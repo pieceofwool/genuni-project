@@ -33,7 +33,7 @@ public class COMPETENZE
         cmd.Parameters.AddWithValue("@Cv", Cv);
         cmd.Parameters.AddWithValue("@Skills", SKILLS);
 
-        c.EseguiSpcmdpparam(cmd);
+        c.EseguiCmd(cmd);
 
     }
     public void Update()
@@ -46,7 +46,7 @@ public class COMPETENZE
         cmd.Parameters.AddWithValue("@Skills", SKILLS);
 
 
-        c.EseguiSpcmdpparam(cmd);
+        c.EseguiCmd(cmd);
         //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
     }
@@ -57,6 +57,6 @@ public class COMPETENZE
         cmd.CommandText = "COMPETENZE_SELECTONE";
         cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
 
-        return c.EseguiSpselectparam(cmd);
+        return c.EseguiSelect(cmd);
     }
 }
