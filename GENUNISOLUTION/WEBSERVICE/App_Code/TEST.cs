@@ -53,4 +53,25 @@ public class TEST
         //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
     }
+    public void Delete()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "TEST_DELETE";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+
+        c.EseguiSpcmdpparam(cmd);
+
+        //c.EseguiCommand("UPDATE tabTIPISPESE SET descrizione='" + descrizione + "'where codiceTipoSpesa=" + codicetipospesa);
+    }
+    public DataTable SelectOne()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "TEST_SELECTONE";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+
+        return c.EseguiSpselectparam(cmd);
+    }
 }
