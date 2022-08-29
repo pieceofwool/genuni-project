@@ -6,8 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
     public class CHAT
     {
         public int CHIAVE;
@@ -36,7 +34,7 @@ using System.Threading.Tasks;
         cmd.Parameters.AddWithValue("@Contenuto", CONTENUTO);
 
 
-        c.EseguiSpcmdpparam(cmd);
+        c.EseguiCmd(cmd);
         //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
     }
@@ -47,7 +45,7 @@ using System.Threading.Tasks;
             cmd.CommandText = "CHAT_SELECTONE";
             cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
 
-            return c.EseguiSpselectparam(cmd);
+            return c.EseguiSelect(cmd);
         }
     }
 

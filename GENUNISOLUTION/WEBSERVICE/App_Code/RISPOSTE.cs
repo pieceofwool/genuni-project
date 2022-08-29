@@ -32,7 +32,7 @@ using System.Threading.Tasks;
             cmd.Parameters.AddWithValue("@Cod_Test", COD_TEST);
             cmd.Parameters.AddWithValue("@Risposta", RISPOSTA);
 
-            c.EseguiSpcmdpparam(cmd);
+            c.EseguiCmd(cmd);
             //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
         }
@@ -43,7 +43,7 @@ using System.Threading.Tasks;
             cmd.CommandText = "RISPOSTE_SELECTONE";
             cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
 
-            return c.EseguiSpselectparam(cmd);
+            return c.EseguiSelect(cmd);
         }
     }
 
