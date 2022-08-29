@@ -33,14 +33,14 @@ public class GENMONEY
         cmd.Parameters.AddWithValue("@Ammontare", Ammontare);
 
         CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiSPselectparam(cmd);
+        conn.EseguiCmd(cmd);
     }
     public DataTable Select()
     {
         SqlCommand cmd = new SqlCommand("GENMONEY_SELECTALL");
-        CONNESSIONE C = new CONNESSIONE();
+        CONNESSIONE c = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return c.EseguiSelect(cmd);
     }
 
     public DataTable SelectOne()
@@ -49,7 +49,7 @@ public class GENMONEY
         cmd.Parameters.AddWithValue("@Chiave", Chiave);
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
     }
 
     #endregion Metodi

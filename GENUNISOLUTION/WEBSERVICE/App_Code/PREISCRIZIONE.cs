@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq
+using System.Linq;
 using System.Data.SqlClient;
 using System.Data;
 using System.Web;
@@ -39,14 +39,14 @@ public class PREISCRIZIONE
         cmd.Parameters.AddWithValue("@Newsletter", Newsletter);
 
         CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiSPselectparam(cmd);
+        conn.EseguiCmd(cmd);
     }
     public DataTable Select()
     {
         SqlCommand cmd = new SqlCommand("PREISCRIZIONI_SELECTALL");
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
     }
 
     public DataTable SelectOne()
@@ -55,7 +55,7 @@ public class PREISCRIZIONE
         cmd.Parameters.AddWithValue("@Chiave", Chiave);
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
     }
 
     #endregion Metodi
