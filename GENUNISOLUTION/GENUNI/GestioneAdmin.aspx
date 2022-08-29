@@ -18,7 +18,7 @@
                 <li>
                     <a href="GestioneTutor.aspx">Abilitazione tutor e contabili</a>
                     <%--SelectAll (where TIPO = T OR C) tutor e contabili--%>
-                    <%--ABILITATO SI/NO-- (Una SP che sia in grado di cambiare quel bool insomma)--%>
+                    <%--ABILITATO SI/NO (Una SP che sia in grado di cambiare quel bool insomma)--%>
                 </li>
                 <li>
                     <a href="GestioneCorsi.aspx">Creazione e assegnazione corsi</a>
