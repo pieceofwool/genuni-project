@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageBackend.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
 
@@ -36,12 +36,12 @@
 
                 <a href="default.aspx" class="logo me-auto">
                     <img src="assets/img/logo_genUni.png" alt="" class="img-fluid" id="logo"></a>
-                <h1 class="logo me-auto"><a href="default.aspx">GEN-UNI</a></h1>
+                <h1 class="logo me-auto"><a href="Default.aspx">GEN-UNI</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
 
                 <nav id="navbar" class="navbar order-last order-lg-0">
                     <ul>
-                        <li><a class="active" href="index.html">Home</a></li>
+                        <%--<li><a class="active" href="index.html">Home</a></li>--%>
                         <%--<li><a href="about.html">Studenti</a></li>
                         <li><a href="courses.html">Docenti</a></li>
                         <li><a href="trainers.html">Tutor</a></li>--%>
@@ -50,7 +50,7 @@
 
                         <li class="dropdown"><a href="#"><span>Studenti</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="#">StudentiDropDown</a></li>
+                                <li><a href="ProvaBack.aspx">StudentiDropDown</a></li>
                                 <li><a href="#">StudentiDropDown</a></li>
                                 <li><a href="#">StudentiDropDown</a></li>
                             </ul>
@@ -85,11 +85,11 @@
                     </ul>
                 </nav>
                 <!-- .navbar -->
-                <%-- <a href="courses.html" class="get-started-btn">Login</a>--%>
+                <a href="MasterPageFrontend.master" class="get-started-btn">Esci</a>
             </div>
         </header>
         <!-- End Header -->
-        <div id="main">
+        <div id="mainBackend">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 <!--pagine figlio-->
             </asp:ContentPlaceHolder>
