@@ -6,8 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LIBCLASSI
-{
+
     public class DOMANDE
     {
         public int CHIAVE;
@@ -85,4 +84,4 @@ namespace LIBCLASSI
             return c.EseguiSpselectparam(cmd);
         }
     }
-}
+

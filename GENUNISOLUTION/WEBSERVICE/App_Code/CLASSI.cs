@@ -6,9 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LIBCLASSI
-    ///Gestisce l'iterazione con la tabella CLASSI
-{
+
     public class CLASSI
     {
         public int CHIAVE;
@@ -63,4 +61,4 @@ namespace LIBCLASSI
         }
         
     }
-}
+

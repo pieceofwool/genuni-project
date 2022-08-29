@@ -6,8 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LIBCLASSI
-{
+
 
     public class CHAT
     {
@@ -51,4 +50,4 @@ namespace LIBCLASSI
             return c.EseguiSpselectparam(cmd);
         }
     }
-}
+
