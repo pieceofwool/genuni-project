@@ -21,8 +21,6 @@ public class TEST
         CONNESSIONE C = new CONNESSIONE();
 
         return C.EseguiSelect(cmd);
-
-
     }
     public void Insert()
     {
@@ -34,7 +32,7 @@ public class TEST
         cmd.Parameters.AddWithValue("@Data_Test", DATA_TEST);
         cmd.Parameters.AddWithValue("@Ora_Test", ORA_TEST);
 
-        c.EseguiSpcmdpparam(cmd);
+        c.EseguiCmd(cmd);
         //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
     }
@@ -49,7 +47,7 @@ public class TEST
         cmd.Parameters.AddWithValue("@Data_Test", DATA_TEST);
         cmd.Parameters.AddWithValue("@Ora_Test", ORA_TEST);
 
-        c.EseguiSpcmdpparam(cmd);
+        c.EseguiCmd(cmd);
         //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
     }
@@ -61,7 +59,7 @@ public class TEST
         cmd.CommandText = "TEST_DELETE";
         cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
 
-        c.EseguiSpcmdpparam(cmd);
+        c.EseguiCmd(cmd);
 
         //c.EseguiCommand("UPDATE tabTIPISPESE SET descrizione='" + descrizione + "'where codiceTipoSpesa=" + codicetipospesa);
     }
@@ -72,6 +70,6 @@ public class TEST
         cmd.CommandText = "TEST_SELECTONE";
         cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
 
-        return c.EseguiSpselectparam(cmd);
+        return c.EseguiSelect(cmd);
     }
 }
