@@ -23,8 +23,7 @@
                 <li>
                     <a href="GestioneCorsi.aspx">Creazione e assegnazione corsi</a>
                     <%--Insert into corsi--%>
-                    <%--SelectAll corsi nella prima pagina, poi popup per assegnare un docente
-                    se non è stato già assegnato, infine popup per assegnare uno studente.--%>
+                    <%--SelectAll corsi nella prima pagina, poi popup per assegnare un tutor.--%>
                 </li>
                 <li>
                     <a href="GestioneReport.aspx">Grafici e report</a>
