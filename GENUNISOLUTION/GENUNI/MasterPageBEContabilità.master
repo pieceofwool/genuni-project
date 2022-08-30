@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageBackend.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageBEContabilità.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
 
@@ -77,9 +77,9 @@
                         </li>
                         <li class="dropdown"><a href="#"><span>Contabilità</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="#">ContabilitàDropDown</a></li>
-                                <li><a href="#">ContabilitàDropDown</a></li>
-                                <li><a href="#">ContabilitàDropDown</a></li>
+                                <li><a href="Contabilità/Report.aspx">Report</a></li>
+                                <li><a href="Contabilità/Compenso.aspx">Compenso</a></li>
+                                <li><a href="Contabilità/Valutazione.aspx">Valutazione</a></li>
                             </ul>
                         </li>
                     </ul>
