@@ -6,17 +6,18 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WSpreiscrizione
+/// Descrizione di riepilogo per WSrisposte
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WSpreiscrizione : System.Web.Services.WebService
+public class WSrisposte : System.Web.Services.WebService
 {
 
-    public WSpreiscrizione()
+    public WSrisposte()
     {
+
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
         //InitializeComponent(); 
     }
@@ -25,33 +26,32 @@ public class WSpreiscrizione : System.Web.Services.WebService
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        PREISCRIZIONE p = new PREISCRIZIONE();
-        dt = p.SelectAll();
-        dt.TableName = "Preiscrizione";
-        return dt;
-    }
-
-    [WebMethod]
-    public DataTable SelectOne(int CHIAVE)
-    {
-        DataTable dt = new DataTable();
-        PREISCRIZIONE p = new PREISCRIZIONE();
-        p.CHIAVE = CHIAVE;
-        dt = p.SelectOne();
-        dt.TableName = "Classi";
+        RISPOSTE r = new RISPOSTE();
+        dt = r.SelectAll();
+        dt.TableName = "Risposte";
         return dt;
     }
     
     [WebMethod]
-    public void Insert(int COD_CORSO, string EMAIL, string NEWSLETTER)
+    public DataTable SelectOne(int CHIAVE)
     {
         DataTable dt = new DataTable();
-        PREISCRIZIONE p = new PREISCRIZIONE();
-        p.COD_CORSO = COD_CORSO;
-        p.EMAIL = EMAIL;
-        p.NEWSLETTER = NEWSLETTER;
+        RISPOSTE r = new RISPOSTE();
+        r.CHIAVE = CHIAVE;  
+        dt = r.SelectAll();
+        dt.TableName = "Risposte";
+        return dt;
+    }
 
-        p.Insert();
+    [WebMethod]
+    public void Insert(int COD_STUDENTE, string COD_TEST, string RISPOSTA)
+    {
+        RISPOSTE r = new RISPOSTE();
+        r.COD_STUDENTE = COD_STUDENTE;
+        r.COD_TEST = COD_TEST;
+        r.RISPOSTA = RISPOSTA;
+
+        r.Insert();
     }
 
 }
