@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBackend.master" AutoEventWireup="true" CodeFile="GestioneAdmin.aspx.cs" Inherits="Default3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBackendAdmin.master" AutoEventWireup="true" CodeFile="GestioneAdmin.aspx.cs" Inherits="Default3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
