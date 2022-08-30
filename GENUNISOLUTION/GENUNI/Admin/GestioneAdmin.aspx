@@ -8,18 +8,18 @@
     <div>
         <ul>
             <li>
-                <a href="GestioneTutor.aspx">Abilitazione tutor e contabili</a>
+                <a href="Admin/GestioneTutor.aspx">Abilitazione tutor e contabili</a>
                 <%--SelectAll (where TIPO = T OR C) tutor e contabili--%>
                 <%--ABILITATO SI/NO (Una SP che sia in grado di cambiare quel bool insomma)--%>
             </li>
             <li>
-                <a href="GestioneCorsi.aspx">Creazione e assegnazione corsi</a>
+                <a href="Admin/GestioneCorsi.aspx">Creazione e assegnazione corsi</a>
                 <%--Insert into corsi--%>
                 <%--SelectAll corsi nella prima pagina, poi popup per assegnare un docente
                     se non è stato già assegnato, infine popup per assegnare uno studente.--%>
             </li>
             <li>
-                <a href="GestioneReport.aspx">Grafici e report</a>
+                <a href="Admin/GestioneReport.aspx">Grafici e report</a>
                 <%--???--%>
             </li>
         </ul>
