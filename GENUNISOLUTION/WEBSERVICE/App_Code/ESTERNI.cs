@@ -123,6 +123,8 @@ public class ESTERNI
     {
         CONNESSIONE c = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_UpdatePassword";
         cmd.Parameters.AddWithValue("@USR", USR);
         cmd.Parameters.AddWithValue("@PWD", PWD);
 
