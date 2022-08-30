@@ -161,7 +161,8 @@ public class ESTERNI
     {
         SqlCommand cmd = new SqlCommand("ESTERNI_STUDENTI_CORSI_FREQUENTATI");
         CONNESSIONE C = new CONNESSIONE();
-        cmd.Parameters.AddWithValue("@USR", USR);
+        cmd.Parameters.AddWithValue("@Chiave", CHIAVE);
+        cmd.Parameters.AddWithValue("@Usr", USR);
 
         return C.EseguiSelect(cmd);
     }
