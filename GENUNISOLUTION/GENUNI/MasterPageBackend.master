@@ -68,11 +68,11 @@
                                 <li><a href="#">TutorDropDown</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="#"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
+                        <li class="dropdown"><a href="GestioneAdmin.aspx"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="#">AdminDropDown</a></li>
-                                <li><a href="#">AdminDropDown</a></li>
-                                <li><a href="#">AdminDropDown</a></li>
+                                <li><a href="GestioneTutor.aspx">Abilitazione tutor e contabili</a></li>
+                                <li><a href="GestioneCorsi.aspx">Creazione e assegnazione corsi</a></li>
+                                <li><a href="GestioneReport.aspx">Grafici e report</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>Contabilità</span> <i class="bi bi-chevron-down"></i></a>
