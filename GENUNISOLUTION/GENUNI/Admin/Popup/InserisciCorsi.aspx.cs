@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
 {
+    string[] estensioni = { ".jpg", ".png", ".bmp" };
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -36,7 +37,7 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
             return;
         }
 
-    
+
 
         int Cod_Utente = int.Parse(ddlUtenti.SelectedValue.ToString());
         string Titolo = txtTitolo.Text.Trim();
@@ -47,8 +48,8 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
 
 
         CORSI C = new CORSI();
-        C.Titolo=Titolo;
-        C.Tipo=Tipo;
+        C.Titolo = Titolo;
+        C.Tipo = Tipo;
         C.Descrizione = Descrizione;
         C.Data_Partenza = Data_Partenza;
         C.Insert();

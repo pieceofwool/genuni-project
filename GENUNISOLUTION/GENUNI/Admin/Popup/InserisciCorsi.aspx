@@ -21,6 +21,11 @@
                         <asp:DropDownList ID="ddlUtenti" ToolTip="Tutor assegnato" runat="server"></asp:DropDownList><br />
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <asp:FileUpload ID="fupAvatar" runat="server" ToolTip="Avatar" accept=".png,.jpg,.jpeg" />
+                    </td>
+                </tr>
 
                 <tr>
                     <td>
@@ -45,8 +50,6 @@
                         <asp:TextBox ID="txtDataPartenza" runat="server" PlaceHolder="Data Partenza" TextMode="Date"></asp:TextBox><br />
                     </td>
                 </tr>
-                <%-- avatar --%>
-
 
                 <tr>
                     <td>
