@@ -20,15 +20,7 @@ public class PREISCRIZIONE
 
     #endregion Membri
 
-    #region Costruttori
-    public PREISCRIZIONE()
-    {
-        //
-        // TODO: aggiungere qui la logica del costruttore
-        //
-    }
-
-    #endregion Costruttori
+ 
 
     #region Metodi
     public void Insert()

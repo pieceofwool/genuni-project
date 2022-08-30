@@ -15,15 +15,11 @@ public class GENMONEY
     public int Chiave;
     public int Cod_Studente;
     public int Cod_Corso;
+    public int Costo;
     public int Ammontare;
 
     #endregion Membri
-    public GENMONEY()
-    {
-        //
-        // TODO: aggiungere qui la logica del costruttore
-        //
-    }
+  
     #region Metodi
     public void Insert()
     {
@@ -34,6 +30,17 @@ public class GENMONEY
 
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
+    }
+    public void AggiornaSaldo()
+    {
+        SqlCommand cmd = new SqlCommand("GENMONEY_AggiornaSaldo");
+        cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
+        cmd.Parameters.AddWithValue("@cod_corso", Cod_Corso);
+        cmd.Parameters.AddWithValue("@costo", Costo);
+        cmd.Parameters.AddWithValue("@ammontare", Ammontare);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        conn.EseguiSPselectparam(cmd);
     }
     public DataTable Select()
     {
