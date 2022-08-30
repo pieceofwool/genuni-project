@@ -28,7 +28,7 @@ public class COMPETENZE
     {
         CONNESSIONE c = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand();
-        cmd.CommandText = "COMPETENZE_UPDATE";
+        cmd.CommandText = "COMPETENZE_INSERT";
         cmd.Parameters.AddWithValue("@Cod_Docente", COD_DOCENTE);
         cmd.Parameters.AddWithValue("@Cv", Cv);
         cmd.Parameters.AddWithValue("@Skills", SKILLS);
