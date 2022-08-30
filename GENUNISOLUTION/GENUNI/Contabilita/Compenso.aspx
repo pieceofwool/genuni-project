@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEContabilità.master" AutoEventWireup="true" CodeFile="Compenso.aspx.cs" Inherits="Default3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEContabilita.master" AutoEventWireup="true" CodeFile="Compenso.aspx.cs" Inherits="Default3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -20,7 +20,7 @@
         <tr>
             <td>
                 <asp:Label ID="lbl" runat="server" Text="Compenso"></asp:Label>
-                <asp:Label ID="lblCpmpeso" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblCompenso" runat="server" Text=""></asp:Label>
             </td>
         </tr>
     </table>
