@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BEstudenti/MasterPageStudenti.master" AutoEventWireup="true" CodeFile="SituazioneContabile.aspx.cs" Inherits="BEstudenti_Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBE_Studenti.master" AutoEventWireup="true" CodeFile="SituazioneContabile.aspx.cs" Inherits="BEstudenti_Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -10,7 +10,7 @@
 
         <div id="Portafoglio">
             <asp:Label ID="Label1" runat="server" Text="Portafoglio"></asp:Label>
-            <asp:Label ID="lblGenMoney" runat="server" Text=""></asp:Label>
+            <asp:Label ID="lblGenMoney" runat="server" Text=""></asp:Label><br />
             <asp:Button ID="btnAcquista" runat="server" Text="Acquista GenMoney" OnClick="btnAcquista_Click"/>
         </div>
     </div>

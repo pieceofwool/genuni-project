@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BEstudenti/MasterPageStudenti.master" AutoEventWireup="true" CodeFile="SituazioneCorsi.aspx.cs" Inherits="BEstudenti_Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBE_Studenti.master" AutoEventWireup="true" CodeFile="SituazioneCorsi.aspx.cs" Inherits="BEstudenti_Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -15,8 +15,9 @@
         </asp:GridView>
     </div>
     <div>
+
         <asp:Label ID="Label2" runat="server" Text="Corsi disponibili"></asp:Label>
-         <asp:GridView ID="grigliaCorsiDisponibili" runat="server">
+        <asp:GridView ID="grigliaCorsiDisponibili" runat="server">
             <Columns>
                 <asp:ButtonField Text="link" />
                 <asp:BoundField DataField="Materia" HeaderText="Materia" SortExpression="Materia" />
