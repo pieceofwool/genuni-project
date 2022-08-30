@@ -32,7 +32,7 @@ using System.Threading.Tasks;
             cmd.Parameters.AddWithValue("@COD_STUDENTE", COD_STUDENTE);
 
 
-            c.EseguiSpcmdpparam(cmd);
+            c.EseguiCmd(cmd);
             //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
         }
@@ -45,7 +45,7 @@ using System.Threading.Tasks;
             cmd.Parameters.AddWithValue("@Punteggio", PUNTEGGIO_TEST);
 
 
-            c.EseguiSpcmdpparam(cmd);
+            c.EseguiCmd(cmd);
             //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
         }
@@ -57,7 +57,7 @@ using System.Threading.Tasks;
             cmd.CommandText = "CLASSI_SELECTONE";
             cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
 
-            return c.EseguiSpselectparam(cmd);
+            return c.EseguiSelect(cmd);
         }
         
     }
