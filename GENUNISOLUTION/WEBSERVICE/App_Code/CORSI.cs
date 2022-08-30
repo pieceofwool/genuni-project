@@ -37,7 +37,7 @@ public class CORSI
         
 
         CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiSPselectparam(cmd);
+        conn.EseguiCmd(cmd);
     }
     public void Update()
     {
@@ -51,14 +51,14 @@ public class CORSI
 
 
         CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiSPselectparam(cmd);
+        conn.EseguiCmd(cmd);
     }
     public DataTable Select()
     {
         SqlCommand cmd = new SqlCommand("CORSI_SelectAll");
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
     }
 
     public DataTable SelectOne()
@@ -67,7 +67,7 @@ public class CORSI
         cmd.Parameters.AddWithValue("@COD_CORSO",CHIAVE_CORSO);
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
     }
     public DataTable Info()
     {
@@ -75,7 +75,7 @@ public class CORSI
         cmd.Parameters.AddWithValue("@COD_CORSO", CHIAVE_CORSO);
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
     }
     public DataTable SelectNonAssegnati()
     {
@@ -90,7 +90,7 @@ public class CORSI
         cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
        
 
-        return c.EseguiSPselectparam(cmd);
+        return c.EseguiSelect(cmd);
         
     }
 
@@ -102,7 +102,7 @@ public class CORSI
         cmd.Parameters.AddWithValue("@Chiave_Studente", CHIAVE_STUDENTE);
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
     }
 
     #endregion Metodi
