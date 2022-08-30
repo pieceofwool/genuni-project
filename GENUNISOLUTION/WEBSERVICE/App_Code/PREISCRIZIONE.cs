@@ -41,7 +41,7 @@ public class PREISCRIZIONE
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
-    public DataTable Select()
+    public DataTable SelectAll()
     {
         SqlCommand cmd = new SqlCommand("PREISCRIZIONI_SELECTALL");
         CONNESSIONE C = new CONNESSIONE();
