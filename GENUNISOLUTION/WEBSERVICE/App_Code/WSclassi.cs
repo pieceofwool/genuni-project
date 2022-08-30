@@ -31,7 +31,8 @@ public class WSclassi : System.Web.Services.WebService
         dt.TableName = "Classi";
         return dt;
     }
-    
+
+    [WebMethod]
     public DataTable SelectOne(int CHIAVE)
     {
         DataTable dt = new DataTable();
