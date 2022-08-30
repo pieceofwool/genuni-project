@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cofiguration>
+	<ConnectionString>
+	<DataSource>DESKTOP-FABIO\SQLEXPRESS</DataSource>
+	<InitialCatalog>GENUNI</InitialCatalog>
+	<IntegratedSecurity>True</IntegratedSecurity>
+	<User></User>
+	<Password></Password>
+	</ConnectionString>
+</cofiguration>
