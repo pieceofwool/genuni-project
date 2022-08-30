@@ -39,7 +39,7 @@ using System.Threading.Tasks;
             cmd.Parameters.AddWithValue("@Voti", VOTI);
 
 
-            c.EseguiSpcmdpparam(cmd);
+            c.EseguiCmd(cmd);
             //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
         }
@@ -57,7 +57,7 @@ using System.Threading.Tasks;
             cmd.Parameters.AddWithValue("@Voti", VOTI);
 
 
-            c.EseguiSpcmdpparam(cmd);
+            c.EseguiCmd(cmd);
             //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
         }
@@ -69,7 +69,7 @@ using System.Threading.Tasks;
             cmd.CommandText = "DOMANDE_DELETE";
             cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
 
-            c.EseguiSpcmdpparam(cmd);
+            c.EseguiCmd(cmd);
 
             //c.EseguiCommand("UPDATE tabTIPISPESE SET descrizione='" + descrizione + "'where codiceTipoSpesa=" + codicetipospesa);
         }
@@ -81,7 +81,7 @@ using System.Threading.Tasks;
             cmd.CommandText = "DOMANDE_SELECTONE";
             cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
 
-            return c.EseguiSpselectparam(cmd);
+            return c.EseguiSelect(cmd);
         }
     }
 
