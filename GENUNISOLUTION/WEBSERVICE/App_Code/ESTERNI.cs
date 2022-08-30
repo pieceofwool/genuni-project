@@ -118,4 +118,30 @@ public class ESTERNI
 
         c.EseguiCmd(cmd);
     }
+
+    public void UpdatePassword()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.Parameters.AddWithValue("@USR", USR);
+        cmd.Parameters.AddWithValue("@PWD", PWD);
+
+        c.EseguiCmd(cmd);
+    }
+    public DataTable InfoCorso()
+    {
+        SqlCommand cmd = new SqlCommand("ESTERNI_InfoCorso");
+        CONNESSIONE C = new CONNESSIONE();
+        cmd.Parameters.AddWithValue("@USR", USR);
+
+        return C.EseguiSelect(cmd);
+    }
+    public DataTable InfoDocente()
+    {
+        SqlCommand cmd = new SqlCommand("ESTERNI_InfoDocente");
+        CONNESSIONE C = new CONNESSIONE();
+        cmd.Parameters.AddWithValue("@USR", USR);
+
+        return C.EseguiSelect(cmd);
+    }
 }
