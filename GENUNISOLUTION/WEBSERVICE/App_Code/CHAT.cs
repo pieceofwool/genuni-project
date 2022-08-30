@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-    public class CHAT
-    {
-        public int CHIAVE;
-        public int COD_CORSO;
-        public int COD_STUDENTE;
-        public int COD_INTERNO;
-        public string CONTENUTO;
+public class CHAT
+{
+    public int CHIAVE;
+    public int COD_CORSO;
+    public int COD_STUDENTE;
+    public int COD_INTERNO;
+    public string CONTENUTO;
 
     public DataTable SelectAll()
     {
@@ -28,7 +28,7 @@ using System.Threading.Tasks;
         CONNESSIONE c = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "CHAT_INSERT";
-        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO );
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
         cmd.Parameters.AddWithValue("@Cod_Studete", COD_STUDENTE);
         cmd.Parameters.AddWithValue("@Cod_Interno", COD_INTERNO);
         cmd.Parameters.AddWithValue("@Contenuto", CONTENUTO);
@@ -38,14 +38,14 @@ using System.Threading.Tasks;
         //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
     }
-        public DataTable SelectOne()
-        {
-            CONNESSIONE c = new CONNESSIONE();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "CHAT_SELECTONE";
-            cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+    public DataTable SelectOne()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_SELECTONE";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
 
-            return c.EseguiSelect(cmd);
-        }
+        return c.EseguiSelect(cmd);
     }
+}
 
