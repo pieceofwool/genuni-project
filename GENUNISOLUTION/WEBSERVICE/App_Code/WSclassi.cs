@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Services;
+
+/// <summary>
+/// Descrizione di riepilogo per WSclassi
+/// </summary>
+[WebService(Namespace = "http://tempuri.org/")]
+[WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+// Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
+// [System.Web.Script.Services.ScriptService]
+public class WSclassi : System.Web.Services.WebService
+{
+
+    public WSclassi()
+    {
+
+        //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
+        //InitializeComponent(); 
+    }
+
+    [WebMethod]
+    public DataTable SelectAll()
+    {
+        DataTable dt = new DataTable();
+        CLASSI c = new CLASSI();
+        dt = c.SelectAll();
+        dt.TableName = "Classi";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectOne(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        CLASSI c = new CLASSI();
+        c.CHIAVE = CHIAVE;
+        dt = c.SelectOne();
+        dt.TableName = "Classi";
+        return dt;
+    }
+    
+    [WebMethod]
+    public void Insert(int COD_CORSO, int COD_STUDENTE)
+    {
+        CLASSI c = new CLASSI();
+        c.COD_CORSO = COD_CORSO;
+        c.COD_STUDENTE = COD_STUDENTE;
+
+        c.Insert();
+    }
+    
+    [WebMethod]
+    public void Update(int CHIAVE, int PUNTEGGIO_TEST)
+    {
+        CLASSI c = new CLASSI();
+        c.CHIAVE = CHIAVE;
+        c.PUNTEGGIO_TEST = PUNTEGGIO_TEST;
+
+        c.Update();
+    }
+
+}
