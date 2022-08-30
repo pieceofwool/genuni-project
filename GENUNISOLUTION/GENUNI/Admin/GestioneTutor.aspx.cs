@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+
 
 public partial class Default3 : System.Web.UI.Page
 {
@@ -24,7 +27,7 @@ public partial class Default3 : System.Web.UI.Page
     {
         //Da aggiornare con effettiva classe e metodo
         UTENTI U = new UTENTI();
-        gridUtentiTC.DataSource = U.SelectTutorContabili();
+        gridUtentiTC.DataSource = U.UTENTI_SelectTutorContabili();
         gridUtentiTC.DataBind();
     }
 
