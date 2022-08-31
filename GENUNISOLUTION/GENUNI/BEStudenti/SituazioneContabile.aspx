@@ -10,7 +10,7 @@
 
         <div id="Portafoglio">
             <asp:Label ID="Label1" runat="server" Text="Portafoglio"></asp:Label>
-            <asp:Label ID="lblGenMoney" runat="server" Text=""></asp:Label><br />
+            <asp:GridView ID="grigliaGenMoney" runat="server"></asp:GridView>
             <asp:Button ID="btnAcquista" runat="server" Text="Acquista GenMoney" OnClick="btnAcquista_Click"/>
         </div>
     </div>
