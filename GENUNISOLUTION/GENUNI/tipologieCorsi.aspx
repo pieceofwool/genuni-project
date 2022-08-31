@@ -43,14 +43,15 @@
             </div>
 
             <div class="container">
-
+                <!--========================== Logo ============================-->
                 <div class="logo float-left">
                     <!-- Uncomment below if you prefer to use an image logo -->
                     <a href="#header" class="scrollto">
-                        <img src="img/ciuchino.png" alt="" class="img-fluid" /></a>
-                    <h1 class="text-light"><a href="Default.aspx" class="scrollto"><span>Gen Uni</span></a></h1>
+                        <img src="img/logo.png" alt="" class="img-fluid"></a>
+                    <h1 class="text-light"><a href="#intro" class="scrollto"><span>Gen Uni</span></a></h1>
                 </div>
             </div>
+            <!-- #logo -->
         </header>
         <!--==========================
       Services Section
