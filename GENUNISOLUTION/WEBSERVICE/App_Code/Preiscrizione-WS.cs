@@ -6,17 +6,18 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WSpreiscrizione
+/// Descrizione di riepilogo per Preiscrizione_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WSpreiscrizione : System.Web.Services.WebService
+public class Preiscrizione_WS : System.Web.Services.WebService
 {
 
-    public WSpreiscrizione()
+    public Preiscrizione_WS()
     {
+
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
         //InitializeComponent(); 
     }
@@ -41,7 +42,7 @@ public class WSpreiscrizione : System.Web.Services.WebService
         dt.TableName = "Classi";
         return dt;
     }
-    
+
     [WebMethod]
     public void Insert(int COD_CORSO, string EMAIL, string NEWSLETTER)
     {
