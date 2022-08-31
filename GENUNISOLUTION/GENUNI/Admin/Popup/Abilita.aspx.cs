@@ -17,9 +17,9 @@ public partial class Admin_Popup_Abilita : System.Web.UI.Page
     protected void btnAbilita_Click(object sender, EventArgs e)
     {
         UTENTI U = new UTENTI();
-        int chiave= int.Parse(Session["chiave"].ToString());
-        U.Chiave= chiave;
-        U.Abilitato();
+        int Chiave= int.Parse(Session["chiave"].ToString());
+        U.Chiave= Chiave;
+        U.Abilita();
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Stato modificato correttamente')", true);
     }
