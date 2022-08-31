@@ -33,16 +33,7 @@ public class UTENTI
 
         return dt.Rows.Count > 0;
     }
-    public bool AbilitaTutor()
-    {
-        SqlCommand cmd = new SqlCommand("UTENTI_AbilitaTutorContabili");
-        cmd.Parameters.AddWithValue("@Chiave", Chiave);
 
-        CONNESSIONE conn = new CONNESSIONE();
-        DataTable dt = conn.EseguiSelect(cmd);
-
-        return dt.Rows.Count > 0;
-    }
     #endregion
 
     #region OPERAZIONI
@@ -82,11 +73,30 @@ public class UTENTI
 
         return C.EseguiSelect(cmd);
     }
-    public DataTable SelectTutor()
+    public DataTable SelectTutorContabili()
     {
         SqlCommand cmd = new SqlCommand("UTENTI_SelectTutorContabili");
-        cmd.Parameters.AddWithValue("@Tipo", Tipo);
         CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
+    public DataTable SelectTutor()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_SelectTutor");
+
+        CONNESSIONE C = new CONNESSIONE();
+        DataTable dt = C.EseguiSelect(cmd);
+
+        return C.EseguiSelect(cmd);
+    }
+    public DataTable SelectStorico()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_SelectStorico");
+
+        CONNESSIONE C = new CONNESSIONE();
+        cmd.Parameters.AddWithValue("@Cod_Studente", Chiave);
+        DataTable dt = C.EseguiSelect(cmd);
 
         return C.EseguiSelect(cmd);
     }
