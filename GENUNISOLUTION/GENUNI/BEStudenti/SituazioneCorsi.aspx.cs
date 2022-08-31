@@ -17,4 +17,9 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         Response.Redirect("Corsi.aspx");
         Session["codiceStudente"] = grigliaCorsiAcquistati.SelectedDataKey[0];
     }
+
+    protected void grigliaCorsiDisponibili_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        Response.Redirect("AcquistoCorsi.aspx");
+    }
 }
