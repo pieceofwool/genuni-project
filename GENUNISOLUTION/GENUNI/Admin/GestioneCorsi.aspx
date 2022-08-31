@@ -49,16 +49,9 @@
             <Columns>
                 <asp:BoundField DataField="Chiave" Visible="false" />
                 <asp:BoundField DataField="Cod_Utente" Visible="false" />
-                <asp:BoundField DataField="Data_Creazione" HeaderText="Data Creazione" />
+                
                 <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
-                <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
-                <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
-                <asp:BoundField DataField="Data_Partenza" HeaderText="Data Partenza" />
-                <asp:BoundField DataField="Status_Corsi" HeaderText="Status Corsi" />
-                <asp:BoundField DataField="Data_Status" HeaderText="Data Status" />
-                <asp:BoundField DataField="Costo" Visible="false" />
-                <asp:BoundField DataField="Avatar_Corso" HeaderText="Avatar" />
-                <asp:BoundField DataField="Tipo_Img" Visible="false" />
+                
 
                 <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
             </Columns>

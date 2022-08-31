@@ -34,7 +34,7 @@ public partial class Admin_Popup_AssegnaCorsi : System.Web.UI.Page
         UTENTI U = new UTENTI();
         ddlTutor.DataSource = U.SelectTutor();
         ddlTutor.DataValueField = "Chiave";
-        ddlTutor.DataTextField = "CognomeNome";
+        ddlTutor.DataTextField = "Cognome";
         ddlTutor.DataBind();
         ddlTutor.SelectedValue = null;
     }
