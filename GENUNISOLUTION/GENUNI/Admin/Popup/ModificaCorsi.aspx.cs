@@ -11,12 +11,18 @@ using App_Code;
 public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
+
     {
+        string[] estensioni = { ".jpg", ".png", ".bmp" };
+
+
         if (!IsPostBack)
         {
+            UpdateTextBox();
             CaricaDDL();
         }
     }
+
     protected void CaricaDDL()
     {
         //Da aggiornare con effettiva classe, metodo e nome del datatextfield
@@ -49,12 +55,13 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         txtTitolo.Text = dt.Rows[0]["Titolo"].ToString();
         txtTipo.Text = dt.Rows[0]["Tipo"].ToString();
         txtDescrizione.Text = dt.Rows[0]["Descrizione"].ToString();
-        txtDescrizione.Text = dt.Rows[0].Field<DateTime>(4).ToString("yyyy-MM-dd");
-        ddlAziende.SelectedValue = dt.Rows[0]["CodiceAzienda"].ToString();
+        txtDataPartenza.Text = dt.Rows[0].Field<DateTime>(4).ToString("yyyy-MM-dd");
+
 
     }
 
-    protected void btnInserisci_Click(object sender, EventArgs e)
+
+    protected void btnModifica_Click(object sender, EventArgs e)
     {
         if (string.IsNullOrEmpty(txtTitolo.Text) || string.IsNullOrEmpty(txtTipo.Text) || string.IsNullOrEmpty(txtDescrizione.Text))
         {
@@ -83,4 +90,6 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         txtDescrizione.Text = "";
         txtDataPartenza.Text = "";
     }
+
+
 }

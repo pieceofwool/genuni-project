@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-         <div>
+<div>
             <table>
                 <tr>
                     <td>
@@ -51,7 +51,7 @@
                 <tr>
                     <td>
 
-                        <asp:Button ID="btnInserisci" runat="server" Text="Modifica" OnClick="btnInserisci_Click" />
+                        <asp:Button ID="btnModifica" runat="server" Text="Modifica" OnClick="btnModifica_Click"  />
                     </td>
                 </tr>
             </table>
