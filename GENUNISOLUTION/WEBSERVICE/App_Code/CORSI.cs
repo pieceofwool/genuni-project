@@ -38,6 +38,7 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_Insert");
        
+        cmd.Parameters.AddWithValue("@Cod_Utente", CHIAVE_TUTOR);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
@@ -45,7 +46,6 @@ public class CORSI
         cmd.Parameters.AddWithValue("@DATA_PARTENZA", DATA_PARTENZA);
         cmd.Parameters.AddWithValue("@TIPO_IMG", TIPO_IMG);
         
-
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
@@ -62,7 +62,6 @@ public class CORSI
         cmd.Parameters.AddWithValue("@STATUS", STATUS);
         cmd.Parameters.AddWithValue("@DATA_STATUS", DATA_STATUS);
         cmd.Parameters.AddWithValue("@TIPO_IMG", TIPO_IMG);
-
 
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
@@ -93,19 +92,11 @@ public class CORSI
     }
     public DataTable SelectNonAssegnati()
     {
-        
-
         CONNESSIONE c = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand("CORSI_SelectNonAssegnati");
-        DataTable dt = new DataTable();
-
-        cmd.Parameters.AddWithValue("@Chiave", CHIAVE_CORSO);
-        cmd.Parameters.AddWithValue("@Titolo", TITOLO);
-        cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
-       
+        DataTable dt = new DataTable();       
 
         return c.EseguiSelect(cmd);
-        
     }
 
     public DataTable TestRisultato()
@@ -132,10 +123,5 @@ public class CORSI
     }
 
     #endregion Metodi
-
-
-
-
-
 
 }
