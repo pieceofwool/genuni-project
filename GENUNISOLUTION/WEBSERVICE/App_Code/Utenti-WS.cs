@@ -33,11 +33,21 @@ public class Utenti_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public DataTable SelectTutorContabili()
+    {
+        DataTable dt = new DataTable();
+        UTENTI u = new UTENTI();
+        dt = u.SelectTutorContabili();
+        dt.TableName = "Utenti";
+        return dt;
+    }
+    
+    [WebMethod]
     public DataTable SelectTutor()
     {
         DataTable dt = new DataTable();
         UTENTI u = new UTENTI();
-        dt = u.SelectAll();
+        dt = u.SelectTutor();
         dt.TableName = "Utenti";
         return dt;
     }
