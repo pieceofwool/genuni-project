@@ -37,7 +37,7 @@ public class Preiscrizione_WS : System.Web.Services.WebService
     {
         DataTable dt = new DataTable();
         PREISCRIZIONE p = new PREISCRIZIONE();
-        p.CHIAVE = CHIAVE;
+        p.Chiave = CHIAVE;
         dt = p.SelectOne();
         dt.TableName = "Classi";
         return dt;
@@ -48,9 +48,9 @@ public class Preiscrizione_WS : System.Web.Services.WebService
     {
         DataTable dt = new DataTable();
         PREISCRIZIONE p = new PREISCRIZIONE();
-        p.COD_CORSO = COD_CORSO;
-        p.EMAIL = EMAIL;
-        p.NEWSLETTER = NEWSLETTER;
+        p.Cod_Corso = COD_CORSO;
+        p.Email = EMAIL;
+        p.Newsletter = NEWSLETTER;
 
         p.Insert();
     }
