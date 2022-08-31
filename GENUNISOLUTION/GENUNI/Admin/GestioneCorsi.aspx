@@ -41,6 +41,7 @@
         <h1>Assegnazione corsi</h1>
         <div class="pulsanti">
             <asp:Button ID="btnAssegna" runat="server" ClientIDMode="Static" Enabled="False" Text="Assegna corso" CssClass="button" />
+            <a href="Admin/Popup/AssegnaCorsi.aspx">Assegna corso</a>
        <asp:Button ID="btnAggiornaAssegnazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaAssegnazione_Click" CssClass="button" />
             </div>
 

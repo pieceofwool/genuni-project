@@ -19,7 +19,7 @@ public partial class Admin_Popup_Abilita : System.Web.UI.Page
         UTENTI U = new UTENTI();
         int Chiave= int.Parse(Session["chiave"].ToString());
         U.Chiave= Chiave;
-        U.Abilita();
+        U.AbilitaTutor();
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Stato modificato correttamente')", true);
     }
