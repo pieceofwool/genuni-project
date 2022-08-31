@@ -13,8 +13,8 @@
     <asp:Label ID="Label3" runat="server" Text="Test Disponibili"></asp:Label>
     <asp:GridView ID="grigliaTest" runat="server"></asp:GridView>
 
-    <asp:Label ID="Label2" runat="server" Text="Test non ancora disponibili"></asp:Label>
-    <asp:GridView ID="grigliaTestNonDisponibili" runat="server"></asp:GridView>
+    <asp:Label ID="Label2" runat="server" Text="Scarica Attestato"></asp:Label>
+    <asp:Button ID="btnAttestato" runat="server" Text="Scarica" />
 
 
     <asp:Label ID="Label4" runat="server" Text="Forum"></asp:Label>
