@@ -64,17 +64,6 @@ public class Utenti_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public bool AbilitaTutor(int Chiave)
-    {
-        DataTable dt = new DataTable();
-        UTENTI u = new UTENTI();
-        u.Chiave = Chiave;
-        bool abilitato = u.AbilitaTutor();
-        dt.TableName = "Utenti";
-        return abilitato;
-    }
-
-    [WebMethod]
     public void Insert(string Usr, string Pwd, string Cognome, string Nome, string Figura)
     {
         UTENTI t = new UTENTI();
