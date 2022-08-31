@@ -82,11 +82,11 @@
                         <li class="drop-down"><a href="#portfolio">Corsi</a>
                             <ul>
                                 <li><a href="#portfolio">Elenco corsi</a></li>
-                                <li class="drop-down"><a href="tipologieCorsi.aspx">Tipologia corsi</a>
+                                <li class="drop-down"><a href="TipologieCorsi.aspx">Tipologia corsi</a>
                                     <ul>
-                                        <li><a href="tipologieCorsi.aspx">TipologiaCorso1</a></li>
-                                        <li><a href="tipologieCorsi.aspx">TipologiaCorso2</a></li>
-                                        <li><a href="tipologieCorsi.aspx">TipologiaCorso3</a></li>
+                                        <li><a href="TipologieCorsi.aspx">TipologiaCorso1</a></li>
+                                        <li><a href="TipologieCorsi.aspx">TipologiaCorso2</a></li>
+                                        <li><a href="TipologieCorsi.aspx">TipologiaCorso3</a></li>
                                     </ul>
                                 </li>
                             </ul>
