@@ -73,10 +73,20 @@ public class UTENTI
 
         return C.EseguiSelect(cmd);
     }
-    public DataTable SelectTutor()
+    public DataTable SelectTutorContabili()
     {
         SqlCommand cmd = new SqlCommand("UTENTI_SelectTutorContabili");
         CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
+    public DataTable SelectTutor()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_SelectTutor");
+
+        CONNESSIONE C = new CONNESSIONE();
+        DataTable dt = C.EseguiSelect(cmd);
 
         return C.EseguiSelect(cmd);
     }
