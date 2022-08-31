@@ -15,6 +15,7 @@ public class CORSI
 
     public int CHIAVE_CORSO;
     public int CHIAVE_TEST;
+    public int CHIAVE_TUTOR;
     public int CHIAVE_STUDENTE;
     public int COD_UTENTE;
     public string TITOLO;
@@ -116,6 +117,18 @@ public class CORSI
         CONNESSIONE C = new CONNESSIONE();
 
         return C.EseguiSelect(cmd);
+    }
+
+    public void UpdateTutor()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_UpdateTutor");
+
+        cmd.Parameters.AddWithValue("@Cod_Corso", CHIAVE_CORSO);
+        cmd.Parameters.AddWithValue("@Cod_Tutor", CHIAVE_TUTOR);
+
+        CONNESSIONE conn = new CONNESSIONE();
+
+        conn.EseguiCmd(cmd);
     }
 
     #endregion Metodi

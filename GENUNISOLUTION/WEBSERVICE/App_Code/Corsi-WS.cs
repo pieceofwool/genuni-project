@@ -107,4 +107,14 @@ public class Corsi_WS : System.Web.Services.WebService
         return dt;
     }
 
+    [WebMethod]
+    public void UpdateTutor(int CHIAVE_CORSO, int CHIAVE_TUTOR)
+    {
+        CORSI c = new CORSI();
+        c.CHIAVE_CORSO = CHIAVE_CORSO;
+        c.CHIAVE_TUTOR = CHIAVE_TUTOR;
+
+        c.UpdateTutor();
+    }
+
 }
