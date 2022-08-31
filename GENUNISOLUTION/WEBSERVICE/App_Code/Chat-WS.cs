@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WScompetenze
+/// Descrizione di riepilogo per Chat_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WScompetenze : System.Web.Services.WebService
+public class Chat_WS : System.Web.Services.WebService
 {
 
-    public WScompetenze()
+    public Chat_WS()
     {
 
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
@@ -26,45 +26,33 @@ public class WScompetenze : System.Web.Services.WebService
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        COMPETENZE c = new COMPETENZE();
+        CHAT c = new CHAT();
         dt = c.SelectAll();
-        dt.TableName = "Competenze";
+        dt.TableName = "Chat";
         return dt;
     }
-    
+
     [WebMethod]
     public DataTable SelectOne(int CHIAVE)
     {
         DataTable dt = new DataTable();
-        COMPETENZE c = new COMPETENZE();
+        CHAT c = new CHAT();
         c.CHIAVE = CHIAVE;
         dt = c.SelectOne();
-        dt.TableName = "Competenze";
+        dt.TableName = "Chat";
         return dt;
     }
 
     [WebMethod]
-    public void Insert(int COD_DOCENTE, byte[] Cv, string SKILLS)
+    public void Insert(int COD_CORSO, int COD_STUDENTE, int COD_INTERNO, string CONTENUTO)
     {
-        COMPETENZE c = new COMPETENZE();
-        c.COD_DOCENTE = COD_DOCENTE;
-        c.Cv = Cv;
-        c.SKILLS = SKILLS;
+        CHAT c = new CHAT();
+        c.COD_CORSO = COD_CORSO;
+        c.COD_STUDENTE = COD_STUDENTE;
+        c.COD_INTERNO = COD_INTERNO;
+        c.CONTENUTO = CONTENUTO;
 
         c.Insert();
     }
-    
-    [WebMethod]
-    public void Update(int CHIAVE, byte[] Cv, string SKILLS)
-    {
-        COMPETENZE c = new COMPETENZE();
-        c.CHIAVE = CHIAVE;
-        c.Cv = Cv;
-        c.SKILLS = SKILLS;
-
-        c.Update();
-    }
-
-
 
 }

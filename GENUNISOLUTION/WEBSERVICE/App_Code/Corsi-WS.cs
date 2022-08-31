@@ -1,23 +1,21 @@
-﻿using Microsoft.SqlServer.Server;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WScorsi
+/// Descrizione di riepilogo per Corsi_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WScorsi : System.Web.Services.WebService
+public class Corsi_WS : System.Web.Services.WebService
 {
 
-    public WScorsi()
+    public Corsi_WS()
     {
 
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
@@ -104,4 +102,5 @@ public class WScorsi : System.Web.Services.WebService
         dt.TableName = "Risultato";
         return dt;
     }
+
 }

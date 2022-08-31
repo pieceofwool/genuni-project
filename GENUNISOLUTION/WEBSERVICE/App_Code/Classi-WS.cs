@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WSclassi
+/// Descrizione di riepilogo per Classi_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WSclassi : System.Web.Services.WebService
+public class Classi_WS : System.Web.Services.WebService
 {
 
-    public WSclassi()
+    public Classi_WS()
     {
 
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
@@ -42,7 +42,7 @@ public class WSclassi : System.Web.Services.WebService
         dt.TableName = "Classi";
         return dt;
     }
-    
+
     [WebMethod]
     public void Insert(int COD_CORSO, int COD_STUDENTE)
     {
@@ -52,7 +52,7 @@ public class WSclassi : System.Web.Services.WebService
 
         c.Insert();
     }
-    
+
     [WebMethod]
     public void Update(int CHIAVE, int PUNTEGGIO_TEST)
     {

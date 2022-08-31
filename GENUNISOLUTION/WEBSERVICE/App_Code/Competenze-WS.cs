@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WSchat
+/// Descrizione di riepilogo per Competenze_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WSchat : System.Web.Services.WebService
+public class Competenze_WS : System.Web.Services.WebService
 {
 
-    public WSchat()
+    public Competenze_WS()
     {
 
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
@@ -26,33 +26,43 @@ public class WSchat : System.Web.Services.WebService
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        CHAT c = new CHAT();
+        COMPETENZE c = new COMPETENZE();
         dt = c.SelectAll();
-        dt.TableName = "Chat";
+        dt.TableName = "Competenze";
         return dt;
     }
-    
+
     [WebMethod]
     public DataTable SelectOne(int CHIAVE)
     {
         DataTable dt = new DataTable();
-        CHAT c = new CHAT();
+        COMPETENZE c = new COMPETENZE();
         c.CHIAVE = CHIAVE;
         dt = c.SelectOne();
-        dt.TableName = "Chat";
+        dt.TableName = "Competenze";
         return dt;
     }
 
     [WebMethod]
-    public void Insert(int COD_CORSO, int COD_STUDENTE, int COD_INTERNO, string CONTENUTO)
+    public void Insert(int COD_DOCENTE, byte[] Cv, string SKILLS)
     {
-        CHAT c = new CHAT();
-        c.COD_CORSO = COD_CORSO;
-        c.COD_STUDENTE = COD_STUDENTE;
-        c.COD_INTERNO = COD_INTERNO;
-        c.CONTENUTO = CONTENUTO;
+        COMPETENZE c = new COMPETENZE();
+        c.COD_DOCENTE = COD_DOCENTE;
+        c.Cv = Cv;
+        c.SKILLS = SKILLS;
 
         c.Insert();
+    }
+
+    [WebMethod]
+    public void Update(int CHIAVE, byte[] Cv, string SKILLS)
+    {
+        COMPETENZE c = new COMPETENZE();
+        c.CHIAVE = CHIAVE;
+        c.Cv = Cv;
+        c.SKILLS = SKILLS;
+
+        c.Update();
     }
 
 }
