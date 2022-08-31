@@ -59,6 +59,7 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
         C.Descrizione = Descrizione;
         C.Data_Partenza = Data_Partenza;
         C.Avatar = Avatar;
+        C.TIPO_IMG = fupAvatar.PostedFile.ContentType;
         C.Insert();
 
         lbl.Text = "Record Inserito";
