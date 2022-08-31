@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEContabilita.master" AutoEventWireup="true" CodeFile="Report.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BEContabilita/MasterPageBEContabilita.master" AutoEventWireup="true" CodeFile="Report.aspx.cs" Inherits="BEContabilita_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -25,5 +25,6 @@
     <asp:GridView ID="grigliaReportStudenri" Visible="false" runat="server"></asp:GridView>
     <asp:Label ID="Label2" runat="server" Text="Totale" Visible="False"></asp:Label>
     <asp:Label ID="lblTotaletudenti" Visible="false" runat="server" Text=""></asp:Label>
+
 </asp:Content>
 

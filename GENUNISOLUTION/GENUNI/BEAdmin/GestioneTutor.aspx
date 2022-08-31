@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBackendAdmin.master" AutoEventWireup="true" CodeFile="GestioneTutor.aspx.cs" Inherits="Default3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BEAdmin/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneTutor.aspx.cs" Inherits="Default3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Abilitazione tutor e contabili</title>

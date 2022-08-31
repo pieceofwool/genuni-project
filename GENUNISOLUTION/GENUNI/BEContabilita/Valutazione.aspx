@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEContabilita.master" AutoEventWireup="true" CodeFile="Valutazione.aspx.cs" Inherits="Default4" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BEContabilita/MasterPageBEContabilita.master" AutoEventWireup="true" CodeFile="Valutazione.aspx.cs" Inherits="BEContabilita_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
+
     <%-- DATA INIZIO VALUTAZIONE --%>
     <asp:Label ID="lblDataInizio" runat="server" Text="Dal"></asp:Label>
     <asp:TextBox ID="txtDataInizio" runat="server" TextMode="Month"></asp:TextBox>
@@ -14,5 +14,6 @@
     <br />
     <%-- GRIGLIA DI VISUALIZZAZIONE VALUTAZIONE CORSI --%>
     <asp:GridView ID="grigliaValutazione" runat="server"></asp:GridView>
+
 </asp:Content>
 
