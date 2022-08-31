@@ -1,9 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BEAdmin/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneCorsi.aspx.cs" Inherits="Default3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneCorsi.aspx.cs" Inherits="Default3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Creazione e assegnazione corsi</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+    <br />
+    <br />
+    <br />
+    <br />
+
      <div id="creazcorsi">
         <h1>Creazione e modifica corsi</h1>
         <div class="pulsanti">

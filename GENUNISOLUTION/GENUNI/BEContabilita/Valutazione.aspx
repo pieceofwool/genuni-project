@@ -1,8 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BEContabilita/MasterPageBEContabilita.master" AutoEventWireup="true" CodeFile="Valutazione.aspx.cs" Inherits="BEContabilita_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEContabilita.master" AutoEventWireup="true" CodeFile="Valutazione.aspx.cs" Inherits="BEContabilita_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+    <br />
+    <br />
+    <br />
+    <br />
 
     <%-- DATA INIZIO VALUTAZIONE --%>
     <asp:Label ID="lblDataInizio" runat="server" Text="Dal"></asp:Label>

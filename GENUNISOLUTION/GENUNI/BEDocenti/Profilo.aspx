@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BEDocenti/MasterPageBEDocenti.master" AutoEventWireup="true" CodeFile="Profilo.aspx.cs" Inherits="BEDocenti_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEDocenti.master" AutoEventWireup="true" CodeFile="Profilo.aspx.cs" Inherits="BEDocenti_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
@@ -85,6 +85,12 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+    <br />
+    <br />
+    <br />
+    <br />
+
     <h2>Profilo</h2>
     <h3>Dati:</h3>
     <%--profilo--%>
