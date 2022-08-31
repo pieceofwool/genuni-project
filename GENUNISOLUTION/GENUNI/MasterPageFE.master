@@ -72,7 +72,7 @@
                             <ul>
                                 <li><a href="BEAdmin/GestioneAdmin.aspx">Admin</a></li>
                                 <li><a href="BEContabilita/Compenso.aspx">Contabilità</a></li>
-                                <li><a href="BEDocenti/">Docenti</a></li>
+                                <li><a href="BEDocenti/GestioneDocenti.aspx">Docenti</a></li>
                                 <li><a href="BEStudenti/Modifica_Profilo.aspx">Studenti</a></li>
                                 <li><a href="BETutor/">Tutor</a></li>
                             </ul>
