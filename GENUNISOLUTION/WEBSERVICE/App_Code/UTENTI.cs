@@ -37,6 +37,7 @@ public class UTENTI
     {
         SqlCommand cmd = new SqlCommand("UTENTI_AbilitaTutorContabili");
         cmd.Parameters.AddWithValue("@Chiave", Chiave);
+        cmd.Parameters.AddWithValue("@Abilitato", Abilitato);
 
         CONNESSIONE conn = new CONNESSIONE();
         DataTable dt = conn.EseguiSelect(cmd);
@@ -85,7 +86,6 @@ public class UTENTI
     public DataTable SelectTutor()
     {
         SqlCommand cmd = new SqlCommand("UTENTI_SelectTutorContabili");
-        cmd.Parameters.AddWithValue("@Tipo", Tipo);
         CONNESSIONE C = new CONNESSIONE();
 
         return C.EseguiSelect(cmd);
