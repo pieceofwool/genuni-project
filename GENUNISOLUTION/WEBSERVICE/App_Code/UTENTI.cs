@@ -90,5 +90,15 @@ public class UTENTI
 
         return C.EseguiSelect(cmd);
     }
+    public DataTable SelectStorico()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_SelectStorico");
+
+        CONNESSIONE C = new CONNESSIONE();
+        cmd.Parameters.AddWithValue("@Cod_Studente", Chiave);
+        DataTable dt = C.EseguiSelect(cmd);
+
+        return C.EseguiSelect(cmd);
+    }
     #endregion
 }

@@ -53,6 +53,16 @@ public class Utenti_WS : System.Web.Services.WebService
     }
     
     [WebMethod]
+    public DataTable SelectStorico()
+    {
+        DataTable dt = new DataTable();
+        UTENTI u = new UTENTI();
+        dt = u.SelectStorico();
+        dt.TableName = "Utenti";
+        return dt;
+    }
+    
+    [WebMethod]
     public bool Abilita(int Chiave)
     {
         DataTable dt = new DataTable();

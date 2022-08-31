@@ -54,6 +54,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectStorico">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectStoricoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectStoricoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Abilita">
         <s:complexType>
           <s:sequence>
@@ -122,6 +139,12 @@
   <wsdl:message name="SelectTutorSoapOut">
     <wsdl:part name="parameters" element="tns:SelectTutorResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectStoricoSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectStorico" />
+  </wsdl:message>
+  <wsdl:message name="SelectStoricoSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectStoricoResponse" />
+  </wsdl:message>
   <wsdl:message name="AbilitaSoapIn">
     <wsdl:part name="parameters" element="tns:Abilita" />
   </wsdl:message>
@@ -152,6 +175,10 @@
     <wsdl:operation name="SelectTutor">
       <wsdl:input message="tns:SelectTutorSoapIn" />
       <wsdl:output message="tns:SelectTutorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectStorico">
+      <wsdl:input message="tns:SelectStoricoSoapIn" />
+      <wsdl:output message="tns:SelectStoricoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Abilita">
       <wsdl:input message="tns:AbilitaSoapIn" />
@@ -188,6 +215,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectTutor">
       <soap:operation soapAction="http://tempuri.org/SelectTutor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectStorico">
+      <soap:operation soapAction="http://tempuri.org/SelectStorico" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -236,6 +272,7 @@
     </wsdl:operation>
     <wsdl:operation name="SelectTutorContabili">
       <soap12:operation soapAction="http://tempuri.org/SelectTutorContabili" style="document" />
+
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -245,6 +282,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectTutor">
       <soap12:operation soapAction="http://tempuri.org/SelectTutor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectStorico">
+      <soap12:operation soapAction="http://tempuri.org/SelectStorico" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
