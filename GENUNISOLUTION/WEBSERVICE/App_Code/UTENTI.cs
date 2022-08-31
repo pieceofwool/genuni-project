@@ -33,17 +33,7 @@ public class UTENTI
 
         return dt.Rows.Count > 0;
     }
-    public bool AbilitaTutor()
-    {
-        SqlCommand cmd = new SqlCommand("UTENTI_AbilitaTutorContabili");
-        cmd.Parameters.AddWithValue("@Chiave", Chiave);
-        cmd.Parameters.AddWithValue("@Abilitato", Abilitato);
 
-        CONNESSIONE conn = new CONNESSIONE();
-        DataTable dt = conn.EseguiSelect(cmd);
-
-        return dt.Rows.Count > 0;
-    }
     #endregion
 
     #region OPERAZIONI
