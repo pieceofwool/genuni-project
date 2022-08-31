@@ -42,7 +42,7 @@ public class GENMONEY
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
-    public DataTable Select()
+    public DataTable SelectAll()
     {
         SqlCommand cmd = new SqlCommand("GENMONEY_SELECTALL");
         CONNESSIONE c = new CONNESSIONE();

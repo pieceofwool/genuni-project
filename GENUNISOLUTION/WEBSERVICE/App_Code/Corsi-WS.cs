@@ -32,25 +32,29 @@ public class Corsi_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Update(int COD_UTENTE, string TITOLO, string TIPO, string DESCRIZIONE, string AVATARCORSO, string TIPOIMG)
+    public void Update(int COD_UTENTE, string DATA_CREAZIONE, string TITOLO, string TIPO, string DESCRIZIONE, string AVATAR_CORSO, string DATA_PARTENZA, string STATUS, string DATA_STATUS, string TIPOIMG)
     {
         CORSI c = new CORSI();
         c.COD_UTENTE = COD_UTENTE;
+        c.DATA_CREAZIONE = DATA_CREAZIONE;
         c.TITOLO = TITOLO;
         c.TIPO = TIPO;
         c.DESCRIZIONE = DESCRIZIONE;
-        c.AVATAR_CORSO = AVATARCORSO;
+        c.AVATAR_CORSO = AVATAR_CORSO;
+        c.DATA_PARTENZA = DATA_PARTENZA;
+        c.STATUS = STATUS;
+        c.DATA_STATUS = DATA_STATUS;
         c.TIPO_IMG = TIPOIMG;
 
         c.Update();
     }
 
     [WebMethod]
-    public DataTable Select()
+    public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
         CORSI c = new CORSI();
-        dt = c.Select();
+        dt = c.SelectAll();
         dt.TableName = "Corsi";
         return dt;
     }
