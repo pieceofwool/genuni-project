@@ -60,7 +60,6 @@ public class CORSI
         cmd.Parameters.AddWithValue("@AVATAR_CORSO", AVATAR_CORSO);
         cmd.Parameters.AddWithValue("@DATA_PARTENZA", DATA_PARTENZA);
         cmd.Parameters.AddWithValue("@STATUS", STATUS);
-        cmd.Parameters.AddWithValue("@DATA_STATUS", DATA_STATUS);
         cmd.Parameters.AddWithValue("@TIPO_IMG", TIPO_IMG);
 
         CONNESSIONE conn = new CONNESSIONE();
@@ -114,8 +113,8 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_UpdateTutor");
 
-        cmd.Parameters.AddWithValue("@Cod_Corso", CHIAVE_CORSO);
-        cmd.Parameters.AddWithValue("@Cod_Tutor", CHIAVE_TUTOR);
+        cmd.Parameters.AddWithValue("@Chiave_Corso", CHIAVE_CORSO);
+        cmd.Parameters.AddWithValue("@Cod_Utente", CHIAVE_TUTOR);
 
         CONNESSIONE conn = new CONNESSIONE();
 
