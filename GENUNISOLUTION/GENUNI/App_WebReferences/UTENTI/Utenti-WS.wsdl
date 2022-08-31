@@ -272,6 +272,7 @@
     </wsdl:operation>
     <wsdl:operation name="SelectTutorContabili">
       <soap12:operation soapAction="http://tempuri.org/SelectTutorContabili" style="document" />
+
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
