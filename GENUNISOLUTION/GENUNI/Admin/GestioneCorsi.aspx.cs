@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
+using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -54,6 +56,5 @@ public partial class Default3 : System.Web.UI.Page
         //Da aggiornare con effettiva classe e metodo
         CORSI C = new CORSI();
         gridAssegnazioneCorsi.DataSource = C.SelectNonAssegnati();
-        gridAssegnazioneCorsi.DataBind();
     }
 }
