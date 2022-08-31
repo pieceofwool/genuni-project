@@ -15,6 +15,7 @@ public class CORSI
 
     public int CHIAVE_CORSO;
     public int CHIAVE_TEST;
+    public int CHIAVE_TUTOR;
     public int CHIAVE_STUDENTE;
     public int COD_UTENTE;
     public string TITOLO;
@@ -24,6 +25,10 @@ public class CORSI
     public int COSTO;
     public string AVATAR_CORSO;
     public string TIPO_IMG;
+    public string DATA_PARTENZA;
+    public string DATA_CREAZIONE;
+    public string DATA_STATUS;
+    public string STATUS;
 
     #endregion Membri
 
@@ -34,31 +39,40 @@ public class CORSI
         SqlCommand cmd = new SqlCommand("CORSI_Insert");
        
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
+        cmd.Parameters.AddWithValue("@TIPO", TIPO);
+        cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
+        cmd.Parameters.AddWithValue("@AVATAR_CORSO", AVATAR_CORSO);
+        cmd.Parameters.AddWithValue("@DATA_PARTENZA", DATA_PARTENZA);
+        cmd.Parameters.AddWithValue("@TIPO_IMG", TIPO_IMG);
         
 
         CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiSPselectparam(cmd);
+        conn.EseguiCmd(cmd);
     }
     public void Update()
     {
         SqlCommand cmd = new SqlCommand("CORSI_Update");
         cmd.Parameters.AddWithValue("@COD_UTENTE", COD_UTENTE);
+        cmd.Parameters.AddWithValue("@DATA_CREAZIONE", DATA_CREAZIONE);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
         cmd.Parameters.AddWithValue("@AVATAR_CORSO", AVATAR_CORSO);
+        cmd.Parameters.AddWithValue("@DATA_PARTENZA", DATA_PARTENZA);
+        cmd.Parameters.AddWithValue("@STATUS", STATUS);
+        cmd.Parameters.AddWithValue("@DATA_STATUS", DATA_STATUS);
         cmd.Parameters.AddWithValue("@TIPO_IMG", TIPO_IMG);
 
 
         CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiSPselectparam(cmd);
+        conn.EseguiCmd(cmd);
     }
-    public DataTable Select()
+    public DataTable SelectAll()
     {
         SqlCommand cmd = new SqlCommand("CORSI_SelectAll");
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
     }
 
     public DataTable SelectOne()
@@ -67,7 +81,7 @@ public class CORSI
         cmd.Parameters.AddWithValue("@COD_CORSO",CHIAVE_CORSO);
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
     }
     public DataTable Info()
     {
@@ -75,7 +89,7 @@ public class CORSI
         cmd.Parameters.AddWithValue("@COD_CORSO", CHIAVE_CORSO);
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
     }
     public DataTable SelectNonAssegnati()
     {
@@ -90,7 +104,7 @@ public class CORSI
         cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
        
 
-        return c.EseguiSPselectparam(cmd);
+        return c.EseguiSelect(cmd);
         
     }
 
@@ -102,7 +116,19 @@ public class CORSI
         cmd.Parameters.AddWithValue("@Chiave_Studente", CHIAVE_STUDENTE);
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
+    }
+
+    public void UpdateTutor()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_UpdateTutor");
+
+        cmd.Parameters.AddWithValue("@Cod_Corso", CHIAVE_CORSO);
+        cmd.Parameters.AddWithValue("@Cod_Tutor", CHIAVE_TUTOR);
+
+        CONNESSIONE conn = new CONNESSIONE();
+
+        conn.EseguiCmd(cmd);
     }
 
     #endregion Metodi

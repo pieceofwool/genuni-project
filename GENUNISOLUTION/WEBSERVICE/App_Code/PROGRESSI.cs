@@ -16,7 +16,7 @@ public class PROGRESSI
     public DateTime Data_Progresso;
     public PROGRESSI()
     {
-        
+
     }
     #region OPERAZIONI
     public void Insert()
@@ -32,10 +32,11 @@ public class PROGRESSI
     public void Update()
     {
         SqlCommand cmd = new SqlCommand("PROGRESSI_Update");
+        cmd.Parameters.AddWithValue("@Chiave", Chiave);
         cmd.Parameters.AddWithValue("@Cod_Programma", Cod_Programma);
         cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
         cmd.Parameters.AddWithValue("@Data_Progesso", Data_Progresso);
-        Connessione conn = new Connessione();
+        CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
     #endregion
