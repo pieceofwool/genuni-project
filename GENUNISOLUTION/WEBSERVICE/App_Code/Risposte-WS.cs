@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -43,7 +44,7 @@ public class Risposte_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Insert(int COD_STUDENTE, string COD_TEST, string RISPOSTA)
+    public void Insert(int COD_STUDENTE, int COD_TEST, string RISPOSTA)
     {
         RISPOSTE r = new RISPOSTE();
         r.COD_STUDENTE = COD_STUDENTE;
