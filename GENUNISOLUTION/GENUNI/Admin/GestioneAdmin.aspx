@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBackendAdmin.master" AutoEventWireup="true" CodeFile="GestioneAdmin.aspx.cs" Inherits="Default3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBackendAdmin.master" AutoEventWireup="true" CodeFile="GestioneAdmin.aspx.cs" Inherits="Default2" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <%--L'admin non gestisce la contabilità, admin != admin contabile.--%>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+      <%--L'admin non gestisce la contabilità, admin != admin contabile.--%>
 
     <div>
         <ul>
@@ -24,6 +24,5 @@
             </li>
         </ul>
     </div>
-
 </asp:Content>
 

@@ -26,8 +26,8 @@ public partial class Default3 : System.Web.UI.Page
     protected void CaricaGriglia()
     {
         //Da aggiornare con effettiva classe e metodo
-        UTENTI U = new UTENTI();
-        gridUtentiTC.DataSource = U.SelectTutor();
+        //   UTENTI U = new UTENTI();
+        // gridUtentiTC.DataSource = U.SelectTutor();
         gridUtentiTC.DataBind();
     }
 

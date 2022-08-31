@@ -6,15 +6,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using App_Code;
 using System.IO;
 
 public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 {
+        string[] estensioni = { ".jpg", ".png", ".bmp" };
     protected void Page_Load(object sender, EventArgs e)
 
     {
-        string[] estensioni = { ".jpg", ".png", ".bmp" };
 
 
         if (!IsPostBack)
@@ -28,8 +27,8 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
     {
         //Da aggiornare con effettiva classe, metodo e nome del datatextfield
 
-        UTENTI U = new UTENTI();
-        ddlUtenti.DataSource = U.SelectTutor();
+        // UTENTI U = new UTENTI();
+        //  ddlUtenti.DataSource = U.SelectTutor();
         ddlUtenti.DataValueField = "Chiave";
         ddlUtenti.DataTextField = "Cognome";
         ddlUtenti.DataBind();
@@ -39,7 +38,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
     public void UpdateTextBox()
     {
-        CORSI c = new CORSI();//creo l'oggetto t di tipospesa
+        // CORSI c = new CORSI();//creo l'oggetto t di tipospesa
 
         DataTable dt = new DataTable();//creo l'oggetto datatable
 
@@ -48,7 +47,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
         //prendo la procedura
         //mi restituisce un data table
-        dt = c.Select(Chiave);
+        // dt = c.Select(Chiave);
 
 
         //di questo datatable prendimi alla riga X il contenuto di Y { MATRICE}
@@ -65,9 +64,9 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
     protected void btnModifica_Click(object sender, EventArgs e)
     {
         int Chiave = int.Parse(Session["ChiaveCreazione"].ToString());
-        CORSI C = new CORSI();
-        C.CHIAVE_CORSO = Chiave;
-        byte[] avatar = new CORSI().SelectOne().Rows[0].Field<byte[]>("avatar_corso");
+        //CORSI C = new CORSI();
+        //C.CHIAVE_CORSO = Chiave;
+        //byte[] avatar = new CORSI().SelectOne().Rows[0].Field<byte[]>("avatar_corso");
 
         if (string.IsNullOrEmpty(txtTitolo.Text) || string.IsNullOrEmpty(txtTipo.Text) || string.IsNullOrEmpty(txtDescrizione.Text))
         {
@@ -88,7 +87,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
                 return;
             }
 
-            avatar = fupAvatar.FileBytes;
+            //    avatar = fupAvatar.FileBytes;
         }
 
 
@@ -101,14 +100,14 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
 
 
-        CORSI C = new CORSI();
-        C.TITOLO = Titolo;
-        C.TIPO = Tipo;
-        C.DESCRIZIONE = Descrizione;
-        C.DATA_PARTENZA = Data_Partenza;
-        C.AVATAR_CORSO = avatar;
-        C.TIPO_IMG = fupAvatar.PostedFile.ContentType;
-        C.Update();
+        //  CORSI C = new CORSI();
+        // C.TITOLO = Titolo;
+        // C.TIPO = Tipo;
+        //        C.DESCRIZIONE = Descrizione;
+        //C.DATA_PARTENZA = Data_Partenza;
+        //C.AVATAR_CORSO = avatar;
+        //C.TIPO_IMG = fupAvatar.PostedFile.ContentType;
+        //C.Update();
 
         lbl.Text = "Record Modificato";
         txtTitolo.Text = "";

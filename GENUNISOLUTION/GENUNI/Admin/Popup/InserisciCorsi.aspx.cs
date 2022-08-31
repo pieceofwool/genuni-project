@@ -22,8 +22,8 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
     {
         //Da aggiornare con effettiva classe, metodo e nome del datatextfield
 
-        UTENTI U = new UTENTI();
-        ddlUtenti.DataSource = U.SelectTutor();
+        //UTENTI U = new UTENTI();
+        //ddlUtenti.DataSource = U.SelectTutor();
         ddlUtenti.DataValueField = "Chiave";
         ddlUtenti.DataTextField = "Cognome";
         ddlUtenti.DataBind();
@@ -53,14 +53,14 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
         byte[] Avatar = fupAvatar.FileBytes;
 
 
-        CORSI C = new CORSI();
-        C.Titolo = Titolo;
-        C.Tipo = Tipo;
-        C.Descrizione = Descrizione;
-        C.Data_Partenza = Data_Partenza;
-        C.Avatar = Avatar;
-        C.TIPO_IMG = fupAvatar.PostedFile.ContentType;
-        C.Insert();
+        //CORSI C = new CORSI();
+        //C.Titolo = Titolo;
+        //C.Tipo = Tipo;
+        //C.Descrizione = Descrizione;
+        //C.Data_Partenza = Data_Partenza;
+        //C.Avatar = Avatar;
+        //C.TIPO_IMG = fupAvatar.PostedFile.ContentType;
+        //C.Insert();
 
         lbl.Text = "Record Inserito";
         txtTitolo.Text = "";
