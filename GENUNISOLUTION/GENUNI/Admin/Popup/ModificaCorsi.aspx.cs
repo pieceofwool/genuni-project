@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using App_Code;
+using System.IO;
 
 public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 {
@@ -30,7 +31,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         UTENTI U = new UTENTI();
         ddlUtenti.DataSource = U.SelectTutor();
         ddlUtenti.DataValueField = "Chiave";
-        ddlUtenti.DataTextField = "CognomeNome";
+        ddlUtenti.DataTextField = "Cognome";
         ddlUtenti.DataBind();
         ddlUtenti.SelectedValue = null;
     }
@@ -43,7 +44,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         DataTable dt = new DataTable();//creo l'oggetto datatable
 
 
-        int Chiave = int.Parse(Session["id"].ToString());//creo una variabile intera da passare al metodo Select
+        int Chiave = int.Parse(Session["ChiaveCreazione"].ToString());//creo una variabile intera da passare al metodo Select
 
         //prendo la procedura
         //mi restituisce un data table
@@ -63,11 +64,33 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
     protected void btnModifica_Click(object sender, EventArgs e)
     {
+        int Chiave = int.Parse(Session["ChiaveCreazione"].ToString());
+        CORSI C = new CORSI();
+        C.CHIAVE_CORSO = Chiave;
+        byte[] avatar = new CORSI().SelectOne().Rows[0].Field<byte[]>("avatar_corso");
+
         if (string.IsNullOrEmpty(txtTitolo.Text) || string.IsNullOrEmpty(txtTipo.Text) || string.IsNullOrEmpty(txtDescrizione.Text))
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Tutti i campi devono essere pieni')", true);
             return;
         }
+
+        if (!estensioni.Contains(Path.GetExtension(fupAvatar.FileName)))
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Formato file non valido: caricare .jpg, .png o .bmp')", true); ;
+            return;
+        }
+        if (fupAvatar.HasFile)
+        {
+            if (!estensioni.Contains(Path.GetExtension(fupAvatar.FileName)))
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Formato file non valido: caricare .jpg, .png o .bmp')", true); ;
+                return;
+            }
+
+            avatar = fupAvatar.FileBytes;
+        }
+
 
         int Cod_Utente = int.Parse(ddlUtenti.SelectedValue.ToString());
         string Titolo = txtTitolo.Text.Trim();
@@ -77,18 +100,22 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
 
 
+
         CORSI C = new CORSI();
-        C.Titolo = Titolo;
-        C.Tipo = Tipo;
-        C.Descrizione = Descrizione;
-        C.Data_Partenza = Data_Partenza;
+        C.TITOLO = Titolo;
+        C.TIPO = Tipo;
+        C.DESCRIZIONE = Descrizione;
+        C.DATA_PARTENZA = Data_Partenza;
+        C.AVATAR_CORSO = avatar;
+        C.TIPO_IMG = fupAvatar.PostedFile.ContentType;
         C.Update();
 
-        lbl.Text = "Record Inserito";
+        lbl.Text = "Record Modificato";
         txtTitolo.Text = "";
         txtTipo.Text = "";
         txtDescrizione.Text = "";
         txtDataPartenza.Text = "";
+        fupAvatar.Dispose();
     }
 
 
