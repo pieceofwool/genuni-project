@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WSprogrammi
+/// Descrizione di riepilogo per Programmi_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WSprogrammi : System.Web.Services.WebService
+public class Programmi_WS : System.Web.Services.WebService
 {
 
-    public WSprogrammi()
+    public Programmi_WS()
     {
 
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
@@ -33,7 +33,7 @@ public class WSprogrammi : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Insert(int COD_MATERIA, string TIPO, string INDICE, string LINK, byte[] MATERIALE, string TITOLO_MATERIALE, string DESCRIZIONE)
+    public void Insert(int COD_MATERIA, string TIPO, int INDICE, string LINK, byte[] MATERIALE, string TITOLO_MATERIALE, string DESCRIZIONE)
     {
         PROGRAMMI p = new PROGRAMMI();
         p.COD_MATERIA = COD_MATERIA;
@@ -46,12 +46,12 @@ public class WSprogrammi : System.Web.Services.WebService
 
         p.Insert();
     }
-    
+
     [WebMethod]
-    public void Update(int CHIAVE, int COD_MATERIA, string TIPO, string INDICE, string LINK, byte[] MATERIALE, string TITOLO_MATERIALE, string DESCRIZIONE)
+    public void Update(int CHIAVE, int COD_MATERIA, string TIPO, int INDICE, string LINK, byte[] MATERIALE, string TITOLO_MATERIALE, string DESCRIZIONE)
     {
         PROGRAMMI p = new PROGRAMMI();
-        p.CHIAVE = CHIAVE;  
+        p.CHIAVE = CHIAVE;
         p.COD_MATERIA = COD_MATERIA;
         p.TIPO = TIPO;
         p.INDICE = INDICE;
@@ -60,6 +60,7 @@ public class WSprogrammi : System.Web.Services.WebService
         p.TITOLO_MATERIALE = TITOLO_MATERIALE;
         p.DESCRIZIONE = DESCRIZIONE;
 
-        p.Insert();
+        p.Update();
     }
+
 }
