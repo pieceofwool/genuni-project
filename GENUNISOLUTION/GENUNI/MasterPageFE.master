@@ -74,7 +74,7 @@
                                 <li><a href="BEContabilita/Compenso.aspx">Contabilità</a></li>
                                 <li><a href="BEDocenti/GestioneDocenti.aspx">Docenti</a></li>
                                 <li><a href="BEStudenti/Modifica_Profilo.aspx">Studenti</a></li>
-                                <li><a href="BETutor/">Tutor</a></li>
+                                <li><a href="BETutor/GestioneTutor.aspx">Tutor</a></li>
                             </ul>
                         </li>
                         <li class="active"><a href="Default.aspx">Home</a></li>
