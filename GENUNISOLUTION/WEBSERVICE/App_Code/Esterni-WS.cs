@@ -38,7 +38,7 @@ public class Esterni_WS : System.Web.Services.WebService
         DataTable dt = new DataTable();
         ESTERNI e = new ESTERNI();
         e.CHIAVE = CHIAVE;
-        dt = e.SelectAll();
+        dt = e.SelectOne();
         dt.TableName = "Esterni";
         return dt;
     }
@@ -72,6 +72,7 @@ public class Esterni_WS : System.Web.Services.WebService
     public void Update(int CHIAVE, string TIPO, string USR, string PWD, string RAGIONE_SOCIALE, string COGNOME, string NOME, string DATA_NASCITA, string PIVA, string CF, string INDIRIZZO, string CAP, string CITTA, string PROVINCIA, string NAZIONALITA, bool ABILITATO, byte[] AVATAR, string TIPOIMG)
     {
         ESTERNI e = new ESTERNI();
+        e.CHIAVE = CHIAVE;
         e.TIPO = TIPO;
         e.USR = USR;
         e.PWD = PWD;

@@ -52,7 +52,7 @@ public class Progressi_WS : System.Web.Services.WebService
         p.Cod_Studente = COD_STUDENTE;
         p.Data_Progresso = DATA_PROGRESSO;
 
-        p.Insert();
+        p.Update();
     }
 
 }

@@ -38,7 +38,7 @@ public class Risposte_WS : System.Web.Services.WebService
         DataTable dt = new DataTable();
         RISPOSTE r = new RISPOSTE();
         r.CHIAVE = CHIAVE;
-        dt = r.SelectAll();
+        dt = r.SelectOne();
         dt.TableName = "Risposte";
         return dt;
     }
