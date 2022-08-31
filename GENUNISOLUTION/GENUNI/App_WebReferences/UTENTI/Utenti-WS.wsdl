@@ -20,6 +20,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectTutorContabili">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectTutorContabiliResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectTutorContabiliResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SelectTutor">
         <s:complexType />
       </s:element>
@@ -48,20 +65,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="AbilitaResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="AbilitaTutor">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Chiave" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="AbilitaTutorResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="AbilitaTutorResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -107,6 +110,12 @@
   <wsdl:message name="SelectAllSoapOut">
     <wsdl:part name="parameters" element="tns:SelectAllResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectTutorContabiliSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectTutorContabili" />
+  </wsdl:message>
+  <wsdl:message name="SelectTutorContabiliSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectTutorContabiliResponse" />
+  </wsdl:message>
   <wsdl:message name="SelectTutorSoapIn">
     <wsdl:part name="parameters" element="tns:SelectTutor" />
   </wsdl:message>
@@ -118,12 +127,6 @@
   </wsdl:message>
   <wsdl:message name="AbilitaSoapOut">
     <wsdl:part name="parameters" element="tns:AbilitaResponse" />
-  </wsdl:message>
-  <wsdl:message name="AbilitaTutorSoapIn">
-    <wsdl:part name="parameters" element="tns:AbilitaTutor" />
-  </wsdl:message>
-  <wsdl:message name="AbilitaTutorSoapOut">
-    <wsdl:part name="parameters" element="tns:AbilitaTutorResponse" />
   </wsdl:message>
   <wsdl:message name="InsertSoapIn">
     <wsdl:part name="parameters" element="tns:Insert" />
@@ -142,6 +145,10 @@
       <wsdl:input message="tns:SelectAllSoapIn" />
       <wsdl:output message="tns:SelectAllSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SelectTutorContabili">
+      <wsdl:input message="tns:SelectTutorContabiliSoapIn" />
+      <wsdl:output message="tns:SelectTutorContabiliSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SelectTutor">
       <wsdl:input message="tns:SelectTutorSoapIn" />
       <wsdl:output message="tns:SelectTutorSoapOut" />
@@ -149,10 +156,6 @@
     <wsdl:operation name="Abilita">
       <wsdl:input message="tns:AbilitaSoapIn" />
       <wsdl:output message="tns:AbilitaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="AbilitaTutor">
-      <wsdl:input message="tns:AbilitaTutorSoapIn" />
-      <wsdl:output message="tns:AbilitaTutorSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
@@ -174,6 +177,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectTutorContabili">
+      <soap:operation soapAction="http://tempuri.org/SelectTutorContabili" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectTutor">
       <soap:operation soapAction="http://tempuri.org/SelectTutor" style="document" />
       <wsdl:input>
@@ -185,15 +197,6 @@
     </wsdl:operation>
     <wsdl:operation name="Abilita">
       <soap:operation soapAction="http://tempuri.org/Abilita" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AbilitaTutor">
-      <soap:operation soapAction="http://tempuri.org/AbilitaTutor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -231,6 +234,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectTutorContabili">
+      <soap12:operation soapAction="http://tempuri.org/SelectTutorContabili" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectTutor">
       <soap12:operation soapAction="http://tempuri.org/SelectTutor" style="document" />
       <wsdl:input>
@@ -242,15 +254,6 @@
     </wsdl:operation>
     <wsdl:operation name="Abilita">
       <soap12:operation soapAction="http://tempuri.org/Abilita" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AbilitaTutor">
-      <soap12:operation soapAction="http://tempuri.org/AbilitaTutor" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
