@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WStest
+/// Descrizione di riepilogo per Test_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WStest : System.Web.Services.WebService
+public class Test_WS : System.Web.Services.WebService
 {
 
-    public WStest()
+    public Test_WS()
     {
 
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
@@ -31,7 +31,7 @@ public class WStest : System.Web.Services.WebService
         dt.TableName = "Test";
         return dt;
     }
-    
+
     [WebMethod]
     public DataTable SelectOne(int CHIAVE)
     {
@@ -57,7 +57,7 @@ public class WStest : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Update (int CHIAVE, int COD_CORSO, int SOGLIA, string DATA_TEST, string ORA_TEST)
+    public void Update(int CHIAVE, int COD_CORSO, int SOGLIA, string DATA_TEST, string ORA_TEST)
     {
         TEST t = new TEST();
 
@@ -75,7 +75,8 @@ public class WStest : System.Web.Services.WebService
         TEST t = new TEST();
 
         t.CHIAVE = CHIAVE;
-        
+
         t.Delete();
     }
+
 }
