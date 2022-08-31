@@ -95,7 +95,7 @@
                         <li><a href="#pricing">Abbonamenti</a></li>
                         <li><a href="#footer">Contatti</a></li>
                         <li>
-                            <button class="btn btn-outline-info my-2 my-sm-0" id="btnLogin" type="submit">Login</button>
+                            <button class="btn btn-outline-info my-2 my-sm-0"><a href="Login/login.aspx" id="btnLogin">Login</a></button>
                         </li>
                     </ul>
 

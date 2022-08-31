@@ -60,7 +60,7 @@
                         <li><a href="#pricing"></a></li>
                         <li><a href="#footer"></a></li>
                         <li>
-                            <button class="btn btn-outline-info my-2 my-sm-0"><a href="Default.aspx" id="btnHome">Torna alla Homepage</a></button>
+                            <button class="btn btn-outline-info my-2 my-sm-0"><a href="../Default.aspx" id="btnHome">Torna alla Homepage</a></button>
                         </li>
                     </ul>
 
@@ -93,7 +93,7 @@
                                     <input type="submit" class="btn btn-lg btn-success btn-block" value="Login" />
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <a href="" class="btn btn-lg btn-primary btn-block">Registrati</a>
+                                    <a href="registrazione.aspx" class="btn btn-lg btn-primary btn-block">Registrati</a>
                                 </div>
                             </div>
                         </fieldset>
