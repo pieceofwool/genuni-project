@@ -6,17 +6,18 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WSpreiscrizione
+/// Descrizione di riepilogo per Chat_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WSpreiscrizione : System.Web.Services.WebService
+public class Chat_WS : System.Web.Services.WebService
 {
 
-    public WSpreiscrizione()
+    public Chat_WS()
     {
+
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
         //InitializeComponent(); 
     }
@@ -25,9 +26,9 @@ public class WSpreiscrizione : System.Web.Services.WebService
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        PREISCRIZIONE p = new PREISCRIZIONE();
-        dt = p.SelectAll();
-        dt.TableName = "Preiscrizione";
+        CHAT c = new CHAT();
+        dt = c.SelectAll();
+        dt.TableName = "Chat";
         return dt;
     }
 
@@ -35,23 +36,23 @@ public class WSpreiscrizione : System.Web.Services.WebService
     public DataTable SelectOne(int CHIAVE)
     {
         DataTable dt = new DataTable();
-        PREISCRIZIONE p = new PREISCRIZIONE();
-        p.CHIAVE = CHIAVE;
-        dt = p.SelectOne();
-        dt.TableName = "Classi";
+        CHAT c = new CHAT();
+        c.CHIAVE = CHIAVE;
+        dt = c.SelectOne();
+        dt.TableName = "Chat";
         return dt;
     }
-    
-    [WebMethod]
-    public void Insert(int COD_CORSO, string EMAIL, string NEWSLETTER)
-    {
-        DataTable dt = new DataTable();
-        PREISCRIZIONE p = new PREISCRIZIONE();
-        p.COD_CORSO = COD_CORSO;
-        p.EMAIL = EMAIL;
-        p.NEWSLETTER = NEWSLETTER;
 
-        p.Insert();
+    [WebMethod]
+    public void Insert(int COD_CORSO, int COD_STUDENTE, int COD_INTERNO, string CONTENUTO)
+    {
+        CHAT c = new CHAT();
+        c.COD_CORSO = COD_CORSO;
+        c.COD_STUDENTE = COD_STUDENTE;
+        c.COD_INTERNO = COD_INTERNO;
+        c.CONTENUTO = CONTENUTO;
+
+        c.Insert();
     }
 
 }

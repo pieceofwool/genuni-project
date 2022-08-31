@@ -16,7 +16,7 @@ public class PROGRESSI
     public DateTime Data_Progresso;
     public PROGRESSI()
     {
-        
+
     }
     #region OPERAZIONI
     public void Insert()

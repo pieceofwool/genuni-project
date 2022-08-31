@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WSgenmoney
+/// Descrizione di riepilogo per Competenze_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WSgenmoney : System.Web.Services.WebService
+public class Competenze_WS : System.Web.Services.WebService
 {
 
-    public WSgenmoney()
+    public Competenze_WS()
     {
 
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
@@ -26,32 +26,43 @@ public class WSgenmoney : System.Web.Services.WebService
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        GENMONEY g = new GENMONEY();
-        dt = g.SelectAll();
-        dt.TableName = "GenMoney";
+        COMPETENZE c = new COMPETENZE();
+        dt = c.SelectAll();
+        dt.TableName = "Competenze";
         return dt;
     }
-    
+
     [WebMethod]
     public DataTable SelectOne(int CHIAVE)
     {
         DataTable dt = new DataTable();
-        GENMONEY g = new GENMONEY();
-        g.CHIAVE = CHIAVE;
-        dt = g.SelectAll();
-        dt.TableName = "GenMoney";
+        COMPETENZE c = new COMPETENZE();
+        c.CHIAVE = CHIAVE;
+        dt = c.SelectOne();
+        dt.TableName = "Competenze";
         return dt;
     }
 
     [WebMethod]
-    public void Insert(int COD_STUDENTE, int COD_CORSO, int AMMONTARE)
+    public void Insert(int COD_DOCENTE, byte[] Cv, string SKILLS)
     {
-        GENMONEY g = new GENMONEY();
-        g.COD_STUDENTE = COD_STUDENTE;
-        g.COD_CORSO = COD_CORSO;
-        g.AMMONTARE = AMMONTARE;
+        COMPETENZE c = new COMPETENZE();
+        c.COD_DOCENTE = COD_DOCENTE;
+        c.Cv = Cv;
+        c.SKILLS = SKILLS;
 
-        g.Insert();
+        c.Insert();
+    }
+
+    [WebMethod]
+    public void Update(int CHIAVE, byte[] Cv, string SKILLS)
+    {
+        COMPETENZE c = new COMPETENZE();
+        c.CHIAVE = CHIAVE;
+        c.Cv = Cv;
+        c.SKILLS = SKILLS;
+
+        c.Update();
     }
 
 }

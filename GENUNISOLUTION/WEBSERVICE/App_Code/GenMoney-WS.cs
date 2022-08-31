@@ -37,8 +37,8 @@ public class GenMoney_WS : System.Web.Services.WebService
     {
         DataTable dt = new DataTable();
         GENMONEY g = new GENMONEY();
-        g.CHIAVE = CHIAVE;
-        dt = g.SelectAll();
+        g.Chiave = CHIAVE;
+        dt = g.SelectOne();
         dt.TableName = "GenMoney";
         return dt;
     }
@@ -47,11 +47,23 @@ public class GenMoney_WS : System.Web.Services.WebService
     public void Insert(int COD_STUDENTE, int COD_CORSO, int AMMONTARE)
     {
         GENMONEY g = new GENMONEY();
-        g.COD_STUDENTE = COD_STUDENTE;
-        g.COD_CORSO = COD_CORSO;
-        g.AMMONTARE = AMMONTARE;
+        g.Cod_Studente = COD_STUDENTE;
+        g.Cod_Corso = COD_CORSO;
+        g.Ammontare = AMMONTARE;
 
         g.Insert();
+    }
+    
+    [WebMethod]
+    public void AggiornaSaldo(int COD_STUDENTE, int COD_CORSO, int COSTO, int AMMONTARE)
+    {
+        GENMONEY g = new GENMONEY();
+        g.Cod_Studente = COD_STUDENTE;
+        g.Cod_Corso = COD_CORSO;
+        g.Costo = COSTO;
+        g.Ammontare = AMMONTARE;
+
+        g.AggiornaSaldo();
     }
 
 }

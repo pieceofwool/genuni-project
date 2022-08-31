@@ -24,6 +24,10 @@ public class CORSI
     public int COSTO;
     public string AVATAR_CORSO;
     public string TIPO_IMG;
+    public string DATA_PARTENZA;
+    public string DATA_CREAZIONE;
+    public string DATA_STATUS;
+    public string STATUS;
 
     #endregion Membri
 
@@ -34,6 +38,11 @@ public class CORSI
         SqlCommand cmd = new SqlCommand("CORSI_Insert");
        
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
+        cmd.Parameters.AddWithValue("@TIPO", TIPO);
+        cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
+        cmd.Parameters.AddWithValue("@AVATAR_CORSO", AVATAR_CORSO);
+        cmd.Parameters.AddWithValue("@DATA_PARTENZA", DATA_PARTENZA);
+        cmd.Parameters.AddWithValue("@TIPO_IMG", TIPO_IMG);
         
 
         CONNESSIONE conn = new CONNESSIONE();
@@ -43,17 +52,21 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_Update");
         cmd.Parameters.AddWithValue("@COD_UTENTE", COD_UTENTE);
+        cmd.Parameters.AddWithValue("@DATA_CREAZIONE", DATA_CREAZIONE);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
         cmd.Parameters.AddWithValue("@AVATAR_CORSO", AVATAR_CORSO);
+        cmd.Parameters.AddWithValue("@DATA_PARTENZA", DATA_PARTENZA);
+        cmd.Parameters.AddWithValue("@STATUS", STATUS);
+        cmd.Parameters.AddWithValue("@DATA_STATUS", DATA_STATUS);
         cmd.Parameters.AddWithValue("@TIPO_IMG", TIPO_IMG);
 
 
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
-    public DataTable Select()
+    public DataTable SelectAll()
     {
         SqlCommand cmd = new SqlCommand("CORSI_SelectAll");
         CONNESSIONE C = new CONNESSIONE();

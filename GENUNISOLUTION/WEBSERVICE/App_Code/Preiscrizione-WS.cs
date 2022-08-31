@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WSchat
+/// Descrizione di riepilogo per Preiscrizione_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WSchat : System.Web.Services.WebService
+public class Preiscrizione_WS : System.Web.Services.WebService
 {
 
-    public WSchat()
+    public Preiscrizione_WS()
     {
 
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
@@ -26,33 +26,33 @@ public class WSchat : System.Web.Services.WebService
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        CHAT c = new CHAT();
-        dt = c.SelectAll();
-        dt.TableName = "Chat";
+        PREISCRIZIONE p = new PREISCRIZIONE();
+        dt = p.SelectAll();
+        dt.TableName = "Preiscrizione";
         return dt;
     }
-    
+
     [WebMethod]
     public DataTable SelectOne(int CHIAVE)
     {
         DataTable dt = new DataTable();
-        CHAT c = new CHAT();
-        c.CHIAVE = CHIAVE;
-        dt = c.SelectOne();
-        dt.TableName = "Chat";
+        PREISCRIZIONE p = new PREISCRIZIONE();
+        p.Chiave = CHIAVE;
+        dt = p.SelectOne();
+        dt.TableName = "Classi";
         return dt;
     }
 
     [WebMethod]
-    public void Insert(int COD_CORSO, int COD_STUDENTE, int COD_INTERNO, string CONTENUTO)
+    public void Insert(int COD_CORSO, string EMAIL, string NEWSLETTER)
     {
-        CHAT c = new CHAT();
-        c.COD_CORSO = COD_CORSO;
-        c.COD_STUDENTE = COD_STUDENTE;
-        c.COD_INTERNO = COD_INTERNO;
-        c.CONTENUTO = CONTENUTO;
+        DataTable dt = new DataTable();
+        PREISCRIZIONE p = new PREISCRIZIONE();
+        p.Cod_Corso = COD_CORSO;
+        p.Email = EMAIL;
+        p.Newsletter = NEWSLETTER;
 
-        c.Insert();
+        p.Insert();
     }
 
 }
