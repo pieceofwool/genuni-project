@@ -25,7 +25,7 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
         UTENTI U = new UTENTI();
         ddlUtenti.DataSource = U.SelectTutor();
         ddlUtenti.DataValueField = "Chiave";
-        ddlUtenti.DataTextField = "CognomeNome";
+        ddlUtenti.DataTextField = "Cognome";
         ddlUtenti.DataBind();
         ddlUtenti.SelectedValue = null;
     }

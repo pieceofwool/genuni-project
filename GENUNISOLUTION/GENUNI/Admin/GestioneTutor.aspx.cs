@@ -27,7 +27,7 @@ public partial class Default3 : System.Web.UI.Page
     {
         //Da aggiornare con effettiva classe e metodo
         UTENTI U = new UTENTI();
-        gridUtentiTC.DataSource = U.UTENTI_SelectTutorContabili();
+        gridUtentiTC.DataSource = U.SelectTutor();
         gridUtentiTC.DataBind();
     }
 
