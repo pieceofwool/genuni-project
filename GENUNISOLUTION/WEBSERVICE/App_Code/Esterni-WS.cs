@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WSEsterni
+/// Descrizione di riepilogo per Esterni_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WSEsterni : System.Web.Services.WebService
+public class Esterni_WS : System.Web.Services.WebService
 {
 
-    public WSEsterni()
+    public Esterni_WS()
     {
 
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
@@ -31,7 +31,7 @@ public class WSEsterni : System.Web.Services.WebService
         dt.TableName = "Esterni";
         return dt;
     }
-    
+
     [WebMethod]
     public DataTable SelectOne(int CHIAVE)
     {
@@ -67,7 +67,7 @@ public class WSEsterni : System.Web.Services.WebService
 
         e.Insert();
     }
-    
+
     [WebMethod]
     public void Update(int CHIAVE, string TIPO, string USR, string PWD, string RAGIONE_SOCIALE, string COGNOME, string NOME, string DATA_NASCITA, string PIVA, string CF, string INDIRIZZO, string CAP, string CITTA, string PROVINCIA, string NAZIONALITA, bool ABILITATO, byte[] AVATAR, string TIPOIMG)
     {
@@ -101,4 +101,5 @@ public class WSEsterni : System.Web.Services.WebService
 
         e.Delete();
     }
+
 }

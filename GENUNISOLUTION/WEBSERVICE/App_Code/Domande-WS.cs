@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Services;
 
 /// <summary>
-/// Descrizione di riepilogo per WSdomande
+/// Descrizione di riepilogo per Domande_WS
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Per consentire la chiamata di questo servizio Web dallo script utilizzando ASP.NET AJAX, rimuovere il commento dalla riga seguente. 
 // [System.Web.Script.Services.ScriptService]
-public class WSdomande : System.Web.Services.WebService
+public class Domande_WS : System.Web.Services.WebService
 {
 
-    public WSdomande()
+    public Domande_WS()
     {
 
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
@@ -56,7 +56,7 @@ public class WSdomande : System.Web.Services.WebService
 
         d.Insert();
     }
-    
+
     [WebMethod]
     public void Update(int CHIAVE, int COD_TEST, string DOMANDA, string RISPOSTA1, string RISPOSTA2, string RISPOSTA3, string VOTI)
     {
@@ -71,7 +71,7 @@ public class WSdomande : System.Web.Services.WebService
 
         d.Update();
     }
-    
+
     [WebMethod]
     public void Delete(int CHIAVE)
     {
@@ -80,4 +80,5 @@ public class WSdomande : System.Web.Services.WebService
 
         d.Delete();
     }
+
 }
