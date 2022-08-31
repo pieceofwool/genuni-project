@@ -42,7 +42,7 @@ public class MATERIE
 
 
         CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiSPselectparam(cmd);
+        conn.EseguiCmd(cmd);
 
     }
     public void Update() {
@@ -60,7 +60,7 @@ public class MATERIE
 
 
         CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiSPselectparam(cmd);
+        conn.EseguiCmd(cmd);
     }
     public DataTable Info()
     {
@@ -68,11 +68,11 @@ public class MATERIE
         cmd.Parameters.AddWithValue("@Chiave", Chiave);
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSPselectparam(cmd);
+        return C.EseguiSelect(cmd);
     }
 
 
-
+    #endregion
 
 
 }
