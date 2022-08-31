@@ -17,7 +17,7 @@
     <div>
 
         <asp:Label ID="Label2" runat="server" Text="Corsi disponibili"></asp:Label>
-        <asp:GridView ID="grigliaCorsiDisponibili" runat="server">
+        <asp:GridView ID="grigliaCorsiDisponibili" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged">
             <Columns>
                 <asp:ButtonField Text="link" />
                 <asp:BoundField DataField="Materia" HeaderText="Materia" SortExpression="Materia" />
