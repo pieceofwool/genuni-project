@@ -32,6 +32,11 @@ public class CORSI
 
     #endregion Membri
 
+    public CORSI()
+    {
+
+
+    }
     #region Metodi 
 
     public void Insert()
@@ -76,7 +81,7 @@ public class CORSI
     public DataTable SelectOne()
     {
         SqlCommand cmd = new SqlCommand("CORSI_SelectOne");
-        cmd.Parameters.AddWithValue("@COD_CORSO",CHIAVE_CORSO);
+        cmd.Parameters.AddWithValue("@COD_CORSO", CHIAVE_CORSO);
         CONNESSIONE C = new CONNESSIONE();
 
         return C.EseguiSelect(cmd);
@@ -91,9 +96,15 @@ public class CORSI
     }
     public DataTable SelectNonAssegnati()
     {
+
+
         CONNESSIONE c = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand("CORSI_SelectNonAssegnati");
         DataTable dt = new DataTable();       
+
+        cmd.Parameters.AddWithValue("@Chiave", CHIAVE_CORSO);
+        cmd.Parameters.AddWithValue("@Titolo", TITOLO);
+        cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
 
         return c.EseguiSelect(cmd);
     }

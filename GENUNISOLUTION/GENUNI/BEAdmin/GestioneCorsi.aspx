@@ -47,6 +47,7 @@
         <h1>Assegnazione corsi</h1>
         <div class="pulsanti">
             <asp:Button ID="btnAssegna" runat="server" ClientIDMode="Static" Enabled="False" Text="Assegna corso" CssClass="button" />
+            <a href="Admin/Popup/AssegnaCorsi.aspx">Assegna corso</a>
        <asp:Button ID="btnAggiornaAssegnazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaAssegnazione_Click" CssClass="button" />
             </div>
 
@@ -54,16 +55,9 @@
             <Columns>
                 <asp:BoundField DataField="Chiave" Visible="false" />
                 <asp:BoundField DataField="Cod_Utente" Visible="false" />
-                <asp:BoundField DataField="Data_Creazione" HeaderText="Data Creazione" />
+                
                 <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
-                <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
-                <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
-                <asp:BoundField DataField="Data_Partenza" HeaderText="Data Partenza" />
-                <asp:BoundField DataField="Status_Corsi" HeaderText="Status Corsi" />
-                <asp:BoundField DataField="Data_Status" HeaderText="Data Status" />
-                <asp:BoundField DataField="Costo" Visible="false" />
-                <asp:BoundField DataField="Avatar_Corso" HeaderText="Avatar" />
-                <asp:BoundField DataField="Tipo_Img" Visible="false" />
+                
 
                 <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
             </Columns>

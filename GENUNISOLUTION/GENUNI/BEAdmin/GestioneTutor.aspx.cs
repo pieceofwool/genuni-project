@@ -26,9 +26,15 @@ public partial class Default3 : System.Web.UI.Page
     protected void CaricaGriglia()
     {
         //Da aggiornare con effettiva classe e metodo
+<<<<<<< HEAD:GENUNISOLUTION/GENUNI/Admin/GestioneTutor.aspx.cs
+        //   UTENTI U = new UTENTI();
+        // gridUtentiTC.DataSource = U.SelectTutor();
+        gridUtentiTC.DataBind();
+=======
         //UTENTI U = new UTENTI();
         //gridUtentiTC.DataSource = U.UTENTI_SelectTutorContabili();
         //gridUtentiTC.DataBind();
+>>>>>>> development:GENUNISOLUTION/GENUNI/BEAdmin/GestioneTutor.aspx.cs
     }
 
     protected void btnAggiorna_Click(object sender, EventArgs e)

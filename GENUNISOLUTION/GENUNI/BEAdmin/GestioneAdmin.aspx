@@ -1,9 +1,13 @@
+<<<<<<< HEAD:GENUNISOLUTION/GENUNI/Admin/GestioneAdmin.aspx
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBackendAdmin.master" AutoEventWireup="true" CodeFile="GestioneAdmin.aspx.cs" Inherits="Default2" %>
+=======
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneAdmin.aspx.cs" Inherits="Default2" %>
+>>>>>>> development:GENUNISOLUTION/GENUNI/BEAdmin/GestioneAdmin.aspx
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <%--L'admin non gestisce la contabilità, admin != admin contabile.--%>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+      <%--L'admin non gestisce la contabilità, admin != admin contabile.--%>
 
     <br />
     <br />
@@ -29,6 +33,5 @@
             </li>
         </ul>
     </div>
-
 </asp:Content>
 
