@@ -127,7 +127,7 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void UpdateProfilo(int CHIAVE, string USR, string RAGIONE_SOCIALE, string COGNOME, string NOME, string DATA_NASCITA, string PIVA, string CF, string INDIRIZZO, string CAP, string CITTA, string PROVINCIA, string NAZIONALITA, bool ABILITATO, byte[] AVATAR, string TIPOIMG)
+    public void UpdateProfilo(int CHIAVE, string USR, string RAGIONE_SOCIALE, string COGNOME, string NOME, string DATA_NASCITA, string PIVA, string CF, string INDIRIZZO, string CAP, string CITTA, string PROVINCIA, string NAZIONALITA)
     {
         ESTERNI e = new ESTERNI();
         e.CHIAVE = CHIAVE;

@@ -32,7 +32,9 @@ public partial class Default2 : System.Web.UI.Page
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
         //E.CHIAVE = int.Parse(Session["CodiceEsterno"].ToString());
         int CHIAVE = 1;
-        DataTable dt = E.SelectOne(CHIAVE);
+        DataTable dt = new DataTable();
+        dt.TableName = "Esterni";
+        dt = E.SelectOne(CHIAVE);
         DataRow dr = dt.Rows[0];
         string tipo = dt.Rows[0]["TipoImg"].ToString();
 
@@ -44,7 +46,7 @@ public partial class Default2 : System.Web.UI.Page
         if (arr1 != null)
         {
             string base64String1 = Convert.ToBase64String(arr1, 0, arr1.Length);
-            string Src = "data:image/"+tipo+";base64," + base64String1;
+            string Src = "data:image/" + tipo + ";base64," + base64String1;
             lit.Text = "<img style='width:200px' src='" + Src + "' />";
         }
 
@@ -54,7 +56,7 @@ public partial class Default2 : System.Web.UI.Page
         lblRagSoc.Text = dt.Rows[0]["Ragione_Sociale"].ToString();
         lblCognome.Text = dt.Rows[0]["Cognome"].ToString();
         lblNome.Text = dt.Rows[0]["Nome"].ToString();
-        lblDataNascita.Text = (dt.Rows[0]["Data_Nascita"].ToString()).Substring(0,10);
+        lblDataNascita.Text = (dt.Rows[0]["Data_Nascita"].ToString()).Substring(0, 10);
         lblIva.Text = dt.Rows[0]["Piva"].ToString();
         lblCF.Text = dt.Rows[0]["CF"].ToString();
         lblIndirizzo.Text = dt.Rows[0]["Indirizzo"].ToString();
@@ -63,19 +65,6 @@ public partial class Default2 : System.Web.UI.Page
         lblProvincia.Text = dt.Rows[0]["Provincia"].ToString();
         lblNazionalita.Text = dt.Rows[0]["Nazionalita"].ToString();
 
-
-    protected void CaricaProfilo()
-    {
-        ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-        //E.CHIAVE = int.Parse(Session["CodiceEsterno"].ToString());
-        int CHIAVE = 1;
-        DataTable dt = new DataTable();
-        dt.TableName = "Esterni";
-         dt = E.SelectOne(CHIAVE);
-        DataRow dr = dt.Rows[0];
-        string tipo = dt.Rows[0]["TipoImg"].ToString();
-
-
         COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
         //C.COD_DOCENTE = int.Parse(Session["CodiceDoc"].ToString());
         int CHIAVE2 = 1;
@@ -83,7 +72,8 @@ public partial class Default2 : System.Web.UI.Page
         DataTable dt2 = C.SelectOne(CHIAVE2);
 
         lblSkills.Text = dt2.Rows[0]["Skills"].ToString();
-        
+
+
     }
 
     protected void BtnCV_Click(object sender, EventArgs e)
