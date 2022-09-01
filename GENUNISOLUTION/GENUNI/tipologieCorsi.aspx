@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="tipologieCorsi.aspx.cs" Inherits="tipologieCorsii" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TipologieCorsi.aspx.cs" Inherits="tipologieCorsii" %>
 
 <!DOCTYPE html>
 

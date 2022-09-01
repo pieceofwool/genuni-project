@@ -68,16 +68,25 @@
                      <!-- #logo -->
                 <nav class="main-nav float-right d-none d-lg-block">
                     <ul>
+                        <li class="drop-down"><a href="Default.aspx">DEBUG</a>
+                            <ul>
+                                <li><a href="BEAdmin/GestioneAdmin.aspx">Admin</a></li>
+                                <li><a href="BEContabilita/Compenso.aspx">Contabilità</a></li>
+                                <li><a href="BEDocenti/GestioneDocenti.aspx">Docenti</a></li>
+                                <li><a href="BEStudenti/Modifica_Profilo.aspx">Studenti</a></li>
+                                <li><a href="BETutor/GestioneTutor.aspx">Tutor</a></li>
+                            </ul>
+                        </li>
                         <li class="active"><a href="Default.aspx">Home</a></li>
                         <li><a href="#about">Chi siamo</a></li>
                         <li class="drop-down"><a href="#portfolio">Corsi</a>
                             <ul>
                                 <li><a href="#portfolio">Elenco corsi</a></li>
-                                <li class="drop-down"><a href="tipologieCorsi.aspx">Tipologia corsi</a>
+                                <li class="drop-down"><a href="TipologieCorsi.aspx">Tipologia corsi</a>
                                     <ul>
-                                        <li><a href="tipologieCorsi.aspx">TipologiaCorso1</a></li>
-                                        <li><a href="tipologieCorsi.aspx">TipologiaCorso2</a></li>
-                                        <li><a href="tipologieCorsi.aspx">TipologiaCorso3</a></li>
+                                        <li><a href="TipologieCorsi.aspx">TipologiaCorso1</a></li>
+                                        <li><a href="TipologieCorsi.aspx">TipologiaCorso2</a></li>
+                                        <li><a href="TipologieCorsi.aspx">TipologiaCorso3</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -86,7 +95,7 @@
                         <li><a href="#pricing">Abbonamenti</a></li>
                         <li><a href="#footer">Contatti</a></li>
                         <li>
-                            <button class="btn btn-outline-info my-2 my-sm-0" id="btnLogin" type="submit">Log-in</button>
+                            <button class="btn btn-outline-info my-2 my-sm-0"><a href="Login/login.aspx" id="btnLogin">Login</a></button>
                         </li>
                     </ul>
 
@@ -98,6 +107,7 @@
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 <!--Pagine figlio-->
+
             </asp:ContentPlaceHolder>
         </div>
     </form>

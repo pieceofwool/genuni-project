@@ -169,12 +169,18 @@ h6 {
     float: right;
 }
 
-#btnLogin {
-    margin: 15px;
-    padding: 0;
-    width: 60px;
-    height: 33px;
+
+#btnHome {
+    width: auto;
+    height: 35px;
+    float: right;
 }
+
+    #btnHome:hover {
+        color: #fff;
+        background-color: #0a98c0;
+    }
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -224,7 +230,7 @@ h6 {
     #header .logo img {
         padding: 0;
         margin-left: -80px;
-        width: 45%;
+        width: 35%;
         margin-top: -19px;
         max-height: 81px;
     }
@@ -232,6 +238,38 @@ h6 {
 .main-pages {
     margin-top: 60px;
 }
+
+/*--------------------------------------------------------------
+# Login
+--------------------------------------------------------------*/
+.colorgraph {
+    height: 5px;
+    border-top: 0;
+    background: #c4e17f;
+    border-radius: 5px;
+    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+#containerLogin {
+    padding: 183px 0 40px 0;
+    margin-top: 50px;
+}
+
+#btnLogin {
+    width: auto;
+    height: 35px;
+    float: right;
+}
+
+    #btnLogin:hover {
+        color: #fff;
+        background-color: #0a98c0;
+    }
+
+
 
 /*--------------------------------------------------------------
 # Intro Section
@@ -605,9 +643,14 @@ h6 {
             transition: .5s;
         }
 
+#genMoneyWhyUs {
+    width: 9%;
+    margin-left: 0px;
+    margin-right: 17px;
+}
+
 /* Services Section
 --------------------------------*/
-
 #services {
     padding: 183px 0 40px 0;
 }
@@ -729,6 +772,7 @@ h6 {
     float: left;
     margin-left: -20px;
     margin-bottom: -48px;
+    margin-right: 20px;
 }
 
 .titoliMission {
@@ -789,6 +833,56 @@ h6 {
 
 /* Portfolio Section
 --------------------------------*/
+
+
+
+.carousel-indicators .active {
+    background: #31708f;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.adjust1 {
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.adjust2 {
+    margin: 0;
+}
+
+.carousel-indicators li {
+    border: 1px solid #ccc;
+}
+
+.carousel-control {
+    color: #31708f;
+    width: 5%;
+}
+
+    .carousel-control:hover, .carousel-control:focus {
+        color: #31708f;
+    }
+
+    .carousel-control.left, .carousel-control.right {
+        background-image: none;
+    }
+
+.media-object {
+    margin: auto;
+    margin-top: 15%;
+}
+
+@media screen and (max-width: 768px) {
+    .media-object {
+        margin-top: 0;
+    }
+}
+
+
 
 #portfolio {
     padding: 60px 0;
@@ -1211,10 +1305,11 @@ h6 {
 
 
 .iconeMoney {
-    width: 36%;
+    width: 17%;
     float: left;
-    margin-left: 36px;
-    margin-bottom: -55px;
+    margin-left: 32px;
+    margin-bottom: -46px;
+    padding: 43px 0px
 }
 /* Frequently Asked Questions Section
 --------------------------------*/
@@ -1268,89 +1363,89 @@ h6 {
             }
 
 <<<<<<< HEAD
-    .contact .php-email-form {
-        width: 100%;
-        background: #fff;
+.contact .php-email-form {
+    width: 100%;
+    background: #fff;
+}
+
+.contact .php-email-form .form-group {
+    padding-bottom: 8px;
+}
+
+.contact .php-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+    .contact .php-email-form .error-message br + br {
+        margin-top: 25px;
     }
 
-        .contact .php-email-form .form-group {
-            padding-bottom: 8px;
-        }
+.contact .php-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
 
-        .contact .php-email-form .error-message {
-            display: none;
-            color: #fff;
-            background: #ed3c0d;
-            text-align: left;
-            padding: 15px;
-            font-weight: 600;
-        }
+.contact .php-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+}
 
-            .contact .php-email-form .error-message br + br {
-                margin-top: 25px;
-            }
+    .contact .php-email-form .loading:before {
+        content: "";
+        display: inline-block;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        margin: 0 10px -6px 0;
+        border: 3px solid #18d26e;
+        border-top-color: #eee;
+        -webkit-animation: animate-loading 1s linear infinite;
+        animation: animate-loading 1s linear infinite;
+    }
 
-        .contact .php-email-form .sent-message {
-            display: none;
-            color: #fff;
-            background: #18d26e;
-            text-align: center;
-            padding: 15px;
-            font-weight: 600;
-        }
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 14px;
+}
 
-        .contact .php-email-form .loading {
-            display: none;
-            background: #fff;
-            text-align: center;
-            padding: 15px;
-        }
+    .contact .php-email-form input:focus,
+    .contact .php-email-form textarea:focus {
+        border-color: #5fcf80;
+    }
 
-            .contact .php-email-form .loading:before {
-                content: "";
-                display: inline-block;
-                border-radius: 50%;
-                width: 24px;
-                height: 24px;
-                margin: 0 10px -6px 0;
-                border: 3px solid #18d26e;
-                border-top-color: #eee;
-                -webkit-animation: animate-loading 1s linear infinite;
-                animation: animate-loading 1s linear infinite;
-            }
+.contact .php-email-form input {
+    height: 44px;
+}
 
-        .contact .php-email-form input,
-        .contact .php-email-form textarea {
-            border-radius: 4px;
-            box-shadow: none;
-            font-size: 14px;
-        }
+.contact .php-email-form textarea {
+    padding: 10px 12px;
+}
 
-            .contact .php-email-form input:focus,
-            .contact .php-email-form textarea:focus {
-                border-color: #5fcf80;
-            }
+.contact .php-email-form button[type=submit] {
+    background: #5fcf80;
+    border: 0;
+    padding: 10px 35px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+}
 
-        .contact .php-email-form input {
-            height: 44px;
-        }
-
-        .contact .php-email-form textarea {
-            padding: 10px 12px;
-        }
-
-        .contact .php-email-form button[type=submit] {
-            background: #5fcf80;
-            border: 0;
-            padding: 10px 35px;
-            color: #fff;
-            transition: 0.4s;
-            border-radius: 50px;
-        }
-
-            .contact .php-email-form button[type=submit]:hover {
-                background: #3ac162;
-            }
+    .contact .php-email-form button[type=submit]:hover {
+        background: #3ac162;
+    }
 
 @-webkit-keyframes animate-loading {
     0% {
@@ -1383,248 +1478,245 @@ h6 {
 }
 
 
-=======
->>>>>>> ce9befb71c2d05bd8fdd0d9e26c4d0eae030b586
+======= > > > > > > > ce9befb71c2d05bd8fdd0d9e26c4d0eae030b586
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-
 <<<<<<< HEAD
 
 
-=======
->>>>>>> ce9befb71c2d05bd8fdd0d9e26c4d0eae030b586
+======= > > > > > > > ce9befb71c2d05bd8fdd0d9e26c4d0eae030b586
 #footer {
     padding: 0 0 30px 0;
     font-size: 14px;
     background: #fff;
 }
 
-    #footer .footer-top {
-        padding: 60px 0 30px 0;
-        background: #f5f8fd;
+#footer .footer-top {
+    padding: 60px 0 30px 0;
+    background: #f5f8fd;
+}
+
+    #footer .footer-top .footer-info {
+        margin-bottom: 30px;
     }
 
-        #footer .footer-top .footer-info {
-            margin-bottom: 30px;
-        }
-
-            #footer .footer-top .footer-info h3 {
-                font-size: 34px;
-                margin: 0 0 20px 0;
-                padding: 2px 0 2px 0;
-                line-height: 1;
-                font-family: "Montserrat", sans-serif;
-                color: #413e66;
-                font-weight: 400;
-                letter-spacing: 3px;
-                text-transform: uppercase;
-            }
-
-            #footer .footer-top .footer-info p {
-                font-size: 13px;
-                line-height: 24px;
-                margin-bottom: 0;
-                font-family: "Montserrat", sans-serif;
-                color: #535074;
-            }
-
-        #footer .footer-top .social-links a {
-            font-size: 18px;
-            display: inline-block;
-            background: #1bb1dc;
-            color: #fff;
+        #footer .footer-top .footer-info h3 {
+            font-size: 34px;
+            margin: 0 0 20px 0;
+            padding: 2px 0 2px 0;
             line-height: 1;
-            padding: 8px 0;
-            margin-right: 4px;
-            border-radius: 50%;
-            text-align: center;
-            width: 36px;
-            height: 36px;
-            transition: 0.3s;
-        }
-
-            #footer .footer-top .social-links a:hover {
-                background: #0a98c0;
-                color: #fff;
-            }
-
-        #footer .footer-top h4 {
-            font-size: 14px;
-            font-weight: bold;
+            font-family: "Montserrat", sans-serif;
             color: #413e66;
-            text-transform: uppercase;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        #footer .footer-top .footer-links {
-            margin-bottom: 30px;
-        }
-
-            #footer .footer-top .footer-links ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-                #footer .footer-top .footer-links ul li {
-                    padding: 8px 0;
-                }
-
-                    #footer .footer-top .footer-links ul li:first-child {
-                        padding-top: 0;
-                    }
-
-                #footer .footer-top .footer-links ul a {
-                    color: #696592;
-                }
-
-                    #footer .footer-top .footer-links ul a:hover {
-                        color: #1bb1dc;
-                    }
-
-        #footer .footer-top .footer-contact {
-            margin-bottom: 30px;
-        }
-
-            #footer .footer-top .footer-contact p {
-                line-height: 26px;
-            }
-
-        #footer .footer-top .footer-newsletter {
-            margin-bottom: 30px;
-        }
-
-            #footer .footer-top .footer-newsletter input[type="email"] {
-                border: 0;
-                padding: 6px 8px;
-                width: 65%;
-                border: 1px solid #d9dde6;
-            }
-
-            #footer .footer-top .footer-newsletter input[type="submit"] {
-                background: #1bb1dc;
-                border: 1px solid #1bb1dc;
-                width: 35%;
-                padding: 6px 0;
-                text-align: center;
-                color: #fff;
-                transition: 0.3s;
-                cursor: pointer;
-            }
-
-                #footer .footer-top .footer-newsletter input[type="submit"]:hover {
-                    background: #0a98c0;
-                }
-
-        #footer .footer-top .form .form-group {
-            margin-bottom: 15px;
-        }
-
-        #footer .footer-top .form #sendmessage {
-            color: #fff;
-            background: #1bb1dc;
-            display: none;
-            text-align: center;
-            padding: 15px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        #footer .footer-top .form #errormessage {
-            color: #fff;
-            display: none;
-            background: red;
-            text-align: center;
-            padding: 15px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-            #footer .footer-top .form #sendmessage.show,
-            #footer .footer-top .form #errormessage.show,
-            #footer .footer-top .form .show {
-                display: block;
-            }
-
-        #footer .footer-top .form .validation {
-            color: red;
-            display: none;
-            margin: 0 0 20px;
             font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        #footer .footer-top .footer-info p {
             font-size: 13px;
+            line-height: 24px;
+            margin-bottom: 0;
+            font-family: "Montserrat", sans-serif;
+            color: #535074;
         }
 
-        #footer .footer-top .form label {
-            color: #413e66;
-            font-weight: 500;
+    #footer .footer-top .social-links a {
+        font-size: 18px;
+        display: inline-block;
+        background: #1bb1dc;
+        color: #fff;
+        line-height: 1;
+        padding: 8px 0;
+        margin-right: 4px;
+        border-radius: 50%;
+        text-align: center;
+        width: 36px;
+        height: 36px;
+        transition: 0.3s;
+    }
+
+        #footer .footer-top .social-links a:hover {
+            background: #0a98c0;
+            color: #fff;
         }
 
-        #footer .footer-top .form input,
-        #footer .footer-top .form textarea {
-            border-radius: 0;
-            box-shadow: none;
-            border: 1px solid #dce1ec;
-            font-size: 14px;
-            height: 40px;
+    #footer .footer-top h4 {
+        font-size: 14px;
+        font-weight: bold;
+        color: #413e66;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    #footer .footer-top .footer-links {
+        margin-bottom: 30px;
+    }
+
+        #footer .footer-top .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-            #footer .footer-top .form input::-webkit-input-placeholder,
-            #footer .footer-top .form textarea::-webkit-input-placeholder {
-                color: #a2a0bd;
+            #footer .footer-top .footer-links ul li {
+                padding: 8px 0;
             }
 
-            #footer .footer-top .form input::-moz-placeholder,
-            #footer .footer-top .form textarea::-moz-placeholder {
-                color: #a2a0bd;
+                #footer .footer-top .footer-links ul li:first-child {
+                    padding-top: 0;
+                }
+
+            #footer .footer-top .footer-links ul a {
+                color: #696592;
             }
 
-            #footer .footer-top .form input:-ms-input-placeholder,
-            #footer .footer-top .form textarea:-ms-input-placeholder {
-                color: #a2a0bd;
-            }
+                #footer .footer-top .footer-links ul a:hover {
+                    color: #1bb1dc;
+                }
 
-            #footer .footer-top .form input::placeholder,
-            #footer .footer-top .form textarea::placeholder {
-                color: #a2a0bd;
-            }
+    #footer .footer-top .footer-contact {
+        margin-bottom: 30px;
+    }
 
-        #footer .footer-top .form button[type="submit"] {
-            background: #1bb1dc;
+        #footer .footer-top .footer-contact p {
+            line-height: 26px;
+        }
+
+    #footer .footer-top .footer-newsletter {
+        margin-bottom: 30px;
+    }
+
+        #footer .footer-top .footer-newsletter input[type="email"] {
             border: 0;
-            border-radius: 3px;
-            padding: 8px 30px;
+            padding: 6px 8px;
+            width: 65%;
+            border: 1px solid #d9dde6;
+        }
+
+        #footer .footer-top .footer-newsletter input[type="submit"] {
+            background: #1bb1dc;
+            border: 1px solid #1bb1dc;
+            width: 35%;
+            padding: 6px 0;
+            text-align: center;
             color: #fff;
             transition: 0.3s;
+            cursor: pointer;
         }
 
-            #footer .footer-top .form button[type="submit"]:hover {
+            #footer .footer-top .footer-newsletter input[type="submit"]:hover {
                 background: #0a98c0;
-                cursor: pointer;
             }
 
-    #footer .copyright {
-        text-align: center;
-        padding-top: 30px;
-        color: #535074;
-        font-size: 15px;
+    #footer .footer-top .form .form-group {
+        margin-bottom: 15px;
     }
 
-    #footer .credits {
+    #footer .footer-top .form #sendmessage {
+        color: #fff;
+        background: #1bb1dc;
+        display: none;
         text-align: center;
-        font-size: 14px;
-        padding-top: 4px;
-        color: #8582a8;
+        padding: 15px;
+        font-weight: 600;
+        margin-bottom: 15px;
     }
 
-        #footer .credits a {
-            color: #1bb1dc;
+    #footer .footer-top .form #errormessage {
+        color: #fff;
+        display: none;
+        background: red;
+        text-align: center;
+        padding: 15px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+        #footer .footer-top .form #sendmessage.show,
+        #footer .footer-top .form #errormessage.show,
+        #footer .footer-top .form .show {
+            display: block;
         }
 
-            #footer .credits a:hover {
-                color: #0a98c0;
-            }
+    #footer .footer-top .form .validation {
+        color: red;
+        display: none;
+        margin: 0 0 20px;
+        font-weight: 400;
+        font-size: 13px;
+    }
+
+    #footer .footer-top .form label {
+        color: #413e66;
+        font-weight: 500;
+    }
+
+    #footer .footer-top .form input,
+    #footer .footer-top .form textarea {
+        border-radius: 0;
+        box-shadow: none;
+        border: 1px solid #dce1ec;
+        font-size: 14px;
+        height: 40px;
+    }
+
+        #footer .footer-top .form input::-webkit-input-placeholder,
+        #footer .footer-top .form textarea::-webkit-input-placeholder {
+            color: #a2a0bd;
+        }
+
+        #footer .footer-top .form input::-moz-placeholder,
+        #footer .footer-top .form textarea::-moz-placeholder {
+            color: #a2a0bd;
+        }
+
+        #footer .footer-top .form input:-ms-input-placeholder,
+        #footer .footer-top .form textarea:-ms-input-placeholder {
+            color: #a2a0bd;
+        }
+
+        #footer .footer-top .form input::placeholder,
+        #footer .footer-top .form textarea::placeholder {
+            color: #a2a0bd;
+        }
+
+    #footer .footer-top .form button[type="submit"] {
+        background: #1bb1dc;
+        border: 0;
+        border-radius: 3px;
+        padding: 8px 30px;
+        color: #fff;
+        transition: 0.3s;
+    }
+
+        #footer .footer-top .form button[type="submit"]:hover {
+            background: #0a98c0;
+            cursor: pointer;
+        }
+
+#footer .copyright {
+    text-align: center;
+    padding-top: 30px;
+    color: #535074;
+    font-size: 15px;
+}
+
+#footer .credits {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 4px;
+    color: #8582a8;
+}
+
+    #footer .credits a {
+        color: #1bb1dc;
+    }
+
+        #footer .credits a:hover {
+            color: #0a98c0;
+        }
 
 /*--------------------------------------------------------------
 # Responsive Media Queries
