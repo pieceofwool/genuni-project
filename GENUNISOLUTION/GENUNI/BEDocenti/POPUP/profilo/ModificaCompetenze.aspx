@@ -12,13 +12,28 @@
             <table>
 
                 <tr>
+                    <td>
+                        <asp:Label ID="Label1" runat="server" Text="Skills:"></asp:Label>
+                    </td>
+                    <td>
                     <asp:TextBox ID="txtSkills" placeholder="Skills" runat="server"></asp:TextBox>
+
+                    </td>
                 </tr>
                 <tr>
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                    <td>
+                        <asp:Label ID="Label2" runat="server" Text="CV:"></asp:Label>
+                    </td>
+                    <td>
+                    <asp:FileUpload ID="FileUploadCV" runat="server" />
+
+                    </td>
                 </tr>
                 <tr>
+                   <td colspan="2">
+
                     <asp:Button ID="btnModifica" runat="server" Text="Modifica" OnClick="btnModifica_Click" />
+                   </td>
                 </tr>
 
 
