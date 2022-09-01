@@ -65,6 +65,59 @@
       <s:element name="AggiornaSaldoResponse">
         <s:complexType />
       </s:element>
+      <s:element name="Storico_Studente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Storico_StudenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Storico_StudenteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Studenti_Acquisto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_STUDENTE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AMMONTARE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Studenti_AcquistoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CountStudente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_STUDENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CountStudenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CountStudenteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -91,6 +144,24 @@
   <wsdl:message name="AggiornaSaldoSoapOut">
     <wsdl:part name="parameters" element="tns:AggiornaSaldoResponse" />
   </wsdl:message>
+  <wsdl:message name="Storico_StudenteSoapIn">
+    <wsdl:part name="parameters" element="tns:Storico_Studente" />
+  </wsdl:message>
+  <wsdl:message name="Storico_StudenteSoapOut">
+    <wsdl:part name="parameters" element="tns:Storico_StudenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Studenti_AcquistoSoapIn">
+    <wsdl:part name="parameters" element="tns:Studenti_Acquisto" />
+  </wsdl:message>
+  <wsdl:message name="Studenti_AcquistoSoapOut">
+    <wsdl:part name="parameters" element="tns:Studenti_AcquistoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CountStudenteSoapIn">
+    <wsdl:part name="parameters" element="tns:CountStudente" />
+  </wsdl:message>
+  <wsdl:message name="CountStudenteSoapOut">
+    <wsdl:part name="parameters" element="tns:CountStudenteResponse" />
+  </wsdl:message>
   <wsdl:portType name="GenMoney_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -107,6 +178,18 @@
     <wsdl:operation name="AggiornaSaldo">
       <wsdl:input message="tns:AggiornaSaldoSoapIn" />
       <wsdl:output message="tns:AggiornaSaldoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Storico_Studente">
+      <wsdl:input message="tns:Storico_StudenteSoapIn" />
+      <wsdl:output message="tns:Storico_StudenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Studenti_Acquisto">
+      <wsdl:input message="tns:Studenti_AcquistoSoapIn" />
+      <wsdl:output message="tns:Studenti_AcquistoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CountStudente">
+      <wsdl:input message="tns:CountStudenteSoapIn" />
+      <wsdl:output message="tns:CountStudenteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="GenMoney_WSSoap" type="tns:GenMoney_WSSoap">
@@ -147,6 +230,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Storico_Studente">
+      <soap:operation soapAction="http://tempuri.org/Storico_Studente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Studenti_Acquisto">
+      <soap:operation soapAction="http://tempuri.org/Studenti_Acquisto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CountStudente">
+      <soap:operation soapAction="http://tempuri.org/CountStudente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="GenMoney_WSSoap12" type="tns:GenMoney_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -179,6 +289,33 @@
     </wsdl:operation>
     <wsdl:operation name="AggiornaSaldo">
       <soap12:operation soapAction="http://tempuri.org/AggiornaSaldo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Storico_Studente">
+      <soap12:operation soapAction="http://tempuri.org/Storico_Studente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Studenti_Acquisto">
+      <soap12:operation soapAction="http://tempuri.org/Studenti_Acquisto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CountStudente">
+      <soap12:operation soapAction="http://tempuri.org/CountStudente" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
