@@ -5,9 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    
-
-    <!--==========================
+   <!--==========================
     Intro Section
   ============================-->
     <section id="intro" class="clearfix">

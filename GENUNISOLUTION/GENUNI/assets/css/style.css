@@ -230,7 +230,7 @@ h6 {
     #header .logo img {
         padding: 0;
         margin-left: -80px;
-        width: 35%;
+        width: 45%;
         margin-top: -19px;
         max-height: 81px;
     }
@@ -260,8 +260,9 @@ h6 {
 
 #btnLogin {
     width: auto;
-    height: 35px;
+    height: 20px;
     float: right;
+    padding: 0;
 }
 
     #btnLogin:hover {
@@ -270,11 +271,9 @@ h6 {
     }
 
 
-
 /*--------------------------------------------------------------
 # Intro Section
 --------------------------------------------------------------*/
-
 #intro {
     width: 100%;
     height: 100vh;
@@ -318,6 +317,11 @@ h6 {
 
 #containerIntro {
     margin-top: 51px;
+}
+
+
+.modal-dialog {
+    padding: 20px;
 }
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -645,10 +649,18 @@ h6 {
 
 #genMoneyWhyUs {
     width: 9%;
-    margin-left: 0px;
+    margin-left: -9px;
     margin-right: 17px;
 }
 
+#h3Mission {
+    margin-bottom: 37px;
+    margin-top: -58px;
+}
+
+#h3GenMoneyWhyUs {
+    margin-left: 10px;
+}
 /* Services Section
 --------------------------------*/
 #services {
@@ -726,6 +738,8 @@ h6 {
         margin: 0 0 15px 0;
         padding: 0;
         transition: 0.3s ease-in-out;
+        max-width: 697px;
+        float: left;
     }
 
         #why-us .why-us-content .features i {
@@ -736,15 +750,17 @@ h6 {
         #why-us .why-us-content .features h4 {
             font-size: 24px;
             font-weight: 600;
-            margin-left: 56px;
+            margin-left: 67px;
             color: #413e66;
             margin-bottom: 5px;
+            padding: 0px 30px 12px 30px;
         }
 
         #why-us .why-us-content .features p {
-            font-size: 16px;
-            margin-left: 79px;
+            font-size: 17px;
+            margin-left: 101px;
             color: #555186;
+            display: block;
         }
 
     #why-us .counters {
@@ -768,20 +784,22 @@ h6 {
         }
 
 .iconeMission {
-    width: 13%;
+    width: 94px;
     float: left;
-    margin-left: -20px;
-    margin-bottom: -48px;
-    margin-right: 20px;
+    margin-left: -15px;
+    margin-bottom: -47px;
+    margin-right: 0px;
 }
 
-.titoliMission {
+/*.titoliMission {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     margin: 6px 5px 23px 5px;
     padding: 0;
+}*/
+.why-us-content {
+    margin-left: 10px
 }
-
 /* Call To Action Section
 --------------------------------*/
 #call-to-action {
@@ -835,7 +853,6 @@ h6 {
 --------------------------------*/
 
 
-
 .carousel-indicators .active {
     background: #31708f;
 }
@@ -882,7 +899,9 @@ h6 {
     }
 }
 
-
+.myCarousel {
+    max-width: 300px;
+}
 
 #portfolio {
     padding: 60px 0;
@@ -1023,9 +1042,69 @@ h6 {
                     opacity: 1;
                 }
 
-/* Testimonials Section
+
+/* Carousel
 --------------------------------*/
 
+.tooltip {
+    border-bottom: 1px dotted black;
+    margin: 0 auto;
+}
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        /*background-color: #1bb1dc;
+        color: #ffff;*/
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+        /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+        opacity: 0;
+        transition: opacity 3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.carousel-inner > .item > a > img, .carousel-inner > .item > img {
+    line-height: 1;
+    width: 100%;
+    height: 80%;
+}
+
+
+.txtCorsi {
+    right: 20%;
+    left: 20%;
+    padding-bottom: 30px;
+    color: black;
+    height: 142px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Montserrat';
+    background-color: white;
+    padding: 29px 0px 0px;
+    opacity: 0.6;
+}
+
+.carousel-item h3 {
+    font-size: 28px;
+    color: #000000;
+}
+
+
+
+/* Testimonials Section
+--------------------------------*/
 #testimonials {
     padding: 60px 0;
 }
@@ -1718,6 +1797,18 @@ h6 {
             color: #0a98c0;
         }
 
+#btnIscrivitiFooter {
+    width: auto;
+    height: 20px;
+    float: right;
+    padding: 0;
+}
+
+    #btnIscrivitiFooter:hover {
+        color: #fff;
+        background-color: #0a98c0;
+    }
+
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/
@@ -1839,4 +1930,69 @@ h6 {
     #footer .footer-top .social-links a {
         margin-bottom: 25px;
     }
+
+    .modal-content .ultimoModal {
+        position: relative;
+        background-color: lightblue;
+        background-clip: padding-box;
+        border: 1px solid #999;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 6px;
+        -webkit-box-shadow: 0 3px 9px rgb(0 0 0 / 50%);
+        box-shadow: 0 3px 9px rgba(0,0,0,.5);
+        outline: 0;
+        width: 102%;
+        text-align: center;
+        vertical-align: middle;
+        padding: 20px 20px 20px 20px;
+        width: 50%;
+        margin: 0 auto;
+    }
 }
+
+/*--------------------------------------------------------------
+# Registrazione
+--------------------------------------------------------------*/
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+#containerRegistrazione {
+    padding: 183px 0 40px 0;
+    margin-top: 50px;
+}
+
+
+.containerCookie {
+    margin: 0 auto;
+}
+
+#h1Registrazione {
+    position: relative;
+    margin: 0px 140px;
+}
+
+    #h1Registrazione::after {
+        content: "";
+        position: absolute;
+        background-color: #1bb1dc;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        opacity: 0;
+        transition: opacity 300ms, transform 300ms;
+    }
+
+    #h1Registrazione:is(:hover, :focus)::after {
+        opacity: 1;
+        transform: translateY(8px);
+    }
