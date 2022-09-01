@@ -26,6 +26,7 @@ public class UTENTI
     public bool Abilita()
     {
         SqlCommand cmd = new SqlCommand("UTENTI_Abilitato");
+        cmd.Parameters.AddWithValue("@Abilitato", Abilitato);
         cmd.Parameters.AddWithValue("@Chiave", Chiave);
 
         CONNESSIONE conn = new CONNESSIONE();
