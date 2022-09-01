@@ -149,6 +149,22 @@ public class CORSI
         return C.EseguiSelect(cmd);
     }
 
+    //metodo che permette al tutor di modificare il corso scelto
+    public void UpdateForTutor()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_UpdateForTutor");
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE_TUTOR);
+        cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
+        cmd.Parameters.AddWithValue("@TIPO", TIPO);
+        cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
+        cmd.Parameters.AddWithValue("@AVATAR_CORSO", AVATAR_CORSO);
+        cmd.Parameters.AddWithValue("@TIPO_IMG", TIPO_IMG);
+        cmd.Parameters.AddWithValue("@DATA_PARTENZA", DATA_PARTENZA);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        conn.EseguiCmd(cmd);
+    }
+
     #endregion Metodi
 
 }
