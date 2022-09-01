@@ -64,6 +64,16 @@ public partial class Default2 : System.Web.UI.Page
         lblNazionalita.Text = dt.Rows[0]["Nazionalita"].ToString();
 
 
+    protected void CaricaProfilo()
+    {
+        ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
+        //E.CHIAVE = int.Parse(Session["CodiceEsterno"].ToString());
+        int CHIAVE = 1;
+        DataTable dt = new DataTable();
+        dt.TableName = "Esterni";
+         dt = E.SelectOne(CHIAVE);
+        DataRow dr = dt.Rows[0];
+        string tipo = dt.Rows[0]["TipoImg"].ToString();
 
 
         COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();

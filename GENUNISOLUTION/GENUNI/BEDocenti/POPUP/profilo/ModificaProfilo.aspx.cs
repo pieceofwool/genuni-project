@@ -72,21 +72,21 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
-        E.CHIAVE = 1;
-        E.USR = txtUser.Text.Trim();
-        E.RAGIONE_SOCIALE = txtRagSoc.Text.Trim();
-        E.COGNOME = txtCognome.Text.Trim();
-        E.NOME = txtNome.Text.Trim();
-        E.DATA_NASCITA = txtDataNascita.Text.Trim();
-        E.PIVA = txtIva.Text.Trim();
-        E.CF = txtCF.Text.Trim();
-        E.INDIRIZZO = txtIndirizzo.Text.Trim();
-        E.CAP = txtCap.Text.Trim();
-        E.CITTA = txtCitta.Text.Trim();
-        E.PROVINCIA = txtProvincia.Text.Trim();
-        E.NAZIONALITA = txtNazionalita.Text.Trim();
+        //E.CHIAVE = 1;
+        //E.USR = txtUser.Text.Trim();
+        //E.RAGIONE_SOCIALE = txtRagSoc.Text.Trim();
+        //E.COGNOME = txtCognome.Text.Trim();
+        //E.NOME = txtNome.Text.Trim();
+        //E.DATA_NASCITA = txtDataNascita.Text.Trim();
+        //E.PIVA = txtIva.Text.Trim();
+        //E.CF = txtCF.Text.Trim();
+        //E.INDIRIZZO = txtIndirizzo.Text.Trim();
+        //E.CAP = txtCap.Text.Trim();
+        //E.CITTA = txtCitta.Text.Trim();
+        //E.PROVINCIA = txtProvincia.Text.Trim();
+        //E.NAZIONALITA = txtNazionalita.Text.Trim();
 
-        E.UpdateProfilo();
+        //E.UpdateProfilo();
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "SUCCESSO", "alert('Dati modificati correttamente')", true);
 
