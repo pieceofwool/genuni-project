@@ -32,9 +32,9 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
 
     protected void btnInserisci_Click(object sender, EventArgs e)
     {
-        if (string.IsNullOrEmpty(txtTitolo.Text) || string.IsNullOrEmpty(txtTipo.Text) || string.IsNullOrEmpty(txtDescrizione.Text))
+        if (string.IsNullOrEmpty(txtTitolo.Text))
         {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Tutti i campi devono essere pieni')", true);
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Il campo titolo non può essere vuoto')", true);
             return;
         }
         if (!estensioni.Contains(Path.GetExtension(fupAvatar.FileName)))
@@ -54,12 +54,13 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
 
 
         //CORSI C = new CORSI();
-        //C.Titolo = Titolo;
-        //C.Tipo = Tipo;
-        //C.Descrizione = Descrizione;
-        //C.Data_Partenza = Data_Partenza;
-        //C.Avatar = Avatar;
+        // C.TITOLO = Titolo;
+        // C.TIPO = Tipo;
+        // C.DESCRIZIONE = Descrizione;
+        //C.DATA_PARTENZA = Data_Partenza;
+        //C.AVATAR_CORSO = avatar;
         //C.TIPO_IMG = fupAvatar.PostedFile.ContentType;
+        
         //C.Insert();
 
         lbl.Text = "Record Inserito";

@@ -18,7 +18,7 @@
 
             <asp:Button ID="btnAbilita" runat="server" ClientIDMode="Static" Text="Cambia stato" Enabled="False" CssClass="button" />
             <%--Link temporaneo finché non si decide come fare i popup--%>
-            <a href="Admin/Popup/Abilita.aspx">Cambia stato</a>
+            <a href="Popup/Abilita.aspx">Cambia stato</a>
 
             <asp:Button ID="btnAggiorna" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiorna_Click" CssClass="button" />
         </div>

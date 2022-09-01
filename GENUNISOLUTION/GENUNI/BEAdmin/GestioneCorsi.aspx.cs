@@ -48,12 +48,9 @@ public partial class Default3 : System.Web.UI.Page
     {
 
         //    CORSI C = new CORSI();
-        //  gridCreazioneCorsi.DataSource = C.Select();
+        //  gridCreazioneCorsi.DataSource = C.SelectAll();
         gridCreazioneCorsi.DataBind();
-        //Da aggiornare con effettiva classe e metodo
-        //CORSI C = new CORSI();
-        //gridCreazioneCorsi.DataSource = C.SelectAll();
-        //gridCreazioneCorsi.DataBind();
+
     }
     protected void CaricaGrigliaAssegnazione()
     {
