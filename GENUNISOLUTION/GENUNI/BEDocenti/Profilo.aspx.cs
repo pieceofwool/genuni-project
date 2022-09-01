@@ -41,6 +41,8 @@ public partial class Default2 : System.Web.UI.Page
         DataRow dr = dt.Rows[0];
         string tipo = dt.Rows[0]["TipoImg"].ToString();
 
+        
+
         //string prova = dt.Rows[0]["Avatar"].ToString();
         //byte[] provaarray = (byte[])dt.Rows[0]["Avatar"];
 
