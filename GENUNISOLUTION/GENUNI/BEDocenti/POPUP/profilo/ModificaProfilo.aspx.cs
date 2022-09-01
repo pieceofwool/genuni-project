@@ -91,10 +91,21 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
         //ScriptManager.RegisterClientScriptBlock(this, GetType(), "SUCCESSO", "alert('Dati modificati correttamente')", true);
 
 
-        //SqlCommand cmd = new SqlCommand();
-        //E.chiave = int.Parse(griglia.SelectedDataKey[0].ToString());
+        //E.CHIAVE = 1;
+        //E.USR = txtUser.Text.Trim();
+        //E.RAGIONE_SOCIALE = txtRagSoc.Text.Trim();
+        //E.COGNOME = txtCognome.Text.Trim();
+        //E.NOME = txtNome.Text.Trim();
+        //E.DATA_NASCITA = txtDataNascita.Text.Trim();
+        //E.PIVA = txtIva.Text.Trim();
+        //E.CF = txtCF.Text.Trim();
+        //E.INDIRIZZO = txtIndirizzo.Text.Trim();
+        //E.CAP = txtCap.Text.Trim();
+        //E.CITTA = txtCitta.Text.Trim();
+        //E.PROVINCIA = txtProvincia.Text.Trim();
+        //E.NAZIONALITA = txtNazionalita.Text.Trim();
 
-        //byte[] imgVecchia = E.SelectOne(cmd).Rows[0].Field<byte[]>("Avatar");
+        //E.UpdateProfilo();
 
 
         ////dichiaro variabili

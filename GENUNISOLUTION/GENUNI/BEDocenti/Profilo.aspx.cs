@@ -30,7 +30,16 @@ public partial class BEDocenti_Default : System.Web.UI.Page
         //    string base64String1 = Convert.ToBase64String(arr1, 0, arr1.Length);
         //    string Src = "data:image/" + tipo + ";base64," + base64String1;
 
-        //    lit.Text += "<img style='width:200px' src='" + Src + "' />";
+    protected void CaricaProfilo()
+    {
+        ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
+        //E.CHIAVE = int.Parse(Session["CodiceEsterno"].ToString());
+        int CHIAVE = 1;
+        DataTable dt = new DataTable();
+        dt.TableName = "Esterni";
+         dt = E.SelectOne(CHIAVE);
+        DataRow dr = dt.Rows[0];
+        string tipo = dt.Rows[0]["TipoImg"].ToString();
 
         //    lblUser.Text = dt.Rows[0]["Usr"].ToString();
         //    lblRagSoc.Text = dt.Rows[0]["Ragione_Sociale"].ToString();
