@@ -74,6 +74,7 @@
       <s:element name="Abilita">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Abilitato" type="s:boolean" />
             <s:element minOccurs="1" maxOccurs="1" name="Chiave" type="s:int" />
           </s:sequence>
         </s:complexType>

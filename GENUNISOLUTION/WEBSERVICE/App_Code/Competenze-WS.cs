@@ -65,4 +65,14 @@ public class Competenze_WS : System.Web.Services.WebService
         c.Update();
     }
 
+    [WebMethod]
+    public DataTable SelectAllDocente(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        COMPETENZE c = new COMPETENZE();
+        c.CHIAVE = CHIAVE;
+        dt = c.SelectAllDocente();
+        dt.TableName = "Competenze";
+        return dt;
+    }
 }
