@@ -14,7 +14,7 @@ public partial class PopUp_Profilo_InserisciProfilo_Competenze : System.Web.UI.P
 
     protected void btnAvatar_Click(object sender, EventArgs e)
     {
-
+        
         //ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
         // int CHIAVE = 1;
         //byte[] img = FileUploadAvatar.FileBytes;

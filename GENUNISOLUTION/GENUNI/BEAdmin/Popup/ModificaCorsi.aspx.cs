@@ -10,7 +10,7 @@ using System.IO;
 
 public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 {
-        string[] estensioni = { ".jpg", ".png", ".bmp" };
+    string[] estensioni = { ".jpg", ".png", ".bmp" };
     protected void Page_Load(object sender, EventArgs e)
 
     {
@@ -25,9 +25,9 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
     protected void CaricaDDL()
     {
-       
+        UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();
         // UTENTI U = new UTENTI();
-        //  ddlUtenti.DataSource = U.SelectTutor();
+        ddlUtenti.DataSource = U.SelectTutor();
         ddlUtenti.DataValueField = "Chiave";
         ddlUtenti.DataTextField = "Cognome";
         ddlUtenti.DataBind();
@@ -38,7 +38,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
     public void UpdateTextBox()
     {
         // CORSI c = new CORSI();
-
+        CORSI.Corsi_WSSoapClient c = new CORSI.Corsi_WSSoapClient();
         DataTable dt = new DataTable();//creo l'oggetto datatable
 
 
@@ -46,7 +46,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
         //prendo la procedura
         //mi restituisce un data table
-        // dt = c.Select(Chiave);
+        dt = c.SelectOne(Chiave);
 
 
         //di questo datatable prendimi alla riga X il contenuto di Y { MATRICE}
@@ -63,9 +63,10 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
     protected void btnModifica_Click(object sender, EventArgs e)
     {
         int Chiave = int.Parse(Session["ChiaveCreazione"].ToString());
+        CORSI.Corsi_WSSoapClient c = new CORSI.Corsi_WSSoapClient();
+
         //CORSI C = new CORSI();
-        //C.CHIAVE_CORSO = Chiave;
-        //byte[] avatar = new CORSI().SelectOne().Rows[0].Field<byte[]>("avatar_corso");
+        byte[] avatar = new CORSI.Corsi_WSSoapClient().SelectOne(Chiave).Rows[0].Field<byte[]>("avatar_corso");
 
         if (string.IsNullOrEmpty(txtTitolo.Text))
         {
@@ -85,7 +86,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
                 return;
             }
 
-            //    avatar = fupAvatar.FileBytes;
+            avatar = fupAvatar.FileBytes;
         }
 
 
@@ -105,7 +106,10 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         //C.DATA_PARTENZA = Data_Partenza;
         //C.AVATAR_CORSO = avatar;
         //C.TIPO_IMG = fupAvatar.PostedFile.ContentType;
-        //C.Update();
+
+
+        //TOGLI COMMENTO UNA VOLTA CHE VIENE FIXATO NEL WS
+        //c.Update(Cod_Utente, Titolo, Tipo, Descrizione, avatar, Data_Partenza, Tipo);
 
         lbl.Text = "Record Modificato";
         txtTitolo.Text = "";

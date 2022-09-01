@@ -102,10 +102,6 @@ public class CORSI
         SqlCommand cmd = new SqlCommand("CORSI_SelectNonAssegnati");
         DataTable dt = new DataTable();       
 
-        cmd.Parameters.AddWithValue("@Chiave", CHIAVE_CORSO);
-        cmd.Parameters.AddWithValue("@Titolo", TITOLO);
-        cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
-
         return c.EseguiSelect(cmd);
     }
 
@@ -130,6 +126,17 @@ public class CORSI
         CONNESSIONE conn = new CONNESSIONE();
 
         conn.EseguiCmd(cmd);
+    }
+
+    public DataTable Search()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SEARCH");
+        cmd.Parameters.AddWithValue("@Titolo", TITOLO);
+        cmd.Parameters.AddWithValue("@Tipo", TIPO);
+        cmd.Parameters.AddWithValue("@Descrizione", DESCRIZIONE);
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
     }
 
     #endregion Metodi

@@ -41,7 +41,7 @@ public class Utenti_WS : System.Web.Services.WebService
         dt.TableName = "Utenti";
         return dt;
     }
-    
+
     [WebMethod]
     public DataTable SelectTutor()
     {
@@ -51,7 +51,7 @@ public class Utenti_WS : System.Web.Services.WebService
         dt.TableName = "Utenti";
         return dt;
     }
-    
+
     [WebMethod]
     public DataTable SelectStorico()
     {
@@ -61,7 +61,7 @@ public class Utenti_WS : System.Web.Services.WebService
         dt.TableName = "Utenti";
         return dt;
     }
-    
+
     [WebMethod]
     public bool Abilita(int Chiave)
     {
@@ -86,9 +86,9 @@ public class Utenti_WS : System.Web.Services.WebService
 
         t.Insert();
     }
-    
+
     [WebMethod]
-    public void Update (char Tipo, string Usr, string Pwd, string Cognome, string Nome, string Figura)
+    public void Update(char Tipo, string Usr, string Pwd, string Cognome, string Nome, string Figura)
     {
         UTENTI t = new UTENTI();
 
@@ -100,5 +100,29 @@ public class Utenti_WS : System.Web.Services.WebService
         t.Figura = Figura;
 
         t.Update();
+    }
+
+    [WebMethod]
+    public bool Login(int Chiave)
+    {
+        DataTable dt = new DataTable();
+        UTENTI u = new UTENTI();
+        u.Chiave = Chiave;
+        bool log = u.Login();
+        dt.TableName = "Utenti";
+        return log;
+
+    }
+
+    [WebMethod]
+    public DataTable TipoLogin(string USR, string PWD)
+    {
+        DataTable dt = new DataTable();
+        UTENTI u = new UTENTI();
+        u.Usr = USR;
+        u.Pwd = PWD;
+        dt = u.TipoLogin();
+        dt.TableName = "Esterni";
+        return dt;
     }
 }

@@ -81,13 +81,10 @@ public class Corsi_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable SelectNonAssegnati(int CHIAVE, string TITOLO, int CODUTENTE)
+    public DataTable SelectNonAssegnati()
     {
         DataTable dt = new DataTable();
         CORSI c = new CORSI();
-        c.CHIAVE_CORSO = CHIAVE;
-        c.TITOLO = TITOLO;
-        c.COD_UTENTE = CODUTENTE;
         dt = c.SelectNonAssegnati();
         dt.TableName = "Corsi";
         return dt;
@@ -114,6 +111,17 @@ public class Corsi_WS : System.Web.Services.WebService
         c.CHIAVE_TUTOR = CHIAVE_TUTOR;
 
         c.UpdateTutor();
+    }
+    
+    [WebMethod]
+    public void Search(string TITOLO, string TIPO, string DESCRIZIONE)
+    {
+        CORSI c = new CORSI();
+        c.TITOLO = TITOLO;
+        c.TIPO = TIPO;
+        c.DESCRIZIONE = DESCRIZIONE;
+
+        c.Search();
     }
 
 }

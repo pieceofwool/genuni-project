@@ -59,5 +59,24 @@ public class GENMONEY
         return C.EseguiSelect(cmd);
     }
 
+    public void Storico_Studente()
+    {
+        SqlCommand cmd = new SqlCommand("GENMONEY_AggiornaSaldo");
+        cmd.Parameters.AddWithValue("@Chiave", Chiave);
+        
+
+        CONNESSIONE conn = new CONNESSIONE();
+        conn.EseguiCmd(cmd);
+    }
+    public void Studenti_Acquisto()
+    {
+        SqlCommand cmd = new SqlCommand("GENMONEY_AggiornaSaldo");
+        cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
+        cmd.Parameters.AddWithValue("@ammontare", Ammontare);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        conn.EseguiCmd(cmd);
+    }
+
     #endregion Metodi
 }
