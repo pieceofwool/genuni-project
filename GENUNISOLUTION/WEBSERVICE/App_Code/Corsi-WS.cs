@@ -42,7 +42,7 @@ public class Corsi_WS : System.Web.Services.WebService
         c.DESCRIZIONE = DESCRIZIONE;
         c.AVATAR_CORSO = AVATAR_CORSO;
         c.DATA_PARTENZA = DATA_PARTENZA;
-        c.STATUS = STATUS
+        c.STATUS = STATUS;
         c.TIPO_IMG = TIPOIMG;
 
         c.Update();
