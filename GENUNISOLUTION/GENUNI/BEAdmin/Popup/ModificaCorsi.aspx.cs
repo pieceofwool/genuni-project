@@ -25,9 +25,9 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
     protected void CaricaDDL()
     {
-
+        UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();
         // UTENTI U = new UTENTI();
-        //  ddlUtenti.DataSource = U.SelectTutor();
+        ddlUtenti.DataSource = U.SelectTutor();
         ddlUtenti.DataValueField = "Chiave";
         ddlUtenti.DataTextField = "Cognome";
         ddlUtenti.DataBind();
