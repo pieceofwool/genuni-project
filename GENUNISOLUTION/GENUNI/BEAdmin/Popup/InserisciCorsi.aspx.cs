@@ -56,16 +56,14 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
         //CORSI C = new CORSI();
 
-        //TOGLI COMMENTO UNA VOLTA CHE VIENE FIXATO NEL WS
-
         //C.TITOLO = Titolo;
         //C.TIPO = Tipo;
         //C.DESCRIZIONE = Descrizione;
         //C.DATA_PARTENZA = Data_Partenza;
         //C.AVATAR_CORSO = avatar;
-        //C.TIPO_IMG = fupAvatar.PostedFile.ContentType;
+        string TIPO_IMG = fupAvatar.PostedFile.ContentType;
 
-        //C.Insert(Titolo);
+        C.Insert(Cod_Utente, Titolo, Tipo, Descrizione, Avatar, Data_Partenza, TIPO_IMG);
 
         lbl.Text = "Record Inserito";
         txtTitolo.Text = "";
