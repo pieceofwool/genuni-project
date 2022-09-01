@@ -108,8 +108,8 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         //C.AVATAR_CORSO = avatar;
         string TIPO_IMG = fupAvatar.PostedFile.ContentType;
 
-
-        c.Update(Cod_Utente, Titolo, Tipo, Descrizione, avatar, Data_Partenza, Status, TIPO_IMG);
+        //DA SISTEMARE
+        //c.Update(Cod_Utente, Titolo, Tipo, Descrizione, avatar, Data_Partenza, Status, TIPO_IMG);
         lbl.Text = "Record Modificato";
         txtTitolo.Text = "";
         txtTipo.Text = "";
