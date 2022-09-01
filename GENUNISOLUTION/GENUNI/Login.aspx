@@ -3,30 +3,31 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-<!-- Favicons -->
-<link href="img/favicon.png" rel="icon" />
-<link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon" />
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet" />
 
-<!-- Bootstrap CSS File -->
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-<!-- Libraries CSS Files -->
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-<link href="lib/animate/animate.min.css" rel="stylesheet" />
-<link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet" />
-<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
-<!-- Main Stylesheet File -->
-<link href="assets/css/style.css" rel="stylesheet" />
-<link href="assets/css/scss-files.txt" rel="stylesheet" />
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" <%--id="bootstrap-css"--%> />
+    <!-- Main Stylesheet File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/scss-files.txt" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" <%--id="bootstrap-css"--%> />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -81,7 +82,7 @@
                             <div class="form-group">
                                 <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" />
                             </div>
-                            <%-- <span class="button-checkbox">
+                           <%-- <span class="button-checkbox">
                                 <button type="button" class="btn" data-color="info">Ricordami</button>
                                 <input type="checkbox" name="remember_me" id="remember_me" checked="checked" class="hidden" />
                                 <a href="" class="btn btn-link pull-right">Password dimenticata?</a>
@@ -92,7 +93,7 @@
                                     <input type="submit" class="btn btn-lg btn-success btn-block" value="Login" />
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <a href="<href="Login/registrazione.aspx" class="btn btn-lg btn-primary btn-block">Registrati</a>
+                                    <a href="registrazione.aspx" class="btn btn-lg btn-primary btn-block">Registrati</a>
                                 </div>
                             </div>
                         </fieldset>

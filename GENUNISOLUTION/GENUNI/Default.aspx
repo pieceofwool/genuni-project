@@ -7,8 +7,6 @@
 
     <!--========================== Intro Section ============================-->
 
-    Intro Section
-  ============================-->
     <section id="intro" class="clearfix">
         <div class="container d-flex h-100" id="containerIntro">
             <div class="row justify-content-center align-self-center">
@@ -17,7 +15,7 @@
                         <br>
                         Inizia la tua <span>formazione!</span></h2>
                     <div>
-                        <a href="#about" class="btn-get-started scrollto">Iscriviti</a>
+                        <a href="registrazione.aspx" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti</a>
                     </div>
                 </div>
 
@@ -25,9 +23,9 @@
                     <img src="img/intro-img.png" alt="" class="img-fluid">
                 </div>
             </div>
-
         </div>
     </section>
+
     <!-- #intro -->
 
     <main id="main">
@@ -45,8 +43,8 @@
                             <h2>Chi siamo</h2>
                             <h3>Leader nella formazione in Italia</h3>
                             <p>
-                                GenUni è un ente autorizzato alla vendita di corsi di formazione riconosciuti dal MIUL.
-                                    Qualificato all’erogazione e alla gestione di corsi di formazione e-learning, GenUni offre professionalità, innovazione e serietà.
+                                GenUni e' un ente autorizzato alla vendita di corsi di formazione riconosciuti dal MIUL.
+                                    Qualificato all’erogazione e alla gestione di corsi di formazione e-learning, GenUni offre professionalita', innovazione e serietà.
                                     I titoli conseguiti al termine dei corsi di formazione professionale e aggiornamento, sono validi in Italia e all’estero per:
                             </p>
                             <ul>
@@ -84,7 +82,7 @@
                                 affinchè tu possa investirli su te stesso e determinare il tuo successo.
                             </p>
                             <div class="features wow bounceInUp clearfix">
-                                <img src="img/dunkey1.png" class="iconeMission" />
+                                <img src="img/genMoney2.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Gen Money</h4>
                                     <p>Commodi quia voluptatum. Est cupiditate voluptas quaerat officiis ex alias dignissimos et ipsum. Soluta at enim modi ut incidunt dolor et.</p>
@@ -148,56 +146,13 @@
                         <p class="cta-text">Rimani aggiornati sui corsi già attivi e su quelli futuri! Non rimanere indietro, </p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="#">Attiva la newsletter!</a>
+                        <a class="cta-btn align-middle" href="#footer">Attiva la newsletter!</a>
                     </div>
                 </div>
 
             </div>
         </section>
         <!-- #call-to-action -->
-
-        <!--========================== Features Section ============================-->
-        <%-- <section id="features">
-            <div class="container">
-
-                <div class="row feature-item">
-                    <div class="col-lg-6 wow fadeInUp">
-                        <img src="img/features-1.svg" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-                        <h4>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h4>
-                        <p>
-                            Ipsum in aspernatur ut possimus sint. Quia omnis est occaecati possimus ea. Quas molestiae perspiciatis occaecati qui rerum. Deleniti quod porro sed quisquam saepe. Numquam mollitia recusandae non ad at et a.
-                        </p>
-                        <p>
-                            Ad vitae recusandae odit possimus. Quaerat cum ipsum corrupti. Odit qui asperiores ea corporis deserunt veritatis quidem expedita perferendis. Qui rerum eligendi ex doloribus quia sit. Porro rerum eum eum.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row feature-item mt-5 pt-5">
-                    <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
-                        <img src="img/features-2.svg" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
-                        <h4>Neque saepe temporibus repellat ea ipsum et. Id vel et quia tempora facere reprehenderit.</h4>
-                        <p>
-                            Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis beatae incidunt sunt. 
-                        </p>
-                        <p>
-                            Voluptas saepe natus quidem blanditiis. Non sunt impedit voluptas mollitia beatae. Qui esse molestias. Laudantium libero nisi vitae debitis. Dolorem cupiditate est perferendis iusto.
-                        </p>
-                        <p>
-                            Eum quia in. Magni quas ipsum a. Quis ex voluptatem inventore sint quia modi. Numquam est aut fuga mollitia exercitationem nam accusantium provident quia.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-        <!-- #about -->--%>
 
         <!--========================== Portfolio Section ============================-->
         <section id="portfolio" class="section-bg">
@@ -206,149 +161,25 @@
                 <header class="section-header">
                     <h3 class="section-title">I nostri corsi</h3>
                 </header>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">Tutti i corsi</li>
-                            <li data-filter=".filter-app">Corsi attivi</li>
-                            <li data-filter=".filter-card">Corsi previsti</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row portfolio-container">
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="img/portfolio/app1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Data analyst</a></h4>
-                                <p>Data</p>
-                                <div>
-                                    <a href="img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
-                        <div class="portfolio-wrap">
-                            <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Cloud specialist</a></h4>
-                                <p>Web</p>
-                                <div>
-                                    <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <img src="img/portfolio/app2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Sviluppatore Java</a></h4>
-                                <p>Java</p>
-                                <div>
-                                    <a href="img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="img/portfolio/card2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Sviluppatore .Net</a></h4>
-                                <p>.Net</p>
-                                <div>
-                                    <a href="img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
-                        <div class="portfolio-wrap">
-                            <img src="img/portfolio/web2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">System and Cybersecurity analys</a></h4>
-                                <p>System and Cybersecurity</p>
-                                <div>
-                                    <a href="img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <img src="img/portfolio/app3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Sviluppatore Software Saleforce</a></h4>
-                                <p>Software</p>
-                                <div>
-                                    <a href="img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="img/portfolio/card1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Card 1</a></h4>
-                                <p>Card</p>
-                                <div>
-                                    <a href="img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card" data-wow-delay="0.1s">
-                        <div class="portfolio-wrap">
-                            <img src="img/portfolio/card3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Food&Bevarage</a></h4>
-                                <p>Card</p>
-                                <div>
-                                    <a href="img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <img src="img/portfolio/web1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Addetto alle vendite</a></h4>
-                                <p>Sales</p>
-                                <div>
-                                    <a href="img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
+
+            <div id="carousel">
+                <figure id="spinner">
+                    <img src="dotnet.png" alt />
+                    <img src="mysql.png" alt />
+                    <img src="javascript.png" alt />
+                    <img src="dotnet.png" alt />
+                    <img src="mysql.png" alt />
+                    <img src="javascript.png" alt />
+                    <img src="dotnet.png" alt />
+                    <img src="mysql.png" alt />
+                </figure>
+            </div>
+            <span style="float: left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+            <span style="float: right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
+
         </section>
+
         <!-- #portfolio -->
 
         <!--========================== Team Section ============================-->
@@ -356,7 +187,7 @@
             <div class="container">
                 <div class="section-header">
                     <h3>Docenti</h3>
-                    <p>Il nostro team docenti è pronto a prepararti al mondo del lavoro</p>
+                    <p>Il nostro team docenti e' pronto a prepararti al mondo del lavoro</p>
                 </div>
 
                 <div class="row">
@@ -457,7 +288,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3><span class="currency">
-                                    <img src="img/dunkey1.png" class="iconeMoney" />
+                                    <img src="img/genMoney2.png" class="iconeMoney" />
                                 </span>50<span class="period">/mese</span></h3>
                             </div>
                             <div class="card-block">
@@ -479,7 +310,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3><span class="currency">
-                                    <img src="img/dunkey1.png" class="iconeMoney" />
+                                    <img src="img/genMoney2.png" class="iconeMoney" />
                                 </span>100<span class="period">/mese</span></h3>
                             </div>
                             <div class="card-block">
@@ -501,7 +332,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3><span class="currency">
-                                    <img src="img/dunkey1.png" class="iconeMoney" />
+                                    <img src="img/genMoney2.png" class="iconeMoney" />
                                 </span>150<span class="period">/mese</span></h3>
                             </div>
                             <div class="card-block">
@@ -528,7 +359,7 @@
         <section id="faq">
             <div class="container">
                 <header class="section-header">
-                    <h3>Domande più frequenti</h3>
+                    <h3>Domande piu' frequenti</h3>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
                 </header>
 
@@ -611,7 +442,7 @@
                                 <div class="footer-info">
                                     <h3>Gen Uni</h3>
                                     <p>
-                                        è la prima accademia di corsi online in ambito coding dove poter imparare a programmare con i principali linguaggi di programmazione, anche da zero.Grazie ai percorsi formativi verrai guidato passo passo fino ad apprendere le competenze delle principali figure professionali, come programmatore web (front-end, back-end o full stack), mobile developer, web designer, ui/ux designer, data scientist e molto altro.
+                                        La prima accademia di corsi online in ambito coding dove poter imparare a programmare con i principali linguaggi di programmazione, anche da zero.Grazie ai percorsi formativi verrai guidato passo passo fino ad apprendere le competenze delle principali figure professionali, come programmatore web (front-end, back-end o full stack), mobile developer, web designer, ui/ux designer, data scientist e molto altro.
                                     </p>
                                 </div>
 
@@ -619,7 +450,7 @@
                                     <h4>La nostra newsletter</h4>
                                     <p>Vuoi più informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
                                     <form action="" method="post">
-                                        <input type="email" name="email" placeholder="E-mail"><input type="submit" value="Iscriviti">
+                                        <input type="email" name="email" placeholder="E-mail"><input type="submit" id="btnIscrivitiFooter" value="Iscriviti">
                                     </form>
                                 </div>
 

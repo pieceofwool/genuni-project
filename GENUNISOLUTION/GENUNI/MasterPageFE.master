@@ -72,7 +72,8 @@
                         <img src="img/logo.png" alt="" class="img-fluid"></a>
                     <h1 class="text-light"><a href="#intro" class="scrollto"><span>Gen Uni</span></a></h1>
                 </div>
-                     <!-- #logo -->
+                <!-- #logo -->
+
                 <nav class="main-nav float-right d-none d-lg-block">
                     <ul>
                         <li class="drop-down"><a href="Default.aspx">DEBUG</a>
@@ -84,8 +85,6 @@
                                 <li><a href="BETutor/GestioneTutor.aspx">Tutor</a></li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul>
                         <li class="active"><a href="Default.aspx">Home</a></li>
                         <li><a href="#about">Chi siamo</a></li>
                         <li><a href="tipologieCorsi.aspx">Corsi</a></li>

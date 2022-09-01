@@ -181,6 +181,10 @@ h6 {
         background-color: #0a98c0;
     }
 
+
+#btnIscrivitiIntro {
+    margin-top: 169px;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -852,57 +856,6 @@ h6 {
 /* Portfolio Section
 --------------------------------*/
 
-
-.carousel-indicators .active {
-    background: #31708f;
-}
-
-.content {
-    margin-top: 20px;
-}
-
-.adjust1 {
-    float: left;
-    width: 100%;
-    margin-bottom: 0;
-}
-
-.adjust2 {
-    margin: 0;
-}
-
-.carousel-indicators li {
-    border: 1px solid #ccc;
-}
-
-.carousel-control {
-    color: #31708f;
-    width: 5%;
-}
-
-    .carousel-control:hover, .carousel-control:focus {
-        color: #31708f;
-    }
-
-    .carousel-control.left, .carousel-control.right {
-        background-image: none;
-    }
-
-.media-object {
-    margin: auto;
-    margin-top: 15%;
-}
-
-@media screen and (max-width: 768px) {
-    .media-object {
-        margin-top: 0;
-    }
-}
-
-.myCarousel {
-    max-width: 300px;
-}
-
 #portfolio {
     padding: 60px 0;
 }
@@ -1046,61 +999,80 @@ h6 {
 /* Carousel
 --------------------------------*/
 
-.tooltip {
-    border-bottom: 1px dotted black;
-    margin: 0 auto;
+div#carousel {
+    perspective: 1200px;
+    background: #100000;
+    padding-top: 10%;
+    font-size: 0;
+    margin-bottom: 3rem;
+    overflow: hidden;
 }
 
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 120px;
-        /*background-color: #1bb1dc;
-        color: #ffff;*/
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
+figure#spinner {
+    transform-style: preserve-3d;
+    height: 300px;
+    transform-origin: 50% 50% -500px;
+    transition: 1s;
+}
+
+    figure#spinner img {
+        width: 40%;
+        max-width: 425px;
         position: absolute;
-        z-index: 1;
-        bottom: 100%;
-        left: 50%;
-        margin-left: -60px;
-        /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
-        opacity: 0;
-        transition: opacity 3s;
+        left: 30%;
+        transform-origin: 50% 50% -500px;
+        outline: 1px solid transparent;
     }
 
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-        opacity: 1;
+        figure#spinner img:nth-child(1) {
+            transform: rotateY(0deg);
+        }
+
+        figure#spinner img:nth-child(2) {
+            transform: rotateY(-45deg);
+        }
+
+        figure#spinner img:nth-child(3) {
+            transform: rotateY(-90deg);
+        }
+
+        figure#spinner img:nth-child(4) {
+            transform: rotateY(-135deg);
+        }
+
+        figure#spinner img:nth-child(5) {
+            transform: rotateY(-180deg);
+        }
+
+        figure#spinner img:nth-child(6) {
+            transform: rotateY(-225deg);
+        }
+
+        figure#spinner img:nth-child(7) {
+            transform: rotateY(-270deg);
+        }
+
+        figure#spinner img:nth-child(8) {
+            transform: rotateY(-315deg);
+        }
+
+div#carousel ~ span {
+    color: #fff;
+    margin: 5%;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: 0.6s color;
+    position: relative;
+    margin-top: -6rem;
+    border-bottom: none;
+    line-height: 0;
+}
+
+    div#carousel ~ span:hover {
+        color: #888;
+        cursor: pointer;
     }
-
-.carousel-inner > .item > a > img, .carousel-inner > .item > img {
-    line-height: 1;
-    width: 100%;
-    height: 80%;
-}
-
-
-.txtCorsi {
-    right: 20%;
-    left: 20%;
-    padding-bottom: 30px;
-    color: black;
-    height: 142px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Montserrat';
-    background-color: white;
-    padding: 29px 0px 0px;
-    opacity: 0.6;
-}
-
-.carousel-item h3 {
-    font-size: 28px;
-    color: #000000;
-}
-
 
 
 /* Testimonials Section
