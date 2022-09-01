@@ -22,9 +22,9 @@ public class Crypta_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public string CRYPTA(string PLAINTEXT)
+    public string PWD_CRYPTA(string PLAINTEXT)
     {
-        string stringaCriptata = CRYPTA(PLAINTEXT);
+        string stringaCriptata = CRYPTA.Crypta(PLAINTEXT);
         return stringaCriptata;
     }
 
