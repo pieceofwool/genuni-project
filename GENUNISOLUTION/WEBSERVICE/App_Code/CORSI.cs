@@ -102,10 +102,6 @@ public class CORSI
         SqlCommand cmd = new SqlCommand("CORSI_SelectNonAssegnati");
         DataTable dt = new DataTable();       
 
-        cmd.Parameters.AddWithValue("@Chiave", CHIAVE_CORSO);
-        cmd.Parameters.AddWithValue("@Titolo", TITOLO);
-        cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
-
         return c.EseguiSelect(cmd);
     }
 

@@ -81,13 +81,10 @@ public class Corsi_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable SelectNonAssegnati(int CHIAVE, string TITOLO, int CODUTENTE)
+    public DataTable SelectNonAssegnati()
     {
         DataTable dt = new DataTable();
         CORSI c = new CORSI();
-        c.CHIAVE_CORSO = CHIAVE;
-        c.TITOLO = TITOLO;
-        c.COD_UTENTE = CODUTENTE;
         dt = c.SelectNonAssegnati();
         dt.TableName = "Corsi";
         return dt;
