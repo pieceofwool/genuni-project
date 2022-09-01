@@ -67,4 +67,35 @@ public class Materie_WS : System.Web.Services.WebService
         return dt;
     }
 
+    //metodo che inserisce il codice docente nella relativa materia
+    [WebMethod]
+    public void InsertDocente(int CHIAVE, int COD_DOCENTE)
+    {
+        MATERIE M = new MATERIE();
+        M.Chiave = CHIAVE;
+        M.Cod_Docente = COD_DOCENTE;
+
+        M.InsertDocente();
+    }
+
+    //metodo che seleziona materie e corsi di un determinato docente
+    [WebMethod]
+    public void SelectDocente(int COD_DOCENTE)
+    {
+        MATERIE M = new MATERIE();
+        M.Cod_Docente = COD_DOCENTE;
+
+        M.SelectDocente();
+    }
+
+    //metodo che elenca le materie alle quali non e stato assegnato un docente
+    [WebMethod]
+    public DataTable SelectNonAssegnate(int COD_CORSO)
+    {
+        MATERIE M = new MATERIE();
+        DataTable dt = new DataTable();
+        dt= M.SelectNonAssegnate();
+        dt.TableName = "Materie";
+        return dt;
+    }
 }

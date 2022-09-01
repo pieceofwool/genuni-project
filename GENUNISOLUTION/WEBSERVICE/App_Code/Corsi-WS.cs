@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -139,5 +140,22 @@ public class Corsi_WS : System.Web.Services.WebService
         dt = c.SelectAllDocenti();
         dt.TableName = "Risultato";
         return dt;
+    }
+
+    //metodo che permette al tutor di modificare il corso scelto
+    [WebMethod]
+    public void UpdateForTutor(int CHIAVE_TUTOR, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string TIPO_IMG, string DATA_PARTENZA)
+    {
+        CORSI C = new CORSI();
+
+        C.CHIAVE_TUTOR = CHIAVE_TUTOR;
+        C.TITOLO = TITOLO;
+        C.TIPO = TIPO;
+        C.DESCRIZIONE = DESCRIZIONE;
+        C.AVATAR_CORSO = AVATAR_CORSO;
+        C.TIPO_IMG = TIPO_IMG;
+        C.DATA_PARTENZA = DATA_PARTENZA;
+
+        C.UpdateForTutor();
     }
 }

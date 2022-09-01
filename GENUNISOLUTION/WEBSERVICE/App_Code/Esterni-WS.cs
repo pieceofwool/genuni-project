@@ -213,4 +213,18 @@ public class Esterni_WS : System.Web.Services.WebService
         return registrato;
 
     }
+
+    //metodo che restituisce una tabella con dati docente in base al suo codice
+    [WebMethod]
+    public DataTable ESTERNI_DOCENTI_InfoCodice(int COD_DOCENTE)
+    {
+        DataTable dt = new DataTable();
+        ESTERNI E = new ESTERNI();
+
+        E.CHIAVE = COD_DOCENTE;
+        dt = E.ESTERNI_DOCENTI_InfoCodice();
+        dt.TableName = "Docenti";
+
+        return dt;
+    }
 }
