@@ -59,18 +59,19 @@ public class GENMONEY
         return C.EseguiSelect(cmd);
     }
 
-    public void Storico_Studente()
+    public DataTable Storico_Studente()
     {
-        SqlCommand cmd = new SqlCommand("GENMONEY_AggiornaSaldo");
-        cmd.Parameters.AddWithValue("@Chiave", Chiave);
-        
+        SqlCommand cmd = new SqlCommand("GENMONEY_STORICO_STUDENTE");
 
-        CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiCmd(cmd);
+        cmd.Parameters.AddWithValue("@Chiave", Chiave);
+
+        CONNESSIONE c = new CONNESSIONE();
+
+        return c.EseguiSelect(cmd);
     }
     public void Studenti_Acquisto()
     {
-        SqlCommand cmd = new SqlCommand("GENMONEY_AggiornaSaldo");
+        SqlCommand cmd = new SqlCommand("GENMONEY_STUDENTI_ACQUISTO");
         cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
         cmd.Parameters.AddWithValue("@ammontare", Ammontare);
 
