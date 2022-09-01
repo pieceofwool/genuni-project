@@ -115,4 +115,36 @@ public class Esterni_WS : System.Web.Services.WebService
         return dt;
     }
 
+    [WebMethod]
+    public void UpdateAvatar(int CHIAVE, byte[] AVATAR, string TIPOIMG)
+    {
+        ESTERNI e = new ESTERNI();
+        e.CHIAVE = CHIAVE;
+        e.AVATAR = AVATAR;
+        e.TIPOIMG = TIPOIMG;
+
+        e.UpdateAvatar();
+    }
+
+    [WebMethod]
+    public void UpdateProfilo(int CHIAVE, string USR, string RAGIONE_SOCIALE, string COGNOME, string NOME, string DATA_NASCITA, string PIVA, string CF, string INDIRIZZO, string CAP, string CITTA, string PROVINCIA, string NAZIONALITA, bool ABILITATO, byte[] AVATAR, string TIPOIMG)
+    {
+        ESTERNI e = new ESTERNI();
+        e.CHIAVE = CHIAVE;
+        e.USR = USR;
+        e.RAGIONE_SOCIALE = RAGIONE_SOCIALE;
+        e.COGNOME = COGNOME;
+        e.NOME = NOME;
+        e.DATA_NASCITA = DATA_NASCITA;
+        e.PIVA = PIVA;
+        e.CF = CF;
+        e.INDIRIZZO = INDIRIZZO;
+        e.CAP = CAP;
+        e.CITTA = CITTA;
+        e.PROVINCIA = PROVINCIA;
+        e.NAZIONALITA = NAZIONALITA;
+
+        e.UpdateProfilo();
+    }
+
 }

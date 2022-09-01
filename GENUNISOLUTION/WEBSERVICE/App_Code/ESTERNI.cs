@@ -188,4 +188,42 @@ public class ESTERNI
 
         return C.EseguiSelect(cmd);
     }
+
+    public void UpdateAvatar()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_UPDATEAVATAR";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+        cmd.Parameters.AddWithValue("@AVATAR", AVATAR);
+        cmd.Parameters.AddWithValue("@TIPOIMG", TIPOIMG);
+
+        c.EseguiCmd(cmd);
+    }
+
+    public void UpdateProfilo()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_UPDATEPROFILO";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+        cmd.Parameters.AddWithValue("@USR", USR);
+        cmd.Parameters.AddWithValue("@RAGIONE_SOCIALE", RAGIONE_SOCIALE);
+        cmd.Parameters.AddWithValue("@COGNOME", COGNOME);
+        cmd.Parameters.AddWithValue("@NOME", NOME);
+        cmd.Parameters.AddWithValue("@DATA_NASCITA", DATA_NASCITA);
+        cmd.Parameters.AddWithValue("@PIVA", PIVA);
+        cmd.Parameters.AddWithValue("@CF", CF);
+        cmd.Parameters.AddWithValue("@INDIRIZZO", INDIRIZZO);
+        cmd.Parameters.AddWithValue("@CAP", CAP);
+        cmd.Parameters.AddWithValue("@CITTA", CITTA);
+        cmd.Parameters.AddWithValue("@PROVINCIA", PROVINCIA);
+        cmd.Parameters.AddWithValue("@NAZIONALITA", NAZIONALITA);
+
+
+
+        c.EseguiCmd(cmd);
+    }
 }
