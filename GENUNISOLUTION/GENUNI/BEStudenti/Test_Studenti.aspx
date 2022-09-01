@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:RadioButtonList id="1" runat="server">
+                    <asp:RadioButtonList id="test1" runat="server">
                         <asp:ListItem>Si</asp:ListItem>
                         <asp:ListItem>No</asp:ListItem>
                         <asp:ListItem>Forse</asp:ListItem>
@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <td>
-                     <asp:RadioButtonList id="2" runat="server">
+                     <asp:RadioButtonList id="test2" runat="server">
                         <asp:ListItem>Si</asp:ListItem>
                         <asp:ListItem>No</asp:ListItem>
                          <asp:ListItem>Forse</asp:ListItem>
@@ -43,7 +43,7 @@
             </tr>
             <tr>
                 <td>
-                     <asp:RadioButtonList id="3" runat="server">
+                     <asp:RadioButtonList id="test3" runat="server">
                         <asp:ListItem>Si</asp:ListItem>
                         <asp:ListItem>No</asp:ListItem>
                          <asp:ListItem>Forse</asp:ListItem>
@@ -57,7 +57,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:RadioButtonList id="4" runat="server">
+                    <asp:RadioButtonList id="test4" runat="server">
                         <asp:ListItem>Si</asp:ListItem>
                         <asp:ListItem>No</asp:ListItem>
                         <asp:ListItem>Forse</asp:ListItem>
@@ -71,7 +71,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:RadioButtonList id="5" runat="server">
+                    <asp:RadioButtonList id="test5" runat="server">
                         <asp:ListItem>Si</asp:ListItem>
                         <asp:ListItem>No</asp:ListItem>
                         <asp:ListItem>Forse</asp:ListItem>
@@ -85,7 +85,7 @@
             </tr>
             <tr>
                 <td>
-                     <asp:RadioButtonList id="6" runat="server">
+                     <asp:RadioButtonList id="test6" runat="server">
                         <asp:ListItem>Si</asp:ListItem>
                         <asp:ListItem>No</asp:ListItem>
                          <asp:ListItem>Forse</asp:ListItem>
@@ -99,7 +99,7 @@
             </tr>
             <tr>
                 <td>
-                     <asp:RadioButtonList id="7" runat="server">
+                     <asp:RadioButtonList id="test7" runat="server">
                         <asp:ListItem>Si</asp:ListItem>
                         <asp:ListItem>No</asp:ListItem>
                          <asp:ListItem>Forse</asp:ListItem>
@@ -113,7 +113,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:RadioButtonList id="8" runat="server">
+                    <asp:RadioButtonList id="test8" runat="server">
                         <asp:ListItem>Si</asp:ListItem>
                         <asp:ListItem>No</asp:ListItem>
                         <asp:ListItem>Forse</asp:ListItem>
@@ -127,7 +127,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:RadioButtonList id="9" runat="server">
+                    <asp:RadioButtonList id="test9" runat="server">
                         <asp:ListItem>Si</asp:ListItem>
                         <asp:ListItem>No</asp:ListItem>
                         <asp:ListItem>Forse</asp:ListItem>
@@ -141,7 +141,7 @@
             </tr>
             <tr>
                 <td>
-                     <asp:RadioButtonList id="10"  runat="server">
+                     <asp:RadioButtonList id="test10"  runat="server">
                         <asp:ListItem>Si</asp:ListItem>
                         <asp:ListItem>No</asp:ListItem>
                          <asp:ListItem>Forse</asp:ListItem>

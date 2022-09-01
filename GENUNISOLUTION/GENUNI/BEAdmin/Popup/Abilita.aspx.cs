@@ -17,11 +17,7 @@ public partial class Admin_Popup_Abilita : System.Web.UI.Page
     protected void btnAbilita_Click(object sender, EventArgs e)
     {
         //UTENTI U = new UTENTI();
-<<<<<<< HEAD:GENUNISOLUTION/GENUNI/Admin/Popup/Abilita.aspx.cs
         int Chiave= int.Parse(Session["chiave"].ToString());
-=======
-        //int Chiave= int.Parse(Session["chiave"].ToString());
->>>>>>> development:GENUNISOLUTION/GENUNI/BEAdmin/Popup/Abilita.aspx.cs
         //U.Chiave= Chiave;
         //U.Abilita();
 

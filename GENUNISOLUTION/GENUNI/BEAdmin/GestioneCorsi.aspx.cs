@@ -46,28 +46,19 @@ public partial class Default3 : System.Web.UI.Page
 
     protected void CaricaGrigliaCreazione()
     {
-<<<<<<< HEAD:GENUNISOLUTION/GENUNI/Admin/GestioneCorsi.aspx.cs
 
         //    CORSI C = new CORSI();
         //  gridCreazioneCorsi.DataSource = C.Select();
         gridCreazioneCorsi.DataBind();
-=======
         //Da aggiornare con effettiva classe e metodo
         //CORSI C = new CORSI();
         //gridCreazioneCorsi.DataSource = C.SelectAll();
         //gridCreazioneCorsi.DataBind();
->>>>>>> development:GENUNISOLUTION/GENUNI/BEAdmin/GestioneCorsi.aspx.cs
     }
     protected void CaricaGrigliaAssegnazione()
     {
         //Da aggiornare con effettiva classe e metodo
-<<<<<<< HEAD:GENUNISOLUTION/GENUNI/Admin/GestioneCorsi.aspx.cs
         // CORSI C = new CORSI();
         //gridAssegnazioneCorsi.DataSource = C.SelectNonAssegnati();
-=======
-        //CORSI C = new CORSI();
-        //gridAssegnazioneCorsi.DataSource = C.SelectAll();
-        //gridAssegnazioneCorsi.DataBind();
->>>>>>> development:GENUNISOLUTION/GENUNI/BEAdmin/GestioneCorsi.aspx.cs
     }
 }
