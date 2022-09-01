@@ -29,8 +29,7 @@ public partial class Admin_Popup_AssegnaCorsi : System.Web.UI.Page
     }
     protected void CaricaDDL()
     {
-        //Da aggiornare con effettiva classe, metodo e nome del datatextfield
-
+        
         //UTENTI U = new UTENTI();
         //  ddlTutor.DataSource = U.SelectTutor();
         ddlTutor.DataValueField = "Chiave";

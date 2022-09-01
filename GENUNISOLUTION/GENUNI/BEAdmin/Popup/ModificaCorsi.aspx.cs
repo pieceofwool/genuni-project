@@ -25,8 +25,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
     protected void CaricaDDL()
     {
-        //Da aggiornare con effettiva classe, metodo e nome del datatextfield
-
+       
         // UTENTI U = new UTENTI();
         //  ddlUtenti.DataSource = U.SelectTutor();
         ddlUtenti.DataValueField = "Chiave";
@@ -38,7 +37,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
     public void UpdateTextBox()
     {
-        // CORSI c = new CORSI();//creo l'oggetto t di tipospesa
+        // CORSI c = new CORSI();
 
         DataTable dt = new DataTable();//creo l'oggetto datatable
 
@@ -68,12 +67,11 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         //C.CHIAVE_CORSO = Chiave;
         //byte[] avatar = new CORSI().SelectOne().Rows[0].Field<byte[]>("avatar_corso");
 
-        if (string.IsNullOrEmpty(txtTitolo.Text) || string.IsNullOrEmpty(txtTipo.Text) || string.IsNullOrEmpty(txtDescrizione.Text))
+        if (string.IsNullOrEmpty(txtTitolo.Text))
         {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Tutti i campi devono essere pieni')", true);
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Il campo titolo non può essere vuoto')", true);
             return;
         }
-
         if (!estensioni.Contains(Path.GetExtension(fupAvatar.FileName)))
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Formato file non valido: caricare .jpg, .png o .bmp')", true); ;
