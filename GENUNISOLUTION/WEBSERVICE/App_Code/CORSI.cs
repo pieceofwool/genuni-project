@@ -59,7 +59,6 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_Update");
         cmd.Parameters.AddWithValue("@COD_UTENTE", COD_UTENTE);
-        cmd.Parameters.AddWithValue("@DATA_CREAZIONE", DATA_CREAZIONE);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);

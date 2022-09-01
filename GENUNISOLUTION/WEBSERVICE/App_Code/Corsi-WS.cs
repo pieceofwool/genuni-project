@@ -38,11 +38,10 @@ public class Corsi_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Update(int COD_UTENTE, string DATA_CREAZIONE, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string DATA_PARTENZA, string STATUS, string TIPOIMG)
+    public void Update(int COD_UTENTE, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string DATA_PARTENZA, string STATUS, string TIPOIMG)
     {
         CORSI c = new CORSI();
         c.COD_UTENTE = COD_UTENTE;
-        c.DATA_CREAZIONE = DATA_CREAZIONE;
         c.TITOLO = TITOLO;
         c.TIPO = TIPO;
         c.DESCRIZIONE = DESCRIZIONE;
@@ -129,5 +128,6 @@ public class Corsi_WS : System.Web.Services.WebService
 
         c.Search();
     }
+
 
 }
