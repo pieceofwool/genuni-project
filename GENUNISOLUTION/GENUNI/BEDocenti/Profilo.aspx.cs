@@ -32,6 +32,7 @@ public partial class Default2 : System.Web.UI.Page
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
         //E.CHIAVE = int.Parse(Session["CodiceEsterno"].ToString());
         int CHIAVE = 1;
+        
         DataTable dt = new DataTable();
         dt.TableName = "Esterni";
         dt = E.SelectOne(CHIAVE);
@@ -78,6 +79,29 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void BtnCV_Click(object sender, EventArgs e)
     {
-        Response.Redirect("CV.aspx");
+        COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient(); ;
+        //C.COD_DOCENTE = int.Parse(Session["CodiceDoc"].ToString());
+        int CHIAVE = 1;
+
+        DataTable dt2 = C.SelectOne(CHIAVE);
+
+
+        DataRow dr2 = dt2.Rows[0];
+        byte[] CV = dr2.Field<byte[]>("Cv");
+
+
+        if (CV != null)
+        {
+
+           
+            string embed = "<object data=\"{0}{1}\" type=\"application/pdf\" width=\"800px\" height=\"700px\">";
+            embed += "If you are unable to view file, you can download from <a href = \"{0}{1}&download=1\">here</a>";
+            embed += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
+            embed += "</object>";
+            Lit2.Text = string.Format(embed, ResolveUrl("GestoreCvPdf.ashx?chiave="), CHIAVE /*valore chiave*/);
+            
+        }
+
+        
     }
 }

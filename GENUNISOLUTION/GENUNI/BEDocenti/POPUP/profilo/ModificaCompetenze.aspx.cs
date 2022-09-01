@@ -15,7 +15,7 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         {
             COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
             int CHIAVE = 1;
-        dt2 = C.SelectOne(CHIAVE);
+        dt2 = C.SelectOne(CHIAVE); //uso selectone apposta
 
         txtSkills.Text = dt2.Rows[0]["Skills"].ToString();
 
@@ -41,7 +41,14 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         DataRow dr2 = dt2.Rows[0];
         byte[] arr2 = dr2.Field<byte[]>("Cv");
         byte[] CV;
+        
+        string tipoCv= FileUploadCV.PostedFile.ContentType;
 
+        if(tipoCv!="application/pdf")
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ok", "alert('Inserire un file pdf valido')", true);
+            return;
+        }
 
         if (!FileUploadCV.HasFile)
         {
