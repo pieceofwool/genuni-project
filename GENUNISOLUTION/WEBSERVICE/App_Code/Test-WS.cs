@@ -90,4 +90,17 @@ public class Test_WS : System.Web.Services.WebService
         return dt;
     }
 
+    //metodo che visualizza i test gia creati di un determinato corso
+    [WebMethod]
+    public DataTable Test_SelectCorso(int COD_CORSO)
+    {
+        TEST t = new TEST();
+        t.COD_CORSO = COD_CORSO;
+
+        DataTable dt = new DataTable();
+        dt = t.Test_SelectCorso();
+        dt.TableName = "Test";
+
+        return dt;
+    }
 }

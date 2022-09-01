@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 
 /// <summary>
@@ -80,5 +81,16 @@ public class TEST
         cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
 
         return c.EseguiSelect(cmd);
+    }
+
+    //metodo che visualizza i test gia creati di un determinato corso
+    public DataTable Test_SelectCorso()
+    {
+        CONNESSIONE conn = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "TEST_SELECTCORSO";
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
+
+    return conn.EseguiSelect(cmd);
     }
 }

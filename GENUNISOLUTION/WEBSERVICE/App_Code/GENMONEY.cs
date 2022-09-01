@@ -31,17 +31,7 @@ public class GENMONEY
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
-    public void AggiornaSaldo()
-    {
-        SqlCommand cmd = new SqlCommand("GENMONEY_AggiornaSaldo");
-        cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
-        cmd.Parameters.AddWithValue("@cod_corso", Cod_Corso);
-        cmd.Parameters.AddWithValue("@costo", Costo);
-        cmd.Parameters.AddWithValue("@ammontare", Ammontare);
 
-        CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiCmd(cmd);
-    }
     public DataTable SelectAll()
     {
         SqlCommand cmd = new SqlCommand("GENMONEY_SELECTALL");
@@ -59,23 +49,35 @@ public class GENMONEY
         return C.EseguiSelect(cmd);
     }
 
-    public void Storico_Studente()
+    public DataTable Storico_Studente()
     {
-        SqlCommand cmd = new SqlCommand("GENMONEY_AggiornaSaldo");
-        cmd.Parameters.AddWithValue("@Chiave", Chiave);
-        
+        SqlCommand cmd = new SqlCommand("GENMONEY_STORICO_STUDENTE");
+
+        cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
+
+        CONNESSIONE c = new CONNESSIONE();
+
+        return c.EseguiSelect(cmd);
+    }
+
+    public void Studenti_Acquisto()
+    {
+        SqlCommand cmd = new SqlCommand("GENMONEY_INSERT");
+        cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
+        cmd.Parameters.AddWithValue("@ammontare", Ammontare);
+        cmd.Parameters.AddWithValue("@Cod_Corso", null);
 
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
-    public void Studenti_Acquisto()
+
+    public int SaldoStudente()
     {
-        SqlCommand cmd = new SqlCommand("GENMONEY_AggiornaSaldo");
+        SqlCommand cmd = new SqlCommand("GENMONEY_COUNT_STUDENTE");
         cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
-        cmd.Parameters.AddWithValue("@ammontare", Ammontare);
 
         CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiCmd(cmd);
+        return conn.EseguiSelect(cmd).Rows[0].Field<int>("Saldo");
     }
 
     #endregion Metodi

@@ -11,4 +11,24 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     {
 
     }
+
+    protected void btnCompra_Click(object sender, EventArgs e)
+    {
+        GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();
+        int AMMONTARE= int.Parse(ddlPacchetto.SelectedValue);
+        //int COD_STUDENTE = int.Parse(Session["Cod_Studente"].ToString());
+        int COD_STUDENTE = 1;
+        int COD_CORSO = 1;
+        //qui va l'insert senza codice corso
+        g.Insert(COD_STUDENTE, COD_CORSO, AMMONTARE);
+        lblC.Text = "GenMoney acquistati! Torna alla pagina precedente per visualizzare il saldo";
+
+    }
+
+    protected void ddlPacchetto_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();
+        int AMMONTARE = int.Parse(ddlPacchetto.SelectedValue);
+
+    }
 }

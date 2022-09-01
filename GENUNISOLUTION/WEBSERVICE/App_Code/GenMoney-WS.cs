@@ -53,17 +53,45 @@ public class GenMoney_WS : System.Web.Services.WebService
 
         g.Insert();
     }
-    
+
     [WebMethod]
-    public void AggiornaSaldo(int COD_STUDENTE, int COD_CORSO, int COSTO, int AMMONTARE)
+    public DataTable Storico_Studente(int COD_STUDENTE)
+    {
+        GENMONEY g = new GENMONEY();
+        g.Cod_Studente = COD_STUDENTE;
+        DataTable dt = g.Storico_Studente();
+        dt.TableName = "GenMoney";
+        return dt;
+    }
+
+    // Per ricaricare Genmoney
+    [WebMethod]
+    public void Studenti_Acquisto(int COD_STUDENTE, int AMMONTARE)
+    {
+        GENMONEY g = new GENMONEY();
+        g.Cod_Studente = COD_STUDENTE;
+        g.Ammontare = AMMONTARE;
+
+        g.Studenti_Acquisto();
+    }
+
+    [WebMethod]
+    public int SaldoStudente(int COD_STUDENTE)
+    {
+        GENMONEY g = new GENMONEY();
+
+        g.Cod_Studente = COD_STUDENTE;
+        return g.SaldoStudente();
+    }
+
+    [WebMethod]
+    public void AcquistaCorso(int COD_STUDENTE, int COD_CORSO, int AMMONTARE)
     {
         GENMONEY g = new GENMONEY();
         g.Cod_Studente = COD_STUDENTE;
         g.Cod_Corso = COD_CORSO;
-        g.Costo = COSTO;
         g.Ammontare = AMMONTARE;
 
-        g.AggiornaSaldo();
+        g.Insert();
     }
-
 }
