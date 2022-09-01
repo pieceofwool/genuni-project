@@ -58,7 +58,6 @@ public partial class Default3 : System.Web.UI.Page
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
 
         // CORSI C = new CORSI();
-        //TOGLI COMMENTO UNA VOLTA CHE VIENE FIXATO NEL WS
-        //gridAssegnazioneCorsi.DataSource = C.SelectNonAssegnati();
+        gridAssegnazioneCorsi.DataSource = C.SelectNonAssegnati();
     }
 }

@@ -95,6 +95,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         string Tipo = txtTipo.Text.Trim();
         string Descrizione = txtDescrizione.Text.Trim();
         string Data_Partenza = txtDataPartenza.Text.Trim();
+        string Status = txtStatus.Text;
 
 
 
@@ -105,12 +106,10 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         //        C.DESCRIZIONE = Descrizione;
         //C.DATA_PARTENZA = Data_Partenza;
         //C.AVATAR_CORSO = avatar;
-        //C.TIPO_IMG = fupAvatar.PostedFile.ContentType;
+        string TIPO_IMG = fupAvatar.PostedFile.ContentType;
 
-
-        //TOGLI COMMENTO UNA VOLTA CHE VIENE FIXATO NEL WS
-        //c.Update(Cod_Utente, Titolo, Tipo, Descrizione, avatar, Data_Partenza, Tipo);
-
+        //DA SISTEMARE
+        c.Update(Cod_Utente, Titolo, Tipo, Descrizione, avatar, Data_Partenza, Status, TIPO_IMG);
         lbl.Text = "Record Modificato";
         txtTitolo.Text = "";
         txtTipo.Text = "";

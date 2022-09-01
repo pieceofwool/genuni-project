@@ -9,6 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.xml
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -395,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+GENUNISOLUTION/WEBSERVICE/xml/connessione.xml

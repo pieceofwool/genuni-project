@@ -52,6 +52,12 @@
                 <tr>
                     <td>
 
+                        <asp:TextBox ID="txtStatus" runat="server" PlaceHolder="Status" MaxLength="1"></asp:TextBox><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
                         <asp:Button ID="btnModifica" runat="server" Text="Modifica" OnClick="btnModifica_Click"  />
                     </td>
                 </tr>

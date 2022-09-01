@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -38,11 +39,10 @@ public class Corsi_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Update(int COD_UTENTE, string DATA_CREAZIONE, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string DATA_PARTENZA, string STATUS, string TIPOIMG)
+    public void Update(int COD_UTENTE, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string DATA_PARTENZA, string STATUS, string TIPOIMG)
     {
         CORSI c = new CORSI();
         c.COD_UTENTE = COD_UTENTE;
-        c.DATA_CREAZIONE = DATA_CREAZIONE;
         c.TITOLO = TITOLO;
         c.TIPO = TIPO;
         c.DESCRIZIONE = DESCRIZIONE;
@@ -130,4 +130,32 @@ public class Corsi_WS : System.Web.Services.WebService
         c.Search();
     }
 
+    [WebMethod]
+    public DataTable SelectAllDocenti(int CHIAVE_DOCENTE, int CHIAVE_CORSO)
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        c.CHIAVE_DOCENTE = CHIAVE_DOCENTE;
+        c.CHIAVE_TEST = CHIAVE_CORSO;
+        dt = c.SelectAllDocenti();
+        dt.TableName = "Risultato";
+        return dt;
+    }
+
+    //metodo che permette al tutor di modificare il corso scelto
+    [WebMethod]
+    public void UpdateForTutor(int CHIAVE_TUTOR, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string TIPO_IMG, string DATA_PARTENZA)
+    {
+        CORSI C = new CORSI();
+
+        C.CHIAVE_TUTOR = CHIAVE_TUTOR;
+        C.TITOLO = TITOLO;
+        C.TIPO = TIPO;
+        C.DESCRIZIONE = DESCRIZIONE;
+        C.AVATAR_CORSO = AVATAR_CORSO;
+        C.TIPO_IMG = TIPO_IMG;
+        C.DATA_PARTENZA = DATA_PARTENZA;
+
+        C.UpdateForTutor();
+    }
 }

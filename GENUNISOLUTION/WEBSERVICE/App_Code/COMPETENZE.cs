@@ -59,4 +59,13 @@ public class COMPETENZE
 
         return c.EseguiSelect(cmd);
     }
+    public DataTable SelectAllDocente()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "COMPETENZE_SELECTALL_DOCENTE";
+        cmd.Parameters.AddWithValue("@COD_DOCENTE", COD_DOCENTE);
+
+        return c.EseguiSelect(cmd);
+    }
 }

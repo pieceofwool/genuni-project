@@ -10,6 +10,7 @@ using System.Web;
 /// </summary>
 public class ESTERNI
 {
+    #region MEMBRI
     public int CHIAVE;
     public string TIPO;
     public string USR;
@@ -28,12 +29,13 @@ public class ESTERNI
     public bool ABILITATO;
     public byte[] AVATAR;
     public string TIPOIMG;
+    #endregion
 
     public ESTERNI()
     {
 
     }
-
+    #region METODI
     public DataTable SelectAll()
     {
         SqlCommand cmd = new SqlCommand("ESTERNI_SELECTALL");
@@ -124,7 +126,7 @@ public class ESTERNI
         CONNESSIONE c = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand();
 
-        cmd.CommandText = "ESTERNI_UpdatePassword";
+        cmd.CommandText = "ESTERNI_UPDATE_PWD";
         cmd.Parameters.AddWithValue("@USR", USR);
         cmd.Parameters.AddWithValue("@PWD", PWD);
 
@@ -226,4 +228,18 @@ public class ESTERNI
 
         c.EseguiCmd(cmd);
     }
+
+    //metodo che restituisce una tabella con dati docente in base al suo codice
+    public DataTable ESTERNI_DOCENTI_InfoCodice()
+    {
+        SqlCommand cmd = new SqlCommand("ESTERNI_Info");
+        cmd.Parameters.AddWithValue("@Cod_Docente", CHIAVE);
+        CONNESSIONE conn = new CONNESSIONE();
+
+        return conn.EseguiSelect(cmd);
+    }
+
+
+
+    #endregion
 }

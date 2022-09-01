@@ -13,6 +13,10 @@
             <asp:GridView ID="grigliaGenMoney" runat="server"></asp:GridView>
             <asp:Button ID="btnAcquista" runat="server" Text="Acquista GenMoney" OnClick="btnAcquista_Click"/>
         </div>
+        <div>
+            <asp:Button ID="btnAggiornaSaldo" runat="server" Text="Aggiorna Saldo" OnClick="btnAggiornaSaldo_Click" />
+
+        </div>
     </div>
 </asp:Content>
 

@@ -18,6 +18,7 @@ public class CORSI
     public int CHIAVE_TUTOR;
     public int CHIAVE_STUDENTE;
     public int CHIAVE_UTENTE;
+    public int CHIAVE_DOCENTE;
     public int COD_UTENTE;
     public string TITOLO;
     public string TIPO;
@@ -59,7 +60,6 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_Update");
         cmd.Parameters.AddWithValue("@COD_UTENTE", COD_UTENTE);
-        cmd.Parameters.AddWithValue("@DATA_CREAZIONE", DATA_CREAZIONE);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
@@ -138,6 +138,31 @@ public class CORSI
         CONNESSIONE C = new CONNESSIONE();
 
         return C.EseguiSelect(cmd);
+    }
+    public DataTable SelectAllDocenti()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_DOCENTI");
+        cmd.Parameters.AddWithValue("@Cod_Docente", CHIAVE_DOCENTE);
+        cmd.Parameters.AddWithValue("@Cod_Corso", CHIAVE_CORSO);
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
+    //metodo che permette al tutor di modificare il corso scelto
+    public void UpdateForTutor()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_UpdateForTutor");
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE_TUTOR);
+        cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
+        cmd.Parameters.AddWithValue("@TIPO", TIPO);
+        cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
+        cmd.Parameters.AddWithValue("@AVATAR_CORSO", AVATAR_CORSO);
+        cmd.Parameters.AddWithValue("@TIPO_IMG", TIPO_IMG);
+        cmd.Parameters.AddWithValue("@DATA_PARTENZA", DATA_PARTENZA);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        conn.EseguiCmd(cmd);
     }
 
     #endregion Metodi
