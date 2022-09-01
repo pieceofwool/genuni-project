@@ -1,0 +1,22 @@
+﻿.containerCookie {
+    padding: 2rem 0rem;
+}
+
+.modal-dialog {
+    margin-top: 0rem;
+    max-width: 100%;
+
+    .modal-content {
+        border-radius: 0rem;
+    }
+
+    .buttons {
+        .btn {
+            padding: 5px 0px;
+            margin-right: 7px;
+            font-size: 12px;
+            line-height: 2.5;
+            border-radius: 7px;
+        }
+    }
+}

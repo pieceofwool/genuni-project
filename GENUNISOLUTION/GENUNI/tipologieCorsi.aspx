@@ -35,22 +35,35 @@
                 <div class="container">
                     <div class="social-links">
                         <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="search" id="barSearchHidden" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" id="btnSearchHidden" type="submit">Search</button>
                         </form>
                     </div>
                 </div>
             </div>
 
             <div class="container">
-
+                <!--========================== Logo ============================-->
                 <div class="logo float-left">
                     <!-- Uncomment below if you prefer to use an image logo -->
                     <a href="#header" class="scrollto">
-                        <img src="img/ciuchino.png" alt="" class="img-fluid" /></a>
+                        <img src="img/logo.png" alt="" href="Default.aspx" class="img-fluid"></a>
                     <h1 class="text-light"><a href="Default.aspx" class="scrollto"><span>Gen Uni</span></a></h1>
                 </div>
-            </div>
+                <!-- #logo -->
+                <nav class="main-nav float-right d-none d-lg-block">
+                    <ul>
+                        <li class="active"><a href="Default.aspx"></a></li>
+                        <li><a href="#about"></a></li>
+                        <li class="active"><a href="Default.aspx"></a></li>
+                        <li><a href="#team"></a></li>
+                        <li><a href="#pricing"></a></li>
+                        <li><a href="#footer"></a></li>
+                        <li>
+                            <button class="btn btn-outline-info my-2 my-sm-0"><a href="Default.aspx" id="btnHome">Torna alla Homepage</a></button>
+                        </li>
+                    </ul>
+
+                </nav>
+                <!-- .main-nav -->
         </header>
         <!--==========================
       Services Section
