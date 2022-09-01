@@ -59,5 +59,16 @@ public class GENMONEY
         return C.EseguiSelect(cmd);
     }
 
+    public DataTable CountStudente()
+    {
+        SqlCommand cmd = new SqlCommand("GENMONEY_COUNT_STUDENTE");
+        cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        return conn.EseguiSelect(cmd);
+    }
+
+
+
     #endregion Metodi
 }

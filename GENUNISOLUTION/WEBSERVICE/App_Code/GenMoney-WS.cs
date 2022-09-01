@@ -66,4 +66,16 @@ public class GenMoney_WS : System.Web.Services.WebService
         g.AggiornaSaldo();
     }
 
+    [WebMethod]
+    public DataTable CountStudente(int COD_STUDENTE)
+    {
+        DataTable dt = new DataTable();
+        GENMONEY g = new GENMONEY();
+
+        g.Cod_Studente = COD_STUDENTE;
+        dt = g.CountStudente();
+        dt.TableName = "GenMoney";
+
+        return dt;
+    } 
 }
