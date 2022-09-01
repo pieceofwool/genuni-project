@@ -10,7 +10,7 @@
     <section id="intro" class="clearfix">
         <div class="container d-flex h-100" id="containerIntro">
             <div class="row justify-content-center align-self-center">
-                <div class="col-md-6 intro-info order-md-first order-last">
+                <div class="col-md-6 intro-info order-md-first order-last" id=>
                     <h2>Gen Uni
                         <br>
                         Inizia la tua <span>formazione!</span></h2>
@@ -155,30 +155,54 @@
         <!-- #call-to-action -->
 
         <!--========================== Portfolio Section ============================-->
+
         <section id="portfolio" class="section-bg">
             <div class="container">
-
                 <header class="section-header">
                     <h3 class="section-title">I nostri corsi</h3>
                 </header>
-            </div>
 
-            <div id="carousel">
-                <figure id="spinner">
-                    <img src="dotnet.png" alt />
-                    <img src="mysql.png" alt />
-                    <img src="javascript.png" alt />
-                    <img src="dotnet.png" alt />
-                    <img src="mysql.png" alt />
-                    <img src="javascript.png" alt />
-                    <img src="dotnet.png" alt />
-                    <img src="mysql.png" alt />
-                </figure>
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/img/code1.png" alt="Los Angeles" width="1100" height="500">
+                            <div class="carousel-caption">
+                                <h3><a class="linkCorsi" href="/tipologieCorsi.aspx">Corso .NET</h3>
+                                <p>Clicca qui per saperne di più</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/mysql.png" alt="Chicago" width="1100" height="500">
+                            <div class="carousel-caption">
+                                <h3><a class="linkCorsi" href="/tipologieCorsi.aspx">Corso My SQL</h3>
+                                <p>Clicca qui per saperne di più</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/javascript.png" alt="New York" width="1100" height="500">
+                            <div class="carousel-caption">
+                                <h3><a class="linkCorsi" href="/tipologieCorsi.aspx">Corso Javascript</h3>
+                                <p>Clicca qui per saperne di più</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
             </div>
-            <span style="float: left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
-            <span style="float: right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
-
         </section>
+
+
+
 
         <!-- #portfolio -->
 
@@ -506,8 +530,7 @@
                                     <div class="validation"></div>
                                 </div>
                                 <div class="form-group">
-                                    <%-- <asp:DropDownList ID="ddlCorsi" class="form-control" runat="server"></asp:DropDownList>--%>
-                                    <%--<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Dropdown" placeholder="Message"></textarea>--%>
+                                    <textarea id="txtAreaFooter" cols="20" rows="2"></textarea>
                                     <div class="validation"></div>
                                 </div>
                                 <div id="sendmessage">Il tuo messaggio è stato inviato!</div>
