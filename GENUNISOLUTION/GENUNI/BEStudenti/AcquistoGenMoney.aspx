@@ -4,7 +4,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div>
-        <asp:DropDownList ID="ddlPacchetti" runat="server"></asp:DropDownList>
+        <p>Quanti GenMoney vuoi acquistare?</p>
+        <asp:DropDownList ID="ddlPacchetto" runat="server" OnSelectedIndexChanged="ddlPacchetto_SelectedIndexChanged">
+            <asp:ListItem>50</asp:ListItem>
+            <asp:ListItem>100</asp:ListItem>
+            <asp:ListItem>200</asp:ListItem>
+        </asp:DropDownList>
+        <asp:Button ID="btnCompra" runat="server" Text="Compra" OnClick="btnCompra_Click" />
+        <asp:Label ID="lblC" runat="server" Text=""></asp:Label>
+
     </div>
 </asp:Content>
 
