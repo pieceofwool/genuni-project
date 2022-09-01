@@ -129,5 +129,15 @@ public class Corsi_WS : System.Web.Services.WebService
         c.Search();
     }
 
-
+    [WebMethod]
+    public DataTable SelectAllDocenti(int CHIAVE_DOCENTE, int CHIAVE_CORSO)
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        c.CHIAVE_DOCENTE = CHIAVE_DOCENTE;
+        c.CHIAVE_TEST = CHIAVE_CORSO;
+        dt = c.SelectAllDocenti();
+        dt.TableName = "Risultato";
+        return dt;
+    }
 }
