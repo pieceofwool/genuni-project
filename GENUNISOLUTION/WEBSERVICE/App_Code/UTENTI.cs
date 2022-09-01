@@ -34,6 +34,29 @@ public class UTENTI
         return dt.Rows.Count > 0;
     }
 
+    public bool Login()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_LOGIN");
+        cmd.Parameters.AddWithValue("@usr", Usr);
+        cmd.Parameters.AddWithValue("@pwd", Pwd);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        DataTable dt = conn.EseguiSelect(cmd);
+
+        if (dt.Rows.Count == 0) return false;
+
+        return true;
+    }
+    public DataTable TipoLogin()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_TIPO_LOGIN");
+        cmd.Parameters.AddWithValue("@Usr", Usr);
+        cmd.Parameters.AddWithValue("@Pwd", Pwd);
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion
 
     #region OPERAZIONI

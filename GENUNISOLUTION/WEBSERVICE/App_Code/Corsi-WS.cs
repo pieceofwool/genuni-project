@@ -112,5 +112,16 @@ public class Corsi_WS : System.Web.Services.WebService
 
         c.UpdateTutor();
     }
+    
+    [WebMethod]
+    public void Search(string TITOLO, string TIPO, string DESCRIZIONE)
+    {
+        CORSI c = new CORSI();
+        c.TITOLO = TITOLO;
+        c.TIPO = TIPO;
+        c.DESCRIZIONE = DESCRIZIONE;
+
+        c.Search();
+    }
 
 }

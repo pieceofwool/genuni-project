@@ -79,4 +79,15 @@ public class Test_WS : System.Web.Services.WebService
         t.Delete();
     }
 
+    [WebMethod]
+    public DataTable DomandeRisposte(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        TEST t = new TEST();
+        t.CHIAVE = CHIAVE;
+        dt = t.DomandeRisposte();
+        dt.TableName = "Test";
+        return dt;
+    }
+
 }
