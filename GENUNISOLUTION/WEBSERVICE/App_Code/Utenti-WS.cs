@@ -124,4 +124,15 @@ public class Utenti_WS : System.Web.Services.WebService
         dt.TableName = "Esterni";
         return dt;
     }
+
+    [WebMethod]
+    public DataTable SelectOne(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        UTENTI u = new UTENTI();
+        u.Chiave = CHIAVE;
+        dt = u.SelectOne();
+        dt.TableName = "Esterni";
+        return dt;
+    }
 }

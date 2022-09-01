@@ -124,5 +124,15 @@ public class UTENTI
 
         return C.EseguiSelect(cmd);
     }
+    public DataTable SelectOne()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_SelectOne");
+
+        CONNESSIONE C = new CONNESSIONE();
+        cmd.Parameters.AddWithValue("@Chiave", Chiave);
+        DataTable dt = C.EseguiSelect(cmd);
+
+        return C.EseguiSelect(cmd);
+    }
     #endregion
 }
