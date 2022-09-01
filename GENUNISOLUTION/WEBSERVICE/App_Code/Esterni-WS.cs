@@ -147,13 +147,5 @@ public class Esterni_WS : System.Web.Services.WebService
         e.UpdateProfilo();
     }
 
-    [WebMethod]
-    public void UpdatePassword(string USR, string PWD)
-    {
-        ESTERNI e = new ESTERNI();
-        
-        e.USR = USR;
-        e.PWD = PWD;
-        e.UpdatePassword();
-    }
+   
 }
