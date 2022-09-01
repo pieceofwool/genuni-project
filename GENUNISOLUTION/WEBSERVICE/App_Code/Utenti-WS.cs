@@ -65,12 +65,10 @@ public class Utenti_WS : System.Web.Services.WebService
     [WebMethod]
     public bool Abilita(bool Abilitato, int Chiave)
     {
-        DataTable dt = new DataTable();
         UTENTI u = new UTENTI();
         u.Chiave = Chiave;
         u.Abilitato = Abilitato;
         bool abilitato = u.Abilita();
-        dt.TableName = "Utenti";
         return abilitato;
     }
 
