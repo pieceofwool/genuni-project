@@ -1,9 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BEAdmin/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneTutor.aspx.cs" Inherits="Default3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneTutor.aspx.cs" Inherits="Default3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Abilitazione tutor e contabili</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+    <br />
+    <br />
+    <br />
+    <br />
+
     <div id="abilitaz">
 
         <h1>Abilitazione tutor e contabili</h1>
@@ -12,7 +18,7 @@
 
             <asp:Button ID="btnAbilita" runat="server" ClientIDMode="Static" Text="Cambia stato" Enabled="False" CssClass="button" />
             <%--Link temporaneo finché non si decide come fare i popup--%>
-            <a href="Admin/Popup/Abilita.aspx">Cambia stato</a>
+            <a href="Popup/Abilita.aspx">Cambia stato</a>
 
             <asp:Button ID="btnAggiorna" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiorna_Click" CssClass="button" />
         </div>

@@ -17,7 +17,7 @@ public partial class Admin_Popup_Abilita : System.Web.UI.Page
     protected void btnAbilita_Click(object sender, EventArgs e)
     {
         //UTENTI U = new UTENTI();
-        //int Chiave= int.Parse(Session["chiave"].ToString());
+        int Chiave= int.Parse(Session["chiave"].ToString());
         //U.Chiave= Chiave;
         //U.Abilita();
 

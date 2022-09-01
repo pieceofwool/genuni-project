@@ -25,9 +25,23 @@ public class Contabilita_WS : System.Web.Services.WebService
     [WebMethod]
     public DataTable ListaSpese(string DATAINIZIO, string DATAFINE)
     {
-        DataTable dt = new DataTable();
+        DataTable dt = CONTABILITA.ListaSpese(DATAINIZIO, DATAFINE);
+        dt.TableName = "Lista spese";
+        return dt;
+    }
 
-        dt = CONTABILITA.ListaSpese(DATAINIZIO, DATAFINE);
+    [WebMethod]
+    public DataTable ListaSpeseCorso(string DATAINIZIO, string DATAFINE, int CODCORSO)
+    {
+        DataTable dt = CONTABILITA.ListaSpeseCorso(DATAINIZIO, DATAFINE, CODCORSO);
+        dt.TableName = "Lista spese";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable ListaSpeseTipoCorso(string DATAINIZIO, string DATAFINE, string TIPOCORSO)
+    {
+        DataTable dt = CONTABILITA.ListaSpeseTipoCorso(DATAINIZIO, DATAFINE, TIPOCORSO);
         dt.TableName = "Lista spese";
         return dt;
     }
@@ -43,9 +57,37 @@ public class Contabilita_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public DataTable ListaRicaviCorso(string DATAINIZIO, string DATAFINE, int CODCORSO)
+    {
+        DataTable dt = CONTABILITA.ListaRicaviCorso(DATAINIZIO, DATAFINE, CODCORSO);
+        dt.TableName = "Lista ricavi";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable ListaRicaviTipoCorso(string DATAINIZIO, string DATAFINE, string TIPOCORSO)
+    {
+        DataTable dt = CONTABILITA.ListaRicaviTipoCorso(DATAINIZIO, DATAFINE, TIPOCORSO);
+        dt.TableName = "Lista ricavi";
+        return dt;
+    }
+
+    [WebMethod]
     public decimal SommaSpese(string DATAINIZIO, string DATAFINE)
     {
         return CONTABILITA.SommaSpese(DATAINIZIO, DATAFINE);
+    }
+
+    [WebMethod]
+    public decimal SommaSpeseCorso(string DATAINIZIO, string DATAFINE, int CODCORSO)
+    {
+        return CONTABILITA.SommaSpeseCorso(DATAINIZIO, DATAFINE, CODCORSO);
+    }
+
+    [WebMethod]
+    public decimal SommaSpeseTipoCorso(string DATAINIZIO, string DATAFINE, string TIPOCORSO)
+    {
+        return CONTABILITA.SommaSpeseTipoCorso(DATAINIZIO, DATAFINE, TIPOCORSO);
     }
 
     [WebMethod]
@@ -55,9 +97,32 @@ public class Contabilita_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public decimal SommaRicaviCorso(string DATAINIZIO, string DATAFINE, int CODCORSO)
+    {
+        return CONTABILITA.SommaRicaviCorso(DATAINIZIO, DATAFINE, CODCORSO);
+    }
+
+    [WebMethod]
+    public decimal SommaRicaviTipoCorso(string DATAINIZIO, string DATAFINE, string TIPOCORSO)
+    {
+        return CONTABILITA.SommaRicaviTipoCorso(DATAINIZIO, DATAFINE, TIPOCORSO);
+    }
+
+    [WebMethod]
     public decimal Utili(string DATAINIZIO, string DATAFINE)
     {
         return CONTABILITA.Utili(DATAINIZIO, DATAFINE);
     }
 
+    [WebMethod]
+    public decimal UtiliCorso(string DATAINIZIO, string DATAFINE, int CODCORSO)
+    {
+        return CONTABILITA.UtiliCorso(DATAINIZIO, DATAFINE, CODCORSO);
+    }
+
+    [WebMethod]
+    public decimal UtiliTipoCorso(string DATAINIZIO, string DATAFINE, string TIPOCORSO)
+    {
+        return CONTABILITA.UtiliTipoCorso(DATAINIZIO, DATAFINE, TIPOCORSO);
+    }
 }
