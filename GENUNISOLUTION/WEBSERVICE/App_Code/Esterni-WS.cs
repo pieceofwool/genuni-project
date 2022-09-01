@@ -103,4 +103,16 @@ public class Esterni_WS : System.Web.Services.WebService
         e.Delete();
     }
 
+    [WebMethod]
+    public DataTable TipoLogin(string USR, string PWD)
+    {
+        DataTable dt = new DataTable();
+        ESTERNI e = new ESTERNI();
+        e.USR = USR;
+        e.PWD = PWD;
+        dt = e.TipoLogin();
+        dt.TableName = "Esterni";
+        return dt;
+    }
+
 }

@@ -128,6 +128,17 @@ public class CORSI
         conn.EseguiCmd(cmd);
     }
 
+    public DataTable Search()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SEARCH");
+        cmd.Parameters.AddWithValue("@Titolo", TITOLO);
+        cmd.Parameters.AddWithValue("@Tipo", TIPO);
+        cmd.Parameters.AddWithValue("@Descrizione", DESCRIZIONE);
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion Metodi
 
 }
