@@ -18,6 +18,7 @@ public class CORSI
     public int CHIAVE_TUTOR;
     public int CHIAVE_STUDENTE;
     public int CHIAVE_UTENTE;
+    public int CHIAVE_DOCENTE;
     public int COD_UTENTE;
     public string TITOLO;
     public string TIPO;
@@ -134,6 +135,15 @@ public class CORSI
         cmd.Parameters.AddWithValue("@Titolo", TITOLO);
         cmd.Parameters.AddWithValue("@Tipo", TIPO);
         cmd.Parameters.AddWithValue("@Descrizione", DESCRIZIONE);
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+    public DataTable SelectAllDocenti()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_DOCENTI");
+        cmd.Parameters.AddWithValue("@Cod_Docente", CHIAVE_DOCENTE);
+        cmd.Parameters.AddWithValue("@Cod_Corso", CHIAVE_CORSO);
         CONNESSIONE C = new CONNESSIONE();
 
         return C.EseguiSelect(cmd);
