@@ -17,13 +17,14 @@ public class CORSI
     public int CHIAVE_TEST;
     public int CHIAVE_TUTOR;
     public int CHIAVE_STUDENTE;
+    public int CHIAVE_UTENTE;
     public int COD_UTENTE;
     public string TITOLO;
     public string TIPO;
     public string DESCRIZIONE;
     public string STATUS_CORSI;
     public int COSTO;
-    public string AVATAR_CORSO;
+    public byte[] AVATAR_CORSO;
     public string TIPO_IMG;
     public string DATA_PARTENZA;
     public string DATA_CREAZIONE;
@@ -43,7 +44,7 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_Insert");
        
-        cmd.Parameters.AddWithValue("@Cod_Utente", CHIAVE_TUTOR);
+        cmd.Parameters.AddWithValue("@Cod_Utente", CHIAVE_UTENTE);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
