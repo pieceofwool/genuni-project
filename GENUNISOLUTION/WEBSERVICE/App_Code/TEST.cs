@@ -72,4 +72,13 @@ public class TEST
 
         return c.EseguiSelect(cmd);
     }
+    public DataTable DomandeRisposte()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "TEST_DOMANDE_RISPOSTE";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+
+        return c.EseguiSelect(cmd);
+    }
 }

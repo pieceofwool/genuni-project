@@ -5,7 +5,13 @@
       <s:element name="Insert">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_UTENTE" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="TITOLO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AVATAR_CORSO" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATA_PARTENZA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIPO_IMG" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -20,7 +26,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="TITOLO" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="AVATAR_CORSO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AVATAR_CORSO" type="s:base64Binary" />
             <s:element minOccurs="0" maxOccurs="1" name="DATA_PARTENZA" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="STATUS" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="TIPOIMG" type="s:string" />
@@ -90,13 +96,7 @@
         </s:complexType>
       </s:element>
       <s:element name="SelectNonAssegnati">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="TITOLO" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="CODUTENTE" type="s:int" />
-          </s:sequence>
-        </s:complexType>
+        <s:complexType />
       </s:element>
       <s:element name="SelectNonAssegnatiResponse">
         <s:complexType>
@@ -144,6 +144,18 @@
         </s:complexType>
       </s:element>
       <s:element name="UpdateTutorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Search">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TITOLO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchResponse">
         <s:complexType />
       </s:element>
     </s:schema>
@@ -196,6 +208,12 @@
   <wsdl:message name="UpdateTutorSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateTutorResponse" />
   </wsdl:message>
+  <wsdl:message name="SearchSoapIn">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
   <wsdl:portType name="Corsi_WSSoap">
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
@@ -228,6 +246,10 @@
     <wsdl:operation name="UpdateTutor">
       <wsdl:input message="tns:UpdateTutorSoapIn" />
       <wsdl:output message="tns:UpdateTutorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input message="tns:SearchSoapIn" />
+      <wsdl:output message="tns:SearchSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Corsi_WSSoap" type="tns:Corsi_WSSoap">
@@ -304,6 +326,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://tempuri.org/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Corsi_WSSoap12" type="tns:Corsi_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -372,6 +403,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateTutor">
       <soap12:operation soapAction="http://tempuri.org/UpdateTutor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap12:operation soapAction="http://tempuri.org/Search" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -26,9 +26,10 @@ public partial class Default3 : System.Web.UI.Page
     protected void CaricaGriglia()
     {
         
+        UTENTI.Utenti_WSSoapClient U=new UTENTI.Utenti_WSSoapClient();
         //UTENTI U = new UTENTI();
-        //gridUtentiTC.DataSource = U.UTENTI_SelectTutorContabili();
-        //gridUtentiTC.DataBind();
+        gridUtentiTC.DataSource = U.SelectTutorContabili();
+        gridUtentiTC.DataBind();
     }
 
     protected void btnAggiorna_Click(object sender, EventArgs e)

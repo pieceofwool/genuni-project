@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEDocenti.master" AutoEventWireup="true" CodeFile="Profilo.aspx.cs" Inherits="BEDocenti_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEDocenti.master" AutoEventWireup="true" CodeFile="Profilo.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
@@ -14,7 +14,7 @@
 
             $('.popupModifica').click(function () {
 
-                var url = 'PopUp/Profilo/ModificaProfilo.aspx';
+                var url = 'POPUP/profilo/ModificaProfilo.aspx';
                 var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
 
                 inserisci.dialog({
@@ -37,9 +37,34 @@
 
         $(document).ready(function () {
 
+            $('.popupModificaAvatar').click(function () {
+
+                var url = 'POPUP/profilo/ModificaAvatar.aspx';
+                var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+
+                inserisci.dialog({
+                    modal: true,
+                    title: 'Modifica Avatar',
+                    resizable: false,
+                    width: 400,
+                    height: 400,
+                    overlay: { opacity: 0.9, background: 'black' },
+
+                    open: function (type, data) { $(this).parent().appendTo('form'); }
+                });
+
+                return false;
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
             $('.popupModificaPwd').click(function () {
 
-                var url = 'PopUp/Profilo/ModificaPassword.aspx';
+                var url = 'POPUP/profilo/ModificaPassword.aspx';
                 var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
 
                 inserisci.dialog({
@@ -64,7 +89,7 @@
 
             $('.popupModificaComp').click(function () {
 
-                var url = 'PopUp/Profilo/ModificaCompetenze.aspx';
+                var url = 'POPUP/profilo/ModificaCompetenze.aspx';
                 var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
 
                 inserisci.dialog({
@@ -85,22 +110,18 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
-    <br />
-    <br />
-    <br />
-    <br />
-
     <h2>Profilo</h2>
     <h3>Dati:</h3>
     <%--profilo--%>
+
+    <asp:Button ID="BtnModificaAvatar" class="popupModificaAvatar" runat="server" Text="ModificaAvatar" />
     <asp:Button ID="BtnModifica" class="popupModifica" runat="server" Text="Modifica Profilo" />
     <asp:Button ID="BtnModificaPwd" class="popupModificaPwd" runat="server" Text="Modifica Password" />
     <asp:Button ID="BtnAggiorna" runat="server" Text="Aggiorna" OnClick="BtnAggiorna_Click" />
     <%--selectone from esterni (docente) --%>
 
     <div>
-        <img src="img/logo.jpg" alt="Avatar"  />
+        <%--<img src="img/logo.jpg" alt="Avatar"  />--%>
         <asp:Literal ID="lit" runat="server"></asp:Literal>
 
         <table>
@@ -115,6 +136,7 @@
                     <asp:Label ID="lblNazionalita" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
+
             <tr>
                 <td><b>Cognome: </b>
                     <asp:Label ID="lblCognome" runat="server" Text=""></asp:Label>
@@ -126,6 +148,8 @@
                     <asp:Label ID="lblDataNascita" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
+
+
             <tr>
                 <td><b>Partita Iva: </b>
                     <asp:Label ID="lblIva" runat="server" Text=""></asp:Label>
@@ -135,6 +159,8 @@
                 </td>
 
             </tr>
+
+
             <tr>
                 <td><b>Indirizzo: </b>
                     <asp:Label ID="lblIndirizzo" runat="server" Text=""></asp:Label>
@@ -154,13 +180,20 @@
     </div>
 
     <h3>Competenze:</h3>
+
     <%--competenze--%>
     <asp:Button ID="BtnModificaComp" class="popupModificaComp" runat="server" Text="Modifica Competenze" />
     <%--selectone from competenze (docente) --%>
     <br />
-    Skills: <asp:Label ID="lblSkills" runat="server" Text="C,C#,SQL,JAVA"></asp:Label>
+    Skills:
+    <asp:Label ID="lblSkills" runat="server" Text="C,C#,SQL,JAVA"></asp:Label>
     <br />
-    <a href="img/cv.jpg"><b>Curriculum Vitae</b></a>
+    <asp:Button ID="BtnCV" runat="server" Text="Visualizza CV" OnClick="BtnCV_Click" />
+
+    <asp:Literal ID="Litpdf" runat="server"></asp:Literal>
+        <a href= "img/cv.pdf" > to the PDF!</ a >
+    
+
 
 </asp:Content>
 

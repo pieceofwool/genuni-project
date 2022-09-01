@@ -46,16 +46,18 @@ public partial class Default3 : System.Web.UI.Page
 
     protected void CaricaGrigliaCreazione()
     {
+        CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
 
         //    CORSI C = new CORSI();
-        //  gridCreazioneCorsi.DataSource = C.SelectAll();
+        gridCreazioneCorsi.DataSource = C.SelectAll();
         gridCreazioneCorsi.DataBind();
-
+        
     }
     protected void CaricaGrigliaAssegnazione()
     {
-        //Da aggiornare con effettiva classe e metodo
+        CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
+
         // CORSI C = new CORSI();
-        //gridAssegnazioneCorsi.DataSource = C.SelectNonAssegnati();
+        gridAssegnazioneCorsi.DataSource = C.SelectNonAssegnati();
     }
 }

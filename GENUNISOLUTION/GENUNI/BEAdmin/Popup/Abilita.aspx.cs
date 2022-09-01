@@ -16,11 +16,12 @@ public partial class Admin_Popup_Abilita : System.Web.UI.Page
 
     protected void btnAbilita_Click(object sender, EventArgs e)
     {
-        //UTENTI U = new UTENTI();
-        int Chiave= int.Parse(Session["chiave"].ToString());
-        //U.Chiave= Chiave;
-        //U.Abilita();
+        UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();
 
-        //ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Stato modificato correttamente')", true);
+        //UTENTI U = new UTENTI();
+        int Chiave = int.Parse(Session["chiave"].ToString());
+        U.Abilita(Chiave);
+
+        ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Stato modificato correttamente')", true);
     }
 }

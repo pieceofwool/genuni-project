@@ -21,9 +21,10 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
     protected void CaricaDDL()
     {
         //Da aggiornare con effettiva classe, metodo e nome del datatextfield
+        UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();
 
         //UTENTI U = new UTENTI();
-        //ddlUtenti.DataSource = U.SelectTutor();
+        ddlUtenti.DataSource = U.SelectTutor();
         ddlUtenti.DataValueField = "Chiave";
         ddlUtenti.DataTextField = "Cognome";
         ddlUtenti.DataBind();
@@ -52,16 +53,17 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
         string Data_Partenza = txtDataPartenza.Text.Trim();
         byte[] Avatar = fupAvatar.FileBytes;
 
-
+        CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
         //CORSI C = new CORSI();
-        // C.TITOLO = Titolo;
-        // C.TIPO = Tipo;
-        // C.DESCRIZIONE = Descrizione;
+
+        //C.TITOLO = Titolo;
+        //C.TIPO = Tipo;
+        //C.DESCRIZIONE = Descrizione;
         //C.DATA_PARTENZA = Data_Partenza;
         //C.AVATAR_CORSO = avatar;
-        //C.TIPO_IMG = fupAvatar.PostedFile.ContentType;
-        
-        //C.Insert();
+        string TIPO_IMG = fupAvatar.PostedFile.ContentType;
+
+        C.Insert(Cod_Utente, Titolo, Tipo, Descrizione, Avatar, Data_Partenza, TIPO_IMG);
 
         lbl.Text = "Record Inserito";
         txtTitolo.Text = "";

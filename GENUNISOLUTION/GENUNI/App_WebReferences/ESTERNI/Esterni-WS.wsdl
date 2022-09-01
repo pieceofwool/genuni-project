@@ -103,6 +103,62 @@
       <s:element name="DeleteResponse">
         <s:complexType />
       </s:element>
+      <s:element name="TipoLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="USR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoLoginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAvatar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AVATAR" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIPOIMG" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAvatarResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateProfilo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="USR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RAGIONE_SOCIALE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="COGNOME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATA_NASCITA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PIVA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="INDIRIZZO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CAP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CITTA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PROVINCIA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NAZIONALITA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProfiloResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -135,6 +191,24 @@
   <wsdl:message name="DeleteSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteResponse" />
   </wsdl:message>
+  <wsdl:message name="TipoLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:TipoLogin" />
+  </wsdl:message>
+  <wsdl:message name="TipoLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:TipoLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAvatarSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAvatar" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAvatarSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAvatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfiloSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProfilo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfiloSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProfiloResponse" />
+  </wsdl:message>
   <wsdl:portType name="Esterni_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -155,6 +229,18 @@
     <wsdl:operation name="Delete">
       <wsdl:input message="tns:DeleteSoapIn" />
       <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoLogin">
+      <wsdl:input message="tns:TipoLoginSoapIn" />
+      <wsdl:output message="tns:TipoLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAvatar">
+      <wsdl:input message="tns:UpdateAvatarSoapIn" />
+      <wsdl:output message="tns:UpdateAvatarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfilo">
+      <wsdl:input message="tns:UpdateProfiloSoapIn" />
+      <wsdl:output message="tns:UpdateProfiloSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Esterni_WSSoap" type="tns:Esterni_WSSoap">
@@ -204,6 +290,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="TipoLogin">
+      <soap:operation soapAction="http://tempuri.org/TipoLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAvatar">
+      <soap:operation soapAction="http://tempuri.org/UpdateAvatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfilo">
+      <soap:operation soapAction="http://tempuri.org/UpdateProfilo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Esterni_WSSoap12" type="tns:Esterni_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -245,6 +358,33 @@
     </wsdl:operation>
     <wsdl:operation name="Delete">
       <soap12:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoLogin">
+      <soap12:operation soapAction="http://tempuri.org/TipoLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAvatar">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAvatar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfilo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateProfilo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

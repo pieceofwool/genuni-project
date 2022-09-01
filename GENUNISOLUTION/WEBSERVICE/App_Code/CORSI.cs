@@ -17,13 +17,14 @@ public class CORSI
     public int CHIAVE_TEST;
     public int CHIAVE_TUTOR;
     public int CHIAVE_STUDENTE;
+    public int CHIAVE_UTENTE;
     public int COD_UTENTE;
     public string TITOLO;
     public string TIPO;
     public string DESCRIZIONE;
     public string STATUS_CORSI;
     public int COSTO;
-    public string AVATAR_CORSO;
+    public byte[] AVATAR_CORSO;
     public string TIPO_IMG;
     public string DATA_PARTENZA;
     public string DATA_CREAZIONE;
@@ -43,7 +44,7 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_Insert");
        
-        cmd.Parameters.AddWithValue("@Cod_Utente", CHIAVE_TUTOR);
+        cmd.Parameters.AddWithValue("@Cod_Utente", CHIAVE_UTENTE);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
@@ -58,7 +59,6 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_Update");
         cmd.Parameters.AddWithValue("@COD_UTENTE", COD_UTENTE);
-        cmd.Parameters.AddWithValue("@DATA_CREAZIONE", DATA_CREAZIONE);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
@@ -102,10 +102,6 @@ public class CORSI
         SqlCommand cmd = new SqlCommand("CORSI_SelectNonAssegnati");
         DataTable dt = new DataTable();       
 
-        cmd.Parameters.AddWithValue("@Chiave", CHIAVE_CORSO);
-        cmd.Parameters.AddWithValue("@Titolo", TITOLO);
-        cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
-
         return c.EseguiSelect(cmd);
     }
 
@@ -130,6 +126,17 @@ public class CORSI
         CONNESSIONE conn = new CONNESSIONE();
 
         conn.EseguiCmd(cmd);
+    }
+
+    public DataTable Search()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SEARCH");
+        cmd.Parameters.AddWithValue("@Titolo", TITOLO);
+        cmd.Parameters.AddWithValue("@Tipo", TIPO);
+        cmd.Parameters.AddWithValue("@Descrizione", DESCRIZIONE);
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
     }
 
     #endregion Metodi
