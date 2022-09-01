@@ -29,6 +29,8 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void CaricaProfilo()
     {
+        Lit2.Text = "";
+
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
         //E.CHIAVE = int.Parse(Session["CodiceEsterno"].ToString());
         int CHIAVE = 1;
@@ -102,6 +104,7 @@ public partial class Default2 : System.Web.UI.Page
             
         }
 
-        
+       
+
     }
 }
