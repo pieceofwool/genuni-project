@@ -72,7 +72,7 @@
                         <img src="img/logo.png" alt="" class="img-fluid"></a>
                     <h1 class="text-light"><a href="#intro" class="scrollto"><span>Gen Uni</span></a></h1>
                 </div>
-                <!-- #logo -->
+                     <!-- #logo -->
                 <nav class="main-nav float-right d-none d-lg-block">
                     <ul>
                         <li class="drop-down"><a href="Default.aspx">DEBUG</a>
