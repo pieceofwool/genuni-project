@@ -11,8 +11,8 @@
     <meta content="" name="description">
 
     <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="img/iconaTitle.png" rel="icon">
+    <link href="img/iconaTitle.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
@@ -30,15 +30,20 @@
     <!-- Main Stylesheet File -->
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/css/scss-files.txt" rel="stylesheet" />
+    <link href="assets/css/bootstrap-contents.scss" rel="stylesheet" />
+
+
+    <!-- Carousel-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <!--==========================
-  Header
-  ============================-->
+        <!--========================== Header ============================-->
         <header id="header">
             <div id="topbar">
                 <div class="container">
@@ -50,21 +55,24 @@
                     </div>--%>
                     <div class="social-links">
                         <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="search" id="barSearch" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" id="btnSearch" type="submit">Search</button>
+                            <input class="form-control mr-sm-2" type="search" id="barSearch" placeholder="Ricerca" aria-label="Search">
+                            <%--<button class="btn btn-outline-success my-2 my-sm-0" id="btnSearch" type="submit">Search</button>--%>
+                            <button class="btn btn-outline-info my-2 my-sm-0" id="btnSearch" type="submit">Cerca</button>
+
                         </form>
                     </div>
                 </div>
             </div>
 
             <div class="container">
-
+                <!--========================== Logo ============================-->
                 <div class="logo float-left">
                     <!-- Uncomment below if you prefer to use an image logo -->
                     <a href="#header" class="scrollto">
-                        <img src="img/ciuchino.png" alt="" class="img-fluid"></a>
+                        <img src="img/logo.png" alt="" class="img-fluid"></a>
                     <h1 class="text-light"><a href="#intro" class="scrollto"><span>Gen Uni</span></a></h1>
                 </div>
+                <!-- #logo -->
 
                 <nav class="main-nav float-right d-none d-lg-block">
                     <ul>
@@ -79,40 +87,26 @@
                         </li>
                         <li class="active"><a href="Default.aspx">Home</a></li>
                         <li><a href="#about">Chi siamo</a></li>
-                        <li class="drop-down"><a href="#portfolio">Corsi</a>
-                            <ul>
-                                <li><a href="#portfolio">Elenco corsi</a></li>
-                                <li class="drop-down"><a href="TipologieCorsi.aspx">Tipologia corsi</a>
-                                    <ul>
-                                        <li><a href="TipologieCorsi.aspx">TipologiaCorso1</a></li>
-                                        <li><a href="TipologieCorsi.aspx">TipologiaCorso2</a></li>
-                                        <li><a href="TipologieCorsi.aspx">TipologiaCorso3</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                        <li><a href="tipologieCorsi.aspx">Corsi</a></li>
                         <li><a href="#team">Docenti</a></li>
                         <li><a href="#pricing">Abbonamenti</a></li>
                         <li><a href="#footer">Contatti</a></li>
                         <li>
-                            <button class="btn btn-outline-info my-2 my-sm-0"><a href="Login/login.aspx" id="btnLogin">Login</a></button>
+                            <button class="btn btn-outline-info my-2 my-sm-0"><a href="Login.aspx" id="btnLogin">Login</></button>
                         </li>
                     </ul>
-
                 </nav>
                 <!-- .main-nav -->
-
             </div>
         </header>
         <!-- #header -->
-
-
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 <!--Pagine figlio-->
-
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>

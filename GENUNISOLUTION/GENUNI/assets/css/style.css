@@ -181,6 +181,10 @@ h6 {
         background-color: #0a98c0;
     }
 
+
+#btnIscrivitiIntro {
+    margin-top: 169px;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -230,7 +234,7 @@ h6 {
     #header .logo img {
         padding: 0;
         margin-left: -80px;
-        width: 35%;
+        width: 45%;
         margin-top: -19px;
         max-height: 81px;
     }
@@ -260,8 +264,9 @@ h6 {
 
 #btnLogin {
     width: auto;
-    height: 35px;
+    height: 20px;
     float: right;
+    padding: 0;
 }
 
     #btnLogin:hover {
@@ -270,11 +275,9 @@ h6 {
     }
 
 
-
 /*--------------------------------------------------------------
 # Intro Section
 --------------------------------------------------------------*/
-
 #intro {
     width: 100%;
     height: 100vh;
@@ -318,6 +321,11 @@ h6 {
 
 #containerIntro {
     margin-top: 51px;
+}
+
+
+.modal-dialog {
+    padding: 20px;
 }
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -645,10 +653,18 @@ h6 {
 
 #genMoneyWhyUs {
     width: 9%;
-    margin-left: 0px;
+    margin-left: -9px;
     margin-right: 17px;
 }
 
+#h3Mission {
+    margin-bottom: 37px;
+    margin-top: -58px;
+}
+
+#h3GenMoneyWhyUs {
+    margin-left: 10px;
+}
 /* Services Section
 --------------------------------*/
 #services {
@@ -726,6 +742,8 @@ h6 {
         margin: 0 0 15px 0;
         padding: 0;
         transition: 0.3s ease-in-out;
+        max-width: 697px;
+        float: left;
     }
 
         #why-us .why-us-content .features i {
@@ -736,15 +754,17 @@ h6 {
         #why-us .why-us-content .features h4 {
             font-size: 24px;
             font-weight: 600;
-            margin-left: 56px;
+            margin-left: 67px;
             color: #413e66;
             margin-bottom: 5px;
+            padding: 0px 30px 12px 30px;
         }
 
         #why-us .why-us-content .features p {
-            font-size: 16px;
-            margin-left: 79px;
+            font-size: 17px;
+            margin-left: 101px;
             color: #555186;
+            display: block;
         }
 
     #why-us .counters {
@@ -768,20 +788,22 @@ h6 {
         }
 
 .iconeMission {
-    width: 13%;
+    width: 94px;
     float: left;
-    margin-left: -20px;
-    margin-bottom: -48px;
-    margin-right: 20px;
+    margin-left: -15px;
+    margin-bottom: -47px;
+    margin-right: 0px;
 }
 
-.titoliMission {
+/*.titoliMission {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     margin: 6px 5px 23px 5px;
     padding: 0;
+}*/
+.why-us-content {
+    margin-left: 10px
 }
-
 /* Call To Action Section
 --------------------------------*/
 #call-to-action {
@@ -833,56 +855,6 @@ h6 {
 
 /* Portfolio Section
 --------------------------------*/
-
-
-
-.carousel-indicators .active {
-    background: #31708f;
-}
-
-.content {
-    margin-top: 20px;
-}
-
-.adjust1 {
-    float: left;
-    width: 100%;
-    margin-bottom: 0;
-}
-
-.adjust2 {
-    margin: 0;
-}
-
-.carousel-indicators li {
-    border: 1px solid #ccc;
-}
-
-.carousel-control {
-    color: #31708f;
-    width: 5%;
-}
-
-    .carousel-control:hover, .carousel-control:focus {
-        color: #31708f;
-    }
-
-    .carousel-control.left, .carousel-control.right {
-        background-image: none;
-    }
-
-.media-object {
-    margin: auto;
-    margin-top: 15%;
-}
-
-@media screen and (max-width: 768px) {
-    .media-object {
-        margin-top: 0;
-    }
-}
-
-
 
 #portfolio {
     padding: 60px 0;
@@ -1023,9 +995,88 @@ h6 {
                     opacity: 1;
                 }
 
-/* Testimonials Section
+
+/* Carousel
 --------------------------------*/
 
+div#carousel {
+    perspective: 1200px;
+    background: #100000;
+    padding-top: 10%;
+    font-size: 0;
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+figure#spinner {
+    transform-style: preserve-3d;
+    height: 300px;
+    transform-origin: 50% 50% -500px;
+    transition: 1s;
+}
+
+    figure#spinner img {
+        width: 40%;
+        max-width: 425px;
+        position: absolute;
+        left: 30%;
+        transform-origin: 50% 50% -500px;
+        outline: 1px solid transparent;
+    }
+
+        figure#spinner img:nth-child(1) {
+            transform: rotateY(0deg);
+        }
+
+        figure#spinner img:nth-child(2) {
+            transform: rotateY(-45deg);
+        }
+
+        figure#spinner img:nth-child(3) {
+            transform: rotateY(-90deg);
+        }
+
+        figure#spinner img:nth-child(4) {
+            transform: rotateY(-135deg);
+        }
+
+        figure#spinner img:nth-child(5) {
+            transform: rotateY(-180deg);
+        }
+
+        figure#spinner img:nth-child(6) {
+            transform: rotateY(-225deg);
+        }
+
+        figure#spinner img:nth-child(7) {
+            transform: rotateY(-270deg);
+        }
+
+        figure#spinner img:nth-child(8) {
+            transform: rotateY(-315deg);
+        }
+
+div#carousel ~ span {
+    color: #fff;
+    margin: 5%;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: 0.6s color;
+    position: relative;
+    margin-top: -6rem;
+    border-bottom: none;
+    line-height: 0;
+}
+
+    div#carousel ~ span:hover {
+        color: #888;
+        cursor: pointer;
+    }
+
+
+/* Testimonials Section
+--------------------------------*/
 #testimonials {
     padding: 60px 0;
 }
@@ -1718,6 +1769,18 @@ h6 {
             color: #0a98c0;
         }
 
+#btnIscrivitiFooter {
+    width: auto;
+    height: 20px;
+    float: right;
+    padding: 0;
+}
+
+    #btnIscrivitiFooter:hover {
+        color: #fff;
+        background-color: #0a98c0;
+    }
+
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/
@@ -1839,4 +1902,69 @@ h6 {
     #footer .footer-top .social-links a {
         margin-bottom: 25px;
     }
+
+    .modal-content .ultimoModal {
+        position: relative;
+        background-color: lightblue;
+        background-clip: padding-box;
+        border: 1px solid #999;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 6px;
+        -webkit-box-shadow: 0 3px 9px rgb(0 0 0 / 50%);
+        box-shadow: 0 3px 9px rgba(0,0,0,.5);
+        outline: 0;
+        width: 102%;
+        text-align: center;
+        vertical-align: middle;
+        padding: 20px 20px 20px 20px;
+        width: 50%;
+        margin: 0 auto;
+    }
 }
+
+/*--------------------------------------------------------------
+# Registrazione
+--------------------------------------------------------------*/
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+#containerRegistrazione {
+    padding: 183px 0 40px 0;
+    margin-top: 50px;
+}
+
+
+.containerCookie {
+    margin: 0 auto;
+}
+
+#h1Registrazione {
+    position: relative;
+    margin: 0px 140px;
+}
+
+    #h1Registrazione::after {
+        content: "";
+        position: absolute;
+        background-color: #1bb1dc;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        opacity: 0;
+        transition: opacity 300ms, transform 300ms;
+    }
+
+    #h1Registrazione:is(:hover, :focus)::after {
+        opacity: 1;
+        transform: translateY(8px);
+    }
