@@ -35,7 +35,7 @@ public class UTENTI
         return dt.Rows.Count > 0;
     }
 
-    public bool Login()
+    public bool Login(bool controlloAbilitazione = true)
     {
         SqlCommand cmd = new SqlCommand("UTENTI_LOGIN");
         cmd.Parameters.AddWithValue("@usr", Usr);
@@ -45,6 +45,8 @@ public class UTENTI
         DataTable dt = conn.EseguiSelect(cmd);
 
         if (dt.Rows.Count == 0) return false;
+
+        if (controlloAbilitazione) return dt.Rows[0].Field<bool>("abilitato");
 
         return true;
     }

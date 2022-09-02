@@ -78,14 +78,41 @@ public class Materie_WS : System.Web.Services.WebService
         M.InsertDocente();
     }
 
+    /// <summary>
+    /// Risponde ad una offerta di materia
+    /// </summary>
+    /// <param name="CHIAVE">Chiave della materia</param>
+    /// <param name="risposta">true se accetta, false se rifiuta</param>
+    [WebMethod]
+    public void Rispondi(int CHIAVE, bool risposta)
+    {
+        MATERIE M = new MATERIE();
+        M.Chiave = CHIAVE;
+
+        M.Rispondi(risposta);
+    }
+
     //metodo che seleziona materie e corsi di un determinato docente
     [WebMethod]
-    public void SelectDocente(int COD_DOCENTE)
+    public DataTable SelectDocente(int COD_DOCENTE)
+    {
+        DataTable dt = new DataTable();
+        MATERIE m = new MATERIE();
+        m.Cod_Docente = COD_DOCENTE;
+        dt = m.SelectDocente();
+        dt.TableName = "Info";
+        return dt;
+    }
+
+    //metodo che seleziona materie di un determinato docente e corsi
+    [WebMethod]
+    public void SelectDocenteCorso(int COD_DOCENTE, int COD_CORSO)
     {
         MATERIE M = new MATERIE();
         M.Cod_Docente = COD_DOCENTE;
+        M.Cod_Corso = COD_CORSO;
 
-        M.SelectDocente();
+        M.SelectDocenteCorso();
     }
 
     //metodo che elenca le materie alle quali non e stato assegnato un docente
@@ -93,8 +120,24 @@ public class Materie_WS : System.Web.Services.WebService
     public DataTable SelectNonAssegnate(int COD_CORSO)
     {
         MATERIE M = new MATERIE();
+        M.Cod_Corso = COD_CORSO;
         DataTable dt = new DataTable();
         dt= M.SelectNonAssegnate();
+        dt.TableName = "Materie";
+        return dt;
+    }
+
+    /// <summary>
+    /// Seleziona le materie del docente a cui non ha risposto
+    /// </summary>
+    /// <param name="cod_docente">Il codice del docente</param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable SelectDaRispondere(int cod_docente)
+    {
+        MATERIE M = new MATERIE();
+        M.Cod_Docente = cod_docente;
+        DataTable dt = M.SelectDaRispondere();
         dt.TableName = "Materie";
         return dt;
     }

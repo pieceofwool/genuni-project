@@ -235,4 +235,30 @@ public class Esterni_WS : System.Web.Services.WebService
         int codUtente = e.RecuperaCodUtente();
         return codUtente;
     }
+
+    /// <summary>
+    /// Il totale guadagnato dal docente
+    /// </summary>
+    /// <param name="COD_DOCENTE"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public decimal Guadagni(int COD_DOCENTE)
+    {
+        ESTERNI E = new ESTERNI();
+        E.CHIAVE = COD_DOCENTE;
+
+        return E.Guadagni();
+    }
+
+    /// <summary>
+    /// Docenti con le competenze
+    /// </summary>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable SelectCompetenze()
+    {
+        DataTable dt = new ESTERNI().SelectCompetenze();
+        dt.TableName = "Docenti";
+        return dt;
+    }
 }
