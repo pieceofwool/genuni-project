@@ -15,9 +15,11 @@
         <div class="pulsanti">
             <asp:Button ID="btnInserisci" runat="server" ClientIDMode="Static" Text="Crea nuovo corso" CssClass="button" />
             <asp:Button ID="btnModifica" runat="server" ClientIDMode="Static" Enabled="False" Text="Modifica corso selezionato" CssClass="button" />
+            <asp:Button ID="btnVisualizzaInfo" runat="server" ClientIDMode="Static" Enabled="False" Text="Visualizza informazioni corso" OnClick="btnVisualizzaInfo_Click" CssClass="button" />
             <%--Link temporanei finché non si decide come fare i popup--%>
             <a href="Popup/InserisciCorsi.aspx">Crea nuovo corso</a>
             <a href="Popup/ModificaCorsi.aspx">Modifica corso selezionato</a>
+            <a href="Popup/VisualizzaInfo.aspx">Visualizza informazioni corso</a>
 
 
             <asp:Button ID="btnAggiornaCreazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaCreazione_Click" CssClass="button" />
@@ -27,8 +29,8 @@
             <Columns>
                 <asp:BoundField DataField="Chiave" Visible="false" />
                 <asp:BoundField DataField="Cod_Utente" Visible="false" />
-                <asp:BoundField DataField="Nome" HeaderText="Nome" />
-                <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
+                <asp:BoundField DataField="Nome" HeaderText="Nome Tutor" />
+                <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor" />
 
                 <asp:BoundField DataField="Data_Creazione" HeaderText="Data Creazione" />
                 <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
@@ -38,7 +40,7 @@
                 <asp:BoundField DataField="Status_Corsi" HeaderText="Status Corsi" />
                 <asp:BoundField DataField="Data_Status" HeaderText="Data Status" />
                 <asp:BoundField DataField="Costo" Visible="false" />
-                <asp:BoundField DataField="Avatar_Corso" HeaderText="Avatar" />
+                <asp:BoundField DataField="Avatar_Corso" Visible="false" />
                 <asp:BoundField DataField="Tipo_Img" Visible="false" />
 
                 <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
