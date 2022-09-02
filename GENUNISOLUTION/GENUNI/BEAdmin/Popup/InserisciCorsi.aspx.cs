@@ -37,6 +37,11 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Il campo titolo non può essere vuoto')", true);
             return;
         }
+        if (string.IsNullOrEmpty(txtDataPartenza.Text))
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Il campo data partenza non può essere vuoto. Inserire una data temporanea')", true);
+            return;
+        }
         if (!estensioni.Contains(Path.GetExtension(fupAvatar.FileName)))
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Formato file non valido: caricare .jpg, .png o .bmp')", true); ;
@@ -56,7 +61,8 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
         }
         byte[] Avatar = fupAvatar.FileBytes;
         string TIPO_IMG = fupAvatar.PostedFile.ContentType;
-        if (fupAvatar.HasFile==false) { Avatar = null; TIPO_IMG = null; }
+        if (fupAvatar.HasFile==false) { Avatar = System.IO.File.ReadAllBytes(HttpContext.Current.Server.MapPath("../../img/avatartemp.png"));
+            TIPO_IMG = "image/png"; }
 
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
         //CORSI C = new CORSI();
@@ -67,7 +73,7 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
         //C.DATA_PARTENZA = Data_Partenza;
         //C.AVATAR_CORSO = avatar;
 
-       // C.Insert(Titolo, Tipo, Descrizione, Avatar, Data_Partenza, TIPO_IMG);
+       C.Insert(Titolo, Tipo, Descrizione, Avatar, Data_Partenza, TIPO_IMG);
 
         lbl.Text = "Record Inserito";
         txtTitolo.Text = "";

@@ -36,7 +36,7 @@
                 <asp:BoundField DataField="Data_Creazione" HeaderText="Data Creazione" />
                 <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
                 <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
-                <asp:BoundField DataField="Data_Partenza" HeaderText="Data Partenza" />
+                <asp:BoundField DataField="Data_Partenza" HeaderText="Data PartenSza" />
                 <asp:BoundField DataField="Status_Corsi" HeaderText="Status Corsi" />
                 <asp:BoundField DataField="Data_Status" HeaderText="Data Status" />
                 <asp:BoundField DataField="Costo" Visible="false" />
@@ -55,13 +55,14 @@
             <asp:Button ID="btnAggiornaAssegnazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaAssegnazione_Click" CssClass="button" />
         </div>
 
-        <asp:GridView ID="gridAssegnazioneCorsi" runat="server" DataKeyNames="Chiave" AutoGenerateColumns="false" OnSelectedIndexChanged="gridAssegnazioneCorsi_SelectedIndexChanged">
+        <asp:GridView ID="gridAssegnazioneCorsi" runat="server" DataKeyNames="Chiave, Cod_Utente" AutoGenerateColumns="false" OnSelectedIndexChanged="gridAssegnazioneCorsi_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="Chiave" Visible="false" />
                 <asp:BoundField DataField="Cod_Utente" Visible="false" />
 
                 <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
-
+                 <asp:BoundField DataField="Nome" HeaderText="Nome Tutor"  ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
+                <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor"  ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
 
                 <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
             </Columns>

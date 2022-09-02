@@ -47,7 +47,7 @@
                 <tr>
                     <td>
 
-                        <asp:TextBox ID="txtDataPartenza" runat="server" PlaceHolder="Data Partenza" TextMode="Date"></asp:TextBox><br />
+                        <asp:TextBox ID="txtDataPartenza" runat="server" tooltip="Data Partenza" TextMode="Date"></asp:TextBox><br />
                     </td>
                 </tr>
 
