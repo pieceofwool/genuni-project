@@ -3,11 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <div>
-        <div id="Profilo">
-            <asp:Label ID="lblNomeStudente" runat="server" Text=""></asp:Label>
-        </div>
-
         <div id="Portafoglio">
             <asp:Label ID="Label1" runat="server" Text="Portafoglio"></asp:Label>
             <asp:GridView ID="grigliaGenMoney" runat="server"></asp:GridView>
@@ -15,7 +16,10 @@
         </div>
         <div>
             <asp:Button ID="btnAggiornaSaldo" runat="server" Text="Aggiorna Saldo" OnClick="btnAggiornaSaldo_Click" />
-
+        </div>
+        <p>Storico Acquisti</p>
+        <div>
+            <asp:GridView ID="grigliaStorico" runat="server"></asp:GridView>
         </div>
     </div>
 </asp:Content>

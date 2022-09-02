@@ -10,6 +10,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         CaricaGenMoney();
+        CaricaStorico();
     }
 
     protected void btnAcquista_Click(object sender, EventArgs e)
@@ -20,10 +21,10 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     protected void CaricaGenMoney()
     {
         GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();
-        //STORED PROCEDURE GGENMONEY_COUNT_STUDENTE
         //int CHIAVE = int.Parse(Session["codiceStudente"].ToString());
-        int CHIAVE = 1;
-        grigliaGenMoney.DataSource = g.SelectOne(CHIAVE);
+        //portafoglio (sum)
+        int COD_STUDENTE = 1;
+        grigliaGenMoney.DataSource = g.CountStudente(COD_STUDENTE);
         grigliaGenMoney.DataBind();
     }
 
@@ -35,4 +36,15 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         //qui va l'aggiornamento della griglia tramite l'aggiornamento del saldo +
         //PROCEDURE GENMONEY_COUNT_STUDENTE
     }
+
+
+    protected void CaricaStorico()
+    {
+        //storico acquisti con cod studente
+        //GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();
+        //int CHIAVE = 1;
+        //grigliaStorico.DataSource = g.Storico_Studente(CHIAVE);
+        //grigliaStorico.DataBind();
+    }
+
 }
