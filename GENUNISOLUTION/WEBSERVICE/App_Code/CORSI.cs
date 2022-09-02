@@ -13,6 +13,7 @@ public class CORSI
 
     #region Membri
 
+    public int CHIAVE;
     public int CHIAVE_CORSO;
     public int CHIAVE_TEST;
     public int CHIAVE_TUTOR;
@@ -57,13 +58,12 @@ public class CORSI
     public void Update()
     {
         SqlCommand cmd = new SqlCommand("CORSI_Update");
-        cmd.Parameters.AddWithValue("@COD_UTENTE", CHIAVE_TUTOR);
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
         cmd.Parameters.AddWithValue("@AVATAR_CORSO", AVATAR_CORSO);
         cmd.Parameters.AddWithValue("@DATA_PARTENZA", DATA_PARTENZA);
-        cmd.Parameters.AddWithValue("@STATUS", STATUS);
         cmd.Parameters.AddWithValue("@TIPO_IMG", TIPO_IMG);
 
         CONNESSIONE conn = new CONNESSIONE();
