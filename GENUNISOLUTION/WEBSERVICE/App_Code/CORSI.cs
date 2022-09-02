@@ -19,7 +19,6 @@ public class CORSI
     public int CHIAVE_STUDENTE;
     public int CHIAVE_UTENTE;
     public int CHIAVE_DOCENTE;
-    public int COD_UTENTE;
     public string TITOLO;
     public string TIPO;
     public string DESCRIZIONE;
@@ -58,7 +57,7 @@ public class CORSI
     public void Update()
     {
         SqlCommand cmd = new SqlCommand("CORSI_Update");
-        cmd.Parameters.AddWithValue("@COD_UTENTE", COD_UTENTE);
+        cmd.Parameters.AddWithValue("@COD_UTENTE", CHIAVE_TUTOR);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
@@ -103,6 +102,21 @@ public class CORSI
         DataTable dt = new DataTable();       
 
         return c.EseguiSelect(cmd);
+    }
+
+    /// <summary>
+    /// Seleziona tutti i corsi del docente con un certo stato di attività
+    /// </summary>
+    /// <param name="Cod_Docente">Il codice del docente</param>
+    /// <param name="attivi">true se vuoi selezionare i corsi attivi, false per quelli inattivi</param>
+    /// <returns></returns>
+    public DataTable SelectByStatus(int Cod_Docente, bool attivi)
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SELECT_STATUS");
+        cmd.Parameters.AddWithValue("codDocente", Cod_Docente);
+        cmd.Parameters.AddWithValue("attivi", attivi);
+
+        return new CONNESSIONE().EseguiSelect(cmd);
     }
 
     public DataTable TestRisultato()
@@ -171,6 +185,19 @@ public class CORSI
         return C.EseguiSelect(cmd);
     }
 
+
+    /// <summary>
+    /// Seleziona tutti gli studenti di un corso e l' esito del loro test
+    /// </summary>
+    /// <returns></returns>
+    public DataTable SituazioneStudenti()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SITUAZIONE_STUDENTI");
+        cmd.Parameters.AddWithValue("@codCorso", CHIAVE_CORSO);
+
+        return new CONNESSIONE().EseguiSelect(cmd);
+    }
+
     //metodo che riporta tutti i corsi che sono stati approvati
     public DataTable CorsiSelectApprovati()
     {
@@ -187,6 +214,7 @@ public class CORSI
         return C.EseguiSelect(cmd);
 
     }
+
     #endregion Metodi
 
 }

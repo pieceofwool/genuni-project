@@ -67,6 +67,17 @@
       <s:element name="InsertDocenteResponse">
         <s:complexType />
       </s:element>
+      <s:element name="Rispondi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="risposta" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RispondiResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="SelectDocente">
         <s:complexType>
           <s:sequence>
@@ -88,6 +99,17 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectDocenteCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_DOCENTE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDocenteCorsoResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="SelectNonAssegnate">
         <s:complexType>
           <s:sequence>
@@ -99,6 +121,27 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SelectNonAssegnateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDaRispondere">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cod_docente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDaRispondereResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectDaRispondereResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -135,17 +178,35 @@
   <wsdl:message name="InsertDocenteSoapOut">
     <wsdl:part name="parameters" element="tns:InsertDocenteResponse" />
   </wsdl:message>
+  <wsdl:message name="RispondiSoapIn">
+    <wsdl:part name="parameters" element="tns:Rispondi" />
+  </wsdl:message>
+  <wsdl:message name="RispondiSoapOut">
+    <wsdl:part name="parameters" element="tns:RispondiResponse" />
+  </wsdl:message>
   <wsdl:message name="SelectDocenteSoapIn">
     <wsdl:part name="parameters" element="tns:SelectDocente" />
   </wsdl:message>
   <wsdl:message name="SelectDocenteSoapOut">
     <wsdl:part name="parameters" element="tns:SelectDocenteResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectDocenteCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectDocenteCorso" />
+  </wsdl:message>
+  <wsdl:message name="SelectDocenteCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectDocenteCorsoResponse" />
+  </wsdl:message>
   <wsdl:message name="SelectNonAssegnateSoapIn">
     <wsdl:part name="parameters" element="tns:SelectNonAssegnate" />
   </wsdl:message>
   <wsdl:message name="SelectNonAssegnateSoapOut">
     <wsdl:part name="parameters" element="tns:SelectNonAssegnateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectDaRispondereSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectDaRispondere" />
+  </wsdl:message>
+  <wsdl:message name="SelectDaRispondereSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectDaRispondereResponse" />
   </wsdl:message>
   <wsdl:portType name="Materie_WSSoap">
     <wsdl:operation name="Insert">
@@ -164,13 +225,25 @@
       <wsdl:input message="tns:InsertDocenteSoapIn" />
       <wsdl:output message="tns:InsertDocenteSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Rispondi">
+      <wsdl:input message="tns:RispondiSoapIn" />
+      <wsdl:output message="tns:RispondiSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SelectDocente">
       <wsdl:input message="tns:SelectDocenteSoapIn" />
       <wsdl:output message="tns:SelectDocenteSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SelectDocenteCorso">
+      <wsdl:input message="tns:SelectDocenteCorsoSoapIn" />
+      <wsdl:output message="tns:SelectDocenteCorsoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SelectNonAssegnate">
       <wsdl:input message="tns:SelectNonAssegnateSoapIn" />
       <wsdl:output message="tns:SelectNonAssegnateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectDaRispondere">
+      <wsdl:input message="tns:SelectDaRispondereSoapIn" />
+      <wsdl:output message="tns:SelectDaRispondereSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Materie_WSSoap" type="tns:Materie_WSSoap">
@@ -211,6 +284,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Rispondi">
+      <soap:operation soapAction="http://tempuri.org/Rispondi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectDocente">
       <soap:operation soapAction="http://tempuri.org/SelectDocente" style="document" />
       <wsdl:input>
@@ -220,8 +302,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectDocenteCorso">
+      <soap:operation soapAction="http://tempuri.org/SelectDocenteCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectNonAssegnate">
       <soap:operation soapAction="http://tempuri.org/SelectNonAssegnate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDaRispondere">
+      <soap:operation soapAction="http://tempuri.org/SelectDaRispondere" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -268,6 +368,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Rispondi">
+      <soap12:operation soapAction="http://tempuri.org/Rispondi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectDocente">
       <soap12:operation soapAction="http://tempuri.org/SelectDocente" style="document" />
       <wsdl:input>
@@ -277,8 +386,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectDocenteCorso">
+      <soap12:operation soapAction="http://tempuri.org/SelectDocenteCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectNonAssegnate">
       <soap12:operation soapAction="http://tempuri.org/SelectNonAssegnate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDaRispondere">
+      <soap12:operation soapAction="http://tempuri.org/SelectDaRispondere" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -211,6 +211,49 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectByStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_DOCENTE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ATTIVI" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectByStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectByStatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SituazioneStudenti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SituazioneStudentiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SituazioneStudentiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="InsertSoapIn">
@@ -285,6 +328,18 @@
   <wsdl:message name="Utenti_SelectAllSoapOut">
     <wsdl:part name="parameters" element="tns:Utenti_SelectAllResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectByStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectByStatus" />
+  </wsdl:message>
+  <wsdl:message name="SelectByStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectByStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SituazioneStudentiSoapIn">
+    <wsdl:part name="parameters" element="tns:SituazioneStudenti" />
+  </wsdl:message>
+  <wsdl:message name="SituazioneStudentiSoapOut">
+    <wsdl:part name="parameters" element="tns:SituazioneStudentiResponse" />
+  </wsdl:message>
   <wsdl:portType name="Corsi_WSSoap">
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
@@ -333,6 +388,14 @@
     <wsdl:operation name="Utenti_SelectAll">
       <wsdl:input message="tns:Utenti_SelectAllSoapIn" />
       <wsdl:output message="tns:Utenti_SelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectByStatus">
+      <wsdl:input message="tns:SelectByStatusSoapIn" />
+      <wsdl:output message="tns:SelectByStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SituazioneStudenti">
+      <wsdl:input message="tns:SituazioneStudentiSoapIn" />
+      <wsdl:output message="tns:SituazioneStudentiSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Corsi_WSSoap" type="tns:Corsi_WSSoap">
@@ -445,6 +508,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectByStatus">
+      <soap:operation soapAction="http://tempuri.org/SelectByStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SituazioneStudenti">
+      <soap:operation soapAction="http://tempuri.org/SituazioneStudenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Corsi_WSSoap12" type="tns:Corsi_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -549,6 +630,24 @@
     </wsdl:operation>
     <wsdl:operation name="Utenti_SelectAll">
       <soap12:operation soapAction="http://tempuri.org/Utenti_SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectByStatus">
+      <soap12:operation soapAction="http://tempuri.org/SelectByStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SituazioneStudenti">
+      <soap12:operation soapAction="http://tempuri.org/SituazioneStudenti" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
