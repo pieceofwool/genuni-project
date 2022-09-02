@@ -195,6 +195,23 @@
       <s:element name="UpdateForTutorResponse">
         <s:complexType />
       </s:element>
+      <s:element name="Utenti_SelectAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="Utenti_SelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Utenti_SelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="InsertSoapIn">
@@ -263,6 +280,12 @@
   <wsdl:message name="UpdateForTutorSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateForTutorResponse" />
   </wsdl:message>
+  <wsdl:message name="Utenti_SelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:Utenti_SelectAll" />
+  </wsdl:message>
+  <wsdl:message name="Utenti_SelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:Utenti_SelectAllResponse" />
+  </wsdl:message>
   <wsdl:portType name="Corsi_WSSoap">
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
@@ -307,6 +330,10 @@
     <wsdl:operation name="UpdateForTutor">
       <wsdl:input message="tns:UpdateForTutorSoapIn" />
       <wsdl:output message="tns:UpdateForTutorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Utenti_SelectAll">
+      <wsdl:input message="tns:Utenti_SelectAllSoapIn" />
+      <wsdl:output message="tns:Utenti_SelectAllSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Corsi_WSSoap" type="tns:Corsi_WSSoap">
@@ -410,6 +437,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Utenti_SelectAll">
+      <soap:operation soapAction="http://tempuri.org/Utenti_SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Corsi_WSSoap12" type="tns:Corsi_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -505,6 +541,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateForTutor">
       <soap12:operation soapAction="http://tempuri.org/UpdateForTutor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utenti_SelectAll">
+      <soap12:operation soapAction="http://tempuri.org/Utenti_SelectAll" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

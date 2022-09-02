@@ -62,7 +62,7 @@ public class GENMONEY
 
     public void Studenti_Acquisto()
     {
-        SqlCommand cmd = new SqlCommand("GENMONEY_INSERT");
+        SqlCommand cmd = new SqlCommand("GENMONEY_STUDENTI_ACQUISTO");
         cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
         cmd.Parameters.AddWithValue("@ammontare", Ammontare);
         cmd.Parameters.AddWithValue("@Cod_Corso", null);
