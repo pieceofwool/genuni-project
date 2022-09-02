@@ -261,4 +261,14 @@ public class Esterni_WS : System.Web.Services.WebService
         dt.TableName = "Docenti";
         return dt;
     }
+
+    [WebMethod]
+    public bool Controlla_Abilitazione(int COD_UTENTE)
+    {
+        ESTERNI e = new ESTERNI();
+        e.COD_UTENTE = COD_UTENTE;
+        bool abilitato = e.Controlla_Abilitatazione();
+        return abilitato;
+
+    }
 }

@@ -321,6 +321,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Controlla_Abilitazione">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_UTENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Controlla_AbilitazioneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Controlla_AbilitazioneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -431,6 +445,12 @@
   <wsdl:message name="SelectCompetenzeSoapOut">
     <wsdl:part name="parameters" element="tns:SelectCompetenzeResponse" />
   </wsdl:message>
+  <wsdl:message name="Controlla_AbilitazioneSoapIn">
+    <wsdl:part name="parameters" element="tns:Controlla_Abilitazione" />
+  </wsdl:message>
+  <wsdl:message name="Controlla_AbilitazioneSoapOut">
+    <wsdl:part name="parameters" element="tns:Controlla_AbilitazioneResponse" />
+  </wsdl:message>
   <wsdl:portType name="Esterni_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -503,6 +523,10 @@
     <wsdl:operation name="SelectCompetenze">
       <wsdl:input message="tns:SelectCompetenzeSoapIn" />
       <wsdl:output message="tns:SelectCompetenzeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Controlla_Abilitazione">
+      <wsdl:input message="tns:Controlla_AbilitazioneSoapIn" />
+      <wsdl:output message="tns:Controlla_AbilitazioneSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Esterni_WSSoap" type="tns:Esterni_WSSoap">
@@ -669,6 +693,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Controlla_Abilitazione">
+      <soap:operation soapAction="http://tempuri.org/Controlla_Abilitazione" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Esterni_WSSoap12" type="tns:Esterni_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -827,6 +860,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectCompetenze">
       <soap12:operation soapAction="http://tempuri.org/SelectCompetenze" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Controlla_Abilitazione">
+      <soap12:operation soapAction="http://tempuri.org/Controlla_Abilitazione" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
