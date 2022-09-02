@@ -80,12 +80,14 @@ public class Materie_WS : System.Web.Services.WebService
 
     //metodo che seleziona materie e corsi di un determinato docente
     [WebMethod]
-    public void SelectDocente(int COD_DOCENTE)
+    public DataTable SelectDocente(int COD_DOCENTE)
     {
-        MATERIE M = new MATERIE();
-        M.Cod_Docente = COD_DOCENTE;
-
-        M.SelectDocente();
+        DataTable dt = new DataTable();
+        MATERIE m = new MATERIE();
+        m.Cod_Docente = COD_DOCENTE;
+        dt = m.SelectDocente();
+        dt.TableName = "Info";
+        return dt;
     }
 
     //metodo che elenca le materie alle quali non e stato assegnato un docente
