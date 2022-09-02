@@ -25,15 +25,15 @@
             <asp:Button ID="btnAggiornaCreazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaCreazione_Click" CssClass="button" />
         </div>
 
-        <asp:GridView ID="gridCreazioneCorsi" runat="server" DataKeyNames="Chiave" AutoGenerateColumns="false" OnSelectedIndexChanged="gridCreazioneCorsi_SelectedIndexChanged">
+        <asp:GridView ID="gridCreazioneCorsi" runat="server" DataKeyNames="Chiave,Cod_Utente" AutoGenerateColumns="False" OnSelectedIndexChanged="gridCreazioneCorsi_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="Chiave" Visible="false" />
-                <asp:BoundField DataField="Cod_Utente" Visible="false" />
-                <asp:BoundField DataField="Nome" HeaderText="Nome Tutor" />
-                <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor" />
+                <asp:BoundField DataField="Cod_Utente" Visible="false"/>
+                <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
+                <asp:BoundField DataField="Nome" HeaderText="Nome Tutor"  ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
+                <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor"  ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
 
                 <asp:BoundField DataField="Data_Creazione" HeaderText="Data Creazione" />
-                <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                 <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
                 <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
                 <asp:BoundField DataField="Data_Partenza" HeaderText="Data Partenza" />
