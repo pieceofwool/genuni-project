@@ -267,7 +267,7 @@ public class ESTERNI
 
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSelect(cmd).Rows[0].Field<int>("codUtente");
+        return C.EseguiSelect(cmd).Rows[0].Field<int>("Chiave");
     }
 
     /// <summary>
