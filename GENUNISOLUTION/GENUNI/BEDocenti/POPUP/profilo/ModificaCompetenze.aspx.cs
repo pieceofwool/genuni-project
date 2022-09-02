@@ -44,18 +44,20 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         
         string tipoCv= FileUploadCV.PostedFile.ContentType;
 
-        if(tipoCv!="application/pdf" && tipoCv!= "application/octet-stream")
-        {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ok", "alert('Inserire un file pdf valido')", true);
-            return;
-        }
-
+        //se non ha file il fileupload tengo il vecchio curriculum letto dal database
         if (!FileUploadCV.HasFile)
         {
             CV = arr2;
         }
-        else
+
+        else //altrimenti procedo con il salvataggio del nuovo
         {
+            //controllo che sia un pdf
+            if (tipoCv != "application/pdf" && tipoCv != "application/octet-stream")
+            {
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "ok", "alert('Inserire un file pdf valido')", true);
+                return;
+            }
             CV = FileUploadCV.FileBytes;
         }
 
