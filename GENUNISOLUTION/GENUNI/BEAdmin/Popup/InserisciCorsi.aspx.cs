@@ -67,7 +67,7 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
         //C.DATA_PARTENZA = Data_Partenza;
         //C.AVATAR_CORSO = avatar;
 
-        C.Insert(Titolo, Tipo, Descrizione, Avatar, Data_Partenza, TIPO_IMG);
+       // C.Insert(Titolo, Tipo, Descrizione, Avatar, Data_Partenza, TIPO_IMG);
 
         lbl.Text = "Record Inserito";
         txtTitolo.Text = "";
