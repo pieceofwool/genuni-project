@@ -27,7 +27,7 @@ public class Corsi_WS : System.Web.Services.WebService
     public void Insert(int COD_UTENTE, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string DATA_PARTENZA, string TIPO_IMG)
     {
         CORSI c = new CORSI();
-        c.COD_UTENTE = COD_UTENTE;
+        c.CHIAVE_DOCENTE = COD_UTENTE;
         c.TITOLO = TITOLO;
         c.TIPO = TIPO;
         c.DESCRIZIONE = DESCRIZIONE;
@@ -42,7 +42,7 @@ public class Corsi_WS : System.Web.Services.WebService
     public void Update(int COD_UTENTE, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string DATA_PARTENZA, string STATUS, string TIPOIMG)
     {
         CORSI c = new CORSI();
-        c.COD_UTENTE = COD_UTENTE;
+        c.CHIAVE_DOCENTE = COD_UTENTE;
         c.TITOLO = TITOLO;
         c.TIPO = TIPO;
         c.DESCRIZIONE = DESCRIZIONE;
@@ -165,6 +165,36 @@ public class Corsi_WS : System.Web.Services.WebService
         DataTable dt = new DataTable();
         CORSI c = new CORSI();
         dt = c.Utenti_SelectAll();
+        dt.TableName = "Corsi";
+        return dt;
+    }
+
+    /// <summary>
+    /// Seleziona tutti i corsi del docente con un certo stato di attività
+    /// </summary>
+    /// <param name="COD_DOCENTE"></param>
+    /// <param name="ATTIVI">true se si vogliono selezionare i corsi attivi, false per quelli inattivi</param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable SelectByStatus(int COD_DOCENTE, bool ATTIVI)
+    {
+        DataTable dt = new CORSI().SelectByStatus(COD_DOCENTE, ATTIVI);
+        dt.TableName = "Corsi";
+        return dt;
+    }
+
+    /// <summary>
+    /// Seleziona tutti gli studenti di un corso e l' esito del loro test
+    /// </summary>
+    /// <param name="COD_CORSO"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable SituazioneStudenti(int COD_CORSO)
+    {
+        CORSI C = new CORSI();
+        C.CHIAVE_CORSO = COD_CORSO;
+
+        DataTable dt = C.SituazioneStudenti();
         dt.TableName = "Corsi";
         return dt;
     }
