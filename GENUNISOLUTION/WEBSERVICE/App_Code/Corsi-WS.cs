@@ -24,10 +24,9 @@ public class Corsi_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Insert(int COD_UTENTE, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string DATA_PARTENZA, string TIPO_IMG)
+    public void Insert(string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string DATA_PARTENZA, string TIPO_IMG)
     {
         CORSI c = new CORSI();
-        c.CHIAVE_DOCENTE = COD_UTENTE;
         c.TITOLO = TITOLO;
         c.TIPO = TIPO;
         c.DESCRIZIONE = DESCRIZIONE;
@@ -118,7 +117,7 @@ public class Corsi_WS : System.Web.Services.WebService
 
         c.UpdateTutor();
     }
-    
+
     [WebMethod]
     public void Search(string TITOLO, string TIPO, string DESCRIZIONE)
     {
@@ -168,7 +167,7 @@ public class Corsi_WS : System.Web.Services.WebService
         dt.TableName = "Corsi";
         return dt;
     }
-
+    
     /// <summary>
     /// Seleziona tutti i corsi del docente con un certo stato di attività
     /// </summary>
@@ -179,6 +178,14 @@ public class Corsi_WS : System.Web.Services.WebService
     public DataTable SelectByStatus(int COD_DOCENTE, bool ATTIVI)
     {
         DataTable dt = new CORSI().SelectByStatus(COD_DOCENTE, ATTIVI);
+
+    //metodo che riporta tutti i corsi che sono stati approvati
+    [WebMethod]
+    public DataTable Corsi_SelectApprovati()
+    {
+        DataTable dt = new DataTable();
+        CORSI C = new CORSI();
+        dt = C.CorsiSelectApprovati();
         dt.TableName = "Corsi";
         return dt;
     }
@@ -198,4 +205,16 @@ public class Corsi_WS : System.Web.Services.WebService
         dt.TableName = "Corsi";
         return dt;
     }
+
+    //metodo che riporta tutti i corsi che non sono ancora stati approvati
+    [WebMethod]
+    public DataTable Corsi_SelectNonApprovati()
+    {
+        DataTable dt = new DataTable();
+        CORSI C = new CORSI();
+        dt = C.CorsiSelectNonApprovati();
+        dt.TableName = "Corsi";
+        return dt;
+    }
+
 }

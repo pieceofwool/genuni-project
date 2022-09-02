@@ -44,7 +44,6 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_Insert");
        
-        cmd.Parameters.AddWithValue("@Cod_Utente", CHIAVE_UTENTE);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
@@ -186,6 +185,7 @@ public class CORSI
         return C.EseguiSelect(cmd);
     }
 
+
     /// <summary>
     /// Seleziona tutti gli studenti di un corso e l' esito del loro test
     /// </summary>
@@ -196,6 +196,23 @@ public class CORSI
         cmd.Parameters.AddWithValue("@codCorso", CHIAVE_CORSO);
 
         return new CONNESSIONE().EseguiSelect(cmd);
+    }
+
+    //metodo che riporta tutti i corsi che sono stati approvati
+    public DataTable CorsiSelectApprovati()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_PREPARATI");
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+
+    //metodo che riporta tutti i corsi che non sono ancora stati approvati
+    public DataTable CorsiSelectNonApprovati()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_NONPREPARATI");
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+
     }
 
     #endregion Metodi
