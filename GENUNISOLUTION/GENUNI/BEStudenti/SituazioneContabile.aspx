@@ -11,7 +11,7 @@
     <div>
         <div id="Portafoglio">
             <asp:Label ID="Label1" runat="server" Text="Portafoglio"></asp:Label>
-            <asp:GridView ID="grigliaGenMoney" runat="server"></asp:GridView>
+            <asp:Label ID="lblSaldo" runat="server" Text=""></asp:Label><br />
             <asp:Button ID="btnAcquista" runat="server" Text="Acquista GenMoney" OnClick="btnAcquista_Click"/>
         </div>
         <div>

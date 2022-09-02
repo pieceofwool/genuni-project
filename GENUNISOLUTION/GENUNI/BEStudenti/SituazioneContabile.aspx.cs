@@ -24,8 +24,8 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         //int CHIAVE = int.Parse(Session["codiceStudente"].ToString());
         //portafoglio (sum)
         int COD_STUDENTE = 1;
-        grigliaGenMoney.DataSource = g.CountStudente(COD_STUDENTE);
-        grigliaGenMoney.DataBind();
+        int saldo = g.SaldoStudente(COD_STUDENTE);
+        lblSaldo.Text = saldo.ToString();
     }
 
 
