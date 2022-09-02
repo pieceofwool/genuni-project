@@ -19,20 +19,20 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         if (!IsPostBack)
         {
             UpdateTextBox();
-            CaricaDDL();
+            //CaricaDDL();
         }
     }
 
-    protected void CaricaDDL()
-    {
-        UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();
-        // UTENTI U = new UTENTI();
-        ddlUtenti.DataSource = U.SelectTutor();
-        ddlUtenti.DataValueField = "Chiave";
-        ddlUtenti.DataTextField = "Nome";
-        ddlUtenti.DataBind();
-        ddlUtenti.SelectedValue = null;
-    }
+    //protected void CaricaDDL()
+    //{
+    //    UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();
+    //    // UTENTI U = new UTENTI();
+    //    ddlUtenti.DataSource = U.SelectTutor();
+    //    ddlUtenti.DataValueField = "Chiave";
+    //    ddlUtenti.DataTextField = "Nome";
+    //    ddlUtenti.DataBind();
+    //    ddlUtenti.SelectedValue = null;
+    //}
 
 
     public void UpdateTextBox()
@@ -50,7 +50,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
 
         //di questo datatable prendimi alla riga X il contenuto di Y { MATRICE}
-        ddlUtenti.SelectedValue = dt.Rows[0]["Cod_Utente"].ToString();
+
         txtTitolo.Text = dt.Rows[0]["Titolo"].ToString();
         txtTipo.Text = dt.Rows[0]["Tipo"].ToString();
         txtDescrizione.Text = dt.Rows[0]["Descrizione"].ToString();
@@ -67,7 +67,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 
         //CORSI C = new CORSI();
         byte[] avatar = new CORSI.Corsi_WSSoapClient().SelectOne(Chiave).Rows[0].Field<byte[]>("avatar_corso");
-
+        string TIPO_IMG = new CORSI.Corsi_WSSoapClient().SelectOne(Chiave).Rows[0]["tipo_img"].ToString();
         if (string.IsNullOrEmpty(txtTitolo.Text))
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Il campo titolo non può essere vuoto')", true);
@@ -87,29 +87,19 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
             }
 
             avatar = fupAvatar.FileBytes;
+            TIPO_IMG = fupAvatar.PostedFile.ContentType;
+
         }
 
 
-        int Cod_Utente = int.Parse(ddlUtenti.SelectedValue.ToString());
         string Titolo = txtTitolo.Text.Trim();
         string Tipo = txtTipo.Text.Trim();
         string Descrizione = txtDescrizione.Text.Trim();
         string Data_Partenza = txtDataPartenza.Text.Trim();
-        string Status = txtStatus.Text;
 
-
-
-
-        //  CORSI C = new CORSI();
-        // C.TITOLO = Titolo;
-        // C.TIPO = Tipo;
-        //        C.DESCRIZIONE = Descrizione;
-        //C.DATA_PARTENZA = Data_Partenza;
-        //C.AVATAR_CORSO = avatar;
-        string TIPO_IMG = fupAvatar.PostedFile.ContentType;
 
         //DA SISTEMARE
-        //c.Update(Cod_Utente, Titolo, Tipo, Descrizione, avatar, Data_Partenza, Status, TIPO_IMG);
+        c.Update(Chiave, Titolo, Tipo, Descrizione, avatar, Data_Partenza, TIPO_IMG);
         lbl.Text = "Record Modificato";
         txtTitolo.Text = "";
         txtTipo.Text = "";
