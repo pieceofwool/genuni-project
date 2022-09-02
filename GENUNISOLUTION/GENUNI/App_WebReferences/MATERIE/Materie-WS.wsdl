@@ -56,6 +56,48 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="InsertDocente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_DOCENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDocenteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectDocente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_DOCENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDocenteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectNonAssegnate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectNonAssegnateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectNonAssegnateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="InsertSoapIn">
@@ -76,6 +118,24 @@
   <wsdl:message name="InfoSoapOut">
     <wsdl:part name="parameters" element="tns:InfoResponse" />
   </wsdl:message>
+  <wsdl:message name="InsertDocenteSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDocente" />
+  </wsdl:message>
+  <wsdl:message name="InsertDocenteSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDocenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectDocenteSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectDocente" />
+  </wsdl:message>
+  <wsdl:message name="SelectDocenteSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectDocenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectNonAssegnateSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectNonAssegnate" />
+  </wsdl:message>
+  <wsdl:message name="SelectNonAssegnateSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectNonAssegnateResponse" />
+  </wsdl:message>
   <wsdl:portType name="Materie_WSSoap">
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
@@ -88,6 +148,18 @@
     <wsdl:operation name="Info">
       <wsdl:input message="tns:InfoSoapIn" />
       <wsdl:output message="tns:InfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDocente">
+      <wsdl:input message="tns:InsertDocenteSoapIn" />
+      <wsdl:output message="tns:InsertDocenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectDocente">
+      <wsdl:input message="tns:SelectDocenteSoapIn" />
+      <wsdl:output message="tns:SelectDocenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectNonAssegnate">
+      <wsdl:input message="tns:SelectNonAssegnateSoapIn" />
+      <wsdl:output message="tns:SelectNonAssegnateSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Materie_WSSoap" type="tns:Materie_WSSoap">
@@ -119,6 +191,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="InsertDocente">
+      <soap:operation soapAction="http://tempuri.org/InsertDocente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDocente">
+      <soap:operation soapAction="http://tempuri.org/SelectDocente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectNonAssegnate">
+      <soap:operation soapAction="http://tempuri.org/SelectNonAssegnate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Materie_WSSoap12" type="tns:Materie_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -142,6 +241,33 @@
     </wsdl:operation>
     <wsdl:operation name="Info">
       <soap12:operation soapAction="http://tempuri.org/Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDocente">
+      <soap12:operation soapAction="http://tempuri.org/InsertDocente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDocente">
+      <soap12:operation soapAction="http://tempuri.org/SelectDocente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectNonAssegnate">
+      <soap12:operation soapAction="http://tempuri.org/SelectNonAssegnate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

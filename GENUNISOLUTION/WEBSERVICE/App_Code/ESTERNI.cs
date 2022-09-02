@@ -181,14 +181,14 @@ public class ESTERNI
         return dt.Rows.Count > 0;
     }
 
-    public DataTable TipoLogin()
+    public string TipoLogin()
     {
         SqlCommand cmd = new SqlCommand("ESTERNI_TIPO_LOGIN");
         cmd.Parameters.AddWithValue("@Usr", USR);
         cmd.Parameters.AddWithValue("@Pwd", PWD);
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSelect(cmd);
+        return C.EseguiSelect(cmd).Rows[0].Field<string>("Tipo");
     }
 
     public void UpdateAvatar()

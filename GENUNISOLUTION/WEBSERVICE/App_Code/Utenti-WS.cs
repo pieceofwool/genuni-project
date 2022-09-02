@@ -115,15 +115,13 @@ public class Utenti_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable TipoLogin(string USR, string PWD)
+    public string TipoLogin(string USR, string PWD)
     {
-        DataTable dt = new DataTable();
         UTENTI u = new UTENTI();
         u.Usr = USR;
         u.Pwd = PWD;
-        dt = u.TipoLogin();
-        dt.TableName = "Esterni";
-        return dt;
+        string tipoLogin = u.TipoLogin();
+        return tipoLogin;
     }
 
     [WebMethod]
