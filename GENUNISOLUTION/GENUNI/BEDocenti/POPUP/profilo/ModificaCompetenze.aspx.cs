@@ -40,11 +40,11 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         dt2 = C.SelectOne(CHIAVE);
         DataRow dr2 = dt2.Rows[0];
         byte[] arr2 = dr2.Field<byte[]>("Cv");
-        byte[] CV;
+        byte[] CV=FileUploadCV.FileBytes;
         
         string tipoCv= FileUploadCV.PostedFile.ContentType;
 
-        if(tipoCv!="application/pdf")
+        if(tipoCv!="application/pdf" && tipoCv!= "application/octet-stream")
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ok", "alert('Inserire un file pdf valido')", true);
             return;
