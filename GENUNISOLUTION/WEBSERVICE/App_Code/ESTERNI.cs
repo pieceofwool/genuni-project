@@ -12,6 +12,7 @@ public class ESTERNI
 {
     #region MEMBRI
     public int CHIAVE;
+    public int COD_UTENTE;
     public string TIPO;
     public string USR;
     public string PWD;
@@ -227,6 +228,17 @@ public class ESTERNI
 
 
         c.EseguiCmd(cmd);
+    }
+
+    public bool Controlla_Abilitatazione()
+    {
+        SqlCommand cmd = new SqlCommand("ESTERNI_Controlla_Abilitazione");
+        cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        DataTable dt = conn.EseguiSelect(cmd);
+
+        return conn.EseguiSelect(cmd).Rows[0].Field<bool>("Abilitato");
     }
 
     //metodo che restituisce una tabella con dati docente in base al suo codice
