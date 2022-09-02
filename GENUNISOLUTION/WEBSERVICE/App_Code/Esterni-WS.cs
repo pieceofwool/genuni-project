@@ -180,13 +180,14 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public bool Login(int CHIAVE)
+    public bool Login(string USR, string PWD)
     {
         DataTable dt = new DataTable();
         ESTERNI e = new ESTERNI();
-        e.CHIAVE = CHIAVE;
+        e.USR = USR;
+        e.PWD = PWD;
         bool log = e.Login();
-        dt.TableName = "Utenti";
+        dt.TableName = "Esterni";
         return log;
 
     }
@@ -209,7 +210,7 @@ public class Esterni_WS : System.Web.Services.WebService
         ESTERNI e = new ESTERNI();
         e.CHIAVE = CHIAVE;
         bool registrato = e.Registrato();
-        dt.TableName = "Utenti";
+        dt.TableName = "Esterni";
         return registrato;
 
     }
