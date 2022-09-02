@@ -1,9 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TipologieCorsi.aspx.cs" Inherits="tipologieCorsii" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageFE.master" AutoEventWireup="true" CodeFile="CorsiFE.aspx.cs" Inherits="Default2" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <!-- Favicons -->
@@ -26,46 +23,9 @@
     <!-- Main Stylesheet File -->
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/css/scss-files.txt" rel="stylesheet" />
-</head>
-<body>
-    <form id="form1" runat="server">
-        <!--Inserimento logo solo per pagina corrente-->
-        <header id="header">
-            <div id="topbar">
-                <div class="container">
-                    <div class="social-links">
-                        <form class="form-inline">
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <!--========================== Logo ============================-->
-                <div class="logo float-left">
-                    <!-- Uncomment below if you prefer to use an image logo -->
-                    <a href="#header" class="scrollto">
-                        <img src="img/logo.png" alt="" href="Default.aspx" class="img-fluid"></a>
-                    <h1 class="text-light"><a href="Default.aspx" class="scrollto"><span>Gen Uni</span></a></h1>
-                </div>
-                <!-- #logo -->
-                <nav class="main-nav float-right d-none d-lg-block">
-                    <ul>
-                        <li class="active"><a href="Default.aspx"></a></li>
-                        <li><a href="#about"></a></li>
-                        <li class="active"><a href="Default.aspx"></a></li>
-                        <li><a href="#team"></a></li>
-                        <li><a href="#pricing"></a></li>
-                        <li><a href="#footer"></a></li>
-                        <li>
-                            <button class="btn btn-outline-info my-2 my-sm-0"><a href="Default.aspx" id="btnHome">Torna alla Homepage</a></button>
-                        </li>
-                    </ul>
-
-                </nav>
-                <!-- .main-nav -->
-        </header>
-        <!--==========================
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <!--==========================
       Services Section
     ============================-->
         <section id="services" class="section-bg">
@@ -73,27 +33,42 @@
 
                 <header class="section-header">
                     <h3>Tipologie corsi</h3>
-                    <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+
+
+                    
+                    <p>Ecco l'elenco aggiornato dei nostri corsi
+                        <br />
+                     <asp:Button ID="BtnTutti"  runat="server" Text="Tutti i corsi" UseSubmitBehavior="False" OnClick="BtnTutti_Click" />
+                    <asp:Button ID="BtnPronti"  runat="server" Text="Corsi Pronti" UseSubmitBehavior="False" OnClick="BtnPronti_Click" />
+                    <asp:Button ID="BtnNonPronti"  runat="server" Text="Corsi non Pronti" UseSubmitBehavior="False" OnClick="BtnNonPronti_Click" />
+                    </p>
+                    
+
                 </header>
+               
+                
 
                 <div class="row">
+
+                    <%--LITERAL DA RIEMPIRE DINAMICAMENTE--%>
+
                     <asp:Literal ID="litCorso" runat="server"></asp:Literal>
 
-                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+                    <%--<div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
                         <div class="box">
                             <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
                             <h4 class="title"><a href="#">Lorem Ipsum</a></h4>
                             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                         </div>
-                    </div>
+                    </div>--%>
 
                     <%--<div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
                         <div class="box">--%>
-                            <%--<div class="icon" style="background: #fceef3;">--%>
-                                <%--<img style="width:60%; border-radius: 20%" src="img/genMoney2.png" />--%>
+                    <%--<div class="icon" style="background: #fceef3;">--%>
+                    <%--<img style="width:60%; border-radius: 20%" src="img/genMoney2.png" />--%>
 
-                            <%--</div>--%>
-                            <%--<h4 class="title"><a href="#">Lorem Ipsum</a></h4>
+                    <%--</div>--%>
+                    <%--<h4 class="title"><a href="#">Lorem Ipsum</a></h4>
                             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                         </div>
                     </div>--%>
@@ -122,7 +97,6 @@
 
         <!-- Template Main Javascript File -->
         <script src="assets/js/main.js"></script>
-        </div>
-    </form>
-</body>
-</html>
+
+</asp:Content>
+
