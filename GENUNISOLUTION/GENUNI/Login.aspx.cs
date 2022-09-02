@@ -49,26 +49,28 @@ public partial class Login : System.Web.UI.Page
 
                 char usertype = Convert.ToChar(Session["TipoAttore"]);
 
-                Datatable dt = U.SelectOne(CodiceAttore);
-
-                switch (usertype)
+                if (U.ControllaAbilitazione(CodiceAttore) == true)
                 {
-                    case 'A':
-                        if () 
-                        {
+                    switch (usertype)
+                    {
+                        case 'A':
+                            Response.Redirect("../BEAdmin/GestioneAdmin.aspx"); //Inserire le pagine principali di redirect 
+                            break;
 
-                        }
-                        Response.Redirect("../BEAdmin/GestioneAdmin.aspx"); //Inserire le pagine principali di redirect 
-                        break;
+                        case 'T':
+                            Response.Redirect("../BETutor/GestioneTutor.aspx"); //Inserire le pagine principali di redirect 
+                            break;
 
-                    case 'T':
-                        Response.Redirect("../BETutor/GestioneTutor.aspx"); //Inserire le pagine principali di redirect 
-                        break;
+                        case 'C':
+                            Response.Redirect("../BEContabilita/Compenso.aspx"); //Inserire le pagine principali di redirect 
+                            break;
+                    }
+                }
 
-                    case 'C':
-                        Response.Redirect("../BEContabilita/Compenso.aspx"); //Inserire le pagine principali di redirect 
-                        break;
-
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('L'account non è attivo')", true);
+                    return;
                 }
             }
 
@@ -78,21 +80,30 @@ public partial class Login : System.Web.UI.Page
 
                 if (E.Login(usr, pwd) == true)
                 {
-                    int CodiceUtente = E.RecuperaCodUtente(usr);
-                    Session["CodiceAttore"] = CodiceUtente;
+                    int CodiceAttore = E.RecuperaCodUtente(usr);
+                    Session["CodiceAttore"] = CodiceAttore;
 
                     Session["TipoAttore"] = E.TipoLogin(usr, pwd);
                     char usertype = Convert.ToChar(Session["TipoAttore"]);
 
-                    switch (usertype)
+                    if (E.ControllaAbilitazione(CodiceAttore) == true)
                     {
-                        case 'S':
-                            Response.Redirect("../BEStudenti/Modifica_Profilo.aspx"); //Inserire le pagine principali di redirect 
-                            break;
+                        switch (usertype)
+                        {
+                            case 'S':
+                                Response.Redirect("../BEStudenti/Modifica_Profilo.aspx"); //Inserire le pagine principali di redirect 
+                                break;
 
-                        case 'D':
-                            Response.Redirect("../BEDocenti/GestioneDocenti.aspx"); //Inserire le pagine principali di redirect 
-                            break;
+                            case 'D':
+                                Response.Redirect("../BEDocenti/GestioneDocenti.aspx"); //Inserire le pagine principali di redirect 
+                                break;
+                        }
+                    }
+
+                    else
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('L'account non è attivo)", true);
+                        return;
                     }
                 }
 
