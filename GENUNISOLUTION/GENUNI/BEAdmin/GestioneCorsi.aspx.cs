@@ -59,5 +59,7 @@ public partial class Default3 : System.Web.UI.Page
 
         // CORSI C = new CORSI();
         gridAssegnazioneCorsi.DataSource = C.SelectNonAssegnati();
+        gridAssegnazioneCorsi.DataBind();
+
     }
 }
