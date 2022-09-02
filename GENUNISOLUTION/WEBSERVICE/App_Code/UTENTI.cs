@@ -48,14 +48,14 @@ public class UTENTI
 
         return true;
     }
-    public DataTable TipoLogin()
+    public string TipoLogin()
     {
-        SqlCommand cmd = new SqlCommand("UTENTI_TIPO_LOGIN");
+        SqlCommand cmd = new SqlCommand("ESTERNI_TIPO_LOGIN");
         cmd.Parameters.AddWithValue("@Usr", Usr);
         cmd.Parameters.AddWithValue("@Pwd", Pwd);
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSelect(cmd);
+        return C.EseguiSelect(cmd).Rows[0].Field<string>("Tipo");
     }
 
     #endregion

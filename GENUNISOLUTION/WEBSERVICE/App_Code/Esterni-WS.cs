@@ -104,15 +104,13 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable TipoLogin(string USR, string PWD)
+    public string TipoLogin(string USR, string PWD)
     {
-        DataTable dt = new DataTable();
         ESTERNI e = new ESTERNI();
         e.USR = USR;
         e.PWD = PWD;
-        dt = e.TipoLogin();
-        dt.TableName = "Esterni";
-        return dt;
+        string tipoLogin = e.TipoLogin();
+        return tipoLogin;
     }
 
     [WebMethod]
