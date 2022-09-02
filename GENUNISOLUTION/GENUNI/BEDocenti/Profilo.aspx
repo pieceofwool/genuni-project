@@ -188,10 +188,10 @@
     Skills:
     <asp:Label ID="lblSkills" runat="server" Text="C,C#,SQL,JAVA"></asp:Label>
     <br />
-    <asp:Button ID="BtnCV" runat="server" Text="Visualizza CV" OnClick="BtnCV_Click" />
 
-    <asp:Literal ID="Litpdf" runat="server"></asp:Literal>
-        <a href= "img/cv.pdf" > to the PDF!</ a >
+    <asp:Button ID="BtnCV" runat="server" Text="Scarica CV" OnClick="BtnCV_Click" />
+
+    <asp:Literal ID="Lit2" runat="server"></asp:Literal>
     
 
 

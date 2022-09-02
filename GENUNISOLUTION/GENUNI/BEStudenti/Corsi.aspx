@@ -3,6 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <asp:Label ID="Label1" runat="server" Text="Clicca sulla materia per il materiale didattico"></asp:Label>
     <asp:GridView ID="grigliaMaterie" runat="server" OnSelectedIndexChanged="grigliaMaterie_SelectedIndexChanged">
         <Columns>

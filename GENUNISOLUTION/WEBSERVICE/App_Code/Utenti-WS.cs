@@ -63,13 +63,12 @@ public class Utenti_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public bool Abilita(int Chiave)
+    public bool Abilita(bool Abilitato, int Chiave)
     {
-        DataTable dt = new DataTable();
         UTENTI u = new UTENTI();
         u.Chiave = Chiave;
+        u.Abilitato = Abilitato;
         bool abilitato = u.Abilita();
-        dt.TableName = "Utenti";
         return abilitato;
     }
 
@@ -103,11 +102,12 @@ public class Utenti_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public bool Login(int Chiave)
+    public bool Login(string USR, string PWD)
     {
         DataTable dt = new DataTable();
         UTENTI u = new UTENTI();
-        u.Chiave = Chiave;
+        u.Usr = USR;
+        u.Pwd = PWD;
         bool log = u.Login();
         dt.TableName = "Utenti";
         return log;
@@ -124,5 +124,25 @@ public class Utenti_WS : System.Web.Services.WebService
         dt = u.TipoLogin();
         dt.TableName = "Esterni";
         return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectOne(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        UTENTI u = new UTENTI();
+        u.Chiave = CHIAVE;
+        dt = u.SelectOne();
+        dt.TableName = "Esterni";
+        return dt;
+    }
+
+    [WebMethod]
+    public int RecuperaCodUtente(string USR)
+    {
+        UTENTI u = new UTENTI();
+        u.Usr = USR;
+        int codUtente = u.RecuperaCodUtente();
+        return codUtente;
     }
 }

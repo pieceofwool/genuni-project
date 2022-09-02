@@ -31,17 +31,7 @@ public class GENMONEY
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
-    public void AggiornaSaldo()
-    {
-        SqlCommand cmd = new SqlCommand("GENMONEY_AggiornaSaldo");
-        cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
-        cmd.Parameters.AddWithValue("@cod_corso", Cod_Corso);
-        cmd.Parameters.AddWithValue("@costo", Costo);
-        cmd.Parameters.AddWithValue("@ammontare", Ammontare);
 
-        CONNESSIONE conn = new CONNESSIONE();
-        conn.EseguiCmd(cmd);
-    }
     public DataTable SelectAll()
     {
         SqlCommand cmd = new SqlCommand("GENMONEY_SELECTALL");
@@ -63,32 +53,32 @@ public class GENMONEY
     {
         SqlCommand cmd = new SqlCommand("GENMONEY_STORICO_STUDENTE");
 
-        cmd.Parameters.AddWithValue("@Chiave", Chiave);
+        cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
 
         CONNESSIONE c = new CONNESSIONE();
 
         return c.EseguiSelect(cmd);
     }
+
     public void Studenti_Acquisto()
     {
-        SqlCommand cmd = new SqlCommand("GENMONEY_STUDENTI_ACQUISTO");
+        SqlCommand cmd = new SqlCommand("GENMONEY_INSERT");
         cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
         cmd.Parameters.AddWithValue("@ammontare", Ammontare);
+        cmd.Parameters.AddWithValue("@Cod_Corso", null);
 
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
 
-    public DataTable CountStudente()
+    public int SaldoStudente()
     {
         SqlCommand cmd = new SqlCommand("GENMONEY_COUNT_STUDENTE");
         cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
 
         CONNESSIONE conn = new CONNESSIONE();
-        return conn.EseguiSelect(cmd);
+        return conn.EseguiSelect(cmd).Rows[0].Field<int>("Saldo");
     }
-
-
 
     #endregion Metodi
 }

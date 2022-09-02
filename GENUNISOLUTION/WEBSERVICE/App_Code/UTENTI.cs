@@ -26,6 +26,7 @@ public class UTENTI
     public bool Abilita()
     {
         SqlCommand cmd = new SqlCommand("UTENTI_Abilitato");
+        cmd.Parameters.AddWithValue("@Abilitato", Abilitato);
         cmd.Parameters.AddWithValue("@Chiave", Chiave);
 
         CONNESSIONE conn = new CONNESSIONE();
@@ -122,6 +123,26 @@ public class UTENTI
         DataTable dt = C.EseguiSelect(cmd);
 
         return C.EseguiSelect(cmd);
+    }
+    public DataTable SelectOne()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_SelectOne");
+
+        CONNESSIONE C = new CONNESSIONE();
+        cmd.Parameters.AddWithValue("@Chiave", Chiave);
+        DataTable dt = C.EseguiSelect(cmd);
+
+        return C.EseguiSelect(cmd);
+    }
+
+    public int RecuperaCodUtente()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_GETCODUTENTE");
+        cmd.Parameters.AddWithValue("@usr", Usr);
+
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd).Rows[0].Field<int>("codUtente");
     }
     #endregion
 }

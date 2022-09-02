@@ -71,6 +71,38 @@ public class MATERIE
         return C.EseguiSelect(cmd);
     }
 
+    //metodo che inserisce il codice docente nella relativa materia
+    public void InsertDocente()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_INSERTDOCENTE");
+        cmd.Parameters.AddWithValue("@Cod_Materia", Chiave); 
+        cmd.Parameters.AddWithValue("@Cod_Docente", Cod_Docente);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        conn.EseguiCmd(cmd);
+    }
+
+    //metodo che seleziona materie e corsi di un determinato docente
+    public DataTable SelectDocente()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_SelectDocente");
+        cmd.Parameters.AddWithValue("@Cod_Docente", Cod_Docente);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        return conn.EseguiSelect(cmd);
+    }
+
+    //metodo che elenca le materie alle quali non e stato assegnato un docente
+    public DataTable SelectNonAssegnate()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_SELECTNONASSEGNATE");
+        cmd.Parameters.AddWithValue("@Cod_Corso", Cod_Corso);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        return conn.EseguiSelect(cmd);
+    }
+
+
 
     #endregion
 

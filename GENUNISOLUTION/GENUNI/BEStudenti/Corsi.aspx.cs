@@ -10,7 +10,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-    }
+    }//griglia riempita con la tabella materie
 
     protected void grigliaMaterie_SelectedIndexChanged(object sender, EventArgs e)
     {

@@ -15,8 +15,9 @@
     <%-- DATA FINE VALUTAZIONE --%>
     <asp:Label ID="lblDataFine" runat="server" Text="Al"></asp:Label>
     <asp:TextBox ID="txtDataFine" runat="server" TextMode="Month"></asp:TextBox>
+    <%-- INVIA DATI --%>
+    <asp:Button ID="btnInvia" runat="server" Text="Invia" />
     <hr />
-    <br />
     <%-- GRIGLIA DI VISUALIZZAZIONE VALUTAZIONE CORSI --%>
     <asp:GridView ID="grigliaValutazione" runat="server"></asp:GridView>
 

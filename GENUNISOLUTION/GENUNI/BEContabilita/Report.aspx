@@ -22,14 +22,11 @@
     <%-- BUTTON CONFERMA --%>
     <asp:Button ID="btnInvia" runat="server" Text="Invia" />
     <hr />
-    <%-- GRIGLIA DI VISUALIZZAZIONE REPORT DOCENTI --%>
+    <%-- GRIGLIA DI VISUALIZZAZIONE REPORT DOCENTI O STUDENTI --%>
     <asp:GridView ID="grigliaReportDocenti" runat="server"></asp:GridView>
-    <asp:Label ID="Label1" runat="server" Text="Totale"></asp:Label>
-    <asp:Label ID="lblTotaleDocenti" runat="server" Text=""></asp:Label>
-    <%-- GRIGLIA DI VISUALIZZAZIONE REPORT STUDENTI --%>
     <asp:GridView ID="grigliaReportStudenri" Visible="false" runat="server"></asp:GridView>
-    <asp:Label ID="Label2" runat="server" Text="Totale" Visible="False"></asp:Label>
-    <asp:Label ID="lblTotaletudenti" Visible="false" runat="server" Text=""></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="Totale"></asp:Label>
+    <asp:Label ID="lblTotale" runat="server" Text=""></asp:Label>>
 
 </asp:Content>
 

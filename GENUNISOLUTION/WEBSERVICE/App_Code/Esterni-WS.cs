@@ -180,13 +180,14 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public bool Login(int CHIAVE)
+    public bool Login(string USR, string PWD)
     {
         DataTable dt = new DataTable();
         ESTERNI e = new ESTERNI();
-        e.CHIAVE = CHIAVE;
+        e.USR = USR;
+        e.PWD = PWD;
         bool log = e.Login();
-        dt.TableName = "Utenti";
+        dt.TableName = "Esterni";
         return log;
 
     }
@@ -209,8 +210,31 @@ public class Esterni_WS : System.Web.Services.WebService
         ESTERNI e = new ESTERNI();
         e.CHIAVE = CHIAVE;
         bool registrato = e.Registrato();
-        dt.TableName = "Utenti";
+        dt.TableName = "Esterni";
         return registrato;
 
+    }
+
+    //metodo che restituisce una tabella con dati docente in base al suo codice
+    [WebMethod]
+    public DataTable ESTERNI_DOCENTI_InfoCodice(int COD_DOCENTE)
+    {
+        DataTable dt = new DataTable();
+        ESTERNI E = new ESTERNI();
+
+        E.CHIAVE = COD_DOCENTE;
+        dt = E.ESTERNI_DOCENTI_InfoCodice();
+        dt.TableName = "Docenti";
+
+        return dt;
+    }
+
+    [WebMethod]
+    public int RecuperaCodUtente(string USR)
+    {
+        ESTERNI e = new ESTERNI();
+        e.USR = USR;
+        int codUtente = e.RecuperaCodUtente();
+        return codUtente;
     }
 }

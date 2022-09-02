@@ -10,8 +10,7 @@
      <table>
         <tr>
             <td>
-                <asp:Label ID="lblDocente" runat="server" Text="Docente"></asp:Label>
-                
+                <asp:Label ID="lblDocente" runat="server" Text="Docente"></asp:Label>                
                 <asp:DropDownList ID="ddlDocente" runat="server"></asp:DropDownList>
             </td>
         </tr>

@@ -29,7 +29,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         // UTENTI U = new UTENTI();
         ddlUtenti.DataSource = U.SelectTutor();
         ddlUtenti.DataValueField = "Chiave";
-        ddlUtenti.DataTextField = "Cognome";
+        ddlUtenti.DataTextField = "Nome";
         ddlUtenti.DataBind();
         ddlUtenti.SelectedValue = null;
     }
@@ -54,7 +54,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         txtTitolo.Text = dt.Rows[0]["Titolo"].ToString();
         txtTipo.Text = dt.Rows[0]["Tipo"].ToString();
         txtDescrizione.Text = dt.Rows[0]["Descrizione"].ToString();
-        txtDataPartenza.Text = dt.Rows[0].Field<DateTime>(4).ToString("yyyy-MM-dd");
+        txtDataPartenza.Text = dt.Rows[0].Field<DateTime>("data_partenza").ToString("yyyy-MM-dd");
 
 
     }
@@ -108,7 +108,7 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         //C.AVATAR_CORSO = avatar;
         string TIPO_IMG = fupAvatar.PostedFile.ContentType;
 
-
+        //DA SISTEMARE
         c.Update(Cod_Utente, Titolo, Tipo, Descrizione, avatar, Data_Partenza, Status, TIPO_IMG);
         lbl.Text = "Record Modificato";
         txtTitolo.Text = "";
