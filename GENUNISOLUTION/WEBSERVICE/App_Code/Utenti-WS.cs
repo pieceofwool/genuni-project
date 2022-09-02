@@ -136,4 +136,13 @@ public class Utenti_WS : System.Web.Services.WebService
         dt.TableName = "Esterni";
         return dt;
     }
+
+    [WebMethod]
+    public int RecuperaCodUtente(string USR)
+    {
+        UTENTI u = new UTENTI();
+        u.Usr = USR;
+        int codUtente = u.RecuperaCodUtente();
+        return codUtente;
+    }
 }

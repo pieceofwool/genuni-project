@@ -134,5 +134,15 @@ public class UTENTI
 
         return C.EseguiSelect(cmd);
     }
+
+    public int RecuperaCodUtente()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_GETCODUTENTE");
+        cmd.Parameters.AddWithValue("@usr", Usr);
+
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd).Rows[0].Field<int>("codUtente");
+    }
     #endregion
 }
