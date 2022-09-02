@@ -16,11 +16,7 @@
                         <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <asp:DropDownList ID="ddlUtenti" ToolTip="Tutor assegnato" runat="server"></asp:DropDownList><br />
-                    </td>
-                </tr>
+                
                 <tr>
                     <td>
                         <asp:FileUpload ID="fupAvatar" runat="server" ToolTip="Avatar" accept=".png,.jpg,.jpeg" />
@@ -49,12 +45,7 @@
                         <asp:TextBox ID="txtDataPartenza" runat="server" tooltip="Data Partenza" TextMode="Date"></asp:TextBox><br />
                     </td>
                 </tr>
-                <tr>
-                    <td>
-
-                        <asp:TextBox ID="txtStatus" runat="server" PlaceHolder="Status" MaxLength="1"></asp:TextBox><br />
-                    </td>
-                </tr>
+                
                 <tr>
                     <td>
 
