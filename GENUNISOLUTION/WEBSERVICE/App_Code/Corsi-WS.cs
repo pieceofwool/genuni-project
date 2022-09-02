@@ -177,6 +177,8 @@ public class Corsi_WS : System.Web.Services.WebService
     public DataTable SelectByStatus(int COD_DOCENTE, bool ATTIVI)
     {
         DataTable dt = new CORSI().SelectByStatus(COD_DOCENTE, ATTIVI);
+        dt.TableName = "Corsi";
+        return dt;
     }
     //metodo che riporta tutti i corsi che sono stati approvati
     [WebMethod]
