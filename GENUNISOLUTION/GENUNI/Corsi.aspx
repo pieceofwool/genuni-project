@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TipologieCorsi.aspx.cs" Inherits="tipologieCorsii" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Corsi.aspx.cs" Inherits="Corsi" %>
 
 <!DOCTYPE html>
 
@@ -28,7 +28,9 @@
     <link href="assets/css/scss-files.txt" rel="stylesheet" />
 </head>
 <body>
+    
     <form id="form1" runat="server">
+
         <!--Inserimento logo solo per pagina corrente-->
         <header id="header">
             <div id="topbar">
@@ -64,6 +66,7 @@
 
                 </nav>
                 <!-- .main-nav -->
+            </div>
         </header>
         <!--==========================
       Services Section
@@ -73,27 +76,39 @@
 
                 <header class="section-header">
                     <h3>Tipologie corsi</h3>
-                    <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+
+
+                    
+                    <p>Ecco l'elenco aggiornato dei nostri corsi</p>
+
                 </header>
+                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+
+                    <asp:Button ID="BtnTutti" runat="server" Text="Tutti i Corsi" OnClick="BtnTutti_Click" />
+                    <asp:Button ID="BtnPronti" runat="server" Text="Corsi Pronti" OnClick="BtnPronti_Click" />
+                    <asp:Button ID="BtnNonPronti" runat="server" Text="Corsi Non Pronti" OnClick="BtnNonPronti_Click" />
 
                 <div class="row">
+
+                    <%--LITERAL DA RIEMPIRE DINAMICAMENTE--%>
+
                     <asp:Literal ID="litCorso" runat="server"></asp:Literal>
 
-                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+                    <%--<div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
                         <div class="box">
                             <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
                             <h4 class="title"><a href="#">Lorem Ipsum</a></h4>
                             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                         </div>
-                    </div>
+                    </div>--%>
 
                     <%--<div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
                         <div class="box">--%>
-                            <%--<div class="icon" style="background: #fceef3;">--%>
-                                <%--<img style="width:60%; border-radius: 20%" src="img/genMoney2.png" />--%>
+                    <%--<div class="icon" style="background: #fceef3;">--%>
+                    <%--<img style="width:60%; border-radius: 20%" src="img/genMoney2.png" />--%>
 
-                            <%--</div>--%>
-                            <%--<h4 class="title"><a href="#">Lorem Ipsum</a></h4>
+                    <%--</div>--%>
+                    <%--<h4 class="title"><a href="#">Lorem Ipsum</a></h4>
                             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                         </div>
                     </div>--%>

@@ -6,13 +6,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class tipologieCorsii : System.Web.UI.Page
+public partial class Corsi : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         CaricaTutti();
+        
 
     }
+
+    
 
     //un metodo carica corsi
     protected void CaricaCorsi(DataTable dt)
@@ -79,4 +82,8 @@ public partial class tipologieCorsii : System.Web.UI.Page
 
         CaricaCorsi(dt);
     }
+
+
+
+   
 }
