@@ -89,12 +89,10 @@
                         <li class="active"><a href="Default.aspx">Home</a></li>
                         <li><a href="#about">Chi siamo</a></li>
                         <li><a href="tipologieCorsi.aspx">Corsi</a></li>
-                        <li><a href="#team">Docenti</a></li>
-                        <li><a href="#pricing">Abbonamenti</a></li>
+                        <li><a href="#team">I docenti</a></li>
+                        <li><a href="#pricing">GenMoney</a></li>
                         <li><a href="#footer">Contatti</a></li>
-                        <li>
-                            <button class="btn btn-outline-info my-2 my-sm-0"><a href="Login.aspx" id="btnLogin1">Login</a></button>
-                        </li>
+                        <li><a href="Login.aspx">Accedi</a></li>
                     </ul>
                 </nav>
                 <!-- .main-nav -->
