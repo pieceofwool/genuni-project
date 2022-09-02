@@ -66,11 +66,12 @@ public class GenMoney_WS : System.Web.Services.WebService
 
     // Per ricaricare Genmoney
     [WebMethod]
-    public void Studenti_Acquisto(int COD_STUDENTE, int AMMONTARE)
+    public void Studenti_Acquisto(int COD_STUDENTE, int AMMONTARE, int COD_CORSO)
     {
         GENMONEY g = new GENMONEY();
         g.Cod_Studente = COD_STUDENTE;
         g.Ammontare = AMMONTARE;
+        g.Cod_Corso = COD_CORSO;
 
         g.Studenti_Acquisto();
     }
