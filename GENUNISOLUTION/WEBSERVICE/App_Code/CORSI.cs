@@ -165,6 +165,13 @@ public class CORSI
         conn.EseguiCmd(cmd);
     }
 
+    public DataTable Utenti_SelectAll()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_UTENTI_SELECTALL");
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion Metodi
 
 }
