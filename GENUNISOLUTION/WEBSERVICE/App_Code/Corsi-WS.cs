@@ -168,4 +168,25 @@ public class Corsi_WS : System.Web.Services.WebService
         dt.TableName = "Corsi";
         return dt;
     }
+
+    //metodo che riporta tutti i corsi che sono stati approvati
+    public DataTable Corsi_SelectApprovati()
+    {
+        DataTable dt = new DataTable();
+        CORSI C = new CORSI();
+        dt = C.CorsiSelectApprovati();
+        dt.TableName = "Corsi";
+        return dt;
+    }
+
+    //metodo che riporta tutti i corsi che non sono ancora stati approvati
+    public DataTable Corsi_SelectNonApprovati()
+    {
+        DataTable dt = new DataTable();
+        CORSI C = new CORSI();
+        dt = C.CorsiSelectNonApprovati();
+        dt.TableName = "Corsi";
+        return dt;
+    }
+
 }

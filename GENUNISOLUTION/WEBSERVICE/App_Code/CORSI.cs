@@ -172,6 +172,22 @@ public class CORSI
         return C.EseguiSelect(cmd);
     }
 
+    //metodo che riporta tutti i corsi che sono stati approvati
+    public DataTable CorsiSelectApprovati()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_PREPARATI");
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+
+    //metodo che riporta tutti i corsi che non sono ancora stati approvati
+    public DataTable CorsiSelectNonApprovati()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_NONPREPARATI");
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+
+    }
     #endregion Metodi
 
 }
