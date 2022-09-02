@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+
 
 public partial class Admin_Popup_Abilita : System.Web.UI.Page
 {
@@ -21,7 +24,11 @@ public partial class Admin_Popup_Abilita : System.Web.UI.Page
         //UTENTI U = new UTENTI();
         int Chiave = int.Parse(Session["chiave"].ToString());
         //DA SISTEMARE
-        //U.Abilita(Chiave);
+       
+        DataTable dt = new DataTable();
+        dt = U.SelectOne(Chiave);
+        bool Abilitato= bool.Parse(dt.Rows[0]["Abilitato"].ToString());
+        U.Abilita(Abilitato, Chiave);
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Stato modificato correttamente')", true);
     }

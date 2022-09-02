@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
 {
-    string[] estensioni = { ".jpg", ".png", ".bmp" };
+    string[] estensioni = { ".jpg", ".png", ".bmp", "" };
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -26,9 +26,8 @@ public partial class Admin_Popup_InserisciCorsi : System.Web.UI.Page
         //UTENTI U = new UTENTI();
         ddlUtenti.DataSource = U.SelectTutor();
         ddlUtenti.DataValueField = "Chiave";
-        ddlUtenti.DataTextField = "Cognome";
+        ddlUtenti.DataTextField = "Nome";
         ddlUtenti.DataBind();
-        ddlUtenti.SelectedValue = null;
     }
 
     protected void btnInserisci_Click(object sender, EventArgs e)
