@@ -118,7 +118,7 @@ public class Corsi_WS : System.Web.Services.WebService
 
         c.UpdateTutor();
     }
-    
+
     [WebMethod]
     public void Search(string TITOLO, string TIPO, string DESCRIZIONE)
     {
@@ -170,6 +170,7 @@ public class Corsi_WS : System.Web.Services.WebService
     }
 
     //metodo che riporta tutti i corsi che sono stati approvati
+    [WebMethod]
     public DataTable Corsi_SelectApprovati()
     {
         DataTable dt = new DataTable();
@@ -180,6 +181,7 @@ public class Corsi_WS : System.Web.Services.WebService
     }
 
     //metodo che riporta tutti i corsi che non sono ancora stati approvati
+    [WebMethod]
     public DataTable Corsi_SelectNonApprovati()
     {
         DataTable dt = new DataTable();
