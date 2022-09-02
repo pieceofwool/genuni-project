@@ -149,7 +149,7 @@ public class Utenti_WS : System.Web.Services.WebService
     {
         UTENTI u = new UTENTI();
         u.Cod_Utente = COD_UTENTE;
-        bool abilitato = u.Controlla_Abilitatazione();
+        bool abilitato = u.Controlla_Abilitazione();
         return abilitato;
 
     }

@@ -51,7 +51,7 @@ public class UTENTI
     }
     public string TipoLogin()
     {
-        SqlCommand cmd = new SqlCommand("ESTERNI_TIPO_LOGIN");
+        SqlCommand cmd = new SqlCommand("UTENTI_TIPO_LOGIN");
         cmd.Parameters.AddWithValue("@Usr", Usr);
         cmd.Parameters.AddWithValue("@Pwd", Pwd);
         CONNESSIONE C = new CONNESSIONE();
@@ -59,7 +59,7 @@ public class UTENTI
         return C.EseguiSelect(cmd).Rows[0].Field<string>("Tipo");
     }
 
-    public bool Controlla_Abilitatazione()
+    public bool Controlla_Abilitazione()
     {
         SqlCommand cmd = new SqlCommand("UTENTI_Controlla_Abilitazione");
         cmd.Parameters.AddWithValue("@Cod_Utente", Cod_Utente);
@@ -154,7 +154,7 @@ public class UTENTI
 
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSelect(cmd).Rows[0].Field<int>("codUtente");
+        return C.EseguiSelect(cmd).Rows[0].Field<int>("Chiave");
     }
     #endregion
 }
