@@ -239,6 +239,15 @@ public class ESTERNI
         return conn.EseguiSelect(cmd);
     }
 
+    /// <summary>
+    /// Restituisce una tabella dei docenti con le relative competenze
+    /// </summary>
+    /// <returns></returns>
+    public DataTable SelectCompetenze()
+    {
+        return new CONNESSIONE().EseguiSelect(new SqlCommand("ESTERNI_COMPETENZE_DOCENTI"));
+    }
+
     public int RecuperaCodUtente()
     {
         SqlCommand cmd = new SqlCommand("ESTERNI_GETCODUTENTE");
@@ -247,6 +256,18 @@ public class ESTERNI
         CONNESSIONE C = new CONNESSIONE();
 
         return C.EseguiSelect(cmd).Rows[0].Field<int>("codUtente");
+    }
+
+    /// <summary>
+    /// Mostra il totale guadagnato dal docente
+    /// </summary>
+    /// <returns></returns>
+    public decimal Guadagni()
+    {
+        SqlCommand cmd = new SqlCommand("ESTERNI_SOMMA_GUADAGNI");
+        cmd.Parameters.AddWithValue("@codDocente", CHIAVE);
+
+        return new CONNESSIONE().EseguiSelect(cmd).Rows[0].Field<decimal>("Guadagni");
     }
 
     #endregion

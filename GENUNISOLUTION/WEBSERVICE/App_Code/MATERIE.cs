@@ -82,6 +82,20 @@ public class MATERIE
         conn.EseguiCmd(cmd);
     }
 
+    /// <summary>
+    /// Risponde ad una offerta di materia
+    /// </summary>
+    /// <param name="risposta">true se accetta, false se rifiuta</param>
+    public void Rispondi(bool risposta)
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_RISPONDI");
+        cmd.Parameters.AddWithValue("@Cod_Materia", Chiave);
+        cmd.Parameters.AddWithValue("@risposta", risposta);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        conn.EseguiCmd(cmd);
+    }
+
     //metodo che seleziona materie e corsi di un determinato docente
     public DataTable SelectDocente()
     {
@@ -102,7 +116,32 @@ public class MATERIE
         return conn.EseguiSelect(cmd);
     }
 
+    /// <summary>
+    /// Seleziona le materie non accettate del docente
+    /// </summary>
+    /// <returns></returns>
+    public DataTable SelectDaRispondere()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_DOCENTE_NON_ACCETTATE");
+        cmd.Parameters.AddWithValue("@codDocente", Cod_Docente);
 
+        CONNESSIONE conn = new CONNESSIONE();
+        return conn.EseguiSelect(cmd);
+    }
+
+    /// <summary>
+    /// Seleziona le materie per corso e docente
+    /// </summary>
+    /// <returns></returns>
+    public DataTable SelectDocenteCorso()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_DOCENTE_CORSO");
+        cmd.Parameters.AddWithValue("@codDocente", Cod_Docente);
+        cmd.Parameters.AddWithValue("@codCorso", Cod_Corso);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        return conn.EseguiSelect(cmd);
+    }
 
     #endregion
 
