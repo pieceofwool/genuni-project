@@ -11,6 +11,7 @@ using System.Web;
 public class UTENTI
 {
     public int Chiave;
+    public int Cod_Utente;
     public char Tipo;
     public string Usr;
     public string Pwd;
@@ -35,7 +36,7 @@ public class UTENTI
         return dt.Rows.Count > 0;
     }
 
-    public bool Login(bool controlloAbilitazione = true)
+    public bool Login()
     {
         SqlCommand cmd = new SqlCommand("UTENTI_LOGIN");
         cmd.Parameters.AddWithValue("@usr", Usr);
@@ -45,8 +46,6 @@ public class UTENTI
         DataTable dt = conn.EseguiSelect(cmd);
 
         if (dt.Rows.Count == 0) return false;
-
-        if (controlloAbilitazione) return dt.Rows[0].Field<bool>("abilitato");
 
         return true;
     }
@@ -58,6 +57,17 @@ public class UTENTI
         CONNESSIONE C = new CONNESSIONE();
 
         return C.EseguiSelect(cmd).Rows[0].Field<string>("Tipo");
+    }
+
+    public bool Controlla_Abilitatazione()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_Controlla_Abilitazione");
+        cmd.Parameters.AddWithValue("@Cod_Utente", Cod_Utente);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        DataTable dt = conn.EseguiSelect(cmd);
+
+        return conn.EseguiSelect(cmd).Rows[0].Field<bool>("Abilitato");
     }
 
     #endregion
