@@ -212,6 +212,40 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Corsi_SelectApprovati">
+        <s:complexType />
+      </s:element>
+      <s:element name="Corsi_SelectApprovatiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Corsi_SelectApprovatiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Corsi_SelectNonApprovati">
+        <s:complexType />
+      </s:element>
+      <s:element name="Corsi_SelectNonApprovatiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Corsi_SelectNonApprovatiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="InsertSoapIn">
@@ -286,6 +320,18 @@
   <wsdl:message name="Utenti_SelectAllSoapOut">
     <wsdl:part name="parameters" element="tns:Utenti_SelectAllResponse" />
   </wsdl:message>
+  <wsdl:message name="Corsi_SelectApprovatiSoapIn">
+    <wsdl:part name="parameters" element="tns:Corsi_SelectApprovati" />
+  </wsdl:message>
+  <wsdl:message name="Corsi_SelectApprovatiSoapOut">
+    <wsdl:part name="parameters" element="tns:Corsi_SelectApprovatiResponse" />
+  </wsdl:message>
+  <wsdl:message name="Corsi_SelectNonApprovatiSoapIn">
+    <wsdl:part name="parameters" element="tns:Corsi_SelectNonApprovati" />
+  </wsdl:message>
+  <wsdl:message name="Corsi_SelectNonApprovatiSoapOut">
+    <wsdl:part name="parameters" element="tns:Corsi_SelectNonApprovatiResponse" />
+  </wsdl:message>
   <wsdl:portType name="Corsi_WSSoap">
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
@@ -334,6 +380,14 @@
     <wsdl:operation name="Utenti_SelectAll">
       <wsdl:input message="tns:Utenti_SelectAllSoapIn" />
       <wsdl:output message="tns:Utenti_SelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Corsi_SelectApprovati">
+      <wsdl:input message="tns:Corsi_SelectApprovatiSoapIn" />
+      <wsdl:output message="tns:Corsi_SelectApprovatiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Corsi_SelectNonApprovati">
+      <wsdl:input message="tns:Corsi_SelectNonApprovatiSoapIn" />
+      <wsdl:output message="tns:Corsi_SelectNonApprovatiSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Corsi_WSSoap" type="tns:Corsi_WSSoap">
@@ -446,6 +500,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Corsi_SelectApprovati">
+      <soap:operation soapAction="http://tempuri.org/Corsi_SelectApprovati" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Corsi_SelectNonApprovati">
+      <soap:operation soapAction="http://tempuri.org/Corsi_SelectNonApprovati" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Corsi_WSSoap12" type="tns:Corsi_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -550,6 +622,24 @@
     </wsdl:operation>
     <wsdl:operation name="Utenti_SelectAll">
       <soap12:operation soapAction="http://tempuri.org/Utenti_SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Corsi_SelectApprovati">
+      <soap12:operation soapAction="http://tempuri.org/Corsi_SelectApprovati" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Corsi_SelectNonApprovati">
+      <soap12:operation soapAction="http://tempuri.org/Corsi_SelectNonApprovati" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

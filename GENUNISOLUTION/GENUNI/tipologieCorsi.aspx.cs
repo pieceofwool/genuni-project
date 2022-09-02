@@ -62,9 +62,9 @@ public partial class tipologieCorsii : System.Web.UI.Page
     {
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
         DataTable dt = new DataTable();
-        dt = C.SelectAll(); //select attivi
+        dt = C.Corsi_SelectApprovati(); //select attivi
        // select * from CORSI where Status_Corsi = A
-
+       
         CaricaCorsi(dt);
     }
 
@@ -74,7 +74,7 @@ public partial class tipologieCorsii : System.Web.UI.Page
     {
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
         DataTable dt = new DataTable();
-        dt = C.SelectAll(); //select previsti
+        dt = C.Corsi_SelectNonApprovati(); //select previsti
         // select * from CORSI where Status_Corsi != A
 
         CaricaCorsi(dt);
