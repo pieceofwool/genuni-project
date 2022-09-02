@@ -86,6 +86,17 @@
                             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                         </div>
                     </div>--%>
+
+                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+                        <div class="box">
+                            <%--<div class="icon" style="background: #fceef3;">--%>
+                                <img style="width:60%; border-radius: 20%" src="img/genMoney2.png" />
+
+                            <%--</div>--%>
+                            <h4 class="title"><a href="#">Lorem Ipsum</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
