@@ -27,7 +27,6 @@ public class Corsi_WS : System.Web.Services.WebService
     public void Insert(int COD_UTENTE, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string DATA_PARTENZA, string TIPO_IMG)
     {
         CORSI c = new CORSI();
-        c.COD_UTENTE = COD_UTENTE;
         c.TITOLO = TITOLO;
         c.TIPO = TIPO;
         c.DESCRIZIONE = DESCRIZIONE;

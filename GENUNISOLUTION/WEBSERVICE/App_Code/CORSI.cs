@@ -45,7 +45,6 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_Insert");
        
-        cmd.Parameters.AddWithValue("@Cod_Utente", CHIAVE_UTENTE);
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
