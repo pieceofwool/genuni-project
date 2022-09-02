@@ -10,7 +10,7 @@
     <section id="intro" class="clearfix">
         <div class="container d-flex h-100" id="containerIntro">
             <div class="row justify-content-center align-self-center">
-                <div class="col-md-6 intro-info order-md-first order-last" id=>
+                <div class="col-md-6 intro-info order-md-first order-last" id="">
                     <h2>Gen Uni
                         <br>
                         Inizia la tua <span>formazione!</span></h2>
@@ -335,7 +335,7 @@
                             <div class="card-header">
                                 <h3><span class="currency">
                                     <img src="img/genMoney2.png" class="iconeMoney" />
-                                </span>100<span class="period">/mese</span></h3>
+                                </span>100<span class="period"></span></h3>
                             </div>
                             <div class="card-block">
                                 <h4 class="card-title">Piano medio
@@ -357,7 +357,7 @@
                             <div class="card-header">
                                 <h3><span class="currency">
                                     <img src="img/genMoney2.png" class="iconeMoney" />
-                                </span>150<span class="period">/mese</span></h3>
+                                </span>200<span class="period"></span></h3>
                             </div>
                             <div class="card-block">
                                 <h4 class="card-title">Piano Premium
@@ -368,7 +368,7 @@
                                     <li class="list-group-item">Et perspiciatis suscipit</li>
                                     <li class="list-group-item">24/7 Support System</li>
                                 </ul>
-                                <a href="#" class="btn">Acquista</a>
+                                <a href="#" class="btn">Iscriviti</a>
                             </div>
                         </div>
                     </div>
@@ -474,7 +474,8 @@
                                     <h4>La nostra newsletter</h4>
                                     <p>Vuoi più informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
                                     <form action="" method="post">
-                                        <input type="email" name="email" placeholder="E-mail"><input type="submit" id="btnIscrivitiFooter" value="Iscriviti">
+                                        <input type="email" name="email" placeholder="E-mail"><input type="submit" id="btnIscrivitiFooter" value="Iscriviti alla newsletter!">
+                                        <!--aggiungi popup/dialog newsletter, stato del corso (coming soon o data di partenza)-->
                                     </form>
                                 </div>
 
@@ -502,6 +503,8 @@
                                             <br>
                                         <strong>Telefono:</strong> +06 55488 55<br>
                                         <strong>Email:</strong> info@genuni.com<br>
+                                        <strong>P.IVA:</strong> 86334519757
+                                        <br>
                                     </p>
                                 </div>
                             </div>
@@ -513,30 +516,10 @@
                         <div class="form">
 
                             <h4>Lavora con noi, diventa un docente!</h4>
-                            <p>Inserisci i tuoi dati e invia la candidatura per poter diventare un insegnante!</p>
+                            <p>Regstrati ed invia la tua candidatura per poter diventare un insegnante ed entrare nel nostro team!</p>
                             <form action="" method="post" role="form" class="contactForm">
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nome" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                    <div class="validation"></div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" data-rule="email" data-msg="Please enter a valid email" />
-                                    <div class="validation"></div>
-                                </div>
-                                <div class="form-group">
-                                    <asp:Label ID="lblCv" runat="server" Text="Inserisci il tuo Curriculum Vitae"></asp:Label>
-                                    <asp:FileUpload ID="cvUpload" class="form-control" runat="server" />
-                                    <%-- <input type="text" class="form-control" name="subject" id="subject" placeholder="Inserisci il tuo cv" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />--%>
-                                    <div class="validation"></div>
-                                </div>
-                                <div class="form-group">
-                                    <textarea id="txtAreaFooter" cols="20" rows="2"></textarea>
-                                    <div class="validation"></div>
-                                </div>
-                                <div id="sendmessage">Il tuo messaggio è stato inviato!</div>
-                                <div id="errormessage"></div>
                                 <div class="text-center">
-                                    <button type="submit" title="Send Message">Invia messaggio</button>
+                                    <button type="submit" title="Send Message">Registrati</button>
                                 </div>
                             </form>
                         </div>
