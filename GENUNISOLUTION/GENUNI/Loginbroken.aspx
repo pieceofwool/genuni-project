@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="login2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Loginbroken.aspx.cs" Inherits="login2" %>
 
 <!DOCTYPE html>
 
@@ -69,8 +69,6 @@
         </header>
         <!--========================== Login ============================-->
         <div id="containerLogin">
-        <asp:Button ID="btnLocale" runat="server" Text="LOCALE" OnClick="btnLocale_Click" />
-        <asp:Button ID="btnProduction" runat="server" Text="PRODUZIONE" OnClick="btnProduction_Click" />
 
             <div class="row" style="margin-top: 20px">
                 <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -91,10 +89,10 @@
                         <hr class="colorgraph">
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <input type="submit" class="btn btn-lg btn-success btn-block" value="Login" />
+                                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-lg btn-success btn-block" OnClick="btnLogin_Click" />
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <a href="registrazione.aspx" class="btn btn-lg btn-primary btn-block">Registrati</a>
+                                <a href="Registrazione.aspx" class="btn btn-lg btn-primary btn-block">Registrati</a>
                             </div>
                         </div>
                     </fieldset>
@@ -102,11 +100,13 @@
             </div>
         </div>
         <!-- //Login -->
-        <div>
+        <div style="align-content: center; margin-left: auto; margin-right: auto; display: block; width: 30%;">
             <p>
                 DB SELECTION:
             </p>
             <p>
+                <asp:Button ID="btnLocale" runat="server" Text="LOCALE" OnClick="btnLocale_Click" />
+                <asp:Button ID="btnProduction" runat="server" Text="PRODUZIONE" OnClick="btnProduction_Click" />
                 <asp:TextBox ID="txtDBView" runat="server" ReadOnly="True"></asp:TextBox>
             </p>
 

@@ -13,7 +13,7 @@ public partial class login2 : System.Web.UI.Page
 
     }
 
-    protected void btnInvia_Click(object sender, EventArgs e)
+    protected void btnLogin_Click(object sender, EventArgs e)
     {
         if (IsPostBack == true)
         {
