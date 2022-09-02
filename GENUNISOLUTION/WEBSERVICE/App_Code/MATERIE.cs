@@ -88,7 +88,7 @@ public class MATERIE
     /// <param name="risposta">true se accetta, false se rifiuta</param>
     public void Rispondi(bool risposta)
     {
-        SqlCommand cmd = new SqlCommand("MATERIE_RISPOSTA");
+        SqlCommand cmd = new SqlCommand("MATERIE_RISPONDI");
         cmd.Parameters.AddWithValue("@Cod_Materia", Chiave);
         cmd.Parameters.AddWithValue("@risposta", risposta);
 
