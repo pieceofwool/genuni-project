@@ -92,7 +92,7 @@
                         <li><a href="#team">I docenti</a></li>
                         <li><a href="#pricing">GenMoney</a></li>
                         <li><a href="#footer">Contatti</a></li>
-                        <li><a href="Loginbroken.aspx">Accedi</a></li>
+                        <li><a href="Login.aspx">Accedi</a></li>
                     </ul>
                 </nav>
                 <!-- .main-nav -->

@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class login2 : System.Web.UI.Page
+public partial class Login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -40,18 +40,24 @@ public partial class login2 : System.Web.UI.Page
             // se il login va a buon fine, reindirizzo alla pagina figlia "default.aspx
             // e mi salvo il tipoUtente nella session
 
-            if (U.Login(usr, pwd) == true)
+            if (U.Login(usr, plaintext) == true)
             {
-                int CodiceUtente = U.RecuperaCodUtente(usr);
-                Session["CodiceAttore"] = CodiceUtente;
+                int CodiceAttore = U.RecuperaCodUtente(usr);
+                Session["CodiceAttore"] = CodiceAttore;
 
                 Session["TipoAttore"] = U.TipoLogin(usr, pwd);
 
                 char usertype = Convert.ToChar(Session["TipoAttore"]);
 
+                Datatable dt = U.SelectOne(CodiceAttore);
+
                 switch (usertype)
                 {
                     case 'A':
+                        if () 
+                        {
+
+                        }
                         Response.Redirect("../BEAdmin/GestioneAdmin.aspx"); //Inserire le pagine principali di redirect 
                         break;
 
@@ -95,22 +101,8 @@ public partial class login2 : System.Web.UI.Page
             }
         }
     }
+}
 
-
-
-    protected void btnProduction_Click(object sender, EventArgs e)
-    {
-        string newName = "connessione";
-        File.Copy(Server.MapPath("~") + @"xml\produzione.xml", Server.MapPath("~") + @"\xml\" + newName + ".xml", true);
-
-        txtDBView.Text = "PRODUZIONE"; 
-    }
-
-    protected void btnLocale_Click(object sender, EventArgs e)
-    {
-        string newName = "connessione";
-        File.Copy(Server.MapPath("~") + @"xml\locale.xml", Server.MapPath("~") + @"\xml\" + newName + ".xml", true);
-
-        txtDBView.Text = "LOCALE";
-    }
+internal class Datatable
+{
 }
