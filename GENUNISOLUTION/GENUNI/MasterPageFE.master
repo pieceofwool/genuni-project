@@ -88,7 +88,7 @@
                         </li>
                         <li class="active"><a href="Default.aspx">Home</a></li>
                         <li><a href="#about">Chi siamo</a></li>
-                        <li><a href="Corsi.aspx">Corsi</a></li>
+                        <li><a href="CorsiFE.aspx">Corsi</a></li>
                         <li><a href="#team">I docenti</a></li>
                         <li><a href="#pricing">GenMoney</a></li>
                         <li><a href="#footer">Contatti</a></li>

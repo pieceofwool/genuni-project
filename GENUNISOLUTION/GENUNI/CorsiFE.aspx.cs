@@ -5,17 +5,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
-public partial class Corsi : System.Web.UI.Page
+public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         CaricaTutti();
-        
+
 
     }
 
-    
+
 
     //un metodo carica corsi
     protected void CaricaCorsi(DataTable dt)
@@ -66,8 +65,8 @@ public partial class Corsi : System.Web.UI.Page
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
         DataTable dt = new DataTable();
         dt = C.Corsi_SelectApprovati(); //select attivi
-       // select * from CORSI where Status_Corsi = A
-       
+                                        // select * from CORSI where Status_Corsi = A
+
         CaricaCorsi(dt);
     }
 
@@ -82,13 +81,20 @@ public partial class Corsi : System.Web.UI.Page
 
         CaricaCorsi(dt);
     }
+      
 
+    protected void BtnTutti_Click(object sender, EventArgs e)
+    {
+        CaricaTutti();
+    }
 
-
-
-
-    protected void Button1_Click(object sender, EventArgs e)
+    protected void BtnPronti_Click(object sender, EventArgs e)
     {
         CaricaAttivi();
+    }
+
+    protected void BtnNonPronti_Click(object sender, EventArgs e)
+    {
+        CaricaNonAttivi();
     }
 }
