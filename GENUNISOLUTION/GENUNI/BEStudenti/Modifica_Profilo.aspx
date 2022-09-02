@@ -9,7 +9,6 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
-    <div style="background-image: url('#'); background-repeat: no-repeat; background-attachment: fixed; background-position: left;">
         <div class="wrapper fadeInDown">
             <div id="formContent">
 
@@ -60,7 +59,7 @@
                                     </div>
                             </fieldset>
                         </div>
-                        <hr style="border: 2px solid #56baed;background-color: #56baed;">
+                        <hr style="border: 2px solid #5fcf80;background-color: #5fcf80;">
                         <div>
                              <legend class="udlite-form-label udlite-heading-sm">Modifica Password:</legend>
                             <div>
@@ -83,6 +82,5 @@
                 </div>
             </div>
         </div>
-    </div>
 </asp:Content>
 

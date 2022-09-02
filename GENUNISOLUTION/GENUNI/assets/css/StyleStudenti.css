@@ -55,8 +55,8 @@ h2 {
 }
 
 #formFooter {
-    background-color: #f6f6f6;
-    border-top: 1px solid #dce8f1;
+    background-color:;
+    border-top: 1px solid #5fcf80;
     padding: 25px;
     text-align: center;
     -webkit-border-radius: 0 0 10px 10px;
@@ -73,7 +73,7 @@ h2.inactive {
 
 h2.active {
     color: #0d0d0d;
-    border-bottom: 2px solid #5fbae9;
+    border-bottom: 2px solid #5fcf80;
 }
 
 
@@ -81,7 +81,7 @@ h2.active {
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset] {
-    background-color: #56baed;
+    background-color: #5fcf80;
     border: none;
     color: white;
     padding: 15px 80px;
@@ -137,7 +137,7 @@ input[type=text], input[type=password] {
 
     input[type=text], input[type=password]:focus {
         background-color: #fff;
-        border-bottom: 2px solid #5fbae9;
+        border-bottom: 2px solid #5fcf80;
     }
 
 input[type=text], -webkit-animation-:placeholder {
@@ -156,6 +156,7 @@ input[type=text], -webkit-animation-:placeholder {
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+    background-color: #5fcf80;
 }
 
 @-webkit-keyframes fadeInDown {
