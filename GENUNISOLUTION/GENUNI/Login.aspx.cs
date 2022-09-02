@@ -49,7 +49,7 @@ public partial class Login : System.Web.UI.Page
 
                 char usertype = Convert.ToChar(Session["TipoAttore"]);
 
-                if (U.ControllaAbilitazione(CodiceAttore) == true)
+                if (U.Controlla_Abilitazione(CodiceAttore) == true)
                 {
                     switch (usertype)
                     {
@@ -86,7 +86,7 @@ public partial class Login : System.Web.UI.Page
                     Session["TipoAttore"] = E.TipoLogin(usr, pwd);
                     char usertype = Convert.ToChar(Session["TipoAttore"]);
 
-                    if (E.ControllaAbilitazione(CodiceAttore) == true)
+                    if (E.Controlla_Abilitazione(CodiceAttore) == true)
                     {
                         switch (usertype)
                         {
