@@ -37,7 +37,7 @@ public partial class tipologieCorsii : System.Web.UI.Page
 
             litCorso.Text += "<div class=\"col - md - 6 col - lg - 4 wow bounceInUp\" data-wow-duration=\"1.4s\">";
             litCorso.Text += "<div class=\"box\">";
-            litCorso.Text += "<img style=\"width:99%; border-radius:5% \" src='" + Src + "' />";
+            litCorso.Text += "<img style=\"width:250px; border-radius:5% \" src='" + Src + "' />";
             litCorso.Text += "<h4 class=\"title\"><a href = \"#\" >" + Titolo + "  </a></h4>";
             litCorso.Text += "<p class=\"description\">" + Descrizione + " </p>";
             litCorso.Text += "</div>";
@@ -63,17 +63,19 @@ public partial class tipologieCorsii : System.Web.UI.Page
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
         DataTable dt = new DataTable();
         dt = C.SelectAll(); //select attivi
+       // select * from CORSI where Status_Corsi = A
 
         CaricaCorsi(dt);
     }
 
     //uno mostra corsi previsti
 
-    protected void CaricaPrevisti()
+    protected void CaricaNonAttivi()
     {
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
         DataTable dt = new DataTable();
         dt = C.SelectAll(); //select previsti
+        // select * from CORSI where Status_Corsi != A
 
         CaricaCorsi(dt);
     }
