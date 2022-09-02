@@ -158,4 +158,14 @@ public class Corsi_WS : System.Web.Services.WebService
 
         C.UpdateForTutor();
     }
+
+    [WebMethod]
+    public DataTable Utenti_SelectAll()
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        dt = c.Utenti_SelectAll();
+        dt.TableName = "Corsi";
+        return dt;
+    }
 }
