@@ -29,10 +29,11 @@ public class MAIL
         client.EnableSsl = false;
 
         //imposto la mail
-        mail.Subject = "Conferma registrazione";
+        mail.Subject = "Conferma registrazione GEN-UNI";
 
         //INSERIRE TESTO EMAIL!!!!!
-        mail.Body = "Inserire testo email";
+        mail.Body = "<p> Benvenuto a Generation University! </p> " +
+            "<p> Per confermare la tua registrazione inserisci il codice di conferma: </p>" + rndCodice;
         mail.IsBodyHtml = true;
         mail.To.Add(new MailAddress(mailUtente));
         mail.From = new MailAddress("doita05@setsistemi.it");

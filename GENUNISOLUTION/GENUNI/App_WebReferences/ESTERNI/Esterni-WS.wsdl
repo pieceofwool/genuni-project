@@ -93,6 +93,35 @@
       <s:element name="UpdateResponse">
         <s:complexType />
       </s:element>
+      <s:element name="CheckOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="USR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RAGIONE_SOCIALE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="COGNOME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOME" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AbilitaEsterno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AbilitaEsternoResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="Delete">
         <s:complexType>
           <s:sequence>
@@ -115,6 +144,20 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="TipoLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNomeResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -276,17 +319,17 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="RecuperaCodUtente">
+      <s:element name="RecuperaCodEsterno">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="USR" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="RecuperaCodUtenteResponse">
+      <s:element name="RecuperaCodEsternoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="RecuperaCodUtenteResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecuperaCodEsternoResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -361,6 +404,18 @@
   <wsdl:message name="UpdateSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="CheckOneSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckOne" />
+  </wsdl:message>
+  <wsdl:message name="CheckOneSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="AbilitaEsternoSoapIn">
+    <wsdl:part name="parameters" element="tns:AbilitaEsterno" />
+  </wsdl:message>
+  <wsdl:message name="AbilitaEsternoSoapOut">
+    <wsdl:part name="parameters" element="tns:AbilitaEsternoResponse" />
+  </wsdl:message>
   <wsdl:message name="DeleteSoapIn">
     <wsdl:part name="parameters" element="tns:Delete" />
   </wsdl:message>
@@ -372,6 +427,12 @@
   </wsdl:message>
   <wsdl:message name="TipoLoginSoapOut">
     <wsdl:part name="parameters" element="tns:TipoLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNomeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNome" />
+  </wsdl:message>
+  <wsdl:message name="GetNomeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNomeResponse" />
   </wsdl:message>
   <wsdl:message name="UpdateAvatarSoapIn">
     <wsdl:part name="parameters" element="tns:UpdateAvatar" />
@@ -427,11 +488,11 @@
   <wsdl:message name="ESTERNI_DOCENTI_InfoCodiceSoapOut">
     <wsdl:part name="parameters" element="tns:ESTERNI_DOCENTI_InfoCodiceResponse" />
   </wsdl:message>
-  <wsdl:message name="RecuperaCodUtenteSoapIn">
-    <wsdl:part name="parameters" element="tns:RecuperaCodUtente" />
+  <wsdl:message name="RecuperaCodEsternoSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperaCodEsterno" />
   </wsdl:message>
-  <wsdl:message name="RecuperaCodUtenteSoapOut">
-    <wsdl:part name="parameters" element="tns:RecuperaCodUtenteResponse" />
+  <wsdl:message name="RecuperaCodEsternoSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperaCodEsternoResponse" />
   </wsdl:message>
   <wsdl:message name="GuadagniSoapIn">
     <wsdl:part name="parameters" element="tns:Guadagni" />
@@ -468,6 +529,14 @@
       <wsdl:input message="tns:UpdateSoapIn" />
       <wsdl:output message="tns:UpdateSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CheckOne">
+      <wsdl:input message="tns:CheckOneSoapIn" />
+      <wsdl:output message="tns:CheckOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AbilitaEsterno">
+      <wsdl:input message="tns:AbilitaEsternoSoapIn" />
+      <wsdl:output message="tns:AbilitaEsternoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Delete">
       <wsdl:input message="tns:DeleteSoapIn" />
       <wsdl:output message="tns:DeleteSoapOut" />
@@ -475,6 +544,10 @@
     <wsdl:operation name="TipoLogin">
       <wsdl:input message="tns:TipoLoginSoapIn" />
       <wsdl:output message="tns:TipoLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNome">
+      <wsdl:input message="tns:GetNomeSoapIn" />
+      <wsdl:output message="tns:GetNomeSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateAvatar">
       <wsdl:input message="tns:UpdateAvatarSoapIn" />
@@ -512,9 +585,9 @@
       <wsdl:input message="tns:ESTERNI_DOCENTI_InfoCodiceSoapIn" />
       <wsdl:output message="tns:ESTERNI_DOCENTI_InfoCodiceSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="RecuperaCodUtente">
-      <wsdl:input message="tns:RecuperaCodUtenteSoapIn" />
-      <wsdl:output message="tns:RecuperaCodUtenteSoapOut" />
+    <wsdl:operation name="RecuperaCodEsterno">
+      <wsdl:input message="tns:RecuperaCodEsternoSoapIn" />
+      <wsdl:output message="tns:RecuperaCodEsternoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Guadagni">
       <wsdl:input message="tns:GuadagniSoapIn" />
@@ -567,6 +640,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CheckOne">
+      <soap:operation soapAction="http://tempuri.org/CheckOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AbilitaEsterno">
+      <soap:operation soapAction="http://tempuri.org/AbilitaEsterno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Delete">
       <soap:operation soapAction="http://tempuri.org/Delete" style="document" />
       <wsdl:input>
@@ -578,6 +669,15 @@
     </wsdl:operation>
     <wsdl:operation name="TipoLogin">
       <soap:operation soapAction="http://tempuri.org/TipoLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNome">
+      <soap:operation soapAction="http://tempuri.org/GetNome" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -666,8 +766,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RecuperaCodUtente">
-      <soap:operation soapAction="http://tempuri.org/RecuperaCodUtente" style="document" />
+    <wsdl:operation name="RecuperaCodEsterno">
+      <soap:operation soapAction="http://tempuri.org/RecuperaCodEsterno" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -741,6 +841,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CheckOne">
+      <soap12:operation soapAction="http://tempuri.org/CheckOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AbilitaEsterno">
+      <soap12:operation soapAction="http://tempuri.org/AbilitaEsterno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Delete">
       <soap12:operation soapAction="http://tempuri.org/Delete" style="document" />
       <wsdl:input>
@@ -752,6 +870,15 @@
     </wsdl:operation>
     <wsdl:operation name="TipoLogin">
       <soap12:operation soapAction="http://tempuri.org/TipoLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNome">
+      <soap12:operation soapAction="http://tempuri.org/GetNome" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -840,8 +967,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RecuperaCodUtente">
-      <soap12:operation soapAction="http://tempuri.org/RecuperaCodUtente" style="document" />
+    <wsdl:operation name="RecuperaCodEsterno">
+      <soap12:operation soapAction="http://tempuri.org/RecuperaCodEsterno" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

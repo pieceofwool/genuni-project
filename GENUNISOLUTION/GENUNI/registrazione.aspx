@@ -42,8 +42,6 @@
             <div id="topbar">
                 <div class="container">
                     <div class="social-links">
-                        <form class="form-inline">
-                        </form>
                     </div>
                 </div>
             </div>
@@ -53,7 +51,7 @@
                 <div class="logo float-left">
                     <!-- Uncomment below if you prefer to use an image logo -->
                     <a href="#header" class="scrollto">
-                        <img src="img/logo.png" alt="" href="Default.aspx" class="img-fluid"></a>
+                        <img src="img/logo.png" alt="" href="Default.aspx" class="img-fluid" /></a>
                     <h1 class="text-light"><a href="Default.aspx" class="scrollto"><span>Gen Uni</span></a></h1>
                 </div>
                 <!-- #logo -->
@@ -66,12 +64,14 @@
                         <li><a href="#pricing"></a></li>
                         <li><a href="#footer"></a></li>
                         <li>
-                            <button class="btn btn-outline-info my-2 my-sm-0"><a href="Default.aspx" id="btnHome">Torna alla Homepage</a></button>
+                            <button class="btn btn-outline-info my-2 my-sm-0"></button>
+                            <a href="Default.aspx" id="btnHome">Torna alla Homepage</a>
                         </li>
                     </ul>
 
                 </nav>
                 <!-- .main-nav -->
+            </div>
         </header>
         <!--========================== Registrazione ============================-->
         <div id="containerRegistrazione">
@@ -90,82 +90,121 @@
                                         <div class="card-body p-md-5 text-black">
                                             <h3 class="mb-5 text-uppercase" id="h1Registrazione">REGISTRAZIONE</h3>
 
+
+                                            <div>
+                                                Voglio registrarmi come
+                                                    <asp:DropDownList ID="ddlTipo" runat="server" CssClass="">
+                                                        <asp:ListItem Value="S">Studente</asp:ListItem>
+                                                        <asp:ListItem Value="D">Docente</asp:ListItem>
+                                                    </asp:DropDownList>
+
+                                            </div>
+
                                             <div class="row">
                                                 <div class="col-md-6 mb-4">
                                                     <div class="form-outline">
-                                                        <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                                                        <label class="form-label" for="form3Example1m">Nome</label>
+
+                                                        <asp:TextBox ID="txtUsr" runat="server" CssClass="form-control form-control-lg" placeholder="Email" TextMode="Email"></asp:TextBox>
+
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4">
                                                     <div class="form-outline">
-                                                        <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                                                        <label class="form-label" for="form3Example1n">Cognome</label>
+
+                                                        <asp:TextBox ID="txtPwd" runat="server" CssClass="form-control form-control-lg" placeholder="Password"></asp:TextBox>
+
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-outline mb-4">
-                                                <input type="text" id="form3Example8" class="form-control form-control-lg" />
-                                                <label class="form-label" for="form3Example8">Indirizzo</label>
+
+                                                <asp:TextBox ID="txtRagioneSociale" CssClass="form-control form-control-lg" runat="server" placeholder="Ragione Sociale"></asp:TextBox>
+
                                             </div>
 
-                                            <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
 
-                                                <h6 class="mb-0 me-4">Gender: </h6>
+                                                        <asp:TextBox ID="txtNome" runat="server" CssClass="form-control form-control-lg" placeholder="Nome"></asp:TextBox>
 
-                                                <div class="form-check form-check-inline mb-0 me-4">
-                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                                                        value="option1" />
-                                                    <label class="form-check-label" for="femaleGender">Donna</label>
+                                                    </div>
                                                 </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
 
-                                                <div class="form-check form-check-inline mb-0 me-4">
-                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                                                        value="option2" />
-                                                    <label class="form-check-label" for="maleGender">Uomo</label>
+                                                        <asp:TextBox ID="txtCognome" runat="server" CssClass="form-control form-control-lg" placeholder="Cognome"></asp:TextBox>
+
+                                                    </div>
                                                 </div>
+                                            </div>
 
-                                                <div class="form-check form-check-inline mb-0">
-                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                                                        value="option3" />
-                                                    <label class="form-check-label" for="otherGender">Altro</label>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+
+                                                        <asp:TextBox ID="txtDataNascita" runat="server" CssClass="form-control form-control-lg" placeholder="Data di nascita" TextMode="Date"></asp:TextBox>
+
+                                                    </div>
                                                 </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+
+                                                        <asp:TextBox ID="txtPartitaIva" runat="server" CssClass="form-control form-control-lg" placeholder="P.IVA"></asp:TextBox>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-outline mb-4">
+
+                                                <asp:TextBox ID="txtCodiceFiscale" runat="server" CssClass="form-control form-control-lg" placeholder="Codice Fiscale"></asp:TextBox>
 
                                             </div>
 
                                             <div class="form-outline mb-4">
-                                                <input type="text" id="form3Example8" class="form-control form-control-lg" />
-                                                <label class="form-label" for="form3Example8">Indirizzo</label>
+
+                                                <asp:TextBox ID="txtIndirizzo" runat="server" CssClass="form-control form-control-lg" placeholder="Indirizzo"></asp:TextBox>
+
                                             </div>
 
-                                            <div class="form-outline mb-4">
-                                                <input type="text" id="form3Example8" class="form-control form-control-lg" />
-                                                <label class="form-label" for="form3Example8">Indirizzo</label>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+
+                                                        <asp:TextBox ID="txtCap" runat="server" CssClass="form-control form-control-lg" placeholder="Cap"></asp:TextBox>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+
+                                                        <asp:TextBox ID="txtCitta" runat="server" CssClass="form-control form-control-lg" placeholder="Città"></asp:TextBox>
+
+                                                    </div>
+                                                </div>
                                             </div>
 
-                                            <div class="form-outline mb-4">
-                                                <input type="text" id="form3Example9" class="form-control form-control-lg" />
-                                                <label class="form-label" for="form3Example9">Provincia</label>
-                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
 
-                                            <div class="form-outline mb-4">
-                                                <input type="text" id="form3Example90" class="form-control form-control-lg" />
-                                                <label class="form-label" for="form3Example90">Cap</label>
-                                            </div>
+                                                        <asp:TextBox ID="txtProvincia" runat="server" CssClass="form-control form-control-lg" placeholder="Provincia"></asp:TextBox>
 
-                                            <div class="form-outline mb-4">
-                                                <input type="text" id="form3Example99" class="form-control form-control-lg" />
-                                                <label class="form-label" for="form3Example99">Corso</label>
-                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
 
-                                            <div class="form-outline mb-4">
-                                                <input type="text" id="form3Example97" class="form-control form-control-lg" />
-                                                <label class="form-label" for="form3Example97">Email</label>
+                                                        <asp:TextBox ID="txtNazione" runat="server" CssClass="form-control form-control-lg" placeholder="Nazione"></asp:TextBox>
+
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <div class="d-flex justify-content-end pt-3">
-                                                <button type="button" class="btn btn-warning btn-lg ms-2">Invia form</button>
+                                                <asp:Button ID="btnRegistra" runat="server" Text="Registra form" CssClass="btn btn-warning btn-lg ms-2" OnClick="btnRegistra_Click" />
                                             </div>
                                         </div>
                                     </div>

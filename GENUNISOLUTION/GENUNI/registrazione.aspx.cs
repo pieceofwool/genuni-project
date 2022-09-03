@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,55 +13,75 @@ public partial class registrazione : System.Web.UI.Page
 
     }
 
-    protected void btnInvia_Click(object sender, EventArgs e)
+    protected void btnRegistra_Click(object sender, EventArgs e)
     {
-        // controlli formali
-        //    if (string.IsNullOrEmpty(txtEmail.Text))
-        //    {
-        //        ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Dati non validi')", true);
-        //        return;
-        //    }
+        //controlli formali
+        if (string.IsNullOrEmpty(txtUsr.Text) || string.IsNullOrEmpty(txtPwd.Text) || string.IsNullOrEmpty(txtRagioneSociale.Text)
+            || string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtCognome.Text) || string.IsNullOrEmpty(txtDataNascita.Text)
+            || string.IsNullOrEmpty(txtPartitaIva.Text) || string.IsNullOrEmpty(txtCodiceFiscale.Text) || string.IsNullOrEmpty(txtIndirizzo.Text)
+            || string.IsNullOrEmpty(txtCap.Text) || string.IsNullOrEmpty(txtCitta.Text) || string.IsNullOrEmpty(txtProvincia.Text)
+            || string.IsNullOrEmpty(txtNazione.Text))
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Il form non è stato compilato.')", true);
+            return;
+        }
 
-        //    // mi salvo la textbox come variabile
-        //    string mail = txtEmail.Text.Trim();
+        ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
-        //    //UTENTI u = new UTENTI();
-        //    //u.email = mail;
+        string Tipo = ddlTipo.SelectedValue.ToString();
+        string usr = txtUsr.Text.Trim();
 
-        //    // controllo se l'utente non sia già registrato
-        //    if (u.Registrato() == true)
-        //    {
-        //        ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Utente già registrato')", true);
-        //        return;
-        //    }
+        CRYPTA.Crypta_WSSoapClient C = new CRYPTA.Crypta_WSSoapClient();
+        string plaintext = txtPwd.Text.Trim(); // Attenzione alle password, quì vengono passate le password pulite
+        string pwd = C.PWD_CRYPTA(plaintext); // E quì vengono cryptate, ergo, se volete provare a fare test con password pulite per un motivo o altro usate plaintext invece di pwd
 
-        //    // salvo il codice di conferma generato casualmente
-        //    Random rnd = new Random();
-        //    string rndCodice = rnd.Next(100000, 999999).ToString();
+        string RagioneSociale = txtRagioneSociale.Text.Trim();
+        string Cognome = txtCognome.Text.Trim();
+        string Nome = txtNome.Text.Trim();
 
-        //    // inserisco nella tab utenti l'email e rndCodice
-        //    u.email = mail;
-        //    //u.password = CRYPTA.Crypta(rndCodice.ToString());
-        //    u.Insert();
+        if (E.CheckOne(Tipo, usr, plaintext, RagioneSociale, Cognome, Nome) == true)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert(''Questo utente esiste già.')", true);
+            return;
+        }
+        // textbox in variabili
 
-        //    // mando l'email di conferma
-        //    //MAIL m = new MAIL();
-        //    m.mailUtente = mail;
-        //    m.rndCodice = rndCodice;
+        string DataNascita = txtDataNascita.Text.Trim();
+        string Piva = txtPartitaIva.Text.Trim();
+        string CF = txtCodiceFiscale.Text.Trim();
+        string Indirizzo = txtIndirizzo.Text.Trim();
+        string Cap = txtCap.Text.Trim();
+        string Citta = txtCitta.Text.Trim();
+        string Provincia = txtProvincia.Text.Trim();
+        string Nazione = txtNazione.Text.Trim();
+        bool Abilitato = false;
+        byte[] Avatar = File.ReadAllBytes(Server.MapPath(@"img\nopropic.jpg"));
+        string TipoImg = ".jpg";
 
-        //    try
-        //    {
-        //        m.mailInvia();
-        //    }
+        // controllo se l'utente non sia già registrato
 
-        //    catch
-        //    {
-        //        ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Errore nell'invio dell'email. Segnati il tuo codice temporaneo: '" + rndCodice + "')", true);
-        //        return;
-        //    }
+        // salvo il codice di conferma generato casualmente
+        Random rnd = new Random();
+        string rndCodice = rnd.Next(100000, 999999).ToString();
 
-        //    ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Controlla il tuo indirizzo di posta elettronica per recuperare il tuo codice provvisorio!')", true);
-        //    return;
-       
+        E.Insert(Tipo, usr, plaintext, RagioneSociale, Cognome, Nome, DataNascita, Piva, CF, Indirizzo, Cap, Citta, Provincia, Nazione, Abilitato, Avatar, TipoImg);
+
+        // mando l'email di conferma
+        MAIL.Mail_WSSoapClient M = new MAIL.Mail_WSSoapClient();
+
+
+        M.mailInvia(usr, rndCodice);
+
+        Session["Tipo"] = Tipo;
+        Session["CodiceConferma"] = rndCodice;
+        Session["Password"] = plaintext;
+        Session["RagioneSociale"] = RagioneSociale;
+        Session["Cognome"] = Cognome;
+        Session["Nome"] = Nome;
+
+        Response.Redirect("RegistrazioneConferma.aspx?rndCodice=" + rndCodice);
+
+        ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Controlla il tuo indirizzo di posta elettronica per recuperare il tuo codice provvisorio!')", true);
+        return;
     }
 }
