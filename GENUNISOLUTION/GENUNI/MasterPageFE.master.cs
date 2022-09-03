@@ -26,20 +26,20 @@ public partial class MasterPageFE : System.Web.UI.MasterPage
             int dice = rnd.Next(0, 3);
             if (usertype == "S")
             {
-                litUserSpace.Text = "<li class=\"drop-down\"><a href=\"Default.aspx\">" + greeting[dice] + Nome + "</a>";
+                litUserSpace.Text = "<li class=\"drop-down\"><a role=\"link\" aria-disabled=\"true\">" + greeting[dice] + Nome + "</a>";
                 litUserSpace.Text += "<ul>";
                 litUserSpace.Text += "<li><a href=\"BEStudenti/Modifica_Profilo.aspx\">Area Riservata</a></li>";
-                litUserSpace.Text += "<li><a href=\"Default.aspx\">Logout</a></li>";
+                litUserSpace.Text += "<li><a href=\"LogOut.aspx\">Logout</a></li>";
                 litUserSpace.Text += "</ul>";
                 litUserSpace.Text += "</li>";
             }
 
             else
             {
-                litUserSpace.Text = "<li class=\"drop-down\">" + greeting[dice] + Nome;
+                litUserSpace.Text = "<li class=\"drop-down\"><a role=\"link\" aria-disabled=\"true\">" + greeting[dice] + Nome + "</a>";
                 litUserSpace.Text += "<ul>";
                 litUserSpace.Text += "<li><a href=\"BEDocenti/Modifica_Profilo.aspx\">Area Riservata</a></li>";
-                litUserSpace.Text += "<li><a href=\"Default.aspx\">Logout</a></li>";
+                litUserSpace.Text += "<li><a href=\"LogOut.aspx\">Logout</a></li>";
                 litUserSpace.Text += "</ul>";
                 litUserSpace.Text += "</li>";
             }
