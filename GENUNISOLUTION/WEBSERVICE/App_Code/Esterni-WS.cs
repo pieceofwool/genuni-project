@@ -137,6 +137,15 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public string GetNome(int Chiave)
+    {
+        ESTERNI e = new ESTERNI();
+        e.CHIAVE = Chiave;
+        string NomeEsterno = e.GetNome();
+        return NomeEsterno;
+    }
+
+    [WebMethod]
     public void UpdateAvatar(int CHIAVE, byte[] AVATAR, string TIPOIMG)
     {
         ESTERNI e = new ESTERNI();

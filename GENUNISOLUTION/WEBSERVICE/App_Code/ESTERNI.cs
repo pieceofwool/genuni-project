@@ -212,6 +212,17 @@ public class ESTERNI
         return C.EseguiSelect(cmd).Rows[0].Field<string>("Tipo");
     }
 
+    public string GetNome()
+    {
+        SqlCommand cmd = new SqlCommand("ESTERNI_GETNOME");
+        CONNESSIONE C = new CONNESSIONE();
+
+        cmd.Parameters.AddWithValue("@Chiave", CHIAVE);
+
+        return C.EseguiSelect(cmd).Rows[0].Field<string>("Nome");
+    }
+
+
     public void UpdateAvatar()
     {
         CONNESSIONE c = new CONNESSIONE();

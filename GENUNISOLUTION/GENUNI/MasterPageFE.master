@@ -43,27 +43,28 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <!--========================== Header ============================-->
-        <header id="header">
-            <div id="topbar">
-                <div class="container">
-                    <%--   <div class="social-links">
+    <!--========================== Header ============================-->
+    <header id="header">
+        <div id="topbar">
+            <div class="container">
+                <%--   <div class="social-links">
                         <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                         <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                         <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
                         <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
                     </div>--%>
-                    <div class="social-links">
-                        <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="search" id="barSearch" placeholder="Ricerca" aria-label="Search">
-                            <%--<button class="btn btn-outline-success my-2 my-sm-0" id="btnSearch" type="submit">Search</button>--%>
-                            <button class="btn btn-outline-info my-2 my-sm-0" id="btnSearch" type="submit">Cerca</button>
+                <div class="social-links">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" id="barSearch" placeholder="Ricerca" aria-label="Search">
+                        <%--<button class="btn btn-outline-success my-2 my-sm-0" id="btnSearch" type="submit">Search</button>--%>
+                        <button class="btn btn-outline-info my-2 my-sm-0" id="btnSearch" type="submit">Cerca</button>
 
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
+        </div>
+
+        <form id="form1" runat="server">
 
             <div class="container">
                 <!--========================== Logo ============================-->
@@ -92,19 +93,23 @@
                         <li><a href="#team">I docenti</a></li>
                         <li><a href="#pricing">GenMoney</a></li>
                         <li><a href="#footer">Contatti</a></li>
-                        <li><a href="Login.aspx">Accedi</a></li>
+                        <li>
+                            <asp:HyperLink ID="lnkLogin" runat="server" Text="Accedi" NavigateUrl="~/Login.aspx" Visible="true"></asp:HyperLink></li>
+                        <li>
+                            <asp:Literal ID="litUserSpace" runat="server"></asp:Literal>
                     </ul>
                 </nav>
                 <!-- .main-nav -->
             </div>
-        </header>
-        <!-- #header -->
-        <div id="paginafiglio">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                <!--Pagine figlio-->
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
+        </form>
+    </header>
+    <!-- #header -->
+    <div id="paginafiglio">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <!--Pagine figlio-->
+        </asp:ContentPlaceHolder>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
