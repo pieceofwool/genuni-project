@@ -71,7 +71,16 @@ public partial class registrazione : System.Web.UI.Page
 
         try
         {
-            m.mailInvia(usr, rndCodice);
+            M.mailInvia(usr, rndCodice);
+            
+            Session["Tipo"] = Tipo;
+            Session["CodiceConferma"] = rndCodice;
+            Session["Password"] = plaintext;
+            Session["RagioneSociale"] = RagioneSociale;
+            Session["Cognome"] = Cognome;
+            Session["Nome"] = Nome;
+
+            Response.Redirect("RegistrazioneConferma.aspx?rndCodice=" + rndCodice);
         }
 
         catch
@@ -82,6 +91,5 @@ public partial class registrazione : System.Web.UI.Page
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Controlla il tuo indirizzo di posta elettronica per recuperare il tuo codice provvisorio!')", true);
         return;
-
     }
 }

@@ -111,6 +111,26 @@ public class ESTERNI
         c.EseguiCmd(cmd);
     }
 
+    public bool CheckOne()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_CHECKONE";
+        cmd.Parameters.AddWithValue("@TIPO", TIPO);
+        cmd.Parameters.AddWithValue("@USR", USR);
+        cmd.Parameters.AddWithValue("@PWD", PWD);
+        cmd.Parameters.AddWithValue("@RAGIONE_SOCIALE", RAGIONE_SOCIALE);
+        cmd.Parameters.AddWithValue("@COGNOME", COGNOME);
+        cmd.Parameters.AddWithValue("@NOME", NOME);
+
+        DataTable dt = C.EseguiSelect(cmd);
+
+        if (dt.Rows.Count == 0) return false;
+
+        return true;
+    }
+
     public void Delete()
     {
         CONNESSIONE c = new CONNESSIONE();
@@ -260,7 +280,7 @@ public class ESTERNI
         return new CONNESSIONE().EseguiSelect(new SqlCommand("ESTERNI_COMPETENZE_DOCENTI"));
     }
 
-    public int RecuperaCodUtente()
+    public int RecuperaCodEsterno()
     {
         SqlCommand cmd = new SqlCommand("ESTERNI_GETCODUTENTE");
         cmd.Parameters.AddWithValue("@usr", USR);
@@ -282,5 +302,13 @@ public class ESTERNI
         return new CONNESSIONE().EseguiSelect(cmd).Rows[0].Field<decimal>("Guadagni");
     }
 
+    public void AbilitaEsterno()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand("ESTERNI_ABILITA");
+        cmd.Parameters.AddWithValue("@Chiave", CHIAVE);
+
+        C.EseguiCmd(cmd);
+    }
     #endregion
 }

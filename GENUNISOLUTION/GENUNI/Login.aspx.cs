@@ -75,7 +75,7 @@ public partial class Login : System.Web.UI.Page
 
                 if (E.Login(usr, plaintext) == true)
                 {
-                    int CodiceAttore = E.RecuperaCodUtente(usr);
+                    int CodiceAttore = E.RecuperaCodEsterno(usr);
                     Session["CodiceAttore"] = CodiceAttore;
 
                     Session["TipoAttore"] = E.TipoLogin(usr, plaintext);

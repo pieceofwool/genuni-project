@@ -104,7 +104,7 @@
                                                 <div class="col-md-6 mb-4">
                                                     <div class="form-outline">
 
-                                                        <asp:TextBox ID="txtUsr" runat="server" CssClass="form-control form-control-lg" placeholder="Email"></asp:TextBox>
+                                                        <asp:TextBox ID="txtUsr" runat="server" CssClass="form-control form-control-lg" placeholder="Email" TextMode="Email"></asp:TextBox>
 
                                                     </div>
                                                 </div>
