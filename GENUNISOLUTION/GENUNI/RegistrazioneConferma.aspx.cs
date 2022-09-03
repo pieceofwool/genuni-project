@@ -11,7 +11,8 @@ public partial class registazione_conferma : System.Web.UI.Page
     {
 
     }
-    protected void btnInvia_Click(object sender, EventArgs e)
+   
+    protected void btnConferma_Click(object sender, EventArgs e)
     {
         //mi salvo in una variabile il codice random preso dalla pagina "registrazione" e istanzio un bool
         int CodiceConferma = int.Parse(Session["CodiceConferma"].ToString());
@@ -46,7 +47,7 @@ public partial class registazione_conferma : System.Web.UI.Page
         }
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Registrazione effettuata con successo!')", true);
-        Response.Redirect("/root/form/LOG/LOGIN/Login.aspx");
+        Response.Redirect("Login.aspx");
 
     }
 }

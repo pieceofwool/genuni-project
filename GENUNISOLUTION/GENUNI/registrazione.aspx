@@ -42,8 +42,6 @@
             <div id="topbar">
                 <div class="container">
                     <div class="social-links">
-                        <form class="form-inline">
-                        </form>
                     </div>
                 </div>
             </div>
@@ -53,7 +51,7 @@
                 <div class="logo float-left">
                     <!-- Uncomment below if you prefer to use an image logo -->
                     <a href="#header" class="scrollto">
-                        <img src="img/logo.png" alt="" href="Default.aspx" class="img-fluid"></a>
+                        <img src="img/logo.png" alt="" href="Default.aspx" class="img-fluid" /></a>
                     <h1 class="text-light"><a href="Default.aspx" class="scrollto"><span>Gen Uni</span></a></h1>
                 </div>
                 <!-- #logo -->
@@ -66,12 +64,14 @@
                         <li><a href="#pricing"></a></li>
                         <li><a href="#footer"></a></li>
                         <li>
-                            <button class="btn btn-outline-info my-2 my-sm-0"><a href="Default.aspx" id="btnHome">Torna alla Homepage</a></button>
+                            <button class="btn btn-outline-info my-2 my-sm-0"></button>
+                            <a href="Default.aspx" id="btnHome">Torna alla Homepage</a>
                         </li>
                     </ul>
 
                 </nav>
                 <!-- .main-nav -->
+            </div>
         </header>
         <!--========================== Registrazione ============================-->
         <div id="containerRegistrazione">
@@ -204,7 +204,7 @@
                                             </div>
 
                                             <div class="d-flex justify-content-end pt-3">
-                                                <button type="button" class="btn btn-warning btn-lg ms-2">Invia form</button>
+                                                <asp:Button ID="btnRegistra" runat="server" Text="Registra form" CssClass="btn btn-warning btn-lg ms-2" OnClick="btnRegistra_Click" />
                                             </div>
                                         </div>
                                     </div>

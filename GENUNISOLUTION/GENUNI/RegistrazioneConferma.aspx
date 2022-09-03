@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegistazioneConferma.aspx.cs" Inherits="registazione_conferma" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegistrazioneConferma.aspx.cs" Inherits="registazione_conferma" %>
 
 <!DOCTYPE html>
 
@@ -14,6 +14,7 @@
             <br />
             Inserisci il codice di conferma: <asp:TextBox ID="txtCodice" runat="server"></asp:TextBox>
             <br />
+            <asp:Button ID="btnConferma" runat="server" Text="Conferma" OnClick="btnConferma_Click" />
         </div>
     </form>
 </body>

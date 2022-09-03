@@ -13,13 +13,13 @@ public partial class registrazione : System.Web.UI.Page
 
     }
 
-    protected void btnInvia_Click(object sender, EventArgs e)
+    protected void btnRegistra_Click(object sender, EventArgs e)
     {
         //controlli formali
         if (string.IsNullOrEmpty(txtUsr.Text) || string.IsNullOrEmpty(txtPwd.Text) || string.IsNullOrEmpty(txtRagioneSociale.Text)
             || string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtCognome.Text) || string.IsNullOrEmpty(txtDataNascita.Text)
             || string.IsNullOrEmpty(txtPartitaIva.Text) || string.IsNullOrEmpty(txtCodiceFiscale.Text) || string.IsNullOrEmpty(txtIndirizzo.Text)
-            || string.IsNullOrEmpty(txtCap.Text) || string.IsNullOrEmpty(txtCitta.Text) || string.IsNullOrEmpty(txtProvincia.Text) 
+            || string.IsNullOrEmpty(txtCap.Text) || string.IsNullOrEmpty(txtCitta.Text) || string.IsNullOrEmpty(txtProvincia.Text)
             || string.IsNullOrEmpty(txtNazione.Text))
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Il form non è stato compilato.')", true);
@@ -39,13 +39,13 @@ public partial class registrazione : System.Web.UI.Page
         string Cognome = txtCognome.Text.Trim();
         string Nome = txtNome.Text.Trim();
 
-        if(E.CheckOne(Tipo, usr, plaintext, RagioneSociale, Cognome, Nome) == true) 
+        if (E.CheckOne(Tipo, usr, plaintext, RagioneSociale, Cognome, Nome) == true)
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert(''Questo utente esiste già.')", true);
             return;
         }
         // textbox in variabili
-                                              
+
         string DataNascita = txtDataNascita.Text.Trim();
         string Piva = txtPartitaIva.Text.Trim();
         string CF = txtCodiceFiscale.Text.Trim();
@@ -55,7 +55,7 @@ public partial class registrazione : System.Web.UI.Page
         string Provincia = txtProvincia.Text.Trim();
         string Nazione = txtNazione.Text.Trim();
         bool Abilitato = false;
-        byte[] Avatar = File.ReadAllBytes(Server.MapPath(@"~img\nopropic.jpg"));
+        byte[] Avatar = File.ReadAllBytes(Server.MapPath(@"img\nopropic.jpg"));
         string TipoImg = ".jpg";
 
         // controllo se l'utente non sia già registrato
@@ -63,31 +63,23 @@ public partial class registrazione : System.Web.UI.Page
         // salvo il codice di conferma generato casualmente
         Random rnd = new Random();
         string rndCodice = rnd.Next(100000, 999999).ToString();
-        
+
         E.Insert(Tipo, usr, plaintext, RagioneSociale, Cognome, Nome, DataNascita, Piva, CF, Indirizzo, Cap, Citta, Provincia, Nazione, Abilitato, Avatar, TipoImg);
 
         // mando l'email di conferma
         MAIL.Mail_WSSoapClient M = new MAIL.Mail_WSSoapClient();
 
-        try
-        {
-            M.mailInvia(usr, rndCodice);
-            
-            Session["Tipo"] = Tipo;
-            Session["CodiceConferma"] = rndCodice;
-            Session["Password"] = plaintext;
-            Session["RagioneSociale"] = RagioneSociale;
-            Session["Cognome"] = Cognome;
-            Session["Nome"] = Nome;
 
-            Response.Redirect("RegistrazioneConferma.aspx?rndCodice=" + rndCodice);
-        }
+        M.mailInvia(usr, rndCodice);
 
-        catch
-        {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Errore nell'invio dell'email. Segnati il tuo codice temporaneo: '" + rndCodice + "')", true);
-            return;
-        }
+        Session["Tipo"] = Tipo;
+        Session["CodiceConferma"] = rndCodice;
+        Session["Password"] = plaintext;
+        Session["RagioneSociale"] = RagioneSociale;
+        Session["Cognome"] = Cognome;
+        Session["Nome"] = Nome;
+
+        Response.Redirect("RegistrazioneConferma.aspx?rndCodice=" + rndCodice);
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Controlla il tuo indirizzo di posta elettronica per recuperare il tuo codice provvisorio!')", true);
         return;
