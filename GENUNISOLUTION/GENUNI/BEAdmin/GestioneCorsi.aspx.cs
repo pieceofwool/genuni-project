@@ -71,4 +71,5 @@ public partial class Default3 : System.Web.UI.Page
         gridAssegnazioneCorsi.DataBind();
 
     }
+
 }

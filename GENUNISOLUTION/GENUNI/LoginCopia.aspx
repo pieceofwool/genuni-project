@@ -45,8 +45,12 @@
                 <div class="form sign-up">
                     <h2 class="h2Login">Crea un account</h2>
                     <label>
-                        <span>Nome</span>
-                        <input type="text" />
+                        <span>Sei uno studente o un docente?</span>
+                        <asp:DropDownList ID="ddlLogin" runat="server">
+                            <asp:ListItem Value="S">Studente</asp:ListItem>
+                            <asp:ListItem Value="D">Docente</asp:ListItem>
+                        </asp:DropDownList>
+
                     </label>
                     <label>
                         <span>Email</span>
@@ -56,8 +60,47 @@
                         <span>Password</span>
                         <input type="password" />
                     </label>
-                    <button type="button" class="submit">Iscriviti</button>
-
+                    <label>
+                        <span>Ragione sociale</span>
+                        <input type="text" />
+                    </label>
+                    <label>
+                        <span>Nome</span>
+                        <input type="text" />
+                    </label>
+                    <label>
+                        <span>Cognome</span>
+                        <input type="text" />
+                    </label>
+                    <label>
+                        <span>Data di nascita</span>
+                        <input type="date" />
+                    </label>
+                    <label>
+                        <span>Partita Iva</span>
+                        <input type="text" />
+                    </label>
+                    <label>
+                        <span>Codice Fiscale</span>
+                        <input type="text" />
+                        <label>
+                            <span>Indirizzo</span>
+                            <input type="text" />
+                        </label>
+                        <label>
+                            <span>Città</span>
+                            <input type="text" />
+                        </label>
+                        <label>
+                            <span>Provincia</span>
+                            <input type="text" />
+                        </label>
+                        <label>
+                            <span>Nazione</span>
+                            <input type="text" />
+                        </label>
+                    </label>
+                    <button type="button" class="submit">Registrati</button>
                 </div>
             </div>
         </div>

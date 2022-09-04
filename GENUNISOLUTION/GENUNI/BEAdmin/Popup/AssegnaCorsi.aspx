@@ -6,6 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <link href="../../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -20,7 +21,7 @@
                 <tr>
                     <td>
 
-                        <asp:Button ID="btnAssegna" runat="server" Text="Assegna" OnClick="btnAssegna_Click" />
+                        <asp:Button ID="btnAssegna" CssClass="btnBE" runat="server" Text="Assegna" OnClick="btnAssegna_Click" />
                     </td>
                 </tr>
             </table>
