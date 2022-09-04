@@ -11,23 +11,23 @@ using System.Data.SqlClient;
 
 public partial class Default3 : System.Web.UI.Page
 {
-    //protected void Button1_Click(object sender, EventArgs e)
-    //{
-    //    string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
-    //    string contentType = FileUpload1.PostedFile.ContentType;
-    //    using (Stream fs = FileUpload1.PostedFile.InputStream)
-    //    {
-    //        using (BinaryReader br = new BinaryReader(fs))
-    //        {
-    //            byte[] bytes = br.ReadBytes((Int32)fs.Length);
-    //            CORSI.Corsi_WSSoapClient corsi = new CORSI.Corsi_WSSoapClient();
-    //            corsi.Insert(1, filename, "pluto", "paperino", bytes, txtData.Text, contentType);
-    //        }
-    //    }
-    //}
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
+        string contentType = FileUpload1.PostedFile.ContentType;
+        using (Stream fs = FileUpload1.PostedFile.InputStream)
+        {
+            using (BinaryReader br = new BinaryReader(fs))
+            {
+                byte[] bytes = br.ReadBytes((Int32)fs.Length);
+                CORSI.Corsi_WSSoapClient corsi = new CORSI.Corsi_WSSoapClient();
+                corsi.Insert(filename, "pluto", "paperino", bytes, txtData.Text, contentType);
+            }
+        }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        lit.Text="";
         CORSI.Corsi_WSSoapClient corsi = new CORSI.Corsi_WSSoapClient();
 
 
