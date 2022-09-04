@@ -27,6 +27,7 @@ public partial class Default2 : System.Web.UI.Page
             string Descrizione = dr.Field<string>("Descrizione").ToString();
             string tipo = dr.Field<string>("Tipo_Img").ToString();
             byte[] arr = dr.Field<byte[]>("Avatar_Corso");
+            int Codice = dr.Field<int>("Chiave");
             string Src;
 
             if (arr != null)
@@ -42,6 +43,10 @@ public partial class Default2 : System.Web.UI.Page
             litCorso.Text += "<img style=\"width:250px; border-radius:5% \" src='" + Src + "' />";
             litCorso.Text += "<h4 class=\"title\"><a href = \"#\" >" + Titolo + "  </a></h4>";
             litCorso.Text += "<p class=\"description\">" + Descrizione + " </p>";
+            litCorso.Text += "<p id=\"CodiceCorso\" runat=\"server\" >" + Codice + "</p>";
+
+            //stampo link con funzione javascript
+            litCorso.Text += "<a href=\"#\" onclick=\"popupCenter({ url: 'InfoCorso.aspx?codice="+ Codice+"', title: 'Info Corso', w: 600, h: 300})\">Info Corso</a>";
             litCorso.Text += "</div>";
             litCorso.Text += "</div>";
         }
@@ -97,4 +102,5 @@ public partial class Default2 : System.Web.UI.Page
     {
         CaricaNonAttivi();
     }
+
 }
