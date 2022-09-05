@@ -316,7 +316,7 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Update_Profilo_Studenti(int CHIAVE, string NOME, string COGNOME, string CITTA, string INDIRIZZO, string PROVINCIA)
+    public void Update_Profilo_Studenti(int CHIAVE, string NOME, string COGNOME, string CITTA, string INDIRIZZO, string PROVINCIA, string NAZIONALITA)
     {
         ESTERNI e = new ESTERNI();
         e.CHIAVE = CHIAVE;
@@ -325,6 +325,7 @@ public class Esterni_WS : System.Web.Services.WebService
         e.CITTA = CITTA;
         e.INDIRIZZO = INDIRIZZO;
         e.PROVINCIA = PROVINCIA;
+        e.NAZIONALITA = NAZIONALITA;
 
         e.Update_Profilo_Studenti();
     }

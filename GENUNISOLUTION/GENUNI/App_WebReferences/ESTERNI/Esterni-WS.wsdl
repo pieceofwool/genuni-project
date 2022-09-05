@@ -408,6 +408,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="CITTA" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="INDIRIZZO" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="PROVINCIA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NAZIONALITA" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>

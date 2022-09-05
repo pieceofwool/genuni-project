@@ -334,6 +334,7 @@ public class ESTERNI
         cmd.Parameters.AddWithValue("@CITTA", CITTA);
         cmd.Parameters.AddWithValue("@INDIRIZZO", INDIRIZZO);
         cmd.Parameters.AddWithValue("@PROVINCIA", PROVINCIA);
+        cmd.Parameters.AddWithValue("@NAZIONALITA", NAZIONALITA);
 
         c.EseguiCmd(cmd);
     }
