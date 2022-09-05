@@ -10,7 +10,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:TextBox ID="txtVecchiaPassword" placeholder="Password attuale" runat="server" TextMode="Password"></asp:TextBox>
             <asp:TextBox ID="txtNuovaPassword" placeholder="Nuova password" runat="server" TextMode="Password"></asp:TextBox>
             <asp:TextBox ID="txtConfermaNuovaPassword" placeholder="Conferma nuova password" runat="server" TextMode="Password"></asp:TextBox>
             <asp:Button ID="btnModificaPassword" runat="server" Text="Modifica Password" OnClick="btnModificaPassword_Click" />

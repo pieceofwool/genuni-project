@@ -126,13 +126,13 @@
 
         <table>
             <tr>
-                <td><b>User: </b>
+                <td width="250px"><b>User: </b>
                     <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
                 </td>
-                <td><b>Ragione Sociale: </b>
+                <td width="250px"><b>Ragione Sociale: </b>
                     <asp:Label ID="lblRagSoc" runat="server" Text=""></asp:Label>
                 </td>
-                <td><b>Nazionalità: </b>
+                <td width="250px"><b>Nazionalità: </b>
                     <asp:Label ID="lblNazionalita" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
@@ -157,6 +157,9 @@
                 <td><b>Codice Fiscale: </b>
                     <asp:Label ID="lblCF" runat="server" Text=""></asp:Label>
                 </td>
+                <td><b>Cap: </b>
+                    <asp:Label ID="lblCap" runat="server" Text=""></asp:Label>
+                </td>
 
             </tr>
 
@@ -171,9 +174,7 @@
                 <td><b>Provincia: </b>
                     <asp:Label ID="lblProvincia" runat="server" Text=""></asp:Label>
                 </td>
-                <td><b>Cap: </b>
-                    <asp:Label ID="lblCap" runat="server" Text=""></asp:Label>
-                </td>
+                
             </tr>
         </table>
 
