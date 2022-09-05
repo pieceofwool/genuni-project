@@ -32,5 +32,15 @@ public class Mail_WS : System.Web.Services.WebService
 
         M.mailInvia();
     }
+    
+    [WebMethod]
+    public void mailInvia_Docenti(string USR)
+    {
+        MAIL M = new MAIL();
+
+        M.mailUtente = USR;
+
+        M.mailInvia_Docenti();
+    }
 
 }

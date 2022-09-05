@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -7,6 +8,7 @@ using System.Web.UI.WebControls;
 
 public partial class PopUp_Profilo_InserisciProfilo_Competenze : System.Web.UI.Page
 {
+    string[] estensioni = { ".jpg", ".png", ".bmp" };
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -22,6 +24,12 @@ public partial class PopUp_Profilo_InserisciProfilo_Competenze : System.Web.UI.P
 
         if (FileUploadAvatar.HasFile)
         {
+            if (!estensioni.Contains(Path.GetExtension(FileUploadAvatar.FileName)))
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Formato file non valido: caricare .jpg, .png o .bmp')", true); ;
+                return;
+            }
+
             E.UpdateAvatar(CHIAVE, img, TIPOIMG);
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Avatar cambiato correttamente')", true);
 

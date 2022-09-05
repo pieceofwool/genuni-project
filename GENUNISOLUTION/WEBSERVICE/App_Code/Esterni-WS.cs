@@ -42,6 +42,17 @@ public class Esterni_WS : System.Web.Services.WebService
         dt.TableName = "Esterni";
         return dt;
     }
+    
+    [WebMethod]
+    public DataTable SelectOne_Profilo_Studenti(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        ESTERNI e = new ESTERNI();
+        e.CHIAVE = CHIAVE;
+        dt = e.SelectOne_Profilo_Studenti();
+        dt.TableName = "Esterni";
+        return dt;
+    }
 
     [WebMethod]
     public void Insert(string TIPO, string USR, string PWD, string RAGIONE_SOCIALE, string COGNOME, string NOME, string DATA_NASCITA, string PIVA, string CF, string INDIRIZZO, string CAP, string CITTA, string PROVINCIA, string NAZIONALITA, bool ABILITATO, byte[] AVATAR, string TIPOIMG)
@@ -302,5 +313,32 @@ public class Esterni_WS : System.Web.Services.WebService
         bool abilitato = e.Controlla_Abilitatazione();
         return abilitato;
 
+    }
+
+    [WebMethod]
+    public void Update_Profilo_Studenti(int CHIAVE, string NOME, string COGNOME, string CITTA, string INDIRIZZO, string PROVINCIA, string NAZIONALITA)
+    {
+        ESTERNI e = new ESTERNI();
+        e.CHIAVE = CHIAVE;
+        e.NOME = NOME;
+        e.COGNOME = COGNOME;
+        e.CITTA = CITTA;
+        e.INDIRIZZO = INDIRIZZO;
+        e.PROVINCIA = PROVINCIA;
+        e.NAZIONALITA = NAZIONALITA;
+
+        e.Update_Profilo_Studenti();
+    }
+
+    //metodo che seleziona tutti i docenti da ESTERNI
+    [WebMethod]
+    public DataTable SelectAll_Docenti()
+    {
+        ESTERNI E = new ESTERNI();
+        DataTable dt = new DataTable();
+
+        dt = E.SelectAll_Docenti();
+        dt.TableName = "Docenti";
+        return dt;
     }
 }

@@ -21,13 +21,19 @@ public partial class Admin_Popup_Abilita : System.Web.UI.Page
     {
         UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();
 
-        //UTENTI U = new UTENTI();
+
         int Chiave = int.Parse(Session["chiave"].ToString());
-        //DA SISTEMARE
-       
+        CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
+        if (C.Check_Tutor_Abilitato(Chiave) == true)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Impossibile disabilitare un tutor con corsi assegnati. Togliere le assegnazioni e riprovare')", true);
+            return;
+        };
+
+
         DataTable dt = new DataTable();
         dt = U.SelectOne(Chiave);
-        bool Abilitato= bool.Parse(dt.Rows[0]["Abilitato"].ToString());
+        bool Abilitato = bool.Parse(dt.Rows[0]["Abilitato"].ToString());
         U.Abilita(Abilitato, Chiave);
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Stato modificato correttamente')", true);

@@ -321,5 +321,44 @@ public class ESTERNI
 
         C.EseguiCmd(cmd);
     }
+
+    public void Update_Profilo_Studenti()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_UPDATE_PROFILO_STUDENTI";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+        cmd.Parameters.AddWithValue("@NOME", NOME);
+        cmd.Parameters.AddWithValue("@COGNOME", COGNOME);
+        cmd.Parameters.AddWithValue("@CITTA", CITTA);
+        cmd.Parameters.AddWithValue("@INDIRIZZO", INDIRIZZO);
+        cmd.Parameters.AddWithValue("@PROVINCIA", PROVINCIA);
+        cmd.Parameters.AddWithValue("@NAZIONALITA", NAZIONALITA);
+
+        c.EseguiCmd(cmd);
+    }
+
+    public DataTable SelectOne_Profilo_Studenti()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_SELECTONE_PROFILO_STUDENTI";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+
+        return c.EseguiSelect(cmd);
+    }
+
+    //metodo che seleziona tutti i docenti da ESTERNI
+    public DataTable SelectAll_Docenti()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_DOCENTI_SELECTALL";
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion
 }
