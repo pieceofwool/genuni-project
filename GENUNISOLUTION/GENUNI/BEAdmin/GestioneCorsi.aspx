@@ -1,7 +1,100 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneCorsi.aspx.cs" Inherits="Default3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script src="../assets/js/GestioneCorsiPopUp.js"></script>
+    <script src="../assets/js/JS.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+    <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
+    <script>
+        $(document).ready(function () {
+            $('#btnInserisci').click(function () {
+                //collego l'oggetto alla pagina
+                var url = "Popup/InserisciCorsi.aspx";
+                var popUp = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+                //dichiariamo tutte le caratteristiche dell' oggetto
+                popUp.dialog({
+
+                    modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
+                    title: 'Inserimento Dati',  //titolo dell'oggetto
+                    dialogClass: 'dialog',
+                    height: 500,
+                    width: 600,
+                    overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
+                    open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
+                });
+                //ogni oggetto deve restituire qualcosa
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#btnModifica').click(function () {
+                //collego l'oggetto alla pagina
+                var url = "Popup/ModificaCorsi.aspx";
+                var popUp = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+                //dichiariamo tutte le caratteristiche dell' oggetto
+                popUp.dialog({
+
+                    modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
+                    title: 'Modifica Dati',  //titolo dell'oggetto
+                    dialogClass: 'dialog',
+                    resizable: false,  //blocca il ridimensionamento
+                    height: 340,
+                    overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
+                    open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
+                });
+                //ogni oggetto deve restituire qualcosa
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#btnVisualizzaInfo').click(function () {
+                //collego l'oggetto alla pagina
+                var url = "Popup/VisualizzaInfo.aspx";
+                var popUp = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+                //dichiariamo tutte le caratteristiche dell' oggetto
+                popUp.dialog({
+
+                    modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
+                    title: 'Modifica Dati',  //titolo dell'oggetto
+                    dialogClass: 'dialog',
+                    resizable: false,  //blocca il ridimensionamento
+                    height: 340,
+                    overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
+                    open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
+                });
+                //ogni oggetto deve restituire qualcosa
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#btnAssegna').click(function () {
+                //collego l'oggetto alla pagina
+                var url = "Popup/AssegnaCorsi.aspx";
+                var popUp = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+                //dichiariamo tutte le caratteristiche dell' oggetto
+                popUp.dialog({
+
+                    modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
+                    title: 'Modifica Dati',  //titolo dell'oggetto
+                    dialogClass: 'dialog',
+                    resizable: false,  //blocca il ridimensionamento
+                    height: 340,
+                    overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
+                    open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
+                });
+                //ogni oggetto deve restituire qualcosa
+                return false;
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div>
@@ -12,18 +105,12 @@
         <table>
             <tr>
                 <td>
-                    <a href="../BEAdmin/Popup/InserisciCorsiCopia.aspx" class="btnBE" id="popUpInserisci">Crea nuovo corso</a>
-                    <div>
-                        <div class="modal fade text-center" id="theModal">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <%--        <asp:Button ID="btnInserisci" CssClass="btnBE" runat="server" ClientIDMode="Static" Text="Crea nuovo corso" />--%>
-                    <asp:Button ID="btnModifica" CssClass="btnBE" runat="server" ClientIDMode="Static" Enabled="False" Text="Modifica corso selezionato" />
-                    <asp:Button ID="btnVisualizzaInfo" CssClass="btnBE" runat="server" ClientIDMode="Static" Enabled="False" Text="Visualizza informazioni corso" OnClick="btnVisualizzaInfo_Click" />
+                    <a id="btnInserisci" class="popUpBtnBE" href="Popup/InserisciCorsi.aspx">Crea nuovo corso</a>
+                    <a id="btnModifica" class="popUpBtnBE" href="Popup/ModificaCorsi.aspx">Modifica corso selezionato</a>
+                    <a id="btnVisualizzaInfo" class="popUpBtnBE" href="Popup/VisualizzaInfo.aspx">Visualizza informazioni corso</a>
+                    <%--<asp:Button ID="btnInserisci" CssClass="btnBE" runat="server" ClientIDMode="Static" Text="Crea nuovo corso" />--%>
+                    <%--<asp:Button ID="btnModifica" CssClass="btnBE" runat="server" ClientIDMode="Static" Enabled="False" Text="Modifica corso selezionato" />--%>
+                    <%--<asp:Button ID="btnVisualizzaInfo" CssClass="btnBE" runat="server" ClientIDMode="Static" Enabled="False" Text="Visualizza informazioni corso" OnClick="btnVisualizzaInfo_Click" />--%>
                     <%--Link temporanei finché non si decide come fare i popup--%>
                     <%-- <a href="Popup/InserisciCorsi.aspx">Crea nuovo corso</a>
             <a href="Popup/ModificaCorsi.aspx">Modifica corso selezionato</a>
@@ -63,7 +150,7 @@
         <table>
             <tr>
                 <td>
-                    <asp:Button ID="btnAssegna" runat="server" ClientIDMode="Static" Enabled="False" Text="Assegna corso" CssClass="btnBE" />
+                    <a id="btnAssegna" class="popUpBtnBE" href="Popup/AssegnaCorsi.aspx">Assegna corso</a>
                     <%--<a href="Popup/AssegnaCorsi.aspx">Assegna corso</a>--%>
                     <asp:Button ID="btnAggiornaAssegnazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaAssegnazione_Click" CssClass="btnBE" />
                 </td>
@@ -74,25 +161,12 @@
                         <Columns>
                             <asp:BoundField DataField="Chiave" Visible="false" />
                             <asp:BoundField DataField="Cod_Utente" Visible="false" />
-
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                             <asp:BoundField DataField="Nome" HeaderText="Nome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
                             <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
-
                             <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
                         </Columns>
                     </asp:GridView>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <ul>
-                        <%--    <li><a href="Popup/Abilita.aspx">Abilita</a></li>--%>
-                        <li><a href="Popup/AssegnaCorsi.aspx">Assegna corsi</a></li>
-                        <li><a href="Popup/InserisciCorsi.aspx">Inserisci corsi</a></li>
-                        <li><a href="Popup/ModificaCorsi.aspx">Modifica corsi</a></li>
-                        <li><a href="Popup/VisualizzaInfo.aspx">Visualizza info</a></li>
-                    </ul>
                 </td>
             </tr>
         </table>

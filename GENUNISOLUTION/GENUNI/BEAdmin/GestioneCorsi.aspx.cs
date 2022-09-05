@@ -21,8 +21,8 @@ public partial class Default3 : System.Web.UI.Page
 
         GridViewRow riga = gridCreazioneCorsi.SelectedRow;
         Session["ChiaveCreazione"] = gridCreazioneCorsi.SelectedDataKey[0].ToString();
-        btnModifica.Enabled = true;
-        btnVisualizzaInfo.Enabled = true;
+        //btnModifica.Enabled = true;
+        //btnVisualizzaInfo.Enabled = true;
 
     }
     protected void gridAssegnazioneCorsi_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,7 +30,7 @@ public partial class Default3 : System.Web.UI.Page
 
         GridViewRow riga = gridAssegnazioneCorsi.SelectedRow;
         Session["ChiaveAssegnazione"] = gridAssegnazioneCorsi.SelectedDataKey[0].ToString();
-        btnAssegna.Enabled = true;
+        //btnAssegna.Enabled = true;
 
     }
 

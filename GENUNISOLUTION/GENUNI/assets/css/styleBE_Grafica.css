@@ -2,25 +2,6 @@
     margin: 0 auto;
 }
 
-
-a:link, a:visited {
-    padding: 27px 55px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: -3px;
-    float: left;
-    margin-top: 13px;
-    margin-left: -18px;
-    text-align: center;
-    text-transform: none;
-}
-
-a:hover, a:active {
-    background-color: #ffffff;
-    color: #5918b7;
-}
-
 #esci {
     float: right;
 }
@@ -84,43 +65,12 @@ h1 {
 }
 
 
-.dropdown-content {
-    position: revert;
-    background-color: transparent;
-    z-index: 1;
-    display: none;
-}
-
-    .dropdown-content a {
-        color: black;
-        background-color: white;
-        padding: 1px 19px;
-        text-decoration: none;
-        display: block;
-    }
-
-        .dropdown-content a:hover {
-            background-color: transparent;
-        }
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-a:hover, .dropdown:hover .dropbtn {
+.dropdown:hover .dropbtn {
     color: #cfc4f8;
-    text-decoration: underline;
-}
-
-a:link {
-    text-decoration: none;
-}
-
-li:visited, ul:visited, a:visited {
-    text-decoration: none;
-}
-
-li:active, ul:active, a:active {
     text-decoration: underline;
 }
 
@@ -139,26 +89,33 @@ li:active, ul:active, a:active {
     display: block;
 }
 
-.bottoni, .btnBE {
+.btnBE {
     background-color: #ffffff;
     color: black;
     border-radius: 5px;
     border-color: rgba(255,255,255,.2);
 }
 
-    .btnBE:hover, .dropdown-content a:hover {
+    .btnBE:hover, .dropdown-content {
         background-color: #9ceeb7;
         color: black;
     }
 
 
-.btnBE {
+
+a.popUpBtnBE {
     background-color: #ffffff;
     color: black;
-    font-family: Tahoma, Calibri;
-    margin-left: 17px;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 4px 4px 4px 4px;
+    border-color: rgba(255,255,255,.2);
 }
 
+    a.popUpBtnBE:hover {
+        background-color: #9ceeb7;
+        color: black;
+    }
 
 table {
     margin-top: 50px;
@@ -269,3 +226,64 @@ table, #header {
 
 
 /*POP UP CSS&HTML*/
+
+/*.ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix {
+    color: darkgreen;
+}*/
+/**/
+
+/*.ui-dialog {
+    widt
+}
+
+.ui-widget {
+   display: block;
+    z-index: 1002;
+    outline: 48px;
+    height: 400px;
+    width: 600px;
+    top: 81px;
+    left: 233px;
+}*/
+
+.ui-widget-content {
+    height: 100%;
+    width: 100%;
+}
+
+.ui-corner-all {
+    height: 39px;
+    width: 590px;
+}
+
+.ui-draggable {
+    display: block;
+    z-index: 1002;
+    outline: 48px;
+    height: 400px;
+    width: 600px;
+    top: 81px;
+    left: 233px;
+}
+
+.ui-dialog-title {
+    font-size: 15px;
+}
+
+/*.ui-draggable .ui-dialog-titlebar {
+    cursor: move;
+    background-color: black;
+    color: darkgreen;
+    background-color: white;
+}*/
+
+.ui-widget-header {
+    border: 1px solid #aaaaaa /*{borderColorHeader}*/;
+    background: #79ef9c;
+    color: black;
+    font-weight: bold;
+}
+
+/*.ui-dialog .ui-dialog-titlebar-close span {
+    color: darkgreen;
+}*/
