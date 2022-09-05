@@ -35,7 +35,8 @@ public partial class Modifica_Profilo : System.Web.UI.Page
 
     protected void btnSalva_Click(object sender, EventArgs e)
     {
-        int Chiave= int.Parse(Session["CHIAVE"].ToString());
+        int Chiave = 1; //sostituire una volta avuta la session
+        //int Chiave= int.Parse(Session["CHIAVE"].ToString());
         string Nome = txtNome.Text;
         string Cognome = txtCognome.Text;
         string Indirizzo = txtIndirizzo.Text;
