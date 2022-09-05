@@ -19,6 +19,11 @@ public partial class Admin_Popup_AssegnaCorsi : System.Web.UI.Page
     {
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
         //CORSI C = new CORSI();
+        if (Session["ChiaveAssegnazione"] == null)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Selezionare una voce dalla tabella')", true);
+            return;
+        }
         int Chiave = int.Parse(Session["ChiaveAssegnazione"].ToString());
         int Cod_Utente = int.Parse(ddlTutor.SelectedValue);
         //C.Chiave = Chiave;

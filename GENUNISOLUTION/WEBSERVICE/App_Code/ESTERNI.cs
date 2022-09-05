@@ -261,7 +261,7 @@ public class ESTERNI
         c.EseguiCmd(cmd);
     }
 
-    public bool Controlla_Abilitatazione()
+    public bool Controlla_Abilitazione()
     {
         SqlCommand cmd = new SqlCommand("ESTERNI_Controlla_Abilitazione");
         cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
@@ -358,6 +358,19 @@ public class ESTERNI
 
         cmd.CommandText = "ESTERNI_DOCENTI_SELECTALL";
         return C.EseguiSelect(cmd);
+    }
+
+    public void UpdatePassword_Studenti()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_UPDATE_PWD_STUDENTI";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+        cmd.Parameters.AddWithValue("@USR", USR);
+        cmd.Parameters.AddWithValue("@PWD", PWD);
+
+        c.EseguiCmd(cmd);
     }
 
     #endregion

@@ -19,8 +19,8 @@ public partial class Modifica_Profilo : System.Web.UI.Page
 
                 return;
             }
-
-            int cod = int.Parse(Session["CHIAVE"].ToString());
+            int cod = 1;
+            //int cod = int.Parse(Session["CHIAVE"].ToString());
             ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
             DataRow sel = E.SelectOne_Profilo_Studenti(cod).Rows[0];
             
@@ -35,7 +35,8 @@ public partial class Modifica_Profilo : System.Web.UI.Page
 
     protected void btnSalva_Click(object sender, EventArgs e)
     {
-        int Chiave= int.Parse(Session["CHIAVE"].ToString());
+        int Chiave = 1; //sostituire una volta avuta la session
+        //int Chiave= int.Parse(Session["CHIAVE"].ToString());
         string Nome = txtNome.Text;
         string Cognome = txtCognome.Text;
         string Indirizzo = txtIndirizzo.Text;
@@ -64,6 +65,7 @@ public partial class Modifica_Profilo : System.Web.UI.Page
     }
     protected void btnSalvaPass_Click(object sender, EventArgs e)
     {
+        int Chiave = 1;
         string User = txtUser.Text;
         string Password = txtPassword.Text;
 
@@ -77,7 +79,7 @@ public partial class Modifica_Profilo : System.Web.UI.Page
         //modifico la Password
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
-        E.UpdatePassword(User, Password);
+        E.UpdatePassword(Chiave, User, Password);
         lbl1.Text="User e Password Modificati!";
     }
 }

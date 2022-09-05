@@ -310,7 +310,7 @@ public class Esterni_WS : System.Web.Services.WebService
     {
         ESTERNI e = new ESTERNI();
         e.COD_UTENTE = COD_UTENTE;
-        bool abilitato = e.Controlla_Abilitatazione();
+        bool abilitato = e.Controlla_Abilitazione();
         return abilitato;
 
     }
@@ -340,5 +340,16 @@ public class Esterni_WS : System.Web.Services.WebService
         dt = E.SelectAll_Docenti();
         dt.TableName = "Docenti";
         return dt;
+    }
+
+    [WebMethod]
+    public void UpdatePassword_Studenti(int CHIAVE, string USR, string PWD)
+    {
+        ESTERNI e = new ESTERNI();
+        e.CHIAVE = CHIAVE;
+        e.USR = USR;
+        e.PWD = PWD;
+
+        e.UpdatePassword_Studenti();
     }
 }

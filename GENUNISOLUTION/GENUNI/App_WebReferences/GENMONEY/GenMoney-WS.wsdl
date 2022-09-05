@@ -78,7 +78,6 @@
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="COD_STUDENTE" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="AMMONTARE" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>

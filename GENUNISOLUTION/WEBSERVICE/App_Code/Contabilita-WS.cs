@@ -91,9 +91,9 @@ public class Contabilita_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public int SommaRicavi(string DATAINIZIO, string DATAFINE)
+    public decimal SommaRicavi(string DATAINIZIO, string DATAFINE)
     {
-        return Convert.ToInt32(CONTABILITA.SommaRicavi(DATAINIZIO, DATAFINE));
+        return CONTABILITA.SommaRicavi(DATAINIZIO, DATAFINE);
     }
 
     [WebMethod]
@@ -124,5 +124,14 @@ public class Contabilita_WS : System.Web.Services.WebService
     public decimal UtiliTipoCorso(string DATAINIZIO, string DATAFINE, string TIPOCORSO)
     {
         return CONTABILITA.UtiliTipoCorso(DATAINIZIO, DATAFINE, TIPOCORSO);
+    }
+
+    //metodo che riporta la lista dei costi per un singolo docente
+    [WebMethod]
+    public DataTable ListaSpeseDocenteSingolo(string DATAINIZIO, string DATAFINE, int CODICEDOCENTE)
+    {
+        DataTable dt = CONTABILITA.ListaSpeseDocenteSingolo(DATAINIZIO, DATAFINE, CODICEDOCENTE);
+        dt.TableName = "Lista spese";
+        return dt;
     }
 }
