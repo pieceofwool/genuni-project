@@ -113,8 +113,9 @@ public class Materie_WS : System.Web.Services.WebService
         M.Cod_Docente = COD_DOCENTE;
         M.Cod_Corso = COD_CORSO;
         dt.TableName = "Materie";
+        dt = M.SelectDocenteCorso();
         
-        return M.SelectDocenteCorso();
+        return dt;
     }
 
     //metodo che elenca le materie alle quali non e stato assegnato un docente

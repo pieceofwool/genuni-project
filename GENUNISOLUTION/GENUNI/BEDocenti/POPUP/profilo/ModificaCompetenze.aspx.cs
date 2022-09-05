@@ -15,7 +15,7 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         {
             COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
 
-            //int CHIAVE= Session["ChiaveEsterno"]
+            //int CHIAVE = Session["ChiaveEsterno"];
             //dt2 = C.SelectAllDocente(CHIAVE);
 
             int CHIAVE = 1;
