@@ -91,9 +91,9 @@ public class Contabilita_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public decimal SommaRicavi(string DATAINIZIO, string DATAFINE)
+    public int SommaRicavi(string DATAINIZIO, string DATAFINE)
     {
-        return CONTABILITA.SommaRicavi(DATAINIZIO, DATAFINE);
+        return Convert.ToInt32(CONTABILITA.SommaRicavi(DATAINIZIO, DATAFINE));
     }
 
     [WebMethod]
