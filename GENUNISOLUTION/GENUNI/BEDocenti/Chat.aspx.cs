@@ -10,7 +10,8 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        CaricaAsc();
+        
+        CaricaDesc();
     }
 
     protected void CaricaAsc()
@@ -42,18 +43,22 @@ public partial class BEDocenti_Default : System.Web.UI.Page
         litChat.Text = "";
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
 
-        int i = 0;
+        int i = 0;//lavoro con i per accedere alla dt in quanto dr mi richiede il cast e con null dà problemi
         int key = 0;
         foreach (DataRow dr in dt.Rows)
         {
 
             //se è un esterno faccio join con tabella esterni se no con la tabella utenti per recuperare i dati corretti
-            
+
+            //se il campo cod_Interno è nullo allora è uno esterno(studente o docente)
             if (string.IsNullOrEmpty(dt.Rows[i]["Cod_Interno"].ToString()))
             {
                // int cod_studente = (int)dt.Rows[i]["Cod_Studente"];
                 
+                //salvo la chiave della chat
                 key = dr.Field<int>("Chiave");
+
+                //chiamo un nuova datatable che contiene la select join con l'esterno per avere le sue informazioni
                 DataTable dt2 = C.SelectOneJoinEsterni(key);
 
                 //recupero variabili
@@ -69,8 +74,10 @@ public partial class BEDocenti_Default : System.Web.UI.Page
                 if (tipo == 'D') { esterno = "Docente"; }
                 else { esterno = "Studente"; }
 
+                //estensione immagine
                 string ext = dt2.Rows[0]["TipoImg"].ToString();
 
+                //per accedere al varbinary meglio usare una datarow
                 DataRow dr2 = dt2.Rows[0];
 
                 if (dt2.Rows[0]["Avatar"] != null)
@@ -95,17 +102,22 @@ public partial class BEDocenti_Default : System.Web.UI.Page
                 }
 
 
+                //riempo la literal
 
                 litChat.Text += "<tr><td>" + IMG + "</td>";
-                litChat.Text += "<td>(" + esterno + ")<br /><b> " + nome + " " + cognome + " </b></td>";
-                litChat.Text += "<td><small> Giorno:" + date.Substring(0, 10) + " <br /> Ora:" + date.Substring(10) + " </small></td>";
+                litChat.Text += "<td><b> " + nome + " " + cognome + " </b><br /><small>(" + esterno + ")</small></td>";
+                litChat.Text += "<td><small> Il " + date.Substring(0, 10) + " <br /> alle" + date.Substring(10) + " </small></td>";
                 litChat.Text += "<td><b> " + messaggio + " </b></td></tr>";
 
             }
 
+
+            //se il campo cod_Interno non è nullo allora è un interno(admin o tutor)
             else
             {
                 key = dr.Field<int>("Chiave");
+
+                //chiamo un nuova datatable che contiene la select join con l'interno per avere le sue informazioni
                 DataTable dt2 = C.SelectOneJoinUtenti(key);
 
                 //recupero variabili
@@ -116,15 +128,16 @@ public partial class BEDocenti_Default : System.Web.UI.Page
                 string cognome = dt2.Rows[0]["Cognome"].ToString();
 
                 string IMG;
-                string esterno = "esterno";
+                string esterno = "Tutor";
 
                 if (tipo == 'T') { esterno = "Tutor"; }
+                if (tipo == 'A') { esterno = "Admin"; }
 
                 IMG = "<img src=\"../img/logo.png\" style=\"width:70px\" />";
 
                 litChat.Text += "<tr><td>" + IMG + "</td>";
-                litChat.Text += "<td>(" + esterno + ")<br /><b> " + nome + " " + cognome + "</b></td>";
-                litChat.Text += "<td><small> Giorno:" + date.Substring(0, 10) + " <br /> Ora:" + date.Substring(10) + " </small></td>";
+                litChat.Text += "<td><b> " + nome + " " + cognome + " </b><br /><small>(" + esterno + ")</small></td>";
+                litChat.Text += "<td><small> Il " + date.Substring(0, 10) + " <br /> alle" + date.Substring(10) + " </small></td>";
                 litChat.Text += "<td><b> " + messaggio + " </b></td></tr>";
             }
 
@@ -154,7 +167,7 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
         C.InsertEsterni(codiceCorso, codiceEsterno, contenuto);
 
-        CaricaAsc();
+        CaricaDesc();
 
         txtRisposta.InnerText = null;
     }
