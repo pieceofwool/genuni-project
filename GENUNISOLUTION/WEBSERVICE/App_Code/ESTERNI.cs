@@ -349,5 +349,16 @@ public class ESTERNI
 
         return c.EseguiSelect(cmd);
     }
+
+    //metodo che seleziona tutti i docenti da ESTERNI
+    public DataTable SelectAll_Docenti()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_DOCENTI_SELECTALL";
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion
 }
