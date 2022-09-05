@@ -279,6 +279,29 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ListaSpeseDocenteSingolo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CODICEDOCENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaSpeseDocenteSingoloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaSpeseDocenteSingoloResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ListaSpeseSoapIn">
@@ -371,6 +394,12 @@
   <wsdl:message name="UtiliTipoCorsoSoapOut">
     <wsdl:part name="parameters" element="tns:UtiliTipoCorsoResponse" />
   </wsdl:message>
+  <wsdl:message name="ListaSpeseDocenteSingoloSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaSpeseDocenteSingolo" />
+  </wsdl:message>
+  <wsdl:message name="ListaSpeseDocenteSingoloSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaSpeseDocenteSingoloResponse" />
+  </wsdl:message>
   <wsdl:portType name="Contabilita_WSSoap">
     <wsdl:operation name="ListaSpese">
       <wsdl:input message="tns:ListaSpeseSoapIn" />
@@ -431,6 +460,10 @@
     <wsdl:operation name="UtiliTipoCorso">
       <wsdl:input message="tns:UtiliTipoCorsoSoapIn" />
       <wsdl:output message="tns:UtiliTipoCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaSpeseDocenteSingolo">
+      <wsdl:input message="tns:ListaSpeseDocenteSingoloSoapIn" />
+      <wsdl:output message="tns:ListaSpeseDocenteSingoloSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Contabilita_WSSoap" type="tns:Contabilita_WSSoap">
@@ -570,6 +603,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ListaSpeseDocenteSingolo">
+      <soap:operation soapAction="http://tempuri.org/ListaSpeseDocenteSingolo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Contabilita_WSSoap12" type="tns:Contabilita_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -701,6 +743,15 @@
     </wsdl:operation>
     <wsdl:operation name="UtiliTipoCorso">
       <soap12:operation soapAction="http://tempuri.org/UtiliTipoCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSpeseDocenteSingolo">
+      <soap12:operation soapAction="http://tempuri.org/ListaSpeseDocenteSingolo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

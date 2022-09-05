@@ -40,6 +40,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectOne_Profilo_Studenti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectOne_Profilo_StudentiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectOne_Profilo_StudentiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Insert">
         <s:complexType>
           <s:sequence>
@@ -378,6 +399,51 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Update_Profilo_Studenti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="COGNOME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CITTA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="INDIRIZZO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PROVINCIA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NAZIONALITA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Profilo_StudentiResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAll_Docenti">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAll_DocentiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAll_DocentiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePassword_Studenti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="USR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePassword_StudentiResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -391,6 +457,12 @@
   </wsdl:message>
   <wsdl:message name="SelectOneSoapOut">
     <wsdl:part name="parameters" element="tns:SelectOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectOne_Profilo_StudentiSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectOne_Profilo_Studenti" />
+  </wsdl:message>
+  <wsdl:message name="SelectOne_Profilo_StudentiSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectOne_Profilo_StudentiResponse" />
   </wsdl:message>
   <wsdl:message name="InsertSoapIn">
     <wsdl:part name="parameters" element="tns:Insert" />
@@ -512,6 +584,24 @@
   <wsdl:message name="Controlla_AbilitazioneSoapOut">
     <wsdl:part name="parameters" element="tns:Controlla_AbilitazioneResponse" />
   </wsdl:message>
+  <wsdl:message name="Update_Profilo_StudentiSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Profilo_Studenti" />
+  </wsdl:message>
+  <wsdl:message name="Update_Profilo_StudentiSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_Profilo_StudentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAll_DocentiSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAll_Docenti" />
+  </wsdl:message>
+  <wsdl:message name="SelectAll_DocentiSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAll_DocentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePassword_StudentiSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePassword_Studenti" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePassword_StudentiSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePassword_StudentiResponse" />
+  </wsdl:message>
   <wsdl:portType name="Esterni_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -520,6 +610,10 @@
     <wsdl:operation name="SelectOne">
       <wsdl:input message="tns:SelectOneSoapIn" />
       <wsdl:output message="tns:SelectOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectOne_Profilo_Studenti">
+      <wsdl:input message="tns:SelectOne_Profilo_StudentiSoapIn" />
+      <wsdl:output message="tns:SelectOne_Profilo_StudentiSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
@@ -601,6 +695,18 @@
       <wsdl:input message="tns:Controlla_AbilitazioneSoapIn" />
       <wsdl:output message="tns:Controlla_AbilitazioneSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Update_Profilo_Studenti">
+      <wsdl:input message="tns:Update_Profilo_StudentiSoapIn" />
+      <wsdl:output message="tns:Update_Profilo_StudentiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAll_Docenti">
+      <wsdl:input message="tns:SelectAll_DocentiSoapIn" />
+      <wsdl:output message="tns:SelectAll_DocentiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword_Studenti">
+      <wsdl:input message="tns:UpdatePassword_StudentiSoapIn" />
+      <wsdl:output message="tns:UpdatePassword_StudentiSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Esterni_WSSoap" type="tns:Esterni_WSSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -615,6 +721,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectOne">
       <soap:operation soapAction="http://tempuri.org/SelectOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOne_Profilo_Studenti">
+      <soap:operation soapAction="http://tempuri.org/SelectOne_Profilo_Studenti" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -802,6 +917,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Update_Profilo_Studenti">
+      <soap:operation soapAction="http://tempuri.org/Update_Profilo_Studenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAll_Docenti">
+      <soap:operation soapAction="http://tempuri.org/SelectAll_Docenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword_Studenti">
+      <soap:operation soapAction="http://tempuri.org/UpdatePassword_Studenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Esterni_WSSoap12" type="tns:Esterni_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -816,6 +958,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectOne">
       <soap12:operation soapAction="http://tempuri.org/SelectOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOne_Profilo_Studenti">
+      <soap12:operation soapAction="http://tempuri.org/SelectOne_Profilo_Studenti" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -996,6 +1147,33 @@
     </wsdl:operation>
     <wsdl:operation name="Controlla_Abilitazione">
       <soap12:operation soapAction="http://tempuri.org/Controlla_Abilitazione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Profilo_Studenti">
+      <soap12:operation soapAction="http://tempuri.org/Update_Profilo_Studenti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAll_Docenti">
+      <soap12:operation soapAction="http://tempuri.org/SelectAll_Docenti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword_Studenti">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePassword_Studenti" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

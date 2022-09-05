@@ -33,6 +33,16 @@ public class PROGRAMMI
         return C.EseguiSelect(cmd);
     }
 
+    public DataTable SelectOne()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "PROGRAMMI_SELECTONE";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+
+        return c.EseguiSelect(cmd);
+    }
+
     public void Insert()
     {
         CONNESSIONE c = new CONNESSIONE();

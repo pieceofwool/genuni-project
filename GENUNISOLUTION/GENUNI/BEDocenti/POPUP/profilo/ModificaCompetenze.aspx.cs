@@ -14,10 +14,14 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         if (!IsPostBack)
         {
             COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
-            int CHIAVE = 1;
-        dt2 = C.SelectOne(CHIAVE); //uso selectone apposta
 
-        txtSkills.Text = dt2.Rows[0]["Skills"].ToString();
+            //int CHIAVE = Session["ChiaveEsterno"];
+            //dt2 = C.SelectAllDocente(CHIAVE);
+
+            int CHIAVE = 1;
+            dt2 = C.SelectAllDocente(CHIAVE); //uso selectone apposta
+
+            txtSkills.Text = dt2.Rows[0]["Skills"].ToString();
 
         }
     }
@@ -34,33 +38,36 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
 
         COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
 
+        //int CHIAVE= Session["ChiaveEsterno"]
+        //dt2 = C.SelectAllDocente(CHIAVE);
 
-        //C.COD_DOCENTE = int.Parse(Session["CodiceDoc"].ToString());
         int CHIAVE = 1;
-        dt2 = C.SelectOne(CHIAVE);
+        dt2 = C.SelectAllDocente(CHIAVE);
         DataRow dr2 = dt2.Rows[0];
         byte[] arr2 = dr2.Field<byte[]>("Cv");
-        byte[] CV;
-        
-        string tipoCv= FileUploadCV.PostedFile.ContentType;
+        byte[] CV = FileUploadCV.FileBytes;
 
-        if(tipoCv!="application/pdf")
-        {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ok", "alert('Inserire un file pdf valido')", true);
-            return;
-        }
+        string tipoCv = FileUploadCV.PostedFile.ContentType;
 
+        //se non ha file il fileupload tengo il vecchio curriculum letto dal database
         if (!FileUploadCV.HasFile)
         {
             CV = arr2;
         }
-        else
+
+        else //altrimenti procedo con il salvataggio del nuovo
         {
+            //controllo che sia un pdf
+            if (tipoCv != "application/pdf" && tipoCv != "application/octet-stream")
+            {
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "ok", "alert('Inserire un file pdf valido')", true);
+                return;
+            }
             CV = FileUploadCV.FileBytes;
         }
 
         string SKILLS = txtSkills.Text.Trim();
-        C.Update(CHIAVE, CV, SKILLS);
+        C.UpdateCodDocente(CHIAVE, CV, SKILLS);
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "ok", "alert('Competenze inserite correttamente')", true);
 

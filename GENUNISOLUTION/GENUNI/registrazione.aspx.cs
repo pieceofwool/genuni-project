@@ -56,7 +56,7 @@ public partial class registrazione : System.Web.UI.Page
         string Nazione = txtNazione.Text.Trim();
         bool Abilitato = false;
         byte[] Avatar = File.ReadAllBytes(Server.MapPath(@"img\nopropic.jpg"));
-        string TipoImg = ".jpg";
+        string TipoImg = "image/jpg";
 
         // controllo se l'utente non sia già registrato
 

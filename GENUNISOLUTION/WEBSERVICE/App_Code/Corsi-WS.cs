@@ -218,5 +218,17 @@ public class Corsi_WS : System.Web.Services.WebService
         return dt;
     }
 
+    [WebMethod]
+    public bool Check_Tutor_Abilitato(int CHIAVE_UTENTE)
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        c.CHIAVE_UTENTE = CHIAVE_UTENTE;
+        bool abilitato = c.Check_Tutor_Abilitato();
+        dt.TableName = "Corsi";
+        return abilitato;
+
+    }
+
 
 }

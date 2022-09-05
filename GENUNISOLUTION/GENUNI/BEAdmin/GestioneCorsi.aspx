@@ -128,24 +128,26 @@
                             <asp:BoundField DataField="Nome" HeaderText="Nome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
                             <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
 
-                            <asp:BoundField DataField="Data_Creazione" HeaderText="Data Creazione" />
-                            <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
-                            <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
-                            <asp:BoundField DataField="Data_Partenza" HeaderText="Data PartenSza" />
-                            <asp:BoundField DataField="Status_Corsi" HeaderText="Status Corsi" />
-                            <asp:BoundField DataField="Data_Status" HeaderText="Data Status" />
-                            <asp:BoundField DataField="Costo" Visible="false" />
-                            <asp:BoundField DataField="Avatar_Corso" Visible="false" />
-                            <asp:BoundField DataField="Tipo_Img" Visible="false" />
-                            <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
-                        </Columns>
-                    </asp:GridView>
-                    <hr />
-                </td>
-            </tr>
-        </table>
-        <div class="titoliBE">
-            <h4>Assegnazione corsi</h4>
+                <asp:BoundField DataField="Data_Creazione" HeaderText="Data Creazione" />
+                <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+                <asp:BoundField DataField="Descrizione" Visible="false" />
+                <asp:BoundField DataField="Data_Partenza" HeaderText="Data Partenza" />
+                <asp:BoundField DataField="Status_Corsi" HeaderText="Status" />
+                <asp:BoundField DataField="Data_Status" HeaderText="Data Status" />
+                <asp:BoundField DataField="Costo" Visible="false" />
+                <asp:BoundField DataField="Avatar_Corso" Visible="false" />
+                <asp:BoundField DataField="Tipo_Img" Visible="false" />
+
+                <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
+            </Columns>
+        </asp:GridView>
+    </div>
+    <div id="assegnazcorsi">
+        <h1>Assegnazione corsi</h1>
+        <div class="pulsanti">
+            <asp:Button ID="btnAssegna" runat="server" ClientIDMode="Static" Enabled="False" Text="Assegna corso" CssClass="button" />
+            <a href="Popup/AssegnaCorsi.aspx">Assegna corso</a>
+            <asp:Button ID="btnAggiornaAssegnazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaAssegnazione_Click" CssClass="button" />
         </div>
         <table>
             <tr>

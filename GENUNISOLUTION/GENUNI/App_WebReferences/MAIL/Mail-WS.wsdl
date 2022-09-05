@@ -13,6 +13,16 @@
       <s:element name="mailInviaResponse">
         <s:complexType />
       </s:element>
+      <s:element name="mailInvia_Docenti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="USR" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailInvia_DocentiResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="mailInviaSoapIn">
@@ -21,10 +31,20 @@
   <wsdl:message name="mailInviaSoapOut">
     <wsdl:part name="parameters" element="tns:mailInviaResponse" />
   </wsdl:message>
+  <wsdl:message name="mailInvia_DocentiSoapIn">
+    <wsdl:part name="parameters" element="tns:mailInvia_Docenti" />
+  </wsdl:message>
+  <wsdl:message name="mailInvia_DocentiSoapOut">
+    <wsdl:part name="parameters" element="tns:mailInvia_DocentiResponse" />
+  </wsdl:message>
   <wsdl:portType name="Mail_WSSoap">
     <wsdl:operation name="mailInvia">
       <wsdl:input message="tns:mailInviaSoapIn" />
       <wsdl:output message="tns:mailInviaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mailInvia_Docenti">
+      <wsdl:input message="tns:mailInvia_DocentiSoapIn" />
+      <wsdl:output message="tns:mailInvia_DocentiSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Mail_WSSoap" type="tns:Mail_WSSoap">
@@ -38,11 +58,29 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="mailInvia_Docenti">
+      <soap:operation soapAction="http://tempuri.org/mailInvia_Docenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Mail_WSSoap12" type="tns:Mail_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="mailInvia">
       <soap12:operation soapAction="http://tempuri.org/mailInvia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailInvia_Docenti">
+      <soap12:operation soapAction="http://tempuri.org/mailInvia_Docenti" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
