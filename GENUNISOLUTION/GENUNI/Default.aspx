@@ -492,8 +492,8 @@
                                     <p>Vuoi pi&#249; informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
 
                                     <asp:TextBox ID="txtEmail" CssClass="" placeholder="E-mail" runat="server" TextMode="Email"></asp:TextBox>
-                                    <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti alla newsletter!" />
-
+                                    <asp:Button ID="btnIscrivitiNews" runat="server" Enabled="false" Text="Iscriviti alla newsletter!" />
+                                    <asp:CheckBox ID="chbxPrivacy" runat="server" AutoPostBack="False" />Autorizzo al trattamento dei miei dati personali a scopo di marketing.
                                 </div>
 
                             </div>
@@ -535,7 +535,7 @@
                             <h4>Lavora con noi, diventa un docente!</h4>
                             <p>Regstrati ed invia la tua candidatura per poter diventare un insegnante ed entrare nel nostro team!</p>
 
-                            <asp:Button ID="btnCandidati" runat="server" Text="Candidati" />
+                            <asp:Button ID="btnCandidati" runat="server" Text="Candidati" OnClick="btnCandidati_Click" />
 
                         </div>
 

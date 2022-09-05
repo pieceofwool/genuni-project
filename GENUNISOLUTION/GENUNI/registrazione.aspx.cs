@@ -10,7 +10,13 @@ public partial class registrazione : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["IscrizioneComeDocente"] != null) 
+        {
+            ddlTipo.SelectedValue = "D";
+            ddlTipo.DataBind();
 
+            Session["IscrizioneComeDocenete"] = null;
+        }
     }
 
     protected void btnRegistra_Click(object sender, EventArgs e)
