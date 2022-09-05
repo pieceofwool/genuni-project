@@ -75,7 +75,7 @@ public static class CONTABILITA
         cmd.Parameters.AddWithValue("@dataFine", dataFine);
 
         DataTable dt = new CONNESSIONE().EseguiSelect(cmd);
-        return dt.Rows[0].Field<decimal>("Spese");
+        return decimal.Parse(dt.Rows[0]["Spese"].ToString());
     }
 
     public static decimal SommaSpeseCorso(string dataInizio, string dataFine, int codCorso)
@@ -86,7 +86,7 @@ public static class CONTABILITA
         cmd.Parameters.AddWithValue("@codCorso", codCorso);
 
         DataTable dt = new CONNESSIONE().EseguiSelect(cmd);
-        return dt.Rows[0].Field<decimal>("Spese");
+        return decimal.Parse(dt.Rows[0]["Spese"].ToString());
     }
 
     public static decimal SommaSpeseTipoCorso(string dataInizio, string dataFine, string tipoCorso)
@@ -97,7 +97,7 @@ public static class CONTABILITA
         cmd.Parameters.AddWithValue("@tipoCorso", tipoCorso);
 
         DataTable dt = new CONNESSIONE().EseguiSelect(cmd);
-        return dt.Rows[0].Field<decimal>("Spese");
+        return decimal.Parse(dt.Rows[0]["Spese"].ToString());
     }
 
     public static decimal SommaRicavi(string dataInizio, string dataFine)
@@ -107,7 +107,7 @@ public static class CONTABILITA
         cmd.Parameters.AddWithValue("@dataFine", dataFine);
 
         DataTable dt = new CONNESSIONE().EseguiSelect(cmd);
-        return dt.Rows[0].Field<decimal>("Ricavi");
+        return decimal.Parse(dt.Rows[0]["Ricavi"].ToString());
     }
 
     public static decimal SommaRicaviCorso(string dataInizio, string dataFine, int codCorso)
@@ -118,7 +118,7 @@ public static class CONTABILITA
         cmd.Parameters.AddWithValue("@codCorso", codCorso);
 
         DataTable dt = new CONNESSIONE().EseguiSelect(cmd);
-        return dt.Rows[0].Field<decimal>("Ricavi");
+        return decimal.Parse(dt.Rows[0]["Ricavi"].ToString());
     }
 
     public static decimal SommaRicaviTipoCorso(string dataInizio, string dataFine, string tipoCorso)
@@ -129,7 +129,7 @@ public static class CONTABILITA
         cmd.Parameters.AddWithValue("@tipoCorso", tipoCorso);
 
         DataTable dt = new CONNESSIONE().EseguiSelect(cmd);
-        return dt.Rows[0].Field<decimal>("Ricavi");
+        return decimal.Parse(dt.Rows[0]["Ricavi"].ToString());
     }
 
     public static decimal Utili(string dataInizio, string dataFine)
