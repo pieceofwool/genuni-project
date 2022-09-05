@@ -261,7 +261,7 @@ public class ESTERNI
         c.EseguiCmd(cmd);
     }
 
-    public bool Controlla_Abilitatazione()
+    public bool Controlla_Abilitazione()
     {
         SqlCommand cmd = new SqlCommand("ESTERNI_Controlla_Abilitazione");
         cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
