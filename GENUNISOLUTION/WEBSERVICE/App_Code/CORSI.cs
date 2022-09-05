@@ -215,6 +215,19 @@ public class CORSI
 
     }
 
+    public bool Check_Tutor_Abilitato()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_CHECK_TUTOR_ABILITATO");
+        cmd.Parameters.AddWithValue("@COD_UTENTE", CHIAVE_UTENTE);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        DataTable dt = conn.EseguiSelect(cmd);
+
+        if (dt.Rows.Count == 0) return false;
+
+        return true;
+    }
+
     #endregion Metodi
 
 }
