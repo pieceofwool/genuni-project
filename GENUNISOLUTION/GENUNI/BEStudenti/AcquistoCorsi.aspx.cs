@@ -24,29 +24,28 @@ public partial class BEStudenti_Default : System.Web.UI.Page
         GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();
 
         GridViewRow riga = grigliaCorso.SelectedRow;
-        int costo2 = int.Parse(riga.Cells[1].Text.ToString());
+        int AMMONTARE = int.Parse(riga.Cells[10].Text.ToString());
 
         //DataTable dt = new DataTable();
         //int costo = int.Parse(dt.Rows[0]["costo"].ToString());
 
-        if (g.SaldoStudente(COD_STUDENTE) > costo2)
+        if (g.SaldoStudente(COD_STUDENTE) > AMMONTARE)
         {
             cl.Insert(COD_CORSO, COD_STUDENTE);
-            //g.Insert(COD_STUDENTE, COD_CORSO, AMMONTARE);
+            g.Insert(COD_STUDENTE, COD_CORSO, AMMONTARE);
         }
         else
         {
             lblErrore.Text = "Saldo insufficiente";
         }
-        //fare un insert in genmoney
-        //g.Insert();
-        //g.
+        int saldoNuovo = g.SaldoStudente(COD_STUDENTE) - AMMONTARE;
     }
 
     protected void CaricaCorsiDisponibili()
     {
         CORSI.Corsi_WSSoapClient c = new CORSI.Corsi_WSSoapClient();
-        grigliaCorso.DataSource = c.SelectNonAssegnati();
+        int CHIAVE = 2;
+        grigliaCorso.DataSource = c.SelectOne(CHIAVE);
         grigliaCorso.DataBind();
     }
 

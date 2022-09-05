@@ -27,13 +27,11 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 
     protected void CaricaCorsiAcquistati()
     {
-        CORSI.Corsi_WSSoapClient c = new CORSI.Corsi_WSSoapClient();
-        //da sostituire con il codice del corso tramite session
-        int CHIAVE = 1;
-        grigliaCorsiAcquistati.DataSource = c.SelectOne(CHIAVE);
-        grigliaCorsiAcquistati.DataBind();
-        //DA SOSTITUIRE CON LA NUOVA PROCEDURE
 
+        ESTERNI.Esterni_WSSoapClient e = new ESTERNI.Esterni_WSSoapClient();
+        int CHIAVE = 1;
+        grigliaCorsiAcquistati.DataSource = e.CorsiFrequentati(CHIAVE);
+        grigliaCorsiAcquistati.DataBind();
 
 
 
@@ -63,11 +61,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 
     protected void grigliaCorsiAcquistati_RowDataBound(object sender, GridViewRowEventArgs e)
     {
-        e.Row.Cells[1].Visible = false;
-        e.Row.Cells[2].Visible = false;
+        e.Row.Cells[4].Visible = false;
         e.Row.Cells[5].Visible = false;
-        e.Row.Cells[8].Visible = false;
-        e.Row.Cells[9].Visible = false;
-        e.Row.Cells[11].Visible = false;
     }
 }

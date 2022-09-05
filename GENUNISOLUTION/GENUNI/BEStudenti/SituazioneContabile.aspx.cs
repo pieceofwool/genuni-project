@@ -39,4 +39,11 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         grigliaStorico.DataBind();
     }
 
+
+    protected void grigliaStorico_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        e.Row.Cells[0].Visible = false;
+        e.Row.Cells[1].Visible = false;
+
+    }
 }
