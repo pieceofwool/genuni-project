@@ -65,6 +65,7 @@ public partial class Modifica_Profilo : System.Web.UI.Page
     }
     protected void btnSalvaPass_Click(object sender, EventArgs e)
     {
+        int Chiave = 1;
         string User = txtUser.Text;
         string Password = txtPassword.Text;
 
@@ -78,7 +79,7 @@ public partial class Modifica_Profilo : System.Web.UI.Page
         //modifico la Password
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
-        E.UpdatePassword(User, Password);
+        E.UpdatePassword(Chiave, User, Password);
         lbl1.Text="User e Password Modificati!";
     }
 }
