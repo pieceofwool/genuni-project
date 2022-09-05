@@ -55,8 +55,9 @@
                         <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
                     </div>--%>
                     <div class="social-links">
-                        <asp:TextBox ID="txtSearch" CssClass="mr-sm-2" placeholder="Cerca Corsi" runat="server"></asp:TextBox>
-                            <%--<input class="form-control mr-sm-2" type="search" id="barSearch" placeholder="Ricerca" aria-label="Search">
+                        <asp:TextBox ID="txtSearch" BorderStyle="None" Height="35px" Text-align="center" CssClass="mr-sm-2 txtSearch" placeholder="Cerca corsi" runat="server"></asp:TextBox>
+                        <asp:Button ID="btnSearch" CssClass="btn btn-outline-info my-2 my-sm-0" runat="server" Text="Cerca" />
+                        <%--<input class="form-control mr-sm-2" type="search" id="barSearch" placeholder="Ricerca" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" id="btnSearch" type="submit">Search</button>
                             <button class="btn btn-outline-info my-2 my-sm-0" id="btnSearch" type="submit">Cerca</button>--%>
                     </div>

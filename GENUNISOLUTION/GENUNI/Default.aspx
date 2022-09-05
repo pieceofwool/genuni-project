@@ -82,19 +82,19 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="why-us-img">
-                            <img src="img/why-us.jpg" alt="" class="img-fluid">
+                            <img src="assets/img/why-us.png" alt="" class="img-fluid" style="margin-top: -46px">
                         </div>
                     </div>
 
                     <div class="col-lg-6">
                         <div class="why-us-content">
-                            <p>Offriamo la possibilit&#224; di svolgere molteplici corsi, sia in ambito informatico che in ambito amministrativo in maniera del tutto innovativa.</p>
-                            <p>
+                            <p class="pMission">Offriamo la possibilit&#224; di svolgere molteplici corsi, sia in ambito informatico che in ambito amministrativo in maniera del tutto innovativa.</p>
+                            <p class="pMission">
                                 Ti forniremo una preparazione a 360&#176; per aiutarti ad affrontare il percorso lavorativo futuro pi&#249; adatto a te. 
                                 Il nostro obiettivo &#232; quello di farti raggiungere un livello di conoscenza adeguato, fornendoti indicatori e strumenti professionali e culturali 
                                 affinch&#232; tu possa investirli su te stesso e determinare il tuo successo.
                             </p>
-                            <div class="features wow bounceInUp clearfix">
+                            <div class="features wow bounceInUp clearfix" style="margin-top: 54px">
                                 <img src="img/genMoney2.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Gen Money</h4>
@@ -318,7 +318,7 @@
             <div class="container">
 
                 <header class="section-header">
-                    <h3>Abbonamenti corsi</h3>
+                    <h3>GenMoney</h3>
                     <p>Scegli il pacchetto che fa per te ed acquista i GenMoney per avere accesso ai nostri corsi!</p>
                 </header>
 
@@ -330,10 +330,10 @@
                             <div class="card-header">
                                 <h3><span class="currency">
                                     <img src="img/genMoney2.png" class="iconeMoney" />
-                                </span>50<span class="period">/mese</span></h3>
+                                </span>50<span class="period"></span></h3>
                             </div>
                             <div class="card-block">
-                                <h4 class="card-title">Piano base
+                                <h4 class="card-title">€250
                                 </h4>
                                 <ul class="list-group">
                                     <li class="list-group-item">Possibilit&#224; di accesso a 1 corso</li>
@@ -355,7 +355,7 @@
                                 </span>100<span class="period"></span></h3>
                             </div>
                             <div class="card-block">
-                                <h4 class="card-title">Piano medio
+                                <h4 class="card-title">€500
                                 </h4>
                                 <ul class="list-group">
                                     <li class="list-group-item">Odio animi voluptates</li>
@@ -377,7 +377,7 @@
                                 </span>200<span class="period"></span></h3>
                             </div>
                             <div class="card-block">
-                                <h4 class="card-title">Piano Premium
+                                <h4 class="card-title">€1000
                                 </h4>
                                 <ul class="list-group">
                                     <li class="list-group-item">Odio animi voluptates</li>
@@ -505,8 +505,8 @@
                                         <li><a href="#">Home</a></li>
                                         <li><a href="#">Chi siamo</a></li>
                                         <li><a href="#">Corsi</a></li>
-                                        <li><a href="#">Termini di servizio</a></li>
-                                        <li><a href="#">Privacy policy</a></li>
+                                        <li><a href="LoginCopia.aspx">Termini di servizio</a></li>
+                                        <li><a href="../BEAdmin/GestioneCorsi.aspx">Privacy policy</a></li>
                                     </ul>
                                 </div>
 
@@ -530,8 +530,8 @@
 
                     <div class="col-lg-6">
 
-                        <div class="footer-newsletter">
-
+                        <div class="form">
+                            <img src="assets/img/docente_genUni.jpg" id="imgDocenteLavoraConNoi" alt="Lavora con noi">
                             <h4>Lavora con noi, diventa un docente!</h4>
                             <p>Regstrati ed invia la tua candidatura per poter diventare un insegnante ed entrare nel nostro team!</p>
 
