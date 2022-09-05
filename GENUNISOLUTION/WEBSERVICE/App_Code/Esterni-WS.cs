@@ -310,7 +310,7 @@ public class Esterni_WS : System.Web.Services.WebService
     {
         ESTERNI e = new ESTERNI();
         e.COD_UTENTE = COD_UTENTE;
-        bool abilitato = e.Controlla_Abilitatazione();
+        bool abilitato = e.Controlla_Abilitazione();
         return abilitato;
 
     }
