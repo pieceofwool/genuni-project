@@ -16,6 +16,9 @@
                     <div class="udlite-container user-manage--container--11_wD">
                         <input type="hidden" name="csrfmiddlewaretoken" value="ZWMsn0DLX2ef9iOICnMhzc516rmtjGXoQpxXBMHDmwfcZmEiPMlMh6xKDH5megwi"><input name="ignore_warnings" type="hidden" value="false"><div class="user-manage--section--4Hqsd">
                             <fieldset class="udlite-form-group" style="padding-top:77px;">
+                                 <div id="tabella" runat="server">
+                                <asp:Label ID="lblRes" runat="server" Text=""></asp:Label>
+                                 </div>
                                 <legend class="udlite-form-label udlite-heading-sm">Profilo:</legend>
                                 <div class="udlite-form-group">
                                     <label class="udlite-sr-only udlite-form-label udlite-heading-sm" for="form-group--3">Nome</label><br />
@@ -38,24 +41,14 @@
                                           <label class="udlite-sr-only udlite-form-label udlite-heading-sm" for="form-group--5">Provincia</label>
                                         <asp:TextBox ID="txtProvincia" runat="server"></asp:TextBox>
                                     </div>
-                               
-                                    <div class="udlite-form-group">
-                                        <label class="udlite-sr-only udlite-form-label udlite-heading-sm" for="form-group--11">Nazionalità</label><div class="udlite-select-container udlite-select-container-large">
-
-                                            <asp:DropDownList ID="DropDownList1" runat="server">
-                                                <asp:ListItem>--Seleziona Nazionalità--</asp:ListItem>
-                                                <asp:ListItem>Tedesco</asp:ListItem>
-                                                <asp:ListItem>Inglese</asp:ListItem>
-                                                <asp:ListItem>Spagnolo</asp:ListItem>
-                                                <asp:ListItem>Olandese</asp:ListItem>
-                                                <asp:ListItem>Italiano</asp:ListItem>
-                                                <asp:ListItem>Giapponese</asp:ListItem>
-                                                <asp:ListItem>Cinese</asp:ListItem>
-                                            </asp:DropDownList>
-                                        </div>
+                               <div class="udlite-form-group">
+                                          <label class="udlite-sr-only udlite-form-label udlite-heading-sm" for="form-group--5">nazionalità</label>
+                                        <asp:TextBox ID="txtNazionalita" runat="server"></asp:TextBox>
                                     </div>
+                                    
+                                     </div>
                                 <div class="udlite-form-group">
-                                        <asp:Button ID="btnSalva" runat="server" Text="Salva" />
+                                        <asp:Button ID="btnSalva" runat="server" Text="Salva" OnClick="btnSalva_Click" />
                                     </div>
                             </fieldset>
                         </div>
@@ -63,19 +56,19 @@
                         <div>
                              <legend class="udlite-form-label udlite-heading-sm">Modifica Password:</legend>
                             <div>
-                                <asp:Label runat="server" Text="Vecchia Password"
+                                <asp:Label runat="server" Text="User"
                                     Width="100px"></asp:Label>
-                                <asp:TextBox ID="TxtVecchiaPassword" runat="server" Width="200px"></asp:TextBox>
+                                <asp:TextBox ID="txtUser" runat="server" Width="200px"></asp:TextBox>
                                 <br />
-                                <asp:Label ID="Label2" runat="server" Text="Nuova Password"
+                                <asp:Label ID="Label2" runat="server" Text="Password"
                                     Width="100px"></asp:Label>
-                                <asp:TextBox ID="txtNuovaPassword" runat="server"
+                                <asp:TextBox ID="txtPassword" runat="server"
                                     TextMode="Password" Width="200px">
                                 </asp:TextBox>
                                 <br />
-                                <asp:Button ID="btn_Salva" runat="server" Text="Salva" />
+                                <asp:Button ID="btn_SalvaPass" runat="server" Text="Salva" OnClick="btnSalvaPass_Click" />
                                 <br />
-                                <asp:Label ID="lb1" runat="server" Font-Bold="True" ForeColor="#FF3300"></asp:Label>
+                                <asp:Label ID="lbl1" runat="server" Text=""></asp:Label>
                             </div>
                         </div>
                     </div>

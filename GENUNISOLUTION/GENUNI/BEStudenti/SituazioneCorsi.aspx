@@ -10,22 +10,22 @@
     <br />
     <div id="corsi">
         <asp:Label ID="Label1" runat="server" Text="Corsi acquistati"></asp:Label>
-        <asp:GridView ID="grigliaCorsiAcquistati" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged">
+        <%--<asp:LinkButton ID="lnkDownload" Text="Download" CommandArgument='<%# Eval("FileData") %>' runat="server" OnClick="lnkDownload_Click"></asp:LinkButton>--%>
+        <asp:GridView ID="grigliaCorsiAcquistati" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged" OnRowCommand="grigliaCorsiAcquistati_RowCommand" OnRowDataBound="grigliaCorsiAcquistati_RowDataBound">
             <Columns>
-                <asp:ButtonField Text="link" />
-                <asp:BoundField DataField="Materia" HeaderText="Materia" SortExpression="Materia" />
-
+                <asp:CommandField ButtonType="Button" ShowSelectButton="True" SelectText="Vai al corso" />
             </Columns>
+
 
         </asp:GridView>
     </div>
     <div>
 
         <asp:Label ID="Label2" runat="server" Text="Corsi disponibili"></asp:Label>
-        <asp:GridView ID="grigliaCorsiDisponibili" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged">
+        <asp:GridView ID="grigliaCorsiDisponibili" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged" OnRowCommand="grigliaCorsiDisponibili_RowCommand">
             <Columns>
-                <asp:ButtonField Text="link" />
-                <asp:BoundField DataField="Materia" HeaderText="Materia" SortExpression="Materia" />
+                <asp:ButtonField Text="Vai al corso" ButtonType="Button" />
+                
 
             </Columns>
 

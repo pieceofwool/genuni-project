@@ -29,22 +29,14 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     }
 
 
-    //verificare che il bottone sia utile
-    protected void btnAggiornaSaldo_Click(object sender, EventArgs e)
-    {
-        GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();
-        //qui va l'aggiornamento della griglia tramite l'aggiornamento del saldo +
-        //PROCEDURE GENMONEY_COUNT_STUDENTE
-    }
-
 
     protected void CaricaStorico()
     {
         //storico acquisti con cod studente
-        //GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();
-        //int CHIAVE = 1;
-        //grigliaStorico.DataSource = g.Storico_Studente(CHIAVE);
-        //grigliaStorico.DataBind();
+        GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();
+        int COD_STUDENTE = 1;
+        grigliaStorico.DataSource = g.Storico_Studente(COD_STUDENTE);
+        grigliaStorico.DataBind();
     }
 
 }

@@ -14,9 +14,6 @@
             <asp:Label ID="lblSaldo" runat="server" Text=""></asp:Label><br />
             <asp:Button ID="btnAcquista" runat="server" Text="Acquista GenMoney" OnClick="btnAcquista_Click"/>
         </div>
-        <div>
-            <asp:Button ID="btnAggiornaSaldo" runat="server" Text="Aggiorna Saldo" OnClick="btnAggiornaSaldo_Click" />
-        </div>
         <p>Storico Acquisti</p>
         <div>
             <asp:GridView ID="grigliaStorico" runat="server"></asp:GridView>
