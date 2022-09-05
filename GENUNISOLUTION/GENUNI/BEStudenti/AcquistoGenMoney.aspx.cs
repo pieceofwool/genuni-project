@@ -18,8 +18,9 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         int AMMONTARE= int.Parse(ddlPacchetto.SelectedValue);
         //int COD_STUDENTE = int.Parse(Session["Cod_Studente"].ToString());
         int COD_STUDENTE = 1;
+        string COD_CORSO = "";
         //qui va l'insert senza codice corso
-        g.Studenti_Acquisto(COD_STUDENTE, AMMONTARE);
+        g.Studenti_Acquisto(COD_STUDENTE, AMMONTARE, int.Parse(COD_CORSO));
         lblC.Text = "GenMoney acquistati! Torna alla pagina precedente per visualizzare il saldo";
 
     }
