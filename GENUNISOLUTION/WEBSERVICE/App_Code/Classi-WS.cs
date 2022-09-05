@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Xml;
 
 /// <summary>
 /// Descrizione di riepilogo per Classi_WS
@@ -62,5 +63,19 @@ public class Classi_WS : System.Web.Services.WebService
 
         c.Update();
     }
+
+    //metodo che restituisce tutte le classi in cui e presente lo studente
+    [WebMethod]
+    public DataTable SelectAllStudenti(int COD_STUDENTE)
+    {
+        DataTable dt = new DataTable();
+        CLASSI C = new CLASSI();
+        C.COD_STUDENTE = COD_STUDENTE;
+        dt = C.SelectAllStudente();
+        dt.TableName = "Classi";
+        return dt;
+    }
+
+
 
 }
