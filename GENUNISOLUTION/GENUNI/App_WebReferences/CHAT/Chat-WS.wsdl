@@ -149,6 +149,18 @@
       <s:element name="InsertEsterniResponse">
         <s:complexType />
       </s:element>
+      <s:element name="InsertInterni">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_INTERNO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONTENUTO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertInterniResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -199,6 +211,12 @@
   <wsdl:message name="InsertEsterniSoapOut">
     <wsdl:part name="parameters" element="tns:InsertEsterniResponse" />
   </wsdl:message>
+  <wsdl:message name="InsertInterniSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertInterni" />
+  </wsdl:message>
+  <wsdl:message name="InsertInterniSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertInterniResponse" />
+  </wsdl:message>
   <wsdl:portType name="Chat_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -231,6 +249,10 @@
     <wsdl:operation name="InsertEsterni">
       <wsdl:input message="tns:InsertEsterniSoapIn" />
       <wsdl:output message="tns:InsertEsterniSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInterni">
+      <wsdl:input message="tns:InsertInterniSoapIn" />
+      <wsdl:output message="tns:InsertInterniSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Chat_WSSoap" type="tns:Chat_WSSoap">
@@ -307,6 +329,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="InsertInterni">
+      <soap:operation soapAction="http://tempuri.org/InsertInterni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Chat_WSSoap12" type="tns:Chat_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -375,6 +406,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertEsterni">
       <soap12:operation soapAction="http://tempuri.org/InsertEsterni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInterni">
+      <soap12:operation soapAction="http://tempuri.org/InsertInterni" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -53,6 +53,21 @@ public class CHAT
       
 
     }
+
+    public void InsertInterni()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_INSERT_INTERNI";
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
+        cmd.Parameters.AddWithValue("@Cod_Interno", COD_INTERNO);
+        cmd.Parameters.AddWithValue("@Contenuto", CONTENUTO);
+
+
+        c.EseguiCmd(cmd);
+
+
+    }
     public DataTable SelectOne()
     {
         CONNESSIONE c = new CONNESSIONE();
