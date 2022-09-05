@@ -95,6 +95,29 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public bool CheckOne(string TIPO, string USR, string PWD, string RAGIONE_SOCIALE, string COGNOME, string NOME)
+    {
+        ESTERNI e = new ESTERNI();
+        e.TIPO = TIPO;
+        e.USR = USR;
+        e.PWD = PWD;
+        e.RAGIONE_SOCIALE = RAGIONE_SOCIALE;
+        e.COGNOME = COGNOME;
+        e.NOME = NOME;
+
+        return e.CheckOne();
+    }
+
+    [WebMethod]
+    public void AbilitaEsterno(int Chiave)
+    {
+        ESTERNI e = new ESTERNI();
+        e.CHIAVE = Chiave;
+
+        e.AbilitaEsterno();
+    }
+
+    [WebMethod]
     public void Delete(int CHIAVE)
     {
         ESTERNI e = new ESTERNI();
@@ -111,6 +134,15 @@ public class Esterni_WS : System.Web.Services.WebService
         e.PWD = PWD;
         string tipoLogin = e.TipoLogin();
         return tipoLogin;
+    }
+
+    [WebMethod]
+    public string GetNome(int Chiave)
+    {
+        ESTERNI e = new ESTERNI();
+        e.CHIAVE = Chiave;
+        string NomeEsterno = e.GetNome();
+        return NomeEsterno;
     }
 
     [WebMethod]
@@ -228,11 +260,11 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public int RecuperaCodUtente(string USR)
+    public int RecuperaCodEsterno(string USR)
     {
         ESTERNI e = new ESTERNI();
         e.USR = USR;
-        int codUtente = e.RecuperaCodUtente();
+        int codUtente = e.RecuperaCodEsterno();
         return codUtente;
     }
 
@@ -260,5 +292,15 @@ public class Esterni_WS : System.Web.Services.WebService
         DataTable dt = new ESTERNI().SelectCompetenze();
         dt.TableName = "Docenti";
         return dt;
+    }
+
+    [WebMethod]
+    public bool Controlla_Abilitazione(int COD_UTENTE)
+    {
+        ESTERNI e = new ESTERNI();
+        e.COD_UTENTE = COD_UTENTE;
+        bool abilitato = e.Controlla_Abilitatazione();
+        return abilitato;
+
     }
 }

@@ -143,4 +143,14 @@ public class Utenti_WS : System.Web.Services.WebService
         int codUtente = u.RecuperaCodUtente();
         return codUtente;
     }
+
+    [WebMethod]
+    public bool Controlla_Abilitazione(int COD_UTENTE)
+    {
+        UTENTI u = new UTENTI();
+        u.Cod_Utente = COD_UTENTE;
+        bool abilitato = u.Controlla_Abilitazione();
+        return abilitato;
+
+    }
 }

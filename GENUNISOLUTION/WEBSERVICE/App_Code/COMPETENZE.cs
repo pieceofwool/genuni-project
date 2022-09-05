@@ -68,4 +68,19 @@ public class COMPETENZE
 
         return c.EseguiSelect(cmd);
     }
+
+    public void UpdateCodDocente()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "COMPETENZE_UPDATE_COD_DOCENTE";
+        cmd.Parameters.AddWithValue("@Cod_Docente", COD_DOCENTE);
+        cmd.Parameters.AddWithValue("@Cv", Cv);
+        cmd.Parameters.AddWithValue("@Skills", SKILLS);
+
+
+        c.EseguiCmd(cmd);
+        //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
+
+    }
 }

@@ -12,6 +12,7 @@ public class ESTERNI
 {
     #region MEMBRI
     public int CHIAVE;
+    public int COD_UTENTE;
     public string TIPO;
     public string USR;
     public string PWD;
@@ -110,6 +111,26 @@ public class ESTERNI
         c.EseguiCmd(cmd);
     }
 
+    public bool CheckOne()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_CHECKONE";
+        cmd.Parameters.AddWithValue("@TIPO", TIPO);
+        cmd.Parameters.AddWithValue("@USR", USR);
+        cmd.Parameters.AddWithValue("@PWD", PWD);
+        cmd.Parameters.AddWithValue("@RAGIONE_SOCIALE", RAGIONE_SOCIALE);
+        cmd.Parameters.AddWithValue("@COGNOME", COGNOME);
+        cmd.Parameters.AddWithValue("@NOME", NOME);
+
+        DataTable dt = C.EseguiSelect(cmd);
+
+        if (dt.Rows.Count == 0) return false;
+
+        return true;
+    }
+
     public void Delete()
     {
         CONNESSIONE c = new CONNESSIONE();
@@ -191,6 +212,17 @@ public class ESTERNI
         return C.EseguiSelect(cmd).Rows[0].Field<string>("Tipo");
     }
 
+    public string GetNome()
+    {
+        SqlCommand cmd = new SqlCommand("ESTERNI_GETNOME");
+        CONNESSIONE C = new CONNESSIONE();
+
+        cmd.Parameters.AddWithValue("@Chiave", CHIAVE);
+
+        return C.EseguiSelect(cmd).Rows[0].Field<string>("Nome");
+    }
+
+
     public void UpdateAvatar()
     {
         CONNESSIONE c = new CONNESSIONE();
@@ -229,6 +261,17 @@ public class ESTERNI
         c.EseguiCmd(cmd);
     }
 
+    public bool Controlla_Abilitatazione()
+    {
+        SqlCommand cmd = new SqlCommand("ESTERNI_Controlla_Abilitazione");
+        cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        DataTable dt = conn.EseguiSelect(cmd);
+
+        return conn.EseguiSelect(cmd).Rows[0].Field<bool>("Abilitato");
+    }
+
     //metodo che restituisce una tabella con dati docente in base al suo codice
     public DataTable ESTERNI_DOCENTI_InfoCodice()
     {
@@ -248,14 +291,14 @@ public class ESTERNI
         return new CONNESSIONE().EseguiSelect(new SqlCommand("ESTERNI_COMPETENZE_DOCENTI"));
     }
 
-    public int RecuperaCodUtente()
+    public int RecuperaCodEsterno()
     {
         SqlCommand cmd = new SqlCommand("ESTERNI_GETCODUTENTE");
         cmd.Parameters.AddWithValue("@usr", USR);
 
         CONNESSIONE C = new CONNESSIONE();
 
-        return C.EseguiSelect(cmd).Rows[0].Field<int>("codUtente");
+        return C.EseguiSelect(cmd).Rows[0].Field<int>("Chiave");
     }
 
     /// <summary>
@@ -270,5 +313,13 @@ public class ESTERNI
         return new CONNESSIONE().EseguiSelect(cmd).Rows[0].Field<decimal>("Guadagni");
     }
 
+    public void AbilitaEsterno()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand("ESTERNI_ABILITA");
+        cmd.Parameters.AddWithValue("@Chiave", CHIAVE);
+
+        C.EseguiCmd(cmd);
+    }
     #endregion
 }

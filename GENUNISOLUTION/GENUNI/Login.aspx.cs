@@ -19,56 +19,53 @@ public partial class Login : System.Web.UI.Page
         {
 
             // controlli formali
-            if (string.IsNullOrEmpty(txtMail.Text) || string.IsNullOrEmpty(txtPassword.Text))
+            if (string.IsNullOrEmpty(txtMail.Text.ToString()) || string.IsNullOrEmpty(txtPassword.Text.ToString()))
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Attenzione: compilare tutti i campi!')", true);
                 return;
             }
-
-            // occhio alla pass, è criptata!! se volete fare delle prove inserendo qualcosa a mano dal DB
-            // togliete il CRYPTA a riga 27 e 33
 
             UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();
             CRYPTA.Crypta_WSSoapClient C = new CRYPTA.Crypta_WSSoapClient();
 
             string usr = txtMail.Text.Trim();
 
-            string plaintext = txtPassword.Text.Trim();
+            string plaintext = txtPassword.Text.Trim(); // Attenzione alle password, quì vengono passate le password pulite
 
-            string pwd = C.PWD_CRYPTA(plaintext);
+            string pwd = C.PWD_CRYPTA(plaintext); // E quì vengono cryptate, ergo, se volete provare a fare test con password pulite per un motivo o altro
 
-            // se il login va a buon fine, reindirizzo alla pagina figlia "default.aspx
-            // e mi salvo il tipoUtente nella session
-
-            if (U.Login(usr, plaintext) == true)
+            if (U.Login(usr, plaintext) == true) // Come overload usate "(usr, plaintext)" invece di "(usr, pwd)"
             {
                 int CodiceAttore = U.RecuperaCodUtente(usr);
-                Session["CodiceAttore"] = CodiceAttore;
+                Session["CodiceAttore"] = CodiceAttore; // Session del codice "utente"
 
-                Session["TipoAttore"] = U.TipoLogin(usr, pwd);
+                string tipo = U.TipoLogin(usr, plaintext);
+                Session["TipoAttore"] = tipo; // Session del TIPO dell'utente
 
                 char usertype = Convert.ToChar(Session["TipoAttore"]);
 
-                Datatable dt = U.SelectOne(CodiceAttore);
-
-                switch (usertype)
+                if (U.Controlla_Abilitazione(CodiceAttore) == true)
                 {
-                    case 'A':
-                        if () 
-                        {
+                    switch (usertype)
+                    {
+                        case 'A':
+                            Response.Redirect("/BEAdmin/GestioneAdmin.aspx"); //Redirect per gli Admin
+                            break;
 
-                        }
-                        Response.Redirect("../BEAdmin/GestioneAdmin.aspx"); //Inserire le pagine principali di redirect 
-                        break;
+                        case 'T':
+                            Response.Redirect("/BETutor/GestioneTutor.aspx"); //Redirect per i Tutor
+                            break;
 
-                    case 'T':
-                        Response.Redirect("../BETutor/GestioneTutor.aspx"); //Inserire le pagine principali di redirect 
-                        break;
+                        case 'C':
+                            Response.Redirect("/BEContabilita/Compenso.aspx"); //Redirect per i Contabili
+                            break;
+                    }
+                }
 
-                    case 'C':
-                        Response.Redirect("../BEContabilita/Compenso.aspx"); //Inserire le pagine principali di redirect 
-                        break;
-
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('L'account non è attivo')", true);
+                    return;
                 }
             }
 
@@ -76,23 +73,32 @@ public partial class Login : System.Web.UI.Page
             {
                 ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
-                if (E.Login(usr, pwd) == true)
+                if (E.Login(usr, plaintext) == true)
                 {
-                    int CodiceUtente = E.RecuperaCodUtente(usr);
-                    Session["CodiceAttore"] = CodiceUtente;
+                    int CodiceAttore = E.RecuperaCodEsterno(usr);
+                    Session["CodiceAttore"] = CodiceAttore;
 
-                    Session["TipoAttore"] = E.TipoLogin(usr, pwd);
+                    Session["TipoAttore"] = E.TipoLogin(usr, plaintext);
                     char usertype = Convert.ToChar(Session["TipoAttore"]);
 
-                    switch (usertype)
+                    if (E.Controlla_Abilitazione(CodiceAttore) == true)
                     {
-                        case 'S':
-                            Response.Redirect("../BEStudenti/Modifica_Profilo.aspx"); //Inserire le pagine principali di redirect 
-                            break;
+                        switch (usertype)
+                        {
+                            case 'S':
+                                Response.Redirect("/BEStudenti/Modifica_Profilo.aspx"); //Inserire le pagine principali di redirect 
+                                break;
 
-                        case 'D':
-                            Response.Redirect("../BEDocenti/GestioneDocenti.aspx"); //Inserire le pagine principali di redirect 
-                            break;
+                            case 'D':
+                                Response.Redirect("/BEDocenti/GestioneDocenti.aspx"); //Inserire le pagine principali di redirect 
+                                break;
+                        }
+                    }
+
+                    else
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('L'account non è attivo)", true);
+                        return;
                     }
                 }
 
@@ -101,8 +107,4 @@ public partial class Login : System.Web.UI.Page
             }
         }
     }
-}
-
-internal class Datatable
-{
 }
