@@ -31,7 +31,11 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         
         CORSI.Corsi_WSSoapClient c = new CORSI.Corsi_WSSoapClient();
         DataTable dt = new DataTable();//creo l'oggetto datatable
-
+        if (Session["ChiaveCreazione"] == null)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Selezionare una voce dalla tabella')", true);
+            return;
+        }
 
         int Chiave = int.Parse(Session["ChiaveCreazione"].ToString());//creo una variabile intera da passare al metodo Select
 
