@@ -32,7 +32,17 @@ public class Mail_WS : System.Web.Services.WebService
 
         M.mailInvia();
     }
-    
+
+    [WebMethod]
+    public void RingraziamentoNewsletter(string USR)
+    {
+        MAIL M = new MAIL();
+
+        M.mailUtente = USR;
+
+        M.RingraziamentoNewsletter();
+    }
+
     [WebMethod]
     public void mailInvia_Docenti(string USR)
     {
