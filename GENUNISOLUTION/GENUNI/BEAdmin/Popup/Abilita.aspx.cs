@@ -20,7 +20,11 @@ public partial class Admin_Popup_Abilita : System.Web.UI.Page
     protected void btnAbilita_Click(object sender, EventArgs e)
     {
         UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();
-
+        if (Session["chiave"] == null)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Selezionare una voce dalla tabella')", true);
+            return;
+        }
 
         int Chiave = int.Parse(Session["chiave"].ToString());
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
