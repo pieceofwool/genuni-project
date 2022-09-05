@@ -42,6 +42,17 @@ public class Esterni_WS : System.Web.Services.WebService
         dt.TableName = "Esterni";
         return dt;
     }
+    
+    [WebMethod]
+    public DataTable SelectOne_Profilo_Studenti(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        ESTERNI e = new ESTERNI();
+        e.CHIAVE = CHIAVE;
+        dt = e.SelectOne_Profilo_Studenti();
+        dt.TableName = "Esterni";
+        return dt;
+    }
 
     [WebMethod]
     public void Insert(string TIPO, string USR, string PWD, string RAGIONE_SOCIALE, string COGNOME, string NOME, string DATA_NASCITA, string PIVA, string CF, string INDIRIZZO, string CAP, string CITTA, string PROVINCIA, string NAZIONALITA, bool ABILITATO, byte[] AVATAR, string TIPOIMG)

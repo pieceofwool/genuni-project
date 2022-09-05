@@ -337,5 +337,16 @@ public class ESTERNI
 
         c.EseguiCmd(cmd);
     }
+
+    public DataTable SelectOne_Profilo_Studenti()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_SELECTONE_PROFILO_STUDENTI";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+
+        return c.EseguiSelect(cmd);
+    }
     #endregion
 }
