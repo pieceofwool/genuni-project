@@ -29,7 +29,7 @@ public class CHAT
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "CHAT_INSERT";
         cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
-        cmd.Parameters.AddWithValue("@Cod_Studete", COD_STUDENTE);
+        cmd.Parameters.AddWithValue("@Cod_Studente", COD_STUDENTE);
         cmd.Parameters.AddWithValue("@Cod_Interno", COD_INTERNO);
         cmd.Parameters.AddWithValue("@Contenuto", CONTENUTO);
 
@@ -38,12 +38,83 @@ public class CHAT
         //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
     }
+
+    public void InsertEsterni()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_INSERT_ESTERNI";
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
+        cmd.Parameters.AddWithValue("@Cod_Studente", COD_STUDENTE);
+        cmd.Parameters.AddWithValue("@Contenuto", CONTENUTO);
+
+
+        c.EseguiCmd(cmd);
+      
+
+    }
+
+    public void InsertInterni()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_INSERT_INTERNI";
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
+        cmd.Parameters.AddWithValue("@Cod_Interno", COD_INTERNO);
+        cmd.Parameters.AddWithValue("@Contenuto", CONTENUTO);
+
+
+        c.EseguiCmd(cmd);
+
+
+    }
     public DataTable SelectOne()
     {
         CONNESSIONE c = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "CHAT_SELECTONE";
         cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+
+        return c.EseguiSelect(cmd);
+    }
+
+    public DataTable SelectOneJoinEsterni()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_SELECTONE_CORSO_JOIN_ESTERNI";
+        cmd.Parameters.AddWithValue("@Chiave", CHIAVE);
+
+        return c.EseguiSelect(cmd);
+    }
+
+
+    public DataTable SelectOneJoinUtenti()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_SELECTONE_CORSO_JOIN_UTENTI";
+        cmd.Parameters.AddWithValue("@Chiave", CHIAVE);
+
+        return c.EseguiSelect(cmd);
+    }
+
+    public DataTable SelectChatCorso()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_SELECTONE_CORSO";
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
+
+        return c.EseguiSelect(cmd);
+    }
+
+    public DataTable SelectChatCorsoDesc()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_SELECTONE_CORSO_DESC";
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
 
         return c.EseguiSelect(cmd);
     }
