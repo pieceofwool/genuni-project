@@ -44,6 +44,17 @@ public class Chat_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public DataTable SelectCorso(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        CHAT c = new CHAT();
+        c.COD_CORSO = CHIAVE;
+        dt = c.SelectCorso();
+        dt.TableName = "Chat";
+        return dt;
+    }
+
+    [WebMethod]
     public void Insert(int COD_CORSO, int COD_STUDENTE, int COD_INTERNO, string CONTENUTO)
     {
         CHAT c = new CHAT();
