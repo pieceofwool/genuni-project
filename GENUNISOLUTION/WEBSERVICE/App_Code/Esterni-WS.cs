@@ -328,4 +328,16 @@ public class Esterni_WS : System.Web.Services.WebService
 
         e.Update_Profilo_Studenti();
     }
+
+    //metodo che seleziona tutti i docenti da ESTERNI
+    [WebMethod]
+    public DataTable SelectAll_Docenti()
+    {
+        ESTERNI E = new ESTERNI();
+        DataTable dt = new DataTable();
+
+        dt = E.SelectAll_Docenti();
+        dt.TableName = "Docenti";
+        return dt;
+    }
 }
