@@ -350,6 +350,6 @@ public class Esterni_WS : System.Web.Services.WebService
         e.USR = USR;
         e.PWD = PWD;
 
-        e.UpdatePassword();
+        e.UpdatePassword_Studenti();
     }
 }
