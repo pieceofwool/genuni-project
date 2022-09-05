@@ -40,6 +40,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectOne_Profilo_Studenti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectOne_Profilo_StudentiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectOne_Profilo_StudentiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Insert">
         <s:complexType>
           <s:sequence>
@@ -407,6 +428,12 @@
   <wsdl:message name="SelectOneSoapOut">
     <wsdl:part name="parameters" element="tns:SelectOneResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectOne_Profilo_StudentiSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectOne_Profilo_Studenti" />
+  </wsdl:message>
+  <wsdl:message name="SelectOne_Profilo_StudentiSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectOne_Profilo_StudentiResponse" />
+  </wsdl:message>
   <wsdl:message name="InsertSoapIn">
     <wsdl:part name="parameters" element="tns:Insert" />
   </wsdl:message>
@@ -542,6 +569,10 @@
       <wsdl:input message="tns:SelectOneSoapIn" />
       <wsdl:output message="tns:SelectOneSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SelectOne_Profilo_Studenti">
+      <wsdl:input message="tns:SelectOne_Profilo_StudentiSoapIn" />
+      <wsdl:output message="tns:SelectOne_Profilo_StudentiSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
       <wsdl:output message="tns:InsertSoapOut" />
@@ -640,6 +671,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectOne">
       <soap:operation soapAction="http://tempuri.org/SelectOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOne_Profilo_Studenti">
+      <soap:operation soapAction="http://tempuri.org/SelectOne_Profilo_Studenti" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -850,6 +890,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectOne">
       <soap12:operation soapAction="http://tempuri.org/SelectOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOne_Profilo_Studenti">
+      <soap12:operation soapAction="http://tempuri.org/SelectOne_Profilo_Studenti" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
