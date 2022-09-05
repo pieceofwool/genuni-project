@@ -378,6 +378,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Update_Profilo_Studenti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="COGNOME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CITTA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="INDIRIZZO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PROVINCIA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Profilo_StudentiResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -512,6 +527,12 @@
   <wsdl:message name="Controlla_AbilitazioneSoapOut">
     <wsdl:part name="parameters" element="tns:Controlla_AbilitazioneResponse" />
   </wsdl:message>
+  <wsdl:message name="Update_Profilo_StudentiSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Profilo_Studenti" />
+  </wsdl:message>
+  <wsdl:message name="Update_Profilo_StudentiSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_Profilo_StudentiResponse" />
+  </wsdl:message>
   <wsdl:portType name="Esterni_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -600,6 +621,10 @@
     <wsdl:operation name="Controlla_Abilitazione">
       <wsdl:input message="tns:Controlla_AbilitazioneSoapIn" />
       <wsdl:output message="tns:Controlla_AbilitazioneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Profilo_Studenti">
+      <wsdl:input message="tns:Update_Profilo_StudentiSoapIn" />
+      <wsdl:output message="tns:Update_Profilo_StudentiSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Esterni_WSSoap" type="tns:Esterni_WSSoap">
@@ -802,6 +827,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Update_Profilo_Studenti">
+      <soap:operation soapAction="http://tempuri.org/Update_Profilo_Studenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Esterni_WSSoap12" type="tns:Esterni_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -996,6 +1030,15 @@
     </wsdl:operation>
     <wsdl:operation name="Controlla_Abilitazione">
       <soap12:operation soapAction="http://tempuri.org/Controlla_Abilitazione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Profilo_Studenti">
+      <soap12:operation soapAction="http://tempuri.org/Update_Profilo_Studenti" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

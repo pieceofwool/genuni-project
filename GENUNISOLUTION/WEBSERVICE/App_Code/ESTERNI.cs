@@ -321,5 +321,21 @@ public class ESTERNI
 
         C.EseguiCmd(cmd);
     }
+
+    public void Update_Profilo_Studenti()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_UPDATE_PROFILO_STUDENTI";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+        cmd.Parameters.AddWithValue("@NOME", NOME);
+        cmd.Parameters.AddWithValue("@COGNOME", COGNOME);
+        cmd.Parameters.AddWithValue("@CITTA", CITTA);
+        cmd.Parameters.AddWithValue("@INDIRIZZO", INDIRIZZO);
+        cmd.Parameters.AddWithValue("@PROVINCIA", PROVINCIA);
+
+        c.EseguiCmd(cmd);
+    }
     #endregion
 }
