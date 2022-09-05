@@ -6,6 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <link href="../../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,7 +14,7 @@
             <table>
                 <tr>
                     <td>
-                        <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lbl" CssClass="lbl" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <%--<tr>
@@ -29,32 +30,32 @@
 
                 <tr>
                     <td>
-                        <asp:TextBox ID="txtTitolo" runat="server" PlaceHolder="Titolo"></asp:TextBox><br />
+                        <asp:TextBox ID="txtTitolo" CssClass="txt" runat="server" PlaceHolder="Titolo"></asp:TextBox><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
 
-                        <asp:TextBox ID="txtTipo" runat="server" PlaceHolder="Tipo"></asp:TextBox><br />
+                        <asp:TextBox ID="txtTipo" CssClass="txt" runat="server" PlaceHolder="Tipo"></asp:TextBox><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
 
-                        <asp:TextBox ID="txtDescrizione" runat="server" PlaceHolder="Descrizione"></asp:TextBox><br />
+                        <asp:TextBox ID="txtDescrizione" CssClass="txt" runat="server" PlaceHolder="Descrizione"></asp:TextBox><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
 
-                        <asp:TextBox ID="txtDataPartenza" runat="server" tooltip="Data Partenza" TextMode="Date"></asp:TextBox><br />
+                        <asp:TextBox ID="txtDataPartenza" CssClass="txt" runat="server" ToolTip="Data Partenza" TextMode="Date"></asp:TextBox><br />
                     </td>
                 </tr>
 
                 <tr>
                     <td>
 
-                        <asp:Button ID="btnInserisci" runat="server" Text="Inserisci" OnClick="btnInserisci_Click" />
+                        <asp:Button ID="btnInserisci" CssClass="btnBE" runat="server" Text="Inserisci" OnClick="btnInserisci_Click" />
                     </td>
                 </tr>
             </table>
