@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <br />
         <br />
-        <div class="cont">
+        <div class="cont" style="zoom:80%">
             <div class="form sign-in">
                 <h2 class="h2Login">ACCEDI</h2>
                 <label>
