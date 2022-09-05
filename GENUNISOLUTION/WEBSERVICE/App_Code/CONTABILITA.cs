@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -145,5 +146,16 @@ public static class CONTABILITA
     public static decimal UtiliTipoCorso(string dataInizio, string dataFine, string tipoCorso)
     {
         return SommaRicaviTipoCorso(dataInizio, dataFine, tipoCorso) - SommaSpeseTipoCorso(dataInizio, dataFine, tipoCorso);
+    }
+
+    //metodo che riporta la contabilita per un singolo docente
+    public static DataTable ListaSpeseDocenteSingolo(string dataInizio, string dataFine, int codiceDocente)
+    {
+        SqlCommand cmd = new SqlCommand("CONTABILITA_COSTO_DOCENTESINGOLO");
+        cmd.Parameters.AddWithValue("@dataInizio", dataInizio);
+        cmd.Parameters.AddWithValue("@dataFine", dataFine);
+        cmd.Parameters.AddWithValue("@codiceDocente", codiceDocente);
+
+        return new CONNESSIONE().EseguiSelect(cmd);
     }
 }
