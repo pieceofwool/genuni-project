@@ -13,7 +13,11 @@ public partial class BEAdmin_Popup_VisualizzaInfo : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-
+            if (Session["ChiaveCreazione"] == null)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Selezionare una voce dalla tabella')", true);
+                return;
+            }
 
             // Recupero i dati del libro selezionato e li inserisco nei campi del form
             CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
