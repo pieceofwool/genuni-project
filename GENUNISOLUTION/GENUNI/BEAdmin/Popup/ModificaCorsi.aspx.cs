@@ -10,7 +10,7 @@ using System.IO;
 
 public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
 {
-    string[] estensioni = { ".jpg", ".png", ".bmp" };
+    string[] estensioni = { ".jpg", ".png", ".bmp", "" };
     protected void Page_Load(object sender, EventArgs e)
 
     {
@@ -19,25 +19,16 @@ public partial class Admin_Popup_ModificaCorsi : System.Web.UI.Page
         if (!IsPostBack)
         {
             UpdateTextBox();
-            //CaricaDDL();
+            
         }
     }
 
-    //protected void CaricaDDL()
-    //{
-    //    UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();
-    //    // UTENTI U = new UTENTI();
-    //    ddlUtenti.DataSource = U.SelectTutor();
-    //    ddlUtenti.DataValueField = "Chiave";
-    //    ddlUtenti.DataTextField = "Nome";
-    //    ddlUtenti.DataBind();
-    //    ddlUtenti.SelectedValue = null;
-    //}
+ 
 
 
     public void UpdateTextBox()
     {
-        // CORSI c = new CORSI();
+        
         CORSI.Corsi_WSSoapClient c = new CORSI.Corsi_WSSoapClient();
         DataTable dt = new DataTable();//creo l'oggetto datatable
 

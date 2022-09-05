@@ -35,9 +35,9 @@
 
                 <asp:BoundField DataField="Data_Creazione" HeaderText="Data Creazione" />
                 <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
-                <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
-                <asp:BoundField DataField="Data_Partenza" HeaderText="Data PartenSza" />
-                <asp:BoundField DataField="Status_Corsi" HeaderText="Status Corsi" />
+                <asp:BoundField DataField="Descrizione" Visible="false" />
+                <asp:BoundField DataField="Data_Partenza" HeaderText="Data Partenza" />
+                <asp:BoundField DataField="Status_Corsi" HeaderText="Status" />
                 <asp:BoundField DataField="Data_Status" HeaderText="Data Status" />
                 <asp:BoundField DataField="Costo" Visible="false" />
                 <asp:BoundField DataField="Avatar_Corso" Visible="false" />

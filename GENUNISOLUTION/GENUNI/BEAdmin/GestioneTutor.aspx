@@ -32,7 +32,7 @@
                 <asp:BoundField DataField="Pwd" Visible="false" />
                 <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
                 <asp:BoundField DataField="Nome" HeaderText="Nome" />
-                <asp:BoundField DataField="Figura" HeaderText="Figura" />
+                <asp:BoundField DataField="Figura" Visible="false" />
                 <asp:BoundField DataField="Abilitato" HeaderText="Abilitato" />
                 <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
             </Columns>
