@@ -19,7 +19,7 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
             //dt2 = C.SelectAllDocente(CHIAVE);
 
             int CHIAVE = 1;
-            dt2 = C.SelectOne(CHIAVE); //uso selectone apposta
+            dt2 = C.SelectAllDocente(CHIAVE); //uso selectone apposta
 
             txtSkills.Text = dt2.Rows[0]["Skills"].ToString();
 
@@ -42,7 +42,7 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         //dt2 = C.SelectAllDocente(CHIAVE);
 
         int CHIAVE = 1;
-        dt2 = C.SelectOne(CHIAVE);
+        dt2 = C.SelectAllDocente(CHIAVE);
         DataRow dr2 = dt2.Rows[0];
         byte[] arr2 = dr2.Field<byte[]>("Cv");
         byte[] CV = FileUploadCV.FileBytes;
@@ -67,7 +67,7 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         }
 
         string SKILLS = txtSkills.Text.Trim();
-        C.Update(CHIAVE, CV, SKILLS);
+        C.UpdateCodDocente(CHIAVE, CV, SKILLS);
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "ok", "alert('Competenze inserite correttamente')", true);
 
