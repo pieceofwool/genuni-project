@@ -38,7 +38,8 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
     protected void CaricaChat(DataTable dt)
     {
-        
+        CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
+
         int i = 0;
         int key = 0;
         foreach (DataRow dr in dt.Rows)

@@ -22,8 +22,16 @@
             <td colspan="4"><b>Chat del Corso</b></td>
         </tr>
         <tr>
-            <asp:Button ID="BtnCaricaAsc" runat="server" Text="Visualizza per Data crescente" OnClick="BtnCaricaAsc_Click" />
-            <asp:Button ID="BtnCaricaDesc" runat="server" Text="Visualizza per Data decrescente" OnClick="BtnCaricaDesc_Click" />
+            <td colspan="4">
+                <asp:Button ID="BtnCaricaAsc" runat="server" Text="Visualizza per Data crescente" OnClick="BtnCaricaAsc_Click" />
+                <asp:Button ID="BtnCaricaDesc" runat="server" Text="Visualizza per Data decrescente" OnClick="BtnCaricaDesc_Click" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:70px"></td>
+            <td style="width:100px"></td>
+            <td style="width:150px"></td>
+            <td></td>
         </tr>
 
         <asp:Literal ID="litChat" runat="server"></asp:Literal>
