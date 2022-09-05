@@ -28,6 +28,17 @@
 
     <!-- #intro -->
 
+    <%-- 
+         &#39;   '
+         &#176;  °
+         &#224;  à
+         &#232;  è
+         &#236;  ì
+         &#242;  ò
+         &#249;  ù
+         &#8364; €   
+    --%>
+
     <main id="main">
         <!--========================== About Us Section ============================-->
         <section id="about">
@@ -74,21 +85,14 @@
                             <img src="img/why-us.jpg" alt="" class="img-fluid">
                         </div>
                     </div>
-                    <%-- &#176; °
-                                 &#39;  '
-                                 &#224; à
-                                 &#232; è
-                                 &#236; ì
-                                 &#242; ò
-                                 &#249; ù --%>
 
                     <div class="col-lg-6">
                         <div class="why-us-content">
                             <p>Offriamo la possibilit&#224; di svolgere molteplici corsi, sia in ambito informatico che in ambito amministrativo in maniera del tutto innovativa.</p>
                             <p>
-                                Ti forniremo una preparazione a 360° per aiutarti ad affrontare il percorso lavorativo futuro più adatto a te. 
-                                Il nostro obiettivo è quello di farti raggiungere un livello di conoscenza adeguato, fornendoti indicatori e strumenti professionali e culturali 
-                                affinchè tu possa investirli su te stesso e determinare il tuo successo.
+                                Ti forniremo una preparazione a 360&#176; per aiutarti ad affrontare il percorso lavorativo futuro pi&#249; adatto a te. 
+                                Il nostro obiettivo &#232; quello di farti raggiungere un livello di conoscenza adeguato, fornendoti indicatori e strumenti professionali e culturali 
+                                affinch&#232; tu possa investirli su te stesso e determinare il tuo successo.
                             </p>
                             <div class="features wow bounceInUp clearfix">
                                 <img src="img/genMoney2.png" class="iconeMission" />
@@ -152,7 +156,7 @@
                 <div class="row">
                     <div class="col-lg-9 text-center text-lg-left">
                         <h3 class="cta-title">Attiva la newsletter! </h3>
-                        <p class="cta-text">Rimani aggiornati sui corsi già attivi e su quelli futuri! Non rimanere indietro, </p>
+                        <p class="cta-text">Rimani aggiornato sui corsi gi&#224; attivi e su quelli futuri! Non rimanere indietro, </p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
                         <a class="cta-btn align-middle" href="#footer">Attiva la newsletter!</a>
@@ -185,7 +189,7 @@
                                     <h3>Corso .NET</h3>
                                 </a>
 
-                                <p>Clicca qui per saperne di più</p>
+                                <p>Clicca qui per saperne di pi&#249;</p>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -194,7 +198,7 @@
                                 <a class="linkCorsi" href="/tipologieCorsi.aspx">
                                     <h3>Corso My SQL</h3>
                                 </a>
-                                <p>Clicca qui per saperne di più</p>
+                                <p>Clicca qui per saperne di pi&#249;</p>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -203,7 +207,7 @@
                                 <a class="linkCorsi" href="/tipologieCorsi.aspx">
                                     <h3>Corso Javascript</h3>
                                 </a>
-                                <p>Clicca qui per saperne di più</p>
+                                <p>Clicca qui per saperne di pi&#249;</p>
                             </div>
                         </div>
                     </div>
@@ -217,9 +221,6 @@
             </div>
         </section>
 
-
-
-
         <!-- #portfolio -->
 
         <!--========================== Team Section ============================-->
@@ -227,7 +228,7 @@
             <div class="container">
                 <div class="section-header">
                     <h3>Docenti</h3>
-                    <p>Il nostro team docenti e' pronto a prepararti al mondo del lavoro</p>
+                    <p>Il nostro team docenti &#232; pronto a prepararti al mondo del lavoro</p>
                 </div>
 
                 <div class="row">
@@ -335,7 +336,7 @@
                                 <h4 class="card-title">Piano base
                                 </h4>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Possibilità di accesso a 1 corso</li>
+                                    <li class="list-group-item">Possibilit&#224; di accesso a 1 corso</li>
                                     <li class="list-group-item">Inventore quisquam et</li>
                                     <li class="list-group-item">Et perspiciatis suscipit</li>
                                     <li class="list-group-item">24/7 Support System</li>
@@ -399,7 +400,7 @@
         <section id="faq">
             <div class="container">
                 <header class="section-header">
-                    <h3>Domande piu' frequenti</h3>
+                    <h3>Domande pi&#249; frequenti</h3>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
                 </header>
 
@@ -488,7 +489,7 @@
 
                                 <div class="footer-newsletter">
                                     <h4>La nostra newsletter</h4>
-                                    <p>Vuoi più informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
+                                    <p>Vuoi pi&#249; informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
 
                                     <asp:TextBox ID="txtEmail" CssClass="" placeholder="E-mail" runat="server" TextMode="Email"></asp:TextBox>
                                     <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti alla newsletter!" />
