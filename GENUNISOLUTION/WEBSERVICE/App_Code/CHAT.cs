@@ -48,7 +48,28 @@ public class CHAT
         return c.EseguiSelect(cmd);
     }
 
-    public DataTable SelectCorso()
+    public DataTable SelectOneJoinEsterni()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_SELECTONE_CORSO_JOIN_ESTERNI";
+        cmd.Parameters.AddWithValue("@Chiave", CHIAVE);
+
+        return c.EseguiSelect(cmd);
+    }
+
+
+    public DataTable SelectOneJoinUtenti()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_SELECTONE_CORSO_JOIN_UTENTI";
+        cmd.Parameters.AddWithValue("@Chiave", CHIAVE);
+
+        return c.EseguiSelect(cmd);
+    }
+
+    public DataTable SelectChatCorso()
     {
         CONNESSIONE c = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand();

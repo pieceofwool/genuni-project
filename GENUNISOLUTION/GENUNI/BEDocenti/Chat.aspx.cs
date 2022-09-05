@@ -18,7 +18,7 @@ public partial class BEDocenti_Default : System.Web.UI.Page
         //int CHIAVE = Session["CodiceCorso"]
         int CHIAVE = 1;
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
-        DataTable dt = C.SelectCorso(CHIAVE);
+        DataTable dt = C.SelectChatCorso(CHIAVE);
 
     }
 }

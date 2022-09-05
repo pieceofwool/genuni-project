@@ -44,12 +44,34 @@ public class Chat_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable SelectCorso(int CHIAVE)
+    public DataTable SelectChatCorso(int CHIAVE)
     {
         DataTable dt = new DataTable();
         CHAT c = new CHAT();
         c.COD_CORSO = CHIAVE;
-        dt = c.SelectCorso();
+        dt = c.SelectChatCorso();
+        dt.TableName = "Chat";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectOneJoinEsterni(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        CHAT c = new CHAT();
+        c.CHIAVE = CHIAVE;
+        dt = c.SelectOneJoinEsterni();
+        dt.TableName = "Chat";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectOneJoinUtenti(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        CHAT c = new CHAT();
+        c.CHIAVE = CHIAVE;
+        dt = c.SelectOneJoinUtenti();
         dt.TableName = "Chat";
         return dt;
     }
