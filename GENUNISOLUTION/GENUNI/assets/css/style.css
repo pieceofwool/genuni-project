@@ -9,6 +9,8 @@
 # General
 --------------------------------------------------------------*/
 
+@charset "UTF-8";
+
 body {
     background: #fff;
     color: #444;
@@ -190,9 +192,11 @@ h6 {
 #titoloGenUni {
     text-decoration: none;
 }
+
     #titoloGenUni:hover {
         text-decoration: none;
     }
+
     #titoloGenUni:active {
         text-decoration: none;
     }
