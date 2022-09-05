@@ -42,15 +42,17 @@
                         <div class="about-content">
                             <h2>Chi siamo</h2>
                             <h3>Leader nella formazione in Italia</h3>
+
+
                             <p>
-                                GenUni e' un ente autorizzato alla vendita di corsi di formazione riconosciuti dal MIUL.
-                                    Qualificato all’erogazione e alla gestione di corsi di formazione e-learning, GenUni offre professionalita', innovazione e serietà.
-                                    I titoli conseguiti al termine dei corsi di formazione professionale e aggiornamento, sono validi in Italia e all’estero per:
+                                GenUni &#233; un ente autorizzato alla vendita di corsi di formazione riconosciuti dal MIUL.
+                                    Qualificato all&#39;erogazione e alla gestione di corsi di formazione e-learning, GenUni offre professionalit&#224;, innovazione e seriet&#224;.
+                                    I titoli conseguiti al termine dei corsi di formazione professionale e aggiornamento, sono validi in Italia e all&#39;estero per:
                             </p>
                             <ul>
-                                <li><i class="ion-android-checkmark-circle"></i>la libera professione,</li>
-                                <li><i class="ion-android-checkmark-circle"></i>l’avanzamento di carriera,</li>
-                                <li><i class="ion-android-checkmark-circle"></i>i crediti formativi professionali</li>
+                                <li><i class="ion-android-checkmark-circle"></i>La libera professione</li>
+                                <li><i class="ion-android-checkmark-circle"></i>L&#39;avanzamento di carriera</li>
+                                <li><i class="ion-android-checkmark-circle"></i>I crediti formativi professionali</li>
                             </ul>
                         </div>
                     </div>
@@ -72,10 +74,17 @@
                             <img src="img/why-us.jpg" alt="" class="img-fluid">
                         </div>
                     </div>
+                    <%-- &#176; °
+                                 &#39;  '
+                                 &#224; à
+                                 &#232; è
+                                 &#236; ì
+                                 &#242; ò
+                                 &#249; ù --%>
 
                     <div class="col-lg-6">
                         <div class="why-us-content">
-                            <p>Offriamo la possibilità di svolgere molteplici corsi, sia in ambito informatico che in ambito amministrativo in maniera del tutto innovativa.</p>
+                            <p>Offriamo la possibilit&#224; di svolgere molteplici corsi, sia in ambito informatico che in ambito amministrativo in maniera del tutto innovativa.</p>
                             <p>
                                 Ti forniremo una preparazione a 360° per aiutarti ad affrontare il percorso lavorativo futuro più adatto a te. 
                                 Il nostro obiettivo è quello di farti raggiungere un livello di conoscenza adeguato, fornendoti indicatori e strumenti professionali e culturali 
@@ -172,21 +181,28 @@
                         <div class="carousel-item active">
                             <img src="assets/img/code1.png" alt="Los Angeles" width="1100" height="500">
                             <div class="carousel-caption">
-                                <h3><a class="linkCorsi" href="/tipologieCorsi.aspx">Corso .NET</h3>
+                                <a class="linkCorsi" href="/tipologieCorsi.aspx">
+                                    <h3>Corso .NET</h3>
+                                </a>
+
                                 <p>Clicca qui per saperne di più</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="assets/img/mysql.png" alt="Chicago" width="1100" height="500">
                             <div class="carousel-caption">
-                                <h3><a class="linkCorsi" href="/tipologieCorsi.aspx">Corso My SQL</h3>
+                                <a class="linkCorsi" href="/tipologieCorsi.aspx">
+                                    <h3>Corso My SQL</h3>
+                                </a>
                                 <p>Clicca qui per saperne di più</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="assets/img/javascript.png" alt="New York" width="1100" height="500">
                             <div class="carousel-caption">
-                                <h3><a class="linkCorsi" href="/tipologieCorsi.aspx">Corso Javascript</h3>
+                                <a class="linkCorsi" href="/tipologieCorsi.aspx">
+                                    <h3>Corso Javascript</h3>
+                                </a>
                                 <p>Clicca qui per saperne di più</p>
                             </div>
                         </div>
@@ -473,10 +489,10 @@
                                 <div class="footer-newsletter">
                                     <h4>La nostra newsletter</h4>
                                     <p>Vuoi più informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
-                                    <form action="" method="post">
-                                        <input type="email" name="email" placeholder="E-mail"><input type="submit" id="btnIscrivitiFooter" value="Iscriviti alla newsletter!">
-                                        <!--aggiungi popup/dialog newsletter, stato del corso (coming soon o data di partenza)-->
-                                    </form>
+
+                                    <asp:TextBox ID="txtEmail" CssClass="" placeholder="E-mail" runat="server" TextMode="Email"></asp:TextBox>
+                                    <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti alla newsletter!" />
+
                                 </div>
 
                             </div>
@@ -513,15 +529,13 @@
 
                     <div class="col-lg-6">
 
-                        <div class="form">
+                        <div class="footer-newsletter">
 
                             <h4>Lavora con noi, diventa un docente!</h4>
                             <p>Regstrati ed invia la tua candidatura per poter diventare un insegnante ed entrare nel nostro team!</p>
-                            <form action="" method="post" role="form" class="contactForm">
-                                <div class="text-center">
-                                    <button type="submit" title="Send Message">Registrati</button>
-                                </div>
-                            </form>
+
+                            <asp:Button ID="btnCandidati" runat="server" Text="Candidati" />
+
                         </div>
 
                     </div>
