@@ -303,4 +303,18 @@ public class Esterni_WS : System.Web.Services.WebService
         return abilitato;
 
     }
+
+    [WebMethod]
+    public void Update_Profilo_Studenti(int CHIAVE, string NOME, string COGNOME, string CITTA, string INDIRIZZO, string PROVINCIA)
+    {
+        ESTERNI e = new ESTERNI();
+        e.CHIAVE = CHIAVE;
+        e.NOME = NOME;
+        e.COGNOME = COGNOME;
+        e.CITTA = CITTA;
+        e.INDIRIZZO = INDIRIZZO;
+        e.PROVINCIA = PROVINCIA;
+
+        e.Update_Profilo_Studenti();
+    }
 }
