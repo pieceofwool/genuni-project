@@ -38,6 +38,8 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
     protected void CaricaChat(DataTable dt)
     {
+        
+        litChat.Text = "";
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
 
         int i = 0;
@@ -46,6 +48,7 @@ public partial class BEDocenti_Default : System.Web.UI.Page
         {
 
             //se è un esterno faccio join con tabella esterni se no con la tabella utenti per recuperare i dati corretti
+            
             if (string.IsNullOrEmpty(dt.Rows[i]["Cod_Interno"].ToString()))
             {
                // int cod_studente = (int)dt.Rows[i]["Cod_Studente"];
@@ -94,9 +97,9 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
 
                 litChat.Text += "<tr><td>" + IMG + "</td>";
-                litChat.Text += "<td>(" + esterno + ")<br /> " + nome + " " + cognome + " </td>";
-                litChat.Text += "<td> Giorno:" + date.Substring(0, 10) + " <br /> Ore:" + date.Substring(10) + " </td>";
-                litChat.Text += "<td> " + messaggio + " </td></tr>";
+                litChat.Text += "<td>(" + esterno + ")<br /><b> " + nome + " " + cognome + " </b></td>";
+                litChat.Text += "<td><small> Giorno:" + date.Substring(0, 10) + " <br /> Ora:" + date.Substring(10) + " </small></td>";
+                litChat.Text += "<td><b> " + messaggio + " </b></td></tr>";
 
             }
 
@@ -120,9 +123,9 @@ public partial class BEDocenti_Default : System.Web.UI.Page
                 IMG = "<img src=\"../img/logo.png\" style=\"width:70px\" />";
 
                 litChat.Text += "<tr><td>" + IMG + "</td>";
-                litChat.Text += "<td>(" + esterno + ")<br /> " + nome + " " + cognome + " </td>";
-                litChat.Text += "<td> Giorno:" + date.Substring(0, 10) + " <br /> Ore:" + date.Substring(10) + " </td>";
-                litChat.Text += "<td> " + messaggio + " </td></tr>";
+                litChat.Text += "<td>(" + esterno + ")<br /><b> " + nome + " " + cognome + "</b></td>";
+                litChat.Text += "<td><small> Giorno:" + date.Substring(0, 10) + " <br /> Ora:" + date.Substring(10) + " </small></td>";
+                litChat.Text += "<td><b> " + messaggio + " </b></td></tr>";
             }
 
             i++;
@@ -138,5 +141,21 @@ public partial class BEDocenti_Default : System.Web.UI.Page
     protected void BtnCaricaDesc_Click(object sender, EventArgs e)
     {
         CaricaDesc();
+    }
+
+    protected void BtnRispondi_Click(object sender, EventArgs e)
+    {
+        CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
+       
+        int codiceCorso = 1 ; //session
+        int codiceEsterno = 1; //session
+        string contenuto = txtRisposta.InnerText;
+
+
+        C.InsertEsterni(codiceCorso, codiceEsterno, contenuto);
+
+        CaricaAsc();
+
+        txtRisposta.InnerText = null;
     }
 }

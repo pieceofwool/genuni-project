@@ -29,13 +29,28 @@ public class CHAT
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "CHAT_INSERT";
         cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
-        cmd.Parameters.AddWithValue("@Cod_Studete", COD_STUDENTE);
+        cmd.Parameters.AddWithValue("@Cod_Studente", COD_STUDENTE);
         cmd.Parameters.AddWithValue("@Cod_Interno", COD_INTERNO);
         cmd.Parameters.AddWithValue("@Contenuto", CONTENUTO);
 
 
         c.EseguiCmd(cmd);
         //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
+
+    }
+
+    public void InsertEsterni()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_INSERT_ESTERNI";
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
+        cmd.Parameters.AddWithValue("@Cod_Studente", COD_STUDENTE);
+        cmd.Parameters.AddWithValue("@Contenuto", CONTENUTO);
+
+
+        c.EseguiCmd(cmd);
+      
 
     }
     public DataTable SelectOne()

@@ -10,14 +10,18 @@
             width: 1200px;
         }
 
-        table, tr, td {
+        table {
             border: 1px solid black;
             border-collapse: collapse;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <table style="margin-top: 300px">
+
+
+
+    <%--chat--%>
+    <table style="margin-top: 100px">
         <tr>
             <td colspan="4"><b>Chat del Corso</b></td>
         </tr>
@@ -28,15 +32,31 @@
             </td>
         </tr>
         <tr>
-            <td style="width:70px"></td>
-            <td style="width:100px"></td>
-            <td style="width:150px"></td>
+            <td style="width: 70px"></td>
+            <td style="width: 150px"></td>
+            <td style="width: 150px"></td>
             <td></td>
         </tr>
 
         <asp:Literal ID="litChat" runat="server"></asp:Literal>
 
     </table>
+
+    <%--risposta--%>
+    <table>
+        <tr>
+            <td>
+                <textarea id="txtRisposta" runat="server" style="width: 1000px;"></textarea>
+
+            </td>
+            <td>
+                <asp:Button ID="BtnRispondi" runat="server" Text="Rispondi" UseSubmitBehavior="False"  OnClick="BtnRispondi_Click" />
+            </td>
+        </tr>
+
+    </table>
+
+
 
 </asp:Content>
 

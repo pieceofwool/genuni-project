@@ -99,4 +99,15 @@ public class Chat_WS : System.Web.Services.WebService
         c.Insert();
     }
 
+    [WebMethod]
+    public void InsertEsterni(int COD_CORSO, int COD_STUDENTE, string CONTENUTO)
+    {
+        CHAT c = new CHAT();
+        c.COD_CORSO = COD_CORSO;
+        c.COD_STUDENTE = COD_STUDENTE;
+        c.CONTENUTO = CONTENUTO;
+
+        c.InsertEsterni();
+    }
+
 }
