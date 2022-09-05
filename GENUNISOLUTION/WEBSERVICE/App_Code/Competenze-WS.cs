@@ -44,6 +44,17 @@ public class Competenze_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public DataTable SelectAllDocente(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        COMPETENZE c = new COMPETENZE();
+        c.COD_DOCENTE = CHIAVE;
+        dt = c.SelectAllDocente();
+        dt.TableName = "Competenze";
+        return dt;
+    }
+
+    [WebMethod]
     public void Insert(int COD_DOCENTE, byte[] Cv, string SKILLS)
     {
         COMPETENZE c = new COMPETENZE();
