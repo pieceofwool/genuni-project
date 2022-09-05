@@ -189,10 +189,10 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void UpdatePassword(int CHIAVE, string PWD)
+    public void UpdatePassword(string USR, string PWD)
     {
         ESTERNI e = new ESTERNI();
-        e.CHIAVE = CHIAVE;
+        e.USR = USR;
         e.PWD = PWD;
 
         e.UpdatePassword();
