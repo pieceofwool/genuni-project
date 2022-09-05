@@ -3,15 +3,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-  <div>
+    <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-            <h4 class="titoliBE">Creazione e modifica corsi</h4>
+        <h4 class="titoliBE">Creazione e modifica corsi</h4>
         <table>
             <tr>
                 <td>
-                    <asp:Button ID="btnInserisci" CssClass="btnBE" runat="server" ClientIDMode="Static" Text="Crea nuovo corso" />
+                    <a href="../BEAdmin/Popup/InserisciCorsiCopia.aspx" class="btnBE" data-bs-target="#theModal" data-bs-toggle="modal">Crea nuovo corso</a>
+                    <div>
+                        <div class="modal fade text-center" id="theModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%--        <asp:Button ID="btnInserisci" CssClass="btnBE" runat="server" ClientIDMode="Static" Text="Crea nuovo corso" />--%>
                     <asp:Button ID="btnModifica" CssClass="btnBE" runat="server" ClientIDMode="Static" Enabled="False" Text="Modifica corso selezionato" />
                     <asp:Button ID="btnVisualizzaInfo" CssClass="btnBE" runat="server" ClientIDMode="Static" Enabled="False" Text="Visualizza informazioni corso" OnClick="btnVisualizzaInfo_Click" />
                     <%--Link temporanei finché non si decide come fare i popup--%>
@@ -77,7 +86,7 @@
             <tr>
                 <td>
                     <ul>
-                    <%--    <li><a href="Popup/Abilita.aspx">Abilita</a></li>--%>
+                        <%--    <li><a href="Popup/Abilita.aspx">Abilita</a></li>--%>
                         <li><a href="Popup/AssegnaCorsi.aspx">Assegna corsi</a></li>
                         <li><a href="Popup/InserisciCorsi.aspx">Inserisci corsi</a></li>
                         <li><a href="Popup/ModificaCorsi.aspx">Modifica corsi</a></li>

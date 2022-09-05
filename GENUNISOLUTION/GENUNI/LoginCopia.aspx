@@ -26,15 +26,15 @@
                 </label>
                 <p class="forgot-pass" href="Default.aspx">Torna alla Home</p>
                 <button type="button" class="submit">Accedi</button>
-
             </div>
             <div class="sub-cont">
                 <div class="img">
                     <div class="img__text m--up">
+                        <img src="img/logo.png" id="logoSignIn"/>
                         <h3 class="h3Login">Non hai ancora un account? Iscriviti!</h3>
                     </div>
                     <div class="img__text m--in">
-
+                        <img src="img/logo.png" id="logoSignUp"/>
                         <h3 class="h3Login">Se hai già un account fai il login</h3>
                     </div>
                     <div class="img__btn">

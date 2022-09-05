@@ -494,7 +494,7 @@
                                         <li><a href="#">Chi siamo</a></li>
                                         <li><a href="#">Corsi</a></li>
                                         <li><a href="LoginCopia.aspx">Termini di servizio</a></li>
-                                        <li><a href="../BETutor/AssegnazioneDocenti.aspx">Privacy policy</a></li>
+                                        <li><a href="../BEAdmin/GestioneCorsi.aspx">Privacy policy</a></li>
                                     </ul>
                                 </div>
 
