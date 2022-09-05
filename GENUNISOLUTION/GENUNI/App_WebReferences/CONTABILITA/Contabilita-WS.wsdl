@@ -196,7 +196,7 @@
       <s:element name="SommaRicaviResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="SommaRicaviResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SommaRicaviResult" type="s:decimal" />
           </s:sequence>
         </s:complexType>
       </s:element>

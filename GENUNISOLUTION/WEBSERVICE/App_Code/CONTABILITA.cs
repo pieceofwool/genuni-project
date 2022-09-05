@@ -107,9 +107,7 @@ public static class CONTABILITA
         cmd.Parameters.AddWithValue("@dataFine", dataFine);
 
         DataTable dt = new CONNESSIONE().EseguiSelect(cmd);
-        decimal temp = dt.Rows[0].Field<decimal>("Ricavi");
-
-        return Convert.ToInt32(temp);
+        return dt.Rows[0].Field<decimal>("Ricavi");
     }
 
     public static decimal SommaRicaviCorso(string dataInizio, string dataFine, int codCorso)
