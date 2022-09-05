@@ -19,6 +19,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectOne">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectOneResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Insert">
         <s:complexType>
           <s:sequence>
@@ -60,6 +77,12 @@
   <wsdl:message name="SelectAllSoapOut">
     <wsdl:part name="parameters" element="tns:SelectAllResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectOneSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectOne" />
+  </wsdl:message>
+  <wsdl:message name="SelectOneSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectOneResponse" />
+  </wsdl:message>
   <wsdl:message name="InsertSoapIn">
     <wsdl:part name="parameters" element="tns:Insert" />
   </wsdl:message>
@@ -77,6 +100,10 @@
       <wsdl:input message="tns:SelectAllSoapIn" />
       <wsdl:output message="tns:SelectAllSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SelectOne">
+      <wsdl:input message="tns:SelectOneSoapIn" />
+      <wsdl:output message="tns:SelectOneSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
       <wsdl:output message="tns:InsertSoapOut" />
@@ -90,6 +117,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="SelectAll">
       <soap:operation soapAction="http://tempuri.org/SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOne">
+      <soap:operation soapAction="http://tempuri.org/SelectOne" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -120,6 +156,15 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="SelectAll">
       <soap12:operation soapAction="http://tempuri.org/SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOne">
+      <soap12:operation soapAction="http://tempuri.org/SelectOne" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

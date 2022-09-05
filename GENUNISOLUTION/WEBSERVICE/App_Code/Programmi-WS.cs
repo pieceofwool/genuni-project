@@ -31,6 +31,16 @@ public class Programmi_WS : System.Web.Services.WebService
         dt.TableName = "Programmi";
         return dt;
     }
+    
+    [WebMethod]
+    public DataTable SelectOne()
+    {
+        DataTable dt = new DataTable();
+        PROGRAMMI p = new PROGRAMMI();
+        dt = p.SelectOne();
+        dt.TableName = "Programmi";
+        return dt;
+    }
 
     [WebMethod]
     public void Insert(int COD_MATERIA, string TIPO, int INDICE, string LINK, byte[] MATERIALE, string TITOLO_MATERIALE, string DESCRIZIONE)
