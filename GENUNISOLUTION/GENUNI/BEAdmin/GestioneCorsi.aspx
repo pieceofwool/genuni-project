@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneCorsi.aspx.cs" Inherits="Default3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script src="../assets/js/GestioneCorsiPopUp.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div>
@@ -11,7 +12,7 @@
         <table>
             <tr>
                 <td>
-                    <a href="../BEAdmin/Popup/InserisciCorsiCopia.aspx" class="btnBE" data-bs-target="#theModal" data-bs-toggle="modal">Crea nuovo corso</a>
+                    <a href="../BEAdmin/Popup/InserisciCorsiCopia.aspx" class="btnBE" id="popUpInserisci">Crea nuovo corso</a>
                     <div>
                         <div class="modal fade text-center" id="theModal">
                             <div class="modal-dialog">
