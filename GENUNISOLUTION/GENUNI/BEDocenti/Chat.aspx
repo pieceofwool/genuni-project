@@ -1,15 +1,34 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEDocenti.master" AutoEventWireup="true" CodeFile="Chat.aspx.cs" Inherits="BEDocenti_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style>
+        * {
+            margin: 0 auto;
+        }
+
+        table {
+            width: 1200px;
+        }
+
+        table, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <table>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <table style="margin-top: 300px">
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="4"><b>Chat del Corso</b></td>
         </tr>
+        <tr>
+            <asp:Button ID="BtnCaricaAsc" runat="server" Text="Visualizza per Data crescente" OnClick="BtnCaricaAsc_Click" />
+            <asp:Button ID="BtnCaricaDesc" runat="server" Text="Visualizza per Data decrescente" OnClick="BtnCaricaDesc_Click" />
+        </tr>
+
+        <asp:Literal ID="litChat" runat="server"></asp:Literal>
+
     </table>
+
 </asp:Content>
 

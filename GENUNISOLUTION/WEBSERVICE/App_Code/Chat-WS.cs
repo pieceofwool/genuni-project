@@ -55,6 +55,17 @@ public class Chat_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public DataTable SelectChatCorsoDesc(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        CHAT c = new CHAT();
+        c.COD_CORSO = CHIAVE;
+        dt = c.SelectChatCorsoDesc();
+        dt.TableName = "Chat";
+        return dt;
+    }
+
+    [WebMethod]
     public DataTable SelectOneJoinEsterni(int CHIAVE)
     {
         DataTable dt = new DataTable();

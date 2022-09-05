@@ -78,5 +78,15 @@ public class CHAT
 
         return c.EseguiSelect(cmd);
     }
+
+    public DataTable SelectChatCorsoDesc()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CHAT_SELECTONE_CORSO_DESC";
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
+
+        return c.EseguiSelect(cmd);
+    }
 }
 

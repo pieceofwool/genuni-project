@@ -61,6 +61,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectChatCorsoDesc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectChatCorsoDescResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectChatCorsoDescResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SelectOneJoinEsterni">
         <s:complexType>
           <s:sequence>
@@ -136,6 +157,12 @@
   <wsdl:message name="SelectChatCorsoSoapOut">
     <wsdl:part name="parameters" element="tns:SelectChatCorsoResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectChatCorsoDescSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectChatCorsoDesc" />
+  </wsdl:message>
+  <wsdl:message name="SelectChatCorsoDescSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectChatCorsoDescResponse" />
+  </wsdl:message>
   <wsdl:message name="SelectOneJoinEsterniSoapIn">
     <wsdl:part name="parameters" element="tns:SelectOneJoinEsterni" />
   </wsdl:message>
@@ -166,6 +193,10 @@
     <wsdl:operation name="SelectChatCorso">
       <wsdl:input message="tns:SelectChatCorsoSoapIn" />
       <wsdl:output message="tns:SelectChatCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatCorsoDesc">
+      <wsdl:input message="tns:SelectChatCorsoDescSoapIn" />
+      <wsdl:output message="tns:SelectChatCorsoDescSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SelectOneJoinEsterni">
       <wsdl:input message="tns:SelectOneJoinEsterniSoapIn" />
@@ -202,6 +233,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectChatCorso">
       <soap:operation soapAction="http://tempuri.org/SelectChatCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatCorsoDesc">
+      <soap:operation soapAction="http://tempuri.org/SelectChatCorsoDesc" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -259,6 +299,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectChatCorso">
       <soap12:operation soapAction="http://tempuri.org/SelectChatCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatCorsoDesc">
+      <soap12:operation soapAction="http://tempuri.org/SelectChatCorsoDesc" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
