@@ -71,5 +71,15 @@ public class CLASSI
         return C.EseguiSelect(cmd);
     }
 
+    //metodo che restituisce tutti gli studenti di una determinata classe 
+    public DataTable SelectAllStudenti()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CLASSI_SELECTALL_STUDENTI";
+        cmd.Parameters.AddWithValue("@CodiceClasse", CHIAVE);
+
+        return C.EseguiSelect(cmd);
+    }
 }
 
