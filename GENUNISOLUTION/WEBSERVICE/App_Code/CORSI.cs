@@ -135,7 +135,7 @@ public class CORSI
         SqlCommand cmd = new SqlCommand("CORSI_UpdateTutor");
 
         cmd.Parameters.AddWithValue("@Chiave_Corso", CHIAVE_CORSO);
-        cmd.Parameters.AddWithValue("@Cod_Utente", CHIAVE_TUTOR);
+        cmd.Parameters.AddWithValue("@Cod_Tutor", CHIAVE_TUTOR);
 
         CONNESSIONE conn = new CONNESSIONE();
 
