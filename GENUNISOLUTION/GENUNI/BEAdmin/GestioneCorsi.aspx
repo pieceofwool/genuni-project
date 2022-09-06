@@ -169,5 +169,31 @@
             </tr>
         </table>
     </div>
+    <div class="containerBE2">
+        <h4 class="titoliBE">Approvazione corsi</h4>
+        <table>
+            <tr>
+                <td>
+                    <!-- POPUP, HTML-->
+                    <a id="btnApprova" class="popUpBtnBE" href="Popup/ApprovaCorsi.aspx">Approva corso</a>
+                    <asp:Button ID="btnAggiornaApprovazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaApprovazione_Click" CssClass="btnBE" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:GridView ID="gridApprovazioneCorsi" runat="server" DataKeyNames="Chiave, Cod_Utente" AutoGenerateColumns="false" OnSelectedIndexChanged="gridApprovazioneCorsi_SelectedIndexChanged">
+                        <Columns>
+                            <asp:BoundField DataField="Chiave" Visible="false" />
+                            <asp:BoundField DataField="Cod_Utente" Visible="false" />
+                            <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
+                            <asp:BoundField DataField="Nome" HeaderText="Nome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
+                            <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
+                            <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
+                        </Columns>
+                    </asp:GridView>
+                </td>
+            </tr>
+        </table>
+    </div>
 </asp:Content>
 
