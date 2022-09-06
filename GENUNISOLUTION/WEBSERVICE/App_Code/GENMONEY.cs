@@ -53,7 +53,7 @@ public class GENMONEY
     {
         SqlCommand cmd = new SqlCommand("GENMONEY_STORICO_STUDENTE");
 
-        cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
+        cmd.Parameters.AddWithValue("@Chiave", Cod_Studente);
 
         CONNESSIONE c = new CONNESSIONE();
 
@@ -76,7 +76,7 @@ public class GENMONEY
         cmd.Parameters.AddWithValue("@Cod_Studente", Cod_Studente);
 
         CONNESSIONE conn = new CONNESSIONE();
-        return conn.EseguiSelect(cmd).Rows[0].Field<int>("Saldo");
+        return conn.EseguiSelect(cmd).Rows[0].Field<int>("Ammontare");
     }
 
     public DataTable StoricoCorsi()

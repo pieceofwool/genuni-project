@@ -22,8 +22,6 @@
     <asp:Button ID="btnAttestato" runat="server" Text="Scarica" />
 
 
-    <asp:Label ID="Label4" runat="server" Text="Forum"></asp:Label>
-    <asp:TextBox ID="txtForum" runat="server" TextMode="MultiLine"></asp:TextBox>
-    <asp:Button ID="btnInvia" runat="server" Text="Invia" />
+    
 </asp:Content>
 

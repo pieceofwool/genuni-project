@@ -13,7 +13,7 @@
         <%--<asp:LinkButton ID="lnkDownload" Text="Download" CommandArgument='<%# Eval("FileData") %>' runat="server" OnClick="lnkDownload_Click"></asp:LinkButton>--%>
         <asp:GridView ID="grigliaCorsiAcquistati" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged" OnRowCommand="grigliaCorsiAcquistati_RowCommand" OnRowDataBound="grigliaCorsiAcquistati_RowDataBound">
             <Columns>
-                <asp:CommandField ButtonType="Button" ShowSelectButton="True" SelectText="Vai al corso" />
+                <asp:CommandField ButtonType="Button" ShowSelectButton="True" SelectText="Accedi al corso" />
             </Columns>
 
 
@@ -24,7 +24,7 @@
         <asp:Label ID="Label2" runat="server" Text="Corsi disponibili"></asp:Label>
         <asp:GridView ID="grigliaCorsiDisponibili" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged" OnRowCommand="grigliaCorsiDisponibili_RowCommand">
             <Columns>
-                <asp:ButtonField Text="Vai al corso" ButtonType="Button" />
+                <asp:ButtonField Text="Acquista corso" ButtonType="Button" />
                 
 
             </Columns>
