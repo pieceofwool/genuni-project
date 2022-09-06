@@ -108,7 +108,7 @@ public partial class Default2 : System.Web.UI.Page
                 litModalCorso.Text += "<span aria-hidden=\"true\">&times;</span>";
                 litModalCorso.Text += "</button>";
                 litModalCorso.Text += "</div>";
-                litModalCorso.Text += "<div class=\"modal-body\">";
+                litModalCorso.Text += "<div style=\"overflow: auto; height: 400px; \" class=\"modal-body\">";
 
                 //qui ci metto il contenuto ovvero la tabella
                 //litModalCorso.Text +="<img style=\"width:50px; border-radius:5% \" src='" + Src + "' />";
@@ -140,16 +140,16 @@ public partial class Default2 : System.Web.UI.Page
                 litModalCorso.Text += "<span aria-hidden=\"true\">&times;</span>";
                 litModalCorso.Text += "</button>";
                 litModalCorso.Text += "</div>";
-                litModalCorso.Text += "<div class=\"modal-body\">";
+                litModalCorso.Text += "<div style=\"overflow: auto; height: 400px; \" class=\"modal-body\">";
 
                 //qui ci metto il contenuto ovvero la tabella
                 //litModalCorso.Text +="<img style=\"width:50px; border-radius:5% \" src='" + Src + "' />";
 
                 litModalCorso.Text += "<div style=\"font-size: 18px; background-image: linear-gradient(to bottom, rgba(21, 56, 76, 0.7), rgba(0, 0, 0, 0.8)),url('" + Src + "');"
-                                      + "width:100%; min-height: 400px;background-size:cover;color:white; padding:20px; ;\"><b>COMING SOON</b></div>";
+                                      + "width:100%; height: 380px;background-size:cover;color:white; padding:20px; ;\"><b>COMING SOON</b></div>";
 
                 litModalCorso.Text += "</div>";
-                litModalCorso.Text += "<div style=\"font-size:12px\" class=\"modal-footer\">";
+                litModalCorso.Text += "<div style=\"font-size:12px;\" class=\"modal-footer\">";
                 litModalCorso.Text += "Email:<input type='text' id='txtEmail" + Codice + "' />";
                 litModalCorso.Text += "Newsletter:<input type='checkbox' id='cbxNewsletter" + Codice + "' />";
                 litModalCorso.Text += "<button style=\"font-size:12px\" type=\"button\" class=\"btn btn-secondary\" onclick='Gestore(" + Codice + ")'>Preiscriviti</button>";
