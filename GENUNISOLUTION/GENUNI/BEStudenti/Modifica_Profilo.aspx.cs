@@ -37,12 +37,12 @@ public partial class Modifica_Profilo : System.Web.UI.Page
     {
         int Chiave = 1; //sostituire una volta avuta la session
         //int Chiave= int.Parse(Session["CHIAVE"].ToString());
-        string Nome = txtNome.Text;
-        string Cognome = txtCognome.Text;
-        string Indirizzo = txtIndirizzo.Text;
-        string Citta = txtCitta.Text;
-        string Provincia = txtProvincia.Text;
-        string Nazionalita = txtNazionalita.Text;
+        string Nome = txtNome.Text.Trim();
+        string Cognome = txtCognome.Text.Trim();
+        string Indirizzo = txtIndirizzo.Text.Trim();
+        string Citta = txtCitta.Text.Trim();
+        string Provincia = txtProvincia.Text.Trim();
+        string Nazionalita = txtNazionalita.Text.Trim();
         // Se non vi è nessun elemento selezionato impedisco il proseguimento
         if (Session["CHIAVE"] == null)
         {
@@ -50,8 +50,8 @@ public partial class Modifica_Profilo : System.Web.UI.Page
             return;
         }
 
-        if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtCognome.Text) || string.IsNullOrEmpty(txtIndirizzo.Text) || 
-            string.IsNullOrEmpty(txtCitta.Text) || string.IsNullOrEmpty(txtProvincia.Text) || string.IsNullOrEmpty(txtNazionalita.Text))
+        if (string.IsNullOrEmpty(txtNome.Text.Trim()) || string.IsNullOrEmpty(txtCognome.Text.Trim()) || string.IsNullOrEmpty(txtIndirizzo.Text.Trim()) || 
+            string.IsNullOrEmpty(txtCitta.Text.Trim()) || string.IsNullOrEmpty(txtProvincia.Text.Trim()) || string.IsNullOrEmpty(txtNazionalita.Text.Trim()))
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Dati non Validi')", true); ;
             return;
@@ -65,12 +65,15 @@ public partial class Modifica_Profilo : System.Web.UI.Page
     }
     protected void btnSalvaPass_Click(object sender, EventArgs e)
     {
+        CRYPTA.Crypta_WSSoapClient C = new CRYPTA.Crypta_WSSoapClient();
+        //dichiaro le variabili
         int Chiave = 1;
-        string User = txtUser.Text;
-        string Password = txtPassword.Text;
+        string User = txtUser.Text.Trim();
+        string plaintext = txtPassword.Text.Trim();
+        string pwd = C.PWD_CRYPTA(plaintext); // E quì vengono cryptate
 
         // Controlli formali
-        if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPassword.Text))
+        if (string.IsNullOrEmpty(txtUser.Text.Trim()) || string.IsNullOrEmpty(txtPassword.Text.Trim()))
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "Dati non validi", "alert('Compilare tutti i campi')", true);
             return;
@@ -78,8 +81,8 @@ public partial class Modifica_Profilo : System.Web.UI.Page
 
         //modifico la Password
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-
-        E.UpdatePassword(Chiave, User, Password);
+        
+        E.UpdatePassword_Studenti(Chiave, User, pwd);
         lbl1.Text="User e Password Modificati!";
     }
 }
