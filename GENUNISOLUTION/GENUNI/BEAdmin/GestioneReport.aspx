@@ -12,8 +12,8 @@
             <tr>
                 <td>
                     <%-- SCELTA REPORT --%>
-                    <asp:CheckBox ID="chkDocenti" CssClass="chk" runat="server" Text="Docenti" GroupName="Report" Checked="false" />
-                    <asp:CheckBox ID="chkStudenti" CssClass="chk" runat="server" Text="Studenti" GroupName="Report" Checked="false" />
+                    <asp:CheckBox ID="chkDocenti" runat="server" Text="Docenti" GroupName="Report" Checked="True" AutoPostBack="True" OnCheckedChanged="chkDocenti_CheckedChanged" />
+                    <asp:CheckBox ID="chkStudenti" runat="server" Text="Studenti" GroupName="Report" Checked="True" AutoPostBack="True" OnCheckedChanged="chkStudenti_CheckedChanged" />
                     <hr />
                 </td>
             </tr>
