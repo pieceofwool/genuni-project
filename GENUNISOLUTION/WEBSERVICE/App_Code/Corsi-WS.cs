@@ -260,4 +260,16 @@ public class Corsi_WS : System.Web.Services.WebService
         return dt;
     }
 
+    [WebMethod]
+    public DataTable SelectForTutor(int COD_TUTOR)
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        c.CHIAVE_TUTOR = COD_TUTOR;
+        dt = c.SelectForTutor();
+        dt.TableName = "Corso";
+        return dt;
+    }
+
+
 }
