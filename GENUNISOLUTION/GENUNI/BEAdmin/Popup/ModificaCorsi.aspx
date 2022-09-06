@@ -12,44 +12,60 @@
 <div>
             <table>
                 <tr>
-                    <td>
-                        <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
+                    <td colspan="2">
+                        <asp:Label ID="lbl" CssClass="lbl" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 
                 <tr>
+                    <td>
+                        <asp:Label ID="lblAvatar" runat="server" Text="Avatar corso:"></asp:Label>
+                    </td>
                     <td>
                         <asp:FileUpload ID="fupAvatar" runat="server" ToolTip="Avatar" accept=".png,.jpg,.jpeg" />
                     </td>
                 </tr>
                 <tr>
+                     <td>
+                        <asp:Label ID="lblTitolo" runat="server" Text="Titolo:"></asp:Label>
+                    </td>
                     <td>
-                        <asp:TextBox ID="txtTitolo" runat="server" PlaceHolder="Titolo"></asp:TextBox><br />
+                        <asp:TextBox ID="txtTitolo" CssClass="txt" runat="server" PlaceHolder="Titolo"></asp:TextBox><br />
+                    </td>
+                </tr>
+                <tr>
+                     <td>
+                        <asp:Label ID="lblTipo" runat="server" Text="Tipo:"></asp:Label>
+                    </td>
+                    <td>
+
+                        <asp:TextBox ID="txtTipo" CssClass="txt" runat="server" PlaceHolder="Tipo"></asp:TextBox><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
+                        <asp:Label ID="lblDescrizione" runat="server" Text="Descrizione:"></asp:Label>
+                    </td>
+                    <td>
 
-                        <asp:TextBox ID="txtTipo" runat="server" PlaceHolder="Tipo"></asp:TextBox><br />
+                        <asp:TextBox ID="txtDescrizione" CssClass="txt" runat="server" PlaceHolder="Descrizione"></asp:TextBox><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
-
-                        <asp:TextBox ID="txtDescrizione" runat="server" PlaceHolder="Descrizione"></asp:TextBox><br />
+                        <asp:Label ID="lblDataPartenza" runat="server" Text="Data partenza:"></asp:Label>
                     </td>
-                </tr>
-                <tr>
+
                     <td>
 
-                        <asp:TextBox ID="txtDataPartenza" runat="server" tooltip="Data Partenza" TextMode="Date"></asp:TextBox><br />
+                        <asp:TextBox ID="txtDataPartenza" CssClass="txt" runat="server" tooltip="Data Partenza" TextMode="Date"></asp:TextBox><br />
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td colspan="2">
 
-                        <asp:Button ID="btnModifica" runat="server" Text="Modifica" OnClick="btnModifica_Click"  />
+                        <asp:Button ID="btnModifica" CssClass="btnBE" runat="server" Text="Modifica" OnClick="btnModifica_Click"  />
                     </td>
                 </tr>
             </table>

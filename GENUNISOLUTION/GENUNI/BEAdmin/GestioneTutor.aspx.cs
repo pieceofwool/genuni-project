@@ -19,7 +19,7 @@ public partial class Default3 : System.Web.UI.Page
 
         GridViewRow riga = gridUtentiTC.SelectedRow;
         Session["chiave"] = gridUtentiTC.SelectedDataKey[0].ToString();
-        btnAbilita.Enabled = true;
+        //btnAbilita.Enabled = true;
 
     }
 

@@ -31,6 +31,7 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/css/scss-files.txt" rel="stylesheet" />
     <link href="assets/css/bootstrap-contents.scss" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
 
 
     <!-- Carousel-->
@@ -55,8 +56,9 @@
                         <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
                     </div>--%>
                     <div class="social-links">
-                        <asp:TextBox ID="txtSearch" CssClass="mr-sm-2" placeholder="Cerca Corsi" runat="server"></asp:TextBox>
-                            <%--<input class="form-control mr-sm-2" type="search" id="barSearch" placeholder="Ricerca" aria-label="Search">
+                        <asp:TextBox ID="txtSearch" BorderStyle="None" Height="35px" Text-align="center" CssClass="mr-sm-2 txtSearch" placeholder="Cerca corsi" runat="server"></asp:TextBox>
+                        <asp:Button ID="btnSearch" CssClass="btn btn-outline-info my-2 my-sm-0" runat="server" Text="Cerca" />
+                        <%--<input class="form-control mr-sm-2" type="search" id="barSearch" placeholder="Ricerca" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" id="btnSearch" type="submit">Search</button>
                             <button class="btn btn-outline-info my-2 my-sm-0" id="btnSearch" type="submit">Cerca</button>--%>
                     </div>
@@ -76,15 +78,15 @@
 
                 <nav class="main-nav float-right d-none d-lg-block">
                     <ul>
-                        <%--<li class="drop-down"><a href="Default.aspx">DEBUG</a>
+                        <li class="drop-down"><a href="Default.aspx">DEBUG</a>
                             <ul>
                                 <li><a href="BEAdmin/GestioneAdmin.aspx">Admin</a></li>
                                 <li><a href="BEContabilita/Compenso.aspx">Contabilità</a></li>
-                                <li><a href="BEDocenti/GestioneDocenti.aspx">Docenti</a></li>      A conti fatti il DEBUG non serve più, ma lo lascio commentato in caso di necessità.
+                                <li><a href="BEDocenti/GestioneDocenti.aspx">Docenti</a></li>      <%--A conti fatti il DEBUG non serve più, ma lo lascio commentato in caso di necessità.--%>
                                 <li><a href="BEStudenti/Modifica_Profilo.aspx">Studenti</a></li> 
                                 <li><a href="BETutor/GestioneTutor.aspx">Tutor</a></li>
                             </ul>
-                        </li>--%>
+                        </li>
                         <li class="active"><a href="Default.aspx">Home</a></li>
                         <li><a href="#about">Chi siamo</a></li>
                         <li><a href="CorsiFE.aspx">Corsi</a></li>

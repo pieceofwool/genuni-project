@@ -22,7 +22,7 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
 
 
             ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-            //E.CodiceDoc = int.Parse(Session["CodiceDoc"].ToString());
+            //int CHIAVE = int.Parse(Session["Chiave"].ToString());
             int CHIAVE = 1;
             DataTable dt = E.SelectOne(CHIAVE);
 
@@ -53,17 +53,22 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
             string.IsNullOrEmpty(txtCognome.Text.Trim()) ||
             string.IsNullOrEmpty(txtNome.Text.Trim()) ||
             string.IsNullOrEmpty(txtDataNascita.Text.Trim()) ||
-            string.IsNullOrEmpty(txtIva.Text.Trim()) ||
             string.IsNullOrEmpty(txtCF.Text.Trim()) ||
             string.IsNullOrEmpty(txtIndirizzo.Text.Trim()) ||
             string.IsNullOrEmpty(txtCap.Text.Trim()) ||
             string.IsNullOrEmpty(txtCitta.Text.Trim()) ||
             string.IsNullOrEmpty(txtProvincia.Text.Trim()) ||
             string.IsNullOrEmpty(txtNazionalita.Text.Trim()) ||
-            !int.TryParse(txtCap.Text, out int result) ||
-            !int.TryParse(txtIva.Text, out int result2)
+            !int.TryParse(txtCap.Text, out int result)
+            
             )
 
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ERRORE", "alert('Dati non validi')", true);
+            return;
+        }
+
+        if(!string.IsNullOrEmpty(txtIva.Text.Trim()) && !int.TryParse(txtIva.Text, out int result2))
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ERRORE", "alert('Dati non validi')", true);
             return;

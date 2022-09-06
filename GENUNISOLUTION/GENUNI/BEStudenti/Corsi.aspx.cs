@@ -15,6 +15,14 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     protected void grigliaMaterie_SelectedIndexChanged(object sender, EventArgs e)
     {
         Response.Redirect("Materie.aspx");
-        Session["codiceMateria"]= grigliaMaterie.SelectedDataKey[0];
+        //Session["codiceMateria"]= grigliaMaterie.SelectedDataKey[0];
+    }
+
+    protected void caricaGriglia()
+    {
+        PROGRAMMI.Programmi_WSSoapClient p = new PROGRAMMI.Programmi_WSSoapClient();
+        grigliaMaterie.DataSource = p.SelectOne();
+        grigliaMaterie.DataBind();
+        //qui c'è il codicecorso
     }
 }

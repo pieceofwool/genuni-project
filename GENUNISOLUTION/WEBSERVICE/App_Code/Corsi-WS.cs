@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.ServiceModel.Configuration;
 using System.Web;
 using System.Web.Services;
 
@@ -140,7 +141,16 @@ public class Corsi_WS : System.Web.Services.WebService
         return dt;
     }
 
-    //metodo che permette al tutor di modificare il corso scelto
+    /// <summary>
+    /// metodo che permette al tutor di modificare il corso scelto
+    /// </summary>
+    /// <param name="CHIAVE_TUTOR"></param>
+    /// <param name="TITOLO"></param>
+    /// <param name="TIPO"></param>
+    /// <param name="DESCRIZIONE"></param>
+    /// <param name="AVATAR_CORSO"></param>
+    /// <param name="TIPO_IMG"></param>
+    /// <param name="DATA_PARTENZA"></param>
     [WebMethod]
     public void UpdateForTutor(int CHIAVE_TUTOR, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string TIPO_IMG, string DATA_PARTENZA)
     {
@@ -180,7 +190,11 @@ public class Corsi_WS : System.Web.Services.WebService
         dt.TableName = "Corsi";
         return dt;
     }
-    //metodo che riporta tutti i corsi che sono stati approvati
+
+    /// <summary>
+    /// metodo che riporta tutti i corsi che sono stati approvati
+    /// </summary>
+    /// <returns></returns>
     [WebMethod]
     public DataTable Corsi_SelectApprovati()
     {
@@ -207,7 +221,9 @@ public class Corsi_WS : System.Web.Services.WebService
         return dt;
     }
 
-    //metodo che riporta tutti i corsi che non sono ancora stati approvati
+    /// <summary>
+    /// riporta tutti i corsi che non sono ancora stati approvati
+    /// </summary>
     [WebMethod]
     public DataTable Corsi_SelectNonApprovati()
     {
@@ -229,6 +245,49 @@ public class Corsi_WS : System.Web.Services.WebService
         return abilitato;
 
     }
+    /// <summary>
+    /// Seleziona tutte le classi di un corso 
+    /// </summary>
+    [WebMethod]
+    public DataTable Corsi_SelectAllClassi(int CODICE_CORSO)
+    {
+        DataTable dt = new DataTable();
+        CORSI C = new CORSI();
+        C.CHIAVE = CODICE_CORSO;
 
+        dt = C.Corsi_SelectAllClassi();
+        dt.TableName = "Classi";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectForTutor(int COD_TUTOR)
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        c.CHIAVE_TUTOR = COD_TUTOR;
+        dt = c.SelectForTutor();
+        dt.TableName = "Corso";
+        return dt;
+    }
+    
+    [WebMethod]
+    public DataTable Select_Utenti_Filtro_Q()
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        dt = c.Select_Utenti_Filtro_Q();
+        dt.TableName = "Corso";
+        return dt;
+    }
+
+    [WebMethod]
+    public void Update_Status(int CHIAVE_CORSO)
+    {
+        CORSI c = new CORSI();
+        c.CHIAVE_CORSO = CHIAVE_CORSO;
+
+        c.Update_Status();
+    }
 
 }

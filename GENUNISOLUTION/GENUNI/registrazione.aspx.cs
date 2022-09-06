@@ -10,7 +10,13 @@ public partial class registrazione : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["IscrizioneComeDocente"] != null) 
+        {
+            ddlTipo.SelectedValue = "D";
+            ddlTipo.DataBind();
 
+            Session["IscrizioneComeDocenete"] = null;
+        }
     }
 
     protected void btnRegistra_Click(object sender, EventArgs e)
@@ -39,7 +45,7 @@ public partial class registrazione : System.Web.UI.Page
         string Cognome = txtCognome.Text.Trim();
         string Nome = txtNome.Text.Trim();
 
-        if (E.CheckOne(Tipo, usr, plaintext, RagioneSociale, Cognome, Nome) == true)
+        if (E.CheckOne(Tipo, usr, pwd, RagioneSociale, Cognome, Nome) == true)
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert(''Questo utente esiste già.')", true);
             return;
@@ -64,7 +70,7 @@ public partial class registrazione : System.Web.UI.Page
         Random rnd = new Random();
         string rndCodice = rnd.Next(100000, 999999).ToString();
 
-        E.Insert(Tipo, usr, plaintext, RagioneSociale, Cognome, Nome, DataNascita, Piva, CF, Indirizzo, Cap, Citta, Provincia, Nazione, Abilitato, Avatar, TipoImg);
+        E.Insert(Tipo, usr, pwd, RagioneSociale, Cognome, Nome, DataNascita, Piva, CF, Indirizzo, Cap, Citta, Provincia, Nazione, Abilitato, Avatar, TipoImg);
 
         // mando l'email di conferma
         MAIL.Mail_WSSoapClient M = new MAIL.Mail_WSSoapClient();
@@ -74,7 +80,7 @@ public partial class registrazione : System.Web.UI.Page
 
         Session["Tipo"] = Tipo;
         Session["CodiceConferma"] = rndCodice;
-        Session["Password"] = plaintext;
+        Session["Password"] = pwd;
         Session["RagioneSociale"] = RagioneSociale;
         Session["Cognome"] = Cognome;
         Session["Nome"] = Nome;

@@ -23,7 +23,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();
         //int CHIAVE = int.Parse(Session["codiceStudente"].ToString());
         //portafoglio (sum)
-        int COD_STUDENTE = 1;
+        int COD_STUDENTE = int.Parse(Session["CodiceAttore"].ToString());
         int saldo = g.SaldoStudente(COD_STUDENTE);
         lblSaldo.Text = saldo.ToString();
     }
@@ -34,7 +34,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     {
         //storico acquisti con cod studente
         GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();
-        int COD_STUDENTE = 1;
+        int COD_STUDENTE = int.Parse(Session["CodiceAttore"].ToString());
         grigliaStorico.DataSource = g.Storico_Studente(COD_STUDENTE);
         grigliaStorico.DataBind();
     }
@@ -45,5 +45,10 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         e.Row.Cells[0].Visible = false;
         e.Row.Cells[1].Visible = false;
 
+    }
+
+    protected void btnAggiornaSaldo_Click(object sender, EventArgs e)
+    {
+        CaricaGenMoney();
     }
 }

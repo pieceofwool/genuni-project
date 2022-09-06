@@ -1,9 +1,3 @@
-/*
-  Theme Name: Rapid
-  Theme URL: https://bootstrapmade.com/rapid-multipurpose-bootstrap-business-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # General
@@ -127,7 +121,7 @@ h6 {
 --------------------------------------------------------------*/
 
 #topbar {
-    padding: 0 0 10px 0;
+    margin-top: -5px;
     font-size: 14px;
     transition: all 0.5s;
 }
@@ -152,25 +146,12 @@ h6 {
             }
 
 #btnSearch {
-    /*font-size: 15px;
+    width: 91px;
     height: 35px;
-    background-color: #1bb1dc;
-    color: white;
-    border-color: white;
-    padding: 2px 10px;
-    display: inline-block;*/
-    margin: 7px;
-    padding: 0px;
-    width: 67px;
-    height: 35px;
+    text-transform: none;
+    line-height: normal;
+    font-size: 14px;
 }
-
-#barSearch {
-    width: 240px;
-    height: 35px;
-    float: right;
-}
-
 
 #btnHome {
     width: auto;
@@ -187,6 +168,12 @@ h6 {
 #btnIscrivitiIntro {
     margin-top: 169px;
 }
+
+    #btnIscrivitiIntro:hover {
+        color: #fff;
+        background-color: #0a98c0;
+        transform: none;
+    }
 
 
 #titoloGenUni {
@@ -289,7 +276,6 @@ h6 {
         background-color: #0a98c0;
     }
 
-
 /*--------------------------------------------------------------
 # Intro Section
 --------------------------------------------------------------*/
@@ -317,12 +303,12 @@ h6 {
         font-family: "Montserrat", sans-serif;
         font-size: 13px;
         font-weight: 600;
-        text-transform: uppercase;
+        text-transform: none;
         letter-spacing: 1px;
         display: inline-block;
         padding: 10px 32px;
         border-radius: 4px;
-        transition: 0.5s;
+        transition: 12.5s;
         color: #fff;
         background: #1bb1dc;
         color: #fff;
@@ -339,9 +325,6 @@ h6 {
 }
 
 
-.modal-dialog {
-    padding: 20px;
-}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -569,7 +552,7 @@ h6 {
     position: relative;
     font-family: "Montserrat", sans-serif;
     margin-bottom: 50px;
-    margin-top: -30px;
+    margin-top: 36px;
 }
 
 .section-header p {
@@ -591,38 +574,42 @@ h6 {
 /* About Us Section
 --------------------------------*/
 
+
 #about {
     padding: 80px 0;
 }
 
     #about .about-content {
         padding-top: 40px;
+        margin-left: 99px;
     }
 
         #about .about-content h2 {
             color: #413e66;
             font-family: "Montserrat", sans-serif;
             font-weight: 700;
+            font-size: 26px;
         }
 
         #about .about-content h3 {
             color: #696592;
             font-weight: 400;
-            font-size: 22px;
+            font-size: 14px;
             font-style: italic;
         }
 
         #about .about-content ul {
             list-style: none;
-            padding: 0;
+            font-size: 14px;
         }
 
             #about .about-content ul li {
                 padding-bottom: 10px;
+                font-size: 14px;
             }
 
                 #about .about-content ul li i {
-                    font-size: 20px;
+                    font-size: 14px;
                     padding-right: 4px;
                     color: #1bb1dc;
                 }
@@ -682,6 +669,7 @@ h6 {
 #h3GenMoneyWhyUs {
     margin-left: 10px;
 }
+
 /* Services Section
 --------------------------------*/
 #services {
@@ -756,11 +744,12 @@ h6 {
 }
 
     #why-us .why-us-content .features {
-        margin: 0 0 15px 0;
+        margin: -21px 0 15px 0;
         padding: 0;
         transition: 0.3s ease-in-out;
         max-width: 697px;
         float: left;
+        font-size: 1px;
     }
 
         #why-us .why-us-content .features i {
@@ -769,19 +758,21 @@ h6 {
         }
 
         #why-us .why-us-content .features h4 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-left: 67px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-left: 70px;
             color: #413e66;
-            margin-bottom: 5px;
-            padding: 0px 30px 12px 30px;
+            margin-bottom: 1px;
+            padding: 5px 30px 12px 30px;
+            text-transform: uppercase;
         }
 
         #why-us .why-us-content .features p {
-            font-size: 17px;
+            font-size: 12px;
             margin-left: 101px;
             color: #555186;
             display: block;
+            margin-top: -10px;
         }
 
     #why-us .counters {
@@ -805,11 +796,11 @@ h6 {
         }
 
 .iconeMission {
-    width: 94px;
+    width: 51px;
     float: left;
-    margin-left: -15px;
-    margin-bottom: -47px;
-    margin-right: 0px;
+    margin-left: 15px;
+    margin-bottom: -45px;
+    margin-right: 1px;
 }
 
 /*.titoliMission {
@@ -819,7 +810,16 @@ h6 {
     padding: 0;
 }*/
 .why-us-content {
-    margin-left: 10px
+    margin-left: 10px;
+    margin-top: -20px;
+    font-size: 14px;
+    color: #555186;
+}
+
+.pMission {
+    font-size: 13px;
+    margin-top: 19px;
+    font-family: "Montserrat", sans-serif;
 }
 /* Call To Action Section
 --------------------------------*/
@@ -1020,18 +1020,20 @@ h6 {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: medium;
+    font-size: large;
 }
 
     .linkCorsi:hover {
         text-decoration: none;
         font-size: x-large;
-        color: #ecb100;
+        color: #fff;
     }
 
     .linkCorsi:active {
         text-decoration: none;
     }
+
+
 /* Testimonials Section
 --------------------------------*/
 #testimonials {
@@ -1315,9 +1317,9 @@ h6 {
 .iconeMoney {
     width: 17%;
     float: left;
-    margin-left: 32px;
-    margin-bottom: -46px;
-    padding: 43px 0px
+    margin-left: 53px;
+    margin-bottom: -54px;
+    padding: 43px 0px;
 }
 /* Frequently Asked Questions Section
 --------------------------------*/
@@ -1359,11 +1361,11 @@ h6 {
         }
 
         #faq #faq-list a.collapse {
-            color: #1bb1dc;
+            color: #55516D;
         }
 
         #faq #faq-list a.collapsed {
-            color: #000;
+            color: #55516D;
         }
 
             #faq #faq-list a.collapsed i::before {
@@ -1743,6 +1745,18 @@ h6 {
 #txtAreaFooter {
     width: 451px;
     height: 100px;
+}
+
+
+#imgDocenteLavoraConNoi {
+    width: 100%;
+    margin-bottom: 29px;
+    border: 1px solid white;
+    border-radius: 6px;
+}
+
+#01 {
+    background-color: white;
 }
 /*--------------------------------------------------------------
 # Responsive Media Queries
