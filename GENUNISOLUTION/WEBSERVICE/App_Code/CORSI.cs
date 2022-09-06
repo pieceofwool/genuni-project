@@ -228,6 +228,15 @@ public class CORSI
         return true;
     }
 
+    public DataTable SelectForTutor()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SelectForTutor");
+        cmd.Parameters.AddWithValue("@COD_TUTOR", CHIAVE_TUTOR);
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion Metodi
 
 }
