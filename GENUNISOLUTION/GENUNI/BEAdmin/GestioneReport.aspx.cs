@@ -27,7 +27,7 @@ public partial class Default3 : System.Web.UI.Page
     {
         CONTABILITA.Contabilita_WSSoapClient C = new CONTABILITA.Contabilita_WSSoapClient();
 
-        grigliaReportDocenti.DataSource = C.ListaSpese("1900-01-01", "2025-01-01");
+        //grigliaReportDocenti.DataSource = C.ListaSpese("1900-01-01", "2025-01-01");
         grigliaReportDocenti.DataBind();
         ltlDocenti.Text = "<br/>Spese Docenti";
     }

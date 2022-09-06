@@ -55,20 +55,21 @@
                     <nav id="navbar" class="navbar order-last order-lg-0">
                         <ul>
                             <li><a class="active" href="../Default.aspx">Home</a></li>
-                            <li class="dropdown"><a href="SituazioneContabile.aspx"><span>Situazione Contabile</span></a>                              
+                            <li class="dropdown"><a href="SituazioneContabile.aspx"><span>Situazione Contabile</span></a>
                             </li>
                             <li class="dropdown"><a href="SituazioneCorsi.aspx"><span>Situazione Corsi</span> </a>
                             </li>
                             <li class="dropdown"><a href="Modifica_Profilo.aspx"><span>Modifica Profilo</span> </a>
-                            </li>                           
-                        </ul>                     
+                            </li>
+                            <li><a href="../Default.aspx">Esci</a></li>
+                        </ul>
                     </nav>
                     <!-- .navbar -->
 
                 </div>
             </header>
             <!-- End Header -->
-            
+
             <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
             <!-- Vendor JS Files -->
