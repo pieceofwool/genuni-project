@@ -55,7 +55,7 @@ public partial class POPUP_profilo_ModificaPassword : System.Web.UI.Page
             return;
         }
 
-        E.UpdatePassword(CHIAVE, password);
+        E.UpdatePassword(user, password);
 
 
         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('La password è stata modificata con successo" + "')", true); 
