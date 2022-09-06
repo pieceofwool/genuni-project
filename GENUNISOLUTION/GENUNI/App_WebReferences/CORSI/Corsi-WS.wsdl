@@ -109,6 +109,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectJoinMateria">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectJoinMateriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectJoinMateriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="TestRisultato">
         <s:complexType>
           <s:sequence>
@@ -325,6 +342,12 @@
   <wsdl:message name="SelectNonAssegnatiSoapOut">
     <wsdl:part name="parameters" element="tns:SelectNonAssegnatiResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectJoinMateriaSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectJoinMateria" />
+  </wsdl:message>
+  <wsdl:message name="SelectJoinMateriaSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectJoinMateriaResponse" />
+  </wsdl:message>
   <wsdl:message name="TestRisultatoSoapIn">
     <wsdl:part name="parameters" element="tns:TestRisultato" />
   </wsdl:message>
@@ -409,6 +432,10 @@
     <wsdl:operation name="SelectNonAssegnati">
       <wsdl:input message="tns:SelectNonAssegnatiSoapIn" />
       <wsdl:output message="tns:SelectNonAssegnatiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectJoinMateria">
+      <wsdl:input message="tns:SelectJoinMateriaSoapIn" />
+      <wsdl:output message="tns:SelectJoinMateriaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="TestRisultato">
       <wsdl:input message="tns:TestRisultatoSoapIn" />
@@ -500,6 +527,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectNonAssegnati">
       <soap:operation soapAction="http://tempuri.org/SelectNonAssegnati" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectJoinMateria">
+      <soap:operation soapAction="http://tempuri.org/SelectJoinMateria" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -647,6 +683,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectNonAssegnati">
       <soap12:operation soapAction="http://tempuri.org/SelectNonAssegnati" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectJoinMateria">
+      <soap12:operation soapAction="http://tempuri.org/SelectJoinMateria" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

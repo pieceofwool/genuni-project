@@ -94,6 +94,17 @@ public class Corsi_WS : System.Web.Services.WebService
         return dt;
     }
 
+
+    [WebMethod]
+    public DataTable SelectJoinMateria()
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        dt = c.SelectJoinMateria();
+        dt.TableName = "Corsi";
+        return dt;
+    }
+
     [WebMethod]
     public DataTable TestRisultato(int CHIAVECORSO, int CHIAVETEST, int CHIAVESTUDENTE)
     {
