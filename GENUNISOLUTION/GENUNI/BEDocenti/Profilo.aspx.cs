@@ -105,7 +105,7 @@ public partial class Default2 : System.Web.UI.Page
             Lit2.Text = string.Format(embed, ResolveUrl("GestoreCvPdf.ashx?chiave="), CHIAVE /*valore chiave*/);
             
         }
-
+        
        
 
     }

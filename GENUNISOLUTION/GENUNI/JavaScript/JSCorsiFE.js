@@ -1,4 +1,6 @@
-﻿const popupCenter = ({ url, title, w, h }) => {
+﻿//funzione per centrare il popup di chrome
+
+const popupCenter = ({ url, title, w, h }) => {
     // Fixes dual-screen position                             Most browsers      Firefox
     const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
     const dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY;
@@ -22,4 +24,34 @@
     if (window.focus) newWindow.focus();
 }
 
-//funzione per centrare il popup di chrome
+//funzione per reindirizzamento
+function Iscrizione(session) {
+
+    if (session === 'S') {
+        location.assign('http://localhost:58243/BEStudenti/SituazioneCorsi.aspx')
+    }
+    else {
+        location.assign('http://localhost:58243/Login.aspx')
+    }
+
+}   
+
+//funzione per gestore
+
+function Gestore(elementid, str) {
+
+    url = 'http://localhost:58243/GestoreCorsi.ashx';
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            document.getElementById(elementid).innerHTML = xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET", url + str, true);
+    xmlhttp.send();
+}

@@ -35,8 +35,8 @@
             <header class="section-header">
                 <h3>Tipologie corsi</h3>
 
-
-
+                
+                
                 <p>
                     Ecco l'elenco aggiornato dei nostri corsi:
                     <br />
@@ -45,7 +45,7 @@
                     <asp:Button ID="BtnPronti" runat="server" Text="Corsi Pronti" UseSubmitBehavior="False" OnClick="BtnPronti_Click" />
                     <asp:Button ID="BtnNonPronti" runat="server" Text="Corsi non Pronti" UseSubmitBehavior="False" OnClick="BtnNonPronti_Click" />
                 </p>
-
+                <div id="gestoreashx"></div>
             </header>
 
             <!-- Button trigger modal -->
