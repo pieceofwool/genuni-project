@@ -13,6 +13,7 @@ public partial class Default3 : System.Web.UI.Page
     {
         CaricaGrigliaCreazione();
         CaricaGrigliaAssegnazione();
+        CaricaGrigliaApprovazione();
 
     }
 
@@ -21,8 +22,7 @@ public partial class Default3 : System.Web.UI.Page
 
         GridViewRow riga = gridCreazioneCorsi.SelectedRow;
         Session["ChiaveCreazione"] = gridCreazioneCorsi.SelectedDataKey[0].ToString();
-        //btnModifica.Enabled = true;
-        //btnVisualizzaInfo.Enabled = true;
+     
 
     }
     protected void gridAssegnazioneCorsi_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,7 +30,15 @@ public partial class Default3 : System.Web.UI.Page
 
         GridViewRow riga = gridAssegnazioneCorsi.SelectedRow;
         Session["ChiaveAssegnazione"] = gridAssegnazioneCorsi.SelectedDataKey[0].ToString();
-        //btnAssegna.Enabled = true;
+
+
+    }
+    protected void gridApprovazioneCorsi_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+        GridViewRow riga = gridApprovazioneCorsi.SelectedRow;
+        Session["ChiaveApprovazione"] = gridApprovazioneCorsi.SelectedDataKey[0].ToString();
+
 
     }
 
@@ -51,13 +59,16 @@ public partial class Default3 : System.Web.UI.Page
         CaricaGrigliaAssegnazione();
 
     }
+    protected void btnAggiornaApprovazione_Click(object sender, EventArgs e)
+    {
+        CaricaGrigliaApprovazione();
 
+    }
 
     protected void CaricaGrigliaCreazione()
     {
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
 
-        //    CORSI C = new CORSI();
         gridCreazioneCorsi.DataSource = C.SelectAll();
         gridCreazioneCorsi.DataBind();
         
@@ -66,10 +77,16 @@ public partial class Default3 : System.Web.UI.Page
     {
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
 
-        // CORSI C = new CORSI();
         gridAssegnazioneCorsi.DataSource = C.SelectAll();
         gridAssegnazioneCorsi.DataBind();
 
     }
+    protected void CaricaGrigliaApprovazione()
+    {
+        CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
 
+        gridApprovazioneCorsi.DataSource = C.Select_Utenti_Filtro_Q();
+        gridApprovazioneCorsi.DataBind();
+
+    }
 }
