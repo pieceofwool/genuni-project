@@ -25,6 +25,9 @@
                 </tr>--%>
                 <tr>
                     <td>
+                        <asp:Label ID="lblAvatar" runat="server" Text="Avatar corso:"></asp:Label>
+                    </td>
+                    <td>
                         <asp:FileUpload ID="fupAvatar" runat="server" ToolTip="Avatar" accept=".png,.jpg,.jpeg" />
                     </td>
                 </tr>
