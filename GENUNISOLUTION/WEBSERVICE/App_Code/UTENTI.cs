@@ -59,6 +59,16 @@ public class UTENTI
         return C.EseguiSelect(cmd).Rows[0].Field<string>("Tipo");
     }
 
+    public string GetNome()
+    {
+        SqlCommand cmd = new SqlCommand("UTENTI_GETNOME");
+        CONNESSIONE C = new CONNESSIONE();
+
+        cmd.Parameters.AddWithValue("@Chiave", Chiave);
+
+        return C.EseguiSelect(cmd).Rows[0].Field<string>("Nome");
+    }
+
     public bool Controlla_Abilitazione()
     {
         SqlCommand cmd = new SqlCommand("UTENTI_Controlla_Abilitazione");

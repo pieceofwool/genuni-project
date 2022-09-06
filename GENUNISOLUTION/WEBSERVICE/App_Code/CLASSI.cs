@@ -81,5 +81,32 @@ public class CLASSI
 
         return C.EseguiSelect(cmd);
     }
+
+    /// <summary>
+    /// Restituisce tutti gli studenti iscritti ad un corso con il relativo punteggio finale
+    /// </summary>
+    /// <returns></returns>
+    public DataTable SelectCorso()
+    {
+        SqlCommand cmd = new SqlCommand("CLASSI_SELECT_CORSO");
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
+
+        return new CONNESSIONE().EseguiSelect(cmd);
+    }
+
+    public void Insert_Punteggio()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CLASSI_INSERT_PUNTEGGIO";
+        cmd.Parameters.AddWithValue("@COD_CORSO", COD_CORSO);
+        cmd.Parameters.AddWithValue("@COD_STUDENTE", COD_STUDENTE);
+        cmd.Parameters.AddWithValue("@PUNTEGGIO", PUNTEGGIO_TEST);
+
+
+        c.EseguiCmd(cmd);
+        //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
+
+    }
 }
 

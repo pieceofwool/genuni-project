@@ -97,4 +97,31 @@ public class Classi_WS : System.Web.Services.WebService
         return dt;
     }
 
+    /// <summary>
+    /// Seleziona tutti gli studenti appartenenti ad un corso
+    /// </summary>
+    /// <param name="COD_CORSO"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable SelectCorso(int COD_CORSO)
+    {
+        CLASSI C = new CLASSI();
+        C.COD_CORSO = COD_CORSO;
+
+        DataTable DT = C.SelectCorso();
+        DT.TableName = "Studenti del corso";
+        return DT;
+    }
+
+    [WebMethod]
+    public void Insert_Punteggio(int COD_CORSO, int COD_STUDENTE, int PUNTEGGIO_TEST)
+    {
+        CLASSI c = new CLASSI();
+        c.COD_CORSO = COD_CORSO;
+        c.COD_STUDENTE = COD_STUDENTE;
+        c.PUNTEGGIO_TEST = PUNTEGGIO_TEST;
+
+        c.Insert_Punteggio();
+    }
+
 }

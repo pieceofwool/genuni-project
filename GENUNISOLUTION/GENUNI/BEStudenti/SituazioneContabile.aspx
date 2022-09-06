@@ -43,13 +43,18 @@
     <div>
         <div id="Portafoglio">
             <asp:Label ID="Label1" runat="server" Text="Portafoglio"></asp:Label>
-            <asp:Label ID="lblSaldo" runat="server" Text=""></asp:Label><br />
-            <input type="button" id="popup" value="Acquista GenMoney"  />
+            <asp:Label ID="lblSaldo" runat="server" Text=""></asp:Label>
+            <br />
+            <input type="button" id="popup" value="Acquista GenMoney" />
             <asp:Button ID="btnAggiornaSaldo" runat="server" Text="Aggiorna saldo" OnClick="btnAggiornaSaldo_Click" />
         </div>
-        <p>Storico Acquisti</p>
         <div>
-            <asp:GridView ID="grigliaStorico" runat="server"></asp:GridView>
+            <p>Storico Acquisti</p>
+            <asp:GridView ID="grigliaStoricoAcquisti" runat="server" ></asp:GridView>
+        </div>
+        <div>
+            <p>Storico ricariche GenMoney</p>
+            <asp:GridView ID="grigliaRicariche" runat="server" OnRowDataBound="grigliaRicariche_RowDataBound"></asp:GridView>
         </div>
     </div>
 </asp:Content>

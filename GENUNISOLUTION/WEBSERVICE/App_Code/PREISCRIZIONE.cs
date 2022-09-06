@@ -50,6 +50,18 @@ public class PREISCRIZIONE
         return C.EseguiSelect(cmd);
     }
 
+    /// <summary>
+    /// metodo che riporta il conto delle preiscrizioni ad un corso passato come parametro
+    /// </summary>
+    /// <returns></returns>
+    public DataTable CountPreiscrizioniCorso()
+    {
+        SqlCommand cmd = new SqlCommand("PREISCRIZIONI_COUNT_CORSO");
+        cmd.Parameters.AddWithValue("@Cod_Corso", Cod_Corso);
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion Metodi
 
 }

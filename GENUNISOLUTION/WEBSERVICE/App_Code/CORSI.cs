@@ -201,7 +201,7 @@ public class CORSI
     //metodo che riporta tutti i corsi che sono stati approvati
     public DataTable CorsiSelectApprovati()
     {
-        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_PREPARATI");
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_APPROVATI");
         CONNESSIONE C = new CONNESSIONE();
         return C.EseguiSelect(cmd);
     }
@@ -209,7 +209,7 @@ public class CORSI
     //metodo che riporta tutti i corsi che non sono ancora stati approvati
     public DataTable CorsiSelectNonApprovati()
     {
-        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_NONPREPARATI");
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_NONAPPROVATI");
         CONNESSIONE C = new CONNESSIONE();
         return C.EseguiSelect(cmd);
 
@@ -257,7 +257,7 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_UPDATE_STATUS");
 
-        cmd.Parameters.AddWithValue("@Chiave_Corso", CHIAVE_CORSO);
+        cmd.Parameters.AddWithValue("@Cod_Corso", CHIAVE_CORSO);
 
         CONNESSIONE conn = new CONNESSIONE();
 
@@ -270,6 +270,30 @@ public class CORSI
         CONNESSIONE C = new CONNESSIONE();
 
         return C.EseguiSelect(cmd);
+    }
+
+    /// <summary>
+    /// metodo che restituisce tutti i corsi con status P
+    /// </summary>
+    /// <returns></returns>
+    public DataTable SelectAllPreparati()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_PREPARATI");
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
+    /// <summary>
+    /// metodo che modifica il corso aggiungendo status Q
+    /// </summary>
+    public void CorsiQuotazione()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_QUOTAZIONE");
+        cmd.Parameters.AddWithValue("@Cod_Corso", CHIAVE);
+        cmd.Parameters.AddWithValue("@Costo", COSTO);
+        CONNESSIONE C = new CONNESSIONE();
+        C.EseguiCmd(cmd);
     }
 
     #endregion Metodi
