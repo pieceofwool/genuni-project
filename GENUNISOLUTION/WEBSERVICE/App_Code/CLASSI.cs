@@ -93,5 +93,20 @@ public class CLASSI
 
         return new CONNESSIONE().EseguiSelect(cmd);
     }
+
+    public void Insert_Punteggio()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CLASSI_INSERT_PUNTEGGIO";
+        cmd.Parameters.AddWithValue("@COD_CORSO", COD_CORSO);
+        cmd.Parameters.AddWithValue("@COD_STUDENTE", COD_STUDENTE);
+        cmd.Parameters.AddWithValue("@PUNTEGGIO", PUNTEGGIO_TEST);
+
+
+        c.EseguiCmd(cmd);
+        //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
+
+    }
 }
 
