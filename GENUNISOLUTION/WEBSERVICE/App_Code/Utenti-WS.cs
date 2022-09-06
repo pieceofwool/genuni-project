@@ -104,14 +104,10 @@ public class Utenti_WS : System.Web.Services.WebService
     [WebMethod]
     public bool Login(string USR, string PWD)
     {
-        DataTable dt = new DataTable();
         UTENTI u = new UTENTI();
         u.Usr = USR;
         u.Pwd = PWD;
-        bool log = u.Login();
-        dt.TableName = "Utenti";
-        return log;
-
+        return u.Login();
     }
 
     [WebMethod]

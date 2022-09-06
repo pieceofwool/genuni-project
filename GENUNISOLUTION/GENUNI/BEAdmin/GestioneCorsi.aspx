@@ -154,7 +154,7 @@
                 <td>
                     <a id="btnAssegna" class="popUpBtnBE" href="Popup/AssegnaCorsi.aspx">Assegna corso</a>
                     <%--<a href="Popup/AssegnaCorsi.aspx">Assegna corso</a>--%>
-                    <asp:Button ID="btnAggiornaAssegnazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaAssegnazione_Click" CssClass="btnBE" />
+                    <%--<asp:Button ID="btnAggiornaAssegnazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaAssegnazione_Click" CssClass="btnBE" />--%>
                 </td>
             </tr>
             <tr>
