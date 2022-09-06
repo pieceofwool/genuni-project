@@ -246,6 +246,23 @@ public class CORSI
         CONNESSIONE C = new CONNESSIONE();
         return C.EseguiSelect(cmd);
     }
+    public DataTable Select_Utenti_Filtro_Q()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_UTENTI_FILTRO_Q");
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+
+    public void Update_Status()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_UPDATE_STATUS");
+
+        cmd.Parameters.AddWithValue("@Chiave_Corso", CHIAVE_CORSO);
+
+        CONNESSIONE conn = new CONNESSIONE();
+
+        conn.EseguiCmd(cmd);
+    }
 
     #endregion Metodi
 
