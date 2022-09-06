@@ -14,7 +14,7 @@
         <div id="content" style="width: 100%;">
             <table>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lbl" CssClass="lbl" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
@@ -28,36 +28,48 @@
                         <asp:Label ID="lblAvatar" runat="server" Text="Avatar corso:"></asp:Label>
                     </td>
                     <td>
-                        <asp:FileUpload ID="fupAvatar" runat="server" ToolTip="Avatar" accept=".png,.jpg,.jpeg" />
+                        <asp:FileUpload ID="fupAvatar" runat="server" accept=".png,.jpg,.jpeg" />
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <asp:TextBox ID="txtTitolo" CssClass="txt" runat="server" PlaceHolder="Titolo"></asp:TextBox><br />
+                        <asp:Label ID="lblTitolo" runat="server" Text="Titolo:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtTitolo" CssClass="txt" runat="server" ></asp:TextBox><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
+                        <asp:Label ID="lblTipo" runat="server" Text="Tipo:"></asp:Label>
+                    </td>
+                    <td>
 
-                        <asp:TextBox ID="txtTipo" CssClass="txt" runat="server" PlaceHolder="Tipo"></asp:TextBox><br />
+                        <asp:TextBox ID="txtTipo" CssClass="txt" runat="server" ></asp:TextBox><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
+                        <asp:Label ID="lblDescrizione" runat="server" Text="Descrizione:"></asp:Label>
+                    </td>
+                    <td>
 
-                        <asp:TextBox ID="txtDescrizione" CssClass="txt" runat="server" PlaceHolder="Descrizione"></asp:TextBox><br />
+                        <asp:TextBox ID="txtDescrizione" CssClass="txt" runat="server" ></asp:TextBox><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
+                        <asp:Label ID="lblDataPartenza" runat="server" Text="Data partenza:"></asp:Label>
+                    </td>
+                    <td>
 
-                        <asp:TextBox ID="txtDataPartenza" CssClass="txt" runat="server" ToolTip="Data Partenza" TextMode="Date"></asp:TextBox><br />
+                        <asp:TextBox ID="txtDataPartenza" CssClass="txt" runat="server" TextMode="Date"></asp:TextBox><br />
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td colspan="2">
 
                         <asp:Button ID="btnInserisci" CssClass="btnBE" runat="server" Text="Inserisci" OnClick="btnInserisci_Click" />
                     </td>
