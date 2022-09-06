@@ -134,4 +134,17 @@ public class Contabilita_WS : System.Web.Services.WebService
         dt.TableName = "Lista spese";
         return dt;
     }
+
+    /// <summary>
+    /// metodo che iporta il costo del docente del corso assegnato passato come parametro
+    /// </summary>
+    /// <param name="CODICECORSO"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable CostoDocentePerCorso(int CODICECORSO)
+    {
+        DataTable dt = CONTABILITA.CostoDocentePerCorso(CODICECORSO);
+        dt.TableName = "Lista spese";
+        return dt;
+    }
 }

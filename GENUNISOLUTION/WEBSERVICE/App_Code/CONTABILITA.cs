@@ -158,4 +158,16 @@ public static class CONTABILITA
 
         return new CONNESSIONE().EseguiSelect(cmd);
     }
+
+    /// <summary>
+    /// metodo che iporta il costo del docente del corso assegnato passato come parametro
+    /// </summary>
+    /// <param name="codiceCorso"></param>
+    /// <returns></returns>
+    public static DataTable CostoDocentePerCorso(int codiceCorso)
+    {
+        SqlCommand cmd = new SqlCommand("CONTABILITA_MATERIE_COSTO_DOCENTE");
+        cmd.Parameters.AddWithValue("@Cod_Corso", codiceCorso);
+        return new CONNESSIONE().EseguiSelect(cmd);
+    }
 }
