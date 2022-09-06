@@ -49,7 +49,6 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
     {
         // Controlli formali
         if (string.IsNullOrEmpty(txtUser.Text.Trim()) ||
-            string.IsNullOrEmpty(txtRagSoc.Text.Trim()) ||
             string.IsNullOrEmpty(txtCognome.Text.Trim()) ||
             string.IsNullOrEmpty(txtNome.Text.Trim()) ||
             string.IsNullOrEmpty(txtDataNascita.Text.Trim()) ||

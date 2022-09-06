@@ -10,7 +10,7 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
         CaricaDesc();
     }
 
@@ -34,12 +34,12 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
         CaricaChat(dt);
     }
-        
-        
+
+
 
     protected void CaricaChat(DataTable dt)
     {
-        
+
         litChat.Text = "";
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
 
@@ -53,8 +53,8 @@ public partial class BEDocenti_Default : System.Web.UI.Page
             //se il campo cod_Interno è nullo allora è uno esterno(studente o docente)
             if (string.IsNullOrEmpty(dt.Rows[i]["Cod_Interno"].ToString()))
             {
-               // int cod_studente = (int)dt.Rows[i]["Cod_Studente"];
-                
+                // int cod_studente = (int)dt.Rows[i]["Cod_Studente"];
+
                 //salvo la chiave della chat
                 key = dr.Field<int>("Chiave");
 
@@ -104,10 +104,14 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
                 //riempo la literal
 
+
                 litChat.Text += "<tr><td>" + IMG + "</td>";
                 litChat.Text += "<td><b> " + nome + " " + cognome + " </b><br /><small>(" + esterno + ")</small></td>";
                 litChat.Text += "<td><small> Il " + date.Substring(0, 10) + " <br /> alle" + date.Substring(10) + " </small></td>";
                 litChat.Text += "<td><b> " + messaggio + " </b></td></tr>";
+
+
+
 
             }
 
@@ -159,8 +163,8 @@ public partial class BEDocenti_Default : System.Web.UI.Page
     protected void BtnRispondi_Click(object sender, EventArgs e)
     {
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
-       
-        int codiceCorso = 1 ; //session
+
+        int codiceCorso = 1; //session
         int codiceEsterno = 1; //session
         string contenuto = txtRisposta.InnerText;
 

@@ -43,7 +43,7 @@
       <s:element name="SelectAllDocente">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_DOCENTE" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
