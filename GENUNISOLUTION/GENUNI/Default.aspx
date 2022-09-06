@@ -12,7 +12,13 @@
                 <div class="col-md-6 intro-info order-md-first order-last" id="">
                     <h2>Gen Uni
                         <br>
-                        Inizia la tua <span>formazione!</span></h2>
+                        Inizia la tua <span>formazione!</span>
+                    </h2>
+                    <h3 id="introDescrizione">
+                        Entra a far parte della nostra accademia e-learing, <br />
+                        trova il corso che fa per te e specializzati nel settore che ami!
+                        
+                    </h3>
                     <div>
                         <a href="registrazione.aspx" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti</a>
                     </div>
@@ -62,6 +68,14 @@
                                 <li><i class="ion-android-checkmark-circle"></i>L&#39;avanzamento di carriera</li>
                                 <li><i class="ion-android-checkmark-circle"></i>I crediti formativi professionali</li>
                             </ul>
+                            <p>
+                                Molto di più di normale corso di e-learning, la nostra academy è innovativa!
+                                Entrare in GenUni ti permetterà di poter interagire costantemente con il docente e con gli altri partecipanti.
+                            </p>
+                            <p>
+                                Gen Uni è la prima accademia di corsi online in ambito coding dove poter imparare a programmare con i principali linguaggi di programmazione, anche da zero.Grazie ai percorsi formativi verrai guidato passo passo fino ad apprendere le competenze delle principali figure professionali, 
+                                come programmatore web (front-end, back-end o full stack), mobile developer, web designer, ui/ux designer, data scientist e molto altro.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -89,7 +103,7 @@
                                 Il nostro obiettivo &#232; quello di farti raggiungere un livello di conoscenza adeguato, fornendoti indicatori e strumenti professionali e culturali 
                                 affinch&#232; tu possa investirli su te stesso e determinare il tuo successo.
                             </p>
-                            <div class="features wow bounceInUp clearfix" style="margin-top: -3px">
+                            <div class="features wow bounceInUp clearfix" style="margin-top: 42px; visibility: visible; animation-name: bounceInUp; font-size: 22px;">
                                 <img src="img/genMoney2.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Gen Money</h4>
@@ -165,8 +179,8 @@
                 <header class="section-header">
                     <h3 class="section-title">I nostri corsi</h3>
                 </header>
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                    <ul class="carousel-indicators">
+                <div id="demo" class="carousel slide" data-ride="carousel" style="width: 90%; margin-left: 71px;">
+                    <ul class="carousel-indicators" style="padding-left: 100px;">
                         <li data-target="#demo" data-slide-to="0" class="active"></li>
                         <li data-target="#demo" data-slide-to="1"></li>
                         <li data-target="#demo" data-slide-to="2"></li>
@@ -176,7 +190,7 @@
                             <img src="assets/img/code1.png" alt="Los Angeles" width="1100" height="500">
                             <div class="carousel-caption">
                                 <a class="linkCorsi" href="/tipologieCorsi.aspx">
-                                    <h3 >Corso .NET</h3>
+                                    <h3>Corso .NET</h3>
                                     <p>Clicca qui per saperne di pi&#249;</p>
                                 </a>
                             </div>
@@ -314,11 +328,12 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3><span class="currency">
-                                    <img src="img/genMoney2.png" class="iconeMoney" />
+                                    <img src="img/genMoney2.png" class="iconeMoney" id="iconeMoney50" />
                                 </span>50<span class="period"></span></h3>
                             </div>
                             <div class="card-block">
-                                <h4 class="card-title">&#8364250
+                                <h4 class="card-title">
+                                    <img src="img/250euro.png" class="euro" />
                                 </h4>
                                 <ul class="list-group">
                                     <li class="list-group-item">Possibilit&#224; di accesso a 1 corso</li>
@@ -340,7 +355,8 @@
                                 </span>100<span class="period"></span></h3>
                             </div>
                             <div class="card-block">
-                                <h4 class="card-title">&#8364500
+                                <h4 class="card-title">
+                                    <img src="img/500euro.png" class="euro" />
                                 </h4>
                                 <ul class="list-group">
                                     <li class="list-group-item">Odio animi voluptates</li>
@@ -362,7 +378,8 @@
                                 </span>200<span class="period"></span></h3>
                             </div>
                             <div class="card-block">
-                                <h4 class="card-title">&#83641000
+                                <h4 class="card-title">
+                                    <img src="img/1000euro.png" class="euro" />
                                 </h4>
                                 <ul class="list-group">
                                     <li class="list-group-item">Odio animi voluptates</li>
@@ -480,7 +497,7 @@
                                         <li><a href="#">Home</a></li>
                                         <li><a href="#">Chi siamo</a></li>
                                         <li><a href="#">Corsi</a></li>
-                                        <li><a href="LoginCopia.aspx">Termini di servizio</a></li>
+                                        <li><a href="Login2.aspx">Termini di servizio</a></li>
                                         <li><a href="../BEAdmin/GestioneCorsi.aspx">Privacy policy</a></li>
                                     </ul>
                                 </div>
