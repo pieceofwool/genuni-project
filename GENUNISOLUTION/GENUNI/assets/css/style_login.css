@@ -224,12 +224,11 @@ button {
 }
 
 .cont {
-    border-radius: 20px;
     overflow: hidden;
     position: relative;
-    width: 897px;
-    height: 769px;
-    margin: -21px auto 36px;
+    width: 893px;
+    height: 623px;
+    margin: 152px auto 18px;
     background: #fff;
     box-shadow: -10px -10px 15px rgb(255 255 255 / 30%), 10px 10px 15px rgb(70 70 70 / 15%), inset -10px -10px 15px rgb(255 255 255 / 30%), inset 10px 10px 15px rgb(70 70 70 / 15%);
 }
@@ -436,8 +435,8 @@ button {
 
 label {
     display: block;
-    width: 262px;
-    margin: 11px auto 7px;
+    width: 253px;
+    margin: 12px 17px;
     text-align: center;
 }
 
@@ -449,12 +448,13 @@ label {
 
 input {
     display: block;
-    width: 101%;
-    margin-top: 3px;
+    width: 100%;
+    margin-top: 2px;
     padding-bottom: -5px;
-    font-size: 12px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
     text-align: center;
+    border-radius: 10px;
 }
 
 .forgot-pass {
@@ -544,4 +544,39 @@ input {
 
 #logoSignIn {
     width: 100%;
+}
+
+#tableScetaLogin {
+    margin-left: -1px;
+    margin-top: 29px;
+    margin-bottom: -14px;
+}
+
+#h3SceltaLogin {
+    margin-left: 175px;
+    margin-bottom: -30px;
+    margin-top: 21px;
+    font-size: 16px;
+}
+
+.h3Login {
+    font-size: 25px;
+    color:white;
+}
+
+#genLoginImg {
+    width: 315px;
+    margin-left: 159px;
+    margin-top: 26px;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+
+#tableSignUp {
+    margin-top: 10px;
+}
+
+#accediLogin {
+    margin-top: -10px;
 }
