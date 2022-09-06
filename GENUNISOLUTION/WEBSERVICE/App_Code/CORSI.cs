@@ -228,12 +228,22 @@ public class CORSI
         return true;
     }
 
+
+    //metodo che riporta tutte le classi relative ad un determinato corso
+    public DataTable Corsi_SelectAllClassi()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CORSI_SELECTALL_CLASSI";
+        cmd.Parameters.AddWithValue("@CodiceCorso", CHIAVE);
+        return C.EseguiSelect(cmd);
+    }
+
     public DataTable SelectForTutor()
     {
         SqlCommand cmd = new SqlCommand("CORSI_SelectForTutor");
         cmd.Parameters.AddWithValue("@COD_TUTOR", CHIAVE_TUTOR);
         CONNESSIONE C = new CONNESSIONE();
-
         return C.EseguiSelect(cmd);
     }
 
