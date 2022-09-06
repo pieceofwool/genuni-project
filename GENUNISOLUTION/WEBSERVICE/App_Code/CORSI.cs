@@ -201,7 +201,7 @@ public class CORSI
     //metodo che riporta tutti i corsi che sono stati approvati
     public DataTable CorsiSelectApprovati()
     {
-        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_PREPARATI");
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_APPROVATI");
         CONNESSIONE C = new CONNESSIONE();
         return C.EseguiSelect(cmd);
     }
@@ -209,7 +209,7 @@ public class CORSI
     //metodo che riporta tutti i corsi che non sono ancora stati approvati
     public DataTable CorsiSelectNonApprovati()
     {
-        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_NONPREPARATI");
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_NONAPPROVATI");
         CONNESSIONE C = new CONNESSIONE();
         return C.EseguiSelect(cmd);
 
