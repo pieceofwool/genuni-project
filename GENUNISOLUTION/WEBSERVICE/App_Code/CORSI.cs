@@ -263,6 +263,14 @@ public class CORSI
 
         conn.EseguiCmd(cmd);
     }
+    public DataTable Utenti_SelectOne()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_UTENTI_SELECTONE");
+        cmd.Parameters.AddWithValue("@COD_CORSO", CHIAVE_CORSO);
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
 
     #endregion Metodi
 

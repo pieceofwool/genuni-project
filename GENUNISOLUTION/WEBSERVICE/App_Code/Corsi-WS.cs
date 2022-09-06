@@ -290,4 +290,15 @@ public class Corsi_WS : System.Web.Services.WebService
         c.Update_Status();
     }
 
+    [WebMethod]
+    public DataTable Utenti_SelectOne(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        c.CHIAVE_CORSO = CHIAVE;
+        dt = c.Utenti_SelectOne();
+        dt.TableName = "Corso";
+        return dt;
+    }
+
 }
