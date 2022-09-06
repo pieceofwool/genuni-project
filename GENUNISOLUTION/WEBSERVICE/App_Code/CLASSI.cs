@@ -81,5 +81,17 @@ public class CLASSI
 
         return C.EseguiSelect(cmd);
     }
+
+    /// <summary>
+    /// Restituisce tutti gli studenti iscritti ad un corso con il relativo punteggio finale
+    /// </summary>
+    /// <returns></returns>
+    public DataTable SelectCorso()
+    {
+        SqlCommand cmd = new SqlCommand("CLASSI_SELECT_CORSO");
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
+
+        return new CONNESSIONE().EseguiSelect(cmd);
+    }
 }
 
