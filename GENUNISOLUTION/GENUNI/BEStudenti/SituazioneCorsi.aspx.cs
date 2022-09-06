@@ -16,7 +16,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     protected void grigliaCorsiAcquistati_SelectedIndexChanged(object sender, EventArgs e)
     {
         Response.Redirect("Corsi.aspx");
-        //Session["codiceStudente"] = grigliaCorsiAcquistati.SelectedDataKey[0];
+        Session["Cod_Corso"] = grigliaCorsiAcquistati.SelectedDataKey[0];
         //select all con il cod_studente
     }
 
@@ -29,7 +29,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     {
 
         ESTERNI.Esterni_WSSoapClient e = new ESTERNI.Esterni_WSSoapClient();
-        int CHIAVE = 1;
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
         grigliaCorsiAcquistati.DataSource = e.CorsiFrequentati(CHIAVE);
         grigliaCorsiAcquistati.DataBind();
 

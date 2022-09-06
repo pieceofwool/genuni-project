@@ -110,6 +110,48 @@
       <s:element name="AcquistaCorsoResponse">
         <s:complexType />
       </s:element>
+      <s:element name="StoricoCorsi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_STUDENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoricoCorsiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StoricoCorsiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoricoRicariche">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_STUDENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoricoRicaricheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StoricoRicaricheResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -154,6 +196,18 @@
   <wsdl:message name="AcquistaCorsoSoapOut">
     <wsdl:part name="parameters" element="tns:AcquistaCorsoResponse" />
   </wsdl:message>
+  <wsdl:message name="StoricoCorsiSoapIn">
+    <wsdl:part name="parameters" element="tns:StoricoCorsi" />
+  </wsdl:message>
+  <wsdl:message name="StoricoCorsiSoapOut">
+    <wsdl:part name="parameters" element="tns:StoricoCorsiResponse" />
+  </wsdl:message>
+  <wsdl:message name="StoricoRicaricheSoapIn">
+    <wsdl:part name="parameters" element="tns:StoricoRicariche" />
+  </wsdl:message>
+  <wsdl:message name="StoricoRicaricheSoapOut">
+    <wsdl:part name="parameters" element="tns:StoricoRicaricheResponse" />
+  </wsdl:message>
   <wsdl:portType name="GenMoney_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -182,6 +236,14 @@
     <wsdl:operation name="AcquistaCorso">
       <wsdl:input message="tns:AcquistaCorsoSoapIn" />
       <wsdl:output message="tns:AcquistaCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StoricoCorsi">
+      <wsdl:input message="tns:StoricoCorsiSoapIn" />
+      <wsdl:output message="tns:StoricoCorsiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StoricoRicariche">
+      <wsdl:input message="tns:StoricoRicaricheSoapIn" />
+      <wsdl:output message="tns:StoricoRicaricheSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="GenMoney_WSSoap" type="tns:GenMoney_WSSoap">
@@ -249,6 +311,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="StoricoCorsi">
+      <soap:operation soapAction="http://tempuri.org/StoricoCorsi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StoricoRicariche">
+      <soap:operation soapAction="http://tempuri.org/StoricoRicariche" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="GenMoney_WSSoap12" type="tns:GenMoney_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -308,6 +388,24 @@
     </wsdl:operation>
     <wsdl:operation name="AcquistaCorso">
       <soap12:operation soapAction="http://tempuri.org/AcquistaCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StoricoCorsi">
+      <soap12:operation soapAction="http://tempuri.org/StoricoCorsi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StoricoRicariche">
+      <soap12:operation soapAction="http://tempuri.org/StoricoRicariche" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

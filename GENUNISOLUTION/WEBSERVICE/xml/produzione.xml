@@ -2,10 +2,10 @@
 <cofiguration>
 	<ConnectionString>
 		<DataSource>
-			5.134.124.100\MSSQLSERVER2019;
+			5.134.124.100\MSSQLSERVER2019
 		</DataSource>
 		<InitialCatalog>
-			generation;
+			generation
 		</InitialCatalog>
 		<IntegratedSecurity>
 			False

@@ -135,7 +135,7 @@ public class CORSI
         SqlCommand cmd = new SqlCommand("CORSI_UpdateTutor");
 
         cmd.Parameters.AddWithValue("@Chiave_Corso", CHIAVE_CORSO);
-        cmd.Parameters.AddWithValue("@Cod_Utente", CHIAVE_TUTOR);
+        cmd.Parameters.AddWithValue("@Cod_Tutor", CHIAVE_TUTOR);
 
         CONNESSIONE conn = new CONNESSIONE();
 
@@ -226,6 +226,25 @@ public class CORSI
         if (dt.Rows.Count == 0) return false;
 
         return true;
+    }
+
+
+    //metodo che riporta tutte le classi relative ad un determinato corso
+    public DataTable Corsi_SelectAllClassi()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CORSI_SELECTALL_CLASSI";
+        cmd.Parameters.AddWithValue("@CodiceCorso", CHIAVE);
+        return C.EseguiSelect(cmd);
+    }
+
+    public DataTable SelectForTutor()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SelectForTutor");
+        cmd.Parameters.AddWithValue("@COD_TUTOR", CHIAVE_TUTOR);
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
     }
 
     #endregion Metodi

@@ -44,6 +44,50 @@ public class Chat_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public DataTable SelectChatCorso(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        CHAT c = new CHAT();
+        c.COD_CORSO = CHIAVE;
+        dt = c.SelectChatCorso();
+        dt.TableName = "Chat";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectChatCorsoDesc(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        CHAT c = new CHAT();
+        c.COD_CORSO = CHIAVE;
+        dt = c.SelectChatCorsoDesc();
+        dt.TableName = "Chat";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectOneJoinEsterni(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        CHAT c = new CHAT();
+        c.CHIAVE = CHIAVE;
+        dt = c.SelectOneJoinEsterni();
+        dt.TableName = "Chat";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectOneJoinUtenti(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        CHAT c = new CHAT();
+        c.CHIAVE = CHIAVE;
+        dt = c.SelectOneJoinUtenti();
+        dt.TableName = "Chat";
+        return dt;
+    }
+
+    [WebMethod]
     public void Insert(int COD_CORSO, int COD_STUDENTE, int COD_INTERNO, string CONTENUTO)
     {
         CHAT c = new CHAT();
@@ -53,6 +97,28 @@ public class Chat_WS : System.Web.Services.WebService
         c.CONTENUTO = CONTENUTO;
 
         c.Insert();
+    }
+
+    [WebMethod]
+    public void InsertEsterni(int COD_CORSO, int COD_STUDENTE, string CONTENUTO)
+    {
+        CHAT c = new CHAT();
+        c.COD_CORSO = COD_CORSO;
+        c.COD_STUDENTE = COD_STUDENTE;
+        c.CONTENUTO = CONTENUTO;
+
+        c.InsertEsterni();
+    }
+
+    [WebMethod]
+    public void InsertInterni(int COD_CORSO, int COD_INTERNO, string CONTENUTO)
+    {
+        CHAT c = new CHAT();
+        c.COD_CORSO = COD_CORSO;
+        c.COD_INTERNO = COD_INTERNO;
+        c.CONTENUTO = CONTENUTO;
+
+        c.InsertInterni();
     }
 
 }
