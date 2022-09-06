@@ -10,7 +10,10 @@ public partial class registrazione : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        NascondiDocenti();
+        if (ddlTipo.SelectedValue == "S")
+        {
+            NascondiDocenti();
+        }
 
         if (Session["IscrizioneComeDocente"] != null)
         {
@@ -19,7 +22,7 @@ public partial class registrazione : System.Web.UI.Page
 
             MostraDocenti();
 
-            Session["IscrizioneComeDocenete"] = null;
+            Session["IscrizioneComeDocente"] = null;
         }
     }
 
@@ -50,7 +53,7 @@ public partial class registrazione : System.Web.UI.Page
                 || string.IsNullOrEmpty(txtCap.Text) || string.IsNullOrEmpty(txtCitta.Text) || string.IsNullOrEmpty(txtProvincia.Text)
                 || string.IsNullOrEmpty(txtNazione.Text))
             {
-                ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Il form non è stato compilato.')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Il form non è stato compilato.')", true);
                 return;
             }
 
@@ -58,6 +61,12 @@ public partial class registrazione : System.Web.UI.Page
 
             string Tipo = ddlTipo.SelectedValue.ToString();
             string usr = txtUsr.Text.Trim();
+            if (E.ControlloDuplice(usr) == true) //ControlloDuplice (della mail) sarebbe a tutti gli effetti un checkone per controllare se la email dell'esterno esiste già, ma il nome "CheckOne"
+                                                 //È già utilizzato per un'altro metodo in RegistrazioneConferma, non è un problema e non ha bisogno di fix, è solo un'appunto.
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Questo e-Mail è già in uso.')", true);
+                return;
+            }
 
             CRYPTA.Crypta_WSSoapClient C = new CRYPTA.Crypta_WSSoapClient();
             string plaintext = txtPwd.Text.Trim(); // Attenzione alle password, quì vengono passate le password pulite
@@ -67,12 +76,6 @@ public partial class registrazione : System.Web.UI.Page
             string Cognome = txtCognome.Text.Trim();
             string Nome = txtNome.Text.Trim();
 
-            if (E.ControlloDuplice(usr) == true) //ControlloDuplice (della mail) sarebbe a tutti gli effetti un checkone per controllare se la email dell'esterno esiste già, ma il nome "CheckOne"
-                                                 //È già utilizzato per un'altro metodo in RegistrazioneConferma, non è un problema e non ha bisogno di fix, è solo un'appunto.
-            {
-                ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert(''Questo utente esiste già.')", true);
-                return;
-            }
             // textbox in variabili
 
             string DataNascita = txtDataNascita.Text.Trim();
@@ -97,7 +100,7 @@ public partial class registrazione : System.Web.UI.Page
             MAIL.Mail_WSSoapClient M = new MAIL.Mail_WSSoapClient();
 
 
-            M.mailInvia(usr, rndCodice);
+            M.MailInviaIscrizioneDocente(usr, rndCodice);
 
             Session["Tipo"] = Tipo;
             Session["CodiceConferma"] = rndCodice;
@@ -106,7 +109,7 @@ public partial class registrazione : System.Web.UI.Page
             Session["Cognome"] = Cognome;
             Session["Nome"] = Nome;
 
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Controlla il tuo indirizzo di posta elettronica per recuperare il tuo codice provvisorio!')", true);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Controlla il tuo indirizzo di posta elettronica per recuperare il tuo codice provvisorio!')", true);
             Response.Redirect("RegistrazioneConferma.aspx?rndCodice=" + rndCodice);
 
             return;
@@ -120,7 +123,7 @@ public partial class registrazione : System.Web.UI.Page
                             || string.IsNullOrEmpty(txtCap.Text) || string.IsNullOrEmpty(txtCitta.Text) || string.IsNullOrEmpty(txtProvincia.Text)
                             || string.IsNullOrEmpty(txtNazione.Text))
             {
-                ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Il form non è stato compilato.')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Il form non è stato compilato.')", true);
                 return;
             }
             
@@ -132,6 +135,13 @@ public partial class registrazione : System.Web.UI.Page
             string Tipo = ddlTipo.SelectedValue.ToString();
             string usr = txtUsr.Text.Trim();
 
+            if (E.ControlloDuplice(usr) == true) //ControlloDuplice (della mail) sarebbe a tutti gli effetti un checkone per controllare se la email dell'esterno esiste già, ma il nome "CheckOne"
+                                                 //È già utilizzato per un'altro metodo in RegistrazioneConferma, non è un problema e non ha bisogno di fix, è solo un'appunto.
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Questa e-Mail è già in uso.')", true);
+                return;
+            }
+
             CRYPTA.Crypta_WSSoapClient C = new CRYPTA.Crypta_WSSoapClient();
             string plaintext = txtPwd.Text.Trim(); // Attenzione alle password, quì vengono passate le password pulite
             string pwd = C.PWD_CRYPTA(plaintext); // E quì vengono cryptate, ergo, se volete provare a fare test con password pulite per un motivo o altro usate plaintext invece di pwd
@@ -139,12 +149,6 @@ public partial class registrazione : System.Web.UI.Page
             string Cognome = txtCognome.Text.Trim();
             string Nome = txtNome.Text.Trim();
 
-            if (E.ControlloDuplice(usr) == true) //ControlloDuplice (della mail) sarebbe a tutti gli effetti un checkone per controllare se la email dell'esterno esiste già, ma il nome "CheckOne"
-                                                 //È già utilizzato per un'altro metodo in RegistrazioneConferma, non è un problema e non ha bisogno di fix, è solo un'appunto.
-            {
-                ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert(''Questo utente esiste già.')", true);
-                return;
-            }
             // textbox in variabili
 
             string DataNascita = txtDataNascita.Text.Trim();
@@ -167,8 +171,7 @@ public partial class registrazione : System.Web.UI.Page
             // mando l'email di conferma
             MAIL.Mail_WSSoapClient M = new MAIL.Mail_WSSoapClient();
 
-
-            M.mailInvia(usr, rndCodice);
+            M.MailInviaIscrizioneStudente(usr, rndCodice);
 
             Session["Tipo"] = Tipo;
             Session["CodiceConferma"] = rndCodice;
@@ -177,7 +180,7 @@ public partial class registrazione : System.Web.UI.Page
             Session["Cognome"] = Cognome;
             Session["Nome"] = Nome;
 
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Controlla il tuo indirizzo di posta elettronica per recuperare il tuo codice provvisorio!')", true);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Controlla il tuo indirizzo di posta elettronica per recuperare il tuo codice provvisorio!')", true);
             Response.Redirect("RegistrazioneConferma.aspx?rndCodice=" + rndCodice);
 
             return;
