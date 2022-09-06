@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Reistrazione</title>
+    <title>Registrazione</title>
     <!-- Favicons -->
     <link href="img/favicon.png" rel="icon" />
     <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -93,7 +93,7 @@
 
                                             <div>
                                                 Voglio registrarmi come
-                                                    <asp:DropDownList ID="ddlTipo" runat="server" CssClass="">
+                                                    <asp:DropDownList ID="ddlTipo" runat="server" CssClass="" AutoPostBack="True" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged">
                                                         <asp:ListItem Value="S">Studente</asp:ListItem>
                                                         <asp:ListItem Value="D">Docente</asp:ListItem>
                                                     </asp:DropDownList>

@@ -23,14 +23,25 @@ public class Mail_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void mailInvia(string USR, string RndCodice)
+    public void MailInviaIscrizioneStudente(string USR, string RndCodice)
     {
         MAIL M = new MAIL();
 
         M.mailUtente = USR;
         M.rndCodice = RndCodice;
 
-        M.mailInvia();
+        M.MailInviaIscrizioneStudente();
+    }
+
+    [WebMethod]
+    public void MailInviaIscrizioneDocente(string USR, string RndCodice)
+    {
+        MAIL M = new MAIL();
+
+        M.mailUtente = USR;
+        M.rndCodice = RndCodice;
+
+        M.MailInviaIscrizioneDocente();
     }
 
     [WebMethod]

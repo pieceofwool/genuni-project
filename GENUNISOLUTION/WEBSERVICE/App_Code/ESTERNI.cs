@@ -131,6 +131,21 @@ public class ESTERNI
         return true;
     }
 
+    public bool ControlloDuplice()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_CONTROLLODUPLICE";
+        cmd.Parameters.AddWithValue("@USR", USR);
+
+        DataTable dt = C.EseguiSelect(cmd);
+
+        if (dt.Rows.Count == 0) return false;
+
+        return true;
+    }
+
     public void Delete()
     {
         CONNESSIONE c = new CONNESSIONE();

@@ -486,7 +486,7 @@
                                     <p>Vuoi pi&#249; informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
                                     <asp:TextBox ID="txtEmail" CssClass="" placeholder="E-mail" runat="server" TextMode="Email"></asp:TextBox>
                                     <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti alla newsletter!" OnClick="btnIscrivitiNews_Click" />
-                                    <asp:CheckBox ID="chbxPrivacy" runat="server" AutoPostBack="False" />Autorizzo al trattamento dei miei dati personali a scopo di marketing.
+                                    <asp:CheckBox ID="chbxPrivacy" runat="server" AutoPostBack="True" OnCheckedChanged="chbxPrivacy_CheckedChanged" />Autorizzo al trattamento dei miei dati personali a scopo di marketing.
                                 </div>
                             </div>
 
