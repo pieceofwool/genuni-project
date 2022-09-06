@@ -58,7 +58,7 @@
                         <div class="about-content">
                             <h2 id="h2AboutUs">Chi siamo</h2>
                             <h3 id="h3AboutUs">Leader nella formazione in Italia</h3>
-                            <p id="pAboutUs">
+                            <p class="pAboutUs">
                                 GenUni &#233; un ente autorizzato alla vendita di corsi di formazione riconosciuti dal MIUL.
                                 Qualificato all&#39;erogazione e alla gestione di corsi di formazione e-learning, GenUni offre professionalit&#224;, innovazione e seriet&#224;.
                                 I titoli conseguiti al termine dei corsi di formazione professionale e aggiornamento, sono validi in Italia e all&#39;estero per:
@@ -68,14 +68,17 @@
                                 <li><i class="ion-android-checkmark-circle"></i>L&#39;avanzamento di carriera</li>
                                 <li><i class="ion-android-checkmark-circle"></i>I crediti formativi professionali</li>
                             </ul>
-                            <p>
-                                Molto di più di normale corso di e-learning, la nostra academy è innovativa!
-                                Entrare in GenUni ti permetterà di poter interagire costantemente con il docente e con gli altri partecipanti.
+                            <p class="pAboutUs">
+
+                                Molto di pi&#249 di normale corso di e-learning, la nostra academy &#232 innovativa!
+                                Entrare in GenUni ti permetter&#224 di poter interagire costantemente con il docente e con gli altri partecipanti.
                             </p>
-                            <p>
-                                Gen Uni è la prima accademia di corsi online in ambito coding dove poter imparare a programmare con i principali linguaggi di programmazione, anche da zero.Grazie ai percorsi formativi verrai guidato passo passo fino ad apprendere le competenze delle principali figure professionali, 
+
+                            <pp class="pAboutUs">
+                                Gen Uni &#232 la prima accademia di corsi online in ambito coding dove poter imparare a programmare con i principali linguaggi di programmazione, anche da zero. 
+                                Grazie ai percorsi formativi verrai guidato passo passo fino ad apprendere le competenze delle principali figure professionali, 
                                 come programmatore web (front-end, back-end o full stack), mobile developer, web designer, ui/ux designer, data scientist e molto altro.
-                            </p>
+                            </pp>
                         </div>
                     </div>
                 </div>
@@ -103,25 +106,25 @@
                                 Il nostro obiettivo &#232; quello di farti raggiungere un livello di conoscenza adeguato, fornendoti indicatori e strumenti professionali e culturali 
                                 affinch&#232; tu possa investirli su te stesso e determinare il tuo successo.
                             </p>
-                            <div class="features wow bounceInUp clearfix" style="margin-top: 42px; visibility: visible; animation-name: bounceInUp; font-size: 22px;">
+                           <div class="features wow bounceInUp clearfix" style="margin-top: 18px;visibility: visible;animation-name: bounceInUp;font-size: 22px;">
                                 <img src="img/genMoney2.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Gen Money</h4>
-                                    <p>Commodi quia voluptatum. Est cupiditate voluptas quaerat officiis ex alias dignissimos et ipsum. Soluta at enim modi ut incidunt dolor et.</p>
+                                    <p class="pMissionInterni">Commodi quia voluptatum. Est cupiditate voluptas quaerat officiis ex alias dignissimos et ipsum. Soluta at enim modi ut incidunt dolor et.</p>
                                 </div>
                             </div>
                             <div class="features wow bounceInUp clearfix">
                                 <img src="img/videolezioni.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Video lezioni</h4>
-                                    <p>Molestias eius rerum iusto voluptas et ab cupiditate aut enim. Assumenda animi occaecati. Quo dolore fuga quasi autem aliquid ipsum odit. Perferendis doloremque iure nulla aut.</p>
+                                    <p class="pMissionInterni">Molestias eius rerum iusto voluptas et ab cupiditate aut enim. Assumenda animi occaecati. Quo dolore fuga quasi autem aliquid ipsum odit. Perferendis doloremque iure nulla aut.</p>
                                 </div>
                             </div>
                             <div class="features wow bounceInUp clearfix">
                                 <img src="img/assistenza.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Supporto</h4>
-                                    <p>Voluptates nihil et quis omnis et eaque omnis sint aut. Ducimus dolorum aspernatur. Totam dolores ut enim ullam voluptas distinctio aut.</p>
+                                    <p class="pMissionInterni">Voluptates nihil et quis omnis et eaque omnis sint aut. Ducimus dolorum aspernatur. Totam dolores ut enim ullam voluptas distinctio aut.</pc>
                                 </div>
                             </div>
                         </div>
@@ -179,8 +182,8 @@
                 <header class="section-header">
                     <h3 class="section-title">I nostri corsi</h3>
                 </header>
-                <div id="demo" class="carousel slide" data-ride="carousel" style="width: 90%; margin-left: 71px;">
-                    <ul class="carousel-indicators" style="padding-left: 100px;">
+                <div id="demo" class="carousel slide" data-ride="carousel" style="width: 80%;margin-left: 113px;margin-bottom: -26px;">
+                    <ul class="carousel-indicators" style="padding-left: 102px;">
                         <li data-target="#demo" data-slide-to="0" class="active"></li>
                         <li data-target="#demo" data-slide-to="1"></li>
                         <li data-target="#demo" data-slide-to="2"></li>
@@ -189,7 +192,7 @@
                         <div class="carousel-item active">
                             <img src="assets/img/code1.png" alt="Los Angeles" width="1100" height="500">
                             <div class="carousel-caption">
-                                <a class="linkCorsi" href="/tipologieCorsi.aspx">
+                                <a class="linkCorsi" href="CorsiFE.aspx">
                                     <h3>Corso .NET</h3>
                                     <p>Clicca qui per saperne di pi&#249;</p>
                                 </a>
@@ -198,7 +201,7 @@
                         <div class="carousel-item">
                             <img src="assets/img/mysql.png" alt="Chicago" width="1100" height="500">
                             <div class="carousel-caption">
-                                <a class="linkCorsi" href="/tipologieCorsi.aspx">
+                                <a class="linkCorsi" href="CorsiFE.aspx">
                                     <h3>Corso My SQL</h3>
                                     <p>Clicca qui per saperne di pi&#249;</p>
                                 </a>
@@ -207,7 +210,7 @@
                         <div class="carousel-item">
                             <img src="assets/img/javascript.png" alt="New York" width="1100" height="500">
                             <div class="carousel-caption">
-                                <a class="linkCorsi" href="/tipologieCorsi.aspx">
+                                <a class="linkCorsi" href="CorsiFE.aspx">
                                     <h3>Corso Javascript</h3>
                                     <p>Clicca qui per saperne di pi&#249;</p>
                                 </a>
@@ -304,25 +307,19 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </section>
         <!-- #team -->
 
         <!--========================== Gen Money/Pricing Section ============================-->
         <section id="pricing" class="wow fadeInUp section-bg">
-
             <div class="container">
-
                 <header class="section-header">
                     <h3>GenMoney</h3>
                     <p>Scegli il pacchetto che fa per te ed acquista i GenMoney per avere accesso ai nostri corsi!</p>
                 </header>
-
                 <div class="row flex-items-xs-middle flex-items-xs-center">
-
                     <!-- Basic Plan  -->
                     <div class="col-xs-12 col-lg-4">
                         <div class="card">
@@ -341,7 +338,7 @@
                                     <li class="list-group-item">Et perspiciatis suscipit</li>
                                     <li class="list-group-item">24/7 Support System</li>
                                 </ul>
-                                <a href="#" class="btn">Iscriviti</a>
+                                <a href="CorsiFE.aspx" class="btn">Acquista</a>
                             </div>
                         </div>
                     </div>
@@ -364,7 +361,7 @@
                                     <li class="list-group-item">Et perspiciatis suscipit</li>
                                     <li class="list-group-item">24/7 Support System</li>
                                 </ul>
-                                <a href="#" class="btn">Iscriviti</a>
+                                <a href="CorsiFE.aspx" class="btn">Acquista</a>
                             </div>
                         </div>
                     </div>
@@ -387,7 +384,7 @@
                                     <li class="list-group-item">Et perspiciatis suscipit</li>
                                     <li class="list-group-item">24/7 Support System</li>
                                 </ul>
-                                <a href="#" class="btn">Iscriviti</a>
+                                <a href="CorsiFE.aspx" class="btn">Acquista</a>
                             </div>
                         </div>
                     </div>
@@ -486,10 +483,21 @@
                                     <p>Vuoi pi&#249; informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
                                     <asp:TextBox ID="txtEmail" CssClass="" placeholder="E-mail" runat="server" TextMode="Email"></asp:TextBox>
                                     <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti alla newsletter!" OnClick="btnIscrivitiNews_Click" />
-                                    <asp:CheckBox ID="chbxPrivacy" runat="server" AutoPostBack="True" OnCheckedChanged="chbxPrivacy_CheckedChanged" />Autorizzo al trattamento dei miei dati personali a scopo di marketing.
+                                    <asp:CheckBox ID="chbxPrivacy" runat="server" AutoPostBack="True" OnCheckedChanged="chbxPrivacy_CheckedChanged" /><p>Ho letto l&#39informativa sulla privacy e acconsento al trattamento dei miei dati personali ai sensi dell&#39art. 13 del D. Lgs. 196/2003
+                                    </p>
                                 </div>
                             </div>
-
+                            
+    <%-- 
+         &#39;   '
+         &#176;  °
+         &#224;  à
+         &#232;  è
+         &#236;  ì
+         &#242;  ò
+         &#249;  ù
+         &#8364; €   
+    --%>
                             <div class="col-sm-6">
                                 <div class="footer-links">
                                     <h4>Link utili</h4>
