@@ -121,6 +121,15 @@ public class Utenti_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public string GetNome(int CHIAVE)
+    {
+        UTENTI U = new UTENTI();
+        U.Chiave = CHIAVE;
+        string Nome = U.GetNome();
+        return Nome;
+    }
+
+    [WebMethod]
     public DataTable SelectOne(int CHIAVE)
     {
         DataTable dt = new DataTable();

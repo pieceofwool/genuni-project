@@ -301,6 +301,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Corsi_SelectAllClassi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CODICE_CORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Corsi_SelectAllClassiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Corsi_SelectAllClassiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SelectForTutor">
         <s:complexType>
           <s:sequence>
@@ -426,6 +447,12 @@
   <wsdl:message name="Check_Tutor_AbilitatoSoapOut">
     <wsdl:part name="parameters" element="tns:Check_Tutor_AbilitatoResponse" />
   </wsdl:message>
+  <wsdl:message name="Corsi_SelectAllClassiSoapIn">
+    <wsdl:part name="parameters" element="tns:Corsi_SelectAllClassi" />
+  </wsdl:message>
+  <wsdl:message name="Corsi_SelectAllClassiSoapOut">
+    <wsdl:part name="parameters" element="tns:Corsi_SelectAllClassiResponse" />
+  </wsdl:message>
   <wsdl:message name="SelectForTutorSoapIn">
     <wsdl:part name="parameters" element="tns:SelectForTutor" />
   </wsdl:message>
@@ -500,6 +527,10 @@
     <wsdl:operation name="Check_Tutor_Abilitato">
       <wsdl:input message="tns:Check_Tutor_AbilitatoSoapIn" />
       <wsdl:output message="tns:Check_Tutor_AbilitatoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Corsi_SelectAllClassi">
+      <wsdl:input message="tns:Corsi_SelectAllClassiSoapIn" />
+      <wsdl:output message="tns:Corsi_SelectAllClassiSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SelectForTutor">
       <wsdl:input message="tns:SelectForTutorSoapIn" />
@@ -654,6 +685,15 @@
     </wsdl:operation>
     <wsdl:operation name="Check_Tutor_Abilitato">
       <soap:operation soapAction="http://tempuri.org/Check_Tutor_Abilitato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Corsi_SelectAllClassi">
+      <soap:operation soapAction="http://tempuri.org/Corsi_SelectAllClassi" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -819,6 +859,15 @@
     </wsdl:operation>
     <wsdl:operation name="Check_Tutor_Abilitato">
       <soap12:operation soapAction="http://tempuri.org/Check_Tutor_Abilitato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Corsi_SelectAllClassi">
+      <soap12:operation soapAction="http://tempuri.org/Corsi_SelectAllClassi" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
