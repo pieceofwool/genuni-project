@@ -121,7 +121,7 @@ public partial class Default2 : System.Web.UI.Page
                 litModalCorso.Text += "<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>";
                 //litModalCorso.Text += "<asp:Button ID=\"BtnIscriviti\"class=\"btn btn-secondary\" runat=\"server\" Text=\"Iscriviti\" UseSubmitBehavior=\"False\" OnClick=\"BtnIscriviti_Click\" />";
                 litModalCorso.Text += "<button type=\"button\" class=\"btn btn-secondary\" onclick='Iscrizione("+session+")'>Iscriviti</button>";
-                litModalCorso.Text += "<button type=\"button\" class=\"btn btn-secondary\" onclick='Gestore(gestoreashx,?codice=1&email=c@d.it&bit=1)'>Preiscriviti</button>";
+                
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "</div>";
@@ -151,6 +151,9 @@ public partial class Default2 : System.Web.UI.Page
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "<div class=\"modal-footer\">";
                 litModalCorso.Text += "<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>";
+                litModalCorso.Text += "<button type=\"button\" class=\"btn btn-secondary\" onclick='Gestore(" + Codice + ")'>Preiscriviti</button>";
+                litModalCorso.Text += "Email:<input type='text' id='txtEmail" + Codice + "' />";
+                litModalCorso.Text += "Newsletter:<input type='checkbox' id='cbxNewsletter" + Codice + "' />";
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "</div>";

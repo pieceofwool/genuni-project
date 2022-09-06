@@ -38,20 +38,35 @@ function Iscrizione(session) {
 
 //funzione per gestore
 
-function Gestore(elementid, str) {
-
+function Gestore(codice) {
+    
     url = 'http://localhost:58243/GestoreCorsi.ashx';
-    if (window.XMLHttpRequest) {
-        xmlhttp = new XMLHttpRequest();
-    } else {
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
+    //if (window.XMLHttpRequest) {
+    //    xmlhttp = new XMLHttpRequest();
+    //} else {
+    //    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    //}
 
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-            document.getElementById(elementid).innerHTML = xmlhttp.responseText;
-        }
-    }
-    xmlhttp.open("GET", url + str, true);
-    xmlhttp.send();
+    //xmlhttp.onreadystatechange = function () {
+    //    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+    //        document.getElementById(elementid).innerHTML = xmlhttp.responseText;
+    //    }
+    //}
+    //xmlhttp.open("GET", url + str, true);
+    //xmlhttp.send();
+
+    email = document.getElementById('txtEmail' + codice).value
+    newsletter = document.getElementById('cbxNewsletter' + codice).checked
+    richiesta = 'GestoreCorsi.ashx?codice=' + codice + '&email=' + email + '&bit=' + newsletter
+    xhttp = new XMLHttpRequest;
+    xhttp.open("GET", richiesta, true);
+    xhttp.send();
+
+    alert('Preiscrizione effettuata');
+
+    document.getElementById('txtEmail' + codice).value = "";
+    document.getElementById('cbxNewsletter' + codice).checked = false;
+
+    //document.getElementById(elementid).innerHTML = xhttp.responseText;
+
 }

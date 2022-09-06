@@ -16,7 +16,7 @@ public class PREISCRIZIONE
     public int Chiave;
     public int Cod_Corso;
     public string Email;
-    public string Newsletter;
+    public bool Newsletter;
 
     #endregion Membri
 
@@ -25,7 +25,7 @@ public class PREISCRIZIONE
     #region Metodi
     public void Insert()
     {
-        SqlCommand cmd = new SqlCommand("PREISCRIZIONE_INSERT");
+        SqlCommand cmd = new SqlCommand("PREISCRIZIONI_INSERT");
         cmd.Parameters.AddWithValue("@Cod_Corso", Cod_Corso);
         cmd.Parameters.AddWithValue("@Email", Email);
         cmd.Parameters.AddWithValue("@Newsletter", Newsletter);

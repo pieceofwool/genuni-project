@@ -44,7 +44,7 @@ public class Preiscrizione_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Insert(int COD_CORSO, string EMAIL, string NEWSLETTER)
+    public void Insert(int COD_CORSO, string EMAIL, bool NEWSLETTER)
     {
         DataTable dt = new DataTable();
         PREISCRIZIONE p = new PREISCRIZIONE();
