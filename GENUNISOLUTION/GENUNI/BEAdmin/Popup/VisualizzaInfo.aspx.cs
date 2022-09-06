@@ -30,7 +30,7 @@ public partial class BEAdmin_Popup_VisualizzaInfo : System.Web.UI.Page
             lblTutor.Text += infocorso["nome"].ToString()+" " + infocorso["cognome"].ToString();
             lblDataCreazione.Text += infocorso["data_creazione"].ToString();
             lblDataStatus.Text+= infocorso["data_status"].ToString();
-            lblStatus.Text+= infocorso["status"].ToString();
+            lblStatus.Text+= infocorso["status_corsi"].ToString();
             byte[] arr = infocorso.Field<byte[]>("avatar_corso");
             string base64String = Convert.ToBase64String(arr, 0, arr.Length);
             imgAvatar.Src = "data:image/jpg;base64," + base64String;
