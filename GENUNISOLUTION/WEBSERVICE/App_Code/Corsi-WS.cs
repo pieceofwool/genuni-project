@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.EnterpriseServices;
 using System.Linq;
 using System.ServiceModel.Configuration;
 using System.Web;
@@ -301,4 +302,31 @@ public class Corsi_WS : System.Web.Services.WebService
         return dt;
     }
 
+    /// <summary>
+    /// metodo che restituisce tutti i corsi con status P
+    /// </summary>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable SelectAllPreparati()
+    {
+        DataTable dt = new DataTable();
+        CORSI C = new CORSI();
+        dt = C.SelectAllPreparati();
+        dt.TableName = "Corsi";
+        return dt;
+    }
+
+    /// <summary>
+    /// metodo che modifica il corso aggiungendo status Q
+    /// </summary>
+    /// <param name="COD_CORSO"></param>
+    /// <param name="COSTO"></param>
+    [WebMethod]
+    public void CorsiQuotazione(int COD_CORSO, int COSTO)
+    {
+        CORSI C = new CORSI();
+        C.CHIAVE = COD_CORSO;
+        C.COSTO = COSTO;
+        C.CorsiQuotazione();
+    }
 }

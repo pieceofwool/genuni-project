@@ -272,6 +272,30 @@ public class CORSI
         return C.EseguiSelect(cmd);
     }
 
+    /// <summary>
+    /// metodo che restituisce tutti i corsi con status P
+    /// </summary>
+    /// <returns></returns>
+    public DataTable SelectAllPreparati()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_PREPARATI");
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
+    /// <summary>
+    /// metodo che modifica il corso aggiungendo status Q
+    /// </summary>
+    public void CorsiQuotazione()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_QUOTAZIONE");
+        cmd.Parameters.AddWithValue("@Cod_Corso", CHIAVE);
+        cmd.Parameters.AddWithValue("@Costo", COSTO);
+        CONNESSIONE C = new CONNESSIONE();
+        C.EseguiCmd(cmd);
+    }
+
     #endregion Metodi
 
 }
