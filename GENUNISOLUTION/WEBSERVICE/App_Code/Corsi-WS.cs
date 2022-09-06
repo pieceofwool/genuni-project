@@ -270,6 +270,24 @@ public class Corsi_WS : System.Web.Services.WebService
         dt.TableName = "Corso";
         return dt;
     }
+    
+    [WebMethod]
+    public DataTable Select_Utenti_Filtro_Q()
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        dt = c.Select_Utenti_Filtro_Q();
+        dt.TableName = "Corso";
+        return dt;
+    }
 
+    [WebMethod]
+    public void Update_Status(int CHIAVE_CORSO)
+    {
+        CORSI c = new CORSI();
+        c.CHIAVE_CORSO = CHIAVE_CORSO;
+
+        c.Update_Status();
+    }
 
 }
