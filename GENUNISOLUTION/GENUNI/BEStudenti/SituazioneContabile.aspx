@@ -49,7 +49,7 @@
         </div>
         <p>Storico Acquisti</p>
         <div>
-            <asp:GridView ID="grigliaStorico" runat="server" OnRowDataBound="grigliaStorico_RowDataBound"></asp:GridView>
+            <asp:GridView ID="grigliaStorico" runat="server"></asp:GridView>
         </div>
     </div>
 </asp:Content>
