@@ -8,7 +8,7 @@
     </div>
     <div class="containerBE">
         <h4 class="titoliBE">Compenso</h4>
-        <asp:RadioButton ID="rdbDocente" runat="server" Text="Singolo Docente" Checked="True" GroupName="Docenti"/>
+        <asp:RadioButton ID="rdbDocente" runat="server" Text="Singolo Docente" Checked="True" GroupName="Docenti" />
         <asp:RadioButton ID="rdbTutti" runat="server" Text="Tutti i Docenti" GroupName="Docenti" />
         <br />
         <asp:DropDownList ID="ddlDocenti" runat="server" Enabled="False"></asp:DropDownList>
