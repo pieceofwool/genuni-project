@@ -28,10 +28,10 @@ const popupCenter = ({ url, title, w, h }) => {
 function Iscrizione(session) {
 
     if (session === 'S') {
-        location.assign('http://localhost:58243/BEStudenti/SituazioneCorsi.aspx')
+        location.assign('http://localhost:58243/BEStudenti/SituazioneCorsi.aspx');
     }
     else {
-        location.assign('http://localhost:58243/Login.aspx')
+        location.assign('http://localhost:58243/Login.aspx');
     }
 
 }   
