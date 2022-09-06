@@ -14,7 +14,8 @@ public partial class BEDocenti_POPUP_Visualizza_corso_Visualizza_Corso : System.
         if (!IsPostBack)
         {
             CORSI.Corsi_WSSoapClient Co = new CORSI.Corsi_WSSoapClient();
-            DataTable dt = Co.SelectOne(int.Parse(Session["CHIAVE_CORSO"].ToString()));
+           // DataTable dt = Co.SelectOne(int.Parse(Session["CHIAVE_CORSO"].ToString()));
+            DataTable dt = Co.SelectOne(11);
 
             ltlCodUtente.Text = dt.Rows[0]["COD_UTENTE"].ToString();
             ltlTitolo.Text = dt.Rows[0]["TITOLO"].ToString();

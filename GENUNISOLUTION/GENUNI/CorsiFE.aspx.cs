@@ -42,12 +42,12 @@ public partial class Default2 : System.Web.UI.Page
 
             //accedo alla join con materie con una nuova procedure
             CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
-            DataTable dt2 = new DataTable();
+            DataTable dtjoin = new DataTable();
 
             string materie = "";
             string materietemp = "";
-            dt2 = C.SelectJoinMateria();
-            foreach (DataRow dr2 in dt2.Rows)
+            dtjoin = C.SelectJoinMateria();
+            foreach (DataRow dr2 in dtjoin.Rows)
             {
                 if (dr2.Field<int>("Cod_Corso") == Codice)
                 {
@@ -85,7 +85,7 @@ public partial class Default2 : System.Web.UI.Page
             //litCorso.Text += "<p id=\"CodiceCorso\" runat=\"server\" >" + Codice + "</p>";
 
             //provo con la modal
-            litCorso.Text += "<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter" + i + "\">Info Corso</button>";
+            litCorso.Text += "<button type=\"button\" style=\"font-size:12px\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter" + i + "\">Info Corso</button>";
 
             //stampo link con funzione javascript
             //litCorso.Text += "<a href=\"#\" onclick=\"popupCenter({ url: 'InfoCorso.aspx?codice=" + Codice + "', title: 'Info Corso', w: 600, h: 300})\">Info Corso</a>";
@@ -118,10 +118,10 @@ public partial class Default2 : System.Web.UI.Page
 
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "<div class=\"modal-footer\">";
-                litModalCorso.Text += "<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>";
                 //litModalCorso.Text += "<asp:Button ID=\"BtnIscriviti\"class=\"btn btn-secondary\" runat=\"server\" Text=\"Iscriviti\" UseSubmitBehavior=\"False\" OnClick=\"BtnIscriviti_Click\" />";
-                litModalCorso.Text += "<button type=\"button\" class=\"btn btn-secondary\" onclick='Iscrizione("+session+")'>Iscriviti</button>";
-                
+                litModalCorso.Text += "<button style=\"font-size:12px\" type=\"button\" class=\"btn btn-secondary\" onclick='Iscriviti(" + session + ")'>Iscriviti</button>";
+                litModalCorso.Text += "<button style=\"font-size:12px\" type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>";
+
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "</div>";
@@ -149,11 +149,11 @@ public partial class Default2 : System.Web.UI.Page
                                       + "width:100%; min-height: 400px;background-size:cover;color:white; padding:20px; ;\"><b>COMING SOON</b></div>";
 
                 litModalCorso.Text += "</div>";
-                litModalCorso.Text += "<div class=\"modal-footer\">";
-                litModalCorso.Text += "<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>";
-                litModalCorso.Text += "<button type=\"button\" class=\"btn btn-secondary\" onclick='Gestore(" + Codice + ")'>Preiscriviti</button>";
+                litModalCorso.Text += "<div style=\"font-size:12px\" class=\"modal-footer\">";
                 litModalCorso.Text += "Email:<input type='text' id='txtEmail" + Codice + "' />";
                 litModalCorso.Text += "Newsletter:<input type='checkbox' id='cbxNewsletter" + Codice + "' />";
+                litModalCorso.Text += "<button style=\"font-size:12px\" type=\"button\" class=\"btn btn-secondary\" onclick='Gestore(" + Codice + ")'>Preiscriviti</button>";
+                litModalCorso.Text += "<button style=\"font-size:12px\" type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>";
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "</div>";
@@ -216,5 +216,5 @@ public partial class Default2 : System.Web.UI.Page
     }
 
 
-  
+
 }

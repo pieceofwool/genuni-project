@@ -11,15 +11,16 @@
     <br />
 
    <%-- verrà creata una literal con all'interno stampati automaticamente tutti i corsi dal db--%>
-    <asp:GridView ID="grvCorsiAttivi" runat="server" OnSelectedIndexChanged="grvCorsiAttivi_SelectedIndexChanged" Height="200px" Width="461px" DataKeyNames="Chiave">
+    <asp:GridView ID="grvCorsiAttivi" runat="server" OnSelectedIndexChanged="grvCorsiAttivi_SelectedIndexChanged" Height="200px" Width="461px" DataKeyNames="CHIAVE">
         <Columns>
             <asp:CommandField ButtonType="Button" ShowSelectButton="True" SelectText="Visualizza" />
         </Columns>
     </asp:GridView>
 
-    <asp:GridView ID="grvAccettazioneCorsi" runat="server"></asp:GridView>
-
-    <asp:GridView ID="grvStoricoCorsi" runat="server"></asp:GridView>
-
+    <asp:GridView ID="grvAccettazioneCorsi" runat="server" GridLines="Horizontal">
+        <Columns>
+            <asp:CheckBoxField Text="Accetta" />
+        </Columns>
+    </asp:GridView>
 </asp:Content>
 

@@ -24,7 +24,13 @@ public partial class BEDocenti_Default : System.Web.UI.Page
     protected void CaricaGrigliaCorsiAttivi()
     {
         CORSI.Corsi_WSSoapClient Co = new CORSI.Corsi_WSSoapClient();
-        grvCorsiAttivi.DataSource = Co.SelectAll();
+        //Session["CHIAVE_DOCENTE"] = 1;
+        //Session["CHIAVE_CORSO"] = 1;
+
+        int CHIAVE_DOCENTE = 1; /*Convert.ToInt32(Session["CHIAVE_DOCENTE"]);*/
+        int CHIAVE_CORSO = 11; /*Convert.ToInt32(Session["CHIAVE_CORSO"]);*/
+
+        grvCorsiAttivi.DataSource = Co.SelectAllDocenti(CHIAVE_DOCENTE, CHIAVE_CORSO);
         grvCorsiAttivi.DataBind();
     }
     //per ogni corso attivo e in corso per docente verranno visualizzati in automatico
@@ -33,9 +39,10 @@ public partial class BEDocenti_Default : System.Web.UI.Page
     {
 
         Session["CHIAVE_CORSO"] = grvCorsiAttivi.SelectedDataKey[0];
+        
         if (Session["CHIAVE_CORSO"] != null)
         {
-            Response.Redirect("Visualizza_Corso.aspx");
+            Response.Redirect("Materie.aspx");
         }
         else
         {
@@ -43,5 +50,18 @@ public partial class BEDocenti_Default : System.Web.UI.Page
             return;
         }
     }
+    protected void VisualizzaAccettazioneCorsi()
+    {
+        CORSI.Corsi_WSSoapClient Co = new CORSI.Corsi_WSSoapClient();
+        MATERIE.Materie_WSSoapClient Ma = new MATERIE.Materie_WSSoapClient();
 
+        //Session["CHIAVE_DOCENTE"] = 1;
+        //Session["CHIAVE_CORSO"] = 1;
+
+        int CHIAVE_DOCENTE = 1; /*Convert.ToInt32(Session["CHIAVE_DOCENTE"]);*/
+        int CHIAVE_CORSO = Convert.ToInt32(Session["CHIAVE_CORSO"]);
+
+        grvAccettazioneCorsi.DataSource = Co.Corsi_SelectNonApprovati();
+        grvAccettazioneCorsi.DataBind();
+    }
 }

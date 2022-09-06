@@ -38,7 +38,7 @@ public partial class POPUP_profilo_ModificaPassword : System.Web.UI.Page
         }
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-        //E.CHIAVE = int.Parse(Session["CodiceEsterno"].ToString());
+        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
         int CHIAVE = 1;
 
         DataTable dt = new DataTable();

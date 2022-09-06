@@ -15,8 +15,7 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         {
             COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
 
-            //int CHIAVE= Session["ChiaveEsterno"]
-            //dt2 = C.SelectAllDocente(CHIAVE);
+            //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
 
             int CHIAVE = 1;
             dt2 = C.SelectAllDocente(CHIAVE); //uso selectone apposta
@@ -31,6 +30,7 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         if (string.IsNullOrEmpty(txtSkills.Text.Trim()))
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ERRORE", "alert('Dati non validi')", true);
+            return;
 
         }
 
@@ -38,14 +38,14 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
 
         COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
 
-        //int CHIAVE= Session["ChiaveEsterno"]
-        //dt2 = C.SelectAllDocente(CHIAVE);
+        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+
 
         int CHIAVE = 1;
         dt2 = C.SelectAllDocente(CHIAVE);
         DataRow dr2 = dt2.Rows[0];
         byte[] arr2 = dr2.Field<byte[]>("Cv");
-        byte[] CV = FileUploadCV.FileBytes;
+        byte[] CV;
 
         string tipoCv = FileUploadCV.PostedFile.ContentType;
 

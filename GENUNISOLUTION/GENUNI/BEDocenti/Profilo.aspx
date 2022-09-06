@@ -192,7 +192,7 @@
 
     <asp:Button ID="BtnCV" runat="server" Text="Scarica CV" OnClick="BtnCV_Click" />
 
-    <asp:Literal ID="Lit2" runat="server"></asp:Literal>
+    <asp:Literal ID="litCV" runat="server"></asp:Literal>
     
 
 

@@ -13,7 +13,7 @@ public class GestoreCorsi : IHttpHandler
         bool bit = bool.Parse(context.Request.QueryString["bit"].ToString());
 
         PREISCRIZIONE.Preiscrizione_WSSoapClient P = new PREISCRIZIONE.Preiscrizione_WSSoapClient();
-            P.Insert(codice, email, bit);
+        P.Insert(codice, email, bit);
 
     }
 

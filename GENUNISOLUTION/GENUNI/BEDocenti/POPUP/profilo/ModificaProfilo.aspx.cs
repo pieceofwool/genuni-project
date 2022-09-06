@@ -13,7 +13,7 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
         if (!IsPostBack)
         {
             //// Se non vi è nessun elemento selezionato impedisco il proseguimento
-            //if (string.IsNullOrEmpty(Session["CodiceDoc"].ToString()))
+            //if (string.IsNullOrEmpty(Session["CodiceAttore"].ToString()))
             //{
             //    ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Errore')", true);
             //    return;
@@ -22,7 +22,7 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
 
 
             ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-            //int CHIAVE = int.Parse(Session["Chiave"].ToString());
+            //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
             int CHIAVE = 1;
             DataTable dt = E.SelectOne(CHIAVE);
 
@@ -76,7 +76,9 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
+        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
         int CHIAVE = 1;
+
         string USR = txtUser.Text.Trim();
         string RAGIONE_SOCIALE = txtRagSoc.Text.Trim();
         string COGNOME = txtCognome.Text.Trim();

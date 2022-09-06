@@ -9,8 +9,8 @@ public partial class Default2 : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            // Se non vi è nessun elemento selezionato impedisco il proseguimento
-            //if (string.IsNullOrEmpty(Session["CodiceEsterno"].ToString()))
+            //Se non vi è nessun elemento selezionato impedisco il proseguimento
+            //if (string.IsNullOrEmpty(Session["CodiceAttore"].ToString()))
             //{
             //    ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Errore')", true);
             //    return;
@@ -29,10 +29,10 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void CaricaProfilo()
     {
-        Lit2.Text = "";
+        litCV.Text = "";
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-        //E.CHIAVE = int.Parse(Session["CodiceEsterno"].ToString());
+        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
         int CHIAVE = 1;
         
         DataTable dt = new DataTable();
@@ -41,7 +41,6 @@ public partial class Default2 : System.Web.UI.Page
         DataRow dr = dt.Rows[0];
         string tipo = dt.Rows[0]["TipoImg"].ToString();
 
-        
 
         //string prova = dt.Rows[0]["Avatar"].ToString();
         //byte[] provaarray = (byte[])dt.Rows[0]["Avatar"];
@@ -55,8 +54,7 @@ public partial class Default2 : System.Web.UI.Page
             lit.Text = "<img style='width:200px' src='" + Src + "' />";
         }
 
-
-
+        //riempo le label
         lblUser.Text = dt.Rows[0]["Usr"].ToString();
         lblRagSoc.Text = dt.Rows[0]["Ragione_Sociale"].ToString();
         lblCognome.Text = dt.Rows[0]["Cognome"].ToString();
@@ -70,11 +68,10 @@ public partial class Default2 : System.Web.UI.Page
         lblProvincia.Text = dt.Rows[0]["Provincia"].ToString();
         lblNazionalita.Text = dt.Rows[0]["Nazionalita"].ToString();
 
+        //carica competenze
         COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
-        //C.COD_DOCENTE = int.Parse(Session["CodiceDoc"].ToString());
-        int CHIAVE2 = 1;
 
-        DataTable dt2 = C.SelectOne(CHIAVE2);
+        DataTable dt2 = C.SelectAllDocente(CHIAVE);
 
         lblSkills.Text = dt2.Rows[0]["Skills"].ToString();
 
@@ -84,10 +81,10 @@ public partial class Default2 : System.Web.UI.Page
     protected void BtnCV_Click(object sender, EventArgs e)
     {
         COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient(); ;
-        //C.COD_DOCENTE = int.Parse(Session["CodiceDoc"].ToString());
+        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
         int CHIAVE = 1;
 
-        DataTable dt2 = C.SelectOne(CHIAVE);
+        DataTable dt2 = C.SelectAllDocente(CHIAVE);
 
 
         DataRow dr2 = dt2.Rows[0];
@@ -102,7 +99,7 @@ public partial class Default2 : System.Web.UI.Page
             embed += "If you are unable to view file, you can download from <a href = \"{0}{1}&download=1\">here</a>";
             embed += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
             embed += "</object>";
-            Lit2.Text = string.Format(embed, ResolveUrl("GestoreCvPdf.ashx?chiave="), CHIAVE /*valore chiave*/);
+            litCV.Text = string.Format(embed, ResolveUrl("GestoreCvPdf.ashx?chiave="), CHIAVE /*valore chiave*/);
             
         }
         

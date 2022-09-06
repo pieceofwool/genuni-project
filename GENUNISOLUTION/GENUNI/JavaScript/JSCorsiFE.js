@@ -25,7 +25,7 @@ const popupCenter = ({ url, title, w, h }) => {
 }
 
 //funzione per reindirizzamento
-function Iscrizione(session) {
+function Iscriviti(session) {
 
     if (session === 'S') {
         location.assign('http://localhost:58243/BEStudenti/SituazioneCorsi.aspx');
@@ -34,13 +34,14 @@ function Iscrizione(session) {
         location.assign('http://localhost:58243/Login.aspx');
     }
 
-}   
+}
 
 //funzione per gestore
 
 function Gestore(codice) {
-    
+
     url = 'http://localhost:58243/GestoreCorsi.ashx';
+
     //if (window.XMLHttpRequest) {
     //    xmlhttp = new XMLHttpRequest();
     //} else {
@@ -48,17 +49,22 @@ function Gestore(codice) {
     //}
 
     //xmlhttp.onreadystatechange = function () {
-    //    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+    //   if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
     //        document.getElementById(elementid).innerHTML = xmlhttp.responseText;
     //    }
     //}
     //xmlhttp.open("GET", url + str, true);
     //xmlhttp.send();
 
+    xhttp = new XMLHttpRequest;
+
     email = document.getElementById('txtEmail' + codice).value
     newsletter = document.getElementById('cbxNewsletter' + codice).checked
     richiesta = 'GestoreCorsi.ashx?codice=' + codice + '&email=' + email + '&bit=' + newsletter
-    xhttp = new XMLHttpRequest;
+
+    if (email === "" || email.includes("@")===false) { alert('Inserire email valida'); return }
+
+
     xhttp.open("GET", richiesta, true);
     xhttp.send();
 

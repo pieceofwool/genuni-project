@@ -7,5 +7,9 @@
     <br />
     <br />
     <br />
+    <%--tutti i corsi accettati e che ha svolto e in corso, e i guadagni--%> 
+    <asp:GridView ID="grvStoricoCorsi" runat="server"></asp:GridView>
+     
+    <asp:Button ID="btnAggiorna" runat="server" Text="Aggiorna storico" OnClick="btnAggiorna_Click" />
 </asp:Content>
 
