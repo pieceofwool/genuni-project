@@ -257,7 +257,7 @@ public class CORSI
     {
         SqlCommand cmd = new SqlCommand("CORSI_UPDATE_STATUS");
 
-        cmd.Parameters.AddWithValue("@Chiave_Corso", CHIAVE_CORSO);
+        cmd.Parameters.AddWithValue("@Cod_Corso", CHIAVE_CORSO);
 
         CONNESSIONE conn = new CONNESSIONE();
 
