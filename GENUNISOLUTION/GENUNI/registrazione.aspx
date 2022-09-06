@@ -93,7 +93,7 @@
 
                                             <div>
                                                 Voglio registrarmi come
-                                                    <asp:DropDownList ID="ddlTipo" runat="server" CssClass="">
+                                                    <asp:DropDownList ID="ddlTipo" runat="server" CssClass="" AutoPostBack="True" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged">
                                                         <asp:ListItem Value="S">Studente</asp:ListItem>
                                                         <asp:ListItem Value="D">Docente</asp:ListItem>
                                                     </asp:DropDownList>

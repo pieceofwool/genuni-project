@@ -120,6 +120,15 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public bool ControlloDuplice(string Usr)
+    {
+        ESTERNI e = new ESTERNI();
+        e.USR = Usr;
+
+        return e.ControlloDuplice();
+    }
+
+    [WebMethod]
     public void AbilitaEsterno(int Chiave)
     {
         ESTERNI e = new ESTERNI();
