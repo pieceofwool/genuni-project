@@ -34,12 +34,12 @@ public partial class Login : System.Web.UI.Page
 
             string pwd = C.PWD_CRYPTA(plaintext); // E quì vengono cryptate, ergo, se volete provare a fare test con password pulite per un motivo o altro
 
-            if (U.Login(usr, plaintext) == true) // Come overload usate "(usr, plaintext)" invece di "(usr, pwd)"
+            if (U.Login(usr, pwd) == true) // Come overload usate "(usr, plaintext)" invece di "(usr, pwd)"
             {
                 int CodiceAttore = U.RecuperaCodUtente(usr);
                 Session["CodiceAttore"] = CodiceAttore; // Session del codice "utente"
 
-                string tipo = U.TipoLogin(usr, plaintext);
+                string tipo = U.TipoLogin(usr, pwd);
                 Session["TipoAttore"] = tipo; // Session del TIPO dell'utente
 
                 char usertype = Convert.ToChar(Session["TipoAttore"]);
@@ -73,12 +73,12 @@ public partial class Login : System.Web.UI.Page
             {
                 ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
-                if (E.Login(usr, plaintext) == true)
+                if (E.Login(usr, pwd) == true)
                 {
                     int CodiceAttore = E.RecuperaCodEsterno(usr);
                     Session["CodiceAttore"] = CodiceAttore;
 
-                    Session["TipoAttore"] = E.TipoLogin(usr, plaintext);
+                    Session["TipoAttore"] = E.TipoLogin(usr, pwd);
                     char usertype = Convert.ToChar(Session["TipoAttore"]);
 
                     if (E.Controlla_Abilitazione(CodiceAttore) == true)

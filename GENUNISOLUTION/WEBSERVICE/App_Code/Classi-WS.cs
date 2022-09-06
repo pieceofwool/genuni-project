@@ -64,9 +64,13 @@ public class Classi_WS : System.Web.Services.WebService
         c.Update();
     }
 
-    //metodo che restituisce tutte le classi in cui e presente lo studente
+    /// <summary>
+    /// metodo che restituisce tutte le classi in cui e presente lo studente
+    /// </summary>
+    /// <param name="COD_STUDENTE"></param>
+    /// <returns></returns>
     [WebMethod]
-    public DataTable SelectAllStudenti(int COD_STUDENTE)
+    public DataTable SelectAllStudente(int COD_STUDENTE)
     {
         DataTable dt = new DataTable();
         CLASSI C = new CLASSI();
@@ -76,6 +80,21 @@ public class Classi_WS : System.Web.Services.WebService
         return dt;
     }
 
+    /// <summary>
+    ///metodo che restituisce tutti gli studenti di una determinata classe  
+    /// </summary>
+    /// <param name="COD_CLASSE"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable SelectAllStudenti(int COD_CLASSE)
+    {
+        DataTable dt = new DataTable();
+        CLASSI C = new CLASSI();
+        C.CHIAVE = COD_CLASSE;
 
+        dt = C.SelectAllStudenti();
+        dt.TableName = "Studenti";
+        return dt;
+    }
 
 }

@@ -121,7 +121,7 @@ h6 {
 --------------------------------------------------------------*/
 
 #topbar {
-    padding: 0 0 10px 0;
+    margin-top: -5px;
     font-size: 14px;
     transition: all 0.5s;
 }
@@ -146,7 +146,7 @@ h6 {
             }
 
 #btnSearch {
-    width: 91px;
+    width: 109px;
     height: 35px;
     text-transform: none;
     line-height: normal;
@@ -187,6 +187,10 @@ h6 {
     #titoloGenUni:active {
         text-decoration: none;
     }
+
+#allineaSearch {
+    justify-content: center;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -552,7 +556,7 @@ h6 {
     position: relative;
     font-family: "Montserrat", sans-serif;
     margin-bottom: 50px;
-    margin-top: -30px;
+    margin-top: 36px;
 }
 
 .section-header p {
@@ -574,38 +578,42 @@ h6 {
 /* About Us Section
 --------------------------------*/
 
+
 #about {
     padding: 80px 0;
 }
 
     #about .about-content {
         padding-top: 40px;
+        margin-left: 99px;
     }
 
         #about .about-content h2 {
             color: #413e66;
             font-family: "Montserrat", sans-serif;
             font-weight: 700;
+            font-size: 26px;
         }
 
         #about .about-content h3 {
             color: #696592;
             font-weight: 400;
-            font-size: 22px;
+            font-size: 14px;
             font-style: italic;
         }
 
         #about .about-content ul {
             list-style: none;
-            padding: 0;
+            font-size: 14px;
         }
 
             #about .about-content ul li {
                 padding-bottom: 10px;
+                font-size: 14px;
             }
 
                 #about .about-content ul li i {
-                    font-size: 20px;
+                    font-size: 14px;
                     padding-right: 4px;
                     color: #1bb1dc;
                 }
@@ -665,6 +673,7 @@ h6 {
 #h3GenMoneyWhyUs {
     margin-left: 10px;
 }
+
 /* Services Section
 --------------------------------*/
 #services {
@@ -744,7 +753,7 @@ h6 {
         transition: 0.3s ease-in-out;
         max-width: 697px;
         float: left;
-        font-size: 1px;
+        font-size: 10px;
     }
 
         #why-us .why-us-content .features i {
@@ -755,7 +764,6 @@ h6 {
         #why-us .why-us-content .features h4 {
             font-size: 14px;
             font-weight: 700;
-
             margin-left: 70px;
             color: #413e66;
             margin-bottom: 1px;
@@ -806,12 +814,16 @@ h6 {
     padding: 0;
 }*/
 .why-us-content {
-    margin-left: 10px
+    margin-left: 10px;
+    margin-top: -20px;
+    font-size: 14px;
+    color: #555186;
 }
 
 .pMission {
-    font-size: 6px;
-    font-family: Calibri,Verdana;
+    font-size: 14px;
+    margin-top: 19px;
+    font-family: "Montserrat", sans-serif;
 }
 /* Call To Action Section
 --------------------------------*/
@@ -1010,7 +1022,7 @@ h6 {
 
 .linkCorsi {
     text-decoration: none;
-    color: #413e66;
+    color: white;
     font-weight: bold;
     font-size: large;
 }
@@ -1018,12 +1030,13 @@ h6 {
     .linkCorsi:hover {
         text-decoration: none;
         font-size: x-large;
-        color: #1bb1dc;
+        color: #fff;
     }
 
     .linkCorsi:active {
         text-decoration: none;
     }
+
 
 /* Testimonials Section
 --------------------------------*/
@@ -1202,6 +1215,13 @@ h6 {
 
 /* Pricing Section
 --------------------------------*/
+.euro {
+    width: 100px;
+    margin-top: -32px;
+    margin-bottom: -34px;
+}
+
+
 
 #pricing {
     padding: 80px 0;
@@ -1312,9 +1332,13 @@ h6 {
     margin-bottom: -54px;
     padding: 43px 0px;
 }
+
+#iconeMoney50 {
+    margin-right: -32px;
+    margin-left: 68px;
+}
 /* Frequently Asked Questions Section
 --------------------------------*/
-
 #faq {
     padding: 60px 0;
     overflow: hidden;
@@ -1352,11 +1376,11 @@ h6 {
         }
 
         #faq #faq-list a.collapse {
-            color: #1bb1dc;
+            color: #55516D;
         }
 
         #faq #faq-list a.collapsed {
-            color: #000;
+            color: #55516D;
         }
 
             #faq #faq-list a.collapsed i::before {
@@ -1889,10 +1913,12 @@ h6 {
     }
 }
 
+#introDescrizione {
+    color: #353445;
+}
 /*--------------------------------------------------------------
 # Registrazione
 --------------------------------------------------------------*/
-
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
     font-size: 1rem;
     line-height: 2.15;

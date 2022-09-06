@@ -24,7 +24,32 @@
                 </tr>
                 <tr>
                     <td>
+                        <asp:Label ID="lblTipo" CssClass="lbl" runat="server" Text=""></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <asp:Label ID="lblDescrizione" CssClass="lbl" runat="server" Text=""></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lblTutor" CssClass="lbl" runat="server" Text="Tutor assegnato: "></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lblDataCreazione" CssClass="lbl" runat="server" Text="Data creazione: "></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lblStatus" CssClass="lbl" runat="server" Text="Status: "></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lblDataStatus" CssClass="lbl" runat="server" Text="Ultima modifica status: "></asp:Label>
                     </td>
                 </tr>
             </table>

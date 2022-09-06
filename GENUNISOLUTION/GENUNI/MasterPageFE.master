@@ -31,6 +31,7 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/css/scss-files.txt" rel="stylesheet" />
     <link href="assets/css/bootstrap-contents.scss" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
 
 
     <!-- Carousel-->
@@ -54,13 +55,13 @@
                         <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
                         <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
                     </div>--%>
-                    <div class="social-links">
-                        <asp:TextBox ID="txtSearch" BorderStyle="None" Height="35px" Text-align="center" CssClass="mr-sm-2 txtSearch" placeholder="Cerca corsi" runat="server"></asp:TextBox>
-                        <asp:Button ID="btnSearch" CssClass="btn btn-outline-info my-2 my-sm-0" runat="server" Text="Cerca" />
+                    <%--<div class="social-links">
+                            <asp:TextBox ID="txtSearch" Height="35px" Text-align="center" CssClass="mr-sm-2 txtSearch" placeholder="Cerca" runat="server"></asp:TextBox>
+                            <asp:Button ID="btnSearch" CssClass="btn btn-outline-info my-2 my-sm-0" runat="server" Text="Cerca un corso" />
                         <%--<input class="form-control mr-sm-2" type="search" id="barSearch" placeholder="Ricerca" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" id="btnSearch" type="submit">Search</button>
                             <button class="btn btn-outline-info my-2 my-sm-0" id="btnSearch" type="submit">Cerca</button>--%>
-                    </div>
+                    <%--</div>--%>
                 </div>
             </div>
 
