@@ -16,29 +16,21 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     protected void grigliaCorsiAcquistati_SelectedIndexChanged(object sender, EventArgs e)
     {
         Response.Redirect("Corsi.aspx");
-        Session["Cod_Corso"] = grigliaCorsiAcquistati.SelectedDataKey[0];
-        //select all con il cod_studente
+        Session["CHIAVE"] = grigliaCorsiAcquistati.SelectedDataKey[0];
     }
 
     protected void grigliaCorsiDisponibili_SelectedIndexChanged(object sender, EventArgs e)
     {
         Response.Redirect("AcquistoCorsi.aspx");
+        Session["CHIAVE"] = grigliaCorsiDisponibili.SelectedDataKey[0];
     }
 
     protected void CaricaCorsiAcquistati()
     {
-
         ESTERNI.Esterni_WSSoapClient e = new ESTERNI.Esterni_WSSoapClient();
         int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
         grigliaCorsiAcquistati.DataSource = e.CorsiFrequentati(CHIAVE);
         grigliaCorsiAcquistati.DataBind();
-
-
-
-        //CLASSI.Classi_WSSoapClient cl = new CLASSI.Classi_WSSoapClient();
-        //grigliaCorsiAcquistati.DataSource = cl.SelectOne(CHIAVE);
-        //grigliaCorsiAcquistati.DataBind();
-
     }
 
 
