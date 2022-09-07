@@ -41,15 +41,8 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         grigliaCorsiDisponibili.DataBind();
     }
 
-    protected void grigliaCorsiAcquistati_RowCommand(object sender, GridViewCommandEventArgs e)
-    {
-        Response.Redirect("Corsi.aspx");
-    }
 
-    protected void grigliaCorsiDisponibili_RowCommand(object sender, GridViewCommandEventArgs e)
-    {
-        Response.Redirect("AcquistoCorsi.aspx");
-    }
+
 
     protected void grigliaCorsiAcquistati_RowDataBound(object sender, GridViewRowEventArgs e)
     {
