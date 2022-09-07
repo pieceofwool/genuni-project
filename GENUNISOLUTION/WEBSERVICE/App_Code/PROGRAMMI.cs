@@ -77,4 +77,14 @@ public class PROGRAMMI
 
         c.EseguiCmd(cmd);
     }
+
+    public DataTable SelectProgrammiMateria()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "PROGRAMMI_MATERIE_SELECT";
+        cmd.Parameters.AddWithValue("@Cod_Materia", COD_MATERIA);
+
+        return c.EseguiSelect(cmd);
+    }
 }

@@ -73,4 +73,16 @@ public class Programmi_WS : System.Web.Services.WebService
         p.Update();
     }
 
+    [WebMethod]
+    public DataTable SelectProgrammiMateria(int COD_MATERIA)
+    {
+        DataTable dt = new DataTable();
+        PROGRAMMI p = new PROGRAMMI();
+        p.COD_MATERIA = COD_MATERIA;
+        dt = p.SelectProgrammiMateria();
+        dt.TableName = "Programmi";
+        return dt;
+    }
+    
+
 }
