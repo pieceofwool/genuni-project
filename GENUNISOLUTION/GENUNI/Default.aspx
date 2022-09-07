@@ -20,7 +20,7 @@
                         
                     </h3>
                     <div>
-                        <a href="registrazione.aspx" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti</a>
+                        <a href="Login.aspx" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti</a>
                     </div>
                 </div>
 
