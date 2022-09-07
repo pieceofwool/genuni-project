@@ -45,7 +45,8 @@ public class MATERIE
         conn.EseguiCmd(cmd);
 
     }
-    public void Update() {
+    public void Update()
+    {
         SqlCommand cmd = new SqlCommand("MATERIE_Update");
         cmd.Parameters.AddWithValue("@Chiave", Chiave);
         cmd.Parameters.AddWithValue("@Cod_Corso", Cod_Corso);
@@ -62,6 +63,10 @@ public class MATERIE
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
+
+
+
+
     public DataTable Info()
     {
         SqlCommand cmd = new SqlCommand("MATERIE_INFO");
@@ -75,7 +80,7 @@ public class MATERIE
     public void InsertDocente()
     {
         SqlCommand cmd = new SqlCommand("MATERIE_INSERTDOCENTE");
-        cmd.Parameters.AddWithValue("@Cod_Materia", Chiave); 
+        cmd.Parameters.AddWithValue("@Cod_Materia", Chiave);
         cmd.Parameters.AddWithValue("@Cod_Docente", Cod_Docente);
 
         CONNESSIONE conn = new CONNESSIONE();
@@ -144,13 +149,22 @@ public class MATERIE
     }
 
     //seleziona materia di un docente non ancora accettate
-    public DataTable SelectNonAccettate()
+    public DataTable SelectMaterieDocente()
     {
-        SqlCommand cmd = new SqlCommand("MATERIE_SelectNonAccettate");
+        SqlCommand cmd = new SqlCommand("MATERIE_Select_Materie_Docente");
         cmd.Parameters.AddWithValue("@Cod_Docente", Cod_Docente);
 
         CONNESSIONE conn = new CONNESSIONE();
         return conn.EseguiSelect(cmd);
+    }
+
+    public void Accettazione()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_Accettazione");
+        cmd.Parameters.AddWithValue("@Chiave", Chiave);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        conn.EseguiCmd(cmd);
     }
 
     #endregion

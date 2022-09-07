@@ -15,17 +15,29 @@ public partial class Default2 : System.Web.UI.Page
         int i = 0;
         MATERIE.Materie_WSSoapClient MA = new MATERIE.Materie_WSSoapClient();
         DataTable storico = new DataTable();
-        storico = MA.SelectDocente(CHIAVE);
-        foreach(DataRow riga in storico.Rows)
+        storico = MA.SelectMaterieDocente(CHIAVE);
+        foreach (DataRow riga in storico.Rows)
         {
-            string materia = storico.Rows[i][0].ToString();
-            string corso = storico.Rows[i][1].ToString();
-            string data = storico.Rows[i][2].ToString().Substring(0,10);
+            bool accettata = bool.Parse(storico.Rows[i][2].ToString());
+            int chiave = int.Parse(storico.Rows[i][0].ToString());
 
-            litStorico.Text += "<tr><td>"+materia+"</td><td>"+corso+"</td><td>"+data+"</td></tr>";
+            string materia = storico.Rows[i][1].ToString();
+            string corso = storico.Rows[i][3].ToString();
+            string data = storico.Rows[i][4].ToString().Substring(0, 10);
+
+            if (accettata)
+            {
+                litStorico.Text += "<tr><td>" + materia + "</td><td>" + corso + "</td><td>" + data + "</td></tr>";
+            }
+            else
+            {
+                litDaAccettare.Text += "<tr><td>" + materia + "</td><td>" + corso + "</td><td>" + data + "</td>"
+                   + "<td><input id=\"btnAccetta"+chiave+"\" type=\"button\" value=\"Accetta\" onclick=\"Accetta("+chiave+")\"/></td></tr>";
+            }
+
             i++;
         }
 
-        
+
     }
 }
