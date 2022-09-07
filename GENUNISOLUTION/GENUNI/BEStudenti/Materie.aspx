@@ -9,7 +9,11 @@
     <br />
     <br />
     <p>Materiale Didattico</p>
-    <asp:GridView id="grigliaMateriale" runat="server"></asp:GridView>
+    <asp:GridView id="grigliaMateriale" runat="server" OnSelectedIndexChanged="grigliaMateriale_SelectedIndexChanged">
+        <Columns>
+            <asp:CommandField ButtonType="Button" SelectText="Vai al link" ShowSelectButton="True" />
+        </Columns>
+    </asp:GridView>
     <div>
         <asp:Button ID="btnTest" runat="server" Text="Vai al test" OnClick="btnTest_Click" />
     </div>

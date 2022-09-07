@@ -329,4 +329,18 @@ public class Corsi_WS : System.Web.Services.WebService
         C.COSTO = COSTO;
         C.CorsiQuotazione();
     }
+
+    /// <summary>
+    /// Lista di tutti i corsi non comprati dallo studente
+    /// </summary>
+    /// <param name="COD_STUDENTE"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable NonComprati (int COD_STUDENTE)
+    {
+        DataTable DT = new CORSI().NonComprati(COD_STUDENTE);
+        DT.TableName = "Corsi";
+
+        return DT;
+    }
 }

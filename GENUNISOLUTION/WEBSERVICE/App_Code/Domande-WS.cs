@@ -81,4 +81,19 @@ public class Domande_WS : System.Web.Services.WebService
         d.Delete();
     }
 
+    /// <summary>
+    /// metodo che restituisce codice, domanda, risposte e voti in base a un codtest come parametro
+    /// </summary>
+    /// <param name="COD_TEST"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable DomandeSelectAllTest(int COD_TEST)
+    {
+        DOMANDE D = new DOMANDE();
+        D.CHIAVE = COD_TEST;
+        DataTable dt = D.DomandeSelectAllTest();
+        dt.TableName = "Domande";
+        return dt;
+    }
+
 }
