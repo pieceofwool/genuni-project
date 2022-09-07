@@ -29,6 +29,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/styleBE.css" rel="stylesheet">
+    <link href="assets/css/styleBE_Grafica.css" rel="stylesheet" />
 
     <!-- =======================================================
   * Template Name: Mentor - v4.8.1

@@ -499,7 +499,7 @@
                                     <ul>
                                         <li><a href="#intro">Home</a></li>
                                         <li><a href="#about">Chi siamo</a></li>
-                                        <li><a href="CorsiFE.aspx">Corsi</a></li>
+                                        <li><a href="../BEStudenti/ModificaProfiloCopia.aspx">Corsi</a></li>
                                         <li><a href="Login2.aspx">Termini di servizio</a></li>
                                         <li><a href="../BEAdmin/GestioneCorsi.aspx">Privacy policy</a></li>
                                     </ul>
