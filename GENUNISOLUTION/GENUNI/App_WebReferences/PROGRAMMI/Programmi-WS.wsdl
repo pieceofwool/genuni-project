@@ -90,6 +90,27 @@
       <s:element name="UpdateResponse">
         <s:complexType />
       </s:element>
+      <s:element name="ProgrammiInfoMateria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_MATERIA" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProgrammiInfoMateriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgrammiInfoMateriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -122,6 +143,12 @@
   <wsdl:message name="UpdateSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="ProgrammiInfoMateriaSoapIn">
+    <wsdl:part name="parameters" element="tns:ProgrammiInfoMateria" />
+  </wsdl:message>
+  <wsdl:message name="ProgrammiInfoMateriaSoapOut">
+    <wsdl:part name="parameters" element="tns:ProgrammiInfoMateriaResponse" />
+  </wsdl:message>
   <wsdl:portType name="Programmi_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -142,6 +169,10 @@
     <wsdl:operation name="Update">
       <wsdl:input message="tns:UpdateSoapIn" />
       <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProgrammiInfoMateria">
+      <wsdl:input message="tns:ProgrammiInfoMateriaSoapIn" />
+      <wsdl:output message="tns:ProgrammiInfoMateriaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Programmi_WSSoap" type="tns:Programmi_WSSoap">
@@ -191,6 +222,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ProgrammiInfoMateria">
+      <soap:operation soapAction="http://tempuri.org/ProgrammiInfoMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Programmi_WSSoap12" type="tns:Programmi_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -232,6 +272,15 @@
     </wsdl:operation>
     <wsdl:operation name="Update">
       <soap12:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgrammiInfoMateria">
+      <soap12:operation soapAction="http://tempuri.org/ProgrammiInfoMateria" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
