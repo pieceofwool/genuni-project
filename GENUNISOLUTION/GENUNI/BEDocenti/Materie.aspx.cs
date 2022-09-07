@@ -28,7 +28,7 @@ public partial class BEDocenti_POPUP_Visualizza_corso_Visualizza_Corso : System.
         Session["CHIAVE_CORSO"] = grvMaterie.SelectedDataKey[1];
         Session["COD_DOCENTE"] = grvMaterie.SelectedDataKey[2];
 
-        grvMaterie.DataSource = Convert.ToInt32(Ma.SelectDocenteCorso(COD_CORSO, COD_DOCENTE)); 
+        grvMaterie.DataSource = Ma.SelectDocenteCorso(COD_CORSO, COD_DOCENTE); 
         grvMaterie.DataBind();
 
     }
