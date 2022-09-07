@@ -49,7 +49,17 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void grigliaProgrammi_SelectedIndexChanged(object sender, EventArgs e)
     {
+        Session["CHIAVE"] = int.Parse(grigliaProgrammi.SelectedDataKey[0].ToString());
         btnModificaMateriale.Visible = true;
         BtnElimina.Visible = true;
+    }
+
+    protected void BtnIndietro_Click(object sender, EventArgs e)
+    {
+        int codice = int.Parse(Session["CodiceCorso"].ToString());
+        string corso = Request.QueryString["corso"].ToString();
+        Response.Redirect("MaterieDocenti.aspx?codice=" + codice + "&corso=" + corso);
+
+
     }
 }

@@ -63,4 +63,9 @@ public partial class Default2 : System.Web.UI.Page
 
 
     }
+
+    protected void BtnIndietro_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("GestioneDocenti.aspx");
+    }
 }

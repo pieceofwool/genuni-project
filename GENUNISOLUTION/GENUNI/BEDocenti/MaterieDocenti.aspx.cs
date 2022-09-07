@@ -11,6 +11,8 @@ public partial class Default2 : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         int codicecorso = int.Parse(Request.QueryString["codice"].ToString());
+        Session["CodiceCorso"] = codicecorso;
+
         string nomecorso = Request.QueryString["corso"].ToString();
         InserireCorso.InnerText = "Corso "+ nomecorso;
 

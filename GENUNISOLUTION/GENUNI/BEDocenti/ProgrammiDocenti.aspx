@@ -88,7 +88,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
      <%-- header--%>
-    <table style="width: 1100px; text-align:center;margin-top:100px;" >
+    <table style="width: 1200px; text-align:center;margin-top:100px;" >
         <tr>
             <td><asp:Button class="popupInserisciMateriale" ID="btnInserisciMateriale" runat="server" Text="Inserisci materiale" />
             </td>
@@ -100,13 +100,14 @@
         </tr>
     </table>
 
-    <asp:GridView width="1100px" class="grigliaProgrammi" ID="grigliaProgrammi" runat="server" AutoGenerateColumns="False" DataKeyNames="Chiave,Cod_Materia" OnSelectedIndexChanged="grigliaProgrammi_SelectedIndexChanged">
+    <asp:GridView width="1200px" class="grigliaProgrammi" ID="grigliaProgrammi" runat="server" AutoGenerateColumns="False" DataKeyNames="Chiave,Cod_Materia" OnSelectedIndexChanged="grigliaProgrammi_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="Chiave" HeaderText="Chiave" InsertVisible="False" ReadOnly="True" SortExpression="Chiave" Visible="False" />
             <asp:BoundField DataField="Cod_Materia" HeaderText="Cod_Materia" SortExpression="Cod_Materia" Visible="False" />
             <asp:BoundField DataField="Tipo" HeaderText="Tipo" SortExpression="Tipo" />
             <asp:BoundField DataField="Indice" HeaderText="Indice" SortExpression="Indice" />
             <asp:BoundField DataField="Link" HeaderText="Link" SortExpression="Link" />
+            <asp:BoundField DataField="Materiale" HeaderText="Materiale" SortExpression="Materiale" />
             <asp:BoundField DataField="Titolo_Materiale" HeaderText="Titolo_Materiale" SortExpression="Titolo_Materiale" />
             <asp:BoundField DataField="Tipo_Materiale" HeaderText="Tipo_Materiale" SortExpression="Tipo_Materiale" />
             <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" SortExpression="Descrizione" />
@@ -117,9 +118,13 @@
 
 
     <%--footer--%>
-    <table style="border: 1px solid black; border-collapse: collapse; width: 1100px; text-align:center;margin-bottom:100px;">
+    <table style="border: 1px solid black; border-collapse: collapse; width: 1200px; text-align:center;margin-bottom:100px;">
         <tr>
             <td><small>Viene mostrato tutto il programma</small></td>
+        </tr>
+        <tr>
+            <td><asp:Button ID="BtnIndietro" runat="server" Text="Indietro" OnClick="BtnIndietro_Click" /></td>
+            
         </tr>
     </table>
 

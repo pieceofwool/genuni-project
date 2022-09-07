@@ -32,11 +32,11 @@
     <%--tabella storico materie accettate--%>
 
     <%-- header--%>
-    <table id="storico" style="width: 717px; text-align:center;">
+    <table id="storico" style="width: 717px; text-align: center;">
         <tr>
-            
+
             <td><b><big>Storico materie</big></b></td>
-            
+
 
         </tr>
     </table>
@@ -65,23 +65,27 @@
     </div>
 
     <%--footer--%>
-    <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align:center">
+    <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align: center">
         <tr>
             <td><small>Vengono mostrate tutte le materie accettate</small></td>
+            <td>
+                <asp:Button ID="BtnIndietro3" runat="server" Text="Esci" OnClick="BtnIndietro_Click" />
+            </td>
         </tr>
+
     </table>
 
     <br />
-    
+
 
     <%--tabelle materie da accettare--%>
 
-   <%-- header--%>
-    <table style="width: 717px; text-align:center;">
+    <%-- header--%>
+    <table style="width: 717px; text-align: center;">
         <tr>
-            
+
             <td><b><big>Materie da accettare</big></b></td>
-            
+
         </tr>
     </table>
 
@@ -109,19 +113,23 @@
     </div>
 
     <%--footer--%>
-    <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align:center">
+    <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align: center">
         <tr>
             <td><small>Vengono mostrate tutte le materie non ancora accettate</small></td>
+            <td>
+                <asp:Button ID="BtnIndietro2" runat="server" Text="Esci" OnClick="BtnIndietro_Click" />
+            </td>
         </tr>
+
     </table>
 
     <br />
-    
+
 
     <%--Corsi Docente--%>
 
-     <%-- header--%>
-    <table style="width: 717px; text-align:center">
+    <%-- header--%>
+    <table style="width: 717px; text-align: center">
         <tr>
             <td style="width: 33.3%"></td>
             <td style="width: 33.3%"><b><big>I miei Corsi</big></b></td>
@@ -144,7 +152,7 @@
                 <td><b>Corso</b></td>
                 <td><b>Link</b></td>
             </tr>
-            
+
 
 
             <asp:Literal ID="litCorsi" runat="server"></asp:Literal>
@@ -153,10 +161,14 @@
     </div>
 
     <%--footer--%>
-    <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align:center;margin-bottom:100px;">
+    <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align: center; margin-bottom: 100px;">
         <tr>
             <td><small>Vengono mostrati tutti i corsi in cui si hanno materie accettate</small></td>
+            <td>
+                <asp:Button ID="BtnIndietro" runat="server" Text="Esci" OnClick="BtnIndietro_Click" />
+            </td>
         </tr>
+
     </table>
 
 

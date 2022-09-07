@@ -33,10 +33,11 @@ public class Programmi_WS : System.Web.Services.WebService
     }
     
     [WebMethod]
-    public DataTable SelectOne()
+    public DataTable SelectOne(int CHIAVE)
     {
         DataTable dt = new DataTable();
         PROGRAMMI p = new PROGRAMMI();
+        p.CHIAVE = CHIAVE;
         dt = p.SelectOne();
         dt.TableName = "Programmi";
         return dt;

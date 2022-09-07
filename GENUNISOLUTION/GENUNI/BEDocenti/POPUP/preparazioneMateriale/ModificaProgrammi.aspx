@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
 <body>
@@ -14,7 +14,7 @@
                 <tr>
                     <td>
                         <asp:Label ID="lblTipo" runat="server" Text="Tipo: "></asp:Label>
-                        <asp:DropDownList ID="ddlTipo" runat="server" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" >
+                        <asp:DropDownList ID="ddlTipo" runat="server" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged">
                             <asp:ListItem Value="1">Link lezione frontale</asp:ListItem>
                             <asp:ListItem Value="2">Link video</asp:ListItem>
                             <asp:ListItem Value="3">Materiale</asp:ListItem>
@@ -41,13 +41,13 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblTipoMateriale" runat="server" Text="tipo materiale: "></asp:Label>
+                        <asp:Label ID="lblTipoMateriale" runat="server" Text="Tipo materiale: "></asp:Label>
                         <asp:TextBox ID="txtTipoMateriale" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblTitolo" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lblTitolo" runat="server" Text="Titolo"></asp:Label>
                         <asp:TextBox ID="txtTitolo" runat="server"></asp:TextBox>
                     </td>
                 </tr>
@@ -55,6 +55,12 @@
                     <td>
                         <asp:Label ID="lblDescrizione" runat="server" Text="Descrizione: "></asp:Label>
                         <asp:TextBox ID="txtDescrizione" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <asp:Button ID="btnModifica" runat="server" Text="Modifica" OnClick="btnModifica_Click"/>
                     </td>
                 </tr>
             </table>
