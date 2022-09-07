@@ -85,4 +85,16 @@ public class PROGRAMMI
 
         c.EseguiCmd(cmd);
     }
+
+    /// <summary>
+    /// metodo che restituisce link, titolo, materiale e descrizione in base a codmateria dato
+    /// </summary>
+    /// <returns></returns>
+    public DataTable ProgrammiInfoMateria()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand("PROGRAMMI_INFO_MATERIA");
+        cmd.Parameters.AddWithValue("@Cod_Materia", COD_MATERIA);
+        return C.EseguiSelect(cmd);
+    }
 }

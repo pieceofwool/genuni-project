@@ -85,4 +85,20 @@ public class Programmi_WS : System.Web.Services.WebService
         p.Update();
     }
 
+    /// <summary>
+    /// metodo che restituisce link, titolo, materiale e descrizione in base a codmateria dato
+    /// </summary>
+    /// <param name="COD_MATERIA"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable ProgrammiInfoMateria(int COD_MATERIA)
+    {
+        PROGRAMMI P = new PROGRAMMI();
+        P.COD_MATERIA = COD_MATERIA;
+
+        DataTable dt = P.ProgrammiInfoMateria();
+        dt.TableName = "Programmi";
+        return dt;  
+    }
+
 }
