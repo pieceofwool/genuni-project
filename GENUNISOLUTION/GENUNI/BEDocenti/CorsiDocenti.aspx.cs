@@ -25,6 +25,7 @@ public partial class Default2 : System.Web.UI.Page
             litStorico.Text += "<tr><td>"+materia+"</td><td>"+corso+"</td><td>"+data+"</td></tr>";
             i++;
         }
+
         
     }
 }
