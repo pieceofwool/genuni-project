@@ -43,6 +43,14 @@ public class PROGRAMMI
         return c.EseguiSelect(cmd);
     }
 
+    public DataTable SelectForMateria()
+    {
+        SqlCommand cmd = new SqlCommand("PROGRAMMI_SELECT_FOR_MATERIA");
+        cmd.Parameters.AddWithValue("@Cod_Materia", COD_MATERIA);
+
+        return new CONNESSIONE().EseguiSelect(cmd);
+    }
+
     public void Insert()
     {
         CONNESSIONE c = new CONNESSIONE();
