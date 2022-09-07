@@ -43,7 +43,7 @@ public class Programmi_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Insert(int COD_MATERIA, string TIPO, int INDICE, string LINK, byte[] MATERIALE, string TITOLO_MATERIALE, string DESCRIZIONE)
+    public void Insert(int COD_MATERIA, string TIPO, int INDICE, string LINK, byte[] MATERIALE, string TITOLO_MATERIALE,string TIPO_MATERIALE, string DESCRIZIONE)
     {
         PROGRAMMI p = new PROGRAMMI();
         p.COD_MATERIA = COD_MATERIA;
@@ -52,6 +52,7 @@ public class Programmi_WS : System.Web.Services.WebService
         p.LINK = LINK;
         p.MATERIALE = MATERIALE;
         p.TITOLO_MATERIALE = TITOLO_MATERIALE;
+        p.TIPO_MATERIALE = TIPO_MATERIALE;
         p.DESCRIZIONE = DESCRIZIONE;
 
         p.Insert();
@@ -83,6 +84,14 @@ public class Programmi_WS : System.Web.Services.WebService
         dt.TableName = "Programmi";
         return dt;
     }
-    
+
+    [WebMethod]
+    public void Delete(int CHIAVE)
+    {
+        PROGRAMMI p = new PROGRAMMI();
+        p.CHIAVE = CHIAVE;
+
+        p.Delete();
+    }
 
 }
