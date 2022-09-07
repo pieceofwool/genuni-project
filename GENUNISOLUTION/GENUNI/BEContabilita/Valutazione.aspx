@@ -16,16 +16,16 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#popup').click(function () {
+            $('#pippo').click(function () {
 
                 var url = this.href;
                 var dialog = $('<iframe src="' + url + '" frameborder="0"></iframe').appendTo('body');
 
                 dialog.dialog({
                     modal: true,
-                    title: 'Inserisci',
-                    resizable: false,
-                    with: '400px',
+                    title: 'Informazioni',
+                    resizable: true,
+                    with: '800%',
                     show: {
                         effect: "explode",
                         duration: 1000
@@ -46,25 +46,15 @@
 
         });
     </script>
-    <a href="PoPup/InfoCorsi.aspx" id="popup">Modifica</a>
-
-
-
-
-
-
-
-
+    <a href="PoPup/InfoCorsi.aspx" id="pippo">Modifica</a>
 
     <div>
-        <img src="../assets/img/lavoriBE.png" class="icona" />
+        <img src="../assets/img/lavoriBE.png" class="icona" />        
     </div>
     <div class="containerBE">
         <h4 class="titoliBE">Valutazione</h4>
-        <asp:GridView ID="grdValutazione" runat="server" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged">
-            <Columns>
-                <asp:CommandField ShowSelectButton="True" />
-            </Columns>
+        <asp:Button ID="btnAggiorna" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiorna_Click" />
+        <asp:GridView ID="grdValutazione" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged">
         </asp:GridView>
     </div>
 </asp:Content>

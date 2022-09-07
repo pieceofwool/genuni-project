@@ -19,10 +19,15 @@ public partial class BEContabilita_Default : System.Web.UI.Page
         grdValutazione.DataBind();
     }
 
+
     protected void grdValutazione_SelectedIndexChanged(object sender, EventArgs e)
     {
-
         GridViewRow row = grdValutazione.SelectedRow;
         Session["id"] = row.Cells[1].Text;
+    }
+
+    protected void btnAggiorna_Click(object sender, EventArgs e)
+    {
+        CaricaGriglia();
     }
 }

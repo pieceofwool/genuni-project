@@ -10,8 +10,14 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Literal ID="lit" runat="server"></asp:Literal>
-            <asp:GridView ID="grd" runat="server"></asp:GridView>
+            <asp:Literal ID="litCorsi" runat="server"></asp:Literal>
+            <asp:Label ID="lblPreIscritti" runat="server" Text=""></asp:Label>
+            <asp:GridView ID="grdDocente" runat="server"></asp:GridView>
+            <br />
+            <asp:Label ID="lblCosto" runat="server" Text="Costo"></asp:Label>
+            <asp:TextBox ID="txtCosto" runat="server"></asp:TextBox>
+            <asp:Button ID="btnInvia" runat="server" OnClick="btnInvia_Click" Text="Invia" />
+            <br />
         </div>
     </form>
 </body>
