@@ -25,10 +25,6 @@ public partial class MasterPageFE : System.Web.UI.MasterPage
             }
             catch(FaultException)
             {
-                
-            }
-            finally
-            {
                 Nome = U.GetNome(Chiave);
             }
 

@@ -9,7 +9,7 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        btnIscrivitiNews.Enabled = false;
+
     }
 
     protected void btnCandidati_Click(object sender, EventArgs e)
@@ -21,35 +21,66 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnIscrivitiNews_Click(object sender, EventArgs e)
     {
-        btnIscrivitiNews.Enabled = false;
-
-        if (string.IsNullOrEmpty(txtEmail.Text.ToString()) == true)
+        if (chbxPrivacy.Checked == true)
         {
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Inserire una mail valida')", true);
+            if (string.IsNullOrEmpty(txtEmail.Text.ToString()) == true)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Inserire una mail valida')", true);
+                return;
+            }
+
+            string email = txtEmail.Text.Trim().ToString();
+
+            txtEmail.Text = "";
+
+            NEWSLETTER.Newsletter_WSSoapClient N = new NEWSLETTER.Newsletter_WSSoapClient();
+            MAIL.Mail_WSSoapClient M = new MAIL.Mail_WSSoapClient();
+
+            N.NewsletterIscrivi(email);
+
+            M.RingraziamentoNewsletter(email);
+
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Iscrizione alla Newsletter effettuata con successo!')", true);
             return;
         }
 
-        string email = txtEmail.Text.Trim().ToString();
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Accettare l\'informativa sulla privacy prima di preiscriversi')", true);
+        return;
 
-        txtEmail.Text = "";
+    }
 
-        NEWSLETTER.Newsletter_WSSoapClient N = new NEWSLETTER.Newsletter_WSSoapClient();
-        MAIL.Mail_WSSoapClient M = new MAIL.Mail_WSSoapClient();
+    protected void RedirectSezioneContabile()
+    {
+        if (Session["CodiceAttore"] != null)
+        {
+            string usertype = Session["TipoAttore"].ToString();
 
-        N.NewsletterIscrivi(email);
+            if (usertype == "S")
+            {
+                Response.Redirect("/BEStudenti/SituazioneContabile.aspx");
+            }
 
-        M.RingraziamentoNewsletter(email);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Solo gli studenti possono comprare GenMoney')", true);
+            return;
+        }
 
-
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Iscrizione alla Newsletter effettuata con successo!')", true);
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Fai accesso prima di poter comprare GenMoney')", true);
+        Response.Redirect("Login.aspx");
         return;
     }
 
-    protected void chbxPrivacy_CheckedChanged(object sender, EventArgs e)
+    protected void btnGenMoney50_Click(object sender, EventArgs e)
     {
-        if (chbxPrivacy.Checked == true)
-        {
-            btnIscrivitiNews.Enabled = true;
-        }
+        RedirectSezioneContabile();
+    }
+
+    protected void btnGenMoney100_Click(object sender, EventArgs e)
+    {
+        RedirectSezioneContabile();
+    }
+
+    protected void btnGenMoney200_Click(object sender, EventArgs e)
+    {
+        RedirectSezioneContabile();
     }
 }
