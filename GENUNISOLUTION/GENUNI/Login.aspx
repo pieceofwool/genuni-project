@@ -201,10 +201,29 @@
                     </div>
                 </div>
                 <script>
+
                     document.querySelector('.img__btn').addEventListener('click', function () {
                         document.querySelector('.cont').classList.toggle('s--signup');
                     });
+
+                    //const status = document.getElementById("status");
+
+                    //if (status === 0) {
+                    //    document.querySelector('.img__btn').addEventListener('click', function () {
+                    //        document.querySelector('.cont').classList.toggle('s--signup');
+
+                    //    });
+                    //}
+
+                    //if (status === 1) {
+                    //    document.querySelector('.img__btn').addEventListener('click', function () {
+                    //        document.querySelector('.cont').classList.toggle('s--signup');
+
+                    //    });
+                    //}
+
                 </script>
+
             </header>
         </div>
     </section>
@@ -225,8 +244,8 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
     <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
+    <script src="contactform/contactform.js"></script> <%--non trovato--%>
 
     <!-- Main Javascript File -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script> <%--non trovato--%>
 </asp:Content>

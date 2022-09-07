@@ -16,7 +16,7 @@ public partial class _Default : System.Web.UI.Page
     {
         Session["IscrizioneComeDocente"] = 'D';
 
-        Response.Redirect("Login.aspx");
+        Response.Redirect("Login.aspx" + "?status=1");
     }
 
     protected void btnIscrivitiNews_Click(object sender, EventArgs e)
