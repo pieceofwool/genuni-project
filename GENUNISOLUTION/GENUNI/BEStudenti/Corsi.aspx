@@ -17,7 +17,8 @@
 
     <div id="attestato" runat="server">
         <asp:Label ID="Label2" runat="server" Text="Scarica Attestato"></asp:Label>
-        <asp:Button ID="btnAttestato" runat="server" Text="Scarica" />
+        <asp:Button ID="btnAttestato" runat="server" Text="Scarica" OnClick="btnAttestato_Click" />
+        <asp:Label ID="lblDownload" runat="server" Text=""></asp:Label>
     </div>
 
 
