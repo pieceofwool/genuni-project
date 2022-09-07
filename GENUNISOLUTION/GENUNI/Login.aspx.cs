@@ -49,7 +49,7 @@ public partial class Login : System.Web.UI.Page
                     switch (usertype)
                     {
                         case 'A':
-                            Response.Redirect("/BEAdmin/GestioneAdmin.aspx"); //Redirect per gli Admin
+                            Response.Redirect("/BEAdmin/GestioneCorsi.aspx"); //Redirect per gli Admin
                             break;
 
                         case 'T':

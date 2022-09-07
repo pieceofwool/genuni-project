@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -18,7 +19,15 @@ public partial class MasterPageFE : System.Web.UI.MasterPage
 
             string Nome;
 
-            if(string.IsNullOrEmpty((Nome = E.GetNome(Chiave)).ToString()))
+            try
+            {
+                string.IsNullOrEmpty((Nome = E.GetNome(Chiave)).ToString());
+            }
+            catch(FaultException)
+            {
+                
+            }
+            finally
             {
                 Nome = U.GetNome(Chiave);
             }
