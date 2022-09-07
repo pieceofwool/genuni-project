@@ -144,4 +144,19 @@ public class Materie_WS : System.Web.Services.WebService
         dt.TableName = "Materie";
         return dt;
     }
+
+    /// <summary>
+    /// metodo che restituisce il titolo e la descrizione della materia in base a quel corso
+    /// </summary>
+    /// <param name="cod_corso"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable MaterieInfoCorso(int cod_corso)
+    {
+        MATERIE M = new MATERIE();
+        M.Cod_Corso = cod_corso;
+        DataTable dt = M.MaterieInfoCorso();
+        dt.TableName = "Materie";
+        return dt;
+    }
 }

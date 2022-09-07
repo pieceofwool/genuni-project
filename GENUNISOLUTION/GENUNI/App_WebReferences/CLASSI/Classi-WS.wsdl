@@ -125,6 +125,18 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Insert_Punteggio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_STUDENTE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PUNTEGGIO_TEST" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_PunteggioResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -169,6 +181,12 @@
   <wsdl:message name="SelectCorsoSoapOut">
     <wsdl:part name="parameters" element="tns:SelectCorsoResponse" />
   </wsdl:message>
+  <wsdl:message name="Insert_PunteggioSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_Punteggio" />
+  </wsdl:message>
+  <wsdl:message name="Insert_PunteggioSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_PunteggioResponse" />
+  </wsdl:message>
   <wsdl:portType name="Classi_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -197,6 +215,10 @@
     <wsdl:operation name="SelectCorso">
       <wsdl:input message="tns:SelectCorsoSoapIn" />
       <wsdl:output message="tns:SelectCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Punteggio">
+      <wsdl:input message="tns:Insert_PunteggioSoapIn" />
+      <wsdl:output message="tns:Insert_PunteggioSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Classi_WSSoap" type="tns:Classi_WSSoap">
@@ -264,6 +286,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Insert_Punteggio">
+      <soap:operation soapAction="http://tempuri.org/Insert_Punteggio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Classi_WSSoap12" type="tns:Classi_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -323,6 +354,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectCorso">
       <soap12:operation soapAction="http://tempuri.org/SelectCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Punteggio">
+      <soap12:operation soapAction="http://tempuri.org/Insert_Punteggio" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

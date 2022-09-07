@@ -11,4 +11,39 @@ public partial class Test_Studenti : System.Web.UI.Page
     {
 
     }
+
+    //protected void ConcludiTest_Click(object sender, EventArgs e)
+    //{
+    //    if (test1.SelectedValue== null || test2.SelectedValue==null || test3.SelectedValue==null || test4.SelectedValue==null ||
+    //        test5.SelectedValue==null || test6.SelectedValue==null || test7.SelectedValue==null || test8.SelectedValue==null ||
+    //        test9.SelectedValue==null || test10.SelectedValue==null)
+    //    {
+    //        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Rispondere a tutte le Domande!')", true);
+    //        return;
+    //    }
+    //    int Esatte = int.Parse(test1.SelectedValue + test2.SelectedValue + test3.SelectedValue + test4.SelectedValue + test5.SelectedValue +
+    //        test6.SelectedValue + test7.SelectedValue + test8.SelectedValue + test9.SelectedValue + test10.SelectedValue);
+
+    //    //se è minore della Soglia
+    //    if (Esatte <=6)
+    //    {
+    //        lbl.Text= "Non superato";
+    //    }
+
+    //    //se è maggiore della soglia
+    //    if (Esatte >=6)
+    //    {
+    //        lbl.Text="superato";
+    //    }
+
+    //    //insert classi
+
+    //    //se fa il test appare il bottone
+    //    btnTornaHomeCorso.Visible=true;
+    //}
+
+    //protected void TornaHomeCorso_Click(object sender, EventArgs e)
+    //{
+    //    Response.Redirect("Corsi.aspx");
+    //}
 }

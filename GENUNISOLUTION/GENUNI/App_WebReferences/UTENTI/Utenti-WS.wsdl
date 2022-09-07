@@ -145,6 +145,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetNome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNomeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SelectOne">
         <s:complexType>
           <s:sequence>
@@ -255,6 +269,12 @@
   <wsdl:message name="TipoLoginSoapOut">
     <wsdl:part name="parameters" element="tns:TipoLoginResponse" />
   </wsdl:message>
+  <wsdl:message name="GetNomeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNome" />
+  </wsdl:message>
+  <wsdl:message name="GetNomeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNomeResponse" />
+  </wsdl:message>
   <wsdl:message name="SelectOneSoapIn">
     <wsdl:part name="parameters" element="tns:SelectOne" />
   </wsdl:message>
@@ -309,6 +329,10 @@
     <wsdl:operation name="TipoLogin">
       <wsdl:input message="tns:TipoLoginSoapIn" />
       <wsdl:output message="tns:TipoLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNome">
+      <wsdl:input message="tns:GetNomeSoapIn" />
+      <wsdl:output message="tns:GetNomeSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SelectOne">
       <wsdl:input message="tns:SelectOneSoapIn" />
@@ -399,6 +423,15 @@
     </wsdl:operation>
     <wsdl:operation name="TipoLogin">
       <soap:operation soapAction="http://tempuri.org/TipoLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNome">
+      <soap:operation soapAction="http://tempuri.org/GetNome" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -510,6 +543,15 @@
     </wsdl:operation>
     <wsdl:operation name="TipoLogin">
       <soap12:operation soapAction="http://tempuri.org/TipoLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNome">
+      <soap12:operation soapAction="http://tempuri.org/GetNome" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

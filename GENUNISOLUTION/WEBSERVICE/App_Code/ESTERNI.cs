@@ -30,6 +30,7 @@ public class ESTERNI
     public bool ABILITATO;
     public byte[] AVATAR;
     public string TIPOIMG;
+    public string SKILLS;
     #endregion
 
     public ESTERNI()
@@ -123,6 +124,21 @@ public class ESTERNI
         cmd.Parameters.AddWithValue("@RAGIONE_SOCIALE", RAGIONE_SOCIALE);
         cmd.Parameters.AddWithValue("@COGNOME", COGNOME);
         cmd.Parameters.AddWithValue("@NOME", NOME);
+
+        DataTable dt = C.EseguiSelect(cmd);
+
+        if (dt.Rows.Count == 0) return false;
+
+        return true;
+    }
+
+    public bool ControlloDuplice()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_CONTROLLODUPLICE";
+        cmd.Parameters.AddWithValue("@USR", USR);
 
         DataTable dt = C.EseguiSelect(cmd);
 
@@ -371,6 +387,17 @@ public class ESTERNI
         cmd.Parameters.AddWithValue("@PWD", PWD);
 
         c.EseguiCmd(cmd);
+    }
+
+    public DataTable SelectForSkills()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_SelectForSkills";
+        cmd.Parameters.AddWithValue("@SKILLS", SKILLS);
+
+        return c.EseguiSelect(cmd);
     }
 
     #endregion

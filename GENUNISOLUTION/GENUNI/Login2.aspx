@@ -30,12 +30,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section id="services" class="section-bg">
-        <div class="container">
+        <div class="container" style="margin-top: -98px;">
             <header class="section-header">
-                <div class="cont" style="zoom: 77%; margin-top: 11px;">
+                <h3 style="margin-top: 17px; margin-bottom: 61px;">LOGIN/REGISTRAZIONE</h3>
+                <div class="cont" style="zoom: 75%;margin-top: -60px;">
                     <div class="form sign-in">
                         <h2 class="h2Login">ACCEDI</h2>
-                       <img src="assets/img/genLoginImg.png" id="genLoginImg" />
+                        <img src="assets/img/genLoginImg.png" id="genLoginImg" />
                         <%--<img src="assets/img/genGif.gif" id="genLoginImg"/>--%>
                         <table>
                             <tr>
@@ -64,7 +65,8 @@
                             </div>
                             <div class="img__text m--in">
                                 <img src="img/logo.png" id="logoSignUp" />
-                                <div class="h3Login">Se hai già un account fai il login</div>
+
+                                <div class="h3Login">Se hai gi&#224 un account fai il login</div>
                             </div>
                             <div class="img__btn">
                                 <span class="m--up">Iscriviti</span>

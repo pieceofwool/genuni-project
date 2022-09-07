@@ -8,6 +8,7 @@
     </div>
     <div class="containerBE">
         <h4 class="titoliBE">Gestione Report</h4>
+
         <div id="selezionedate">
            
 
@@ -78,6 +79,7 @@
             <asp:Label ID="lblUtili" runat="server" CssClass="lblReport" Text=""></asp:Label>
 
         </div>
+
     </div>
 </asp:Content>
 

@@ -133,6 +133,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ControlloDuplice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ControlloDupliceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ControlloDupliceResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="AbilitaEsterno">
         <s:complexType>
           <s:sequence>
@@ -444,6 +458,27 @@
       <s:element name="UpdatePassword_StudentiResponse">
         <s:complexType />
       </s:element>
+      <s:element name="SelectForSkills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SKILLS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectForSkillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectForSkillsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -481,6 +516,12 @@
   </wsdl:message>
   <wsdl:message name="CheckOneSoapOut">
     <wsdl:part name="parameters" element="tns:CheckOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="ControlloDupliceSoapIn">
+    <wsdl:part name="parameters" element="tns:ControlloDuplice" />
+  </wsdl:message>
+  <wsdl:message name="ControlloDupliceSoapOut">
+    <wsdl:part name="parameters" element="tns:ControlloDupliceResponse" />
   </wsdl:message>
   <wsdl:message name="AbilitaEsternoSoapIn">
     <wsdl:part name="parameters" element="tns:AbilitaEsterno" />
@@ -602,6 +643,12 @@
   <wsdl:message name="UpdatePassword_StudentiSoapOut">
     <wsdl:part name="parameters" element="tns:UpdatePassword_StudentiResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectForSkillsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectForSkills" />
+  </wsdl:message>
+  <wsdl:message name="SelectForSkillsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectForSkillsResponse" />
+  </wsdl:message>
   <wsdl:portType name="Esterni_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -626,6 +673,10 @@
     <wsdl:operation name="CheckOne">
       <wsdl:input message="tns:CheckOneSoapIn" />
       <wsdl:output message="tns:CheckOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlloDuplice">
+      <wsdl:input message="tns:ControlloDupliceSoapIn" />
+      <wsdl:output message="tns:ControlloDupliceSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="AbilitaEsterno">
       <wsdl:input message="tns:AbilitaEsternoSoapIn" />
@@ -707,6 +758,10 @@
       <wsdl:input message="tns:UpdatePassword_StudentiSoapIn" />
       <wsdl:output message="tns:UpdatePassword_StudentiSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SelectForSkills">
+      <wsdl:input message="tns:SelectForSkillsSoapIn" />
+      <wsdl:output message="tns:SelectForSkillsSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Esterni_WSSoap" type="tns:Esterni_WSSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -757,6 +812,15 @@
     </wsdl:operation>
     <wsdl:operation name="CheckOne">
       <soap:operation soapAction="http://tempuri.org/CheckOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlloDuplice">
+      <soap:operation soapAction="http://tempuri.org/ControlloDuplice" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -944,6 +1008,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectForSkills">
+      <soap:operation soapAction="http://tempuri.org/SelectForSkills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Esterni_WSSoap12" type="tns:Esterni_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -994,6 +1067,15 @@
     </wsdl:operation>
     <wsdl:operation name="CheckOne">
       <soap12:operation soapAction="http://tempuri.org/CheckOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlloDuplice">
+      <soap12:operation soapAction="http://tempuri.org/ControlloDuplice" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1174,6 +1256,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdatePassword_Studenti">
       <soap12:operation soapAction="http://tempuri.org/UpdatePassword_Studenti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectForSkills">
+      <soap12:operation soapAction="http://tempuri.org/SelectForSkills" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
