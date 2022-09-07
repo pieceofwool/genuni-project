@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.EnterpriseServices;
 using System.Linq;
+using System.ServiceModel.Configuration;
 using System.Web;
 using System.Web.Services;
 
@@ -151,7 +153,16 @@ public class Corsi_WS : System.Web.Services.WebService
         return dt;
     }
 
-    //metodo che permette al tutor di modificare il corso scelto
+    /// <summary>
+    /// metodo che permette al tutor di modificare il corso scelto
+    /// </summary>
+    /// <param name="CHIAVE_TUTOR"></param>
+    /// <param name="TITOLO"></param>
+    /// <param name="TIPO"></param>
+    /// <param name="DESCRIZIONE"></param>
+    /// <param name="AVATAR_CORSO"></param>
+    /// <param name="TIPO_IMG"></param>
+    /// <param name="DATA_PARTENZA"></param>
     [WebMethod]
     public void UpdateForTutor(int CHIAVE_TUTOR, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string TIPO_IMG, string DATA_PARTENZA)
     {
@@ -191,7 +202,11 @@ public class Corsi_WS : System.Web.Services.WebService
         dt.TableName = "Corsi";
         return dt;
     }
-    //metodo che riporta tutti i corsi che sono stati approvati
+
+    /// <summary>
+    /// metodo che riporta tutti i corsi che sono stati approvati
+    /// </summary>
+    /// <returns></returns>
     [WebMethod]
     public DataTable Corsi_SelectApprovati()
     {
@@ -218,7 +233,9 @@ public class Corsi_WS : System.Web.Services.WebService
         return dt;
     }
 
-    //metodo che riporta tutti i corsi che non sono ancora stati approvati
+    /// <summary>
+    /// riporta tutti i corsi che non sono ancora stati approvati
+    /// </summary>
     [WebMethod]
     public DataTable Corsi_SelectNonApprovati()
     {
@@ -229,5 +246,112 @@ public class Corsi_WS : System.Web.Services.WebService
         return dt;
     }
 
+    [WebMethod]
+    public bool Check_Tutor_Abilitato(int CHIAVE_UTENTE)
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        c.CHIAVE_UTENTE = CHIAVE_UTENTE;
+        bool abilitato = c.Check_Tutor_Abilitato();
+        dt.TableName = "Corsi";
+        return abilitato;
 
+    }
+    /// <summary>
+    /// Seleziona tutte le classi di un corso 
+    /// </summary>
+    [WebMethod]
+    public DataTable Corsi_SelectAllClassi(int CODICE_CORSO)
+    {
+        DataTable dt = new DataTable();
+        CORSI C = new CORSI();
+        C.CHIAVE = CODICE_CORSO;
+
+        dt = C.Corsi_SelectAllClassi();
+        dt.TableName = "Classi";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectForTutor(int COD_TUTOR)
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        c.CHIAVE_TUTOR = COD_TUTOR;
+        dt = c.SelectForTutor();
+        dt.TableName = "Corso";
+        return dt;
+    }
+    
+    [WebMethod]
+    public DataTable Select_Utenti_Filtro_Q()
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        dt = c.Select_Utenti_Filtro_Q();
+        dt.TableName = "Corso";
+        return dt;
+    }
+
+    [WebMethod]
+    public void Update_Status(int CHIAVE_CORSO)
+    {
+        CORSI c = new CORSI();
+        c.CHIAVE_CORSO = CHIAVE_CORSO;
+
+        c.Update_Status();
+    }
+
+    [WebMethod]
+    public DataTable Utenti_SelectOne(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        c.CHIAVE_CORSO = CHIAVE;
+        dt = c.Utenti_SelectOne();
+        dt.TableName = "Corso";
+        return dt;
+    }
+
+    /// <summary>
+    /// metodo che restituisce tutti i corsi con status P
+    /// </summary>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable SelectAllPreparati()
+    {
+        DataTable dt = new DataTable();
+        CORSI C = new CORSI();
+        dt = C.SelectAllPreparati();
+        dt.TableName = "Corsi";
+        return dt;
+    }
+
+    /// <summary>
+    /// metodo che modifica il corso aggiungendo status Q
+    /// </summary>
+    /// <param name="COD_CORSO"></param>
+    /// <param name="COSTO"></param>
+    [WebMethod]
+    public void CorsiQuotazione(int COD_CORSO, int COSTO)
+    {
+        CORSI C = new CORSI();
+        C.CHIAVE = COD_CORSO;
+        C.COSTO = COSTO;
+        C.CorsiQuotazione();
+    }
+
+    /// <summary>
+    /// Lista di tutti i corsi non comprati dallo studente
+    /// </summary>
+    /// <param name="COD_STUDENTE"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable NonComprati (int COD_STUDENTE)
+    {
+        DataTable DT = new CORSI().NonComprati(COD_STUDENTE);
+        DT.TableName = "Corsi";
+
+        return DT;
+    }
 }

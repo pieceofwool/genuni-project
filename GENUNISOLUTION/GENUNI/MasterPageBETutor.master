@@ -29,142 +29,73 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/styleBE.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Mentor - v4.8.1
-  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <link href="assets/css/styleBE_Grafica.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+        <!-- ======= Header ======= -->
+        <div id="header" class="fixed-top">
+            <div class="container d-flex align-items-center">
+                <h1 class="logo me-auto"><a href="../Default.aspx">GENUNI</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+                <nav id="navbar" class="navbar order-last order-lg-0">
+                    <ul>
+                        <li><a class="active" href="../Default.aspx">Home</a></li>
+                        <li><a href="../BETutor/GestioneTutor.aspx">Tutor</a></li>
+                        <li class="dropdown"><a href="../BETutor/AssegnazioneDocenti.aspx"><span>Docenti</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="../BETutor/CronistoriaDocenti.aspx">Cronisoria docenti</a></li>
+                                <li><a href="../BETutor/AssegnazioneDocenti.aspx">Assegnazione docenti</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="../BETutor/SituazioneStudenti.aspx"><span>Studenti</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="../BETutor/SituazioneStudenti.aspx">Situazione studenti</a></li>
+                                <li><a href="../BETutor/Chat.aspx">Chat</a></li>
+                            </ul>
+                            <li class="dropdown"><a href="../BETutor/SituazioneCorsi.aspx"><span>Corsi</span> <i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="../BETutor/SituazioneCorsi.aspx">Situazione corsi</a></li>
+                                    <li><a href="../BETutor/PreparazioneCorso.aspx">Preparazione corso</a></li>
+                                </ul>
+                                <li class="dropdown"><a href="../BETutor/PreparazioneTest.aspx"><span>Test&Materie</span> <i class="bi bi-chevron-down"></i></a>
+                                    <ul>
+                                        <li><a href="../BETutor/PreparazioneTest.aspx">Preparazione test</a></li>
+                                        <li><a href="../BETutor/RisultatiTest.aspx">Risultati test</a></li>
+                                        <li><a href="../BETutor/DefinizioneMaterie.aspx">Definizione materie</a></li>
+                                    </ul>
+                                </li>
+                        <li><a href="../Default.aspx">Esci</a></li>
+                    </ul>
+                </nav>
+                <!-- .navbar -->
+            </div>
+        </div>
+        <!-- End Header -->
+        <!-- End Header -->
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/main2.js"></script>
+
         <div>
-
-            <!-- ======= Header ======= -->
-            <header id="header" class="fixed-top">
-                <div class="container d-flex align-items-center">
-
-                    <h1 class="logo me-auto"><a href="../Default.aspx">GENUNI</a></h1>
-                    <!-- Uncomment below if you prefer to use an image logo -->
-                    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-                    <nav id="navbar" class="navbar order-last order-lg-0">
-                        <ul>
-                            <li><a class="active" href="../Default.aspx">Home</a></li>
-                            <li class="dropdown"><a href="../BEAdmin/GestioneAdmin.aspx"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="#">Drop Down 1</a></li>
-                                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                        <ul>
-                                            <li><a href="#">Deep Drop Down 1</a></li>
-                                            <li><a href="#">Deep Drop Down 2</a></li>
-                                            <li><a href="#">Deep Drop Down 3</a></li>
-                                            <li><a href="#">Deep Drop Down 4</a></li>
-                                            <li><a href="#">Deep Drop Down 5</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Drop Down 2</a></li>
-                                    <li><a href="#">Drop Down 3</a></li>
-                                    <li><a href="#">Drop Down 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="../BEContabilita/Compenso.aspx"><span>Contabilità</span> <i class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="#">Drop Down 1</a></li>
-                                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                        <ul>
-                                            <li><a href="#">Deep Drop Down 1</a></li>
-                                            <li><a href="#">Deep Drop Down 2</a></li>
-                                            <li><a href="#">Deep Drop Down 3</a></li>
-                                            <li><a href="#">Deep Drop Down 4</a></li>
-                                            <li><a href="#">Deep Drop Down 5</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Drop Down 2</a></li>
-                                    <li><a href="#">Drop Down 3</a></li>
-                                    <li><a href="#">Drop Down 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="../BEDocenti/GestioneDocenti.aspx"><span>Docenti</span> <i class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="#">Drop Down 1</a></li>
-                                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                        <ul>
-                                            <li><a href="#">Deep Drop Down 1</a></li>
-                                            <li><a href="#">Deep Drop Down 2</a></li>
-                                            <li><a href="#">Deep Drop Down 3</a></li>
-                                            <li><a href="#">Deep Drop Down 4</a></li>
-                                            <li><a href="#">Deep Drop Down 5</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Drop Down 2</a></li>
-                                    <li><a href="#">Drop Down 3</a></li>
-                                    <li><a href="#">Drop Down 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="../BEStudenti/Modifica_Profilo.aspx"><span>Studenti</span> <i class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="#">Drop Down 1</a></li>
-                                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                        <ul>
-                                            <li><a href="#">Deep Drop Down 1</a></li>
-                                            <li><a href="#">Deep Drop Down 2</a></li>
-                                            <li><a href="#">Deep Drop Down 3</a></li>
-                                            <li><a href="#">Deep Drop Down 4</a></li>
-                                            <li><a href="#">Deep Drop Down 5</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Drop Down 2</a></li>
-                                    <li><a href="#">Drop Down 3</a></li>
-                                    <li><a href="#">Drop Down 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="../BETutor/GestioneTutor.aspx"><span>Tutor</span> <i class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="#">Drop Down 1</a></li>
-                                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                        <ul>
-                                            <li><a href="#">Deep Drop Down 1</a></li>
-                                            <li><a href="#">Deep Drop Down 2</a></li>
-                                            <li><a href="#">Deep Drop Down 3</a></li>
-                                            <li><a href="#">Deep Drop Down 4</a></li>
-                                            <li><a href="#">Deep Drop Down 5</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Drop Down 2</a></li>
-                                    <li><a href="#">Drop Down 3</a></li>
-                                    <li><a href="#">Drop Down 4</a></li>
-                                </ul>
-                            </li>
-
-                            
-                        </ul>
-                        <i class="bi bi-list mobile-nav-toggle"></i>
-                    </nav>
-                    <!-- .navbar -->
-
-                </div>
-            </header>
-            <!-- End Header -->
-
-            <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-            <!-- Vendor JS Files -->
-            <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-            <script src="assets/vendor/aos/aos.js"></script>
-            <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-            <script src="assets/vendor/php-email-form/validate.js"></script>
-
-            <!-- Template Main JS File -->
-            <script src="assets/js/main2.js"></script>
-
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+        </div>
+        <div id="footer">
         </div>
     </form>
 </body>

@@ -103,4 +103,15 @@ public class Test_WS : System.Web.Services.WebService
 
         return dt;
     }
+
+    [WebMethod]
+    public DataTable SelectSoglia(int COD_CORSO)
+    {
+        DataTable dt = new DataTable();
+        TEST t = new TEST();
+        t.COD_CORSO = COD_CORSO;
+        dt = t.Select_Soglia();
+        dt.TableName = "Test";
+        return dt;
+    }
 }

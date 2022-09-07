@@ -10,22 +10,21 @@
     <br />
     <div id="corsi">
         <asp:Label ID="Label1" runat="server" Text="Corsi acquistati"></asp:Label>
-        <asp:GridView ID="grigliaCorsiAcquistati" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged">
+        <asp:GridView ID="grigliaCorsiAcquistati" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged" >
             <Columns>
-                <asp:ButtonField Text="link" />
-                <asp:BoundField DataField="Materia" HeaderText="Materia" SortExpression="Materia" />
-
+                <asp:CommandField ButtonType="Button" ShowSelectButton="True" SelectText="Accedi al corso" />
             </Columns>
+
 
         </asp:GridView>
     </div>
     <div>
 
         <asp:Label ID="Label2" runat="server" Text="Corsi disponibili"></asp:Label>
-        <asp:GridView ID="grigliaCorsiDisponibili" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged">
+        <asp:GridView ID="grigliaCorsiDisponibili" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged" >
             <Columns>
-                <asp:ButtonField Text="link" />
-                <asp:BoundField DataField="Materia" HeaderText="Materia" SortExpression="Materia" />
+                <asp:CommandField ButtonType="Button" SelectText="Acquista corso" ShowSelectButton="True" />
+                
 
             </Columns>
 

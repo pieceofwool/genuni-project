@@ -1,25 +1,61 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEContabilita.master" AutoEventWireup="true" CodeFile="Valutazione.aspx.cs" Inherits="BEContabilita_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <br />
+    
     <br />
     <br />
     <br />
 
-    <%-- DATA INIZIO VALUTAZIONE --%>
-    <asp:Label ID="lblDataInizio" runat="server" Text="Dal"></asp:Label>
-    <asp:TextBox ID="txtDataInizio" runat="server" TextMode="Month"></asp:TextBox>
-    <%-- DATA FINE VALUTAZIONE --%>
-    <asp:Label ID="lblDataFine" runat="server" Text="Al"></asp:Label>
-    <asp:TextBox ID="txtDataFine" runat="server" TextMode="Month"></asp:TextBox>
-    <%-- INVIA DATI --%>
-    <asp:Button ID="btnInvia" runat="server" Text="Invia" />
-    <hr />
-    <%-- GRIGLIA DI VISUALIZZAZIONE VALUTAZIONE CORSI --%>
-    <asp:GridView ID="grigliaValutazione" runat="server"></asp:GridView>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#pippo').click(function () {
+
+                var url = this.href;
+                var dialog = $('<iframe src="' + url + '" frameborder="0"></iframe').appendTo('body');
+
+                dialog.dialog({
+                    modal: true,
+                    title: 'Informazioni',
+                    resizable: true,
+                    with: '800%',
+                    show: {
+                        effect: "explode",
+                        duration: 1000
+                    },
+                    hide: {
+                        effect: "explode",
+                        duration: 1000
+                    },
+                    overlay: { opacity: 0.9, backgroun: 'black' },
+
+                    open: function (type, data) { $(this).parent().appendTo('form'); }
+
+
+                });
+
+                return false;
+            });
+
+        });
+    </script>
+    <a href="PoPup/InfoCorsi.aspx" id="pippo">Modifica</a>
+
+    <div>
+        <img src="../assets/img/lavoriBE.png" class="icona" />        
+    </div>
+    <div class="containerBE">
+        <h4 class="titoliBE">Valutazione</h4>
+        <asp:Button ID="btnAggiorna" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiorna_Click" />
+        <asp:GridView ID="grdValutazione" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged">
+        </asp:GridView>
+    </div>
 </asp:Content>
 

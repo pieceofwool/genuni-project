@@ -2,7 +2,7 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="mailInvia">
+      <s:element name="MailInviaIscrizioneStudente">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="USR" type="s:string" />
@@ -10,27 +10,115 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="mailInviaResponse">
+      <s:element name="MailInviaIscrizioneStudenteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="MailInviaIscrizioneDocente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="USR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RndCodice" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MailInviaIscrizioneDocenteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RingraziamentoNewsletter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="USR" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RingraziamentoNewsletterResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="mailInvia_Docenti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="USR" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mailInvia_DocentiResponse">
         <s:complexType />
       </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="mailInviaSoapIn">
-    <wsdl:part name="parameters" element="tns:mailInvia" />
+  <wsdl:message name="MailInviaIscrizioneStudenteSoapIn">
+    <wsdl:part name="parameters" element="tns:MailInviaIscrizioneStudente" />
   </wsdl:message>
-  <wsdl:message name="mailInviaSoapOut">
-    <wsdl:part name="parameters" element="tns:mailInviaResponse" />
+  <wsdl:message name="MailInviaIscrizioneStudenteSoapOut">
+    <wsdl:part name="parameters" element="tns:MailInviaIscrizioneStudenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="MailInviaIscrizioneDocenteSoapIn">
+    <wsdl:part name="parameters" element="tns:MailInviaIscrizioneDocente" />
+  </wsdl:message>
+  <wsdl:message name="MailInviaIscrizioneDocenteSoapOut">
+    <wsdl:part name="parameters" element="tns:MailInviaIscrizioneDocenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RingraziamentoNewsletterSoapIn">
+    <wsdl:part name="parameters" element="tns:RingraziamentoNewsletter" />
+  </wsdl:message>
+  <wsdl:message name="RingraziamentoNewsletterSoapOut">
+    <wsdl:part name="parameters" element="tns:RingraziamentoNewsletterResponse" />
+  </wsdl:message>
+  <wsdl:message name="mailInvia_DocentiSoapIn">
+    <wsdl:part name="parameters" element="tns:mailInvia_Docenti" />
+  </wsdl:message>
+  <wsdl:message name="mailInvia_DocentiSoapOut">
+    <wsdl:part name="parameters" element="tns:mailInvia_DocentiResponse" />
   </wsdl:message>
   <wsdl:portType name="Mail_WSSoap">
-    <wsdl:operation name="mailInvia">
-      <wsdl:input message="tns:mailInviaSoapIn" />
-      <wsdl:output message="tns:mailInviaSoapOut" />
+    <wsdl:operation name="MailInviaIscrizioneStudente">
+      <wsdl:input message="tns:MailInviaIscrizioneStudenteSoapIn" />
+      <wsdl:output message="tns:MailInviaIscrizioneStudenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MailInviaIscrizioneDocente">
+      <wsdl:input message="tns:MailInviaIscrizioneDocenteSoapIn" />
+      <wsdl:output message="tns:MailInviaIscrizioneDocenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RingraziamentoNewsletter">
+      <wsdl:input message="tns:RingraziamentoNewsletterSoapIn" />
+      <wsdl:output message="tns:RingraziamentoNewsletterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mailInvia_Docenti">
+      <wsdl:input message="tns:mailInvia_DocentiSoapIn" />
+      <wsdl:output message="tns:mailInvia_DocentiSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Mail_WSSoap" type="tns:Mail_WSSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="mailInvia">
-      <soap:operation soapAction="http://tempuri.org/mailInvia" style="document" />
+    <wsdl:operation name="MailInviaIscrizioneStudente">
+      <soap:operation soapAction="http://tempuri.org/MailInviaIscrizioneStudente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MailInviaIscrizioneDocente">
+      <soap:operation soapAction="http://tempuri.org/MailInviaIscrizioneDocente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RingraziamentoNewsletter">
+      <soap:operation soapAction="http://tempuri.org/RingraziamentoNewsletter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailInvia_Docenti">
+      <soap:operation soapAction="http://tempuri.org/mailInvia_Docenti" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -41,8 +129,35 @@
   </wsdl:binding>
   <wsdl:binding name="Mail_WSSoap12" type="tns:Mail_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="mailInvia">
-      <soap12:operation soapAction="http://tempuri.org/mailInvia" style="document" />
+    <wsdl:operation name="MailInviaIscrizioneStudente">
+      <soap12:operation soapAction="http://tempuri.org/MailInviaIscrizioneStudente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MailInviaIscrizioneDocente">
+      <soap12:operation soapAction="http://tempuri.org/MailInviaIscrizioneDocente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RingraziamentoNewsletter">
+      <soap12:operation soapAction="http://tempuri.org/RingraziamentoNewsletter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mailInvia_Docenti">
+      <soap12:operation soapAction="http://tempuri.org/mailInvia_Docenti" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

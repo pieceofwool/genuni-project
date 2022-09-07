@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <cofiguration>
 	<ConnectionString>
-	<DataSource>DESKTOP-V2BKRA6\SQLEXPRESS</DataSource>
+	<DataSource>GIOVANNI\SQLEXPRESS01</DataSource>
 	<InitialCatalog>GENUNI</InitialCatalog>
 	<IntegratedSecurity>True</IntegratedSecurity>
 	<User></User>

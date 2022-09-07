@@ -10,26 +10,16 @@ public partial class Default3 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (IsPostBack)
+        //VISUALIZZAZIONE DELLE GRIGLIE
+        if (!IsPostBack)
         {
-            //VISUALIZZAZIONE  DELLE GRIGLIE
-            if (chkDocenti.Checked)
-            {
-                CaricaGrigliaDocenti();
-            }
-            else
-            {
-                NascondiGrigliaDocenti();
-            }
 
-            if (chkStudenti.Checked)
-            {
-                CaricaGrigliaStudenti();
-            }
-            else
-            {
-                NascondiGrigliaStudenti();
-            }
+            CaricaGrigliaDocenti();
+
+            CaricaGrigliaStudenti();
+
+            CaricaUtili();
+
         }
     }
 
@@ -39,7 +29,8 @@ public partial class Default3 : System.Web.UI.Page
 
         grigliaReportDocenti.DataSource = C.ListaSpese("1900-01-01", "2025-01-01");
         grigliaReportDocenti.DataBind();
-        ltlDocenti.Text = "<br>Spese Docenti";
+        lblTotDoc.Text = C.SommaSpese("1900-01-01", "2025-01-01").ToString() + "€";
+
     }
     protected void CaricaGrigliaStudenti()
     {
@@ -47,19 +38,34 @@ public partial class Default3 : System.Web.UI.Page
 
         grigliaReportStudenti.DataSource = C.ListaRicavi("1900-01-01", "2025-01-01");
         grigliaReportStudenti.DataBind();
-        ltlStudenti.Text = "<br>Ricavo Studenti";
+        lblTotStud.Text = C.SommaRicavi("1900-01-01", "2025-01-01").ToString() + ",00€";
+
     }
-    protected void NascondiGrigliaStudenti()
+
+    protected void CaricaUtili()
     {
 
-        grigliaReportStudenti.Visible = false;
-        ltlStudenti.Text = "";
+        CONTABILITA.Contabilita_WSSoapClient C = new CONTABILITA.Contabilita_WSSoapClient();
+
+        decimal utili = C.Utili("1900-01-01", "2025-01-01");
+        lblUtili.Text = utili.ToString() + "€";
     }
-    protected void NascondiGrigliaDocenti()
-    {
-        grigliaReportDocenti.Visible = false;
-        ltlDocenti.Text = "";
-    }
+
+    //protected void NascondiGrigliaStudenti()
+    //{
+
+    //    grigliaReportStudenti.Visible = false;
+    //    ltlStudenti.Visible = false;
+    //    lblTot2.Visible = false;
+
+
+    //}
+    //protected void NascondiGrigliaDocenti()
+    //{
+    //    grigliaReportDocenti.Visible = false;
+    //    ltlDocenti.Visible = false;
+    //    lblTot1.Visible = false;
+    //}
     protected void btnInvia_Click(object sender, EventArgs e)
     {
         string DataFine = txtDataFine.Text;
@@ -70,25 +76,96 @@ public partial class Default3 : System.Web.UI.Page
         }
         if (string.IsNullOrEmpty(txtDataInizio.Text))
         {
-            DataFine = "1900-01-01";
+            DataInizio = "1900-01-01";
         }
         CONTABILITA.Contabilita_WSSoapClient C = new CONTABILITA.Contabilita_WSSoapClient();
-        DataTable dt = new DataTable();
-        dt = C.ListaRicavi(DataInizio, DataFine);
-        grigliaReportStudenti.DataSource = dt;
+
+        grigliaReportStudenti.DataSource = C.ListaRicavi(DataInizio, DataFine);
         grigliaReportStudenti.DataBind();
-        lblTotStud.Text = C.SommaRicavi(DataInizio, DataFine).ToString();
+        lblTotStud.Text = C.SommaRicavi(DataInizio, DataFine).ToString() + ",00€";
 
-        DataTable dt2 = new DataTable();
-        dt2 = C.ListaSpese(DataInizio, DataFine);
-        grigliaReportDocenti.DataSource = dt2;
+        grigliaReportDocenti.DataSource = C.ListaSpese(DataInizio, DataFine);
         grigliaReportDocenti.DataBind();
-        lblTotDoc.Text = C.SommaSpese(DataInizio, DataFine).ToString();
+        lblTotDoc.Text = C.SommaSpese(DataInizio, DataFine).ToString() + "€";
 
-        if (chkDocenti.Checked && chkStudenti.Checked) { ltlUtili.Text = "<br>Utili: ";
-
-            decimal utili=C.Utili(DataInizio, DataFine);
-            lblUtili.Text = utili.ToString(); }
+        decimal utili = C.Utili(DataInizio, DataFine);
+        lblUtili.Text = utili.ToString() + "€";
+    }
+    protected void btnReset_Click(object sender, EventArgs e)
+    {
+        txtDataFine.Text = "";
+        txtDataInizio.Text= "";
+        CaricaGrigliaDocenti();
+        CaricaGrigliaStudenti();
+        CaricaUtili();
 
     }
+
+    //if (chkDocenti.Checked && chkStudenti.Checked)
+    //{
+    //    ltlUtili.Text = "<br/>Utili: ";
+
+    //    decimal utili = C.Utili(DataInizio, DataFine);
+    //    lblUtili.Text = utili.ToString();
+    //}
+
+
+    //}
+
+    ////protected void chkDocenti_CheckedChanged(object sender, EventArgs e)
+    ////{
+    ////    if (chkDocenti.Checked)
+    ////    {
+    ////        MostraGrigliaDocenti();
+    ////    }
+    ////    else
+    ////    {
+    ////        NascondiGrigliaDocenti();
+    ////    }
+    ////    NascondiUtili();
+
+    ////}
+
+    ////protected void chkStudenti_CheckedChanged(object sender, EventArgs e)
+    ////{
+
+    ////    if (chkStudenti.Checked)
+    ////    {
+    ////        MostraGrigliaStudenti();
+    ////    }
+    ////    else
+    ////    {
+    ////        NascondiGrigliaStudenti();
+    ////    }
+    ////    NascondiUtili();
+
+    ////}
+    //protected void MostraGrigliaDocenti()
+    //{
+    //    grigliaReportDocenti.Visible = true;
+    //    ltlDocenti.Visible = true;
+    //    lblTot1.Visible = true;
+
+    //}
+
+    //protected void MostraGrigliaStudenti()
+    //{
+    //    grigliaReportStudenti.Visible = true;
+    //    ltlStudenti.Visible = true;
+    //    lblTot2.Visible = true;
+
+    //}
+
+
+
+    //}
+    ////protected void NascondiUtili()
+    ////{
+    ////    if (!chkDocenti.Checked && !chkStudenti.Checked)
+    ////    {
+    ////        ltlUtili.Visible = false;
+    ////        lblUtili.Visible = false;
+    ////    }
+    ////}
+
 }

@@ -51,7 +51,7 @@ public class CONNESSIONE
 
         else
         {
-            StringaDiConnessione += ";Integrated Security=False;User Id=" + user + ";Password" + password;
+            StringaDiConnessione += ";Integrated Security=False;User Id=" + user + ";Password=" + password;
         }
 
         conn = new SqlConnection(StringaDiConnessione);

@@ -6,16 +6,21 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <!--========================== Intro Section ============================-->
-
     <section id="intro" class="clearfix">
         <div class="container d-flex h-100" id="containerIntro">
             <div class="row justify-content-center align-self-center">
                 <div class="col-md-6 intro-info order-md-first order-last" id="">
                     <h2>Gen Uni
                         <br>
-                        Inizia la tua <span>formazione!</span></h2>
+                        Inizia la tua <span>formazione!</span>
+                    </h2>
+                    <h3 id="introDescrizione">Entra a far parte della nostra accademia e-learning,
+                        <br />
+                        trova il corso che fa per te e specializzati nel settore che ami!
+                        
+                    </h3>
                     <div>
-                        <a href="registrazione.aspx" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti</a>
+                        <a href="Login.aspx?status=1" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti</a>
                     </div>
                 </div>
 
@@ -28,6 +33,17 @@
 
     <!-- #intro -->
 
+    <%-- 
+         &#39;   '
+         &#176;  °
+         &#224;  à
+         &#232;  è
+         &#236;  ì
+         &#242;  ò
+         &#249;  ù
+         &#8364; €   
+    --%>
+
     <main id="main">
         <!--========================== About Us Section ============================-->
         <section id="about">
@@ -35,73 +51,80 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="about-img">
-                            <img src="img/about-img.jpg" alt="">
+                            <img src="img/aboutus1.png" alt="">
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-6">
                         <div class="about-content">
-                            <h2>Chi siamo</h2>
-                            <h3>Leader nella formazione in Italia</h3>
-                            <p>
-                                GenUni e' un ente autorizzato alla vendita di corsi di formazione riconosciuti dal MIUL.
-                                    Qualificato all’erogazione e alla gestione di corsi di formazione e-learning, GenUni offre professionalita', innovazione e serietà.
-                                    I titoli conseguiti al termine dei corsi di formazione professionale e aggiornamento, sono validi in Italia e all’estero per:
+                            <h2 id="h2AboutUs">Chi siamo</h2>
+                            <h3 id="h3AboutUs">Leader nella formazione in Italia</h3>
+                            <p class="pAboutUs">
+                                GenUni &#233; un ente autorizzato alla vendita di corsi di formazione riconosciuti dal MIUL.
+                                Qualificato all&#39;erogazione e alla gestione di corsi di formazione e-learning, GenUni offre professionalit&#224;, innovazione e seriet&#224;.
+                                I titoli conseguiti al termine dei corsi di formazione professionale e aggiornamento, sono validi in Italia e all&#39;estero per:
                             </p>
                             <ul>
-                                <li><i class="ion-android-checkmark-circle"></i>la libera professione,</li>
-                                <li><i class="ion-android-checkmark-circle"></i>l’avanzamento di carriera,</li>
-                                <li><i class="ion-android-checkmark-circle"></i>i crediti formativi professionali</li>
+                                <li><i class="ion-android-checkmark-circle"></i>La libera professione</li>
+                                <li><i class="ion-android-checkmark-circle"></i>L&#39;avanzamento di carriera</li>
+                                <li><i class="ion-android-checkmark-circle"></i>I crediti formativi professionali</li>
                             </ul>
+                            <p class="pAboutUs">
+                                Molto di pi&#249 di normale corso di e-learning, la nostra academy &#232 innovativa!
+                                Entrare in GenUni ti permetter&#224 di poter interagire costantemente con il docente e con gli altri partecipanti.
+                            </p>
+
+                            <pp class="pAboutUs">
+                                Gen Uni &#232 la prima accademia di corsi online in ambito coding dove poter imparare a programmare con i principali linguaggi di programmazione, anche da zero. 
+                                Grazie ai percorsi formativi verrai guidato passo passo fino ad apprendere le competenze delle principali figure professionali, 
+                                come programmatore web (front-end, back-end o full stack), mobile developer, web designer, ui/ux designer, data scientist e molto altro.
+                            </pp>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
         <!-- #about -->
+
         <!--========================== Why Us Section ============================-->
         <section id="why-us" class="wow fadeIn">
             <div class="container-fluid">
-
                 <header class="section-header">
                     <h3>La nostra mission</h3>
                 </header>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="why-us-img">
-                            <img src="img/why-us.jpg" alt="" class="img-fluid">
+                            <img src="assets/img/why-us.png" alt="" class="img-fluid" style="margin-top: -24px; width: 493px; margin-left: 55px;">
                         </div>
                     </div>
-
                     <div class="col-lg-6">
                         <div class="why-us-content">
-                            <p>Offriamo la possibilità di svolgere molteplici corsi, sia in ambito informatico che in ambito amministrativo in maniera del tutto innovativa.</p>
-                            <p>
-                                Ti forniremo una preparazione a 360° per aiutarti ad affrontare il percorso lavorativo futuro più adatto a te. 
-                                Il nostro obiettivo è quello di farti raggiungere un livello di conoscenza adeguato, fornendoti indicatori e strumenti professionali e culturali 
-                                affinchè tu possa investirli su te stesso e determinare il tuo successo.
+                            <p class="pMission">Offriamo la possibilit&#224; di svolgere molteplici corsi, sia in ambito informatico che in ambito amministrativo in maniera del tutto innovativa.</p>
+                            <p class="pMission">
+                                Ti forniremo una preparazione a 360&#176; per aiutarti ad affrontare il percorso lavorativo futuro pi&#249; adatto a te. 
+                                Il nostro obiettivo &#232; quello di farti raggiungere un livello di conoscenza adeguato, fornendoti indicatori e strumenti professionali e culturali 
+                                affinch&#232; tu possa investirli su te stesso e determinare il tuo successo.
                             </p>
-                            <div class="features wow bounceInUp clearfix">
-                                <img src="img/genMoney2.png" class="iconeMission" />
+                            <div class="features wow bounceInUp clearfix" style="margin-top: 18px; visibility: visible; animation-name: bounceInUp; font-size: 22px;">
+                                <img src="assets/img/genMoney2.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Gen Money</h4>
-                                    <p>Commodi quia voluptatum. Est cupiditate voluptas quaerat officiis ex alias dignissimos et ipsum. Soluta at enim modi ut incidunt dolor et.</p>
+                                    <p class="pMissionInterni">Commodi quia voluptatum. Est cupiditate voluptas quaerat officiis ex alias dignissimos et ipsum. Soluta at enim modi ut incidunt dolor et.</p>
                                 </div>
                             </div>
-
                             <div class="features wow bounceInUp clearfix">
-                                <img src="img/videolezioni.png" class="iconeMission" />
+                                <img src="assets/img/videolezioni.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Video lezioni</h4>
-                                    <p>Molestias eius rerum iusto voluptas et ab cupiditate aut enim. Assumenda animi occaecati. Quo dolore fuga quasi autem aliquid ipsum odit. Perferendis doloremque iure nulla aut.</p>
+                                    <p class="pMissionInterni">Molestias eius rerum iusto voluptas et ab cupiditate aut enim. Assumenda animi occaecati. Quo dolore fuga quasi autem aliquid ipsum odit. Perferendis doloremque iure nulla aut.</p>
                                 </div>
                             </div>
-
                             <div class="features wow bounceInUp clearfix">
-                                <img src="img/assistenza.png" class="iconeMission" />
+                                <img src="assets/img/assistenza.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Supporto</h4>
-                                    <p>Voluptates nihil et quis omnis et eaque omnis sint aut. Ducimus dolorum aspernatur. Totam dolores ut enim ullam voluptas distinctio aut.</p>
+                                    <p class="pMissionInterni">
+                                        Voluptates nihil et quis omnis et eaque omnis sint aut. Ducimus dolorum aspernatur. Totam dolores ut enim ullam voluptas distinctio aut.</pc>
                                 </div>
                             </div>
                         </div>
@@ -109,33 +132,27 @@
                 </div>
             </div>
 
+            <!--========================== Aggiornamento dati Gen Uni ============================-->
             <div class="container">
                 <div class="row counters">
-
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">123</span>
+                        <%-- logica contatore commentata aspettando l'aggiornamento del ws/classe--%>
+                        <asp:Label ID="lblContoStudenti" runat="server" Text=""></asp:Label>
                         <p>Studenti</p>
                     </div>
-
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">67</span>
-                        <p>Progetti</p>
+                        <asp:Label ID="lblContoDocenti" runat="server" Text=""></asp:Label>
+                        <p>Docenti</p>
                     </div>
-
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">364</span>
-                        <p>Ore di supporto</p>
+                        <asp:Label ID="lblContoCorsi" runat="server" Text=""></asp:Label>
+                        <p>Corsi</p>
                     </div>
-
-                    <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">18</span>
-                        <p>Progetti importanti</p>
-                    </div>
-
                 </div>
-
             </div>
         </section>
+
+        <!-- #aggiornamento-dati-GenUni -->
 
         <!--========================== Call To Action Section ============================-->
         <section id="call-to-action" class="wow fadeInUp">
@@ -143,51 +160,54 @@
                 <div class="row">
                     <div class="col-lg-9 text-center text-lg-left">
                         <h3 class="cta-title">Attiva la newsletter! </h3>
-                        <p class="cta-text">Rimani aggiornati sui corsi già attivi e su quelli futuri! Non rimanere indietro, </p>
+                        <p class="cta-text">Rimani aggiornato sui corsi gi&#224; attivi e su quelli futuri! Non rimanere indietro, </p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
                         <a class="cta-btn align-middle" href="#footer">Attiva la newsletter!</a>
                     </div>
                 </div>
-
             </div>
         </section>
         <!-- #call-to-action -->
 
-        <!--========================== Portfolio Section ============================-->
-
+        <!--========================== Corsi/Portfolio Section ============================-->
         <section id="portfolio" class="section-bg">
             <div class="container">
                 <header class="section-header">
                     <h3 class="section-title">I nostri corsi</h3>
                 </header>
-
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                    <ul class="carousel-indicators">
+                <div id="demo" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 113px; margin-bottom: -26px;">
+                    <ul class="carousel-indicators" style="padding-left: 102px;">
                         <li data-target="#demo" data-slide-to="0" class="active"></li>
                         <li data-target="#demo" data-slide-to="1"></li>
                         <li data-target="#demo" data-slide-to="2"></li>
                     </ul>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="assets/img/code1.png" alt="Los Angeles" width="1100" height="500">
-                            <div class="carousel-caption">
-                                <h3><a class="linkCorsi" href="/tipologieCorsi.aspx">Corso .NET</h3>
-                                <p>Clicca qui per saperne di più</p>
+                            <img src="img/dotnet.png" alt="DotNet" width="1100" height="500">
+                            <div class="carousel-caption" style="left: 13%; bottom: 17px;">
+                                <a class="linkCorsi" href="CorsiFE.aspx">
+                                    <h3>Corso .NET</h3>
+                                    <p>Clicca qui per saperne di pi&#249;</p>
+                                </a>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/img/mysql.png" alt="Chicago" width="1100" height="500">
-                            <div class="carousel-caption">
-                                <h3><a class="linkCorsi" href="/tipologieCorsi.aspx">Corso My SQL</h3>
-                                <p>Clicca qui per saperne di più</p>
+                            <img src="img/mysql.png" alt="MySQL" width="1100" height="500">
+                            <div class="carousel-caption" style="left: 13%; bottom: 17px;">
+                                <a class="linkCorsi" href="CorsiFE.aspx">
+                                    <h3>Corso My SQL</h3>
+                                    <p>Clicca qui per saperne di pi&#249;</p>
+                                </a>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/img/javascript.png" alt="New York" width="1100" height="500">
-                            <div class="carousel-caption">
-                                <h3><a class="linkCorsi" href="/tipologieCorsi.aspx">Corso Javascript</h3>
-                                <p>Clicca qui per saperne di più</p>
+                            <img src="img/javascript.png" alt="Javascript" width="1100" height="500">
+                            <div class="carousel-caption" style="left: 13%; bottom: 17px;">
+                                <a class="linkCorsi" href="CorsiFE.aspx">
+                                    <h3>Corso Javascript</h3>
+                                    <p>Clicca qui per saperne di pi&#249;</p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -200,10 +220,6 @@
                 </div>
             </div>
         </section>
-
-
-
-
         <!-- #portfolio -->
 
         <!--========================== Team Section ============================-->
@@ -211,23 +227,21 @@
             <div class="container">
                 <div class="section-header">
                     <h3>Docenti</h3>
-                    <p>Il nostro team docenti e' pronto a prepararti al mondo del lavoro</p>
+                    <p>Il nostro team docenti &#232; pronto a prepararti al mondo del lavoro</p>
                 </div>
-
                 <div class="row">
-
                     <div class="col-lg-3 col-md-6 wow fadeInUp">
                         <div class="member">
-                            <img src="img/team-1.jpg" class="img-fluid" alt="">
+                            <img src="img/vittorio2.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Roberto Ciliento</h4>
-                                    <span>Chief Executive Officer</span>
+                                    <h4>Vittorio Boemio</h4>
+                                    <span>Docente di Sviluppo Web Avanzati</span>
                                     <div class="social">
-                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                        <%--<a href="#"><i class="fa fa-twitter"></i></a>
+                                        <%--<a href="#"><i class="fa fa-facebook"></i></a>--%>
+                                        <%--<a href="#"><i class="fa fa-google-plus"></i></a>--%>
+                                        <a href="https://www.linkedin.com/in/vittoriomattiaboemio/"><i class="fa fa-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -236,16 +250,16 @@
 
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="member">
-                            <img src="img/team-2.jpg" class="img-fluid" alt="">
+                            <img src="img/roberton2.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Anna Vizitiu</h4>
-                                    <span>Product Manager</span>
+                                    <h4>Roberto Ninno</h4>
+                                    <span>Ingegnere e sviluppatore informatico</span>
                                     <div class="social">
-                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                        <%--<a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>--%>
+                                        <a href="https://www.linkedin.com/in/roberto-ninno-887793244/"><i class="fa fa-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -254,16 +268,16 @@
 
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="member">
-                            <img src="img/team-3.jpg" class="img-fluid" alt="">
+                            <img src="img/fabio2.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Alessio Voltolini</h4>
-                                    <span>CTO</span>
+                                    <h4>Fabio Ghidella</h4>
+                                    <span>Formatore e docente .NET e Unity</span>
                                     <div class="social">
-                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                        <%--<a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>--%>
+                                        <a href="https://www.linkedin.com/in/fabio-ghidella/"><i class="fa fa-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -272,59 +286,54 @@
 
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="member">
-                            <img src="img/team-4.jpg" class="img-fluid" alt="">
+                            <img src="img/raffa2.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Roberto Boemio</h4>
-                                    <span>Accountant</span>
+                                    <h4>Raffaella Cioffi</h4>
+                                    <span>Docente di grafica e Web Designer </span>
                                     <div class="social">
-                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                        <%--<a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>--%>
+                                        <a href="https://www.linkedin.com/in/raffaella-cioffi-b64383173/"><i class="fa fa-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </section>
         <!-- #team -->
 
-
-        <!--========================== Pricing Section ============================-->
+        <!--========================== Gen Money/Pricing Section ============================-->
         <section id="pricing" class="wow fadeInUp section-bg">
-
             <div class="container">
-
                 <header class="section-header">
-                    <h3>Abbonamenti corsi</h3>
+                    <h3>GenMoney</h3>
                     <p>Scegli il pacchetto che fa per te ed acquista i GenMoney per avere accesso ai nostri corsi!</p>
                 </header>
-
                 <div class="row flex-items-xs-middle flex-items-xs-center">
-
                     <!-- Basic Plan  -->
                     <div class="col-xs-12 col-lg-4">
                         <div class="card">
                             <div class="card-header">
                                 <h3><span class="currency">
-                                    <img src="img/genMoney2.png" class="iconeMoney" />
-                                </span>50<span class="period">/mese</span></h3>
+                                    <img src="img/genMoney2.png" class="iconeMoney" id="iconeMoney50" />
+                                </span>50<span class="period"></span></h3>
                             </div>
                             <div class="card-block">
-                                <h4 class="card-title">Piano base
+                                <h4 class="card-title">
+                                    <img src="img/250euro.png" class="euro" />
                                 </h4>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Possibilità di accesso a 1 corso</li>
-                                    <li class="list-group-item">Inventore quisquam et</li>
-                                    <li class="list-group-item">Et perspiciatis suscipit</li>
-                                    <li class="list-group-item">24/7 Support System</li>
+                                    <li class="list-group-item">Con questo pacchetto avrai la possibilit&#224; di acquistare </li>
+                                    <li class="list-group-item">i GenMoney che ti mancano per accedere ad un corso</li>
+                                    <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
+                                    <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
-                                <a href="#" class="btn">Acquista</a>
+                                <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
+                                <asp:Button ID="btnGenMoney50" CssClass="btn" runat="server" Text="ACQUISTA" OnClick="btnGenMoney50_Click" />
                             </div>
                         </div>
                     </div>
@@ -338,15 +347,17 @@
                                 </span>100<span class="period"></span></h3>
                             </div>
                             <div class="card-block">
-                                <h4 class="card-title">Piano medio
+                                <h4 class="card-title">
+                                    <img src="img/500euro.png" class="euro" />
                                 </h4>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Odio animi voluptates</li>
-                                    <li class="list-group-item">Inventore quisquam et</li>
-                                    <li class="list-group-item">Et perspiciatis suscipit</li>
-                                    <li class="list-group-item">24/7 Support System</li>
+                                    <li class="list-group-item">Con questo pacchetto avrai la possibilit&#224; di acquistare</li>
+                                    <li class="list-group-item">i GenMoney necessari per accedere ad un intero corso</li>
+                                    <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
+                                    <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
-                                <a href="#" class="btn">Acquista</a>
+                                <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
+                                <asp:Button ID="btnGenMoney100" CssClass="btn" runat="server" Text="ACQUISTA" OnClick="btnGenMoney100_Click" />
                             </div>
                         </div>
                     </div>
@@ -360,22 +371,22 @@
                                 </span>200<span class="period"></span></h3>
                             </div>
                             <div class="card-block">
-                                <h4 class="card-title">Piano Premium
+                                <h4 class="card-title">
+                                    <img src="img/1000euro.png" class="euro" />
                                 </h4>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Odio animi voluptates</li>
-                                    <li class="list-group-item">Inventore quisquam et</li>
-                                    <li class="list-group-item">Et perspiciatis suscipit</li>
-                                    <li class="list-group-item">24/7 Support System</li>
+                                    <li class="list-group-item">Con questo pacchetto avrai la possibilit&#224; di acquistare</li>
+                                    <li class="list-group-item">i GenMoney necessari per accedere a 2 corsi</li>
+                                    <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
+                                    <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
-                                <a href="#" class="btn">Iscriviti</a>
+                                <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
+                                <asp:Button ID="btnGenMoney200" CssClass="btn" runat="server" Text="ACQUISTA" OnClick="btnGenMoney200_Click" />
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </section>
         <!-- #pricing -->
 
@@ -383,61 +394,58 @@
         <section id="faq">
             <div class="container">
                 <header class="section-header">
-                    <h3>Domande piu' frequenti</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                    <h3>Domande pi&#249; frequenti</h3>
                 </header>
 
                 <ul id="faq-list" class="wow fadeInUp">
                     <li>
-                        <a data-toggle="collapse" class="collapsed" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="ion-android-remove"></i></a>
+                        <a data-toggle="collapse" class="collapsed" href="#faq1">Quanto costa un corso di Gen Uni?<i class="ion-android-remove"></i></a>
                         <div id="faq1" class="collapse" data-parent="#faq-list">
                             <p>
-                                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                                Visita la sezione Corsi e troverai tutte le informazioni riguardo i costi dei nostri costi, procedi al pagamento e ricevi i tuoi GenMoney!
                             </p>
                         </div>
                     </li>
 
                     <li>
-                        <a data-toggle="collapse" href="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="ion-android-remove"></i></a>
+                        <a data-toggle="collapse" href="#faq2" class="collapsed">Come faccio ad iscrivermi?<i class="ion-android-remove"></i></a>
                         <div id="faq2" class="collapse" data-parent="#faq-list">
                             <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                Per effettuare l&#39iscrizione puoi accedere all&#39area riservata a questa procedura. La trovi in alto a destra, nella barra su in alto!
                             </p>
                         </div>
                     </li>
 
                     <li>
-                        <a data-toggle="collapse" href="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="ion-android-remove"></i></a>
+                        <a data-toggle="collapse" href="#faq3" class="collapsed">Quale validit&#224 ha l&#39attestato?<i class="ion-android-remove"></i></a>
                         <div id="faq3" class="collapse" data-parent="#faq-list">
                             <p>
-                                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                                I nostri attestati sono spendibili professionalmente sia sul territorio italiano che all&#39estero.
                             </p>
                         </div>
                     </li>
-
                     <li>
-                        <a data-toggle="collapse" href="#faq4" class="collapsed">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="ion-android-remove"></i></a>
+                        <a data-toggle="collapse" href="#faq4" class="collapsed">Come funzionano i test?<i class="ion-android-remove"></i></a>
                         <div id="faq4" class="collapse" data-parent="#faq-list">
                             <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                Solitamente i test sono quiz online a risposta multipla, ma in alcuni casi pu &#242 essere richiesto l&#39invio di un elaborato al docente per la correzione. In caso di mancato superamento di un test &#232 possibile ripeterlo, senza costi aggiuntivi.
                             </p>
                         </div>
                     </li>
 
                     <li>
-                        <a data-toggle="collapse" href="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="ion-android-remove"></i></a>
+                        <a data-toggle="collapse" href="#faq5" class="collapsed">Quando iniziano i corsi online?<i class="ion-android-remove"></i></a>
                         <div id="faq5" class="collapse" data-parent="#faq-list">
                             <p>
-                                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                                In generale, tutti i corsi sono personalizzati sui ritmi di apprendimento dello studente, ed essendo online non hanno data di inizio, partono al momento del primo accesso ovvero quando lo studente sceglie di iniziare.
                             </p>
                         </div>
                     </li>
-
                     <li>
-                        <a data-toggle="collapse" href="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="ion-android-remove"></i></a>
+                        <a data-toggle="collapse" href="#faq6" class="collapsed">In cosa consiste l'assistenza? <i class="ion-android-remove"></i></a>
                         <div id="faq6" class="collapse" data-parent="#faq-list">
                             <p>
-                                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+                                Il nostro personale  &#232 a disposizione per assistenza sulla piattaforma di e-learning. In particolare, i docenti ed i tutor sono disponibili per rispondere alle tue domande sui contenuti dei corsi tramite la nostra chat, che ti metter&#224; a contatto diretto con i tuoi docenti, oppure tramite l'utilizzo della classica email. Dove necessario offriamo anche il servizio di supporto in videoconferenza, telefono o strumenti di collaborazione remota. 
                             </p>
                         </div>
                     </li>
@@ -446,23 +454,17 @@
 
             </div>
         </section>
-        <!-- #faq -->
-
     </main>
+    <!-- #faq -->
 
     <!--========================== Footer ============================-->
     <footer id="footer" class="section-bg">
         <div class="footer-top">
             <div class="container">
-
                 <div class="row">
-
                     <div class="col-lg-6">
-
                         <div class="row">
-
                             <div class="col-sm-6">
-
                                 <div class="footer-info">
                                     <h3>Gen Uni</h3>
                                     <p>
@@ -472,24 +474,34 @@
 
                                 <div class="footer-newsletter">
                                     <h4>La nostra newsletter</h4>
-                                    <p>Vuoi più informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
-                                    <form action="" method="post">
-                                        <input type="email" name="email" placeholder="E-mail"><input type="submit" id="btnIscrivitiFooter" value="Iscriviti alla newsletter!">
-                                        <!--aggiungi popup/dialog newsletter, stato del corso (coming soon o data di partenza)-->
-                                    </form>
+                                    <p>Vuoi pi&#249; informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
+                                    <asp:TextBox ID="txtEmail" CssClass="" placeholder="E-mail" runat="server" TextMode="Email"></asp:TextBox>
+                                    <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti" OnClick="btnIscrivitiNews_Click" />
+                                    <asp:CheckBox ID="chbxPrivacy" runat="server" /><p>
+                                        Ho letto l&#39informativa sulla privacy e acconsento al trattamento dei miei dati personali ai sensi dell&#39art. 13 del D. Lgs. 196/2003
+                                    </p>
                                 </div>
-
                             </div>
 
+                            <%-- 
+         &#39;   '
+         &#176;  °
+         &#224;  à
+         &#232;  è
+         &#236;  ì
+         &#242;  ò
+         &#249;  ù
+         &#8364; €   
+                            --%>
                             <div class="col-sm-6">
                                 <div class="footer-links">
                                     <h4>Link utili</h4>
                                     <ul>
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">Chi siamo</a></li>
-                                        <li><a href="#">Corsi</a></li>
-                                        <li><a href="#">Termini di servizio</a></li>
-                                        <li><a href="#">Privacy policy</a></li>
+                                        <li><a href="#intro">Home</a></li>
+                                        <li><a href="#about">Chi siamo</a></li>
+                                        <li><a href="../BEStudenti/ModificaProfiloCopia.aspx">Corsi</a></li>
+                                        <li><a href="Login2.aspx">Termini di servizio</a></li>
+                                        <li><a href="../BEAdmin/GestioneCorsi.aspx">Privacy policy</a></li>
                                     </ul>
                                 </div>
 
@@ -501,7 +513,7 @@
                                         Roma, RM 07318<br>
                                         Italia
                                             <br>
-                                        <strong>Telefono:</strong> +06 55488 55<br>
+                                        <strong>Telefono:</strong> +39 06 5548855<br>
                                         <strong>Email:</strong> info@genuni.com<br>
                                         <strong>P.IVA:</strong> 86334519757
                                         <br>
@@ -511,28 +523,20 @@
                         </div>
                     </div>
 
+                    <!-- Form "Lavora con noi" -->
                     <div class="col-lg-6">
-
                         <div class="form">
-
+                            <img src="assets/img/docente_genUni.jpg" id="imgDocenteLavoraConNoi" alt="Lavora con noi">
                             <h4>Lavora con noi, diventa un docente!</h4>
-                            <p>Regstrati ed invia la tua candidatura per poter diventare un insegnante ed entrare nel nostro team!</p>
-                            <form action="" method="post" role="form" class="contactForm">
-                                <div class="text-center">
-                                    <button type="submit" title="Send Message">Registrati</button>
-                                </div>
-                            </form>
+                            <p>Registrati ed invia la tua candidatura per poter diventare un insegnante ed entrare nel nostro team!</p>
+                            <asp:Button ID="btnCandidati" class="btn" runat="server" Text="Candidati" OnClick="btnCandidati_Click" />
                         </div>
-
                     </div>
-
-
-
                 </div>
-
             </div>
         </div>
 
+        <!-- COPYRIGHT -->
         <div class="container">
             <div class="copyright">
                 &copy; Copyright <strong>GenUni</strong>. All Rights Reserved
@@ -544,10 +548,7 @@
     </footer>
     <!-- #footer -->
 
-
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    <!-- Uncomment below i you want to use a preloader -->
-    <!-- <div id="preloader"></div> -->
 
     <!-- JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>
@@ -561,10 +562,10 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+
     <!-- Contact Form JavaScript File -->
     <script src="contactform/contactform.js"></script>
 
-    <!-- Template Main Javascript File -->
+    <!-- Main Javascript File -->
     <script src="assets/js/main.js"></script>
 </asp:Content>
-

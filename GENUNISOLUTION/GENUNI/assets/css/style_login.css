@@ -3,6 +3,8 @@
 # Top Bar
 --------------------------------------------------------------*/
 
+@charset "UTF-8";
+
 #topbar {
     padding: 0 0 10px 0;
     font-size: 14px;
@@ -222,20 +224,30 @@ button {
 }
 
 .cont {
-    border-radius: 20px;
     overflow: hidden;
     position: relative;
-    width: 900px;
-    height: 550px;
-    margin: 0 auto 100px;
+    width: 893px;
+    height: 623px;
+    margin: 152px auto 18px;
     background: #fff;
-    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.15), inset -10px -10px 15px rgba(255, 255, 255, 0.3), inset 10px 10px 15px rgba(70, 70, 70, 0.15);
+    box-shadow: -10px -10px 15px rgb(255 255 255 / 30%), 10px 10px 15px rgb(70 70 70 / 15%), inset -10px -10px 15px rgb(255 255 255 / 30%), inset 10px 10px 15px rgb(70 70 70 / 15%);
 }
+
+#ddlLogin {
+    width: 93px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    height: 27px;
+    text-align: center;
+    margin-top: 6px;
+}
+
 
 .form {
     position: relative;
-    width: 640px;
-    height: 100%;
+    width: 648px;
+    height: 101%;
     -webkit-transition: -webkit-transform 1.2s ease-in-out;
     transition: -webkit-transform 1.2s ease-in-out;
     transition: transform 1.2s ease-in-out;
@@ -359,9 +371,9 @@ button {
     overflow: hidden;
     z-index: 2;
     position: relative;
-    width: 100px;
+    width: 116px;
     height: 36px;
-    margin: 0 auto;
+    margin: 6px auto;
     background: transparent;
     color: #fff;
     text-transform: uppercase;
@@ -418,29 +430,31 @@ button {
     width: 100%;
     font-size: 26px;
     text-align: center;
+    margin-top: -24px;
 }
 
 label {
     display: block;
-    width: 260px;
-    margin: 25px auto 0;
+    width: 253px;
+    margin: 12px 17px;
     text-align: center;
 }
 
     label span {
-        font-size: 12px;
-        color: #cfcfcf;
+        font-size: 13px;
+        color: black;
         text-transform: uppercase;
     }
 
 input {
     display: block;
     width: 100%;
-    margin-top: 5px;
-    padding-bottom: 5px;
-    font-size: 16px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    margin-top: 2px;
+    padding-bottom: -5px;
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
     text-align: center;
+    border-radius: 10px;
 }
 
 .forgot-pass {
@@ -451,7 +465,7 @@ input {
 }
 
 .submit {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
     background: #0a98c0;
     text-transform: uppercase;
@@ -523,3 +537,46 @@ input {
         color: #fff;
         background-color: #0a98c0;
     }
+
+#logoSignUp {
+    width: 100%;
+}
+
+#logoSignIn {
+    width: 100%;
+}
+
+#tableScetaLogin {
+    margin-left: -1px;
+    margin-top: 29px;
+    margin-bottom: -14px;
+}
+
+#h3SceltaLogin {
+    margin-left: 175px;
+    margin-bottom: -30px;
+    margin-top: 21px;
+    font-size: 16px;
+}
+
+.h3Login {
+    font-size: 25px;
+    color:white;
+}
+
+#genLoginImg {
+    width: 315px;
+    margin-left: 159px;
+    margin-top: 26px;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+
+#tableSignUp {
+    margin-top: 10px;
+}
+
+#accediLogin {
+    margin-top: -10px;
+}

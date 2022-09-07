@@ -1,40 +1,108 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneReport.aspx.cs" Inherits="Default3" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+
+
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+    <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
+
+
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     <br />
-    <br />
-    <br />
-    <br />
-    <h1>Gestione Report</h1>
-    
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div>
+        <img src="../assets/img/lavoriBE.png" class="icona" />
+    </div>
+    <div class="containerBE">
+        <h4 class="titoliBE">Gestione Report</h4>
 
-    <%-- SCELTA REPORT --%>
-    <asp:CheckBox ID="chkDocenti" runat="server" Text="Docenti" GroupName="Report" Checked="True" />
-    <asp:CheckBox ID="chkStudenti" runat="server" Text="Studenti" GroupName="Report" />
-    <hr />
-    <%-- DATA INIZIO REPORT --%>
-    <asp:Label ID="lblDataInizio" runat="server" Text="Dal"></asp:Label>
-    <asp:TextBox ID="txtDataInizio" runat="server" TextMode="Date"></asp:TextBox>
-    <%-- DATA FINE REPORT --%>
-    <asp:Label ID="lblDataFine" runat="server" Text="Al"></asp:Label>
-    <asp:TextBox ID="txtDataFine" runat="server" TextMode="Date"></asp:TextBox>
-    <%-- BUTTON CONFERMA --%>
-    <asp:Button ID="btnInvia" runat="server" Text="Invia" OnClick="btnInvia_Click" />
-    <hr />
-    <%-- GRIGLIA DI VISUALIZZAZIONE REPORT DOCENTI O STUDENTI --%>
-    <asp:Literal ID="ltlDocenti" runat="server" Text=""></asp:Literal>
-    <asp:GridView ID="grigliaReportDocenti" runat="server"></asp:GridView>
-    <asp:Label ID="lblTot1" runat="server" Text="Totale spese: "></asp:Label>
-    <asp:Label ID="lblTotDoc" runat="server" Text=""></asp:Label>
+        <div id="selezionedate">
 
-    <asp:Literal ID="ltlStudenti" runat="server" Text=""></asp:Literal>
-    <asp:GridView ID="grigliaReportStudenti" Visible="false" runat="server"></asp:GridView>
-    <asp:Label ID="lblTot2" runat="server" Text="Totale ricavi: "></asp:Label>
-    <asp:Label ID="lblTotStud" runat="server" Text=""></asp:Label>
-    <asp:Literal ID="ltlUtili" runat="server" Text=""></asp:Literal>
-    <asp:Label ID="lblUtili" runat="server" Text=""></asp:Label>
 
+            <%-- DATA INIZIO REPORT --%>
+            <asp:Label ID="lblDataInizio" CssClass="lbl" runat="server" Text="Data inizio report:"></asp:Label>
+            <asp:TextBox ID="txtDataInizio" CssClass="txt" runat="server" TextMode="Date"></asp:TextBox>
+            <%-- DATA FINE REPORT --%>
+            <asp:Label ID="lblDataFine" CssClass="lbl" runat="server" Text="Data fine report:"></asp:Label>
+            <asp:TextBox ID="txtDataFine" CssClass="txt" runat="server" TextMode="Date"></asp:TextBox>
+            <%-- BUTTON CONFERMA --%>
+            <asp:Button ID="btnInvia" CssClass="btnBE" runat="server" Text="Invia" OnClick="btnInvia_Click" />
+            <%-- BUTTON RESETTA DATE --%>
+            <asp:Button ID="btnReset" CssClass="btnBE" runat="server" Text="Reset date" OnClick="btnReset_Click" />
+
+        </div>
+        <div id="docenti">
+
+            <h3 class="titoliBE">Spese docenti</h3>
+            <%-- GRIGLIA DI VISUALIZZAZIONE REPORT DOCENTI --%>
+            <asp:GridView ID="grigliaReportDocenti" AutoGenerateColumns="False" runat="server">
+                <Columns>
+                    <asp:BoundField DataField="Cod_Corso" Visible="false" />
+                    <asp:BoundField DataField="Corso" HeaderText="Titolo corso" />
+                    <asp:BoundField DataField="Tipo materia" HeaderText="Tipo" />
+                    <asp:BoundField DataField="Materia" HeaderText="Materia" />
+                    <asp:BoundField DataField="Data_Partenza" HeaderText="Data partenza" />
+                    <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
+                    <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                    <asp:BoundField DataField="CF" HeaderText="Codice fiscale" />
+                    <asp:BoundField DataField="Ragione_Sociale" HeaderText="Ragione sociale" ConvertEmptyStringToNull="False" NullDisplayText="N/A" />
+                    <asp:BoundField DataField="Piva" HeaderText="Partita IVA" ConvertEmptyStringToNull="False" NullDisplayText="N/A" />
+                    <asp:BoundField DataField="Costo_Docente" HeaderText="Costo docente" />
+                    <asp:BoundField DataField="Tipo docente" Visible="false" />
+                    <asp:BoundField DataField="Chiave" Visible="false" />
+                </Columns>
+            </asp:GridView>
+            <span><b>Totale spese:</b></span>
+            <asp:Label ID="lblTotDoc" runat="server" CssClass="lbl" Text=""></asp:Label>
+        </div>
+        <div id="studenti">
+            <h3 class="titoliBE">Ricavo studenti</h3>
+
+            <%-- GRIGLIA DI VISUALIZZAZIONE REPORT STUDENTI --%>
+
+            <asp:GridView ID="grigliaReportStudenti" AutoGenerateColumns="False" runat="server">
+                <Columns>
+                    <asp:BoundField DataField="Cod_Corso" Visible="false" />
+                    <asp:BoundField DataField="Corso" HeaderText="Titolo corso" />
+                    <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+                    <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
+                    <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                    <asp:BoundField DataField="CF" HeaderText="Codice fiscale" />
+                    <asp:BoundField DataField="Data_Transazione" HeaderText="Data transazione" />
+                    <asp:BoundField DataField="Ammontare" HeaderText="Ammontare" />
+
+
+                </Columns>
+            </asp:GridView>
+
+            <span><b>Totale ricavi:</b></span>
+            <asp:Label ID="lblTotStud" runat="server" CssClass="lbl" Text=""></asp:Label>
+        </div>
+        <%-- UTILI --%>
+        <%--<div id="utili">--%>
+            <%-- Per il team grafica: 'totale utili' (la div 'utili' sarà in fondo centrale, sotto i due div affiancati) dovrebbe avere uno stile tipo titoletto ma 
+                deve rimanere inline con la label; per ora ho lasciato un grassetto nell'html per segnalarlo, poi sistemate voi lo stile dello span come preferite--%>
+<%--            <span><b>Totale utili: </b></span>--%>
+<%--            <asp:Label ID="lblUtili" runat="server" CssClass="lblReport" Text=""></asp:Label>--%>
+     <%--   </div>--%>
+
+        <div id="utili">
+            <h3 class="titoliBE">Utili</h3>
+            <span><b>Totale utili: </b></span>
+            <asp:Label ID="lblUtili" runat="server" CssClass="lbl" Text=""></asp:Label>
+        </div>
+                         
+
+       <%--     <table class="tablePopUp">
+                <tr>
+                    <td class="btnGestisci">
+                    </td>
+                </tr>
+            </table>--%>
+
+
+    </div>
 </asp:Content>
 

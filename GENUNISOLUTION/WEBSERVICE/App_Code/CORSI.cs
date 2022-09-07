@@ -144,7 +144,7 @@ public class CORSI
         SqlCommand cmd = new SqlCommand("CORSI_UpdateTutor");
 
         cmd.Parameters.AddWithValue("@Chiave_Corso", CHIAVE_CORSO);
-        cmd.Parameters.AddWithValue("@Cod_Utente", CHIAVE_TUTOR);
+        cmd.Parameters.AddWithValue("@Cod_Tutor", CHIAVE_TUTOR);
 
         CONNESSIONE conn = new CONNESSIONE();
 
@@ -210,7 +210,7 @@ public class CORSI
     //metodo che riporta tutti i corsi che sono stati approvati
     public DataTable CorsiSelectApprovati()
     {
-        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_PREPARATI");
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_APPROVATI");
         CONNESSIONE C = new CONNESSIONE();
         return C.EseguiSelect(cmd);
     }
@@ -218,12 +218,105 @@ public class CORSI
     //metodo che riporta tutti i corsi che non sono ancora stati approvati
     public DataTable CorsiSelectNonApprovati()
     {
-        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_NONPREPARATI");
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_NONAPPROVATI");
         CONNESSIONE C = new CONNESSIONE();
         return C.EseguiSelect(cmd);
 
     }
 
+    public bool Check_Tutor_Abilitato()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_CHECK_TUTOR_ABILITATO");
+        cmd.Parameters.AddWithValue("@COD_UTENTE", CHIAVE_UTENTE);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        DataTable dt = conn.EseguiSelect(cmd);
+
+        if (dt.Rows.Count == 0) return false;
+
+        return true;
+    }
+
+
+    //metodo che riporta tutte le classi relative ad un determinato corso
+    public DataTable Corsi_SelectAllClassi()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CORSI_SELECTALL_CLASSI";
+        cmd.Parameters.AddWithValue("@CodiceCorso", CHIAVE);
+        return C.EseguiSelect(cmd);
+    }
+
+    public DataTable SelectForTutor()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SelectForTutor");
+        cmd.Parameters.AddWithValue("@COD_TUTOR", CHIAVE_TUTOR);
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+    public DataTable Select_Utenti_Filtro_Q()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_UTENTI_FILTRO_Q");
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+
+    public void Update_Status()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_UPDATE_STATUS");
+
+        cmd.Parameters.AddWithValue("@Cod_Corso", CHIAVE_CORSO);
+
+        CONNESSIONE conn = new CONNESSIONE();
+
+        conn.EseguiCmd(cmd);
+    }
+    public DataTable Utenti_SelectOne()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_UTENTI_SELECTONE");
+        cmd.Parameters.AddWithValue("@COD_CORSO", CHIAVE_CORSO);
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
+    /// <summary>
+    /// metodo che restituisce tutti i corsi con status P
+    /// </summary>
+    /// <returns></returns>
+    public DataTable SelectAllPreparati()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SELECTALL_PREPARATI");
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
+    /// <summary>
+    /// metodo che modifica il corso aggiungendo status Q
+    /// </summary>
+    public void CorsiQuotazione()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_QUOTAZIONE");
+        cmd.Parameters.AddWithValue("@Cod_Corso", CHIAVE);
+        cmd.Parameters.AddWithValue("@Costo", COSTO);
+        CONNESSIONE C = new CONNESSIONE();
+        C.EseguiCmd(cmd);
+    }
+
+    /// <summary>
+    /// Lista di tutti i corsi non comprati dallo studente
+    /// </summary>
+    /// <param name="COD_STUDENTE"></param>
+    /// <returns></returns>
+    public DataTable NonComprati(int COD_STUDENTE)
+    {
+        SqlCommand CMD = new SqlCommand("CORSI_SELECT_NON_COMPRATI");
+        CMD.Parameters.AddWithValue("@COD_STUDENTE", COD_STUDENTE);
+
+        return new CONNESSIONE().EseguiSelect(CMD);
+    }
     #endregion Metodi
 
 }

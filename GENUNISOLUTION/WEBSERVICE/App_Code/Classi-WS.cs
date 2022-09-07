@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Xml;
 
 /// <summary>
 /// Descrizione di riepilogo per Classi_WS
@@ -61,6 +62,77 @@ public class Classi_WS : System.Web.Services.WebService
         c.PUNTEGGIO_TEST = PUNTEGGIO_TEST;
 
         c.Update();
+    }
+
+    /// <summary>
+    /// metodo che restituisce tutte le classi in cui e presente lo studente
+    /// </summary>
+    /// <param name="COD_STUDENTE"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable SelectAllStudente(int COD_STUDENTE)
+    {
+        DataTable dt = new DataTable();
+        CLASSI C = new CLASSI();
+        C.COD_STUDENTE = COD_STUDENTE;
+        dt = C.SelectAllStudente();
+        dt.TableName = "Classi";
+        return dt;
+    }
+
+    /// <summary>
+    ///metodo che restituisce tutti gli studenti di una determinata classe  
+    /// </summary>
+    /// <param name="COD_CLASSE"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable SelectAllStudenti(int COD_CLASSE)
+    {
+        DataTable dt = new DataTable();
+        CLASSI C = new CLASSI();
+        C.CHIAVE = COD_CLASSE;
+
+        dt = C.SelectAllStudenti();
+        dt.TableName = "Studenti";
+        return dt;
+    }
+
+    /// <summary>
+    /// Seleziona tutti gli studenti appartenenti ad un corso
+    /// </summary>
+    /// <param name="COD_CORSO"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable SelectCorso(int COD_CORSO)
+    {
+        CLASSI C = new CLASSI();
+        C.COD_CORSO = COD_CORSO;
+
+        DataTable DT = C.SelectCorso();
+        DT.TableName = "Studenti del corso";
+        return DT;
+    }
+
+    [WebMethod]
+    public void Insert_Punteggio(int COD_CORSO, int COD_STUDENTE, int PUNTEGGIO_TEST)
+    {
+        CLASSI c = new CLASSI();
+        c.COD_CORSO = COD_CORSO;
+        c.COD_STUDENTE = COD_STUDENTE;
+        c.PUNTEGGIO_TEST = PUNTEGGIO_TEST;
+
+        c.Insert_Punteggio();
+    }
+
+    [WebMethod]
+    public DataTable Select_Punteggio(int COD_STUDENTE)
+    {
+        DataTable dt = new DataTable();
+        CLASSI c = new CLASSI();
+        c.COD_STUDENTE = COD_STUDENTE;
+        dt = c.Select_Punteggio();
+        dt.TableName = "Classi";
+        return dt;
     }
 
 }

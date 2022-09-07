@@ -30,6 +30,7 @@ public class ESTERNI
     public bool ABILITATO;
     public byte[] AVATAR;
     public string TIPOIMG;
+    public string SKILLS;
     #endregion
 
     public ESTERNI()
@@ -123,6 +124,21 @@ public class ESTERNI
         cmd.Parameters.AddWithValue("@RAGIONE_SOCIALE", RAGIONE_SOCIALE);
         cmd.Parameters.AddWithValue("@COGNOME", COGNOME);
         cmd.Parameters.AddWithValue("@NOME", NOME);
+
+        DataTable dt = C.EseguiSelect(cmd);
+
+        if (dt.Rows.Count == 0) return false;
+
+        return true;
+    }
+
+    public bool ControlloDuplice()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_CONTROLLODUPLICE";
+        cmd.Parameters.AddWithValue("@USR", USR);
 
         DataTable dt = C.EseguiSelect(cmd);
 
@@ -261,7 +277,7 @@ public class ESTERNI
         c.EseguiCmd(cmd);
     }
 
-    public bool Controlla_Abilitatazione()
+    public bool Controlla_Abilitazione()
     {
         SqlCommand cmd = new SqlCommand("ESTERNI_Controlla_Abilitazione");
         cmd.Parameters.AddWithValue("@Cod_Utente", COD_UTENTE);
@@ -321,5 +337,76 @@ public class ESTERNI
 
         C.EseguiCmd(cmd);
     }
+
+    public void Update_Profilo_Studenti()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_UPDATE_PROFILO_STUDENTI";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+        cmd.Parameters.AddWithValue("@NOME", NOME);
+        cmd.Parameters.AddWithValue("@COGNOME", COGNOME);
+        cmd.Parameters.AddWithValue("@CITTA", CITTA);
+        cmd.Parameters.AddWithValue("@INDIRIZZO", INDIRIZZO);
+        cmd.Parameters.AddWithValue("@PROVINCIA", PROVINCIA);
+        cmd.Parameters.AddWithValue("@NAZIONALITA", NAZIONALITA);
+
+        c.EseguiCmd(cmd);
+    }
+
+    public DataTable SelectOne_Profilo_Studenti()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_SELECTONE_PROFILO_STUDENTI";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+
+        return c.EseguiSelect(cmd);
+    }
+
+    //metodo che seleziona tutti i docenti da ESTERNI
+    public DataTable SelectAll_Docenti()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_DOCENTI_SELECTALL";
+        return C.EseguiSelect(cmd);
+    }
+
+    public void UpdatePassword_Studenti()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_UPDATE_PWD_STUDENTI";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
+        cmd.Parameters.AddWithValue("@USR", USR);
+        cmd.Parameters.AddWithValue("@PWD", PWD);
+
+        c.EseguiCmd(cmd);
+    }
+
+    public DataTable SelectForSkills()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_SelectForSkills";
+        cmd.Parameters.AddWithValue("@SKILLS", SKILLS);
+
+        return c.EseguiSelect(cmd);
+    }
+
+    public DataTable SelectAll_Studenti()
+    {
+        SqlCommand cmd = new SqlCommand("ESTERNI_STUDENTI_SELECTALL");
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion
 }

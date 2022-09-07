@@ -187,6 +187,18 @@ public class MATERIE
     }
     
 
+    /// <summary>
+    /// metodo che restituisce il titolo e la descrizione della materia in base a quel corso
+    /// </summary>
+    /// <returns></returns>
+    public DataTable MaterieInfoCorso()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_INFO_CORSO");
+        cmd.Parameters.AddWithValue("@Cod_Corso", Cod_Corso);
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion
 
 

@@ -55,4 +55,19 @@ public class Preiscrizione_WS : System.Web.Services.WebService
         p.Insert();
     }
 
+    /// <summary>
+    ///  metodo che riporta il conto delle preiscrizioni ad un corso passato come parametro
+    /// </summary>
+    /// <param name="COD_CORSO"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable CountPreiscrizioniCorso(int COD_CORSO)
+    {
+        DataTable dt = new DataTable();
+        PREISCRIZIONE P = new PREISCRIZIONE();
+        P.Cod_Corso = COD_CORSO;
+        dt = P.CountPreiscrizioniCorso();
+        dt.TableName = "Preiscrizioni";
+        return dt;
+    }
 }

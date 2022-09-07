@@ -1,5 +1,7 @@
 ﻿/* BASIC */
 
+@charset "UTF-8";
+
 html {
     background-color: #56baed;
 }
@@ -33,29 +35,27 @@ h2 {
 .wrapper {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     width: 100%;
     min-height: 100%;
-    padding: 20px;
+    padding: 100px;
 }
 
-#formContent {
+.formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 2px 2px 2px 3px;
     background: #fff;
     padding: 30px;
-    width: 90%;
-    max-width: 450px;
+    width: 372px;
     position: relative;
-    padding: 0px;
-    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    padding: 0;
+    -webkit-box-shadow: 0 30px 60px 0 rgb(0 0 0 / 30%);
+    box-shadow: 0 30px 60px 0 rgb(0 0 0 / 30%);
     text-align: center;
 }
 
 #formFooter {
-    background-color:;
     border-top: 1px solid #5fcf80;
     padding: 25px;
     text-align: center;
@@ -81,7 +81,7 @@ h2.active {
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset] {
-    background-color: #5fcf80;
+    background-color: #1a4126;
     border: none;
     color: white;
     padding: 15px 80px;
@@ -103,7 +103,7 @@ input[type=button], input[type=submit], input[type=reset] {
 }
 
     input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
-        background-color: #39ace7;
+        background-color: #5fcf80;
     }
 
     input[type=button]:active, input[type=submit]:active, input[type=reset]:active {
@@ -116,15 +116,15 @@ input[type=button], input[type=submit], input[type=reset] {
 
 input[type=text], input[type=password] {
     background-color: #f6f6f6;
-    border: none;
+    */ border: none;
     color: #0d0d0d;
-    padding: 15px 32px;
+    padding: 5px 4px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     margin: 5px;
-    width: 85%;
+    width: 90%;
     border: 2px solid #f6f6f6;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -132,7 +132,7 @@ input[type=text], input[type=password] {
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     -webkit-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 10px 10px 10px 10px;
 }
 
     input[type=text], input[type=password]:focus {
@@ -157,6 +157,10 @@ input[type=text], -webkit-animation-:placeholder {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     background-color: #5fcf80;
+    margin-top: -17px;
+    height: 834px;
+}
+
 }
 
 @-webkit-keyframes fadeInDown {
@@ -285,4 +289,11 @@ input[type=text], -webkit-animation-:placeholder {
 
 #icon {
     width: 60%;
+}
+
+.tableProfilo {
+    text-align: center;
+}
+
+#containerModificaProfilo1 {
 }

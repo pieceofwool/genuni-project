@@ -43,6 +43,7 @@ public class Competenze_WS : System.Web.Services.WebService
         return dt;
     }
 
+
     //metodo che restituisce le competenze di un dato docente
     [WebMethod]
     public DataTable SelectAllDocente(int COD_DOCENTE)
@@ -88,6 +89,18 @@ public class Competenze_WS : System.Web.Services.WebService
 
         c.UpdateCodDocente();
     }
+
+    [WebMethod]
+    public DataTable SelectDocente(string SKILLS)
+    {
+        DataTable dt = new DataTable();
+        COMPETENZE c = new COMPETENZE();
+        c.SKILLS = SKILLS;
+        dt = c.SelectDocente();
+        dt.TableName = "Competenze";
+        return dt;
+    }
+
 
 
 }
