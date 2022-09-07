@@ -83,4 +83,14 @@ public class COMPETENZE
         //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
 
     }
+
+    public DataTable SelectDocente()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "COMPETENZE_SelectDocente";
+        cmd.Parameters.AddWithValue("@SKILLS", SKILLS);
+
+        return c.EseguiSelect(cmd);
+    }
 }
