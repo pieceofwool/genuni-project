@@ -51,7 +51,7 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="about-img">
-                            <img src="img/about-us.png" alt="">
+                            <img src="img/aboutus1.png" alt="">
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-6">
@@ -238,16 +238,16 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6 wow fadeInUp">
                         <div class="member">
-                            <img src="img/team-1.jpg" class="img-fluid" alt="">
+                            <img src="img/vittorio2.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Roberto Ciliento</h4>
-                                    <span>Chief Executive Officer</span>
+                                    <h4>Vittorio Boemio</h4>
+                                    <span>Docente di Sviluppo Web Avanzati</span>
                                     <div class="social">
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <%--<a href="#"><i class="fa fa-twitter"></i></a>
+                                        <%--<a href="#"><i class="fa fa-facebook"></i></a>--%>
+                                        <%--<a href="#"><i class="fa fa-google-plus"></i></a>--%>
+                                        <a href="https://www.linkedin.com/in/vittoriomattiaboemio/"><i class="fa fa-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -256,16 +256,16 @@
 
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="member">
-                            <img src="img/team-2.jpg" class="img-fluid" alt="">
+                            <img src="img/roberton2.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Anna Vizitiu</h4>
-                                    <span>Product Manager</span>
+                                    <h4>Roberto Ninno</h4>
+                                    <span>Ingegnere e sviluppatore informatico</span>
                                     <div class="social">
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <%--<a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>--%>
+                                        <a href="https://www.linkedin.com/in/roberto-ninno-887793244/"><i class="fa fa-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -274,16 +274,16 @@
 
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="member">
-                            <img src="img/team-3.jpg" class="img-fluid" alt="">
+                            <img src="img/fabio2.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Roberto Boemio</h4>
-                                    <span>CTO</span>
+                                    <h4>Fabio Ghidella</h4>
+                                    <span>Formatore e docente .NET e Unity</span>
                                     <div class="social">
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <%--<a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>--%>
+                                        <a href="https://www.linkedin.com/in/fabio-ghidella/"><i class="fa fa-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -292,16 +292,16 @@
 
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="member">
-                            <img src="img/team-4.jpg" class="img-fluid" alt="">
+                            <img src="img/raffa2.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4>Raffaella Cioffi</h4>
-                                    <span>Accountant</span>
+                                    <span>Docente di grafica e Web Designer </span>
                                     <div class="social">
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <%--<a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>--%>
+                                        <a href="https://www.linkedin.com/in/raffaella-cioffi-b64383173/"><i class="fa fa-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -333,10 +333,10 @@
                                     <img src="img/250euro.png" class="euro" />
                                 </h4>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Possibilit&#224; di accesso a 1 corso</li>
-                                    <li class="list-group-item">Inventore quisquam et</li>
-                                    <li class="list-group-item">Et perspiciatis suscipit</li>
-                                    <li class="list-group-item">24/7 Support System</li>
+                                    <li class="list-group-item">Con questo pacchetto avrai la possibilit&#224; di acquistare </li>
+                                    <li class="list-group-item">i GenMoney che ti mancano per accedere ad un corso</li>
+                                    <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
+                                    <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
                                 <a href="CorsiFE.aspx" class="btn">Acquista</a>
                             </div>
@@ -356,10 +356,10 @@
                                     <img src="img/500euro.png" class="euro" />
                                 </h4>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Odio animi voluptates</li>
-                                    <li class="list-group-item">Inventore quisquam et</li>
-                                    <li class="list-group-item">Et perspiciatis suscipit</li>
-                                    <li class="list-group-item">24/7 Support System</li>
+                                    <li class="list-group-item">Con questo pacchetto avrai la possibilit&#224; di acquistare</li>
+                                    <li class="list-group-item">i GenMoney necessari per accedere ad un intero corso</li>
+                                    <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
+                                    <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
                                 <a href="CorsiFE.aspx" class="btn">Acquista</a>
                             </div>
@@ -379,10 +379,10 @@
                                     <img src="img/1000euro.png" class="euro" />
                                 </h4>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Odio animi voluptates</li>
-                                    <li class="list-group-item">Inventore quisquam et</li>
-                                    <li class="list-group-item">Et perspiciatis suscipit</li>
-                                    <li class="list-group-item">24/7 Support System</li>
+                                    <li class="list-group-item">Con questo pacchetto avrai la possibilit&#224; di acquistare</li>
+                                    <li class="list-group-item">i GenMoney necessari per accedere a 2 corsi</li>
+                                    <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
+                                    <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
                                 <a href="CorsiFE.aspx" class="btn">Acquista</a>
                             </div>
@@ -448,7 +448,7 @@
                         <a data-toggle="collapse" href="#faq6" class="collapsed">In cosa consiste l'assistenza? <i class="ion-android-remove"></i></a>
                         <div id="faq6" class="collapse" data-parent="#faq-list">
                             <p>
-                                Il nostro personale  &#232 a disposizione per assistenza sulla piattaforma di elearning, in particolare i docenti sono disponibili per rispondere alle domande sui contenuti dei Corsi, preferibilmente via mail ma se necessario anche via videoconferenza, telefono o strumenti di collaborazione remota. 
+                                Il nostro personale  &#232 a disposizione per assistenza sulla piattaforma di e-learning. In particolare, i docenti ed i tutor sono disponibili per rispondere alle tue domande sui contenuti dei corsi tramite la nostra chat, che ti metter&#224; a contatto diretto con i tuoi docenti, oppure tramite l'utilizzo della classica email. Dove necessario offriamo anche il servizio di supporto in videoconferenza, telefono o strumenti di collaborazione remota. 
                             </p>
                         </div>
                     </li>
