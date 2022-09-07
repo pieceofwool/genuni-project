@@ -32,11 +32,11 @@
     <%--tabella storico materie accettate--%>
 
     <%-- header--%>
-    <table id="storico" style="width: 717px">
+    <table id="storico" style="width: 717px; text-align:center;">
         <tr>
-            <td style="width: 33.3%"></td>
-            <td style="width: 33.3%"><b><big>Storico materie</big></b></td>
-            <td style="width: 33.3%"></td>
+            
+            <td><b><big>Storico materie</big></b></td>
+            
 
         </tr>
     </table>
@@ -72,16 +72,16 @@
     </table>
 
     <br />
-    <br />
+    
 
     <%--tabelle materie da accettare--%>
 
    <%-- header--%>
-    <table style="width: 717px">
+    <table style="width: 717px; text-align:center;">
         <tr>
-            <td style="width: 33.3%"></td>
-            <td style="width: 33.3%"><b><big>Materie da accettare</big></b></td>
-            <td style="width: 33.3%"></td>
+            
+            <td><b><big>Materie da accettare</big></b></td>
+            
         </tr>
     </table>
 
@@ -112,6 +112,50 @@
     <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align:center">
         <tr>
             <td><small>Vengono mostrate tutte le materie non ancora accettate</small></td>
+        </tr>
+    </table>
+
+    <br />
+    
+
+    <%--Corsi Docente--%>
+
+     <%-- header--%>
+    <table style="width: 717px; text-align:center">
+        <tr>
+            <td style="width: 33.3%"></td>
+            <td style="width: 33.3%"><b><big>I miei Corsi</big></b></td>
+            <td style="width: 33.3%"></td>
+
+        </tr>
+    </table>
+
+    <%--corpo scrollabile--%>
+    <div class="MaterieScroll">
+
+
+        <table class="tabella">
+            <tr>
+                <td style="width: 50%"></td>
+                <td style="width: 50%"></td>
+
+            </tr>
+            <tr>
+                <td><b>Corso</b></td>
+                <td><b>Link</b></td>
+            </tr>
+            
+
+
+            <asp:Literal ID="litCorsi" runat="server"></asp:Literal>
+
+        </table>
+    </div>
+
+    <%--footer--%>
+    <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align:center;margin-bottom:100px;">
+        <tr>
+            <td><small>Vengono mostrati tutti i corsi in cui si hanno materie accettate</small></td>
         </tr>
     </table>
 

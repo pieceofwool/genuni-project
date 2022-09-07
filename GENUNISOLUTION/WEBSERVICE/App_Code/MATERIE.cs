@@ -167,6 +167,26 @@ public class MATERIE
         conn.EseguiCmd(cmd);
     }
 
+    //seleziona i corsi in cui il docente ha materie accettate
+    public DataTable SelectCorsiDocente()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_Select_Corsi_Docenti");
+        cmd.Parameters.AddWithValue("@Cod_Docente", Cod_Docente);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        return conn.EseguiSelect(cmd);
+    }
+    public DataTable SelectMaterieDocenteCorso()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_ACCETTATE_DOCENTE_CORSO");
+        cmd.Parameters.AddWithValue("@CodDocente", Cod_Docente);
+        cmd.Parameters.AddWithValue("@CodCorso", Cod_Corso);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        return conn.EseguiSelect(cmd);
+    }
+    
+
     #endregion
 
 

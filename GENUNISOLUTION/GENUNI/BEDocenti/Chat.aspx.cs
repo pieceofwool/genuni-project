@@ -10,15 +10,20 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        string nomecorso = Request.QueryString["nomecorso"].ToString();
+        InserisciCorso.InnerText = "Chat del corso: " + nomecorso;
 
         CaricaDesc();
     }
 
     protected void CaricaAsc()
     {
+
         litChat.Text = "";
-        //int CHIAVE = Session["CodiceCorso"]
-        int CHIAVE = 1; // DEBUG
+
+        int CHIAVE = int.Parse(Request.QueryString["codicecorso"].ToString());
+        
+       // int CHIAVE = 1; // DEBUG
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
         DataTable dt = C.SelectChatCorso(CHIAVE);
 
@@ -27,8 +32,9 @@ public partial class BEDocenti_Default : System.Web.UI.Page
     protected void CaricaDesc()
     {
         litChat.Text = "";
+        int CHIAVE = int.Parse(Request.QueryString["codicecorso"].ToString());
         //int CHIAVE = Session["CodiceCorso"]
-        int CHIAVE = 1; // DEBUG
+        //int CHIAVE = 1; // DEBUG
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
         DataTable dt = C.SelectChatCorsoDesc(CHIAVE);
 
@@ -170,7 +176,10 @@ public partial class BEDocenti_Default : System.Web.UI.Page
     {
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
 
-        int codiceCorso = 1; //DEBUG, sostituire con Session
+        int codiceCorso = int.Parse(Request.QueryString["codicecorso"].ToString());
+        //int codiceCorso = 1; //DEBUG, sostituire con Session
+
+        //int codiceEsterno = int.Parse(Session["CodiceAttore"].ToString());
         int codiceEsterno = 2; //DEBUG, sostituire con Session
         string contenuto = txtRisposta.InnerText;
 
@@ -180,5 +189,12 @@ public partial class BEDocenti_Default : System.Web.UI.Page
         CaricaDesc();
 
         txtRisposta.InnerText = null;
+    }
+
+    protected void BtnEsci_Click(object sender, EventArgs e)
+    {
+        int codiceCorso = int.Parse(Request.QueryString["codicecorso"].ToString());
+        string nomecorso = Request.QueryString["nomecorso"].ToString();
+        Response.Redirect("MaterieDocenti.aspx?codice=" + codiceCorso + "&corso=" + nomecorso + "");
     }
 }

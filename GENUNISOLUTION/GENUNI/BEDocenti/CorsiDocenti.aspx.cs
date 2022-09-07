@@ -18,6 +18,12 @@ public partial class Default2 : System.Web.UI.Page
         storico = MA.SelectMaterieDocente(CHIAVE);
         foreach (DataRow riga in storico.Rows)
         {
+            if(storico.Rows.Count == 0)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "ERRORE", "alert('Nessuna materia presente')", true);
+                return;
+            }
+
             bool accettata = bool.Parse(storico.Rows[i][2].ToString());
             int chiave = int.Parse(storico.Rows[i][0].ToString());
 
@@ -36,6 +42,23 @@ public partial class Default2 : System.Web.UI.Page
             }
 
             i++;
+        }
+
+        DataTable corsi = new DataTable();
+        corsi = MA.SelectCorsiDocente(CHIAVE);
+
+        foreach(DataRow riga in corsi.Rows)
+        {
+            if (corsi.Rows.Count == 0)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "ERRORE", "alert('Nessun corso presente')", true);
+                return;
+            }
+
+            string corso = riga.Field<string>("Corso").ToString();
+            int codice = riga.Field<int>("Chiave");
+
+            litCorsi.Text += "<tr><td>"+corso+"</td><td><a href=\"MaterieDocenti.aspx?codice="+codice+"&corso="+corso+"\">Vai al Corso</a></td></tr>";
         }
 
 

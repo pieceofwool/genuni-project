@@ -163,4 +163,30 @@ public class Materie_WS : System.Web.Services.WebService
 
         m.Accettazione();
     }
+
+    //seleziona i corsi in cui il docente ha materie accettate
+    [WebMethod]
+    public DataTable SelectCorsiDocente(int cod_docente)
+    {
+        MATERIE M = new MATERIE();
+        M.Cod_Docente = cod_docente;
+        DataTable dt = new DataTable();
+        dt = M.SelectCorsiDocente();
+        dt.TableName = "Materie";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectMaterieDocenteCorso(int cod_docente, int cod_corso)
+    {
+        MATERIE M = new MATERIE();
+        M.Cod_Docente = cod_docente;
+        M.Cod_Corso = cod_corso;
+        DataTable dt = new DataTable();
+        dt = M.SelectMaterieDocenteCorso();
+        dt.TableName = "Materie";
+        return dt;
+    }
+
+    
 }
