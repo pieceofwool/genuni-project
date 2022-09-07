@@ -30,6 +30,7 @@ public class ESTERNI
     public bool ABILITATO;
     public byte[] AVATAR;
     public string TIPOIMG;
+    public string SKILLS;
     #endregion
 
     public ESTERNI()
@@ -386,6 +387,17 @@ public class ESTERNI
         cmd.Parameters.AddWithValue("@PWD", PWD);
 
         c.EseguiCmd(cmd);
+    }
+
+    public DataTable SelectForSkills()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "ESTERNI_SelectForSkills";
+        cmd.Parameters.AddWithValue("@SKILLS", SKILLS);
+
+        return c.EseguiSelect(cmd);
     }
 
     #endregion
