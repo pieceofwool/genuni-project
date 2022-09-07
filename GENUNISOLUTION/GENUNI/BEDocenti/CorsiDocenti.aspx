@@ -23,7 +23,7 @@
     
     
     <table>
-        <tr>
+        <tr style="border: 1px solid black">
             <td style="width: 33.3%"></td>
             <td style="width: 33.3%"><b><big>Storico materie</big></b></td>
             <td style="width: 33.3%"></td>
