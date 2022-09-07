@@ -16,11 +16,13 @@ public partial class _Default : System.Web.UI.Page
     {
         Session["IscrizioneComeDocente"] = 'D';
 
-        Response.Redirect("Registrazione.aspx");
+        Response.Redirect("Login.aspx");
     }
 
     protected void btnIscrivitiNews_Click(object sender, EventArgs e)
     {
+        btnIscrivitiNews.Enabled = false;
+
         if (string.IsNullOrEmpty(txtEmail.Text.ToString()) == true)
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Inserire una mail valida')", true);
@@ -29,12 +31,15 @@ public partial class _Default : System.Web.UI.Page
 
         string email = txtEmail.Text.Trim().ToString();
 
+        txtEmail.Text = "";
+
         NEWSLETTER.Newsletter_WSSoapClient N = new NEWSLETTER.Newsletter_WSSoapClient();
         MAIL.Mail_WSSoapClient M = new MAIL.Mail_WSSoapClient();
 
         N.NewsletterIscrivi(email);
 
         M.RingraziamentoNewsletter(email);
+
 
         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Iscrizione alla Newsletter effettuata con successo!')", true);
         return;
