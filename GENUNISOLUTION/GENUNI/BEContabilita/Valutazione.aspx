@@ -1,14 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEContabilita.master" AutoEventWireup="true" CodeFile="Valutazione.aspx.cs" Inherits="BEContabilita_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
-    
-    <br />
-    <br />
-    <br />
-
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
     <link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
@@ -46,26 +38,30 @@
 
         });
     </script>
-    <a href="PoPup/InfoCorsi.aspx" id="popup">Modifica</a>
-
-
-
-
-
-
-
-
-
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
         <h4 class="titoliBE">Valutazione</h4>
-        <asp:GridView ID="grdValutazione" runat="server" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged">
-            <Columns>
-                <asp:HyperLinkField DataNavigateUrlFields="~/BEContabilita/PoPup/InfoCorsi.aspx" HeaderText="Visualizza Corso" NavigateUrl="~/BEContabilita/PoPup/InfoCorsi.aspx" />
-            </Columns>
-        </asp:GridView>
+        <table class="tablePopUp">
+            <tr>
+                <td class="btnGestisci">
+                    <!-- POPUP, HTML-->
+                    <a id="popup" class="popUpBtnBE" href="PoPup/InfoCorsi.aspx">Modifica</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:GridView ID="grdValutazione" runat="server" CssClass="griglia" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged">
+                        <Columns>
+                            <asp:HyperLinkField DataNavigateUrlFields="~/BEContabilita/PoPup/InfoCorsi.aspx" HeaderText="Visualizza Corso" NavigateUrl="~/BEContabilita/PoPup/InfoCorsi.aspx" />
+                        </Columns>
+                    </asp:GridView>
+                </td>
+            </tr>
+        </table>
     </div>
 </asp:Content>
 

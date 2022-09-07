@@ -8,11 +8,14 @@
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div class="containerBE2">
+   <div>
+        <img src="../assets/img/lavoriBE.png" class="icona" />
+    </div>
+    <div class="containerBE">
         <h4 class="titoliBE">Approvazione corsi</h4>
-        <table>
+        <table class="tablePopUp">
             <tr>
-                <td>
+                <td class="btnGestisci">
                     <!-- POPUP, HTML-->
                     <a id="btnApprova" class="popUpBtnBE" href="Popup/ApprovaCorsi.aspx">Approva corso</a>
                     <asp:Button ID="btnAggiornaApprovazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaApprovazione_Click" CssClass="btnBE" />
@@ -20,15 +23,20 @@
             </tr>
             <tr>
                 <td>
-                    <asp:GridView ID="gridApprovazioneCorsi" runat="server" DataKeyNames="Chiave, Cod_Utente" AutoGenerateColumns="false" OnSelectedIndexChanged="gridApprovazioneCorsi_SelectedIndexChanged">
+                    <asp:GridView ID="gridApprovazioneCorsi" CssClass="griglia" runat="server" DataKeyNames="Chiave, Cod_Utente" AutoGenerateColumns="false" OnSelectedIndexChanged="gridApprovazioneCorsi_SelectedIndexChanged">
                         <Columns>
                             <asp:BoundField DataField="Chiave" Visible="false" />
                             <asp:BoundField DataField="Cod_Utente" Visible="false" />
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                             <asp:BoundField DataField="Nome" HeaderText="Nome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
                             <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
-                            <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
+
+                            <asp:CommandField ButtonType="Button" ShowSelectButton="true">
+                                <ControlStyle CssClass="btnBE" />
+                            </asp:CommandField>
                         </Columns>
+                        <HeaderStyle />
+                        <HeaderStyle CssClass="headergrid" />
                     </asp:GridView>
                 </td>
             </tr>

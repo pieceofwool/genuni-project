@@ -7,12 +7,12 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <h4 class="titoliBE">Gestione Report</h4>
-        <table>
+        <h4 class="titoliBE">Gestione report</h4>
+        <table class="tablePopUp">
             <tr>
-                <td >
+                <td class="btnGestisci">
                     <%-- SCELTA REPORT --%>
-                    <asp:CheckBox ID="chkDocenti" style="margin-left: 214px;" runat="server" Text="Docenti" GroupName="Report" styleChecked="True" AutoPostBack="True" OnCheckedChanged="chkDocenti_CheckedChanged" />
+                    <asp:CheckBox ID="chkDocenti" Style="margin-left: 14px; padding-right: 10px;" runat="server" Text="Docenti" GroupName="Report" styleChecked="True" AutoPostBack="True" OnCheckedChanged="chkDocenti_CheckedChanged" />
                     <asp:CheckBox ID="chkStudenti" runat="server" Text="Studenti" GroupName="Report" Checked="True" AutoPostBack="True" OnCheckedChanged="chkStudenti_CheckedChanged" />
                     <hr />
                 </td>
@@ -36,17 +36,18 @@
                 <td>
                     <%-- GRIGLIA DI VISUALIZZAZIONE REPORT DOCENTI O STUDENTI --%>
                     <asp:Literal ID="ltlDocenti" runat="server" Text=""></asp:Literal>
-                    <asp:GridView ID="grigliaReportDocenti" runat="server"></asp:GridView>
+                    <asp:GridView ID="grigliaReportDocenti" CssClass="griglia" runat="server"></asp:GridView>
                     <asp:Label ID="lblTot1" runat="server" CssClass="lblReport" Text="Totale spese: "></asp:Label>
                     <asp:Label ID="lblTotDoc" runat="server" CssClass="lblReport" Text=""></asp:Label>
                 </td>
+                <td>
+                    <asp:Literal ID="ltlStudenti" runat="server" Text=""></asp:Literal>
+                    <asp:GridView ID="grigliaReportStudenti" CssClass="griglia" Visible="false" runat="server"></asp:GridView>
+                    <asp:Label ID="lblTot2" runat="server" CssClass="lblReport" Text="Totale ricavi: "></asp:Label>
+                    <asp:Label ID="lblTotStud" runat="server" CssClass="lblReport" Text=""></asp:Label>
             </tr>
             <tr>
                 <td>
-                    <asp:Literal ID="ltlStudenti" runat="server" Text=""></asp:Literal>
-                    <asp:GridView ID="grigliaReportStudenti" Visible="false" runat="server"></asp:GridView>
-                    <asp:Label ID="lblTot2" runat="server" CssClass="lblReport" Text="Totale ricavi: "></asp:Label>
-                    <asp:Label ID="lblTotStud" runat="server" CssClass="lblReport" Text=""></asp:Label>
                     <asp:Literal ID="ltlUtili" runat="server" Text=""></asp:Literal>
                     <asp:Label ID="lblUtili" runat="server" CssClass="lblReport" Text=""></asp:Label>
                 </td>
