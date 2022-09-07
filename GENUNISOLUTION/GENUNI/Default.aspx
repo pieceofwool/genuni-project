@@ -135,29 +135,23 @@
             <!--========================== Aggiornamento dati Gen Uni ============================-->
             <div class="container">
                 <div class="row counters">
-
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">123</span>
+                        <%-- logica contatore commentata aspettando l'aggiornamento del ws/classe--%>
+                        <asp:Label ID="lblContoStudenti" runat="server" Text=""></asp:Label>
                         <p>Studenti</p>
                     </div>
-
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">67</span>
-                        <p>Progetti</p>
+                        <asp:Label ID="lblContoDocenti" runat="server" Text=""></asp:Label>
+                        <p>Docenti</p>
                     </div>
-
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">364</span>
-                        <p>Ore di supporto</p>
-                    </div>
-
-                    <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">18</span>
-                        <p>Progetti importanti</p>
+                        <asp:Label ID="lblContoCorsi" runat="server" Text=""></asp:Label>
+                        <p>Corsi</p>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- #aggiornamento-dati-GenUni -->
 
         <!--========================== Call To Action Section ============================-->
@@ -427,11 +421,11 @@
                             </p>
                         </div>
                     </li>
-      <li>
+                    <li>
                         <a data-toggle="collapse" href="#faq4" class="collapsed">Come funzionano i test?<i class="ion-android-remove"></i></a>
                         <div id="faq4" class="collapse" data-parent="#faq-list">
                             <p>
-                               Solitamente i test sono quiz online a risposta multipla, ma in alcuni casi pu &#242 essere richiesto l&#39invio di un elaborato al docente per la correzione. In caso di mancato superamento di un test &#232 possibile ripeterlo, senza costi aggiuntivi.
+                                Solitamente i test sono quiz online a risposta multipla, ma in alcuni casi pu &#242 essere richiesto l&#39invio di un elaborato al docente per la correzione. In caso di mancato superamento di un test &#232 possibile ripeterlo, senza costi aggiuntivi.
                             </p>
                         </div>
                     </li>
