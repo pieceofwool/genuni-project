@@ -44,7 +44,7 @@ public partial class _Default : System.Web.UI.Page
             return;
         }
 
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Accettare l\'informativa sulla privacy prima di preiscriversi')", true);
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Accettare Informativa sulla Privacy prima di preiscriversi')", true);
         return;
 
     }
