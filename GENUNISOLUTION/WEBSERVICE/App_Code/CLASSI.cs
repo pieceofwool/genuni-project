@@ -66,7 +66,7 @@ public class CLASSI
         CONNESSIONE C = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "CLASSI_SELECTALL_STUDENTE";
-        cmd.Parameters.AddWithValue("@Cod_Studente", COD_STUDENTE);
+        cmd.Parameters.AddWithValue("@CodiceStudente", COD_STUDENTE);
 
         return C.EseguiSelect(cmd);
     }
