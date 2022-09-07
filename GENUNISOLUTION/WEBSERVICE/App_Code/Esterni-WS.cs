@@ -361,4 +361,25 @@ public class Esterni_WS : System.Web.Services.WebService
 
         e.UpdatePassword_Studenti();
     }
+
+    [WebMethod]
+    public DataTable SelectForSkills(string SKILLS)
+    {
+        DataTable dt = new DataTable();
+        ESTERNI e = new ESTERNI();
+        e.SKILLS = SKILLS;
+        dt = e.SelectForSkills();
+        dt.TableName = "Esterni";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectAll_Studenti()
+    {
+        DataTable dt = new DataTable();
+        ESTERNI e = new ESTERNI();
+        dt = e.SelectAll_Studenti();
+        dt.TableName = "Esterni";
+        return dt;
+    }
 }

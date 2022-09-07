@@ -93,4 +93,14 @@ public class TEST
 
     return conn.EseguiSelect(cmd);
     }
+
+    public DataTable Select_Soglia()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "TEST_SELECT_SOGLIA ";
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
+
+        return c.EseguiSelect(cmd);
+    }
 }
