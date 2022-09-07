@@ -20,7 +20,7 @@
                         
                     </h3>
                     <div>
-                        <a href="registrazione.aspx" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti</a>
+                        <a href="Login.aspx" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti</a>
                     </div>
                 </div>
 
@@ -338,7 +338,8 @@
                                     <li class="list-group-item">Et perspiciatis suscipit</li>
                                     <li class="list-group-item">24/7 Support System</li>
                                 </ul>
-                                <a href="CorsiFE.aspx" class="btn">Acquista</a>
+                                <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
+                                <asp:Button ID="btnGenMoney50" CssClass="btn" runat="server" Text="ACQUISTA" OnClick="btnGenMoney50_Click" />
                             </div>
                         </div>
                     </div>
@@ -361,7 +362,8 @@
                                     <li class="list-group-item">Et perspiciatis suscipit</li>
                                     <li class="list-group-item">24/7 Support System</li>
                                 </ul>
-                                <a href="CorsiFE.aspx" class="btn">Acquista</a>
+                                <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
+                                <asp:Button ID="btnGenMoney100" CssClass="btn" runat="server" Text="ACQUISTA" OnClick="btnGenMoney100_Click" />
                             </div>
                         </div>
                     </div>
@@ -384,7 +386,8 @@
                                     <li class="list-group-item">Et perspiciatis suscipit</li>
                                     <li class="list-group-item">24/7 Support System</li>
                                 </ul>
-                                <a href="CorsiFE.aspx" class="btn">Acquista</a>
+                                <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
+                                <asp:Button ID="btnGenMoney200" CssClass="btn" runat="server" Text="ACQUISTA" OnClick="btnGenMoney200_Click" />
                             </div>
                         </div>
                     </div>
@@ -480,7 +483,7 @@
                                     <p>Vuoi pi&#249; informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
                                     <asp:TextBox ID="txtEmail" CssClass="" placeholder="E-mail" runat="server" TextMode="Email"></asp:TextBox>
                                     <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti" OnClick="btnIscrivitiNews_Click" />
-                                    <asp:CheckBox ID="chbxPrivacy" runat="server" AutoPostBack="True" OnCheckedChanged="chbxPrivacy_CheckedChanged" /><p>
+                                    <asp:CheckBox ID="chbxPrivacy" runat="server" /><p>
                                         Ho letto l&#39informativa sulla privacy e acconsento al trattamento dei miei dati personali ai sensi dell&#39art. 13 del D. Lgs. 196/2003
                                     </p>
                                 </div>
