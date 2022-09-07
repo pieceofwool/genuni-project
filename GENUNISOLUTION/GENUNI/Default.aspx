@@ -14,8 +14,8 @@
                         <br>
                         Inizia la tua <span>formazione!</span>
                     </h2>
-                    <h3 id="introDescrizione">
-                        Entra a far parte della nostra accademia e-learing, <br />
+                    <h3 id="introDescrizione">Entra a far parte della nostra accademia e-learning,
+                        <br />
                         trova il corso che fa per te e specializzati nel settore che ami!
                         
                     </h3>
@@ -51,7 +51,7 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="about-img">
-                            <img src="img/about-img.jpg" alt="">
+                            <img src="img/about-us.png" alt="">
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-6">
@@ -69,7 +69,6 @@
                                 <li><i class="ion-android-checkmark-circle"></i>I crediti formativi professionali</li>
                             </ul>
                             <p class="pAboutUs">
-
                                 Molto di pi&#249 di normale corso di e-learning, la nostra academy &#232 innovativa!
                                 Entrare in GenUni ti permetter&#224 di poter interagire costantemente con il docente e con gli altri partecipanti.
                             </p>
@@ -95,7 +94,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="why-us-img">
-                            <img src="assets/img/why-us.png" alt="" class="img-fluid" style="margin-top: -46px">
+                            <img src="assets/img/why-us.png" alt="" class="img-fluid" style="margin-top: -24px; width: 493px; margin-left: 55px;">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -106,25 +105,26 @@
                                 Il nostro obiettivo &#232; quello di farti raggiungere un livello di conoscenza adeguato, fornendoti indicatori e strumenti professionali e culturali 
                                 affinch&#232; tu possa investirli su te stesso e determinare il tuo successo.
                             </p>
-                           <div class="features wow bounceInUp clearfix" style="margin-top: 18px;visibility: visible;animation-name: bounceInUp;font-size: 22px;">
-                                <img src="img/genMoney2.png" class="iconeMission" />
+                            <div class="features wow bounceInUp clearfix" style="margin-top: 18px; visibility: visible; animation-name: bounceInUp; font-size: 22px;">
+                                <img src="assets/img/genMoney2.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Gen Money</h4>
                                     <p class="pMissionInterni">Commodi quia voluptatum. Est cupiditate voluptas quaerat officiis ex alias dignissimos et ipsum. Soluta at enim modi ut incidunt dolor et.</p>
                                 </div>
                             </div>
                             <div class="features wow bounceInUp clearfix">
-                                <img src="img/videolezioni.png" class="iconeMission" />
+                                <img src="assets/img/videolezioni.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Video lezioni</h4>
                                     <p class="pMissionInterni">Molestias eius rerum iusto voluptas et ab cupiditate aut enim. Assumenda animi occaecati. Quo dolore fuga quasi autem aliquid ipsum odit. Perferendis doloremque iure nulla aut.</p>
                                 </div>
                             </div>
                             <div class="features wow bounceInUp clearfix">
-                                <img src="img/assistenza.png" class="iconeMission" />
+                                <img src="assets/img/assistenza.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Supporto</h4>
-                                    <p class="pMissionInterni">Voluptates nihil et quis omnis et eaque omnis sint aut. Ducimus dolorum aspernatur. Totam dolores ut enim ullam voluptas distinctio aut.</pc>
+                                    <p class="pMissionInterni">
+                                        Voluptates nihil et quis omnis et eaque omnis sint aut. Ducimus dolorum aspernatur. Totam dolores ut enim ullam voluptas distinctio aut.</pc>
                                 </div>
                             </div>
                         </div>
@@ -182,7 +182,7 @@
                 <header class="section-header">
                     <h3 class="section-title">I nostri corsi</h3>
                 </header>
-                <div id="demo" class="carousel slide" data-ride="carousel" style="width: 80%;margin-left: 113px;margin-bottom: -26px;">
+                <div id="demo" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 113px; margin-bottom: -26px;">
                     <ul class="carousel-indicators" style="padding-left: 102px;">
                         <li data-target="#demo" data-slide-to="0" class="active"></li>
                         <li data-target="#demo" data-slide-to="1"></li>
@@ -190,8 +190,8 @@
                     </ul>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="assets/img/code1.png" alt="Los Angeles" width="1100" height="500">
-                            <div class="carousel-caption">
+                            <img src="img/dotnet.png" alt="DotNet" width="1100" height="500">
+                            <div class="carousel-caption" style="left: 13%; bottom: 17px;">
                                 <a class="linkCorsi" href="CorsiFE.aspx">
                                     <h3>Corso .NET</h3>
                                     <p>Clicca qui per saperne di pi&#249;</p>
@@ -199,8 +199,8 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/img/mysql.png" alt="Chicago" width="1100" height="500">
-                            <div class="carousel-caption">
+                            <img src="img/mysql.png" alt="MySQL" width="1100" height="500">
+                            <div class="carousel-caption" style="left: 13%; bottom: 17px;">
                                 <a class="linkCorsi" href="CorsiFE.aspx">
                                     <h3>Corso My SQL</h3>
                                     <p>Clicca qui per saperne di pi&#249;</p>
@@ -208,8 +208,8 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/img/javascript.png" alt="New York" width="1100" height="500">
-                            <div class="carousel-caption">
+                            <img src="img/javascript.png" alt="Javascript" width="1100" height="500">
+                            <div class="carousel-caption" style="left: 13%; bottom: 17px;">
                                 <a class="linkCorsi" href="CorsiFE.aspx">
                                     <h3>Corso Javascript</h3>
                                     <p>Clicca qui per saperne di pi&#249;</p>
@@ -398,60 +398,57 @@
             <div class="container">
                 <header class="section-header">
                     <h3>Domande pi&#249; frequenti</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
                 </header>
 
                 <ul id="faq-list" class="wow fadeInUp">
                     <li>
-                        <a data-toggle="collapse" class="collapsed" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="ion-android-remove"></i></a>
+                        <a data-toggle="collapse" class="collapsed" href="#faq1">Quanto costa un corso di Gen Uni?<i class="ion-android-remove"></i></a>
                         <div id="faq1" class="collapse" data-parent="#faq-list">
                             <p>
-                                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                                Visita la sezione Corsi e troverai tutte le informazioni riguardo i costi dei nostri costi, procedi al pagamento e ricevi i tuoi GenMoney!
                             </p>
                         </div>
                     </li>
 
                     <li>
-                        <a data-toggle="collapse" href="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="ion-android-remove"></i></a>
+                        <a data-toggle="collapse" href="#faq2" class="collapsed">Come faccio ad iscrivermi?<i class="ion-android-remove"></i></a>
                         <div id="faq2" class="collapse" data-parent="#faq-list">
                             <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                Per effettuare l&#39iscrizione puoi accedere all&#39area riservata a questa procedura. La trovi in alto a destra, nella barra su in alto!
                             </p>
                         </div>
                     </li>
 
                     <li>
-                        <a data-toggle="collapse" href="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="ion-android-remove"></i></a>
+                        <a data-toggle="collapse" href="#faq3" class="collapsed">Quale validit&#224 ha l&#39attestato?<i class="ion-android-remove"></i></a>
                         <div id="faq3" class="collapse" data-parent="#faq-list">
                             <p>
-                                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                                I nostri attestati sono spendibili professionalmente sia sul territorio italiano che all&#39estero.
                             </p>
                         </div>
                     </li>
-
-                    <li>
-                        <a data-toggle="collapse" href="#faq4" class="collapsed">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="ion-android-remove"></i></a>
+      <li>
+                        <a data-toggle="collapse" href="#faq4" class="collapsed">Come funzionano i test?<i class="ion-android-remove"></i></a>
                         <div id="faq4" class="collapse" data-parent="#faq-list">
                             <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                               Solitamente i test sono quiz online a risposta multipla, ma in alcuni casi pu &#242 essere richiesto l&#39invio di un elaborato al docente per la correzione. In caso di mancato superamento di un test &#232 possibile ripeterlo, senza costi aggiuntivi.
                             </p>
                         </div>
                     </li>
 
                     <li>
-                        <a data-toggle="collapse" href="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="ion-android-remove"></i></a>
+                        <a data-toggle="collapse" href="#faq5" class="collapsed">Quando iniziano i corsi online?<i class="ion-android-remove"></i></a>
                         <div id="faq5" class="collapse" data-parent="#faq-list">
                             <p>
-                                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                                In generale, tutti i corsi sono personalizzati sui ritmi di apprendimento dello studente, ed essendo online non hanno data di inizio, partono al momento del primo accesso ovvero quando lo studente sceglie di iniziare.
                             </p>
                         </div>
                     </li>
-
                     <li>
-                        <a data-toggle="collapse" href="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="ion-android-remove"></i></a>
+                        <a data-toggle="collapse" href="#faq6" class="collapsed">In cosa consiste l'assistenza? <i class="ion-android-remove"></i></a>
                         <div id="faq6" class="collapse" data-parent="#faq-list">
                             <p>
-                                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+                                Il nostro personale  &#232 a disposizione per assistenza sulla piattaforma di elearning, in particolare i docenti sono disponibili per rispondere alle domande sui contenuti dei Corsi, preferibilmente via mail ma se necessario anche via videoconferenza, telefono o strumenti di collaborazione remota. 
                             </p>
                         </div>
                     </li>
@@ -482,13 +479,14 @@
                                     <h4>La nostra newsletter</h4>
                                     <p>Vuoi pi&#249; informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
                                     <asp:TextBox ID="txtEmail" CssClass="" placeholder="E-mail" runat="server" TextMode="Email"></asp:TextBox>
-                                    <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti alla newsletter!" OnClick="btnIscrivitiNews_Click" />
-                                    <asp:CheckBox ID="chbxPrivacy" runat="server" AutoPostBack="True" OnCheckedChanged="chbxPrivacy_CheckedChanged" /><p>Ho letto l&#39informativa sulla privacy e acconsento al trattamento dei miei dati personali ai sensi dell&#39art. 13 del D. Lgs. 196/2003
+                                    <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti" OnClick="btnIscrivitiNews_Click" />
+                                    <asp:CheckBox ID="chbxPrivacy" runat="server" AutoPostBack="True" OnCheckedChanged="chbxPrivacy_CheckedChanged" /><p>
+                                        Ho letto l&#39informativa sulla privacy e acconsento al trattamento dei miei dati personali ai sensi dell&#39art. 13 del D. Lgs. 196/2003
                                     </p>
                                 </div>
                             </div>
-                            
-    <%-- 
+
+                            <%-- 
          &#39;   '
          &#176;  °
          &#224;  à
@@ -497,14 +495,14 @@
          &#242;  ò
          &#249;  ù
          &#8364; €   
-    --%>
+                            --%>
                             <div class="col-sm-6">
                                 <div class="footer-links">
                                     <h4>Link utili</h4>
                                     <ul>
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">Chi siamo</a></li>
-                                        <li><a href="#">Corsi</a></li>
+                                        <li><a href="#intro">Home</a></li>
+                                        <li><a href="#about">Chi siamo</a></li>
+                                        <li><a href="CorsiFE.aspx">Corsi</a></li>
                                         <li><a href="Login2.aspx">Termini di servizio</a></li>
                                         <li><a href="../BEAdmin/GestioneCorsi.aspx">Privacy policy</a></li>
                                     </ul>
@@ -518,7 +516,7 @@
                                         Roma, RM 07318<br>
                                         Italia
                                             <br>
-                                        <strong>Telefono:</strong> +06 55488 55<br>
+                                        <strong>Telefono:</strong> +39 06 5548855<br>
                                         <strong>Email:</strong> info@genuni.com<br>
                                         <strong>P.IVA:</strong> 86334519757
                                         <br>

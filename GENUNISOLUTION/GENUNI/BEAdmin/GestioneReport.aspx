@@ -10,9 +10,9 @@
         <h4 class="titoliBE">Gestione Report</h4>
         <table>
             <tr>
-                <td>
+                <td >
                     <%-- SCELTA REPORT --%>
-                    <asp:CheckBox ID="chkDocenti" runat="server" Text="Docenti" GroupName="Report" Checked="True" AutoPostBack="True" OnCheckedChanged="chkDocenti_CheckedChanged" />
+                    <asp:CheckBox ID="chkDocenti" style="margin-left: 214px;" runat="server" Text="Docenti" GroupName="Report" styleChecked="True" AutoPostBack="True" OnCheckedChanged="chkDocenti_CheckedChanged" />
                     <asp:CheckBox ID="chkStudenti" runat="server" Text="Studenti" GroupName="Report" Checked="True" AutoPostBack="True" OnCheckedChanged="chkStudenti_CheckedChanged" />
                     <hr />
                 </td>

@@ -52,6 +52,7 @@
                         <li><a href="../BEAdmin/GestioneTutor.aspx">Abilitazione tutor e contabili</a></li>
                         <li><a href="../BEAdmin/GestioneCorsi.aspx">Creazione e assegnazione corsi</a></li>
                         <li><a href="../BEAdmin/GestioneReport.aspx">Grafici e report</a></li>
+                        <li><a href="../Default.aspx">Esci</a></li>
                     </ul>
                 </nav>
                 <!-- .navbar -->
@@ -76,7 +77,7 @@
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
-        <div id="containerMPBE">
+        <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
