@@ -18,7 +18,7 @@ public partial class BEDocenti_Default : System.Web.UI.Page
     {
         litChat.Text = "";
         //int CHIAVE = Session["CodiceCorso"]
-        int CHIAVE = 1;
+        int CHIAVE = 1; // DEBUG
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
         DataTable dt = C.SelectChatCorso(CHIAVE);
 
@@ -28,7 +28,7 @@ public partial class BEDocenti_Default : System.Web.UI.Page
     {
         litChat.Text = "";
         //int CHIAVE = Session["CodiceCorso"]
-        int CHIAVE = 1;
+        int CHIAVE = 1; // DEBUG
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
         DataTable dt = C.SelectChatCorsoDesc(CHIAVE);
 
@@ -39,9 +39,15 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
     protected void CaricaChat(DataTable dt)
     {
-
         litChat.Text = "";
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
+
+        if (dt.Rows.Count == 0)
+        {
+            // metto messaggio di riempimento nella lit se non esistono messaggi per quel corso
+            litChat.Text = "Questa chat non ha ancora nessun messaggio.";
+            return;
+        }
 
         int i = 0;//lavoro con i per accedere alla dt in quanto dr mi richiede il cast e con null dà problemi
         int key = 0;
@@ -164,8 +170,8 @@ public partial class BEDocenti_Default : System.Web.UI.Page
     {
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
 
-        int codiceCorso = 1; //session
-        int codiceEsterno = 1; //session
+        int codiceCorso = 1; //DEBUG, sostituire con Session
+        int codiceEsterno = 2; //DEBUG, sostituire con Session
         string contenuto = txtRisposta.InnerText;
 
 
