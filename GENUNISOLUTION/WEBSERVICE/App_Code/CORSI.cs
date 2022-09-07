@@ -296,6 +296,18 @@ public class CORSI
         C.EseguiCmd(cmd);
     }
 
+    /// <summary>
+    /// Lista di tutti i corsi non comprati dallo studente
+    /// </summary>
+    /// <param name="COD_STUDENTE"></param>
+    /// <returns></returns>
+    public DataTable NonComprati(int COD_STUDENTE)
+    {
+        SqlCommand CMD = new SqlCommand("CORSI_SELECT_NON_COMPRATI");
+        CMD.Parameters.AddWithValue("@COD_STUDENTE", COD_STUDENTE);
+
+        return new CONNESSIONE().EseguiSelect(CMD);
+    }
     #endregion Metodi
 
 }
