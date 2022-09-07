@@ -78,15 +78,15 @@
 
                 <nav class="main-nav float-right d-none d-lg-block">
                     <ul>
-                        <li class="drop-down"><a href="Default.aspx">DEBUG</a>
+                        <%--<li class="drop-down"><a href="Default.aspx">DEBUG</a>
                             <ul>
                                 <li><a href="BEAdmin/GestioneAdmin.aspx">Admin</a></li>
                                 <li><a href="BEContabilita/Compenso.aspx">Contabilità</a></li>
-                                <li><a href="BEDocenti/GestioneDocenti.aspx">Docenti</a></li>      <%--A conti fatti il DEBUG non serve più, ma lo lascio commentato in caso di necessità.--%>
+                                <li><a href="BEDocenti/GestioneDocenti.aspx">Docenti</a></li>      A conti fatti il DEBUG non serve più, ma lo lascio commentato in caso di necessità.
                                 <li><a href="BEStudenti/Modifica_Profilo.aspx">Studenti</a></li> 
                                 <li><a href="BETutor/GestioneTutor.aspx">Tutor</a></li>
                             </ul>
-                        </li>
+                        </li>--%>
                         <li class="active"><a href="Default.aspx">Home</a></li>
                         <li><a href="#about">Chi siamo</a></li>
                         <li><a href="CorsiFE.aspx">Corsi</a></li>
@@ -94,7 +94,7 @@
                         <li><a href="#pricing">GenMoney</a></li>
                         <li><a href="#footer">Contatti</a></li>
                         <li>
-                            <asp:HyperLink ID="lnkLogin" runat="server" Text="Accedi" NavigateUrl="~/Login.aspx" Visible="true"></asp:HyperLink></li>
+                            <asp:HyperLink ID="lnkLogin" runat="server" Text="Accedi" NavigateUrl="~/Login.aspx?status=0" Visible="true"></asp:HyperLink></li>
                         <li>
                             <asp:Literal ID="litUserSpace" runat="server"></asp:Literal>
                     </ul>

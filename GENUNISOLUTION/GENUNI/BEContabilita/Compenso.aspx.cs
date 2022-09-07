@@ -12,8 +12,9 @@ public partial class BEContabilita_Default : System.Web.UI.Page
         if (!IsPostBack)
         {
             CaricaDDl();
-            SceltaVisualiazzione();
+            CaricaGrigliaDocenti();
         }
+
     }
 
     protected void CaricaDDl()
@@ -28,41 +29,89 @@ public partial class BEContabilita_Default : System.Web.UI.Page
     protected void CaricaGrigliaDocenteSingolo()
     {
         CONTABILITA.Contabilita_WSSoapClient C = new CONTABILITA.Contabilita_WSSoapClient();
-        string dataInzio = txtDataInzio.Text;
-        string dataFine = txtDataFine.Text;
+        string dataInizio;
+        string dataFine;
+        if (string.IsNullOrEmpty(txtDataInzio.Text))
+        {
+            dataInizio = "1900-01-01";
+        }
+        else
+        {
+            dataInizio = txtDataInzio.Text;
+        }
+
+        if (string.IsNullOrEmpty(txtDataFine.Text))
+        {
+            dataFine = "2999-12-31";
+        }
+        else
+        {
+            dataFine = txtDataFine.Text;
+        }
+
         int codDocente = int.Parse(ddlDocenti.SelectedValue.ToString());
-        grdDocente.DataSource = C.ListaSpeseDocenteSingolo(dataInzio, dataFine, codDocente);
+        grdDocente.DataSource = C.ListaSpeseDocenteSingolo(dataInizio, dataFine, codDocente);
         grdDocente.DataBind();
     }
 
     protected void CaricaGrigliaDocenti()
     {
         CONTABILITA.Contabilita_WSSoapClient C = new CONTABILITA.Contabilita_WSSoapClient();
-        string dataInzio = txtDataInzio.Text;
-        string dataFine = txtDataFine.Text;
-        grdDocente.DataSource = C.ListaSpese(dataInzio, dataFine);
+        string dataInizio;
+        string dataFine;
+        if (string.IsNullOrEmpty(txtDataInzio.Text))
+        {
+            dataInizio = "1900-01-01";
+        }
+        else
+        {
+            dataInizio=txtDataInzio.Text;
+        }
+
+        if (string.IsNullOrEmpty(txtDataFine.Text))
+        {
+            dataFine = "2999-12-31";
+        }
+        else
+        {
+            dataFine = txtDataFine.Text;
+        }
+
+        grdDocente.DataSource = C.ListaSpese(dataInizio, dataFine);
         grdDocente.DataBind();
 
     }
 
-    protected void SceltaVisualiazzione()
+
+
+    protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if (rdbDocente.Checked)
+        if(RadioButtonList1.SelectedIndex==0)
         {
-            CaricaGrigliaDocenteSingolo();
-            ddlDocenti.Enabled = true;
+            ddlDocenti.Enabled = false;
+            CaricaGrigliaDocenti();
         }
         else
         {
-            CaricaGrigliaDocenti();
-            ddlDocenti.Enabled = false;
+            ddlDocenti.Enabled = true; 
 
         }
     }
 
-    protected void btnInvia_Click(object sender, EventArgs e)
+    protected void ddlDocenti_SelectedIndexChanged(object sender, EventArgs e)
     {
-        SceltaVisualiazzione();
+        CaricaGrigliaDocenteSingolo();
     }
 
+    protected void btnCarica_Click(object sender, EventArgs e)
+    {
+        if (RadioButtonList1.SelectedIndex == 0)
+        {
+            CaricaGrigliaDocenti();
+        }
+        else
+        {
+            CaricaGrigliaDocenteSingolo();
+        }
+    }
 }

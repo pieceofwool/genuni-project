@@ -479,6 +479,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectAll_Studenti">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAll_StudentiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAll_StudentiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -649,6 +666,12 @@
   <wsdl:message name="SelectForSkillsSoapOut">
     <wsdl:part name="parameters" element="tns:SelectForSkillsResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectAll_StudentiSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAll_Studenti" />
+  </wsdl:message>
+  <wsdl:message name="SelectAll_StudentiSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAll_StudentiResponse" />
+  </wsdl:message>
   <wsdl:portType name="Esterni_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -761,6 +784,10 @@
     <wsdl:operation name="SelectForSkills">
       <wsdl:input message="tns:SelectForSkillsSoapIn" />
       <wsdl:output message="tns:SelectForSkillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAll_Studenti">
+      <wsdl:input message="tns:SelectAll_StudentiSoapIn" />
+      <wsdl:output message="tns:SelectAll_StudentiSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Esterni_WSSoap" type="tns:Esterni_WSSoap">
@@ -1017,6 +1044,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectAll_Studenti">
+      <soap:operation soapAction="http://tempuri.org/SelectAll_Studenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Esterni_WSSoap12" type="tns:Esterni_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1265,6 +1301,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectForSkills">
       <soap12:operation soapAction="http://tempuri.org/SelectForSkills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAll_Studenti">
+      <soap12:operation soapAction="http://tempuri.org/SelectAll_Studenti" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

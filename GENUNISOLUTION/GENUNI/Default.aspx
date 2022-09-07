@@ -20,7 +20,7 @@
                         
                     </h3>
                     <div>
-                        <a href="registrazione.aspx" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti</a>
+                        <a href="Login.aspx?status=1" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti</a>
                     </div>
                 </div>
 
@@ -135,29 +135,23 @@
             <!--========================== Aggiornamento dati Gen Uni ============================-->
             <div class="container">
                 <div class="row counters">
-
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">123</span>
+                        <%-- logica contatore commentata aspettando l'aggiornamento del ws/classe--%>
+                        <asp:Label ID="lblContoStudenti" runat="server" Text=""></asp:Label>
                         <p>Studenti</p>
                     </div>
-
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">67</span>
-                        <p>Progetti</p>
+                        <asp:Label ID="lblContoDocenti" runat="server" Text=""></asp:Label>
+                        <p>Docenti</p>
                     </div>
-
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">364</span>
-                        <p>Ore di supporto</p>
-                    </div>
-
-                    <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">18</span>
-                        <p>Progetti importanti</p>
+                        <asp:Label ID="lblContoCorsi" runat="server" Text=""></asp:Label>
+                        <p>Corsi</p>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- #aggiornamento-dati-GenUni -->
 
         <!--========================== Call To Action Section ============================-->
@@ -338,7 +332,8 @@
                                     <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
                                     <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
-                                <a href="CorsiFE.aspx" class="btn">Acquista</a>
+                                <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
+                                <asp:Button ID="btnGenMoney50" CssClass="btn" runat="server" Text="ACQUISTA" OnClick="btnGenMoney50_Click" />
                             </div>
                         </div>
                     </div>
@@ -361,7 +356,8 @@
                                     <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
                                     <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
-                                <a href="CorsiFE.aspx" class="btn">Acquista</a>
+                                <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
+                                <asp:Button ID="btnGenMoney100" CssClass="btn" runat="server" Text="ACQUISTA" OnClick="btnGenMoney100_Click" />
                             </div>
                         </div>
                     </div>
@@ -384,7 +380,8 @@
                                     <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
                                     <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
-                                <a href="CorsiFE.aspx" class="btn">Acquista</a>
+                                <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
+                                <asp:Button ID="btnGenMoney200" CssClass="btn" runat="server" Text="ACQUISTA" OnClick="btnGenMoney200_Click" />
                             </div>
                         </div>
                     </div>
@@ -427,11 +424,11 @@
                             </p>
                         </div>
                     </li>
-      <li>
+                    <li>
                         <a data-toggle="collapse" href="#faq4" class="collapsed">Come funzionano i test?<i class="ion-android-remove"></i></a>
                         <div id="faq4" class="collapse" data-parent="#faq-list">
                             <p>
-                               Solitamente i test sono quiz online a risposta multipla, ma in alcuni casi pu &#242 essere richiesto l&#39invio di un elaborato al docente per la correzione. In caso di mancato superamento di un test &#232 possibile ripeterlo, senza costi aggiuntivi.
+                                Solitamente i test sono quiz online a risposta multipla, ma in alcuni casi pu &#242 essere richiesto l&#39invio di un elaborato al docente per la correzione. In caso di mancato superamento di un test &#232 possibile ripeterlo, senza costi aggiuntivi.
                             </p>
                         </div>
                     </li>
@@ -480,7 +477,7 @@
                                     <p>Vuoi pi&#249; informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
                                     <asp:TextBox ID="txtEmail" CssClass="" placeholder="E-mail" runat="server" TextMode="Email"></asp:TextBox>
                                     <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti" OnClick="btnIscrivitiNews_Click" />
-                                    <asp:CheckBox ID="chbxPrivacy" runat="server" AutoPostBack="True" OnCheckedChanged="chbxPrivacy_CheckedChanged" /><p>
+                                    <asp:CheckBox ID="chbxPrivacy" runat="server" /><p>
                                         Ho letto l&#39informativa sulla privacy e acconsento al trattamento dei miei dati personali ai sensi dell&#39art. 13 del D. Lgs. 196/2003
                                     </p>
                                 </div>
@@ -502,7 +499,7 @@
                                     <ul>
                                         <li><a href="#intro">Home</a></li>
                                         <li><a href="#about">Chi siamo</a></li>
-                                        <li><a href="CorsiFE.aspx">Corsi</a></li>
+                                        <li><a href="../BEStudenti/ModificaProfiloCopia.aspx">Corsi</a></li>
                                         <li><a href="Login2.aspx">Termini di servizio</a></li>
                                         <li><a href="../BEAdmin/GestioneCorsi.aspx">Privacy policy</a></li>
                                     </ul>

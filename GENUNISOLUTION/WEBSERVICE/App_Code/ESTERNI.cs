@@ -400,5 +400,13 @@ public class ESTERNI
         return c.EseguiSelect(cmd);
     }
 
+    public DataTable SelectAll_Studenti()
+    {
+        SqlCommand cmd = new SqlCommand("ESTERNI_STUDENTI_SELECTALL");
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion
 }
