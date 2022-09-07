@@ -49,8 +49,14 @@
                         <li><a class="active" href="../Default.aspx">Home</a></li>
                         <%--<li><a href="#"></a></li>
                             <li><a href="#"></a></li>--%>
+                        <li class="dropdown"><a href="../BEAdmin/GestioneCorsi.aspx"><span>Corsi</span><i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="../BEAdmin/Inserimento_Modifica_InformazioniCorsi.aspx">Inserimento e modifica corso</a></li>
+                                <li><a href="../BEAdmin/AssegnaCorsi.aspx">Assegnazione corso</a></li>
+                                <li><a href="../BEAdmin/ApprovazioneCorsi.aspx">Approvazione corso</a></li>
+                            </ul>
+                        </li>
                         <li><a href="../BEAdmin/GestioneTutor.aspx">Abilitazione tutor e contabili</a></li>
-                        <li><a href="../BEAdmin/GestioneCorsi.aspx">Creazione e assegnazione corsi</a></li>
                         <li><a href="../BEAdmin/GestioneReport.aspx">Grafici e report</a></li>
                         <li><a href="../Default.aspx">Esci</a></li>
                     </ul>
@@ -58,7 +64,6 @@
                 <!-- .navbar -->
             </div>
         </div>
-        <!-- End Header -->
         <!-- End Header -->
 
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

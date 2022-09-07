@@ -40,7 +40,7 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Modifica Dati',  //titolo dell'oggetto
+                    title: 'Modifica corsi',  //titolo dell'oggetto
                     dialogClass: 'dialog',
                     resizable: false,  //blocca il ridimensionamento
                     height: 500,
@@ -63,7 +63,7 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Modifica Dati',  //titolo dell'oggetto
+                    title: 'Informazioni',  //titolo dell'oggetto
                     dialogClass: 'dialog',
                     resizable: false,  //blocca il ridimensionamento
                     height: 500,
@@ -86,7 +86,7 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Modifica Dati',  //titolo dell'oggetto
+                    title: 'Assegna corsi',  //titolo dell'oggetto
                     dialogClass: 'dialog',
                     resizable: false,  //blocca il ridimensionamento--%>
                     height: 500,
@@ -99,6 +99,52 @@
             });
         });
     </script>
+     <script>
+         $(document).ready(function () {
+             $('#btnApprova').click(function () {
+                 //collego l'oggetto alla pagina
+                 var url = "Popup/ApprovaCorsi.aspx";
+                 var popUp = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+                 //dichiariamo tutte le caratteristiche dell' oggetto
+                 popUp.dialog({
+
+                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
+                     title: 'Approvazione',  //titolo dell'oggetto
+                     dialogClass: 'dialog',
+                     resizable: false,  //blocca il ridimensionamento--%>
+                     height: 500,
+                     width: 600,
+                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
+                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
+                 });
+                 //ogni oggetto deve restituire qualcosa
+                 return false;
+             });
+         });
+     </script>
+         <script>
+             $(document).ready(function () {
+                 $('#btnAbilita').click(function () {
+                     //collego l'oggetto alla pagina
+                     var url = "Popup/Abilita.aspx";
+                     var popUp = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+                     //dichiariamo tutte le caratteristiche dell' oggetto
+                     popUp.dialog({
+
+                         modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
+                         title: 'Abilita',  //titolo dell'oggetto
+                         dialogClass: 'dialog',
+                         resizable: false,  //blocca il ridimensionamento--%>
+                         height: 500,
+                         width: 600,
+                         overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
+                         open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
+                     });
+                     //ogni oggetto deve restituire qualcosa
+                     return false;
+                 });
+             });
+         </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
