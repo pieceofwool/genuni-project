@@ -21,6 +21,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
+    <%--tabella storico materie--%>
     
     <table>
         <tr style="border: 1px solid black">
@@ -39,5 +40,10 @@
         <asp:Literal ID="litStorico" runat="server"></asp:Literal>
 
     </table>
+
+    <%--tabelle materie da accettare--%>
+
+
+
 </asp:Content>
 

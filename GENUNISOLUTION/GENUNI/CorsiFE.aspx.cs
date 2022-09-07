@@ -28,17 +28,22 @@ public partial class Default2 : System.Web.UI.Page
         foreach (DataRow dr in dt.Rows)
         {
             char status = char.Parse(dr.Field<string>("Status_Corsi"));
-
-
-
+            int Codice = dr.Field<int>("Chiave");
             string Titolo = dr.Field<string>("Titolo").ToString();
-            string Descrizione = dr.Field<string>("Descrizione").ToString();
             byte[] arr = dr.Field<byte[]>("Avatar_Corso");
             string tipo = dr.Field<string>("Tipo_Img").ToString();
-            // string data = dr.Field<string>("Data_Partenza").ToString();
-            string data = dt.Rows[i]["Data_Partenza"].ToString().Substring(0, 10);
-            int Codice = dr.Field<int>("Chiave");
-            int prezzo = dr.Field<int>("Costo");
+
+            string Descrizione = "";
+            string data = "";
+            int prezzo = 0;
+            if (status == 'A')
+            {
+                Descrizione = dr.Field<string>("Descrizione").ToString();
+                // string data = dr.Field<string>("Data_Partenza").ToString();
+                data = dt.Rows[i]["Data_Partenza"].ToString().Substring(0, 10);
+                prezzo = dr.Field<int>("Costo");
+            }
+
 
             //accedo alla join con materie con una nuova procedure
             CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
@@ -119,9 +124,9 @@ public partial class Default2 : System.Web.UI.Page
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "<div class=\"modal-footer\">";
                 //litModalCorso.Text += "<asp:Button ID=\"BtnIscriviti\"class=\"btn btn-secondary\" runat=\"server\" Text=\"Iscriviti\" UseSubmitBehavior=\"False\" OnClick=\"BtnIscriviti_Click\" />";
-                litModalCorso.Text += "<button style=\"font-size:12px\" type=\"button\" class=\"btn btn-secondary\" onclick='Iscriviti(" + session + ")'>Iscriviti</button>";
+                litModalCorso.Text += "<button style=\"font-size:12px\" type=\"button\" class=\"btn btn-secondary\" onclick=\"Iscriviti('" + session + "')\" >Iscriviti</button>";
                 litModalCorso.Text += "<button style=\"font-size:12px\" type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>";
-
+                //Iscriviti(" + session + ")
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "</div>";
                 litModalCorso.Text += "</div>";

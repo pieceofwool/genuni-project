@@ -141,4 +141,17 @@ public class Materie_WS : System.Web.Services.WebService
         dt.TableName = "Materie";
         return dt;
     }
+
+
+    //seleziona materia di un docente non ancora accettate
+    [WebMethod]
+    public DataTable SelectNonAccettate(int cod_docente)
+    {
+        MATERIE M = new MATERIE();
+        M.Cod_Docente = cod_docente;
+        DataTable dt = new DataTable();
+        dt = M.SelectNonAccettate();
+        dt.TableName = "Materie";
+        return dt;
+    }
 }

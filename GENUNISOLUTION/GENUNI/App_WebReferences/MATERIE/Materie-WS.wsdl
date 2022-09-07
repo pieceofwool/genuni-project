@@ -152,6 +152,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectNonAccettate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cod_docente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectNonAccettateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectNonAccettateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="InsertSoapIn">
@@ -208,6 +229,12 @@
   <wsdl:message name="SelectDaRispondereSoapOut">
     <wsdl:part name="parameters" element="tns:SelectDaRispondereResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectNonAccettateSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectNonAccettate" />
+  </wsdl:message>
+  <wsdl:message name="SelectNonAccettateSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectNonAccettateResponse" />
+  </wsdl:message>
   <wsdl:portType name="Materie_WSSoap">
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
@@ -244,6 +271,10 @@
     <wsdl:operation name="SelectDaRispondere">
       <wsdl:input message="tns:SelectDaRispondereSoapIn" />
       <wsdl:output message="tns:SelectDaRispondereSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectNonAccettate">
+      <wsdl:input message="tns:SelectNonAccettateSoapIn" />
+      <wsdl:output message="tns:SelectNonAccettateSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Materie_WSSoap" type="tns:Materie_WSSoap">
@@ -329,6 +360,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectNonAccettate">
+      <soap:operation soapAction="http://tempuri.org/SelectNonAccettate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Materie_WSSoap12" type="tns:Materie_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -406,6 +446,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectDaRispondere">
       <soap12:operation soapAction="http://tempuri.org/SelectDaRispondere" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectNonAccettate">
+      <soap12:operation soapAction="http://tempuri.org/SelectNonAccettate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

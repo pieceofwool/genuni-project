@@ -143,6 +143,16 @@ public class MATERIE
         return conn.EseguiSelect(cmd);
     }
 
+    //seleziona materia di un docente non ancora accettate
+    public DataTable SelectNonAccettate()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_SelectNonAccettate");
+        cmd.Parameters.AddWithValue("@Cod_Docente", Cod_Docente);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        return conn.EseguiSelect(cmd);
+    }
+
     #endregion
 
 
