@@ -51,7 +51,7 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="about-img">
-                            <img src="img/about-us.jpg" alt="">
+                            <img src="img/about-us.png" alt="">
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-6">
