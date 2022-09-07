@@ -75,6 +75,11 @@
             
             <asp:Literal ID="litChat" runat="server"></asp:Literal>
         </tr>
+        <tr>
+            <td>
+                <asp:Button ID="BtnEsci" runat="server" Text="Indietro" OnClick="BtnEsci_Click" />
+            </td>
+        </tr>
     </table>
 
 </asp:Content>

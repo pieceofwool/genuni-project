@@ -18,7 +18,6 @@ public partial class Default2 : System.Web.UI.Page
 
         //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
         int CHIAVE = 2;
-        Session["CodiceCorso"] = codicecorso;
 
         MATERIE.Materie_WSSoapClient MA = new MATERIE.Materie_WSSoapClient();
         DataTable materie = new DataTable();
@@ -29,8 +28,13 @@ public partial class Default2 : System.Web.UI.Page
         {
             string materia = riga.Field<string>("Titolo").ToString();
             int codicemateria = riga.Field<int>("Chiave");
-            litMaterie.Text += "<tr><td>" + materia + "</td><td><a href=\"ProgrammaDocenti.aspx?" +
+            litMaterie.Text += "<tr><td>" + materia + "</td><td><a href=\"ProgrammiDocenti.aspx?" +
                 "codice=" + codicemateria + "&corso="+nomecorso+"&materia="+materia+"\">Vai al Programma</a></td></tr>";
         }
+    }
+
+    protected void BtnEsci_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CorsiDocenti.aspx");
     }
 }
