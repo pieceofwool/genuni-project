@@ -120,6 +120,15 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public bool ControlloDuplice(string Usr)
+    {
+        ESTERNI e = new ESTERNI();
+        e.USR = Usr;
+
+        return e.ControlloDuplice();
+    }
+
+    [WebMethod]
     public void AbilitaEsterno(int Chiave)
     {
         ESTERNI e = new ESTERNI();
@@ -351,5 +360,26 @@ public class Esterni_WS : System.Web.Services.WebService
         e.PWD = PWD;
 
         e.UpdatePassword_Studenti();
+    }
+
+    [WebMethod]
+    public DataTable SelectForSkills(string SKILLS)
+    {
+        DataTable dt = new DataTable();
+        ESTERNI e = new ESTERNI();
+        e.SKILLS = SKILLS;
+        dt = e.SelectForSkills();
+        dt.TableName = "Esterni";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectAll_Studenti()
+    {
+        DataTable dt = new DataTable();
+        ESTERNI e = new ESTERNI();
+        dt = e.SelectAll_Studenti();
+        dt.TableName = "Esterni";
+        return dt;
     }
 }

@@ -43,6 +43,18 @@ public class Programmi_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public DataTable SelectForMateria(int COD_MATERIA)
+    {
+        PROGRAMMI p = new PROGRAMMI();
+        p.COD_MATERIA = COD_MATERIA;
+
+        DataTable dt = p.SelectForMateria();
+        dt.TableName = "Programmi";
+
+        return dt;
+    }
+
+    [WebMethod]
     public void Insert(int COD_MATERIA, string TIPO, int INDICE, string LINK, byte[] MATERIALE, string TITOLO_MATERIALE, string DESCRIZIONE)
     {
         PROGRAMMI p = new PROGRAMMI();
@@ -71,6 +83,22 @@ public class Programmi_WS : System.Web.Services.WebService
         p.DESCRIZIONE = DESCRIZIONE;
 
         p.Update();
+    }
+
+    /// <summary>
+    /// metodo che restituisce link, titolo, materiale e descrizione in base a codmateria dato
+    /// </summary>
+    /// <param name="COD_MATERIA"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable ProgrammiInfoMateria(int COD_MATERIA)
+    {
+        PROGRAMMI P = new PROGRAMMI();
+        P.COD_MATERIA = COD_MATERIA;
+
+        DataTable dt = P.ProgrammiInfoMateria();
+        dt.TableName = "Programmi";
+        return dt;  
     }
 
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,8 +15,19 @@ public partial class MasterPageFE : System.Web.UI.MasterPage
             int Chiave = int.Parse(Session["CodiceAttore"].ToString());
 
             ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
+            UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();
 
-            string Nome = E.GetNome(Chiave);
+            string Nome;
+
+            try
+            {
+                string.IsNullOrEmpty((Nome = E.GetNome(Chiave)).ToString());
+            }
+            catch (FaultException)
+            {
+                Nome = U.GetNome(Chiave);
+            }
+
             string usertype = Session["TipoAttore"].ToString();
             string[] greeting = { "Benvenuto, ", "Bentornato, ", "Ci si rivede! " };
 
@@ -24,25 +36,60 @@ public partial class MasterPageFE : System.Web.UI.MasterPage
 
             Random rnd = new Random();
             int dice = rnd.Next(0, 3);
-            if (usertype == "S")
-            {
-                litUserSpace.Text = "<li class=\"drop-down\"><a role=\"link\" aria-disabled=\"true\">" + greeting[dice] + Nome + "</a>";
+
+            AreaRiservata(usertype, greeting[dice], Nome);
+
+        }
+    }
+
+    protected void AreaRiservata(string usertype, string greeting, string Nome)
+    {
+        switch (usertype)
+        {
+            case "A":
+                litUserSpace.Text = "<li class=\"drop-down\"><a role=\"link\" aria-disabled=\"true\">" + greeting + Nome + "</a>";
+                litUserSpace.Text += "<ul>";
+                litUserSpace.Text += "<li><a href=\"BEAdmin/GestioneCorsi.aspx\">Area Riservata</a></li>";
+                litUserSpace.Text += "<li><a href=\"LogOut.aspx\">Logout</a></li>";
+                litUserSpace.Text += "</ul>";
+                litUserSpace.Text += "</li>";
+                break;
+
+            case "T":
+                litUserSpace.Text = "<li class=\"drop-down\"><a role=\"link\" aria-disabled=\"true\">" + greeting + Nome + "</a>";
+                litUserSpace.Text += "<ul>";
+                litUserSpace.Text += "<li><a href=\"BETutor/GestioneTutor.aspx\">Area Riservata</a></li>";
+                litUserSpace.Text += "<li><a href=\"LogOut.aspx\">Logout</a></li>";
+                litUserSpace.Text += "</ul>";
+                litUserSpace.Text += "</li>";
+                break;
+
+            case "C":
+                litUserSpace.Text = "<li class=\"drop-down\"><a role=\"link\" aria-disabled=\"true\">" + greeting + Nome + "</a>";
+                litUserSpace.Text += "<ul>";
+                litUserSpace.Text += "<li><a href=\"BEContabilita/Report.aspx\">Area Riservata</a></li>";
+                litUserSpace.Text += "<li><a href=\"LogOut.aspx\">Logout</a></li>";
+                litUserSpace.Text += "</ul>";
+                litUserSpace.Text += "</li>";
+                break;
+
+            case "S":
+                litUserSpace.Text = "<li class=\"drop-down\"><a role=\"link\" aria-disabled=\"true\">" + greeting + Nome + "</a>";
                 litUserSpace.Text += "<ul>";
                 litUserSpace.Text += "<li><a href=\"BEStudenti/Modifica_Profilo.aspx\">Area Riservata</a></li>";
                 litUserSpace.Text += "<li><a href=\"LogOut.aspx\">Logout</a></li>";
                 litUserSpace.Text += "</ul>";
                 litUserSpace.Text += "</li>";
-            }
+                break;
 
-            else
-            {
-                litUserSpace.Text = "<li class=\"drop-down\"><a role=\"link\" aria-disabled=\"true\">" + greeting[dice] + Nome + "</a>";
+            case "D":
+                litUserSpace.Text = "<li class=\"drop-down\"><a role=\"link\" aria-disabled=\"true\">" + greeting + Nome + "</a>";
                 litUserSpace.Text += "<ul>";
                 litUserSpace.Text += "<li><a href=\"BEDocenti/GestioneDocenti.aspx\">Area Riservata</a></li>";
                 litUserSpace.Text += "<li><a href=\"LogOut.aspx\">Logout</a></li>";
                 litUserSpace.Text += "</ul>";
                 litUserSpace.Text += "</li>";
-            }
+                break;
         }
     }
 }

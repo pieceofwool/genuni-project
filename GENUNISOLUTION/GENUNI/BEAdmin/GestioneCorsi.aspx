@@ -107,9 +107,9 @@
     </div>
     <div class="containerBE">
         <h4 class="titoliBE">Creazione e modifica corsi</h4>
-        <table>
+        <table class="tablePopUp">
             <tr>
-                <td>
+                <td class="btnGestisci">
                     <!-- POPUP, HTML-->
                     <a id="btnInserisci" class="popUpBtnBE" href="Popup/InserisciCorsi.aspx">Crea nuovo corso</a>
                     <a id="btnModifica" class="popUpBtnBE" href="Popup/ModificaCorsi.aspx">Modifica corso selezionato</a>
@@ -120,7 +120,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:GridView ID="gridCreazioneCorsi" runat="server" DataKeyNames="Chiave,Cod_Utente" AutoGenerateColumns="False" OnSelectedIndexChanged="gridCreazioneCorsi_SelectedIndexChanged">
+                    <asp:GridView ID="gridCreazioneCorsi" runat="server" DataKeyNames="Chiave,Cod_Utente" AutoGenerateColumns="False" CssClass="griglia" OnSelectedIndexChanged="gridCreazioneCorsi_SelectedIndexChanged">
                         <Columns>
                             <asp:BoundField DataField="Chiave" Visible="false" />
                             <asp:BoundField DataField="Cod_Utente" Visible="false" />
@@ -136,8 +136,12 @@
                             <asp:BoundField DataField="Costo" Visible="false" />
                             <asp:BoundField DataField="Avatar_Corso" Visible="false" />
                             <asp:BoundField DataField="Tipo_Img" Visible="false" />
-                            <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
+                            <asp:CommandField ButtonType="Button" ShowSelectButton="true">
+                                <ControlStyle CssClass="btnBE" />
+                            </asp:CommandField>
                         </Columns>
+                        <HeaderStyle />
+                        <HeaderStyle CssClass="headergrid" />
                     </asp:GridView>
                 </td>
             </tr>
@@ -145,9 +149,9 @@
     </div>
     <div class="containerBE2">
         <h4 class="titoliBE">Assegnazione corsi</h4>
-        <table>
+        <table class="tablePopUp">
             <tr>
-                <td>
+                <td class="btnGestisci">
                     <!-- POPUP, HTML-->
                     <a id="btnAssegna" class="popUpBtnBE" href="Popup/AssegnaCorsi.aspx">Assegna corso</a>
                     <asp:Button ID="btnAggiornaAssegnazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaAssegnazione_Click" CssClass="btnBE" />
@@ -155,14 +159,16 @@
             </tr>
             <tr>
                 <td>
-                    <asp:GridView ID="gridAssegnazioneCorsi" runat="server" DataKeyNames="Chiave, Cod_Utente" AutoGenerateColumns="false" OnSelectedIndexChanged="gridAssegnazioneCorsi_SelectedIndexChanged">
+                    <asp:GridView ID="gridAssegnazioneCorsi" runat="server" DataKeyNames="Chiave,Cod_Utente" AutoGenerateColumns="False" CssClass="griglia" OnSelectedIndexChanged="gridAssegnazioneCorsi_SelectedIndexChanged">
                         <Columns>
                             <asp:BoundField DataField="Chiave" Visible="false" />
                             <asp:BoundField DataField="Cod_Utente" Visible="false" />
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                             <asp:BoundField DataField="Nome" HeaderText="Nome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
                             <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
-                            <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
+                            <asp:CommandField ButtonType="Button" ShowSelectButton="true">
+                                <ControlStyle CssClass="btnBE" />
+                            </asp:CommandField>
                         </Columns>
                     </asp:GridView>
                 </td>

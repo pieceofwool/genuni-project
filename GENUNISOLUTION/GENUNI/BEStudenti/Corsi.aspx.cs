@@ -9,20 +9,32 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
-    }//griglia riempita con la tabella materie
+        caricaGriglia();
+        //fare l'if con il controllo sul test
+        /*int soglia = g.soglia;
+         * int risultato = g. risultato;
+         * if(risultato>=soglia)
+         * {
+         *    attestato.visible=true;
+         * }
+         * else
+         * {
+         *    attestato.visible=false;
+         * }
+         */
+        attestato.Visible = false;
+    }
 
     protected void grigliaMaterie_SelectedIndexChanged(object sender, EventArgs e)
     {
         Response.Redirect("Materie.aspx");
-        //Session["codiceMateria"]= grigliaMaterie.SelectedDataKey[0];
     }
 
     protected void caricaGriglia()
     {
-        PROGRAMMI.Programmi_WSSoapClient p = new PROGRAMMI.Programmi_WSSoapClient();
-        grigliaMaterie.DataSource = p.SelectOne();
+        MATERIE.Materie_WSSoapClient m = new MATERIE.Materie_WSSoapClient();
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        grigliaMaterie.DataSource = m.MaterieInfoCorso(CHIAVE);
         grigliaMaterie.DataBind();
-        //qui c'è il codicecorso
     }
 }

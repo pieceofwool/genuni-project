@@ -66,7 +66,7 @@ public class CLASSI
         CONNESSIONE C = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "CLASSI_SELECTALL_STUDENTE";
-        cmd.Parameters.AddWithValue("@Cod_Studente", COD_STUDENTE);
+        cmd.Parameters.AddWithValue("@CodiceStudente", COD_STUDENTE);
 
         return C.EseguiSelect(cmd);
     }
@@ -92,6 +92,31 @@ public class CLASSI
         cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
 
         return new CONNESSIONE().EseguiSelect(cmd);
+    }
+
+    public void Insert_Punteggio()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CLASSI_INSERT_PUNTEGGIO";
+        cmd.Parameters.AddWithValue("@COD_CORSO", COD_CORSO);
+        cmd.Parameters.AddWithValue("@COD_STUDENTE", COD_STUDENTE);
+        cmd.Parameters.AddWithValue("@PUNTEGGIO", PUNTEGGIO_TEST);
+
+
+        c.EseguiCmd(cmd);
+        //c.EseguiCommand("insert into tabTipiSpese values('" + descrizione + "')");
+
+    }
+
+    public DataTable Select_Punteggio()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "CLASSI_SELECT_PUNTEGGIO";
+        cmd.Parameters.AddWithValue("@Cod_Studente", COD_STUDENTE);
+
+        return c.EseguiSelect(cmd);
     }
 }
 

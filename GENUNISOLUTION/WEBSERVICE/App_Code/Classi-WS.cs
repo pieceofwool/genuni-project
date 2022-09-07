@@ -113,4 +113,26 @@ public class Classi_WS : System.Web.Services.WebService
         return DT;
     }
 
+    [WebMethod]
+    public void Insert_Punteggio(int COD_CORSO, int COD_STUDENTE, int PUNTEGGIO_TEST)
+    {
+        CLASSI c = new CLASSI();
+        c.COD_CORSO = COD_CORSO;
+        c.COD_STUDENTE = COD_STUDENTE;
+        c.PUNTEGGIO_TEST = PUNTEGGIO_TEST;
+
+        c.Insert_Punteggio();
+    }
+
+    [WebMethod]
+    public DataTable Select_Punteggio(int COD_STUDENTE)
+    {
+        DataTable dt = new DataTable();
+        CLASSI c = new CLASSI();
+        c.COD_STUDENTE = COD_STUDENTE;
+        dt = c.Select_Punteggio();
+        dt.TableName = "Classi";
+        return dt;
+    }
+
 }

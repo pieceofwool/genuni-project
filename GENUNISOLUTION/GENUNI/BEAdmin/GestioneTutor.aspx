@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
-    
+
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
     <script>
         $(document).ready(function () {
@@ -36,9 +36,9 @@
     </div>
     <div class="containerBE">
         <h4 class="titoliBE">Abilitazione tutor e contabili</h4>
-        <table>
+        <table class="tablePopUp">
             <tr>
-                <td>
+                <td class="btnGestisci">
                     <!-- POPUP, HTML-->
                     <a id="btnAbilita" class="popUpBtnBE" href="Popup/btnAbilita.aspx">Cambia stato</a>
                     <!--NO POPUP, OGETTO ASP-->
@@ -48,7 +48,7 @@
             <tr>
                 <td>
                     <%-- Tabella che contiene utenti T o C --%>
-                    <asp:GridView ID="gridUtentiTC" runat="server" DataKeyNames="Chiave" AutoGenerateColumns="false" OnSelectedIndexChanged="gridUtentiTC_SelectedIndexChanged">
+                    <asp:GridView ID="gridUtentiTC" CssClass="griglia" runat="server" DataKeyNames="Chiave" AutoGenerateColumns="false" OnSelectedIndexChanged="gridUtentiTC_SelectedIndexChanged">
                         <Columns>
                             <asp:BoundField DataField="Chiave" Visible="false" />
                             <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
@@ -58,7 +58,9 @@
                             <asp:BoundField DataField="Nome" HeaderText="Nome" />
                             <asp:BoundField DataField="Figura" HeaderText="Figura" />
                             <asp:BoundField DataField="Abilitato" HeaderText="Abilitato" />
-                            <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
+                            <asp:CommandField ButtonType="Button" ShowSelectButton="true">
+                                <ControlStyle CssClass="btnBE" />
+                            </asp:CommandField>
                         </Columns>
                     </asp:GridView>
                 </td>

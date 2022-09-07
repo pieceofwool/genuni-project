@@ -36,6 +36,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SelectForMateria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_MATERIA" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectForMateriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectForMateriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Insert">
         <s:complexType>
           <s:sequence>
@@ -69,6 +90,27 @@
       <s:element name="UpdateResponse">
         <s:complexType />
       </s:element>
+      <s:element name="ProgrammiInfoMateria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_MATERIA" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProgrammiInfoMateriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgrammiInfoMateriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -83,6 +125,12 @@
   <wsdl:message name="SelectOneSoapOut">
     <wsdl:part name="parameters" element="tns:SelectOneResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectForMateriaSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectForMateria" />
+  </wsdl:message>
+  <wsdl:message name="SelectForMateriaSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectForMateriaResponse" />
+  </wsdl:message>
   <wsdl:message name="InsertSoapIn">
     <wsdl:part name="parameters" element="tns:Insert" />
   </wsdl:message>
@@ -95,6 +143,12 @@
   <wsdl:message name="UpdateSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="ProgrammiInfoMateriaSoapIn">
+    <wsdl:part name="parameters" element="tns:ProgrammiInfoMateria" />
+  </wsdl:message>
+  <wsdl:message name="ProgrammiInfoMateriaSoapOut">
+    <wsdl:part name="parameters" element="tns:ProgrammiInfoMateriaResponse" />
+  </wsdl:message>
   <wsdl:portType name="Programmi_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -104,6 +158,10 @@
       <wsdl:input message="tns:SelectOneSoapIn" />
       <wsdl:output message="tns:SelectOneSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SelectForMateria">
+      <wsdl:input message="tns:SelectForMateriaSoapIn" />
+      <wsdl:output message="tns:SelectForMateriaSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
       <wsdl:output message="tns:InsertSoapOut" />
@@ -111,6 +169,10 @@
     <wsdl:operation name="Update">
       <wsdl:input message="tns:UpdateSoapIn" />
       <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProgrammiInfoMateria">
+      <wsdl:input message="tns:ProgrammiInfoMateriaSoapIn" />
+      <wsdl:output message="tns:ProgrammiInfoMateriaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Programmi_WSSoap" type="tns:Programmi_WSSoap">
@@ -133,6 +195,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectForMateria">
+      <soap:operation soapAction="http://tempuri.org/SelectForMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Insert">
       <soap:operation soapAction="http://tempuri.org/Insert" style="document" />
       <wsdl:input>
@@ -144,6 +215,15 @@
     </wsdl:operation>
     <wsdl:operation name="Update">
       <soap:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgrammiInfoMateria">
+      <soap:operation soapAction="http://tempuri.org/ProgrammiInfoMateria" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -172,6 +252,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectForMateria">
+      <soap12:operation soapAction="http://tempuri.org/SelectForMateria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Insert">
       <soap12:operation soapAction="http://tempuri.org/Insert" style="document" />
       <wsdl:input>
@@ -183,6 +272,15 @@
     </wsdl:operation>
     <wsdl:operation name="Update">
       <soap12:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgrammiInfoMateria">
+      <soap12:operation soapAction="http://tempuri.org/ProgrammiInfoMateria" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
