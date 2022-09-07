@@ -24,4 +24,10 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         grigliaMateriale.DataSource = p.ProgrammiInfoMateria(CHIAVE);
         grigliaMateriale.DataBind();
     }
+
+    protected void grigliaMateriale_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        string link = grigliaMateriale.SelectedRow.Cells[1].Text.ToString();
+        Response.Redirect(link);
+    }
 }
