@@ -32,8 +32,8 @@ public partial class Default2 : System.Web.UI.Page
         Lit2.Text = "";
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
-        int CHIAVE = 1;
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        //int CHIAVE = 1;
         
         DataTable dt = new DataTable();
         dt.TableName = "Esterni";
