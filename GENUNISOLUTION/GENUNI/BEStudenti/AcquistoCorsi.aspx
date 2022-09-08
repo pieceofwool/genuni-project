@@ -40,7 +40,7 @@
     <br />
     <br />
     <br />
-    <asp:GridView ID="grigliaCorso" runat="server" OnRowDataBound="grigliaCorso_RowDataBound" DataKeyNames="CHIAVE" OnSelectedIndexChanged="grigliaCorso_SelectedIndexChanged">
+    <asp:GridView ID="grigliaCorso" runat="server" DataKeyNames="CHIAVE" OnSelectedIndexChanged="grigliaCorso_SelectedIndexChanged">
         <Columns>
             <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
         </Columns>

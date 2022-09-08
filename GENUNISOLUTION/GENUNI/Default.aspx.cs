@@ -10,8 +10,6 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        btnIscrivitiNews.Enabled = false;
-
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
         DataTable dtstudenti = new DataTable();
@@ -30,8 +28,6 @@ public partial class _Default : System.Web.UI.Page
         dtcorsi = C.SelectAll();
         int contcorsi = dtcorsi.Rows.Count;
         lblContoCorsi.Text = contcorsi.ToString();
-
-
     }
 
     protected void btnCandidati_Click(object sender, EventArgs e)
@@ -66,7 +62,7 @@ public partial class _Default : System.Web.UI.Page
             return;
         }
 
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Accettare Informativa sulla Privacy prima di preiscriversi')", true);
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Accettare l\\'Informativa sulla Privacy prima di preiscriversi')", true);
         return;
 
     }
@@ -86,7 +82,7 @@ public partial class _Default : System.Web.UI.Page
             return;
         }
 
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Fai accesso prima di poter comprare GenMoney')", true);
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Fai 'l\\'accesso prima di poter comprare GenMoney')", true);
         Response.Redirect("Login.aspx");
         return;
     }

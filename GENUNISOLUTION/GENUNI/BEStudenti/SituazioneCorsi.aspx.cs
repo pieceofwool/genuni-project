@@ -37,7 +37,8 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     protected void CaricaCorsiDisponibili()
     {
         CORSI.Corsi_WSSoapClient c = new CORSI.Corsi_WSSoapClient();
-        grigliaCorsiDisponibili.DataSource = c.SelectNonAssegnati();
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        grigliaCorsiDisponibili.DataSource = c.NonComprati(CHIAVE);
         grigliaCorsiDisponibili.DataBind();
     }
 

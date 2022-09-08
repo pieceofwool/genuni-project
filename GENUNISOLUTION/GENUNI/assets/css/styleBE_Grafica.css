@@ -150,6 +150,7 @@ a.popUpBtnBE {
     text-align: center;
     position: relative;
     text-transform: uppercase;
+    width: 500px;
 }
 
     .titoliBE::after {
@@ -223,27 +224,6 @@ a.popUpBtnBE {
     border: 1px solid;
 }
 
-
-/*POP UP CSS&HTML*/
-
-/*.ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix {
-    color: darkgreen;
-}*/
-/**/
-
-/*.ui-dialog {
-    widt
-}
-
-.ui-widget {
-   display: block;
-    z-index: 1002;
-    outline: 48px;
-    height: 400px;
-    width: 600px;
-    top: 81px;
-    left: 233px;
-}*/
 
 .ui-widget-content {
     height: 100%;
@@ -405,3 +385,9 @@ th {
     text-align: center;
 }
 
+
+#h4Report {
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+}

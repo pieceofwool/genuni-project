@@ -82,13 +82,18 @@
                             <div class="card card-registration my-4">
                                 <div class="row g-0">
                                     <div class="col-xl-6 d-none d-xl-block">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
-                                            alt="Sample photo" class="img-fluid"
+                          <%--<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                                           alt="Sample photo" class="img-fluid"
+                                            style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />--%>
+                                        <img src="img/img4.png" alt="Sample photo" class="img-fluid"
                                             style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+
+
+
                                     </div>
                                     <div class="col-xl-6">
                                         <div class="card-body p-md-5 text-black">
-                                            <h3 margin="0px 28px" class="mb-5 text-uppercase" id="h1Registrazione">CONFERMA LA TUA REGISTRAZIONE</h3>
+                                            <h3 margin="0px 28px" class="mb-5 text-uppercase" id="h1Registrazione" style="margin: 0px 46px 0px 3px;" >CONFERMA LA TUA REGISTRAZIONE</h3>
 
 
                                             <div class="row">
@@ -102,14 +107,14 @@
                                                 <div class="col-md-6 mb-4">
                                                     <div class="form-outline">
 
-                                                        Inserisci il codice di conferma: <asp:TextBox ID="txtCodice" runat="server"></asp:TextBox>
+                                                        Inserisci codice di conferma: <asp:TextBox ID="txtCodice" runat="server"></asp:TextBox>
 
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="d-flex justify-content-end pt-3">
-                                                <asp:Button ID="btnConferma" runat="server" Text="Conferma" CssClass="btn btn-warning btn-lg ms-2" OnClick="btnConferma_Click" />
+                                            <div class="d-flex justify-content-end pt-3" style="padding-right: 45px; ">
+                                              <asp:Button ID="btnConferma" runat="server" Text="Conferma" CssClass="btn btn-warning btn-lg ms-2" OnClick="btnConferma_Click" />
                                             </div>
                                         </div>
                                     </div>

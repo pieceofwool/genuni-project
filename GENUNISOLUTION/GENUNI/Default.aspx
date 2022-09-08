@@ -133,16 +133,16 @@
             <!--========================== Aggiornamento dati Gen Uni ============================-->
             <div class="container">
                 <div class="row counters">
-                    <div class="col-lg-3 col-6 text-center">
+                    <div class="col-lg-custom col-custom text-center">
                         <%-- logica contatore commentata aspettando l'aggiornamento del ws/classe--%>
                         <asp:Label ID="lblContoStudenti" runat="server" Text=""></asp:Label>
                         <p>Studenti</p>
                     </div>
-                    <div class="col-lg-3 col-6 text-center">
+                    <div class="col-lg-custom col-custom text-center">
                         <asp:Label ID="lblContoDocenti" runat="server" Text=""></asp:Label>
                         <p>Docenti</p>
                     </div>
-                    <div class="col-lg-3 col-6 text-center">
+                    <div class="col-lg-custom col-custom text-center">
                         <asp:Label ID="lblContoCorsi" runat="server" Text=""></asp:Label>
                         <p>Corsi</p>
                     </div>

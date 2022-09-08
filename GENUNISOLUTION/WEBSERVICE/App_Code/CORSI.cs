@@ -44,14 +44,14 @@ public class CORSI
     public void Insert()
     {
         SqlCommand cmd = new SqlCommand("CORSI_Insert");
-       
+
         cmd.Parameters.AddWithValue("@TITOLO", TITOLO);
         cmd.Parameters.AddWithValue("@TIPO", TIPO);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
         cmd.Parameters.AddWithValue("@AVATAR_CORSO", AVATAR_CORSO);
         cmd.Parameters.AddWithValue("@DATA_PARTENZA", DATA_PARTENZA);
         cmd.Parameters.AddWithValue("@TIPO_IMG", TIPO_IMG);
-        
+
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
@@ -99,7 +99,7 @@ public class CORSI
 
         CONNESSIONE c = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand("CORSI_SelectNonAssegnati");
-        DataTable dt = new DataTable();       
+        DataTable dt = new DataTable();
 
         return c.EseguiSelect(cmd);
     }
@@ -117,6 +117,15 @@ public class CORSI
         cmd.Parameters.AddWithValue("attivi", attivi);
 
         return new CONNESSIONE().EseguiSelect(cmd);
+    }
+
+
+    public DataTable SelectJoinMateria()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_JOIN_MATERIA");
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
     }
 
     public DataTable TestRisultato()
@@ -307,6 +316,29 @@ public class CORSI
         CMD.Parameters.AddWithValue("@COD_STUDENTE", COD_STUDENTE);
 
         return new CONNESSIONE().EseguiSelect(CMD);
+    }
+
+    /// <summary>
+    /// metodo che restituisce tutti i corsi con status C creati dal parametro tutor
+    /// </summary>
+    /// <returns></returns>
+    public DataTable CorsiCreati()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SelectStautsC");
+        cmd.Parameters.AddWithValue("@COD_TUTOR", CHIAVE_TUTOR);
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+
+    /// <summary>
+    /// metodo che assegna status M a parametro COD_CORSO
+    /// </summary>
+    public void CorsoMateriaAssegnata()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_StatusM");
+        cmd.Parameters.AddWithValue("@COD_CORSO", CHIAVE);
+        CONNESSIONE C = new CONNESSIONE();
+        C.EseguiCmd(cmd);
     }
     #endregion Metodi
 

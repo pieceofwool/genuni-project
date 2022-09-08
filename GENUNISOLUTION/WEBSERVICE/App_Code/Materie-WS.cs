@@ -145,6 +145,54 @@ public class Materie_WS : System.Web.Services.WebService
         return dt;
     }
 
+
+    //seleziona materia di un docente non ancora accettate
+    [WebMethod]
+    public DataTable SelectMaterieDocente(int cod_docente)
+    {
+        MATERIE M = new MATERIE();
+        M.Cod_Docente = cod_docente;
+        DataTable dt = new DataTable();
+        dt = M.SelectMaterieDocente();
+        dt.TableName = "Materie";
+        return dt;
+    }
+
+    [WebMethod]
+    public void Accettazione(int CHIAVE)
+    {
+        MATERIE m = new MATERIE();
+        m.Chiave = CHIAVE;
+
+        m.Accettazione();
+    }
+
+    //seleziona i corsi in cui il docente ha materie accettate
+    [WebMethod]
+    public DataTable SelectCorsiDocente(int cod_docente)
+    {
+        MATERIE M = new MATERIE();
+        M.Cod_Docente = cod_docente;
+        DataTable dt = new DataTable();
+        dt = M.SelectCorsiDocente();
+        dt.TableName = "Materie";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable SelectMaterieDocenteCorso(int cod_docente, int cod_corso)
+    {
+        MATERIE M = new MATERIE();
+        M.Cod_Docente = cod_docente;
+        M.Cod_Corso = cod_corso;
+        DataTable dt = new DataTable();
+        dt = M.SelectMaterieDocenteCorso();
+        dt.TableName = "Materie";
+        return dt;
+    }
+
+    
+
     /// <summary>
     /// metodo che restituisce il titolo e la descrizione della materia in base a quel corso
     /// </summary>
@@ -156,6 +204,19 @@ public class Materie_WS : System.Web.Services.WebService
         MATERIE M = new MATERIE();
         M.Cod_Corso = cod_corso;
         DataTable dt = M.MaterieInfoCorso();
+        dt.TableName = "Materie";
+        return dt;
+    }
+
+    /// <summary>
+    /// metodo che restituisce tutte le materie che sono state preparate 
+    /// </summary>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable MateriePreparate()
+    {
+        MATERIE M = new MATERIE();
+        DataTable dt = M.MateriePreparate();
         dt.TableName = "Materie";
         return dt;
     }

@@ -321,10 +321,12 @@ public class ESTERNI
     /// Mostra il totale guadagnato dal docente
     /// </summary>
     /// <returns></returns>
-    public decimal Guadagni()
+    public decimal Guadagni(string dataInizio, string dataFine)
     {
         SqlCommand cmd = new SqlCommand("ESTERNI_SOMMA_GUADAGNI");
         cmd.Parameters.AddWithValue("@codDocente", CHIAVE);
+        cmd.Parameters.AddWithValue("@dataInizio", dataInizio);
+        cmd.Parameters.AddWithValue("@dataFine", dataFine);
 
         return new CONNESSIONE().EseguiSelect(cmd).Rows[0].Field<decimal>("Guadagni");
     }
