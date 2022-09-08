@@ -18,8 +18,8 @@ public partial class Default2 : System.Web.UI.Page
 
         litChat.Text = "<td><a href=\"Chat.aspx?codicecorso="+codicecorso+"&nomecorso="+nomecorso+"\">Chat del corso "+nomecorso+"</a></td>";
 
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
-        int CHIAVE = 2;
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        //int CHIAVE = 2;
 
         MATERIE.Materie_WSSoapClient MA = new MATERIE.Materie_WSSoapClient();
         DataTable materie = new DataTable();
@@ -31,7 +31,7 @@ public partial class Default2 : System.Web.UI.Page
             string materia = riga.Field<string>("Titolo").ToString();
             int codicemateria = riga.Field<int>("Chiave");
             litMaterie.Text += "<tr><td>" + materia + "</td><td><a href=\"ProgrammiDocenti.aspx?" +
-                "codice=" + codicemateria + "&corso="+nomecorso+"&materia="+materia+"\">Vai al Programma</a></td></tr>";
+                "codicemateria=" + codicemateria + "&corso="+nomecorso+"&materia="+materia+"\">Vai al Programma</a></td></tr>";
         }
     }
 

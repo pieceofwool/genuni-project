@@ -37,43 +37,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
        <br /><br /><br /><br />
-    <table>
-        <tr>
-            <td>
-                <%--titolo--%>
-                <asp:Label ID="lblTitolo" runat="server" Text="Titolo:"></asp:Label>
-                <asp:TextBox ID="txtTitolo" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <%--tipo--%>
-                <asp:Label ID="lblTipo" runat="server" Text="Tipo: "></asp:Label>
-                <asp:TextBox ID="txtTipo" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <%--descrizione--%>
-                <asp:Label ID="lblDescrizione" runat="server" Text="Descrizione: "></asp:Label>
-                <asp:TextBox ID="txtDescrizione" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <%--data di partenza--%>
-                <asp:Label ID="lblDataDiPartenza" runat="server" Text="Data di partenza: "></asp:Label>
-                <asp:TextBox ID="txtDataDiPartenza" runat="server" TextMode="DateTime"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <%--scelta dell' avatar del corso (formato estratto dal bottone "aggiungi corso")--%>
-                <asp:Label ID="lblAvatar" runat="server" Text="Immagine Profilo: "></asp:Label>
-                <asp:FileUpload ID="UploadAvatar" runat="server" />
-            </td>
-        </tr>
-    </table>
+    
 
     <p>
         <%--bottone scelta docenti--%>
@@ -82,8 +46,7 @@
         <%--bottone scelta materie--%>
         <asp:Button Class="popupDefinizioneMaterie" ID="btnDefinizioneMateria" runat="server" Text="Definisci materie" OnClick="btnDefinizioneMateria_Click" />
 
-        <%--bottone inserisci corso--%>
-        <asp:Button ID="btnInserisciCorso" runat="server" Text="Aggiungi corso" OnClick="btnInserisciCorso_Click" />
+        
     </p>
 
     <p>

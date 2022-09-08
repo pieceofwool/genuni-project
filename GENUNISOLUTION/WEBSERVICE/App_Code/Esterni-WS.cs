@@ -294,12 +294,12 @@ public class Esterni_WS : System.Web.Services.WebService
     /// <param name="COD_DOCENTE"></param>
     /// <returns></returns>
     [WebMethod]
-    public decimal Guadagni(int COD_DOCENTE)
+    public decimal Guadagni(int COD_DOCENTE, string DATA_INIZIO, string DATA_FINE)
     {
         ESTERNI E = new ESTERNI();
         E.CHIAVE = COD_DOCENTE;
 
-        return E.Guadagni();
+        return E.Guadagni(DATA_INIZIO, DATA_FINE);
     }
 
     /// <summary>

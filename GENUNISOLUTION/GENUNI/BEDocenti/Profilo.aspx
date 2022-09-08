@@ -141,11 +141,22 @@
 
     <div>
         <%--<img src="img/logo.jpg" alt="Avatar"  />--%>
-        <asp:Literal ID="lit" runat="server"></asp:Literal>
 
         <div class="containerBE">
             <h3 class="titoliBE">Dati:</h3>
-            <table class="tablePopUp">
+            
+            <table class="tablePopUp" style="text-align:center;">
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        <asp:Literal ID="lit" runat="server"></asp:Literal>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
                 <tr>
                     <td width="250px"><b>User: </b>
                         <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
