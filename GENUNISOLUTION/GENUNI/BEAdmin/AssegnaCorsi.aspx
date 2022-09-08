@@ -10,17 +10,17 @@
         $(document).ready(function () {
             $('#btnAssegna').click(function () {
                 //collego l'oggetto alla pagina
-                var url = "Popup/Abilita.aspx";
+                var url = "Popup/AssegnaCorsi.aspx";
                 var popUp = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
                 //dichiariamo tutte le caratteristiche dell' oggetto
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Abilita',  //titolo dell'oggetto
+                    title: 'Assegna corso',  //titolo dell'oggetto
                     dialogClass: 'dialog',
                     resizable: false,  //blocca il ridimensionamento--%>
-                    height: 500,
-                    width: 600,
+                    height: 250,
+                    width: 400,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
                 });

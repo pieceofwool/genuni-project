@@ -60,7 +60,12 @@
                             </li>
                             <li class="dropdown"><a href="SituazioneCorsi.aspx"><span>Situazione Corsi</span> </a>
                             </li>
-                            <li class="dropdown"><a href="Modifica_Profilo.aspx"><span>Modifica Profilo</span> </a>
+                            <li class="dropdown"><a href="Modifica_Profilo.aspx"><span>Profilo</span> </a>
+                                <ul>
+                                    <li><a href="../BEStudenti/Modifica_Profilo.aspx">Modifica Profilo</a></li>
+                                    <li><a href="../BEStudenti/Modifica_Password.aspx">Modifica Password</a></li>
+                                </ul>
+
                             </li>
                             <li><a href="../Default.aspx">Esci</a></li>
                         </ul>

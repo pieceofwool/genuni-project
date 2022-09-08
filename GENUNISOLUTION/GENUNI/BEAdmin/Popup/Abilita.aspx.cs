@@ -15,8 +15,6 @@ public partial class Admin_Popup_Abilita : System.Web.UI.Page
 
     }
 
-
-
     protected void btnAbilita_Click(object sender, EventArgs e)
     {
         UTENTI.Utenti_WSSoapClient U = new UTENTI.Utenti_WSSoapClient();

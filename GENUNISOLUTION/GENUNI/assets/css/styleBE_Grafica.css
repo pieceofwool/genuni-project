@@ -64,7 +64,12 @@ h1 {
     float: left;
 }
 
-
+#lblDataInizio {
+    font-size: 14px;
+}
+#lblDataFine {
+    font-size: 14px;
+}
 
 .dropdown:hover .dropdown-content {
     display: block;

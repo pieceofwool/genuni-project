@@ -17,8 +17,6 @@ public partial class Default2 : System.Web.UI.Page
 
         GridViewRow riga = gridCreazioneCorsi.SelectedRow;
         Session["ChiaveCreazione"] = gridCreazioneCorsi.SelectedDataKey[0].ToString();
-
-
     }
 
     protected void btnVisualizzaInfo_Click(object sender, EventArgs e)

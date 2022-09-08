@@ -17,15 +17,15 @@
             <tr>
                 <td>
                     <%-- DATA INIZIO REPORT --%>
-                    <asp:Label ID="lblDataInizio" CssClass="lbl" runat="server" Text="Data inizio report:"></asp:Label>
-                    <asp:TextBox ID="txtDataInizio" CssClass="txtDate" runat="server" TextMode="Date"></asp:TextBox>
+                    <asp:Label ID="lblDataInizio" CssClass="lbl" runat="server" Text="Data inizio report:" Style="font-size: 16px;"></asp:Label>
+                    <asp:TextBox ID="txtDataInizio" CssClass="txtDate" runat="server" TextMode="Date" Style="font-size: 16px;"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>
                     <%-- DATA FINE REPORT --%>
-                    <asp:Label ID="lblDataFine" CssClass="lbl" runat="server" Text="Data fine report:"></asp:Label>
-                    <asp:TextBox ID="txtDataFine" CssClass="txtDate" runat="server" TextMode="Date"></asp:TextBox>
+                    <asp:Label ID="lblDataFine" CssClass="lbl" runat="server" Text="Data fine report:" Style="font-size: 16px;"></asp:Label>
+                    <asp:TextBox ID="txtDataFine" CssClass="txtDate" runat="server" TextMode="Date" Style="font-size: 16px;"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -44,6 +44,7 @@
             <tr>
                 <td>
                     <%-- GRIGLIA DI VISUALIZZAZIONE REPORT DOCENTI --%>
+                    <div class="box-content" style="min-height: 40px">
                         <asp:GridView ID="grigliaReportDocenti" CssClass="griglia" AutoGenerateColumns="False" runat="server">
                             <Columns>
                                 <asp:BoundField DataField="Cod_Corso" Visible="false" />
@@ -64,9 +65,9 @@
                             <HeaderStyle CssClass="headergrid" />
                             <SelectedRowStyle CssClass="selezionegrid" />
                         </asp:GridView>
+                    </div>
                     <span><b>Totale spese:</b></span>
                     <asp:Label ID="lblTotDoc" runat="server" CssClass="lbl" Text=""></asp:Label>
-
                 </td>
             </tr>
         </table>
@@ -77,7 +78,9 @@
         <table class="tablePopUp">
             <tr>
                 <td>
+
                     <%-- GRIGLIA DI VISUALIZZAZIONE REPORT STUDENTI --%>
+                    <div class="box-content" style="min-height: 40px">
                         <asp:GridView ID="grigliaReportStudenti" CssClass="griglia" AutoGenerateColumns="False" runat="server">
                             <Columns>
                                 <asp:BoundField DataField="Cod_Corso" Visible="false" />
@@ -93,6 +96,7 @@
                             <HeaderStyle CssClass="headergrid" />
                             <SelectedRowStyle CssClass="selezionegrid" />
                         </asp:GridView>
+                    </div>
                     <span><b>Totale ricavi:</b></span>
                     <asp:Label ID="lblTotStud" runat="server" CssClass="lbl" Text=""></asp:Label>
                 </td>
