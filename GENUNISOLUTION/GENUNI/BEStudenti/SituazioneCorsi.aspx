@@ -34,9 +34,14 @@
             <tr>
                 <td class="btnGestisci">
                     <!-- POPUP, HTML-->
-                    <asp:GridView ID="grigliaCorsiDisponibili" CssClass="griglia" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged">
+                    <asp:GridView ID="grigliaCorsiDisponibili" CssClass="griglia" DataKeyNames="Chiave" AutoGenerateColumns="False" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged">
 
                         <Columns>
+                            <asp:BoundField DataField="Chiave" Visible="false" />
+                            <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
+                            <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+                            <asp:BoundField DataField="Data_Partenza" HeaderText="Data partenza" />
+                            <asp:BoundField DataField="Costo" HeaderText="Costo" />
                             <asp:CommandField ButtonType="Button" ShowSelectButton="true" SelectText="Acquista corso">
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
