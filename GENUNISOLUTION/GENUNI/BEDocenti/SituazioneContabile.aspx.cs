@@ -20,7 +20,7 @@ public partial class BEDocenti_Default2 : System.Web.UI.Page
 
         int COD_DOCENTE = Convert.ToInt32(Session["COD_DOCENTE"]);
 
-        grvStoricoCorsi.DataSource = Es.Guadagni(COD_DOCENTE);
+        //grvStoricoCorsi.DataSource = Es.Guadagni(COD_DOCENTE);
         grvStoricoCorsi.DataBind();
     }
 

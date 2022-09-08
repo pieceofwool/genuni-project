@@ -296,4 +296,10 @@ input[type=text], -webkit-animation-:placeholder {
 }
 
 #containerModificaProfilo1 {
+    background-color: whitesmoke;
+}
+
+#containerModificaProfilo2 {
+    background-color: whitesmoke;
+    height: 416px;
 }

@@ -35,26 +35,27 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <div>
-        <div id="Portafoglio">
-            <asp:Label ID="Label1" runat="server" Text="Portafoglio"></asp:Label>
-            <asp:Label ID="lblSaldo" runat="server" Text=""></asp:Label>
+     <div>
+        <img src="../assets/img/lavoriBE.png" class="icona" />
+    </div>
+    <div class="containerBE">
+        <h4 class="titoliBE">SITUAZIONE CONTABILE</h4>
+        <table class="tablePopUp">
+            <tr>
+                <td class="btnGestisci">
+            <asp:Label ID="Label1" runat="server" CssClass="lbl" Text="Portafoglio"></asp:Label>
+            <asp:Label ID="lblSaldo" runat="server" CssClass="lbl" Text=""></asp:Label>
             <br />
             <input type="button" id="popup" value="Acquista GenMoney" />
             <asp:Button ID="btnAggiornaSaldo" runat="server" Text="Aggiorna saldo" OnClick="btnAggiornaSaldo_Click" />
         </div>
         <div>
             <p>Storico Acquisti</p>
-            <asp:GridView ID="grigliaStoricoAcquisti" runat="server" ></asp:GridView>
+            <asp:GridView ID="grigliaStoricoAcquisti" CssClass="griglia" runat="server" ></asp:GridView>
         </div>
         <div>
             <p>Storico ricariche GenMoney</p>
-            <asp:GridView ID="grigliaRicariche" runat="server" OnRowDataBound="grigliaRicariche_RowDataBound"></asp:GridView>
+            <asp:GridView ID="grigliaRicariche" runat="server" CssClass="griglia" OnRowDataBound="grigliaRicariche_RowDataBound"></asp:GridView>
         </div>
     </div>
 </asp:Content>
