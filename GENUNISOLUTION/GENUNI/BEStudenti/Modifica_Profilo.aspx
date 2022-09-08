@@ -8,7 +8,7 @@
     <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
-    <div class="containerBE" id="containerModificaProfilo1">
+    <div class="containerBE">
         <h4 class="titoliBE">MODIFICA PROFILO</h4>
         <table style="margin-top: 16px; text-align: center;">
             <tr>

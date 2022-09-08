@@ -27,8 +27,6 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         lblSaldo.Text = saldo.ToString();
     }
 
-
-
     protected void CaricaStorico()
     {
         GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();

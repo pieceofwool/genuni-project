@@ -8,14 +8,12 @@
     <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
-    <div class="containerBE" id="containerModificaProfilo1" style="height: 500px;">
+    <div class="containerBE" style="height: 500px;">
         <h4 class="titoliBE">MODIFICA PASSWORD</h4>
         <table style="margin-top: 16px; text-align: center;">
-            <tr>
-                <td>
-                    <asp:Label ID="lbl1" runat="server" Text=""></asp:Label>
-                </td>
-            </tr>
+            <div id="tabella" runat="server">
+                <asp:Label ID="lbl1" runat="server" Text=""></asp:Label>
+            </div>
             <tr>
                 <td>
                     <asp:Label ID="lblUser" runat="server" Text="User"></asp:Label>
@@ -23,19 +21,23 @@
                 </td>
                 <td>
                     <asp:Label ID="lblPass" runat="server" Text="Password"></asp:Label>
-                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" MaxLength="64"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" MaxLength="64"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:Label ID="lblConfermaPass" runat="server" Text="Conferma password"></asp:Label>
-                    <asp:TextBox ID="txtConfermaPass" runat="server" TextMode="Password" MaxLength="64"></asp:TextBox>
+                    <asp:Label ID="lblConfermaPassw" runat="server" Text="Conferma password"></asp:Label>
+                    <asp:TextBox ID="txtConfermaPassw" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <%--<td>&nbsp;</td>--%>
-                <td colspan="3">
-                    <asp:Button ID="btnSalvaPass" runat="server" CssClass="btnBE" Text="Modifica" OnClick="btnSalvaPass_Click" />
+                <td>
+                    <tr>
+                        <%--<td>&nbsp;</td>--%>
+                        <td colspan="3">
+                            <asp:Button ID="Button1" runat="server" CssClass="btnBE" Text="Modifica" OnClick="btnSalvaPass_Click" />
+                        </td>
+                        <%--<td>&nbsp;</td>--%>
+                    </tr>
                 </td>
-                <%--<td>&nbsp;</td>--%>
             </tr>
         </table>
     </div>
