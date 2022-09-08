@@ -51,7 +51,7 @@
                                     <label>
                                         <span>PASSWORD</span>
                                         <%--<input type="password" />--%>
-                                        <asp:TextBox ID="txtLogPwd" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtLogPwd" runat="server" TextMode="Password"></asp:TextBox>
                                     </label>
                                 </td>
                             </tr>
@@ -139,7 +139,7 @@
                                         <label>
                                             <span>Data di nascita</span>
                                             <%--<input type="date" />--%>
-                                            <asp:TextBox ID="txtDataNascita" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtDataNascita" runat="server" TextMode="Date"></asp:TextBox>
 
                                         </label>
                                     </td>
@@ -196,7 +196,8 @@
                                     </td>
                                 </tr>
                             </table>
-                            <button type="button" class="submit">Registrati</button>
+                            <%--<button type="button" class="submit">Registrati</button>--%>
+                            <asp:Button ID="btnRegistrati" CssClass="" runat="server" Text="REGISTRATI" OnClick="btnRegistra_Click" />
                         </div>
                     </div>
                 </div>
