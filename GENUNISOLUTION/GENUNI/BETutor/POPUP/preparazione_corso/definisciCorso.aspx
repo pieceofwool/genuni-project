@@ -36,13 +36,13 @@
             <td>
                 <%--data di partenza--%>
                 <asp:Label ID="lblDataDiPartenza" runat="server" Text="Data di partenza: "></asp:Label><br />
-                <asp:TextBox ID="txtDataDiPartenza" runat="server" TextMode="DateTime"></asp:TextBox>
+                <asp:TextBox ID="txtDataDiPartenza" runat="server" TextMode="Date"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td>
                 <%--scelta dell' avatar del corso (formato estratto dal bottone "aggiungi corso")--%>
-                <asp:Label ID="lblAvatar" runat="server" Text="Immagine Profilo: "></asp:Label>
+                <asp:Label ID="lblAvatar" runat="server" Text="Immagine Profilo: "></asp:Label><br />
                 <asp:FileUpload ID="UploadAvatar" runat="server" />
             </td>
         </tr>
