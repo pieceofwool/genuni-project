@@ -32,7 +32,7 @@ public partial class preparazioneTest : System.Web.UI.Page
         string RISPOSTA1 = txtCorretta.Text.ToString();
         string RISPOSTA2 = txtIncompleta.Text.ToString();
         string RISPOSTA3 = txtErrata.Text.ToString();
-        string VOTI = txtVoti.Text.ToString();
+        string VOTI = "1,0,-1";
 
 
         DOMANDE.Domande_WSSoapClient D = new DOMANDE.Domande_WSSoapClient();

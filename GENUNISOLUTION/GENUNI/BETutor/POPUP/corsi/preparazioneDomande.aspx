@@ -19,36 +19,29 @@
                 <tr>
                     <td>
                         <%--DOMANDA --%>
-                        <asp:Label ID="lblInserimentoDomanda" runat="server" Text="Inserire il quesito: "></asp:Label>
+                        <asp:Label ID="lblInserimentoDomanda" runat="server" Text="Inserire il quesito: "></asp:Label><br />
                         <asp:TextBox ID="txtInserimentoDomanda" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <%--risp coretta 1 --%>
-                        <asp:Label ID="lblCorretta" runat="server" Text="Risposta corretta: "></asp:Label>
+                        <asp:Label ID="lblCorretta" runat="server" Text="Risposta corretta: "></asp:Label><br />
                         <asp:TextBox ID="txtCorretta" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <%--risposta dubbia 0 --%>
-                        <asp:Label ID="lblIncompleta" runat="server" Text="Risposta incompleta: "></asp:Label>
+                        <asp:Label ID="lblIncompleta" runat="server" Text="Risposta incompleta: "></asp:Label><br />
                         <asp:TextBox ID="txtIncompleta" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <%--risposta sbagliata -1 --%>
-                        <asp:Label ID="lblErrata" runat="server" Text="Risposta errata: "></asp:Label>
+                        <asp:Label ID="lblErrata" runat="server" Text="Risposta errata: "></asp:Label><br />
                         <asp:TextBox ID="txtErrata" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <%--voti --%>
-                        <asp:Label ID="Label1" runat="server" Text="Voti: "></asp:Label>
-                        <asp:TextBox ID="txtVoti" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

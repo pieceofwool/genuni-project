@@ -34,7 +34,13 @@
                 </td>
             </tr>
         </table>
+        <hr />
+        <div>
 
+            <asp:Label ID="lblMaterie" runat="server" Text="Materie preparate"></asp:Label>
+            <asp:GridView ID="gridMaterie" runat="server"></asp:GridView>
+
+        </div>
 
     </form>
 </body>
