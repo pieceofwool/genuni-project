@@ -196,7 +196,8 @@
                                     </td>
                                 </tr>
                             </table>
-                            <button type="button" class="submit">Registrati</button>
+                            <%--<button type="button" class="submit">Registrati</button>--%>
+                            <asp:Button ID="btnRegistrati" CssClass="" runat="server" Text="REGISTRATI" OnClick="btnRegistra_Click" />
                         </div>
                     </div>
                 </div>

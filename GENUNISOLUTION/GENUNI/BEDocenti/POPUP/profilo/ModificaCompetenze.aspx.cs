@@ -15,9 +15,9 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         {
             COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
 
-            //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+            int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
 
-            int CHIAVE = 1;
+            //int CHIAVE = 1;
             dt2 = C.SelectAllDocente(CHIAVE); //uso selectone apposta
 
             txtSkills.Text = dt2.Rows[0]["Skills"].ToString();
@@ -38,10 +38,10 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
 
         COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
 
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
 
 
-        int CHIAVE = 1;
+        //int CHIAVE = 1;
         dt2 = C.SelectAllDocente(CHIAVE);
         DataRow dr2 = dt2.Rows[0];
         byte[] arr2 = dr2.Field<byte[]>("Cv");

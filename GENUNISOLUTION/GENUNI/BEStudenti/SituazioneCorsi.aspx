@@ -26,6 +26,7 @@
                 </td>
             </tr>
         </table>
+
     </div>
     <div class="containerBE2">
         <h4 class="titoliBE">Corsi disponibili</h4>
@@ -34,6 +35,7 @@
                 <td class="btnGestisci">
                     <!-- POPUP, HTML-->
                     <asp:GridView ID="grigliaCorsiDisponibili" CssClass="griglia" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged">
+
                         <Columns>
                             <asp:CommandField ButtonType="Button" ShowSelectButton="true" SelectText="Acquista corso">
                                 <ControlStyle CssClass="btnBE" />

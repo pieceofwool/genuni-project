@@ -5,10 +5,13 @@
     <link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#popup').click(function () {
+            $('#pippo').click(function () {
 
                 var url = this.href;
                 var dialog = $('<iframe src="' + url + '" frameborder="0"></iframe').appendTo('body');
@@ -38,30 +41,23 @@
 
         });
     </script>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
     <div>
-        <img src="../assets/img/lavoriBE.png" class="icona" />
+        <%--<img src="../assets/img/lavoriBE.png" class="icona" />--%>
     </div>
     <div class="containerBE">
         <h4 class="titoliBE">Valutazione</h4>
-        <table class="tablePopUp">
-            <tr>
-                <td class="btnGestisci">
-                    <!-- POPUP, HTML-->
-                    <a id="popup" class="popUpBtnBE" href="PoPup/InfoCorsi.aspx">Modifica</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:GridView ID="grdValutazione" runat="server" CssClass="griglia" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged">
-                        <Columns>
-                            <asp:HyperLinkField DataNavigateUrlFields="~/BEContabilita/PoPup/InfoCorsi.aspx" HeaderText="Visualizza Corso" NavigateUrl="~/BEContabilita/PoPup/InfoCorsi.aspx" />
-                        </Columns>
-                    </asp:GridView>
-                </td>
-            </tr>
-        </table>
+        <a href="PoPup/InfoCorsi.aspx" id="popup">Visualizza</a>
+        <asp:Button ID="btnAggiorna" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiorna_Click" />
+        <asp:GridView ID="grdValutazione" runat="server" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="Chiave">
+            <Columns>
+                <asp:BoundField DataField="Chiave" HeaderText="Chiave" InsertVisible="False" ReadOnly="True" SortExpression="Chiave" />
+                <asp:BoundField DataField="Titolo" HeaderText="Titolo" SortExpression="Titolo" />
+                <asp:BoundField DataField="Cognome" HeaderText="Cognome" SortExpression="Cognome" />
+                <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
+                <asp:CommandField ShowSelectButton="True" ButtonType="Button"/>
+            </Columns>
+        </asp:GridView>
     </div>
 </asp:Content>
 

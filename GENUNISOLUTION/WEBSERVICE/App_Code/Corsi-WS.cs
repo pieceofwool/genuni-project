@@ -164,11 +164,11 @@ public class Corsi_WS : System.Web.Services.WebService
     /// <param name="TIPO_IMG"></param>
     /// <param name="DATA_PARTENZA"></param>
     [WebMethod]
-    public void UpdateForTutor(int CHIAVE_TUTOR, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string TIPO_IMG, string DATA_PARTENZA)
+    public void UpdateForTutor(int CHIAVE, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string TIPO_IMG, string DATA_PARTENZA)
     {
         CORSI C = new CORSI();
 
-        C.CHIAVE_TUTOR = CHIAVE_TUTOR;
+        C.CHIAVE = CHIAVE;
         C.TITOLO = TITOLO;
         C.TIPO = TIPO;
         C.DESCRIZIONE = DESCRIZIONE;
@@ -354,4 +354,34 @@ public class Corsi_WS : System.Web.Services.WebService
 
         return DT;
     }
+
+    /// <summary>
+    /// metodo che restituisce tutti i corsi con status C creati dal parametro tutor
+    /// </summary>
+    /// <param name="COD_TUTOR"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable CorsiCreati(int COD_TUTOR)
+    {
+        DataTable dt = new DataTable();
+        CORSI C = new CORSI();
+        C.CHIAVE_TUTOR = COD_TUTOR;
+        dt = C.CorsiCreati();
+        dt.TableName = "Corsi";
+        return dt;
+        
+    }
+
+    /// <summary>
+    /// metodo che assegna status M a parametro COD_CORSO
+    /// </summary>
+    /// <param name="COD_CORSO"></param>
+    [WebMethod]
+    public void CorsiMaterieAssegnate(int COD_CORSO)
+    {
+        CORSI C = new CORSI();
+        C.CHIAVE = COD_CORSO;
+        C.CorsoMateriaAssegnata();
+    }
+
 }

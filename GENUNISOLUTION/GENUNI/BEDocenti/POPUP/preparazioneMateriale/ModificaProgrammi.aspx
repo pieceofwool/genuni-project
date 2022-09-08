@@ -14,10 +14,10 @@
                 <tr>
                     <td>
                         <asp:Label ID="lblTipo" runat="server" Text="Tipo: "></asp:Label>
-                        <asp:DropDownList ID="ddlTipo" runat="server" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged">
-                            <asp:ListItem Value="1">Link lezione frontale</asp:ListItem>
-                            <asp:ListItem Value="2">Link video</asp:ListItem>
-                            <asp:ListItem Value="3">Materiale</asp:ListItem>
+                        <asp:DropDownList ID="ddlTipo" runat="server" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" AutoPostBack="True">
+                            <asp:ListItem Value="LF">Link lezione frontale</asp:ListItem>
+                            <asp:ListItem Value="LV">Link video</asp:ListItem>
+                            <asp:ListItem Value="MA">Materiale</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -27,22 +27,16 @@
                         <asp:TextBox ID="txtIndice" placeholder="es. 1, 2, 3" runat="server"></asp:TextBox>
                     </td>
                 </tr>
-                <tr>
+                <tr runat="server" id="LINK">
                     <td>
                         <asp:Label ID="lblLink" runat="server" Text="Link: "></asp:Label>
                         <asp:TextBox ID="txtLink" placeholder="Link delle lezioni o video" runat="server"></asp:TextBox>
                     </td>
                 </tr>
-                <tr>
+                <tr runat="server" id="MATERIALE">
                     <td>
                         <asp:Label ID="lblMateriale" runat="server" Text="Carica materiale: "></asp:Label>
                         <asp:FileUpload ID="fupMateriale" runat="server" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="lblTipoMateriale" runat="server" Text="Tipo materiale: "></asp:Label>
-                        <asp:TextBox ID="txtTipoMateriale" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

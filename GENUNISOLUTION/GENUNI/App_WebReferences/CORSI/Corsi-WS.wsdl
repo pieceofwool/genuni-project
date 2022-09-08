@@ -197,7 +197,7 @@
       <s:element name="UpdateForTutor">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE_TUTOR" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="TITOLO" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
@@ -457,6 +457,37 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="CorsiCreati">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_TUTOR" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CorsiCreatiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CorsiCreatiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CorsiMaterieAssegnate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CorsiMaterieAssegnateResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="InsertSoapIn">
@@ -615,6 +646,18 @@
   <wsdl:message name="NonCompratiSoapOut">
     <wsdl:part name="parameters" element="tns:NonCompratiResponse" />
   </wsdl:message>
+  <wsdl:message name="CorsiCreatiSoapIn">
+    <wsdl:part name="parameters" element="tns:CorsiCreati" />
+  </wsdl:message>
+  <wsdl:message name="CorsiCreatiSoapOut">
+    <wsdl:part name="parameters" element="tns:CorsiCreatiResponse" />
+  </wsdl:message>
+  <wsdl:message name="CorsiMaterieAssegnateSoapIn">
+    <wsdl:part name="parameters" element="tns:CorsiMaterieAssegnate" />
+  </wsdl:message>
+  <wsdl:message name="CorsiMaterieAssegnateSoapOut">
+    <wsdl:part name="parameters" element="tns:CorsiMaterieAssegnateResponse" />
+  </wsdl:message>
   <wsdl:portType name="Corsi_WSSoap">
     <wsdl:operation name="Insert">
       <wsdl:input message="tns:InsertSoapIn" />
@@ -719,6 +762,14 @@
     <wsdl:operation name="NonComprati">
       <wsdl:input message="tns:NonCompratiSoapIn" />
       <wsdl:output message="tns:NonCompratiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CorsiCreati">
+      <wsdl:input message="tns:CorsiCreatiSoapIn" />
+      <wsdl:output message="tns:CorsiCreatiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CorsiMaterieAssegnate">
+      <wsdl:input message="tns:CorsiMaterieAssegnateSoapIn" />
+      <wsdl:output message="tns:CorsiMaterieAssegnateSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Corsi_WSSoap" type="tns:Corsi_WSSoap">
@@ -957,6 +1008,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CorsiCreati">
+      <soap:operation soapAction="http://tempuri.org/CorsiCreati" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CorsiMaterieAssegnate">
+      <soap:operation soapAction="http://tempuri.org/CorsiMaterieAssegnate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Corsi_WSSoap12" type="tns:Corsi_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1187,6 +1256,24 @@
     </wsdl:operation>
     <wsdl:operation name="NonComprati">
       <soap12:operation soapAction="http://tempuri.org/NonComprati" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CorsiCreati">
+      <soap12:operation soapAction="http://tempuri.org/CorsiCreati" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CorsiMaterieAssegnate">
+      <soap12:operation soapAction="http://tempuri.org/CorsiMaterieAssegnate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

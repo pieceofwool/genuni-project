@@ -39,39 +39,15 @@
         <!-- ======= Header ======= -->
         <div id="header" class="fixed-top">
             <div class="container d-flex align-items-center">
-                <h1 class="logo me-auto"><a href="../Default.aspx">GENUNI</a></h1>
+                <h1 class="logo me-auto"><a href="../Default.aspx">GENUNI<sub style="color: #808080">Area Tutor</sub></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
                 <nav id="navbar" class="navbar order-last order-lg-0">
                     <ul>
-                        <li><a class="active" href="../Default.aspx">Home</a></li>
-                        <li><a href="../BETutor/GestioneTutor.aspx">Tutor</a></li>
-                        <li class="dropdown"><a href="../BETutor/AssegnazioneDocenti.aspx"><span>Docenti</span> <i class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="../BETutor/CronistoriaDocenti.aspx">Cronisoria docenti</a></li>
-                                <li><a href="../BETutor/AssegnazioneDocenti.aspx">Assegnazione docenti</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="../BETutor/SituazioneStudenti.aspx"><span>Studenti</span> <i class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="../BETutor/SituazioneStudenti.aspx">Situazione studenti</a></li>
-                                <li><a href="../BETutor/Chat.aspx">Chat</a></li>
-                            </ul>
-                            <li class="dropdown"><a href="../BETutor/SituazioneCorsi.aspx"><span>Corsi</span> <i class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="../BETutor/SituazioneCorsi.aspx">Situazione corsi</a></li>
-                                    <li><a href="../BETutor/PreparazioneCorso.aspx">Preparazione corso</a></li>
-                                </ul>
-                                <li class="dropdown"><a href="../BETutor/PreparazioneTest.aspx"><span>Test&Materie</span> <i class="bi bi-chevron-down"></i></a>
-                                    <ul>
-                                        <li><a href="../BETutor/PreparazioneTest.aspx">Preparazione test</a></li>
-                                        <li><a href="../BETutor/RisultatiTest.aspx">Risultati test</a></li>
-                                        <li><a href="../BETutor/DefinizioneMaterie.aspx">Definizione materie</a></li>
-                                    </ul>
-                                </li>
-                        <li><a href="../Default.aspx">Esci</a></li>
-                    </ul>
+                        <li><a class="active" href="../SITUAZIONE_CORSI/situazioneCorsi.aspx">Home</a></li>
+                        <li><a class="active" href="/BETutor/PREPARAZIONE_CORSO/preparazioneCorso.aspx">ACCEDI AI CORSI IN PREPARAZIONE</a></li>
+                        </ul>
                 </nav>
                 <!-- .navbar -->
             </div>

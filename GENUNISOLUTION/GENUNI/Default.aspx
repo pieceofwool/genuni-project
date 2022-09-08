@@ -14,13 +14,12 @@
                         <br>
                         Inizia la tua <span>formazione!</span>
                     </h2>
-                    <h3 id="introDescrizione">Entra a far parte della nostra accademia e-learning,
-                        <br />
-                        trova il corso che fa per te e specializzati nel settore che ami!
-                        
-                    </h3>
+                    <h3 id="introDescrizione">La prima accademia di corsi online dove puoi iniziare il tuo percorso di formazione in qualsiasi ambito tu voglia specializzarti, anche da zero!</h3>
+                    <br />
+                    <h4>Grazie ai nostri percorsi formativi verrai guidato passo dopo passo e supportato 24/7 da un team di tutor e docenti esperti che ti permetteranno di apprendere tutte le competenze necessarie per svolgere qualsiasi tipo di professione tu stia ricercando.
+                    </h4>
                     <div>
-                        <a href="Login.aspx?status=1" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti</a>
+                        <a href="Login.aspx?status=1" class="btn-get-started scrollto" id="btnIscrivitiIntro">Iscriviti ai nostri corsi!</a>
                     </div>
                 </div>
 
@@ -59,7 +58,7 @@
                             <h2 id="h2AboutUs">Chi siamo</h2>
                             <h3 id="h3AboutUs">Leader nella formazione in Italia</h3>
                             <p class="pAboutUs">
-                                GenUni &#233; un ente autorizzato alla vendita di corsi di formazione riconosciuti dal MIUL.
+                                Gen Uni &#233; un ente autorizzato alla vendita di corsi di formazione riconosciuti dai maggiori enti professionali.
                                 Qualificato all&#39;erogazione e alla gestione di corsi di formazione e-learning, GenUni offre professionalit&#224;, innovazione e seriet&#224;.
                                 I titoli conseguiti al termine dei corsi di formazione professionale e aggiornamento, sono validi in Italia e all&#39;estero per:
                             </p>
@@ -70,13 +69,12 @@
                             </ul>
                             <p class="pAboutUs">
                                 Molto di pi&#249 di normale corso di e-learning, la nostra academy &#232 innovativa!
-                                Entrare in GenUni ti permetter&#224 di poter interagire costantemente con il docente e con gli altri partecipanti.
+                                Entrare in Gen Uni ti permetter&#224 di poter interagire costantemente con il docente e con gli altri partecipanti, oltre alla possibilit&#224 di essere seguito da tutor esperti in qualsiasi momento tu voglia.
+
                             </p>
 
                             <pp class="pAboutUs">
-                                Gen Uni &#232 la prima accademia di corsi online in ambito coding dove poter imparare a programmare con i principali linguaggi di programmazione, anche da zero. 
-                                Grazie ai percorsi formativi verrai guidato passo passo fino ad apprendere le competenze delle principali figure professionali, 
-                                come programmatore web (front-end, back-end o full stack), mobile developer, web designer, ui/ux designer, data scientist e molto altro.
+                                Anche le modalit&#224 di accesso ai corsi sono del tutto innovative! Ti baster&#224 acquistare i nostri pacchetti di GenMoney, per avere la possibilit&#224 di accedere a qualsiasi nostro corso e a tutte le offerte a te dedicate. Scopri cosa sono i GenMoney e come poterli utilizzare continuando a visitare il nostro sito o cliccando sul link GenMoney in alto!
                             </pp>
                         </div>
                     </div>
@@ -99,24 +97,24 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="why-us-content">
-                            <p class="pMission">Offriamo la possibilit&#224; di svolgere molteplici corsi, sia in ambito informatico che in ambito amministrativo in maniera del tutto innovativa.</p>
+                            <p class="pMission">Offriamo la possibilit&#224; di svolgere molteplici corsi in svariati ambiti: informatico, amministrativo, culinario, cura personale, ecc. in maniera del tutto innovativa.</p>
                             <p class="pMission">
                                 Ti forniremo una preparazione a 360&#176; per aiutarti ad affrontare il percorso lavorativo futuro pi&#249; adatto a te. 
                                 Il nostro obiettivo &#232; quello di farti raggiungere un livello di conoscenza adeguato, fornendoti indicatori e strumenti professionali e culturali 
-                                affinch&#232; tu possa investirli su te stesso e determinare il tuo successo.
+                                affinch&#232; tu possa investirli su te stesso e determinare il tuo successo. Oltre alle lezioni teoriche, forniamo anche lezioni pratiche ma soprattutto lezioni di soft-skills per permetterti di relazionarti e aprirti al meglio al mondo del lavoro.
                             </p>
                             <div class="features wow bounceInUp clearfix" style="margin-top: 18px; visibility: visible; animation-name: bounceInUp; font-size: 22px;">
                                 <img src="assets/img/genMoney2.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Gen Money</h4>
-                                    <p class="pMissionInterni">Commodi quia voluptatum. Est cupiditate voluptas quaerat officiis ex alias dignissimos et ipsum. Soluta at enim modi ut incidunt dolor et.</p>
+                                    <p class="pMissionInterni">I GenMoney sono il nostro metodo di pagamento, token utilizzabili nella nostra accademia volti all'acquisto dei vari corsi che ti proponiamo.</p>
                                 </div>
                             </div>
                             <div class="features wow bounceInUp clearfix">
                                 <img src="assets/img/videolezioni.png" class="iconeMission" />
                                 <div class="titoliMission">
                                     <h4>Video lezioni</h4>
-                                    <p class="pMissionInterni">Molestias eius rerum iusto voluptas et ab cupiditate aut enim. Assumenda animi occaecati. Quo dolore fuga quasi autem aliquid ipsum odit. Perferendis doloremque iure nulla aut.</p>
+                                    <p class="pMissionInterni">I corsi si svolgono totalmente online tramite le nostri video lezioni, dandoti la possibilit&#224 di seguirci ovunque tu sia e fornendoti tutto il supporto di cui hai bisogno.</p>
                                 </div>
                             </div>
                             <div class="features wow bounceInUp clearfix">
@@ -124,7 +122,7 @@
                                 <div class="titoliMission">
                                     <h4>Supporto</h4>
                                     <p class="pMissionInterni">
-                                        Voluptates nihil et quis omnis et eaque omnis sint aut. Ducimus dolorum aspernatur. Totam dolores ut enim ullam voluptas distinctio aut.</pc>
+                                        I nostri docenti e tutor sono a tua disposizione per qualunque esigenza riguardante il tuo percorso in accademia, non solo tramite mail e contatti personali, ma anche grazie alla nostra chat attiva 24/7 per darti tutto l'appoggio di cui necessiti in ogni momento!</pc>
                                 </div>
                             </div>
                         </div>
@@ -135,16 +133,16 @@
             <!--========================== Aggiornamento dati Gen Uni ============================-->
             <div class="container">
                 <div class="row counters">
-                    <div class="col-lg-3 col-6 text-center">
+                    <div class="col-lg-custom col-custom text-center">
                         <%-- logica contatore commentata aspettando l'aggiornamento del ws/classe--%>
                         <asp:Label ID="lblContoStudenti" runat="server" Text=""></asp:Label>
                         <p>Studenti</p>
                     </div>
-                    <div class="col-lg-3 col-6 text-center">
+                    <div class="col-lg-custom col-custom text-center">
                         <asp:Label ID="lblContoDocenti" runat="server" Text=""></asp:Label>
                         <p>Docenti</p>
                     </div>
-                    <div class="col-lg-3 col-6 text-center">
+                    <div class="col-lg-custom col-custom text-center">
                         <asp:Label ID="lblContoCorsi" runat="server" Text=""></asp:Label>
                         <p>Corsi</p>
                     </div>
@@ -236,7 +234,7 @@
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4>Vittorio Boemio</h4>
-                                    <span>Docente di Sviluppo Web Avanzati</span>
+                                    <span>Docente di Informatica</span>
                                     <div class="social">
                                         <%--<a href="#"><i class="fa fa-twitter"></i></a>
                                         <%--<a href="#"><i class="fa fa-facebook"></i></a>--%>
@@ -254,7 +252,7 @@
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4>Roberto Ninno</h4>
-                                    <span>Ingegnere e sviluppatore informatico</span>
+                                    <span>Docente Bartending</span>
                                     <div class="social">
                                         <%--<a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>
@@ -272,7 +270,7 @@
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4>Fabio Ghidella</h4>
-                                    <span>Formatore e docente .NET e Unity</span>
+                                    <span>Docente di soft-skills</span>
                                     <div class="social">
                                         <%--<a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>
@@ -290,7 +288,7 @@
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4>Raffaella Cioffi</h4>
-                                    <span>Docente di grafica e Web Designer </span>
+                                    <span>Tutor di Gen Uni</span>
                                     <div class="social">
                                         <%--<a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>
@@ -311,7 +309,7 @@
             <div class="container">
                 <header class="section-header">
                     <h3>GenMoney</h3>
-                    <p>Scegli il pacchetto che fa per te ed acquista i GenMoney per avere accesso ai nostri corsi!</p>
+                    <p>Scegli il pacchetto di token online che fa per te ed acquista i GenMoney per avere accesso ai nostri corsi!</p>
                 </header>
                 <div class="row flex-items-xs-middle flex-items-xs-center">
                     <!-- Basic Plan  -->
@@ -329,7 +327,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">Con questo pacchetto avrai la possibilit&#224; di acquistare </li>
                                     <li class="list-group-item">i GenMoney che ti mancano per accedere ad un corso</li>
-                                    <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
+                                    <li class="list-group-item">a tua scelta o di usufruire delle nostre offerte.</li>
                                     <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
                                 <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
@@ -353,7 +351,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">Con questo pacchetto avrai la possibilit&#224; di acquistare</li>
                                     <li class="list-group-item">i GenMoney necessari per accedere ad un intero corso</li>
-                                    <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
+                                    <li class="list-group-item">a tua scelta o di usufruire delle nostre offerte.</li>
                                     <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
                                 <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
@@ -377,7 +375,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">Con questo pacchetto avrai la possibilit&#224; di acquistare</li>
                                     <li class="list-group-item">i GenMoney necessari per accedere a 2 corsi</li>
-                                    <li class="list-group-item">a tua scelta o di accedere alle nostre offerte.</li>
+                                    <li class="list-group-item">a tua scelta o di usufruire delle nostre offerte.</li>
                                     <li class="list-group-item">In caso di domande o problemi il supporto tecnico &#232 attivo 24/7</li>
                                 </ul>
                                 <%--<a href="CorsiFE.aspx" class="btn">Acquista</a>--%>
@@ -468,19 +466,35 @@
                                 <div class="footer-info">
                                     <h3>Gen Uni</h3>
                                     <p>
-                                        La prima accademia di corsi online in ambito coding dove poter imparare a programmare con i principali linguaggi di programmazione, anche da zero.Grazie ai percorsi formativi verrai guidato passo passo fino ad apprendere le competenze delle principali figure professionali, come programmatore web (front-end, back-end o full stack), mobile developer, web designer, ui/ux designer, data scientist e molto altro.
+                                        <div class="col-sm-6">
+                                            
+
+                                            <div class="footer-links">
+                                                <h4>Contattaci</h4>
+                                                <p>
+                                                    Via Livenza,6
+                                            <br>
+                                                    Roma, RM 07318<br>
+                                                    Italia
+                                            <br>
+                                                    <strong>Telefono:</strong> +39 06 5548855<br>
+                                                    <strong>Email:</strong> info@genuni.com<br>
+                                                    <strong>P.IVA:</strong> 86334519757
+                                        <br>
+                                                </p>
+                                            </div>
+                                            <div class="footer-links">
+                                                <h4>Link utili</h4>
+                                                <ul>                                                
+                                                    <li><a href="Login2.aspx">Termini di servizio</a></li>
+                                                    <li><a href="../BEAdmin/GestioneCorsi.aspx">Privacy policy</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </p>
                                 </div>
 
-                                <div class="footer-newsletter">
-                                    <h4>La nostra newsletter</h4>
-                                    <p>Vuoi pi&#249; informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
-                                    <asp:TextBox ID="txtEmail" CssClass="" placeholder="E-mail" runat="server" TextMode="Email"></asp:TextBox>
-                                    <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti" OnClick="btnIscrivitiNews_Click" />
-                                    <asp:CheckBox ID="chbxPrivacy" runat="server" /><p>
-                                        Ho letto l&#39informativa sulla privacy e acconsento al trattamento dei miei dati personali ai sensi dell&#39art. 13 del D. Lgs. 196/2003
-                                    </p>
-                                </div>
+                               
                             </div>
 
                             <%-- 
@@ -493,32 +507,14 @@
          &#249;  ù
          &#8364; €   
                             --%>
-                            <div class="col-sm-6">
-                                <div class="footer-links">
-                                    <h4>Link utili</h4>
-                                    <ul>
-                                        <li><a href="#intro">Home</a></li>
-                                        <li><a href="#about">Chi siamo</a></li>
-                                        <li><a href="../BEStudenti/Modifica_Profilo.aspx">Corsi</a></li>
-                                        <li><a href="Login2.aspx">Termini di servizio</a></li>
-                                        <li><a href="../BEAdmin/GestioneCorsi.aspx">Privacy policy</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="footer-links">
-                                    <h4>Contattaci</h4>
-                                    <p>
-                                        Via Livenza,6
-                                            <br>
-                                        Roma, RM 07318<br>
-                                        Italia
-                                            <br>
-                                        <strong>Telefono:</strong> +39 06 5548855<br>
-                                        <strong>Email:</strong> info@genuni.com<br>
-                                        <strong>P.IVA:</strong> 86334519757
-                                        <br>
-                                    </p>
-                                </div>
+                            <div class="footer-newsletter">
+                                <h4>La nostra newsletter</h4>
+                                <p>Vuoi pi&#249; informazioni? Iscriviti alla nostra newsletter e riceverai aggiornamenti costanti sui nostri corsi!</p>
+                                <asp:TextBox ID="txtEmail" CssClass="" placeholder="E-mail" runat="server" TextMode="Email"></asp:TextBox>
+                                <asp:Button ID="btnIscrivitiNews" runat="server" Text="Iscriviti" OnClick="btnIscrivitiNews_Click" />
+                                <asp:CheckBox ID="chbxPrivacy" runat="server" /><p>
+                                    Ho letto l&#39informativa sulla privacy e acconsento al trattamento dei miei dati personali ai sensi dell&#39art. 13 del D. Lgs. 196/2003
+                                </p>
                             </div>
                         </div>
                     </div>

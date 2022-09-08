@@ -82,6 +82,7 @@ public class PROGRAMMI
         cmd.Parameters.AddWithValue("@LINK", LINK);
         cmd.Parameters.AddWithValue("@MATERIALE", MATERIALE);
         cmd.Parameters.AddWithValue("@TITOLO_MATERIALE", TITOLO_MATERIALE);
+        cmd.Parameters.AddWithValue("@TIPO_MATERIALE", TIPO_MATERIALE);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
 
         c.EseguiCmd(cmd);

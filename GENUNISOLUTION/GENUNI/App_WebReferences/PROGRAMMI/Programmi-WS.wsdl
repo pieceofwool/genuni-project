@@ -88,33 +88,13 @@
             <s:element minOccurs="0" maxOccurs="1" name="LINK" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="MATERIALE" type="s:base64Binary" />
             <s:element minOccurs="0" maxOccurs="1" name="TITOLO_MATERIALE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIPO_MATERIALE" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="UpdateResponse">
         <s:complexType />
-      </s:element>
-      <s:element name="ProgrammiInfoMateria">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="COD_MATERIA" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ProgrammiInfoMateriaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ProgrammiInfoMateriaResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
       </s:element>
       <s:element name="SelectProgrammiMateria">
         <s:complexType>
@@ -146,6 +126,27 @@
       </s:element>
       <s:element name="DeleteResponse">
         <s:complexType />
+      </s:element>
+      <s:element name="ProgrammiInfoMateria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_MATERIA" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProgrammiInfoMateriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgrammiInfoMateriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
       </s:element>
     </s:schema>
   </wsdl:types>
@@ -179,12 +180,6 @@
   <wsdl:message name="UpdateSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateResponse" />
   </wsdl:message>
-  <wsdl:message name="ProgrammiInfoMateriaSoapIn">
-    <wsdl:part name="parameters" element="tns:ProgrammiInfoMateria" />
-  </wsdl:message>
-  <wsdl:message name="ProgrammiInfoMateriaSoapOut">
-    <wsdl:part name="parameters" element="tns:ProgrammiInfoMateriaResponse" />
-  </wsdl:message>
   <wsdl:message name="SelectProgrammiMateriaSoapIn">
     <wsdl:part name="parameters" element="tns:SelectProgrammiMateria" />
   </wsdl:message>
@@ -196,6 +191,12 @@
   </wsdl:message>
   <wsdl:message name="DeleteSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProgrammiInfoMateriaSoapIn">
+    <wsdl:part name="parameters" element="tns:ProgrammiInfoMateria" />
+  </wsdl:message>
+  <wsdl:message name="ProgrammiInfoMateriaSoapOut">
+    <wsdl:part name="parameters" element="tns:ProgrammiInfoMateriaResponse" />
   </wsdl:message>
   <wsdl:portType name="Programmi_WSSoap">
     <wsdl:operation name="SelectAll">
@@ -218,10 +219,6 @@
       <wsdl:input message="tns:UpdateSoapIn" />
       <wsdl:output message="tns:UpdateSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="ProgrammiInfoMateria">
-      <wsdl:input message="tns:ProgrammiInfoMateriaSoapIn" />
-      <wsdl:output message="tns:ProgrammiInfoMateriaSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="SelectProgrammiMateria">
       <wsdl:input message="tns:SelectProgrammiMateriaSoapIn" />
       <wsdl:output message="tns:SelectProgrammiMateriaSoapOut" />
@@ -229,6 +226,10 @@
     <wsdl:operation name="Delete">
       <wsdl:input message="tns:DeleteSoapIn" />
       <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProgrammiInfoMateria">
+      <wsdl:input message="tns:ProgrammiInfoMateriaSoapIn" />
+      <wsdl:output message="tns:ProgrammiInfoMateriaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Programmi_WSSoap" type="tns:Programmi_WSSoap">
@@ -278,15 +279,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ProgrammiInfoMateria">
-      <soap:operation soapAction="http://tempuri.org/ProgrammiInfoMateria" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="SelectProgrammiMateria">
       <soap:operation soapAction="http://tempuri.org/SelectProgrammiMateria" style="document" />
       <wsdl:input>
@@ -298,6 +290,15 @@
     </wsdl:operation>
     <wsdl:operation name="Delete">
       <soap:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgrammiInfoMateria">
+      <soap:operation soapAction="http://tempuri.org/ProgrammiInfoMateria" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
