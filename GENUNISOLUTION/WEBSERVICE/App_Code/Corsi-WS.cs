@@ -164,11 +164,11 @@ public class Corsi_WS : System.Web.Services.WebService
     /// <param name="TIPO_IMG"></param>
     /// <param name="DATA_PARTENZA"></param>
     [WebMethod]
-    public void UpdateForTutor(int CHIAVE_TUTOR, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string TIPO_IMG, string DATA_PARTENZA)
+    public void UpdateForTutor(int CHIAVE, string TITOLO, string TIPO, string DESCRIZIONE, byte[] AVATAR_CORSO, string TIPO_IMG, string DATA_PARTENZA)
     {
         CORSI C = new CORSI();
 
-        C.CHIAVE_TUTOR = CHIAVE_TUTOR;
+        C.CHIAVE = CHIAVE;
         C.TITOLO = TITOLO;
         C.TIPO = TIPO;
         C.DESCRIZIONE = DESCRIZIONE;
