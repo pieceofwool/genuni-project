@@ -13,7 +13,7 @@ public class GestoreCv : IHttpHandler {
         //C.COD_DOCENTE = int.Parse(Session["CodiceDoc"].ToString());
         int CHIAVE = int.Parse(context.Request.QueryString["chiave"].ToString());
 
-        DataTable dt2 = C.SelectOne(CHIAVE);
+        DataTable dt2 = C.SelectAllDocente(CHIAVE);
 
 
         DataRow dr2 = dt2.Rows[0];

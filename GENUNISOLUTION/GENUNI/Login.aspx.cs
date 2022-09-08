@@ -137,7 +137,7 @@ public partial class _Default : System.Web.UI.Page
                                 break;
 
                             case 'D':
-                                Response.Redirect("/BEDocenti/GestioneDocenti.aspx"); //Inserire le pagine principali di redirect 
+                                Response.Redirect("/BEDocenti/Profilo.aspx"); //Inserire le pagine principali di redirect 
                                 break;
                         }
                     }

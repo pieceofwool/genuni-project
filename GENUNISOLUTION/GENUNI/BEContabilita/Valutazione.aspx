@@ -41,7 +41,7 @@
 
                 dialog.dialog({
                     modal: true,
-                    title: 'Inserisci',
+                    title: 'Visualizza',
                     resizable: false,
                     with: '400px',
                     show: {

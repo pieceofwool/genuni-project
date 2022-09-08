@@ -40,6 +40,6 @@ public partial class BEDocenti_Default2 : System.Web.UI.Page
         string DATAINIZIO = txtDataInizio.Text.ToString();
         string DATAFINE = txtDataFine.Text.ToString();
 
-        ltlSommaRicavi.Text = Es.Guadagni(COD_DOCENTE, DATAINIZIO, DATAFINE).ToString();
+        ltlSommaRicavi.Text ="ammonta complessivamente a " + Es.Guadagni(COD_DOCENTE, DATAINIZIO, DATAFINE).ToString() + " €";
     }
 }
