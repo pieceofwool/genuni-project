@@ -207,4 +207,17 @@ public class Materie_WS : System.Web.Services.WebService
         dt.TableName = "Materie";
         return dt;
     }
+
+    /// <summary>
+    /// metodo che restituisce tutte le materie che sono state preparate 
+    /// </summary>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable MateriePreparate()
+    {
+        MATERIE M = new MATERIE();
+        DataTable dt = M.MateriePreparate();
+        dt.TableName = "Materie";
+        return dt;
+    }
 }
