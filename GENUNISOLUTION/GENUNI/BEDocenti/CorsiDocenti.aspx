@@ -68,7 +68,7 @@
     <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align: center">
         <tr>
             <td><small>Vengono mostrate tutte le materie accettate</small></td>
-            <td>
+            <td style="text-align: right">
                 <asp:Button ID="BtnIndietro3" runat="server" Text="Esci" OnClick="BtnIndietro_Click" />
             </td>
         </tr>
@@ -116,7 +116,7 @@
     <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align: center">
         <tr>
             <td><small>Vengono mostrate tutte le materie non ancora accettate</small></td>
-            <td>
+            <td style="text-align: right">
                 <asp:Button ID="BtnIndietro2" runat="server" Text="Esci" OnClick="BtnIndietro_Click" />
             </td>
         </tr>
@@ -164,7 +164,7 @@
     <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align: center; margin-bottom: 100px;">
         <tr>
             <td><small>Vengono mostrati tutti i corsi in cui si hanno materie accettate</small></td>
-            <td>
+            <td style="text-align: right">
                 <asp:Button ID="BtnIndietro" runat="server" Text="Esci" OnClick="BtnIndietro_Click" />
             </td>
         </tr>
