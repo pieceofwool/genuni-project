@@ -13,7 +13,7 @@
                 <td class="btnGestisci">
                     <!-- POPUP, HTML-->
                     <%--<asp:LinkButton ID="lnkDownload" Text="Download" CommandArgument='<%# Eval("FileData") %>' runat="server" OnClick="lnkDownload_Click"></asp:LinkButton>--%>
-                    <asp:GridView ID="grigliaCorsiAcquistati" CssClass="gtiglia" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged" OnRowCommand="grigliaCorsiAcquistati_RowCommand" OnRowDataBound="grigliaCorsiAcquistati_RowDataBound">
+                    <asp:GridView ID="grigliaCorsiAcquistati" CssClass="gtiglia" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged" OnRowDataBound="grigliaCorsiAcquistati_RowDataBound">
                         <Columns>
                             <asp:CommandField ButtonType="Button" ShowSelectButton="true" SelectText="Accedi al corso">
                                 <ControlStyle CssClass="btnBE" />
@@ -32,7 +32,7 @@
             <tr>
                 <td class="btnGestisci">
                     <!-- POPUP, HTML-->
-                    <asp:GridView ID="grigliaCorsiDisponibili" CssClass="gtiglia" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged" OnRowCommand="grigliaCorsiDisponibili_RowCommand">
+                    <asp:GridView ID="grigliaCorsiDisponibili" CssClass="griglia" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged">
                         <Columns>
                             <asp:CommandField ButtonType="Button" ShowSelectButton="true" SelectText="Acquista corso">
                                 <ControlStyle CssClass="btnBE" />
