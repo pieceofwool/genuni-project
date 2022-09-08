@@ -44,6 +44,11 @@ h1 {
     color: rgba(76, 43, 148,0.5);
 }
 
+.ddl {
+    border-radius: 9px;
+    border: 1px solid #9ceeb78b;
+    width: 99px;
+}
 .btnHeader {
     background-color: #ffffff;
     color: black;

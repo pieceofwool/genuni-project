@@ -63,9 +63,16 @@
                                 I titoli conseguiti al termine dei corsi di formazione professionale e aggiornamento, sono validi in Italia e all&#39;estero per:
                             </p>
                             <ul>
-                                <li><i class="ion-android-checkmark-circle"></i>La libera professione</li>
-                                <li><i class="ion-android-checkmark-circle"></i>L&#39;avanzamento di carriera</li>
-                                <li><i class="ion-android-checkmark-circle"></i>I crediti formativi professionali</li>
+                                <li><i class="ion-android-checkmark-circle"></i><p style="margin-left: 25px; margin-top: -21px; color: #413e66;">
+                                    La libera professione
+                                    </p>
+                                </li>
+                                <li><i class="ion-android-checkmark-circle"></i>
+                                    <p style="margin-left: 25px; margin-top: -21px; color: #413e66;">L&#39;avanzamento di carriera</p>
+                                </li>
+                                <li><i class="ion-android-checkmark-circle"></i>
+                                    <p style="margin-left: 25px; margin-top: -21px; color: #413e66;">I crediti formativi professionali</p>
+                                </li>
                             </ul>
                             <p class="pAboutUs">
                                 Molto di pi&#249 di normale corso di e-learning, la nostra academy &#232 innovativa!
@@ -467,7 +474,7 @@
                                     <h3>Gen Uni</h3>
                                     <p>
                                         <div class="col-sm-6">
-                                            
+
 
                                             <div class="footer-links">
                                                 <h4>Contattaci</h4>
@@ -485,7 +492,7 @@
                                             </div>
                                             <div class="footer-links">
                                                 <h4>Link utili</h4>
-                                                <ul>                                                
+                                                <ul>
                                                     <li><a href="Login2.aspx">Termini di servizio</a></li>
                                                     <li><a href="../BEStudenti/SituazioneContabile.aspx">Privacy policy</a></li>
                                                 </ul>
@@ -494,7 +501,7 @@
                                     </p>
                                 </div>
 
-                               
+
                             </div>
 
                             <%-- 

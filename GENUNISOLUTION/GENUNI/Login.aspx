@@ -176,7 +176,7 @@
                                     </td>
                                     <td>
                                         <label>
-                                            <span>Città</span>
+                                            <span>Citta'</span>
                                             <%--<input type="text" />--%>
                                             <asp:TextBox ID="txtCitta" runat="server"></asp:TextBox>
 
@@ -197,7 +197,7 @@
                                 </tr>
                             </table>
                             <%--<button type="button" class="submit">Registrati</button>--%>
-                            <asp:Button ID="btnRegistrati" CssClass="" runat="server" Text="REGISTRATI" OnClick="btnRegistra_Click" />
+                            <asp:Button ID="btnRegistrati" CssClass="btnLoginCopia" runat="server" Text="REGISTRATI" OnClick="btnRegistra_Click" />
                         </div>
                     </div>
                 </div>
