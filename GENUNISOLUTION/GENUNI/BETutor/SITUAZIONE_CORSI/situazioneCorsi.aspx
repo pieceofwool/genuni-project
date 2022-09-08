@@ -35,7 +35,7 @@
 
             $('.popupPreparaDomande').click(function () {
 
-                var url = '../POPUP/corsi/preparazioneDomande.aspx';
+                var url = '../POPUP/preparazione_domande/preparazioneDomande.aspx';
                 var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
 
                 inserisci.dialog({

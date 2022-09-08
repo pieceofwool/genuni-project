@@ -10,7 +10,10 @@ public partial class preparazioneDomande : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+  
+   
+            AggiornaDomande();
+    
     }
 
     protected void btnAggiungiDomanda_Click(object sender, EventArgs e)
@@ -36,5 +39,19 @@ public partial class preparazioneDomande : System.Web.UI.Page
 
         D.Insert(COD_TEST, DOMANDA, RISPOSTA1, RISPOSTA2, RISPOSTA3, VOTI);
 
+    }
+
+    protected void AggiornaDomande()
+    {
+        DOMANDE.Domande_WSSoapClient D = new DOMANDE.Domande_WSSoapClient();
+        int COD_CORSO = Convert.ToInt32(Session["Chiave_Corso"]);
+        gridDomande.DataSource = D.DomandeSelectAllCorso(COD_CORSO);
+        gridDomande.DataBind(); 
+
+    }
+
+    protected void btnAggiorna_Click(object sender, EventArgs e)
+    {
+        AggiornaDomande();
     }
 }

@@ -4,11 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
+
+
         <div>
             <table>
                 <tr>
@@ -52,6 +54,13 @@
                     </td>
                 </tr>
             </table>
+            <br />
+
+                <asp:Button ID="btnAggiorna" runat="server" Text="Aggiorna domande" OnClick="btnAggiorna_Click" />
+            <br />
+                <asp:GridView ID="gridDomande" runat="server"></asp:GridView>
+
+
         </div>
     </form>
 </body>

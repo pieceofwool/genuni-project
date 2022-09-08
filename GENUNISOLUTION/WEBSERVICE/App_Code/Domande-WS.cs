@@ -96,4 +96,19 @@ public class Domande_WS : System.Web.Services.WebService
         return dt;
     }
 
+    /// <summary>
+    ///  metodo che restituisce tutte le domande di un parametro CodCorso
+    /// </summary>
+    /// <param name="COD_CORSO"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable DomandeSelectAllCorso(int COD_CORSO)
+    {
+        DOMANDE D = new DOMANDE();
+        D.COD_CORSO = COD_CORSO;
+        DataTable dt = D.DomandeSelectAllCorso();
+        dt.TableName = "Domande";
+        return dt;
+    }
+
 }
