@@ -14,8 +14,14 @@
                 <td class="btnGestisci">
                     <!-- POPUP, HTML-->
                     <%--<asp:LinkButton ID="lnkDownload" Text="Download" CommandArgument='<%# Eval("FileData") %>' runat="server" OnClick="lnkDownload_Click"></asp:LinkButton>--%>
-                    <asp:GridView ID="grigliaCorsiAcquistati" CssClass="griglia" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged" OnRowDataBound="grigliaCorsiAcquistati_RowDataBound">
+                    <asp:GridView ID="grigliaCorsiAcquistati" DataKeyNames="Chiave" AutoGenerateColumns="False" CssClass="griglia" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged" >
                         <Columns>
+                            <asp:BoundField DataField="Chiave" Visible="false" />
+                            <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
+                            <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
+                            <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                            <asp:BoundField DataField="Avatar_Corso" Visible="false" />
+                            <asp:BoundField DataField="Tipo" Visible="false" />
                             <asp:CommandField ButtonType="Button" ShowSelectButton="true" SelectText="Accedi al corso">
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
