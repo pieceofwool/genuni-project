@@ -1942,7 +1942,7 @@ h6 {
 
 #containerRegistrazione {
     padding: 183px 0 40px 0;
-    margin-top: 50px;
+    margin-top: -113px;
 }
 
 
@@ -1952,7 +1952,7 @@ h6 {
 
 #h1Registrazione {
     position: relative;
-    margin: 0px 140px;
+    margin: 0px 26px;
 }
 
     #h1Registrazione::after {

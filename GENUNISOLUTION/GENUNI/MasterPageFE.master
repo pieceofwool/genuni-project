@@ -72,7 +72,7 @@
                     <!-- Uncomment below if you prefer to use an image logo -->
                     <a href="#header" class="scrollto">
                         <img src="img/logo.png" alt="" class="img-fluid"></a>
-                    <h1 class="text-light"><a href="#intro" class="scrollto"><span>Gen Uni</span></a></h1>
+                    <h1 class="text-light"><a href="../Default.aspx" class="scrollto"><span>Gen Uni</span></a></h1>
                 </div>
                 <!-- #logo -->
 
@@ -94,7 +94,7 @@
                         <li><a href="#pricing">GenMoney</a></li>
                         <li><a href="#footer">Contatti</a></li>
                         <li>
-                            <asp:HyperLink ID="lnkLogin" runat="server" Text="Accedi" NavigateUrl="~/Login.aspx" Visible="true"></asp:HyperLink></li>
+                            <asp:HyperLink ID="lnkLogin" runat="server" Text="Accedi" NavigateUrl="~/Login.aspx?status=0" Visible="true"></asp:HyperLink></li>
                         <li>
                             <asp:Literal ID="litUserSpace" runat="server"></asp:Literal>
                     </ul>

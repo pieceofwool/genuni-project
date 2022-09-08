@@ -40,7 +40,7 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Modifica Dati',  //titolo dell'oggetto
+                    title: 'Modifica corsi',  //titolo dell'oggetto
                     dialogClass: 'dialog',
                     resizable: false,  //blocca il ridimensionamento
                     height: 500,
@@ -63,7 +63,7 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Modifica Dati',  //titolo dell'oggetto
+                    title: 'Informazioni',  //titolo dell'oggetto
                     dialogClass: 'dialog',
                     resizable: false,  //blocca il ridimensionamento
                     height: 500,
@@ -86,7 +86,53 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Modifica Dati',  //titolo dell'oggetto
+                    title: 'Assegna corsi',  //titolo dell'oggetto
+                    dialogClass: 'dialog',
+                    resizable: false,  //blocca il ridimensionamento--%>
+                    height: 500,
+                    width: 600,
+                    overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
+                    open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
+                });
+                //ogni oggetto deve restituire qualcosa
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#btnApprova').click(function () {
+                //collego l'oggetto alla pagina
+                var url = "Popup/ApprovaCorsi.aspx";
+                var popUp = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+                //dichiariamo tutte le caratteristiche dell' oggetto
+                popUp.dialog({
+
+                    modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
+                    title: 'Approvazione',  //titolo dell'oggetto
+                    dialogClass: 'dialog',
+                    resizable: false,  //blocca il ridimensionamento--%>
+                    height: 500,
+                    width: 600,
+                    overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
+                    open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
+                });
+                //ogni oggetto deve restituire qualcosa
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#btnAbilita').click(function () {
+                //collego l'oggetto alla pagina
+                var url = "Popup/Abilita.aspx";
+                var popUp = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+                //dichiariamo tutte le caratteristiche dell' oggetto
+                popUp.dialog({
+
+                    modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
+                    title: 'Abilita',  //titolo dell'oggetto
                     dialogClass: 'dialog',
                     resizable: false,  //blocca il ridimensionamento--%>
                     height: 500,
@@ -170,6 +216,8 @@
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
                         </Columns>
+                         <HeaderStyle />
+                        <HeaderStyle CssClass="headergrid" />
                     </asp:GridView>
                 </td>
             </tr>
@@ -179,7 +227,7 @@
         <h4 class="titoliBE">Approvazione corsi</h4>
         <table>
             <tr>
-                <td>
+                <td class="btnGestisci">
                     <!-- POPUP, HTML-->
                     <a id="btnApprova" class="popUpBtnBE" href="Popup/ApprovaCorsi.aspx">Approva corso</a>
                     <asp:Button ID="btnAggiornaApprovazione" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiornaApprovazione_Click" CssClass="btnBE" />
@@ -187,15 +235,19 @@
             </tr>
             <tr>
                 <td>
-                    <asp:GridView ID="gridApprovazioneCorsi" runat="server" DataKeyNames="Chiave, Cod_Utente" AutoGenerateColumns="false" OnSelectedIndexChanged="gridApprovazioneCorsi_SelectedIndexChanged">
+                    <asp:GridView ID="gridApprovazioneCorsi" runat="server" DataKeyNames="Chiave, Cod_Utente" CssClass="griglia" AutoGenerateColumns="false" OnSelectedIndexChanged="gridApprovazioneCorsi_SelectedIndexChanged">
                         <Columns>
                             <asp:BoundField DataField="Chiave" Visible="false" />
                             <asp:BoundField DataField="Cod_Utente" Visible="false" />
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                             <asp:BoundField DataField="Nome" HeaderText="Nome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
                             <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
-                            <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
+                               <asp:CommandField ButtonType="Button" ShowSelectButton="true">
+                                <ControlStyle CssClass="btnBE" />
+                            </asp:CommandField>
                         </Columns>
+                         <HeaderStyle />
+                        <HeaderStyle CssClass="headergrid" />
                     </asp:GridView>
                 </td>
             </tr>

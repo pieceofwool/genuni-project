@@ -4,76 +4,83 @@
     <link href="../assets/css/StyleStudenti.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
-        <div class="wrapper fadeInDown" style="padding-right: 350px;">
-            <div class="formContent">
-
-                <div class="manage-fields-wrapper">
-                    <div class="udlite-container user-manage--container--11_wD">
-                        <input type="hidden" name="csrfmiddlewaretoken" value="ZWMsn0DLX2ef9iOICnMhzc516rmtjGXoQpxXBMHDmwfcZmEiPMlMh6xKDH5megwi"><input name="ignore_warnings" type="hidden" value="false"><div class="user-manage--section--4Hqsd">
-                            <fieldset class="udlite-form-group" style="padding-top: 32px;">
-                                 <div id="tabella" runat="server">
-                                <asp:Label ID="lblRes" runat="server" Text=""></asp:Label>
-                                 </div>
-                                <legend class="udlite-form-label udlite-heading-sm">Profilo:</legend>
-                                <div class="udlite-form-group">
-                                    <label class="udlite-sr-only udlite-form-label udlite-heading-sm" for="form-group--3">Nome</label><br />
-                                    <asp:TextBox ID="txtNome" runat="server"  MaxLength="64"></asp:TextBox>
-                                </div>
-                                <div class="udlite-form-group">
-                                    <label class="udlite-sr-only udlite-form-label udlite-heading-sm" for="form-group--5">Cognome</label><asp:TextBox ID="txtCognome" runat="server" MaxLength="64"></asp:TextBox>
-                                </div>
-                                    <div class="udlite-form-group">
-                                    <label class="udlite-sr-only udlite-form-label udlite-heading-sm" for="form-group--5">Indirizzo</label>
-                                        <asp:TextBox ID="txtIndirizzo" runat="server"></asp:TextBox>
-                                    </div>
-                              
-                                 <div class="udlite-form-group">
-                                     <label class="udlite-sr-only udlite-form-label udlite-heading-sm" for="form-group--5">Città</label><br />
-                                        <asp:TextBox ID="txtCitta" runat="server"></asp:TextBox>
-                                    </div>
-                               
-                                      <div class="udlite-form-group">
-                                          <label class="udlite-sr-only udlite-form-label udlite-heading-sm" for="form-group--5">Provincia</label>
-                                        <asp:TextBox ID="txtProvincia" runat="server"></asp:TextBox>
-                                    </div>
-                               <div class="udlite-form-group">
-                                          <label class="udlite-sr-only udlite-form-label udlite-heading-sm" for="form-group--5">azionalità</label>
-                                        <asp:TextBox ID="txtNazionalita" runat="server"></asp:TextBox>
-                                    </div>
-                                    
-                                     </div>
-                                <div class="udlite-form-group">
-                                        <asp:Button ID="btnSalva" runat="server" Text="Salva" OnClick="btnSalva_Click" />
-                                    </div>
-                            </fieldset>
-                        </div>
-                        
-                        <div class="formContent" style="position: absolute;top:0px; right: -420px; font-size: 18px";>
-                             <legend class="udlite-form-label udlite-heading-sm">Modifica Password:</legend>
-                            <div>
-                                <asp:Label runat="server" Text="User"
-                                    Width="100px"></asp:Label>
-                                <asp:TextBox ID="txtUser" runat="server" Width="200px"></asp:TextBox>
-                                <br />
-                                <asp:Label ID="Label2" runat="server" Text="Password"
-                                    Width="100px"></asp:Label>
-                                <asp:TextBox ID="txtPassword" runat="server"
-                                    TextMode="Password" Width="200px">
-                                </asp:TextBox>
-                                <br />
-                                <asp:Button ID="btn_SalvaPass" runat="server" Text="Salva" OnClick="btnSalvaPass_Click" />
-                                <br />
-                                <asp:Label ID="lbl1" runat="server" Text=""></asp:Label>
-                            </div>
-                        </div>
+    <div>
+        <img src="../assets/img/lavoriBE.png" class="icona" />
+    </div>
+    <div class="containerBE" id="containerModificaProfilo1">
+        <h4 class="titoliBE">MODIFICA PROFILO</h4>
+        <table style="margin-top: 16px; text-align: center;">
+            <tr>
+                <td>
+                    <div id="tabella" runat="server">
+                        <asp:Label ID="lblRes" runat="server" Text=""></asp:Label>
                     </div>
-                </div>
-            </div>
-        </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblNome" runat="server" Text="Nome"></asp:Label>
+                    <asp:TextBox ID="txtNome" runat="server" MaxLength="64"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Label ID="lblCognome" runat="server" Text="Cognome"></asp:Label>
+                    <asp:TextBox ID="txtCognome" runat="server" MaxLength="64"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Label ID="lblIndirizzo" runat="server" Text="Indirizzo"></asp:Label>
+                    <asp:TextBox ID="txtIndirizzo" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblCitta" runat="server" Text="Città"></asp:Label>
+                    <asp:TextBox ID="txtCitta" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
+                    <asp:TextBox ID="txtProvincia" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Label ID="lblNazionalita" runat="server" Text="Nazionalità"></asp:Label>
+                    <asp:TextBox ID="txtNazionalita" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="btnSalva" runat="server" CssClass="btnBE" Text="Salva" OnClick="btnSalva_Click" />
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="containerBE" id="containerModificaProfilo2" style="margin-top: -47px; text-align: center;">
+        <h4 class="titoliBE">MODIFICA PASSWORD</h4>
+        <table style="margin-top: 16px; text-align: center;">
+            <tr>
+                <td>
+                    <asp:Label ID="lbl1" runat="server" Text=""></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblUser" runat="server" Text="User"></asp:Label>
+                    <asp:TextBox ID="txtUser" runat="server" MaxLength="64"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Label ID="lblPass" runat="server" Text="Password"></asp:Label>
+                    <asp:TextBox ID="txtPassword" runat="server" MaxLength="64"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <%--<td>&nbsp;</td>--%>
+                <td colspan="2">
+                    <asp:Button style="margin-left: -24px;" ID="btnSalvaPass" runat="server" Text="Salva" OnClick="btnSalvaPass_Click" />
+                </td>
+                <%--<td>&nbsp;</td>--%>
+            </tr>
+        </table>
+    </div>
 </asp:Content>
 

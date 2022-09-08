@@ -96,6 +96,17 @@ public class Corsi_WS : System.Web.Services.WebService
         return dt;
     }
 
+
+    [WebMethod]
+    public DataTable SelectJoinMateria()
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        dt = c.SelectJoinMateria();
+        dt.TableName = "Corsi";
+        return dt;
+    }
+
     [WebMethod]
     public DataTable TestRisultato(int CHIAVECORSO, int CHIAVETEST, int CHIAVESTUDENTE)
     {
@@ -328,5 +339,19 @@ public class Corsi_WS : System.Web.Services.WebService
         C.CHIAVE = COD_CORSO;
         C.COSTO = COSTO;
         C.CorsiQuotazione();
+    }
+
+    /// <summary>
+    /// Lista di tutti i corsi non comprati dallo studente
+    /// </summary>
+    /// <param name="COD_STUDENTE"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable NonComprati (int COD_STUDENTE)
+    {
+        DataTable DT = new CORSI().NonComprati(COD_STUDENTE);
+        DT.TableName = "Corsi";
+
+        return DT;
     }
 }

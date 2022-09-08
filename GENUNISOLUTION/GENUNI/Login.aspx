@@ -206,21 +206,19 @@
                         document.querySelector('.cont').classList.toggle('s--signup');
                     });
 
-                    //const status = document.getElementById("status");
+                    let params = new URLSearchParams(location.search);
+                    let status = params.get('status');
+                    let intStatus = parseInt(status)
 
-                    //if (status === 0) {
-                    //    document.querySelector('.img__btn').addEventListener('click', function () {
-                    //        document.querySelector('.cont').classList.toggle('s--signup');
+                    if (intStatus === 0) {
+                        document.querySelector('.cont').classList.toggle('s--login');
 
-                    //    });
-                    //}
+                    };
 
-                    //if (status === 1) {
-                    //    document.querySelector('.img__btn').addEventListener('click', function () {
-                    //        document.querySelector('.cont').classList.toggle('s--signup');
+                    if (intStatus === 1) {
+                        document.querySelector('.cont').classList.toggle('s--signup');
 
-                    //    });
-                    //}
+                    };
 
                 </script>
 
@@ -244,8 +242,10 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
     <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script> <%--non trovato--%>
+    <script src="contactform/contactform.js"></script>
+    <%--non trovato--%>
 
     <!-- Main Javascript File -->
-    <script src="assets/js/main.js"></script> <%--non trovato--%>
+    <script src="assets/js/main.js"></script>
+    <%--non trovato--%>
 </asp:Content>
