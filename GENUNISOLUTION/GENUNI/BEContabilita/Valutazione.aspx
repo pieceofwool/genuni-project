@@ -18,7 +18,7 @@
 
                 dialog.dialog({
                     modal: true,
-                    title: 'Inserisci',
+                    title: 'Visualizza',
                     resizable: false,
                     with: '400px',
                     show: {
@@ -47,7 +47,7 @@
     </div>
     <div class="containerBE">
         <h4 class="titoliBE">Valutazione</h4>
-        <a href="PoPup/InfoCorsi.aspx" id="popup">Visualizza</a>
+        <a href="PoPup/InfoCorsi.aspx" id="pippo">Visualizza</a>
         <asp:Button ID="btnAggiorna" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiorna_Click" />
         <asp:GridView ID="grdValutazione" runat="server" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="Chiave">
             <Columns>
