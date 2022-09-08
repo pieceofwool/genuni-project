@@ -9,6 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <%--TABELLA DI INSERIMENTO MATERIE --%>
         <table>
             <tr>
                 <td>
@@ -36,9 +37,22 @@
         </table>
         <hr />
         <div>
+            <%--TABELLA DEI CORSI CREATI DAL TUTOR CHE HA FATTO ACCESSO--%>
+            <asp:Label ID="lblCorsiCreati" runat="server" Text="Corsi creati:"></asp:Label>
+            <asp:GridView ID="gridCorsiCreati" runat="server" OnSelectedIndexChanged="gridCorsiCreati_SelectedIndexChanged" DataKeyNames="Chiave">
+                <Columns>
+                    <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Seleziona" ShowHeader="True" Text="Seleziona" />
+                </Columns>
+            </asp:GridView>
+            <asp:Button ID="btnAssegnaM" runat="server" Text="Assegna Materia" OnClick="btnAssegnaM_Click" />
+            <asp:Button ID="btnAggiornaCorsi" runat="server" Text="Aggiorna Corsi" OnClick="btnAggiornaCorsi_Click" />
+        </div>
 
-            <asp:Label ID="lblMaterie" runat="server" Text="Materie preparate"></asp:Label>
-            <asp:GridView ID="gridMaterie" runat="server"></asp:GridView>
+        <hr />
+        <div>
+            <%--TABELLA DI TUTTE LE MATERIE GIA PREPARATE--%>
+            <asp:Label ID="lblMatPreparate" runat="server" Text="Materie preparate"></asp:Label>
+            <asp:GridView ID="gridMatPreparate" runat="server"></asp:GridView>
 
         </div>
 
