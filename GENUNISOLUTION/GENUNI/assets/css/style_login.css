@@ -227,7 +227,7 @@ button {
     overflow: hidden;
     position: relative;
     width: 893px;
-    height: 623px;
+    height: 665px;
     margin: 152px auto 18px;
     background: #fff;
     box-shadow: -10px -10px 15px rgb(255 255 255 / 30%), 10px 10px 15px rgb(70 70 70 / 15%), inset -10px -10px 15px rgb(255 255 255 / 30%), inset 10px 10px 15px rgb(70 70 70 / 15%);
@@ -284,6 +284,24 @@ button {
     color: #fff;
     font-size: 15px;
     cursor: pointer;
+}
+
+
+
+.btnLoginCopia {
+    display: block;
+    margin: 0 auto;
+    width: 260px;
+    height: 36px;
+    border-radius: 30px;
+    border-color: #0a98c0;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #0a98c0;
+    text-transform: uppercase;
 }
 
 .img {
@@ -561,7 +579,7 @@ input {
 
 .h3Login {
     font-size: 25px;
-    color:white;
+    color: white;
 }
 
 #genLoginImg {

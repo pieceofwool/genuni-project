@@ -61,10 +61,8 @@
                         <asp:TextBox ID="txtDataPartenza" CssClass="txt" runat="server" tooltip="Data Partenza" TextMode="Date"></asp:TextBox><br />
                     </td>
                 </tr>
-                
                 <tr>
                     <td colspan="2">
-
                         <asp:Button ID="btnModifica" CssClass="btnBE" runat="server" Text="Modifica" OnClick="btnModifica_Click"  />
                     </td>
                 </tr>

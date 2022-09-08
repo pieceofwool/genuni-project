@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneReport.aspx.cs" Inherits="Default3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneReport2.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
@@ -44,6 +44,7 @@
             <tr>
                 <td>
                     <%-- GRIGLIA DI VISUALIZZAZIONE REPORT DOCENTI --%>
+                    <div class="box-content" style="min-height: 40px">
                         <asp:GridView ID="grigliaReportDocenti" CssClass="griglia" AutoGenerateColumns="False" runat="server">
                             <Columns>
                                 <asp:BoundField DataField="Cod_Corso" Visible="false" />
@@ -64,6 +65,7 @@
                             <HeaderStyle CssClass="headergrid" />
                             <SelectedRowStyle CssClass="selezionegrid" />
                         </asp:GridView>
+                    </div>
                     <span><b>Totale spese:</b></span>
                     <asp:Label ID="lblTotDoc" runat="server" CssClass="lbl" Text=""></asp:Label>
 
@@ -71,13 +73,13 @@
             </tr>
         </table>
     </div>
-
     <div class="containerBE" style="margin-top: -54px;">
         <h4 class="titoliBE">Ricavo studenti</h4>
         <table class="tablePopUp">
             <tr>
                 <td>
                     <%-- GRIGLIA DI VISUALIZZAZIONE REPORT STUDENTI --%>
+                    <div class="box-content" style="min-height: 40px">
                         <asp:GridView ID="grigliaReportStudenti" CssClass="griglia" AutoGenerateColumns="False" runat="server">
                             <Columns>
                                 <asp:BoundField DataField="Cod_Corso" Visible="false" />
@@ -93,6 +95,7 @@
                             <HeaderStyle CssClass="headergrid" />
                             <SelectedRowStyle CssClass="selezionegrid" />
                         </asp:GridView>
+                    </div>
                     <span><b>Totale ricavi:</b></span>
                     <asp:Label ID="lblTotStud" runat="server" CssClass="lbl" Text=""></asp:Label>
                 </td>

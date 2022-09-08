@@ -8,7 +8,7 @@
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-   <div>
+    <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
@@ -37,6 +37,7 @@
                         </Columns>
                         <HeaderStyle />
                         <HeaderStyle CssClass="headergrid" />
+                        <SelectedRowStyle CssClass="selezionegrid" />
                     </asp:GridView>
                 </td>
             </tr>

@@ -116,8 +116,9 @@
                                 <controlstyle cssclass="btnBE" />
                             </asp:CommandField>
                         </columns>
-                        <headerstyle />
-                        <headerstyle cssclass="headergrid" />
+                        <HeaderStyle />
+                        <HeaderStyle CssClass="headergrid" />
+                        <SelectedRowStyle CssClass="selezionegrid" />
                     </asp:GridView>
                 </td>
             </tr>
