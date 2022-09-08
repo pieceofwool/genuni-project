@@ -14,10 +14,10 @@ public partial class _Default : System.Web.UI.Page
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
-        //DataTable dtstudenti = new DataTable();
-        //dtstudenti = E.SelectAll_Studenti();
-        //int contstudenti = dtstudenti.Rows.Count;
-        //lblContoStudenti.Text = contstudenti.ToString();
+        DataTable dtstudenti = new DataTable();
+        dtstudenti = E.SelectAll_Studenti();
+        int contstudenti = dtstudenti.Rows.Count;
+        lblContoStudenti.Text = contstudenti.ToString();
 
         DataTable dtdocenti = new DataTable();
         dtdocenti = E.SelectAll_Docenti();
