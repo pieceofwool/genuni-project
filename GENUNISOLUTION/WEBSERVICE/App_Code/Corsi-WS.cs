@@ -354,4 +354,34 @@ public class Corsi_WS : System.Web.Services.WebService
 
         return DT;
     }
+
+    /// <summary>
+    /// metodo che restituisce tutti i corsi con status C creati dal parametro tutor
+    /// </summary>
+    /// <param name="COD_TUTOR"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public DataTable CorsiCreati(int COD_TUTOR)
+    {
+        DataTable dt = new DataTable();
+        CORSI C = new CORSI();
+        C.CHIAVE_TUTOR = COD_TUTOR;
+        dt = C.CorsiCreati();
+        dt.TableName = "Corsi";
+        return dt;
+        
+    }
+
+    /// <summary>
+    /// metodo che assegna status M a parametro COD_CORSO
+    /// </summary>
+    /// <param name="COD_CORSO"></param>
+    [WebMethod]
+    public void CorsiMaterieAssegnate(int COD_CORSO)
+    {
+        CORSI C = new CORSI();
+        C.CHIAVE = COD_CORSO;
+        C.CorsoMateriaAssegnata();
+    }
+
 }

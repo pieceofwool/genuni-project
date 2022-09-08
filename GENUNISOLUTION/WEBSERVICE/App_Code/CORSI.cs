@@ -317,6 +317,29 @@ public class CORSI
 
         return new CONNESSIONE().EseguiSelect(CMD);
     }
+
+    /// <summary>
+    /// metodo che restituisce tutti i corsi con status C creati dal parametro tutor
+    /// </summary>
+    /// <returns></returns>
+    public DataTable CorsiCreati()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SelectStautsC");
+        cmd.Parameters.AddWithValue("@COD_TUTOR", CHIAVE_TUTOR);
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+
+    /// <summary>
+    /// metodo che assegna status M a parametro COD_CORSO
+    /// </summary>
+    public void CorsoMateriaAssegnata()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_StatusM");
+        cmd.Parameters.AddWithValue("@COD_CORSO", CHIAVE);
+        CONNESSIONE C = new CONNESSIONE();
+        C.EseguiCmd(cmd);
+    }
     #endregion Metodi
 
 }
