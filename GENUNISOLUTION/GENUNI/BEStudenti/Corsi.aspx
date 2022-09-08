@@ -20,7 +20,9 @@
         <asp:Button ID="btnAttestato" runat="server" Text="Scarica" OnClick="btnAttestato_Click" />
         <asp:Label ID="lblDownload" runat="server" Text=""></asp:Label>
     </div>
-
+    <div>
+        <asp:Literal ID="lit" runat="server"></asp:Literal>
+    </div>
 
 
 

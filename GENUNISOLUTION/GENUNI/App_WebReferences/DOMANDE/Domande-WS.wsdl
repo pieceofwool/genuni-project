@@ -102,6 +102,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="DomandeSelectAllCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DomandeSelectAllCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DomandeSelectAllCorsoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllSoapIn">
@@ -140,6 +161,12 @@
   <wsdl:message name="DomandeSelectAllTestSoapOut">
     <wsdl:part name="parameters" element="tns:DomandeSelectAllTestResponse" />
   </wsdl:message>
+  <wsdl:message name="DomandeSelectAllCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:DomandeSelectAllCorso" />
+  </wsdl:message>
+  <wsdl:message name="DomandeSelectAllCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:DomandeSelectAllCorsoResponse" />
+  </wsdl:message>
   <wsdl:portType name="Domande_WSSoap">
     <wsdl:operation name="SelectAll">
       <wsdl:input message="tns:SelectAllSoapIn" />
@@ -164,6 +191,10 @@
     <wsdl:operation name="DomandeSelectAllTest">
       <wsdl:input message="tns:DomandeSelectAllTestSoapIn" />
       <wsdl:output message="tns:DomandeSelectAllTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DomandeSelectAllCorso">
+      <wsdl:input message="tns:DomandeSelectAllCorsoSoapIn" />
+      <wsdl:output message="tns:DomandeSelectAllCorsoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Domande_WSSoap" type="tns:Domande_WSSoap">
@@ -222,6 +253,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DomandeSelectAllCorso">
+      <soap:operation soapAction="http://tempuri.org/DomandeSelectAllCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Domande_WSSoap12" type="tns:Domande_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -272,6 +312,15 @@
     </wsdl:operation>
     <wsdl:operation name="DomandeSelectAllTest">
       <soap12:operation soapAction="http://tempuri.org/DomandeSelectAllTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DomandeSelectAllCorso">
+      <soap12:operation soapAction="http://tempuri.org/DomandeSelectAllCorso" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

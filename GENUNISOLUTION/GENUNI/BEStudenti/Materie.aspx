@@ -9,7 +9,7 @@
     <br />
     <br />
     <p>Materiale Didattico</p>
-    <asp:GridView id="grigliaMateriale" runat="server" OnSelectedIndexChanged="grigliaMateriale_SelectedIndexChanged">
+    <asp:GridView id="grigliaMateriale" runat="server" OnSelectedIndexChanged="grigliaMateriale_SelectedIndexChanged" DataKeyNames="Chiave">
         <Columns>
             <asp:CommandField ButtonType="Button" SelectText="Apri materiale" ShowSelectButton="True" />
         </Columns>

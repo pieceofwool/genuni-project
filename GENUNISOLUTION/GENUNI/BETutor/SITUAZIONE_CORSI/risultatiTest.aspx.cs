@@ -15,4 +15,14 @@ public partial class BETutor_Default : System.Web.UI.Page
         grvRisulati.DataSource = T.Test_SelectCorso(COD_CORSO);
 
     }
+
+    protected void grvRisulati_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("../SITUAZIONE_STUDENTI/situazioneStudenti.aspx");
+    }
 }

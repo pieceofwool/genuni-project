@@ -3,12 +3,12 @@
 @charset "UTF-8";
 
 html {
-    background-color: #56baed;
+    background-color: whitesmoke;
 }
 
 body {
+    background-color: whitesmoke;
     font-family: "Poppins", sans-serif;
-    height: 100vh;
 }
 
 a {
@@ -80,43 +80,21 @@ h2.active {
 
 /* FORM TYPOGRAPHY*/
 
-input[type=button], input[type=submit], input[type=reset] {
-    background-color: #1a4126;
-    border: none;
-    color: white;
-    padding: 15px 80px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 13px;
-    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
-    margin: 5px 20px 40px 20px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+.btnBE {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 5px;
+    border-color: rgba(255,255,255,.2);
 }
 
-    input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
-        background-color: #5fcf80;
-    }
-
-    input[type=button]:active, input[type=submit]:active, input[type=reset]:active {
-        -moz-transform: scale(0.95);
-        -webkit-transform: scale(0.95);
-        -o-transform: scale(0.95);
-        -ms-transform: scale(0.95);
-        transform: scale(0.95);
+    .btnBE:hover, .dropdown-content {
+        background-color: #9ceeb7;
+        color: black;
     }
 
 input[type=text], input[type=password] {
     background-color: #f6f6f6;
-    */ border: none;
+    border: none;
     color: #0d0d0d;
     padding: 5px 4px;
     text-align: center;
@@ -302,4 +280,9 @@ input[type=text], -webkit-animation-:placeholder {
 #containerModificaProfilo2 {
     background-color: whitesmoke;
     height: 416px;
+}
+
+
+td {
+    width: 200px;
 }

@@ -16,6 +16,7 @@ public class DOMANDE
     public string RISPOSTA2;
     public string RISPOSTA3;
     public string VOTI;
+    public int COD_CORSO;
 
     public DataTable SelectAll()
     {
@@ -93,6 +94,19 @@ public class DOMANDE
         CONNESSIONE C = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand("DOMANDE_SELECT_TEST");
         cmd.Parameters.AddWithValue("@Cod_Test", COD_TEST);
+
+        return C.EseguiSelect(cmd);
+    }
+
+    /// <summary>
+    /// metodo che restituisce tutte le domande di un parametro CodCorso
+    /// </summary>
+    /// <returns></returns>
+    public DataTable DomandeSelectAllCorso()
+    {
+        CONNESSIONE C = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand("DOMANDE_SELECT_CORSO");
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
 
         return C.EseguiSelect(cmd);
     }
