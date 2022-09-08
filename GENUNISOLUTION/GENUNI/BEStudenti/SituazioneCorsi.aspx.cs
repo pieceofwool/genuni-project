@@ -43,8 +43,6 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     }
 
 
-
-
     protected void grigliaCorsiAcquistati_RowDataBound(object sender, GridViewRowEventArgs e)
     {
         e.Row.Cells[4].Visible = false;

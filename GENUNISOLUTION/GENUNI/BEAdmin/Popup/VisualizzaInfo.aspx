@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
+    <link href="../../assets/css/StylePopUp.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,37 +19,37 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblTitolo" CssClass="lbl" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblTitolo" CssClass="lblPTitolo" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblTipo" CssClass="lbl" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblTipo" CssClass="lblPTitolo" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblDescrizione" CssClass="lbl" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblDescrizione" CssClass="lblP" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblTutor" CssClass="lbl" runat="server" Text="Tutor assegnato: "></asp:Label>
+                        <asp:Label ID="lblTutor"  CssClass="lblP" runat="server" Text="Tutor assegnato: "></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblDataCreazione" CssClass="lbl" runat="server" Text="Data creazione: "></asp:Label>
+                        <asp:Label ID="lblDataCreazione"  CssClass="lblP" runat="server" Text="Data creazione: "></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblStatus" CssClass="lbl" runat="server" Text="Status: "></asp:Label>
+                        <asp:Label ID="lblStatus"  CssClass="lblP" runat="server" Text="Status: "></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblDataStatus" CssClass="lbl" runat="server" Text="Ultima modifica status: "></asp:Label>
+                        <asp:Label ID="lblDataStatus"  CssClass="lblP" runat="server" Text="Ultima modifica status: "></asp:Label>
                     </td>
                 </tr>
             </table>

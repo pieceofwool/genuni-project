@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneReport.aspx.cs" Inherits="Default3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneReport2.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
@@ -17,15 +17,15 @@
             <tr>
                 <td>
                     <%-- DATA INIZIO REPORT --%>
-                    <asp:Label ID="lblDataInizio" CssClass="lbl" runat="server" Text="Data inizio report:" Style="font-size: 16px;"></asp:Label>
-                    <asp:TextBox ID="txtDataInizio" CssClass="txtDate" runat="server" TextMode="Date" Style="font-size: 16px;"></asp:TextBox>
+                    <asp:Label ID="lblDataInizio" CssClass="lbl" runat="server" Text="Data inizio report:"></asp:Label>
+                    <asp:TextBox ID="txtDataInizio" CssClass="txtDate" runat="server" TextMode="Date"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>
                     <%-- DATA FINE REPORT --%>
-                    <asp:Label ID="lblDataFine" CssClass="lbl" runat="server" Text="Data fine report:" Style="font-size: 16px;"></asp:Label>
-                    <asp:TextBox ID="txtDataFine" CssClass="txtDate" runat="server" TextMode="Date" Style="font-size: 16px;"></asp:TextBox>
+                    <asp:Label ID="lblDataFine" CssClass="lbl" runat="server" Text="Data fine report:"></asp:Label>
+                    <asp:TextBox ID="txtDataFine" CssClass="txtDate" runat="server" TextMode="Date"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -68,17 +68,16 @@
                     </div>
                     <span><b>Totale spese:</b></span>
                     <asp:Label ID="lblTotDoc" runat="server" CssClass="lbl" Text=""></asp:Label>
+
                 </td>
             </tr>
         </table>
     </div>
-
     <div class="containerBE" style="margin-top: -54px;">
         <h4 class="titoliBE">Ricavo studenti</h4>
         <table class="tablePopUp">
             <tr>
                 <td>
-
                     <%-- GRIGLIA DI VISUALIZZAZIONE REPORT STUDENTI --%>
                     <div class="box-content" style="min-height: 40px">
                         <asp:GridView ID="grigliaReportStudenti" CssClass="griglia" AutoGenerateColumns="False" runat="server">

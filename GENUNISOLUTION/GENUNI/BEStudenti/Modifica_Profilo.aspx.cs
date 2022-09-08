@@ -63,26 +63,5 @@ public partial class Modifica_Profilo : System.Web.UI.Page
 
         lblRes.Text="Info Modificato";
     }
-    protected void btnSalvaPass_Click(object sender, EventArgs e)
-    {
-        CRYPTA.Crypta_WSSoapClient C = new CRYPTA.Crypta_WSSoapClient();
-        //dichiaro le variabili
-        int Chiave = 1;
-        string User = txtUser.Text.Trim();
-        string plaintext = txtPassword.Text.Trim();
-        string pwd = C.PWD_CRYPTA(plaintext); // E quì vengono cryptate
-
-        // Controlli formali
-        if (string.IsNullOrEmpty(txtUser.Text.Trim()) || string.IsNullOrEmpty(txtPassword.Text.Trim()))
-        {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "Dati non validi", "alert('Compilare tutti i campi')", true);
-            return;
-        }
-
-        //modifico la Password
-        ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-        
-        E.UpdatePassword_Studenti(Chiave, User, pwd);
-        lbl1.Text="User e Password Modificati!";
-    }
+    
 }
