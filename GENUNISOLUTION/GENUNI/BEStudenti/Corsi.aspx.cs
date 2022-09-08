@@ -14,25 +14,25 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     {
         caricaGriglia();
 
-        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
 
-        //trasformo una datatable in un intero
-        TEST.Test_WSSoapClient t = new TEST.Test_WSSoapClient();
-        DataTable dt = t.SelectSoglia(CHIAVE);
-        int soglia = int.Parse(dt.Rows[0]["Soglia"].ToString());
+        ////trasformo una datatable in un intero
+        //TEST.Test_WSSoapClient t = new TEST.Test_WSSoapClient();
+        //DataTable dt = t.SelectSoglia(CHIAVE);
+        ////int soglia = int.Parse(dt.Rows[0]["Soglia"].ToString());
 
-        CLASSI.Classi_WSSoapClient c = new CLASSI.Classi_WSSoapClient();
-        DataTable da = c.Select_Punteggio(CHIAVE);
-        int risultato = int.Parse(da.Rows[0]["Punteggio"].ToString());
+        //CLASSI.Classi_WSSoapClient c = new CLASSI.Classi_WSSoapClient();
+        //DataTable da = c.Select_Punteggio(CHIAVE);
+        //int risultato = int.Parse(da.Rows[0]["Punteggio"].ToString());
 
-        if (risultato >= soglia)
-        {
-            attestato.Visible = true;
-        }
-        else
-        {
-            attestato.Visible = false;
-        }
+        //if (risultato >= soglia)
+        //{
+        //    attestato.Visible = true;
+        //}
+        //else
+        //{
+        //    attestato.Visible = false;
+        //}
     }
 
     protected void grigliaMaterie_SelectedIndexChanged(object sender, EventArgs e)
