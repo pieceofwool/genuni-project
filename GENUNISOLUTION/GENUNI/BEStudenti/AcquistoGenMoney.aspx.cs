@@ -24,11 +24,24 @@ public partial class Default2 : System.Web.UI.Page
     {
 
         GENMONEY.GenMoney_WSSoapClient g = new GENMONEY.GenMoney_WSSoapClient();
-        int AMMONTARE = int.Parse(ddlPacchetto.SelectedValue);
         int COD_STUDENTE = int.Parse(Session["CodiceAttore"].ToString());
+        if (rdbPacchetto1.Checked)
+        {
+            int AMMONTARE = 50;
+            g.Studenti_Acquisto(COD_STUDENTE, AMMONTARE);
+        }
+        if (rdbPacchetto2.Checked)
+        {
+            int AMMONTARE = 100;
+            g.Studenti_Acquisto(COD_STUDENTE, AMMONTARE);
+        }
+        if (rdbPacchetto3.Checked)
+        {
+            int AMMONTARE = 200;
+            g.Studenti_Acquisto(COD_STUDENTE, AMMONTARE);
+        }
 
-        g.Studenti_Acquisto(COD_STUDENTE, AMMONTARE);
         lblC.Text = "GenMoney acquistati! Aggiorna per visualizzare il nuovo saldo.";
-        btnConferma.Visible=false;
+        btnConferma.Visible = false;
     }
 }

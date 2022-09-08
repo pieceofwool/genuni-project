@@ -11,7 +11,7 @@
     <p>Materiale Didattico</p>
     <asp:GridView id="grigliaMateriale" runat="server" OnSelectedIndexChanged="grigliaMateriale_SelectedIndexChanged">
         <Columns>
-            <asp:CommandField ButtonType="Button" SelectText="Vai al link" ShowSelectButton="True" />
+            <asp:CommandField ButtonType="Button" SelectText="Apri materiale" ShowSelectButton="True" />
         </Columns>
     </asp:GridView>
     <div>
