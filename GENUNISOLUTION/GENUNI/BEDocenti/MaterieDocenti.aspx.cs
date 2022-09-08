@@ -31,7 +31,7 @@ public partial class Default2 : System.Web.UI.Page
             string materia = riga.Field<string>("Titolo").ToString();
             int codicemateria = riga.Field<int>("Chiave");
             litMaterie.Text += "<tr><td>" + materia + "</td><td><a href=\"ProgrammiDocenti.aspx?" +
-                "codice=" + codicemateria + "&corso="+nomecorso+"&materia="+materia+"\">Vai al Programma</a></td></tr>";
+                "codicemateria=" + codicemateria + "&corso="+nomecorso+"&materia="+materia+"\">Vai al Programma</a></td></tr>";
         }
     }
 
