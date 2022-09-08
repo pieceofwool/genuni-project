@@ -199,6 +199,17 @@ public class MATERIE
         return C.EseguiSelect(cmd);
     }
 
+    /// <summary>
+    /// metodo che restituisce tutte le materie che sono state preparate 
+    /// </summary>
+    /// <returns></returns>
+    public DataTable MateriePreparate()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_SELECT_PREPARATE");
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion
 
 
