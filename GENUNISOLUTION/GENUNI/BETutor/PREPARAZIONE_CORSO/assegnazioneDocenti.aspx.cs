@@ -21,6 +21,9 @@ public partial class BETutor_Default : System.Web.UI.Page
             ddlMaterie.DataTextField = dt.Columns[1].ToString();
             ddlMaterie.DataBind();
         }
+
+        btnCronistoriaDocente.Enabled = false;
+        btnSelezionaDocente.Enabled = false;
     }
 
     protected void btnSkills_Click(object sender, EventArgs e)
@@ -34,6 +37,8 @@ public partial class BETutor_Default : System.Web.UI.Page
     protected void GridDocenti_SelectedIndexChanged(object sender, EventArgs e)
     {
         Session["COD_DOCENTE"]= Convert.ToInt32(GridDocenti.SelectedDataKey[0].ToString());
+        btnCronistoriaDocente.Enabled = true;
+        btnSelezionaDocente.Enabled = true;
     }
 
     protected void btnSelezionaDocente_Click(object sender, EventArgs e)
@@ -42,6 +47,9 @@ public partial class BETutor_Default : System.Web.UI.Page
         int CHIAVE = Convert.ToInt32(ddlMaterie.SelectedValue);
         int COD_DOCENTE = Convert.ToInt32(GridDocenti.SelectedDataKey[0].ToString());
         M.InsertDocente(CHIAVE, COD_DOCENTE);
+
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('dati inseriti correttamente')", true);
+        return;
     }
 
     protected void btnCronistoriaDocente_Click(object sender, EventArgs e)
