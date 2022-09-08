@@ -326,7 +326,7 @@ public class ESTERNI
         SqlCommand cmd = new SqlCommand("ESTERNI_SOMMA_GUADAGNI");
         cmd.Parameters.AddWithValue("@codDocente", CHIAVE);
         cmd.Parameters.AddWithValue("@dataInizio", dataInizio);
-        cmd.Parameters.AddWithValue("@dataInizio", dataFine);
+        cmd.Parameters.AddWithValue("@dataFine", dataFine);
 
         return new CONNESSIONE().EseguiSelect(cmd).Rows[0].Field<decimal>("Guadagni");
     }
