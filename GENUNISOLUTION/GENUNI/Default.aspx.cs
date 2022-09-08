@@ -62,7 +62,7 @@ public partial class _Default : System.Web.UI.Page
             return;
         }
 
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Accettare Informativa sulla Privacy prima di preiscriversi')", true);
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Accettare l\\'Informativa sulla Privacy prima di preiscriversi')", true);
         return;
 
     }
@@ -82,7 +82,7 @@ public partial class _Default : System.Web.UI.Page
             return;
         }
 
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Fai accesso prima di poter comprare GenMoney')", true);
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Fai 'l\\'accesso prima di poter comprare GenMoney')", true);
         Response.Redirect("Login.aspx");
         return;
     }
