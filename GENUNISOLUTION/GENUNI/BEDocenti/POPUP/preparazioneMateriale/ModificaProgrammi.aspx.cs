@@ -100,12 +100,10 @@ public partial class BEDocenti_POPUP_inserimentoProgrammi_ModificaProgrammi : Sy
         {
             INDICE = Convert.ToInt32(txtIndice.Text);
         }
-        //se è vuoto sia link che materiale
-        if (string.IsNullOrEmpty(txtLink.Text) && !fupMateriale.HasFile)
-        {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ERRORE", "alert('Inserire un link o un materiale')", true);
-            return;
-        }
+
+        int CHIAVE = Convert.ToInt32(Session["CHIAVE"]);
+
+
 
         //controllo selezione ddl
         string TIPO_MATERIALE;
@@ -122,11 +120,29 @@ public partial class BEDocenti_POPUP_inserimentoProgrammi_ModificaProgrammi : Sy
         //se è un materiale
         else
         {
-            TIPO_MATERIALE = fupMateriale.PostedFile.ContentType.ToString();
-            MATERIALE = fupMateriale.FileBytes;
+
+            //se non ha file il fileupload tengo il vecchio materiale letto dal database
+            if (!fupMateriale.HasFile)
+            {
+                PROGRAMMI.Programmi_WSSoapClient P = new PROGRAMMI.Programmi_WSSoapClient();
+                DataTable dt = new DataTable();
+
+                dt = P.SelectOne(CHIAVE);
+                byte[] vecchio = (byte[])dt.Rows[0]["Materiale"];
+                string tipo = dt.Rows[0]["Tipo_Materiale"].ToString();
+
+                MATERIALE = vecchio;
+                TIPO_MATERIALE = tipo;
+            }
+
+            else //altrimenti procedo con il salvataggio del nuovo
+            {
+                TIPO_MATERIALE = fupMateriale.PostedFile.ContentType.ToString();
+                MATERIALE = fupMateriale.FileBytes;
+            }
+            
         }
 
-        int CHIAVE = Convert.ToInt32(Session["CHIAVE"]);
         int COD_MATERIA = Convert.ToInt32(Session["COD_MATERIA"]);
         string TIPO = ddlTipo.SelectedValue.ToString();
         string LINK = txtLink.Text.ToString();

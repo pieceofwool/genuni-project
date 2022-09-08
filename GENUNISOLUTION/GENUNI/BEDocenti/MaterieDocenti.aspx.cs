@@ -18,8 +18,8 @@ public partial class Default2 : System.Web.UI.Page
 
         litChat.Text = "<td><a href=\"Chat.aspx?codicecorso="+codicecorso+"&nomecorso="+nomecorso+"\">Chat del corso "+nomecorso+"</a></td>";
 
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
-        int CHIAVE = 2;
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        //int CHIAVE = 2;
 
         MATERIE.Materie_WSSoapClient MA = new MATERIE.Materie_WSSoapClient();
         DataTable materie = new DataTable();

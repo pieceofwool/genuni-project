@@ -22,8 +22,8 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
 
 
             ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-            //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
-            int CHIAVE = 1;
+            int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+            //int CHIAVE = 1;
             DataTable dt = E.SelectOne(CHIAVE);
 
 
@@ -76,8 +76,8 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
-        int CHIAVE = 1;
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        //int CHIAVE = 1;
 
         string USR = txtUser.Text.Trim();
         string RAGIONE_SOCIALE = txtRagSoc.Text.Trim();

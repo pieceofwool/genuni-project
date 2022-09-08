@@ -18,8 +18,8 @@ public partial class PopUp_Profilo_InserisciProfilo_Competenze : System.Web.UI.P
     {
        
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
-        int CHIAVE = 1;
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        //int CHIAVE = 1;
         byte[] img = FileUploadAvatar.FileBytes;
         string TIPOIMG = FileUploadAvatar.PostedFile.ContentType ;
 

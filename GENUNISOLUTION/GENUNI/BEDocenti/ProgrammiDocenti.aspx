@@ -110,9 +110,9 @@
                 <asp:BoundField DataField="Tipo" HeaderText="Tipo" SortExpression="Tipo" />
                 <asp:BoundField DataField="Indice" HeaderText="Indice" SortExpression="Indice" />
                 <asp:BoundField DataField="Link" HeaderText="Link" SortExpression="Link" />
-                <%--<asp:BoundField DataField="Materiale" HeaderText="Materiale" SortExpression="Materiale" />--%>
+                <asp:BoundField DataField="Materiale" HeaderText="Materiale" SortExpression="Materiale" Visible="False" />
                 <asp:BoundField DataField="Titolo_Materiale" HeaderText="Titolo_Materiale" SortExpression="Titolo_Materiale" />
-                <asp:BoundField DataField="Tipo_Materiale" HeaderText="Tipo_Materiale" SortExpression="Tipo_Materiale" />
+                <asp:BoundField DataField="Tipo_Materiale" HeaderText="Tipo_Materiale" SortExpression="Tipo_Materiale" Visible="False" />
                 <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" SortExpression="Descrizione" />
                 <asp:CommandField ButtonType="Button" SelectText="Seleziona" ShowSelectButton="True" />
             </Columns>
