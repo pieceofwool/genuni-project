@@ -81,8 +81,8 @@ public partial class Default2 : System.Web.UI.Page
     protected void BtnCV_Click(object sender, EventArgs e)
     {
         COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient(); ;
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
-        int CHIAVE = 1;
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        //int CHIAVE = 1;
 
         DataTable dt2 = C.SelectAllDocente(CHIAVE);
 

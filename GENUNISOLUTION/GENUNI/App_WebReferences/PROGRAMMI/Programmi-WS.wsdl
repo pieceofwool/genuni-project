@@ -88,6 +88,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="LINK" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="MATERIALE" type="s:base64Binary" />
             <s:element minOccurs="0" maxOccurs="1" name="TITOLO_MATERIALE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIPO_MATERIALE" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
           </s:sequence>
         </s:complexType>

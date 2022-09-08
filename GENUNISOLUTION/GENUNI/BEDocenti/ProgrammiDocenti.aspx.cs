@@ -23,7 +23,7 @@ public partial class Default2 : System.Web.UI.Page
         btnModificaMateriale.Visible = false;
         BtnElimina.Visible = false;
 
-        int codicemateria = int.Parse(Request.QueryString["codice"].ToString());
+        int codicemateria = int.Parse(Request.QueryString["codicemateria"].ToString());
         Session["COD_MATERIA"] = codicemateria;
 
         PROGRAMMI.Programmi_WSSoapClient P = new PROGRAMMI.Programmi_WSSoapClient();

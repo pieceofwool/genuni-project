@@ -10,8 +10,8 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
-        int CHIAVE = 2;
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        //int CHIAVE = 2;
         int i = 0;
         MATERIE.Materie_WSSoapClient MA = new MATERIE.Materie_WSSoapClient();
         DataTable storico = new DataTable();
