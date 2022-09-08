@@ -11,7 +11,11 @@ public partial class BEContabilita_PoPup_InfoCorsi : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        InfoCorsi();
+        if (!IsPostBack)
+        {
+            InfoCorsi();
+
+        }
         CaricaGriglia();
     }
 
@@ -24,7 +28,7 @@ public partial class BEContabilita_PoPup_InfoCorsi : System.Web.UI.Page
 
         DataTable dtPreiscritti = new DataTable();
         dtPreiscritti = preiscrizione.CountPreiscrizioniCorso(codice);
-        string elencoPre= dtPreiscritti.Rows[0].Field<int>("QUANTI").ToString();
+        string elencoPre = dtPreiscritti.Rows[0].Field<int>("QUANTI").ToString();
         lblPreIscritti.Text += "<p><b>Elenco Preiscritti: ";
         lblPreIscritti.Text += elencoPre;
         lblPreIscritti.Text += "</b><p/>";

@@ -16,7 +16,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#pippo').click(function () {
+            $('#PIPPO').click(function () {
 
                 var url = this.href;
                 var dialog = $('<iframe src="' + url + '" frameborder="0"></iframe').appendTo('body');
@@ -46,15 +46,22 @@
 
         });
     </script>
-    <a href="PoPup/InfoCorsi.aspx" id="pippo">Modifica</a>
 
     <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />        
     </div>
     <div class="containerBE">
         <h4 class="titoliBE">Valutazione</h4>
+    <a href="PoPup/InfoCorsi.aspx" id="pippo">Modifica</a>
         <asp:Button ID="btnAggiorna" runat="server" Text="Aggiorna Griglia" OnClick="btnAggiorna_Click" />
-        <asp:GridView ID="grdValutazione" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged">
+        <asp:GridView ID="grdValutazione" runat="server" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="Chiave">
+            <Columns>
+                <asp:BoundField DataField="Chiave" HeaderText="Chiave" InsertVisible="False" ReadOnly="True" SortExpression="Chiave" />
+                <asp:BoundField DataField="Titolo" HeaderText="Titolo" SortExpression="Titolo" />
+                <asp:BoundField DataField="Cognome" HeaderText="Cognome" SortExpression="Cognome" />
+                <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
+                <asp:CommandField ShowSelectButton="True"/>
+            </Columns>
         </asp:GridView>
     </div>
 </asp:Content>
