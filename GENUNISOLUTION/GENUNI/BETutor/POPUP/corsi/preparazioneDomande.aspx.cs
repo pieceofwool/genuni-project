@@ -24,19 +24,30 @@ public partial class preparazioneTest : System.Web.UI.Page
 
         DataTable dt = new DataTable();
         dt = T.Test_SelectCorso(COD_CORSO);
-        
 
-        //scrivo i prarametri
-        int COD_TEST = Convert.ToInt32(dt.Rows[0]["Chiave"]);
-        string DOMANDA = txtInserimentoDomanda.Text.ToString();
-        string RISPOSTA1 = txtCorretta.Text.ToString();
-        string RISPOSTA2 = txtIncompleta.Text.ToString();
-        string RISPOSTA3 = txtErrata.Text.ToString();
-        string VOTI = "1,0,-1";
+        if (txtCorretta.Text == "" || txtErrata.Text == "" || txtIncompleta.Text == "" || txtInserimentoDomanda.Text == "")
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('dati mancanti')", true);
+            return;
+
+        }
+        else
+        {
+            //scrivo i prarametri
+            int COD_TEST = Convert.ToInt32(dt.Rows[0]["Chiave"]);
+            string DOMANDA = txtInserimentoDomanda.Text.ToString();
+            string RISPOSTA1 = txtCorretta.Text.ToString();
+            string RISPOSTA2 = txtIncompleta.Text.ToString();
+            string RISPOSTA3 = txtErrata.Text.ToString();
+            string VOTI = "1,0,-1";
 
 
-        DOMANDE.Domande_WSSoapClient D = new DOMANDE.Domande_WSSoapClient();
+            DOMANDE.Domande_WSSoapClient D = new DOMANDE.Domande_WSSoapClient();
 
-        D.Insert(COD_TEST, DOMANDA, RISPOSTA1, RISPOSTA2, RISPOSTA3, VOTI);
+            D.Insert(COD_TEST, DOMANDA, RISPOSTA1, RISPOSTA2, RISPOSTA3, VOTI);
+
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('dati inseriti correttamente')", true);
+            return;
+        }
     }
 }
