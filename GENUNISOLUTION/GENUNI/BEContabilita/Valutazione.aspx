@@ -16,7 +16,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#PIPPO').click(function () {
+            $('#pippo').click(function () {
 
                 var url = this.href;
                 var dialog = $('<iframe src="' + url + '" frameborder="0"></iframe').appendTo('body');
