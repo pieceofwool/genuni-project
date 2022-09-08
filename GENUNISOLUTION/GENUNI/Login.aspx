@@ -51,7 +51,7 @@
                                     <label>
                                         <span>PASSWORD</span>
                                         <%--<input type="password" />--%>
-                                        <asp:TextBox ID="txtLogPwd" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtLogPwd" runat="server" TextMode="Password"></asp:TextBox>
                                     </label>
                                 </td>
                             </tr>
