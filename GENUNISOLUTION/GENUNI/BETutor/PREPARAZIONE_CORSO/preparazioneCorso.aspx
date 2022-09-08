@@ -32,6 +32,29 @@
             });
         });
 
+
+        $(document).ready(function () {
+
+            $('.btnDefinisciCorso').click(function () {
+
+                //var url = '/definizioneMaterie.aspx';
+                var url = '../POPUP/preparazione_corso/definisciCorso.aspx';
+                var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+
+                inserisci.dialog({
+                    modal: true,
+                    title: 'Definizione Materie',
+                    resizable: false,
+                    width: 450,
+                    height: 350,
+                    overlay: { opacity: 0.9, background: 'black' },
+
+                    open: function (type, data) { $(this).parent().appendTo('form'); }
+                });
+
+                return false;
+            });
+        });
     </script>
 
 </asp:Content>
@@ -46,7 +69,8 @@
         <%--bottone scelta materie--%>
         <asp:Button Class="popupDefinizioneMaterie" ID="btnDefinizioneMateria" runat="server" Text="Definisci materie" OnClick="btnDefinizioneMateria_Click" />
 
-        
+        <%--bottone definizione corso--%>
+        <asp:Button Class="btnDefinisciCorso" ID="btnDefinisciCorso" runat="server" Text="Definisci corso" OnClick="Button1_Click"  />
     </p>
 
     <p>
