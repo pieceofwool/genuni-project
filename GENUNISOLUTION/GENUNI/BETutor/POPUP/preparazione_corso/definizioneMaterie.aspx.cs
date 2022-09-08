@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,6 +10,12 @@ public partial class definizioneMaterie : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        if (!IsPostBack)
+        {
+            CaricaMaterie();
+        }
+
     }
 
     protected void btnInserisciMaterie_Click(object sender, EventArgs e)
@@ -42,6 +49,14 @@ public partial class definizioneMaterie : System.Web.UI.Page
         string DATA_RISPOSTA = "";
 
         Ma.Insert(COD_CORSO, COD_DOCENTE, COSTO_DOCENTE, TITOLO, DESCRIZIONE, INDICE, PREPARATO, ACCETTATO, DATA_RISPOSTA);
+    }
+
+    protected void CaricaMaterie()
+    {
+        MATERIE.Materie_WSSoapClient Ma = new MATERIE.Materie_WSSoapClient();
+        gridMaterie.DataSource = Ma.MateriePreparate();
+        gridMaterie.DataBind();
+
     }
 
 
