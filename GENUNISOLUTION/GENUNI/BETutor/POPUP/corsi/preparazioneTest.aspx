@@ -15,29 +15,28 @@
                 <tr>
                     <td>
                         <%--info per creazione test--%>
-                        <asp:Label ID="lblSogliaDiSuperamento" runat="server" Text="Soglia di superamento: "></asp:Label>
+                        <asp:Label ID="lblSogliaDiSuperamento" runat="server" Text="Soglia di superamento: "></asp:Label><br />
                         <asp:TextBox ID="txtSogliaDiSuperamento" runat="server"></asp:TextBox>
 
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblData" runat="server" Text="Data: "></asp:Label>
-                        <asp:TextBox ID="txtData" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblData" runat="server" Text="Data: "></asp:Label><br />
+                        <asp:TextBox ID="txtData" runat="server" TextMode="Date"></asp:TextBox>
 
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblOra" runat="server" Text="Ora: "></asp:Label>
-                        <asp:TextBox ID="txtOra" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblOra" runat="server" Text="Ora: "></asp:Label><br />
+                        <asp:TextBox ID="txtOra" runat="server" TextMode="Time"></asp:TextBox>
 
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <asp:Button ID="btnCreaTest" runat="server" Text="Crea test" OnClick="btnCreaTest_Click" />
-                        <asp:Button ID="btnCreaDomande" runat="server" Text="Crea domande" />
                     </td>
                 </tr>
             </table>
