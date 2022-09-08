@@ -29,13 +29,24 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     {
         //controllo sulla colonna materiale
         //se + vuoto fare...
-        string link = grigliaMateriale.SelectedRow.Cells[1].Text.ToString();
-        Response.Redirect(link);
+        //if (/*controllo tabella materiale*/)
+        //{
+        //    string link = grigliaMateriale.SelectedRow.Cells[1].Text.ToString();
+        //    Response.Redirect(link);
+        //}
         //...questo
         //altrimenti response ad un pop up 
-
+        //else
+        //{
+        string chiave = grigliaMateriale.SelectedDataKey[0].ToString();
+        Response.Redirect("GestoreDownload.ashx?chiave=" + chiave);
         //if per vedere se è un file pdf
-
+        //string embed = "<object data=\"{0}{1}\" type=\"application/pdf\" width=\"800px\" height=\"700px\">";
+        //embed += "If you are unable to view file, you can download from <a href = \"{0}{1}&download=0\">here</a>";
+        //embed += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
+        //embed += "</object>";
+        //lit.Text += string.Format(embed, ResolveUrl("gestore.ashx?c="), r["chiave"]);
+        //}
 
 
 
