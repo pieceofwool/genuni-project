@@ -39,7 +39,7 @@ public partial class Default2 : System.Web.UI.Page
         DataTable dt = new DataTable();
         dt = T.Test_SelectCorso(COD_CORSO);
 
-        if (dt.Rows.Count < 0)
+        if (dt.Rows.Count < 1)
         {
             popupPreparaTest.Enabled = true;
         }
@@ -60,7 +60,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void btnPreparaDomande_Click(object sender, EventArgs e)
     {
-        Response.Redirect("../POPUP/corsi/preparazioneDomande.aspx");
+        Response.Redirect("../POPUP/preparazione_domande/preparazioneDomande.aspx");
     }
 
     protected void popupPreparaTest_Click(object sender, EventArgs e)
