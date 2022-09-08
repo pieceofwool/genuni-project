@@ -29,6 +29,6 @@
         <asp:TextBox ID="txtDataFine" runat="server" TextMode="Date"></asp:TextBox>
         <asp:Button ID="btnCarica" runat="server" Text="Carica" OnClick="btnCarica_Click" />
         <hr />
-        <asp:GridView ID="grdDocente" runat="server"></asp:GridView>
+        <asp:GridView ID="grdDocente" CssClass="griglia" runat="server"></asp:GridView>
     </div>
 </asp:Content>

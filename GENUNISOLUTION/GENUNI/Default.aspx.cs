@@ -4,12 +4,30 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
+        DataTable dtstudenti = new DataTable();
+        dtstudenti = E.SelectAll_Studenti();
+        int contstudenti = dtstudenti.Rows.Count;
+        lblContoStudenti.Text = contstudenti.ToString();
+
+        DataTable dtdocenti = new DataTable();
+        dtdocenti = E.SelectAll_Docenti();
+        int contdocenti = dtdocenti.Rows.Count;
+        lblContoDocenti.Text = contdocenti.ToString();
+
+        CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
+
+        DataTable dtcorsi = new DataTable();
+        dtcorsi = C.SelectAll();
+        int contcorsi = dtcorsi.Rows.Count;
+        lblContoCorsi.Text = contcorsi.ToString();
     }
 
     protected void btnCandidati_Click(object sender, EventArgs e)
@@ -44,7 +62,7 @@ public partial class _Default : System.Web.UI.Page
             return;
         }
 
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Accettare Informativa sulla Privacy prima di preiscriversi')", true);
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Accettare l\\'Informativa sulla Privacy prima di preiscriversi')", true);
         return;
 
     }
@@ -64,7 +82,7 @@ public partial class _Default : System.Web.UI.Page
             return;
         }
 
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Fai accesso prima di poter comprare GenMoney')", true);
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Fai 'l\\'accesso prima di poter comprare GenMoney')", true);
         Response.Redirect("Login.aspx");
         return;
     }

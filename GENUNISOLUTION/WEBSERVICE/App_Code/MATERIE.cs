@@ -45,7 +45,8 @@ public class MATERIE
         conn.EseguiCmd(cmd);
 
     }
-    public void Update() {
+    public void Update()
+    {
         SqlCommand cmd = new SqlCommand("MATERIE_Update");
         cmd.Parameters.AddWithValue("@Chiave", Chiave);
         cmd.Parameters.AddWithValue("@Cod_Corso", Cod_Corso);
@@ -62,6 +63,10 @@ public class MATERIE
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
     }
+
+
+
+
     public DataTable Info()
     {
         SqlCommand cmd = new SqlCommand("MATERIE_INFO");
@@ -75,7 +80,7 @@ public class MATERIE
     public void InsertDocente()
     {
         SqlCommand cmd = new SqlCommand("MATERIE_INSERTDOCENTE");
-        cmd.Parameters.AddWithValue("@Cod_Materia", Chiave); 
+        cmd.Parameters.AddWithValue("@Cod_Materia", Chiave);
         cmd.Parameters.AddWithValue("@Cod_Docente", Cod_Docente);
 
         CONNESSIONE conn = new CONNESSIONE();
@@ -143,6 +148,45 @@ public class MATERIE
         return conn.EseguiSelect(cmd);
     }
 
+    //seleziona materia di un docente non ancora accettate
+    public DataTable SelectMaterieDocente()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_Select_Materie_Docente");
+        cmd.Parameters.AddWithValue("@Cod_Docente", Cod_Docente);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        return conn.EseguiSelect(cmd);
+    }
+
+    public void Accettazione()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_Accettazione");
+        cmd.Parameters.AddWithValue("@Chiave", Chiave);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        conn.EseguiCmd(cmd);
+    }
+
+    //seleziona i corsi in cui il docente ha materie accettate
+    public DataTable SelectCorsiDocente()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_Select_Corsi_Docenti");
+        cmd.Parameters.AddWithValue("@Cod_Docente", Cod_Docente);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        return conn.EseguiSelect(cmd);
+    }
+    public DataTable SelectMaterieDocenteCorso()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_ACCETTATE_DOCENTE_CORSO");
+        cmd.Parameters.AddWithValue("@CodDocente", Cod_Docente);
+        cmd.Parameters.AddWithValue("@CodCorso", Cod_Corso);
+
+        CONNESSIONE conn = new CONNESSIONE();
+        return conn.EseguiSelect(cmd);
+    }
+    
+
     /// <summary>
     /// metodo che restituisce il titolo e la descrizione della materia in base a quel corso
     /// </summary>
@@ -151,6 +195,17 @@ public class MATERIE
     {
         SqlCommand cmd = new SqlCommand("MATERIE_INFO_CORSO");
         cmd.Parameters.AddWithValue("@Cod_Corso", Cod_Corso);
+        CONNESSIONE C = new CONNESSIONE();
+        return C.EseguiSelect(cmd);
+    }
+
+    /// <summary>
+    /// metodo che restituisce tutte le materie che sono state preparate 
+    /// </summary>
+    /// <returns></returns>
+    public DataTable MateriePreparate()
+    {
+        SqlCommand cmd = new SqlCommand("MATERIE_SELECT_PREPARATE");
         CONNESSIONE C = new CONNESSIONE();
         return C.EseguiSelect(cmd);
     }

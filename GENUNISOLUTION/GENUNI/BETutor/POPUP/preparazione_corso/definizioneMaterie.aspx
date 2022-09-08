@@ -4,27 +4,44 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
+        <table>
+            <tr>
+                <td>
+                    <asp:Label ID="lblTitolo" runat="server" Text="Titolo: "></asp:Label>
+                    <asp:TextBox ID="txtTitolo" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblDescrizione" runat="server" Text="Descrizione: "></asp:Label>
+                    <asp:TextBox ID="txtDescrizione" cols="20" Rows="2" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblIndice" runat="server" Text="Indice:"></asp:Label>
+                    <asp:TextBox ID="txtIndice" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="btnInserisciMaterie" runat="server" Text="Inserisci materia" OnClick="btnInserisciMaterie_Click" />
+                </td>
+            </tr>
+        </table>
+        <hr />
         <div>
-            <%-- titolo --%>
-            <asp:Label ID="Label1" runat="server" Text="Titolo: "></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
-            <%-- descrizione --%>
-            <asp:Label ID="Label2" runat="server" Text="Descrizione: "></asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:Label ID="lblMaterie" runat="server" Text="Materie preparate"></asp:Label>
+            <asp:GridView ID="gridMaterie" runat="server"></asp:GridView>
 
-            <%-- indice --%>
-            <asp:Label ID="Label3" runat="server" Text="Indice: "></asp:Label>
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-
-            <%-- inserisci materia --%>
-            <asp:Button ID="Button1" runat="server" Text="Inserisci Materia" />
         </div>
+
     </form>
 </body>
 </html>

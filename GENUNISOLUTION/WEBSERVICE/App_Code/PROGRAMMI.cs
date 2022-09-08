@@ -63,6 +63,7 @@ public class PROGRAMMI
         cmd.Parameters.AddWithValue("@LINK", LINK);
         cmd.Parameters.AddWithValue("@MATERIALE", MATERIALE);
         cmd.Parameters.AddWithValue("@TITOLO_MATERIALE", TITOLO_MATERIALE);
+        cmd.Parameters.AddWithValue("@TIPO_MATERIALE", TIPO_MATERIALE);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
 
         c.EseguiCmd(cmd);
@@ -82,6 +83,27 @@ public class PROGRAMMI
         cmd.Parameters.AddWithValue("@MATERIALE", MATERIALE);
         cmd.Parameters.AddWithValue("@TITOLO_MATERIALE", TITOLO_MATERIALE);
         cmd.Parameters.AddWithValue("@DESCRIZIONE", DESCRIZIONE);
+
+        c.EseguiCmd(cmd);
+    }
+
+    public DataTable SelectProgrammiMateria()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "PROGRAMMI_MATERIE_SELECT";
+        cmd.Parameters.AddWithValue("@Cod_Materia", COD_MATERIA);
+
+        return c.EseguiSelect(cmd);
+    }
+
+    public void Delete()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = "PROGRAMMI_DELETE";
+        cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
 
         c.EseguiCmd(cmd);
     }

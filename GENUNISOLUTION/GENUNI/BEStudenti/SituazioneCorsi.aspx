@@ -18,17 +18,24 @@
 
         </asp:GridView>
     </div>
-    <div>
-
-        <asp:Label ID="Label2" runat="server" Text="Corsi disponibili"></asp:Label>
-        <asp:GridView ID="grigliaCorsiDisponibili" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged" >
-            <Columns>
-                <asp:CommandField ButtonType="Button" SelectText="Acquista corso" ShowSelectButton="True" />
-                
-
-            </Columns>
-
-        </asp:GridView>
+    <div class="containerBE2">
+        <h4 class="titoliBE">Corsi disponibili</h4>
+        <table class="tablePopUp">
+            <tr>
+                <td class="btnGestisci">
+                    <!-- POPUP, HTML-->
+                    <asp:GridView ID="grigliaCorsiDisponibili" CssClass="gtiglia" runat="server" OnSelectedIndexChanged="grigliaCorsiDisponibili_SelectedIndexChanged">
+                        <Columns>
+                            <asp:CommandField ButtonType="Button" ShowSelectButton="true" SelectText="Acquista corso">
+                                <ControlStyle CssClass="btnBE" />
+                            </asp:CommandField>
+                        </Columns>
+                        <HeaderStyle />
+                        <HeaderStyle CssClass="headergrid" />
+                    </asp:GridView>
+                </td>
+            </tr>
+        </table>
     </div>
 </asp:Content>
 

@@ -38,7 +38,7 @@ public partial class POPUP_profilo_ModificaPassword : System.Web.UI.Page
         }
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-        //E.CHIAVE = int.Parse(Session["CodiceEsterno"].ToString());
+        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
         int CHIAVE = 1;
 
         DataTable dt = new DataTable();
@@ -60,13 +60,3 @@ public partial class POPUP_profilo_ModificaPassword : System.Web.UI.Page
         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('La password è stata modificata con successo" + "')", true); 
     }
 }
-
-//[WebMethod]
-//public void UpdatePassword(string USR, string PWD)
-//{
-//    ESTERNI e = new ESTERNI();
-
-//    e.USR = USR;
-//    e.PWD = PWD;
-//    e.UpdatePassword();
-//}

@@ -10,7 +10,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1>Popup Please</h1>
         <div id="popup1" class="popup">
             <a href="GestioneTutor.aspx" class="close">&times;</a>
             <div>

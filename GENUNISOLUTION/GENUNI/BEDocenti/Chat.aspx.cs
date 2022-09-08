@@ -10,15 +10,20 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        string nomecorso = Request.QueryString["nomecorso"].ToString();
+        InserisciCorso.InnerText = "Chat del corso: " + nomecorso;
+
         CaricaDesc();
     }
 
     protected void CaricaAsc()
     {
+
         litChat.Text = "";
-        //int CHIAVE = Session["CodiceCorso"]
-        int CHIAVE = 1;
+
+        int CHIAVE = int.Parse(Request.QueryString["codicecorso"].ToString());
+        
+       // int CHIAVE = 1; // DEBUG
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
         DataTable dt = C.SelectChatCorso(CHIAVE);
 
@@ -27,21 +32,28 @@ public partial class BEDocenti_Default : System.Web.UI.Page
     protected void CaricaDesc()
     {
         litChat.Text = "";
+        int CHIAVE = int.Parse(Request.QueryString["codicecorso"].ToString());
         //int CHIAVE = Session["CodiceCorso"]
-        int CHIAVE = 1;
+        //int CHIAVE = 1; // DEBUG
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
         DataTable dt = C.SelectChatCorsoDesc(CHIAVE);
 
         CaricaChat(dt);
     }
-        
-        
+
+
 
     protected void CaricaChat(DataTable dt)
     {
-        
         litChat.Text = "";
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
+
+        if (dt.Rows.Count == 0)
+        {
+            // metto messaggio di riempimento nella lit se non esistono messaggi per quel corso
+            litChat.Text = "Questa chat non ha ancora nessun messaggio.";
+            return;
+        }
 
         int i = 0;//lavoro con i per accedere alla dt in quanto dr mi richiede il cast e con null dà problemi
         int key = 0;
@@ -53,8 +65,8 @@ public partial class BEDocenti_Default : System.Web.UI.Page
             //se il campo cod_Interno è nullo allora è uno esterno(studente o docente)
             if (string.IsNullOrEmpty(dt.Rows[i]["Cod_Interno"].ToString()))
             {
-               // int cod_studente = (int)dt.Rows[i]["Cod_Studente"];
-                
+                // int cod_studente = (int)dt.Rows[i]["Cod_Studente"];
+
                 //salvo la chiave della chat
                 key = dr.Field<int>("Chiave");
 
@@ -104,10 +116,14 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
                 //riempo la literal
 
+
                 litChat.Text += "<tr><td>" + IMG + "</td>";
                 litChat.Text += "<td><b> " + nome + " " + cognome + " </b><br /><small>(" + esterno + ")</small></td>";
                 litChat.Text += "<td><small> Il " + date.Substring(0, 10) + " <br /> alle" + date.Substring(10) + " </small></td>";
                 litChat.Text += "<td><b> " + messaggio + " </b></td></tr>";
+
+
+
 
             }
 
@@ -159,9 +175,12 @@ public partial class BEDocenti_Default : System.Web.UI.Page
     protected void BtnRispondi_Click(object sender, EventArgs e)
     {
         CHAT.Chat_WSSoapClient C = new CHAT.Chat_WSSoapClient();
-       
-        int codiceCorso = 1 ; //session
-        int codiceEsterno = 1; //session
+
+        int codiceCorso = int.Parse(Request.QueryString["codicecorso"].ToString());
+        //int codiceCorso = 1; //DEBUG, sostituire con Session
+
+        //int codiceEsterno = int.Parse(Session["CodiceAttore"].ToString());
+        int codiceEsterno = 2; //DEBUG, sostituire con Session
         string contenuto = txtRisposta.InnerText;
 
 
@@ -170,5 +189,12 @@ public partial class BEDocenti_Default : System.Web.UI.Page
         CaricaDesc();
 
         txtRisposta.InnerText = null;
+    }
+
+    protected void BtnEsci_Click(object sender, EventArgs e)
+    {
+        int codiceCorso = int.Parse(Request.QueryString["codicecorso"].ToString());
+        string nomecorso = Request.QueryString["nomecorso"].ToString();
+        Response.Redirect("MaterieDocenti.aspx?codice=" + codiceCorso + "&corso=" + nomecorso + "");
     }
 }
