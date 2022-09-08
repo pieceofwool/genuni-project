@@ -11,11 +11,11 @@
     <form id="form1" runat="server">
         <div id="pacchetto" runat="server">
             <p>Quanti GenMoney vuoi acquistare?</p>
-            <asp:DropDownList ID="ddlPacchetto" runat="server">
-                <asp:ListItem>50</asp:ListItem>
-                <asp:ListItem>100</asp:ListItem>
-                <asp:ListItem>200</asp:ListItem>
-            </asp:DropDownList>
+            
+            <asp:RadioButton ID="rdbPacchetto1" runat="server" GroupName="Pacchetto" Checked="True" Text="50" /> <img src="../img/genMoney2.png" style="height:20px;"/>
+            <asp:RadioButton ID="rdbPacchetto2" runat="server" GroupName="Pacchetto" Text="100" /><img src="../img/genMoney2.png" style="height:30px;"/>
+            <asp:RadioButton ID="rdbPacchetto3" runat="server" GroupName="Pacchetto" Text="200"/><img src="../img/genMoney2.png" style="height:40px;"/>
+            
             <asp:Button ID="btnCompra" runat="server" Text="Compra" OnClick="btnCompra_Click" />
         </div>
         <div>

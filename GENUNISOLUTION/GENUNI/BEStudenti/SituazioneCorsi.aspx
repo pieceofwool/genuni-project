@@ -10,7 +10,7 @@
     <br />
     <div id="corsi">
         <asp:Label ID="Label1" runat="server" Text="Corsi acquistati"></asp:Label>
-        <asp:GridView ID="grigliaCorsiAcquistati" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged" >
+        <asp:GridView ID="grigliaCorsiAcquistati" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged" OnRowDataBound="grigliaCorsiAcquistati_RowDataBound" >
             <Columns>
                 <asp:CommandField ButtonType="Button" ShowSelectButton="True" SelectText="Accedi al corso" />
             </Columns>

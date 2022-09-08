@@ -27,7 +27,17 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 
     protected void grigliaMateriale_SelectedIndexChanged(object sender, EventArgs e)
     {
+        //controllo sulla colonna materiale
+        //se + vuoto fare...
         string link = grigliaMateriale.SelectedRow.Cells[1].Text.ToString();
         Response.Redirect(link);
+        //...questo
+        //altrimenti response ad un pop up 
+
+        //if per vedere se è un file pdf
+
+
+
+
     }
 }
