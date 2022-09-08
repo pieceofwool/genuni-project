@@ -60,13 +60,38 @@ h1 {
     float: right;
 }
 
+.grigliaStudentiContabilità {
+    border: 1px solid lightgrey;
+    width: 70%;
+    font-size: 12px;
+    margin-top: 8px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.h5Sottotitoli {
+    text-align: center;
+}
+
 #btnGestione {
     float: left;
+}
+
+.lblTest {
+    font-weight: 600;
+    text-align: center;
+    font-style: italic;
+}
+
+.tdTest {
+    padding-bottom: 15px;
 }
 
 #lblDataInizio {
     font-size: 14px;
 }
+
 #lblDataFine {
     font-size: 14px;
 }

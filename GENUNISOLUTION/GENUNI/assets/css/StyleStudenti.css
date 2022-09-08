@@ -1,15 +1,15 @@
 ﻿/* BASIC */
 
 @charset "UTF-8";
-
+/*
 html {
-    background-color: whitesmoke;
-}
+    background-color: #fff;
+}*/
 
-body {
-    background-color: whitesmoke;
+/*body {
+    background-color: #fff;
     font-family: "Poppins", sans-serif;
-}
+}*/
 
 a {
     color: #92badd;
@@ -93,35 +93,29 @@ h2.active {
     }
 
 input[type=text], input[type=password] {
-    background-color: #f6f6f6;
+    background-color: #fff;
     border: none;
     color: #0d0d0d;
     padding: 5px 4px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 14px;
     margin: 5px;
     width: 90%;
-    border: 2px solid #f6f6f6;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 10px 10px 10px 10px;
 }
 
     input[type=text], input[type=password]:focus {
         background-color: #fff;
-        border-bottom: 2px solid #5fcf80;
+        border-bottom: 3px solid #5fcf80;
+        border-top: 3px solid lightgrey;
     }
 
-input[type=text], -webkit-animation-:placeholder {
-    color: #cccccc;
+input: internal autofill selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: #fff;
 }
-
 
 
 /* ANIMATIONS */
@@ -274,11 +268,11 @@ input[type=text], -webkit-animation-:placeholder {
 }
 
 #containerModificaProfilo1 {
-    background-color: whitesmoke;
+    background-color: #fff;
 }
 
 #containerModificaProfilo2 {
-    background-color: whitesmoke;
+    background-color: #fff;
     height: 416px;
 }
 

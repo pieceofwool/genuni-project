@@ -487,7 +487,7 @@
                                                 <h4>Link utili</h4>
                                                 <ul>                                                
                                                     <li><a href="Login2.aspx">Termini di servizio</a></li>
-                                                    <li><a href="../BEAdmin/GestioneCorsi.aspx">Privacy policy</a></li>
+                                                    <li><a href="../BEStudenti/SituazioneContabile.aspx">Privacy policy</a></li>
                                                 </ul>
                                             </div>
                                         </div>
