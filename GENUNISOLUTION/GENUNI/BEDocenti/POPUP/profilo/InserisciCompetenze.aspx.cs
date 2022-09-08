@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
+public partial class BEDocenti_POPUP_profilo_InserisciCompetenze : System.Web.UI.Page
 {
     public DataTable dt2 = new DataTable();
     protected void Page_Load(object sender, EventArgs e)
@@ -53,19 +52,7 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
 
         //int CHIAVE = 1;
         dt2 = C.SelectAllDocente(CHIAVE);
-        byte[] cv;
-
-        try //se non c'è nessun CV e ho errore assegno ad cv null con un cast in bytes
-        {
-            DataRow dr2 = dt2.Rows[0];
-            cv = dr2.Field<byte[]>("Cv");
-
-        }
-
-        catch (Exception)
-        {
-            cv = Encoding.ASCII.GetBytes("null");
-        }
+       
 
         byte[] CV;
         string tipoCv = FileUploadCV.PostedFile.ContentType;
@@ -73,7 +60,8 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         //se non ha file il fileupload tengo il vecchio curriculum letto dal database
         if (!FileUploadCV.HasFile)
         {
-            CV = cv;
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "Attenzione", "alert('Inserire un CV in formato pdf')", true);
+            return;
         }
 
         else //altrimenti procedo con il salvataggio del nuovo
@@ -88,7 +76,7 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         }
 
         string SKILLS = txtSkills.Text.Trim();
-        C.UpdateCodDocente(CHIAVE, CV, SKILLS);
+        C.Insert(CHIAVE, CV, SKILLS);
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "ok", "alert('Competenze inserite correttamente')", true);
 
