@@ -166,7 +166,7 @@ h6 {
 
 
 #btnIscrivitiIntro {
-    margin-top: 169px;
+    margin-top: 30px;
 }
 
     #btnIscrivitiIntro:hover {
@@ -605,10 +605,11 @@ h6 {
         #about .about-content ul {
             list-style: none;
             font-size: 14px;
-            margin-bottom: -20px;
+            margin-bottom: -30px;
         }
 
             #about .about-content ul li {
+                color: #535074;
                 padding-bottom: 10px;
                 font-size: 14px;
             }
