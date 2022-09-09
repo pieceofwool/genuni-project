@@ -40,12 +40,7 @@
             </tr>
             <tr>
                 <td>
-                    <h5 CssClass="h5Sottotitoli" runat="server">Clicca per accedere alla chat del corso</h5>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Button ID="btnChat" runat="server" Text="Chat" CssClass="btnBE" OnClick="btnChat_Click" />
+                    <asp:Button ID="btnChat" runat="server" Text="Accedi alla chat del corso" CssClass="btnBE" OnClick="btnChat_Click" />
                 </td>
             </tr>
         </table>

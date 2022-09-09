@@ -36,7 +36,7 @@
         <div class="container">
 
             <header class="section-header">
-                <h3>Tipologie corsi</h3>
+                <h3>I nostri corsi</h3>
 
                 
 
