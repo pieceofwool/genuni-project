@@ -29,10 +29,24 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void CaricaProfilo()
     {
+        COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+
+        //carica competenze
+        DataTable dt2 = C.SelectAllDocente(CHIAVE);
+        if (dt2.Rows.Count == 0)
+        {
+            popupModificaCompDiv.Visible = false;
+        }
+        else
+        {
+            popupInserisciCompDiv.Visible = false;
+        }
+        
+
         Lit2.Text = "";
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
         //int CHIAVE = 1;
         
         DataTable dt = new DataTable();
@@ -67,11 +81,13 @@ public partial class Default2 : System.Web.UI.Page
         lblCitta.Text = dt.Rows[0]["Citta"].ToString();
         lblProvincia.Text = dt.Rows[0]["Provincia"].ToString();
         lblNazionalita.Text = dt.Rows[0]["Nazionalita"].ToString();
+        
+        
 
-        //carica competenze
-        COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
-
-        DataTable dt2 = C.SelectAllDocente(CHIAVE);
+        if (dt2.Rows.Count == 0)
+        {
+            return;
+        }
 
         lblSkills.Text = dt2.Rows[0]["Skills"].ToString();
 
@@ -86,22 +102,31 @@ public partial class Default2 : System.Web.UI.Page
 
         DataTable dt2 = C.SelectAllDocente(CHIAVE);
 
+        try {
 
-        DataRow dr2 = dt2.Rows[0];
-        byte[] CV = dr2.Field<byte[]>("Cv");
+            DataRow dr2 = dt2.Rows[0];
+            byte[] CV = dr2.Field<byte[]>("Cv");
 
 
-        if (CV != null)
-        {
+            if (CV != null)
+            {
 
-           
-            string embed = "<object data=\"{0}{1}\" type=\"application/pdf\" width=\"800px\" height=\"700px\">";
-            embed += "If you are unable to view file, you can download from <a href = \"{0}{1}&download=1\">here</a>";
-            embed += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
-            embed += "</object>";
-            Lit2.Text = string.Format(embed, ResolveUrl("GestoreCvPdf.ashx?chiave="), CHIAVE /*valore chiave*/);
-            
+
+                string embed = "<object data=\"{0}{1}\" type=\"application/pdf\" width=\"800px\" height=\"700px\">";
+                embed += "If you are unable to view file, you can download from <a href = \"{0}{1}&download=1\">here</a>";
+                embed += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
+                embed += "</object>";
+                Lit2.Text = string.Format(embed, ResolveUrl("GestoreCvPdf.ashx?chiave="), CHIAVE /*valore chiave*/);
+
+            }
         }
+
+        catch (Exception)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "SUCCESSO", "alert('Nessun CV presente')", true);
+            return;
+        }
+        
         
        
 

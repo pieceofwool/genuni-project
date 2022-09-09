@@ -14,7 +14,7 @@ public partial class BETutor_Default2 : System.Web.UI.Page
     public void VisualizzaStudentiPerCorso()
     {
         CLASSI.Classi_WSSoapClient Cl = new CLASSI.Classi_WSSoapClient();
-        int COD_CORSO = Convert.ToInt32(Session["COD_CORSO"]);
+        int COD_CORSO = Convert.ToInt32(Session["Chiave_Corso"]);
         grvStudenti.DataSource = Cl.SelectCorso(COD_CORSO);
         DataBind();
     }

@@ -14,7 +14,6 @@ public partial class Default2 : System.Web.UI.Page
             btnChat.Enabled = false;
             btnPreparaDomande.Enabled = false;
             btnRisultatiTest.Enabled = false;
-            btnStudenti.Enabled = false;
             popupPreparaTest.Enabled = false;
         
         if (!IsPostBack == true)
@@ -31,7 +30,6 @@ public partial class Default2 : System.Web.UI.Page
     {
         //abilito i bottoni
         btnChat.Enabled = true;
-        btnStudenti.Enabled = true;
 
         //controlli per i test e relativa abilitazione dei bottoni
         TEST.Test_WSSoapClient T = new TEST.Test_WSSoapClient();
@@ -39,7 +37,7 @@ public partial class Default2 : System.Web.UI.Page
         DataTable dt = new DataTable();
         dt = T.Test_SelectCorso(COD_CORSO);
 
-        if (dt.Rows.Count < 0)
+        if (dt.Rows.Count < 1)
         {
             popupPreparaTest.Enabled = true;
         }
@@ -60,7 +58,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void btnPreparaDomande_Click(object sender, EventArgs e)
     {
-        Response.Redirect("../POPUP/corsi/preparazioneDomande.aspx");
+        Response.Redirect("../POPUP/preparazione_domande/preparazioneDomande.aspx");
     }
 
     protected void popupPreparaTest_Click(object sender, EventArgs e)
@@ -73,8 +71,5 @@ public partial class Default2 : System.Web.UI.Page
         Response.Redirect("../POPUP/corsi/Chat.aspx");
     }
 
-    protected void btnStudenti_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("../SITUAZIONE_STUDENTI/situazioneStudenti.aspx");
-    }
+   
 }

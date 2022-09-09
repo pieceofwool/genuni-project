@@ -4,17 +4,26 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <link href="../../assets/css/StylePopUp.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="conferma" runat="server">
-            <p>Sicuro di voler accquistare questo corso?</p>
-            <asp:Button ID="btnAcquista" runat="server" Text="Acquista" OnClick="btnAcquista_Click" />
-        </div>
-        <div>
-            <asp:Label ID="lblErrore" runat="server" Text=""></asp:Label>
+        <div id="content" style="width: 100%;">
+            <table>
+                <tr>
+                    <td id="conferma" runat="server">
+                        <asp:Label ID="lblTitolo" CssClass="lblP" runat="server" Text="Sicuro di voler acquistare questo corso?"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Button ID="btnAcquista" CssClass="btnBE" runat="server" Text="Acquista" OnClick="btnAcquista_Click" />
+                        <asp:Label ID="lblErrore" CssClass="lbl" runat="server" Text=""></asp:Label>
+                    </td>
+                </tr>
+            </table>
         </div>
     </form>
 </body>

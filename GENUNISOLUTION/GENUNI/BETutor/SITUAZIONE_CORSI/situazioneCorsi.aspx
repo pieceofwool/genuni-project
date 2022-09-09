@@ -35,7 +35,7 @@
 
             $('.popupPreparaDomande').click(function () {
 
-                var url = '../POPUP/corsi/preparazioneDomande.aspx';
+                var url = '../POPUP/preparazione_domande/preparazioneDomande.aspx';
                 var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
 
                 inserisci.dialog({
@@ -70,7 +70,6 @@
     <asp:Button ID="btnRisultatiTest" runat="server" Text="Risultati test" OnClick="btnRisultatiTest_Click" />
     <asp:Button class="popupPreparaTest" ID="popupPreparaTest" runat="server" Text="Crea test" />
     <asp:Button ID="btnChat" runat="server" Text="Chat del corso" OnClick="btnChat_Click" />
-    <asp:Button ID="btnStudenti" runat="server" Text="Studenti" OnClick="btnStudenti_Click"/>
     <br />
     <%--griglia corsi--%>
     <asp:GridView ID="GridCorsi" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave"></asp:GridView>

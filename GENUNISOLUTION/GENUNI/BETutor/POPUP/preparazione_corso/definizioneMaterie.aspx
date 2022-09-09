@@ -13,19 +13,19 @@
         <table>
             <tr>
                 <td>
-                    <asp:Label ID="lblTitolo" runat="server" Text="Titolo: "></asp:Label>
+                    <asp:Label ID="lblTitolo" runat="server" Text="Titolo: "></asp:Label><br />
                     <asp:TextBox ID="txtTitolo" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lblDescrizione" runat="server" Text="Descrizione: "></asp:Label>
+                    <asp:Label ID="lblDescrizione" runat="server" Text="Descrizione: "></asp:Label><br />
                     <asp:TextBox ID="txtDescrizione" cols="20" Rows="2" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lblIndice" runat="server" Text="Indice:"></asp:Label>
+                    <asp:Label ID="lblIndice" runat="server" Text="Indice:"></asp:Label><br />
                     <asp:TextBox ID="txtIndice" runat="server"></asp:TextBox>
                 </td>
             </tr>
@@ -35,27 +35,25 @@
                 </td>
             </tr>
         </table>
-        <hr />
-        <div>
+       <%-- <hr />
+        <div>--%>
             <%--TABELLA DEI CORSI CREATI DAL TUTOR CHE HA FATTO ACCESSO--%>
-            <asp:Label ID="lblCorsiCreati" runat="server" Text="Corsi creati:"></asp:Label>
+            <%--<asp:Label ID="lblCorsiCreati" runat="server" Text="Corsi creati:"></asp:Label>
             <asp:GridView ID="gridCorsiCreati" runat="server" OnSelectedIndexChanged="gridCorsiCreati_SelectedIndexChanged" DataKeyNames="Chiave">
                 <Columns>
                     <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Seleziona" ShowHeader="True" Text="Seleziona" />
                 </Columns>
             </asp:GridView>
-            <asp:Button ID="btnAssegnaM" runat="server" Text="Assegna Materia" OnClick="btnAssegnaM_Click" />
-            <asp:Button ID="btnAggiornaCorsi" runat="server" Text="Aggiorna Corsi" OnClick="btnAggiornaCorsi_Click" />
-        </div>
+            <asp:Button ID="btnAssegnaM" runat="server" Text="Marca corso come 'Materie Assegnate'" OnClick="btnAssegnaM_Click" /><br />--%>
+            <asp:Button ID="btnAggiornaCorsi" runat="server" Text="Aggiorna Materie" OnClick="btnAggiornaCorsi_Click" />
+        <%--</div>--%>
 
         <hr />
         <div>
-            <%--TABELLA DI TUTTE LE MATERIE GIA PREPARATE--%>
-            <asp:Label ID="lblMatPreparate" runat="server" Text="Materie preparate"></asp:Label>
-            <asp:GridView ID="gridMatPreparate" runat="server"></asp:GridView>
-
+            <%--TABELLA DELLE MATERIE DEL CORSO--%>
+            <asp:Label ID="lblMatcORSO" runat="server" Text="Materie del Corso"></asp:Label>
+            <asp:GridView ID="gridMatCorso" runat="server"></asp:GridView>
         </div>
-
     </form>
 </body>
 </html>
