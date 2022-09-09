@@ -22,11 +22,11 @@
                     </asp:GridView>
                 </td>
             </tr>
-            <tr>
+           <%-- <tr>
                 <td>
                     <asp:Button ID="btnTest" runat="server" CssClass="btnBE" Text="Vai al test" OnClick="btnTest_Click" />
                 </td>
-            </tr>
+            </tr>--%>
         </table>
     </div>
 </asp:Content>
