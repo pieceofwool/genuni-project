@@ -12,8 +12,8 @@ public partial class BEContabilita_Default : System.Web.UI.Page
         if (!IsPostBack)
         {
             CaricaDDl();
-            CaricaGrigliaDocenti();
         }
+        CaricaGrigliaDocenti();
 
     }
 
@@ -65,7 +65,7 @@ public partial class BEContabilita_Default : System.Web.UI.Page
         }
         else
         {
-            dataInizio=txtDataInzio.Text;
+            dataInizio = txtDataInzio.Text;
         }
 
         if (string.IsNullOrEmpty(txtDataFine.Text))
@@ -86,14 +86,14 @@ public partial class BEContabilita_Default : System.Web.UI.Page
 
     protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if(RadioButtonList1.SelectedIndex==0)
+        if (RadioButtonList1.SelectedIndex == 0)
         {
             ddlDocenti.Enabled = false;
             CaricaGrigliaDocenti();
         }
         else
         {
-            ddlDocenti.Enabled = true; 
+            ddlDocenti.Enabled = true;
 
         }
     }
