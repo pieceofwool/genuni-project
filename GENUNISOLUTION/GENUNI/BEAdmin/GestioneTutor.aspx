@@ -48,7 +48,7 @@
             <tr>
                 <td>
                     <%-- Tabella che contiene utenti T o C --%>
-                    <asp:GridView ID="gridUtentiTC" CssClass="griglia" runat="server" DataKeyNames="Chiave" AutoGenerateColumns="false" OnSelectedIndexChanged="gridUtentiTC_SelectedIndexChanged">
+                    <asp:GridView ID="gridUtentiTC" CssClass="griglia" runat="server" DataKeyNames="Chiave" AutoGenerateColumns="False" OnSelectedIndexChanged="gridUtentiTC_SelectedIndexChanged">
                         <Columns>
                             <asp:BoundField DataField="Chiave" Visible="false" />
                             <asp:BoundField DataField="Tipo" HeaderText="Tipo" />

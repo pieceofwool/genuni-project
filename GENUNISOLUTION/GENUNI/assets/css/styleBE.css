@@ -6,9 +6,9 @@
 
 body {
     font-family: "Open Sans", sans-serif;
-    color: #444444;
+    height: auto;
+    background-image: url('../img/intro-bg.jpg');
 }
-
 a {
     color: #5fcf80;
     text-decoration: none;
