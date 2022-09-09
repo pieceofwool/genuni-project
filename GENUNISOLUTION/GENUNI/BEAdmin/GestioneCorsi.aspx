@@ -186,7 +186,6 @@
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
                         </Columns>
-                        <HeaderStyle />
                         <HeaderStyle CssClass="headergrid" />
                         <SelectedRowStyle CssClass="selezionegrid" />
                     </asp:GridView>

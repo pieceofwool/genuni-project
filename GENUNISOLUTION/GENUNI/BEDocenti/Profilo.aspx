@@ -7,8 +7,6 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
-
-
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -145,9 +143,6 @@
         <table class="tablePopUp">
             <tr>
                 <td class="btnGestisci">
-
-
-
                     <a id="popupModificaAvatar" class="popUpBtnBE" href="POPUP/profilo/ModificaAvatar.aspx">Modifica avatar</a>
                     <%--                    <asp:Button ID="popupModificaAvatar" class="popUpBtnBE" runat="server" Text="Modifica Avatar" />--%>
                     <a id="popupModifica" class="popUpBtnBE" href="POPUP/profilo/ModificaProfilo.aspx">Modifica profilo</a>
@@ -161,13 +156,11 @@
             </tr>
         </table>
     </div>
-
-
     <div>
         <%--<img src="img/logo.jpg" alt="Avatar"  />--%>
 
-        <div class="containerBE">
-            <h3 class="titoliBE">Dati:</h3>
+        <div class="containerBE" style="margin-top: -20px;">
+            <h3 class="titoliBE" style="margin-top: -42px;">Dati:</h3>
 
             <table class="tablePopUp" style="text-align: center;">
                 <tr>
@@ -178,8 +171,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td colspan="3">
-                        &nbsp
+                    <td colspan="3">&nbsp
                     </td>
                 </tr>
                 <tr>
@@ -232,7 +224,7 @@
             </table>
         </div>
 
-        <div class="containerBE">
+        <div class="containerBE" style="margin-top: -20px;">
             <h4 class="titoliBE">Competenze:</h4>
             <table class="tablePopUp">
                 <tr>
