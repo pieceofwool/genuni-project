@@ -66,8 +66,6 @@
                     <asp:BoundField DataField="CF" HeaderText="Codice fiscale" />
                     <asp:BoundField DataField="Data_Transazione" HeaderText="Data transazione" />
                     <asp:BoundField DataField="Ammontare" HeaderText="Ammontare" />
-
-
                 </Columns>
             </asp:GridView>
 
