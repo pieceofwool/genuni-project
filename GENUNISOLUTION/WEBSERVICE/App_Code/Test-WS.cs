@@ -114,4 +114,15 @@ public class Test_WS : System.Web.Services.WebService
         dt.TableName = "Test";
         return dt;
     }
+
+    [WebMethod]
+    public DataTable SelectOneByCorso(int CHIAVE)
+    {
+        DataTable dt = new DataTable();
+        TEST t = new TEST();
+        t.COD_CORSO = CHIAVE;
+        dt = t.SelectOneByCorso();
+        dt.TableName = "Test";
+        return dt;
+    }
 }
