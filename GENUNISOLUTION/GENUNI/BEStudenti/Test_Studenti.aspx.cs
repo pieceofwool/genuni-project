@@ -222,6 +222,9 @@ public partial class Test_Studenti : System.Web.UI.Page
             lbl.Text="Test non Superato!";
             btnTornaHomeCorso.Visible=true;
             btnConcludiTest.Visible=false;
+
+            return;
+
         }
 
         //se è maggiore della soglia
@@ -230,7 +233,9 @@ public partial class Test_Studenti : System.Web.UI.Page
             //ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Test Superato! Torna alla Home')", true);
             lbl.Text="Test Superato!";
             btnTornaHomeCorso.Visible=true;
-            btnConcludiTest.Visible=false;
+
+            btnConcludiTest.Visible= false;
+            return;
 
         }
         
