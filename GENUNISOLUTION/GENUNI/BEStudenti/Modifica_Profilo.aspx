@@ -3,6 +3,39 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="../assets/css/StyleStudenti.css" rel="stylesheet" />
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+    <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#popupModificaAvatar').click(function () {
+
+                var url = 'Modifica_Avatar_Popup.aspx';
+                var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+
+                inserisci.dialog({
+                    modal: true,
+                    title: 'Modifica Avatar',
+                    resizable: false,
+                    width: 400,
+                    height: 400,
+                    overlay: { opacity: 0.9, background: 'black' },
+
+                    open: function (type, data) { $(this).parent().appendTo('form'); }
+                });
+
+                return false;
+            });
+        });
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div>
@@ -12,9 +45,13 @@
         <h4 class="titoliBE">MODIFICA PROFILO</h4>
         <table style="margin-top: 16px; text-align: center;">
             <tr>
+                <td colspan="3">
+                    <asp:Literal ID="lit" runat="server"></asp:Literal>
+                </td>
+            </tr>
+            <tr>
                 <td>
                     <div id="tabella" runat="server">
-                        <asp:Label ID="lblRes" runat="server" Text=""></asp:Label>
                     </div>
                 </td>
             </tr>
@@ -47,13 +84,20 @@
                 </td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
                 <td>
-                    <asp:Button ID="btnSalva" runat="server" Text="Modifica" CssClass="btnBE" OnClick="btnSalva_Click" />
+                    <a id="popupModificaAvatar" class="popUpBtnBE" href="Modifica_Avatar_Popup.aspx">Modifica Avatar</a>
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="Button1" class="btnBE" runat="server" Text="Aggiorna Avatar" OnClick="Button1_Click" />
+                </td>
+                <td>
+                    <asp:Button ID="btnSalva" runat="server" Text="Modifica Dati Personali" class="btnBE" OnClick="btnSalva_Click" />
+                </td>
             </tr>
         </table>
+
+
+
     </div>
 </asp:Content>
 

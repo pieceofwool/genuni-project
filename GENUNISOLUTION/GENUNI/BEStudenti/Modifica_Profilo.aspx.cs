@@ -14,7 +14,6 @@ public partial class Modifica_Profilo : System.Web.UI.Page
         {
             if (Session["CodiceAttore"] == null)
             {
-                lblRes.Text = "ERRORE, selezionare una voce";
                 tabella.Visible = false;
 
                 return;
@@ -30,6 +29,25 @@ public partial class Modifica_Profilo : System.Web.UI.Page
             txtCitta.Text = sel["Citta"].ToString();
             txtProvincia.Text = sel["Provincia"].ToString();
             txtNazionalita.Text=sel["Nazionalita"].ToString();
+
+            DataTable dt = new DataTable();
+            dt.TableName = "Esterni";
+            dt = E.SelectOne(cod);
+            DataRow dr = dt.Rows[0];
+            string tipo = dt.Rows[0]["TipoImg"].ToString();
+
+
+            //string prova = dt.Rows[0]["Avatar"].ToString();
+            //byte[] provaarray = (byte[])dt.Rows[0]["Avatar"];
+
+            byte[] arr1 = dr.Field<byte[]>("Avatar");
+            //byte[] arr1 = (byte[])dt.Rows[0]["Avatar"];
+            if (arr1 != null)
+            {
+                string base64String1 = Convert.ToBase64String(arr1, 0, arr1.Length);
+                string Src = "data:image/" + tipo + ";base64," + base64String1;
+                lit.Text = "<img style='width:200px' src='" + Src + "' />";
+            }
         }
     }
 
@@ -60,8 +78,32 @@ public partial class Modifica_Profilo : System.Web.UI.Page
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
         E.Update_Profilo_Studenti(Chiave, Nome, Cognome, Indirizzo, Citta, Provincia, Nazionalita);
-
-        lblRes.Text="Info Modificato";
     }
-    
+
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
+        //int CHIAVE = 1;
+
+        DataTable dt = new DataTable();
+        dt.TableName = "Esterni";
+        int Chiave = int.Parse(Session["CodiceAttore"].ToString());
+        dt = E.SelectOne(Chiave);
+        DataRow dr = dt.Rows[0];
+        string tipo = dt.Rows[0]["TipoImg"].ToString();
+
+
+        //string prova = dt.Rows[0]["Avatar"].ToString();
+        //byte[] provaarray = (byte[])dt.Rows[0]["Avatar"];
+
+        byte[] arr1 = dr.Field<byte[]>("Avatar");
+        //byte[] arr1 = (byte[])dt.Rows[0]["Avatar"];
+        if (arr1 != null)
+        {
+            string base64String1 = Convert.ToBase64String(arr1, 0, arr1.Length);
+            string Src = "data:image/" + tipo + ";base64," + base64String1;
+            lit.Text = "<img style='width:200px' src='" + Src + "' />";
+        }
+    }
 }
