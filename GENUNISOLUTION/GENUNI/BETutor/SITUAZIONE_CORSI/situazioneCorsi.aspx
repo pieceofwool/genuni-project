@@ -55,7 +55,9 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div>
+
+
+   <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
@@ -63,22 +65,26 @@
         <table class="tablePopUp">
             <tr>
                 <td class="btnGestisci">
-                    <asp:Button class="popupPreparaDomande" CssClass="btnBE" ID="btnPreparaDomande" runat="server" Text="Prepara domande" OnClick="btnPreparaDomande_Click" />
-                    <asp:Button ID="btnRisultatiTest" CssClass="btnBE" runat="server" Text="Risultati test" OnClick="btnRisultatiTest_Click" />
-                    <asp:Button class="popupPreparaTest" CssClass="btnBE" ID="popupPreparaTest" runat="server" Text="Crea test" />
-                    <asp:Button ID="btnChat" runat="server" CssClass="btnBE" Text="Chat del corso" OnClick="btnChat_Click" />
-                </td>
+    <asp:Button class="popupPreparaDomande" ID="btnPreparaDomande" runat="server" Text="Prepara domande" OnClick="btnPreparaDomande_Click" />
+    <asp:Button ID="btnRisultatiTest" runat="server" Text="Risultati test" OnClick="btnRisultatiTest_Click" />
+    <asp:Button class="popupPreparaTest" ID="popupPreparaTest" runat="server" Text="Crea test" />
+    <asp:Button ID="btnChat" runat="server" Text="Chat del corso" OnClick="btnChat_Click" />
+    </td>
             </tr>
             <tr>
                 <td>
                     <%--griglia corsi--%>
-                    <asp:GridView ID="GridCorsi" CssClass="griglia" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave">
-                        <HeaderStyle />
-                        <HeaderStyle CssClass="headergrid" />
-                        <SelectedRowStyle CssClass="selezionegrid" />
-                    </asp:GridView>
-                </td>
+    <asp:GridView ID="GridCorsi" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave" AutoGenerateColumns="False">
+        <Columns>
+            <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
+            <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+            <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
+            <asp:BoundField DataField="Data_partenza" HeaderText="Data Partenza" />
+        </Columns>
+    </asp:GridView>
+     </td>
             </tr>
         </table>
-    </div>
+    </div>                 
+
 </asp:Content>

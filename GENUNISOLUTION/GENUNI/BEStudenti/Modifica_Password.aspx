@@ -16,10 +16,6 @@
             </div>
             <tr>
                 <td>
-                    <asp:Label ID="lblUser" runat="server" Text="User"></asp:Label>
-                    <asp:TextBox ID="txtUser" runat="server" MaxLength="64"></asp:TextBox>
-                </td>
-                <td>
                     <asp:Label ID="lblPass" runat="server" Text="Password"></asp:Label>
                     <asp:TextBox ID="txtPassword" runat="server" MaxLength="64"></asp:TextBox>
                 </td>
