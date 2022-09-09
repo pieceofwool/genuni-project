@@ -75,16 +75,17 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
                 if (dt2.Rows.Count == 0)
                 {
-                    // metto messaggio di riempimento nella lit se non esistono messaggi per quel corso
-                    litChat.Text = "Questa chat non ha ancora nessun messaggio.";
+                    //la join è fallita, evito di scrivere il messaggio di un esterno non più esistente
                     return;
                 }
 
                 //recupero variabili
                 string date = dt2.Rows[0]["Data_Post"].ToString();
                 DateTime Data = DateTime.Parse(date);
-                string giorno = Data.Date.ToString().Substring(0, 10);
-                string ora = Data.TimeOfDay.ToString();
+                string giorno = Data.ToString("d");
+                string ora = Data.ToString("t");
+                // string giorno = Data.Date.ToString().Substring(0, 10);
+                //string ora = Data.TimeOfDay.ToString();
 
                 string messaggio = dt2.Rows[0]["Contenuto"].ToString();
                 char tipo = char.Parse(dt2.Rows[0]["Tipo"].ToString());
@@ -150,16 +151,17 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
                 if (dt2.Rows.Count == 0)
                 {
-                    // metto messaggio di riempimento nella lit se non esistono messaggi per quel corso
-                    litChat.Text = "Questa chat non ha ancora nessun messaggio.";
+                    //la join è fallita, evito di scrivere il messaggio di un utente non più esistente
                     return;
                 }
 
                 //recupero variabili
                 string date = dt2.Rows[0]["Data_Post"].ToString();
                 DateTime Data = DateTime.Parse(date);
-                string giorno = Data.Date.ToString().Substring(0, 10);
-                string ora = Data.TimeOfDay.ToString();
+                string giorno = Data.ToString("d");
+                string ora = Data.ToString("t");
+               // string giorno = Data.Date.ToString().Substring(0, 10);
+               // string ora = Data.TimeOfDay.ToString();
 
                 string messaggio = dt2.Rows[0]["Contenuto"].ToString();
                 char tipo = char.Parse(dt2.Rows[0]["Tipo"].ToString());
