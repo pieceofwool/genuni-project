@@ -132,7 +132,7 @@ public partial class BEDocenti_Default : System.Web.UI.Page
                 litChat.Text += "<tr><td>" + IMG + "</td>";
                 litChat.Text += "<td><b> " + nome + " " + cognome + " </b><br /><small>(" + esterno + ")</small></td>";
                 // litChat.Text += "<td><small> Il " + date.Substring(0, 10) + " <br /> alle" + date.Substring(10) + " </small></td>";
-                litChat.Text += "<td><small> Il " + giorno + " <br /> alle" + ora + " </small></td>";
+                litChat.Text += "<td><small> Il " + giorno + " <br /> alle: " + ora + " </small></td>";
                 litChat.Text += "<td><b> " + messaggio + " </b></td></tr>";
 
 
@@ -179,7 +179,7 @@ public partial class BEDocenti_Default : System.Web.UI.Page
                 litChat.Text += "<tr><td>" + IMG + "</td>";
                 litChat.Text += "<td><b> " + nome + " " + cognome + " </b><br /><small>(" + esterno + ")</small></td>";
                // litChat.Text += "<td><small> Il " + date.Substring(0, 10) + " <br /> alle" + date.Substring(10) + " </small></td>";
-                litChat.Text += "<td><small> Il " + giorno + " <br /> alle" + ora + " </small></td>";
+                litChat.Text += "<td><small> Il " + giorno + " <br /> alle: " + ora + " </small></td>";
                 litChat.Text += "<td><b> " + messaggio + " </b></td></tr>";
             }
 
