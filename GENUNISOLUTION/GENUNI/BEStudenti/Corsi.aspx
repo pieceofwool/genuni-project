@@ -42,6 +42,7 @@
                 </td>
             </tr>
         </table>
+        <asp:Label ID="lbl1" runat="server" Text="Label"></asp:Label>
     </div>
 
     <asp:Button ID="btnTest" runat="server" Text="Esegui Test" OnClick="btnTest_Click" />

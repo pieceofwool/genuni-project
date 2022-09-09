@@ -14,12 +14,14 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     {
         caricaGriglia();
 
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
-
+        //int Cod_Corso = int.Parse(Session["Chiave"].ToString());
+        //TEST.Test_WSSoapClient te = new TEST.Test_WSSoapClient();
+        //DataTable dat = te.SelectOne(Cod_Corso);
+        //int Cod_test= int.Parse()
         ////trasformo una datatable in un intero
         //TEST.Test_WSSoapClient t = new TEST.Test_WSSoapClient();
         //DataTable dt = t.SelectSoglia(CHIAVE);
-        ////int soglia = int.Parse(dt.Rows[0]["Soglia"].ToString());
+        //int soglia = int.Parse(dt.Rows[0]["Soglia"].ToString());
 
         //CLASSI.Classi_WSSoapClient c = new CLASSI.Classi_WSSoapClient();
         //DataTable da = c.Select_Punteggio(CHIAVE);
@@ -27,11 +29,13 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 
         //if (risultato >= soglia)
         //{
-        //    attestato.Visible = true;
+        //    lbl1.Text="Test Superato!";
+        //    btnTest.Visible = false;
         //}
         //else
         //{
-        //    attestato.Visible = false;
+        //    lbl1.Text="Test Non Superato! Se vuoi effettuare nuobamente il Test, puoi iscriverti ad un nuovo corso. Puoi continuare ad usufruire del materiale";
+        //    btnTest.Visible = false;
         //}
     }
 

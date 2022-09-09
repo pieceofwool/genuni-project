@@ -134,12 +134,13 @@
         <table>
             <tr>
                 <td>
-                    <asp:Button runat="server" CssClass="btnBE" Text="Concludi Test!" OnClick="ConcludiTest_Click" />
+                    <asp:Button ID="btnConcludiTest" runat="server" CssClass="btnBE" Text="Concludi Test!" OnClick="ConcludiTest_Click" Visible="True"/>
                     <%--<asp:Label id="lbl" runat="server" Text=""></asp:Label>--%>
                     <asp:Button ID="btnTornaHomeCorso" CssClass="btnBE" runat="server" Text="Torna alla Home del Corso" Visible="False" OnClick="TornaHomeCorso_Click" />
                 </td>
             </tr>
         </table>
+        <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
     </div>
 
 </asp:Content>
