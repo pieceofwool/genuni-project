@@ -92,4 +92,9 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         T.SelectOne(Chiave);
         Response.Redirect("Test_Studenti.aspx");
     }
+
+    protected void btnChat_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("/BEStudenti/ChatStudenti.aspx");
+    }
 }
