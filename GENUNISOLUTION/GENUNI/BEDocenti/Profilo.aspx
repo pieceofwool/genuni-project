@@ -173,9 +173,14 @@
                 <tr>
                     <td></td>
                     <td>
-                        <asp:Literal ID="lit" runat="server"></asp:Literal>
+                        <asp:Literal ID="litIMG" runat="server"></asp:Literal>
                     </td>
                     <td></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        &nbsp
+                    </td>
                 </tr>
                 <tr>
                     <td width="250px"><b>User: </b>
@@ -238,7 +243,6 @@
                             <a id="popupModificaComp" class="popUpBtnBE" href="POPUP/profilo/ModificaCompetenze.aspx">Modifica competenze</a>
                         </div>
                         <br />
-                        <br />
 
                         <div id="popupInserisciCompDiv" runat="server">
                             <a id="popupInserisciComp" class="popUpBtnBE" href="POPUP/profilo/InserisciCompetenze.aspx">Inserisci competenze</a>
@@ -253,9 +257,11 @@
                         <asp:Label ID="lblSkills" class="lbl" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
+            </table>
+            <table class="tablePopUp">
                 <tr>
                     <td colspan="2">
-                        <asp:Literal ID="Lit2" runat="server"></asp:Literal>
+                        <asp:Literal ID="LitCV" runat="server"></asp:Literal>
                     </td>
                 </tr>
             </table>

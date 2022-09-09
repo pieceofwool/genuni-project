@@ -7,18 +7,18 @@
         }
 
         #storico {
-            width: 700px;
+            width: 900px;
             margin-top: 100px;
         }
 
         .tabella {
-            width: 700px;
+            width: 900px;
         }
 
         .MaterieScroll {
             overflow: auto;
             max-height: 250px;
-            width: 720px;
+            width: 920px;
         }
 
         table {
@@ -32,7 +32,7 @@
     <%--tabella storico materie accettate--%>
 
     <%-- header--%>
-    <table id="storico" style="width: 717px; text-align: center;">
+    <table id="storico" style="width: 917px; text-align: center;">
         <tr>
 
             <td><b><big>Storico materie</big></b></td>
@@ -65,7 +65,7 @@
     </div>
 
     <%--footer--%>
-    <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align: center">
+    <table style="border: 1px solid black; border-collapse: collapse; width: 917px; text-align: center">
         <tr>
             <td><small>Vengono mostrate tutte le materie accettate</small></td>
             <td style="text-align: right">
@@ -81,7 +81,7 @@
     <%--tabelle materie da accettare--%>
 
     <%-- header--%>
-    <table style="width: 717px; text-align: center;">
+    <table style="width: 917px; text-align: center;">
         <tr>
 
             <td><b><big>Materie da accettare</big></b></td>
@@ -113,7 +113,7 @@
     </div>
 
     <%--footer--%>
-    <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align: center">
+    <table style="border: 1px solid black; border-collapse: collapse; width: 917px; text-align: center">
         <tr>
             <td><small>Vengono mostrate tutte le materie non ancora accettate</small></td>
             <td style="text-align: right">
@@ -129,7 +129,7 @@
     <%--Corsi Docente--%>
 
     <%-- header--%>
-    <table style="width: 717px; text-align: center">
+    <table style="width: 917px; text-align: center">
         <tr>
             <td style="width: 33.3%"></td>
             <td style="width: 33.3%"><b><big>I miei Corsi</big></b></td>
@@ -161,7 +161,7 @@
     </div>
 
     <%--footer--%>
-    <table style="border: 1px solid black; border-collapse: collapse; width: 717px; text-align: center; margin-bottom: 100px;">
+    <table style="border: 1px solid black; border-collapse: collapse; width: 917px; text-align: center; margin-bottom: 100px;">
         <tr>
             <td><small>Vengono mostrati tutti i corsi in cui si hanno materie accettate</small></td>
             <td style="text-align: right">
