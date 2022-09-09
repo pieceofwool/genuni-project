@@ -221,6 +221,7 @@ public partial class Test_Studenti : System.Web.UI.Page
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Test non Superato! Torna alla Home')", true);
 
             btnTornaHomeCorso.Visible=true;
+            btnConcludiTest.Visible=false;
             return;
         }
 
@@ -229,6 +230,7 @@ public partial class Test_Studenti : System.Web.UI.Page
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Test Superato! Torna alla Home')", true);
             btnTornaHomeCorso.Visible=true;
+            btnConcludiTest.Visible= false;
             return;
         }
         
