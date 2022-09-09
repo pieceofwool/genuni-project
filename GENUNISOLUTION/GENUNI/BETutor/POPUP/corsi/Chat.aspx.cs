@@ -105,12 +105,12 @@ public partial class BETutor_Default : System.Web.UI.Page
                     }
                     else
                     {
-                        IMG = "<img src=\"../img/team-1.jpg\" style=\"width:70px\" />";
+                        IMG = "<img src=\"../../../img/team-1.jpg\" style=\"width:70px\" />";
                     }
                 }
                 else
                 {
-                    IMG = "<img src=\"../img/team-1.jpg\" style=\"width:70px\" />";
+                    IMG = "<img src=\"../../../img/team-1.jpg\" style=\"width:70px\" />";
                 }
 
 
@@ -149,7 +149,7 @@ public partial class BETutor_Default : System.Web.UI.Page
                 if (tipo == 'T') { esterno = "Tutor"; }
                 if (tipo == 'A') { esterno = "Admin"; }
 
-                IMG = "<img src=\"../img/logo.png\" style=\"width:70px\" />";
+                IMG = "<img src=\"../../../img/logo.png\" style=\"width:70px\" />";
 
                 litChat.Text += "<tr><td>" + IMG + "</td>";
                 litChat.Text += "<td><b> " + nome + " " + cognome + " </b><br /><small>(" + esterno + ")</small></td>";
@@ -179,12 +179,10 @@ public partial class BETutor_Default : System.Web.UI.Page
         int codiceCorso = Convert.ToInt32(Session["Chiave_Corso"]);
         //int codiceCorso = 1; //DEBUG, sostituire con Session
 
-        //int codiceEsterno = int.Parse(Session["CodiceAttore"].ToString());
-        int codiceEsterno = 2; //DEBUG, sostituire con Session
+        int codiceInterno = int.Parse(Session["CodiceAttore"].ToString());
         string contenuto = txtRisposta.InnerText;
 
-
-        C.InsertEsterni(codiceCorso, codiceEsterno, contenuto);
+        C.InsertInterni(codiceCorso, codiceInterno, contenuto);
 
         CaricaDesc();
 

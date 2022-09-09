@@ -44,7 +44,7 @@
                     <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Seleziona" ShowHeader="True" Text="Seleziona" />
                 </Columns>
             </asp:GridView>
-            <asp:Button ID="btnAssegnaM" runat="server" Text="Assegna Materia" OnClick="btnAssegnaM_Click" />
+            <asp:Button ID="btnAssegnaM" runat="server" Text="Marca corso come 'Materie Assegnate'" OnClick="btnAssegnaM_Click" /><br />
             <asp:Button ID="btnAggiornaCorsi" runat="server" Text="Aggiorna Corsi" OnClick="btnAggiornaCorsi_Click" />
         </div>
 

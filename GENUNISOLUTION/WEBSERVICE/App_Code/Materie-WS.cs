@@ -23,7 +23,7 @@ public class Materie_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Insert(int COD_CORSO, int COD_DOCENTE, int COSTO_DOCENTE, string TITOLO, string DESCRIZIONE, int INDICE, string PREPARATO, string ACCETTATO, string DATA_RISPOSTA)
+    public void Insert(int COD_CORSO, int COD_DOCENTE, int COSTO_DOCENTE, string TITOLO, string DESCRIZIONE, int INDICE)
     {
         MATERIE m = new MATERIE();
         m.Cod_Corso = COD_CORSO;
@@ -32,15 +32,12 @@ public class Materie_WS : System.Web.Services.WebService
         m.Titolo = TITOLO;
         m.Descrizione = DESCRIZIONE;
         m.Indice = INDICE;
-        m.Preparato = PREPARATO;
-        m.Accettato = ACCETTATO;
-        m.Data_Risposta = DATA_RISPOSTA;
 
         m.Insert();
     }
 
     [WebMethod]
-    public void Update(int CHIAVE, int COD_CORSO, int COD_DOCENTE, int COSTO_DOCENTE, string TITOLO, string DESCRIZIONE, int INDICE, string PREPARATO, string ACCETTATO, string DATA_RISPOSTA)
+    public void Update(int CHIAVE, int COD_CORSO, int COD_DOCENTE, int COSTO_DOCENTE, string TITOLO, string DESCRIZIONE, int INDICE, bool PREPARATO, bool ACCETTATO, string DATA_RISPOSTA)
     {
         MATERIE m = new MATERIE();
         m.Chiave = CHIAVE;
