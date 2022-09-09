@@ -9,7 +9,7 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        CaricaAttivi();
+        CaricaTutti();
 
 
     }
@@ -82,7 +82,7 @@ public partial class Default2 : System.Web.UI.Page
             //creo ogni scheda del corso
             litCorso.Text += "<div class=\"col - md - 6 col - lg - 4 wow bounceInUp\" data-wow-duration=\"1.4s\">";
             litCorso.Text += "<div style=\"width: fit-content\" class=\"box\">";
-            litCorso.Text += "<img style=\"height:150px; border-radius:5% \" src='" + Src + "' />";
+            litCorso.Text += "<img style=\"height:145px; border-radius:5% \" src='" + Src + "' />";
             litCorso.Text += "<h4 class=\"title\"><a href = \"#\" ></br>" + Titolo + "  </a></h4>";
 
             //litCorso.Text += "<p class=\"description\">" + Descrizione + " </p>";
