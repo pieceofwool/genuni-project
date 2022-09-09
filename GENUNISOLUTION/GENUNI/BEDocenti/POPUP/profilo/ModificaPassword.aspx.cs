@@ -38,8 +38,8 @@ public partial class POPUP_profilo_ModificaPassword : System.Web.UI.Page
         }
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
-        int CHIAVE = 1;
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        //int CHIAVE = 1;
 
         DataTable dt = new DataTable();
         dt.TableName = "Esterni";
@@ -51,12 +51,12 @@ public partial class POPUP_profilo_ModificaPassword : System.Web.UI.Page
 
         if (E.Login(user, password))
         {
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('La password è uguale a quella vecchia, cambiala." + "')", true);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Password uguale a quella vecchia, cambiala." + "')", true);
             return;
         }
 
-        E.UpdatePassword(user, password);
+        E.UpdatePassword(CHIAVE, password);
 
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('La password è stata modificata con successo" + "')", true); 
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Password modificata con successo" + "')", true); 
     }
 }

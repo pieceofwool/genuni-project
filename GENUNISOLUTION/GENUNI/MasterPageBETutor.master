@@ -39,18 +39,15 @@
         <!-- ======= Header ======= -->
         <div id="header" class="fixed-top">
             <div class="container d-flex align-items-center">
-                <h1 class="logo me-auto"><a href="../Default.aspx">GENUNI</a></h1>
+                <h1 class="logo me-auto"><a href="../Default.aspx">GENUNI<sub style="color: #808080">Area Tutor</sub></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
                 <nav id="navbar" class="navbar order-last order-lg-0">
                     <ul>
-                        <li><a class="active" href="../Default.aspx">Home</a></li>
-                        <li><a href="../BETutor/GestioneTutor.aspx">Tutor</a></li>
-                        <li class="dropdown"><a href="../BETutor/SITUAZIONE_CORSI/situazioneCorsi.aspx.cs"><span>CORSI</span> <i class="bi bi-chevron-down"></i></a>
-                        </li>
-                        <li><a href="../Default.aspx">Esci</a></li>
-                    </ul>
+                        <li><a class="active" href="../SITUAZIONE_CORSI/situazioneCorsi.aspx">Home</a></li>
+                        <li><a class="active" href="/BETutor/PREPARAZIONE_CORSO/preparazioneCorso.aspx">ACCEDI AI CORSI IN PREPARAZIONE</a></li>
+                        </ul>
                 </nav>
                 <!-- .navbar -->
             </div>

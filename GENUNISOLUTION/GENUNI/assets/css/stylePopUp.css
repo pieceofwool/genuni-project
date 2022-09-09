@@ -1,0 +1,166 @@
+﻿.txt {
+    padding: 7px 11px 8px 7px;
+    border-color: white;
+    background: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: left;
+    width: 179px;
+    height: auto;
+    color: darkgreen;
+    font-family: 'Montserrat',sans-serif;
+}
+
+    .txt:hover {
+        background-color: #9ceeb7;
+        color: black;
+    }
+
+.txtDate {
+    margin-top: 11px;
+    background: white;
+    border: 1px solid white;
+    border-radius: 0px;
+    text-align: center;
+    width: 179px;
+}
+
+    .txtDate:hover {
+        background-color: #9ceeb7;
+        color: black;
+    }
+
+.lblP {
+    font-family: 'Montserrat',sans-serif;
+}
+
+.lblPTitolo {
+    font-family: 'Montserrat',sans-serif;
+    font-weight: bold;
+}
+
+.ui-widget-header {
+    border: 1px solid #aaaaaa /*{borderColorHeader}*/;
+    background: #9ceeb78c;
+    color: black;
+    font-weight: bold;
+}
+
+.ui-widget-content {
+    border: 1px solid #aaaaaa /*{borderColorContent}*/;
+    background: #ffffff /*{bgColorContent}*/ url(images/ui-bg_flat_75_ffffff_40x100.png) /*{bgImgUrlContent}*/ 100% /*{bgContentXPos}*/ 100% /*{bgContentYPos}*/ repeat-x /*{bgContentRepeat}*/;
+    color: #222222 /*{fcContent}*/;
+}
+
+    .ui-widget-content a {
+        color: #222222 /*{fcContent}*/;
+    }
+
+.ui-dialog {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .2em;
+    outline: 0;
+}
+
+    .ui-dialog .ui-dialog-titlebar {
+        padding: .4em 1em;
+        position: relative;
+    }
+
+    .ui-dialog .ui-dialog-title {
+        float: left;
+        margin: .1em 0;
+        white-space: nowrap;
+        width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .ui-dialog .ui-dialog-titlebar-close {
+        position: absolute;
+        right: .3em;
+        top: 50%;
+        width: 20px;
+        margin: -10px 0 0 0;
+        padding: 1px;
+        height: 20px;
+    }
+
+    .ui-dialog .ui-dialog-content {
+        position: relative;
+        border: 0;
+        padding: .5em 1em;
+        background: none;
+        overflow: auto;
+    }
+
+    .ui-dialog .ui-dialog-buttonpane {
+        text-align: left;
+        border-width: 1px 0 0 0;
+        background-image: none;
+        margin-top: .5em;
+        padding: .3em 1em .5em .4em;
+    }
+
+        .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+            float: right;
+        }
+
+        .ui-dialog .ui-dialog-buttonpane button {
+            margin: .5em .4em .5em 0;
+            cursor: pointer;
+        }
+
+    .ui-dialog .ui-resizable-se {
+        width: 12px;
+        height: 12px;
+        right: -5px;
+        bottom: -5px;
+        background-position: 16px 16px;
+    }
+
+.ui-draggable .ui-dialog-titlebar {
+    cursor: move;
+}
+
+a.popUpBtnBE {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 4px 4px 4px 4px;
+    border-color: rgba(255,255,255,.2);
+}
+
+    a.popUpBtnBE:hover {
+        background-color: #9ceeb7;
+        color: black;
+    }
+
+.tablePopUpePopUp {
+    margin-top: 50px;
+    text-align: center;
+    max-width: 70%;
+    font-family: Tahoma, Calibri;
+    font-size: small;
+    width: 70%;
+    border-color: darkgray;
+    padding: 10px;
+}
+
+
+.btnBE {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 5px;
+    font-size: 16px;
+    border-color: rgba(255,255,255,.2);
+}
+
+    .btnBE:hover, .dropdown-content {
+        background-color: #9ceeb7;
+        color: black;
+    }

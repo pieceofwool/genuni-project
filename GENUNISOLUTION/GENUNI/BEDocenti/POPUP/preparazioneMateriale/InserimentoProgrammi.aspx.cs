@@ -7,14 +7,19 @@ using System.Web.UI.WebControls;
 
 public partial class BEDocenti_POPUP_inserimentoProgrammi_InserimentoProgrammi : System.Web.UI.Page
 {
+    protected int link;
+
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (MATERIALE.Visible == false)
+        {
+            link = 1;
+        }
     }
 
     protected void btnInserisci_Click1(object sender, EventArgs e)
     {
-        
+
 
         //controlli formali
         int INDICE = 0;
@@ -29,29 +34,69 @@ public partial class BEDocenti_POPUP_inserimentoProgrammi_InserimentoProgrammi :
             return;
         }
 
+        //controllo selezione ddl
+        string TIPO_MATERIALE;
+        if (link == 1)
+        {
+            TIPO_MATERIALE = "";
+        }
+        else
+        {
+            TIPO_MATERIALE = fupMateriale.PostedFile.ContentType.ToString();
+        }
+
 
         int COD_MATERIA = Convert.ToInt32(Session["COD_MATERIA"]);
         string TIPO = ddlTipo.SelectedValue.ToString();
         string LINK = txtLink.Text.ToString();
         byte[] MATERIALE = fupMateriale.FileBytes;
         string TITOLO_MATERIALE = txtTitolo.Text.ToString();
-        string TIPO_MATERIALE = txtTipoMateriale.Text.ToString();
+
         string DESCRIZIONE = txtDescrizione.Text.ToString();
 
         PROGRAMMI.Programmi_WSSoapClient Pr = new PROGRAMMI.Programmi_WSSoapClient();
         Pr.Insert(COD_MATERIA, TIPO, INDICE, LINK, MATERIALE, TITOLO_MATERIALE, TIPO_MATERIALE, DESCRIZIONE);
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "OK", "alert('Inseririmento effettuato')", true);
+
+        txtLink.Text = "";
+        txtTitolo.Text = "";
+        txtIndice.Text = "";
+        txtDescrizione.Text = "";
+
+
+
     }
 
     protected void ddlTipo_SelectedIndexChanged(object sender, EventArgs e)
     {
-        //string Tipo = ddlTipo.SelectedValue.ToString();
-        //switch (Tipo)
-        //{
-        //    case ("LF"):
-        //        break;
-        //}
+        string Tipo = ddlTipo.SelectedValue.ToString();
+        switch (Tipo)
+        {
+            case ("LF"):
+                MATERIALE.Visible = false;
+                LINK.Visible = true;
+                link = 1;
+
+                break;
+
+            case ("LV"):
+                MATERIALE.Visible = false;
+                LINK.Visible = true;
+                link = 1;
+
+                break;
+
+            case ("MA"):
+                LINK.Visible = false;
+                MATERIALE.Visible = true;
+                link = 0;
+
+                break;
+
+        }
+
+
 
 
 

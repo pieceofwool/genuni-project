@@ -88,6 +88,30 @@
 
         $(document).ready(function () {
 
+            $('#popupInserisciComp').click(function () {
+
+                var url = 'POPUP/profilo/InserisciCompetenze.aspx';
+                var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
+
+                inserisci.dialog({
+                    modal: true,
+                    title: 'Inserisci Competenze',
+                    resizable: false,
+                    width: 400,
+                    height: 300,
+                    overlay: { opacity: 0.9, background: 'black' },
+
+                    open: function (type, data) { $(this).parent().appendTo('form'); }
+                });
+
+                return false;
+            });
+        });
+    </script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
             $('#popupModificaComp').click(function () {
 
                 var url = 'POPUP/profilo/ModificaCompetenze.aspx';
@@ -141,11 +165,23 @@
 
     <div>
         <%--<img src="img/logo.jpg" alt="Avatar"  />--%>
-        <asp:Literal ID="lit" runat="server"></asp:Literal>
 
         <div class="containerBE">
             <h3 class="titoliBE">Dati:</h3>
-            <table class="tablePopUp">
+
+            <table class="tablePopUp" style="text-align: center;">
+                <tr>
+                    <td></td>
+                    <td>
+                        <asp:Literal ID="litIMG" runat="server"></asp:Literal>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        &nbsp
+                    </td>
+                </tr>
                 <tr>
                     <td width="250px"><b>User: </b>
                         <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
@@ -201,20 +237,31 @@
             <table class="tablePopUp">
                 <tr>
                     <td class="btnGestisci">
+
                         <%--competenze--%>
-                        <a id="popupModificaComp" class="popUpBtnBE" href="POPUP/profilo/ModificaCompetenze.aspx">Modifica competenze</a>
+                        <div id="popupModificaCompDiv" runat="server">
+                            <a id="popupModificaComp" class="popUpBtnBE" href="POPUP/profilo/ModificaCompetenze.aspx">Modifica competenze</a>
+                        </div>
+                        <br />
+
+                        <div id="popupInserisciCompDiv" runat="server">
+                            <a id="popupInserisciComp" class="popUpBtnBE" href="POPUP/profilo/InserisciCompetenze.aspx">Inserisci competenze</a>
+                        </div>
+
 
                         <asp:Button ID="BtnCV" class="btnBE" runat="server" Text="Scarica CV" OnClick="BtnCV_Click" />
                     </td>
                 </tr>
                 <tr>
                     <td><b>Skills:</b>
-                        <asp:Label ID="lblSkills" class="lbl" runat="server" Text="C,C#,SQL,JAVA"></asp:Label>
+                        <asp:Label ID="lblSkills" class="lbl" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
+            </table>
+            <table class="tablePopUp">
                 <tr>
                     <td colspan="2">
-                        <asp:Literal ID="Lit2" runat="server"></asp:Literal>
+                        <asp:Literal ID="LitCV" runat="server"></asp:Literal>
                     </td>
                 </tr>
             </table>

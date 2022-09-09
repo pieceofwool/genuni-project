@@ -8,7 +8,13 @@
 
         <br /><br /><br /><br />
         <%-- corsi precedenti con classe --%>
-        <asp:GridView ID="gridCorsi" runat="server"></asp:GridView>
+        <asp:GridView ID="gridCorsi" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="Corso" HeaderText="Corso" />
+                <asp:BoundField DataField="Materia" HeaderText="Materia" />
+                <asp:BoundField DataField="Data_Partenza" HeaderText="Data Partenza" />
+            </Columns>
+        </asp:GridView>
     </div>
 </asp:Content>
 

@@ -32,8 +32,8 @@
     <section id="services" class="section-bg">
         <div class="container" style="margin-top: -98px;">
             <header class="section-header">
-                <h3 style="margin-top: 17px; margin-bottom: 61px;">LOGIN/REGISTRAZIONE</h3>
-                <div class="cont" style="zoom: 75%; margin-top: -60px;">
+                <h3 style="margin-top: 17px; margin-bottom: 61px; font-size: 29px; margin-left: 42px;">LOGIN/REGISTRAZIONE</h3>
+                <div class="cont" style="zoom: 95%; margin-top: -60px;">
                     <div class="form sign-in">
                         <h2 class="h2Login">ACCEDI</h2>
                         <img src="assets/img/genLoginImg.png" id="genLoginImg" />
@@ -51,15 +51,15 @@
                                     <label>
                                         <span>PASSWORD</span>
                                         <%--<input type="password" />--%>
-                                        <asp:TextBox ID="txtLogPwd" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtLogPwd" runat="server" TextMode="Password"></asp:TextBox>
                                     </label>
                                 </td>
                             </tr>
                         </table>
                         <%--<p class="forgot-pass" href="Default.aspx">Torna alla Home</p>--%>
-                        <asp:HyperLink ID="lnkHomepage" CssClass="forgot-pass" runat="server" NavigateUrl="Default.aspx">Torna alla Home</asp:HyperLink>
+                        <asp:HyperLink ID="lnkHomepage" CssClass="forgot-pass" runat="server" NavigateUrl="Default.aspx" Style="margin-left: 240px;">Torna alla Home</asp:HyperLink>
                         <%--<button type="button" id="accediLogin" class="submit">Accedi</button>--%>
-                        <asp:Button ID="btnLogin" runat="server" CssClass="submit" Text="Accedi" OnClick="btnLogin_Click" />
+                        <asp:Button ID="btnLogin" runat="server" CssClass="btnLoginCopia" Text="Accedi" OnClick="btnLogin_Click" />
                     </div>
                     <div class="sub-cont">
                         <div class="img">
@@ -116,7 +116,7 @@
                                         <label>
                                             <span>Password</span>
                                             <%--<input type="password" />--%>
-                                            <asp:TextBox ID="txtPwd" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtPwd" runat="server" TextMode="Password"></asp:TextBox>
 
                                         </label>
                                         <label>
@@ -139,7 +139,7 @@
                                         <label>
                                             <span>Data di nascita</span>
                                             <%--<input type="date" />--%>
-                                            <asp:TextBox ID="txtDataNascita" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtDataNascita" runat="server" TextMode="Date"></asp:TextBox>
 
                                         </label>
                                     </td>
@@ -170,13 +170,13 @@
                                         <label>
                                             <span>Provincia</span>
                                             <%--<input type="text" />--%>
-                                            <asp:TextBox ID="txtProvincia" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtProvincia" runat="server" MaxLength="2"></asp:TextBox>
 
                                         </label>
                                     </td>
                                     <td>
                                         <label>
-                                            <span>Città</span>
+                                            <span>Citta'</span>
                                             <%--<input type="text" />--%>
                                             <asp:TextBox ID="txtCitta" runat="server"></asp:TextBox>
 
@@ -184,7 +184,7 @@
                                         <label>
                                             <span>CAP</span>
                                             <%--<input type="text" />--%>
-                                            <asp:TextBox ID="txtCap" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtCap" runat="server" MaxLength="5"></asp:TextBox>
 
                                         </label>
                                         <label>
@@ -196,7 +196,8 @@
                                     </td>
                                 </tr>
                             </table>
-                            <button type="button" class="submit">Registrati</button>
+                            <%--<button type="button" class="submit">Registrati</button>--%>
+                            <asp:Button ID="btnRegistrati" CssClass="btnLoginCopia" runat="server" Text="REGISTRATI" OnClick="btnRegistra_Click" />
                         </div>
                     </div>
                 </div>

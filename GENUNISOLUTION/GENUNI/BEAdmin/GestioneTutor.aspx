@@ -17,10 +17,10 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Inserimento Dati',  //titolo dell'oggetto
+                    title: 'Abilita tutor',  //titolo dell'oggetto
                     dialogClass: 'dialog',
-                    height: 500,
-                    width: 600,
+                    height: 250,
+                    width: 400,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
                 });
@@ -48,7 +48,7 @@
             <tr>
                 <td>
                     <%-- Tabella che contiene utenti T o C --%>
-                    <asp:GridView ID="gridUtentiTC" CssClass="griglia" runat="server" DataKeyNames="Chiave" AutoGenerateColumns="false" OnSelectedIndexChanged="gridUtentiTC_SelectedIndexChanged">
+                    <asp:GridView ID="gridUtentiTC" CssClass="griglia" runat="server" DataKeyNames="Chiave" AutoGenerateColumns="False" OnSelectedIndexChanged="gridUtentiTC_SelectedIndexChanged">
                         <Columns>
                             <asp:BoundField DataField="Chiave" Visible="false" />
                             <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
@@ -62,6 +62,9 @@
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
                         </Columns>
+                        <HeaderStyle />
+                        <HeaderStyle CssClass="headergrid" />
+                        <SelectedRowStyle CssClass="selezionegrid" />
                     </asp:GridView>
                 </td>
             </tr>

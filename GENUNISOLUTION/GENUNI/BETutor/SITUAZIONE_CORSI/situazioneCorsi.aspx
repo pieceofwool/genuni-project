@@ -35,7 +35,7 @@
 
             $('.popupPreparaDomande').click(function () {
 
-                var url = '../POPUP/corsi/preparazioneDomande.aspx';
+                var url = '../POPUP/preparazione_domande/preparazioneDomande.aspx';
                 var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
 
                 inserisci.dialog({
@@ -56,23 +56,35 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <br />
-    <br />
-    <br />
-    <br />
 
-    <asp:Label ID="lblEs1" runat="server" Text="I TUOI CORSI"></asp:Label>
-    <br />
-
-    <%--bottoni--%>
-    <br />
+   <div>
+        <img src="../assets/img/lavoriBE.png" class="icona" />
+    </div>
+    <div class="containerBE">
+        <h4 class="titoliBE">I tuoi corsi</h4>
+        <table class="tablePopUp">
+            <tr>
+                <td class="btnGestisci">
     <asp:Button class="popupPreparaDomande" ID="btnPreparaDomande" runat="server" Text="Prepara domande" OnClick="btnPreparaDomande_Click" />
     <asp:Button ID="btnRisultatiTest" runat="server" Text="Risultati test" OnClick="btnRisultatiTest_Click" />
     <asp:Button class="popupPreparaTest" ID="popupPreparaTest" runat="server" Text="Crea test" />
     <asp:Button ID="btnChat" runat="server" Text="Chat del corso" OnClick="btnChat_Click" />
-    <asp:Button ID="btnStudenti" runat="server" Text="Studenti" OnClick="btnStudenti_Click"/>
-    <br />
-    <%--griglia corsi--%>
-    <asp:GridView ID="GridCorsi" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave"></asp:GridView>
+    </td>
+            </tr>
+            <tr>
+                <td>
+                    <%--griglia corsi--%>
+    <asp:GridView ID="GridCorsi" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave" AutoGenerateColumns="False">
+        <Columns>
+            <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
+            <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+            <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
+            <asp:BoundField DataField="Data_partenza" HeaderText="Data Partenza" />
+        </Columns>
+    </asp:GridView>
+     </td>
+            </tr>
+        </table>
+    </div>                 
 
 </asp:Content>

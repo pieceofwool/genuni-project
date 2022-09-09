@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,12 +16,21 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
         {
             COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
 
-            //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+            int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
 
-            int CHIAVE = 1;
+            //int CHIAVE = 1;
             dt2 = C.SelectAllDocente(CHIAVE); //uso selectone apposta
 
-            txtSkills.Text = dt2.Rows[0]["Skills"].ToString();
+            try
+            {
+                txtSkills.Text = dt2.Rows[0]["Skills"].ToString();
+            }
+
+            catch (Exception)
+            {
+                return;
+            }
+
 
         }
     }
@@ -38,21 +48,32 @@ public partial class PopUp_Profilo_ModificaComp : System.Web.UI.Page
 
         COMPETENZE.Competenze_WSSoapClient C = new COMPETENZE.Competenze_WSSoapClient();
 
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
 
 
-        int CHIAVE = 1;
+        //int CHIAVE = 1;
         dt2 = C.SelectAllDocente(CHIAVE);
-        DataRow dr2 = dt2.Rows[0];
-        byte[] arr2 = dr2.Field<byte[]>("Cv");
-        byte[] CV;
+        byte[] cv;
 
+        try //se non c'è nessun CV e ho errore assegno ad cv null con un cast in bytes
+        {
+            DataRow dr2 = dt2.Rows[0];
+            cv = dr2.Field<byte[]>("Cv");
+
+        }
+
+        catch (Exception)
+        {
+            cv = Encoding.ASCII.GetBytes("null");
+        }
+
+        byte[] CV;
         string tipoCv = FileUploadCV.PostedFile.ContentType;
 
         //se non ha file il fileupload tengo il vecchio curriculum letto dal database
         if (!FileUploadCV.HasFile)
         {
-            CV = arr2;
+            CV = cv;
         }
 
         else //altrimenti procedo con il salvataggio del nuovo

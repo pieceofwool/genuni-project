@@ -27,17 +27,20 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 
     protected void grigliaMateriale_SelectedIndexChanged(object sender, EventArgs e)
     {
-        //controllo sulla colonna materiale
-        //se + vuoto fare...
-        string link = grigliaMateriale.SelectedRow.Cells[1].Text.ToString();
-        Response.Redirect(link);
+        //controllo sulla colonna tipo
+        string tipo = grigliaMateriale.SelectedRow.Cells[2].Text;
+        //se LV o LF...
+        if (tipo == "LV" || tipo == "LF")
+        {
+            string link = grigliaMateriale.SelectedRow.Cells[3].Text.ToString();
+            Response.Redirect(link);
+        }
         //...questo
-        //altrimenti response ad un pop up 
-
-        //if per vedere se è un file pdf
-
-
-
-
+        //altrimenti response al gestore
+        else
+        {
+            string chiave = grigliaMateriale.SelectedDataKey[0].ToString();
+            Response.Redirect("GestoreDownload.ashx?chiave=" + chiave);
+        }
     }
 }

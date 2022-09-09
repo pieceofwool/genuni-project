@@ -73,8 +73,20 @@ public partial class BEDocenti_Default : System.Web.UI.Page
                 //chiamo un nuova datatable che contiene la select join con l'esterno per avere le sue informazioni
                 DataTable dt2 = C.SelectOneJoinEsterni(key);
 
+                if (dt2.Rows.Count == 0)
+                {
+                    //la join è fallita, evito di scrivere il messaggio di un esterno non più esistente
+                    return;
+                }
+
                 //recupero variabili
                 string date = dt2.Rows[0]["Data_Post"].ToString();
+                DateTime Data = DateTime.Parse(date);
+                string giorno = Data.ToString("d");
+                string ora = Data.ToString("t");
+                // string giorno = Data.Date.ToString().Substring(0, 10);
+                //string ora = Data.TimeOfDay.ToString();
+
                 string messaggio = dt2.Rows[0]["Contenuto"].ToString();
                 char tipo = char.Parse(dt2.Rows[0]["Tipo"].ToString());
                 string nome = dt2.Rows[0]["Nome"].ToString();
@@ -119,7 +131,8 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
                 litChat.Text += "<tr><td>" + IMG + "</td>";
                 litChat.Text += "<td><b> " + nome + " " + cognome + " </b><br /><small>(" + esterno + ")</small></td>";
-                litChat.Text += "<td><small> Il " + date.Substring(0, 10) + " <br /> alle" + date.Substring(10) + " </small></td>";
+                // litChat.Text += "<td><small> Il " + date.Substring(0, 10) + " <br /> alle" + date.Substring(10) + " </small></td>";
+                litChat.Text += "<td><small> Il " + giorno + " <br /> alle: " + ora + " </small></td>";
                 litChat.Text += "<td><b> " + messaggio + " </b></td></tr>";
 
 
@@ -136,8 +149,20 @@ public partial class BEDocenti_Default : System.Web.UI.Page
                 //chiamo un nuova datatable che contiene la select join con l'interno per avere le sue informazioni
                 DataTable dt2 = C.SelectOneJoinUtenti(key);
 
+                if (dt2.Rows.Count == 0)
+                {
+                    //la join è fallita, evito di scrivere il messaggio di un utente non più esistente
+                    return;
+                }
+
                 //recupero variabili
                 string date = dt2.Rows[0]["Data_Post"].ToString();
+                DateTime Data = DateTime.Parse(date);
+                string giorno = Data.ToString("d");
+                string ora = Data.ToString("t");
+               // string giorno = Data.Date.ToString().Substring(0, 10);
+               // string ora = Data.TimeOfDay.ToString();
+
                 string messaggio = dt2.Rows[0]["Contenuto"].ToString();
                 char tipo = char.Parse(dt2.Rows[0]["Tipo"].ToString());
                 string nome = dt2.Rows[0]["Nome"].ToString();
@@ -153,7 +178,8 @@ public partial class BEDocenti_Default : System.Web.UI.Page
 
                 litChat.Text += "<tr><td>" + IMG + "</td>";
                 litChat.Text += "<td><b> " + nome + " " + cognome + " </b><br /><small>(" + esterno + ")</small></td>";
-                litChat.Text += "<td><small> Il " + date.Substring(0, 10) + " <br /> alle" + date.Substring(10) + " </small></td>";
+               // litChat.Text += "<td><small> Il " + date.Substring(0, 10) + " <br /> alle" + date.Substring(10) + " </small></td>";
+                litChat.Text += "<td><small> Il " + giorno + " <br /> alle: " + ora + " </small></td>";
                 litChat.Text += "<td><b> " + messaggio + " </b></td></tr>";
             }
 
@@ -179,8 +205,8 @@ public partial class BEDocenti_Default : System.Web.UI.Page
         int codiceCorso = int.Parse(Request.QueryString["codicecorso"].ToString());
         //int codiceCorso = 1; //DEBUG, sostituire con Session
 
-        //int codiceEsterno = int.Parse(Session["CodiceAttore"].ToString());
-        int codiceEsterno = 2; //DEBUG, sostituire con Session
+        int codiceEsterno = int.Parse(Session["CodiceAttore"].ToString());
+        //int codiceEsterno = 2; //DEBUG, sostituire con Session
         string contenuto = txtRisposta.InnerText;
 
 

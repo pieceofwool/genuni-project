@@ -40,7 +40,7 @@
         <!-- ======= Header ======= -->
         <div id="header" class="fixed-top">
             <div class="container d-flex align-items-center">
-                <h1 class="logo me-auto"><a href="../Default.aspx">GENUNI</a></h1>
+                <h1 class="logo me-auto"><a href="../Default.aspx">GENUNI<sub style="color: #808080">Area Admin</sub></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -57,7 +57,7 @@
                             </ul>
                         </li>
                         <li><a href="../BEAdmin/GestioneTutor.aspx">Abilitazione tutor e contabili</a></li>
-                        <li><a href="../BEAdmin/GestioneReport.aspx">Grafici e report</a></li>
+                        <li><a href="../BEAdmin/GestioneReport.aspx">Report</a></li>
                         <li><a href="../Default.aspx">Esci</a></li>
                     </ul>
                 </nav>

@@ -11,9 +11,6 @@
             <s:element minOccurs="0" maxOccurs="1" name="TITOLO" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="INDICE" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="PREPARATO" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ACCETTATO" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DATA_RISPOSTA" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -30,8 +27,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="TITOLO" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="INDICE" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="PREPARATO" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ACCETTATO" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PREPARATO" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ACCETTATO" type="s:boolean" />
             <s:element minOccurs="0" maxOccurs="1" name="DATA_RISPOSTA" type="s:string" />
           </s:sequence>
         </s:complexType>

@@ -10,13 +10,16 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(!IsPostBack == true)
+        btnAssegnazioneDocenti.Enabled = false;
+        btnDefinizioneMateria.Enabled = false;
+        btnDefinisciCorso.Enabled = false;
+        if (!IsPostBack == true)
         {
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
 
         int COD_TUTOR =Convert.ToInt32(Session["CodiceAttore"]);
 
-        GridCorsi.DataSource = C.SelectForTutor(COD_TUTOR);
+        GridCorsi.DataSource = C.CorsiCreati(COD_TUTOR);
         GridCorsi.DataBind();
         }
     }
@@ -24,7 +27,10 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void GridCorsi_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Session["CHIAVE"] = GridCorsi.SelectedDataKey[0];
+        Session["ChiaveCorso"] = GridCorsi.SelectedDataKey[0];
+        btnAssegnazioneDocenti.Enabled = true;
+        btnDefinizioneMateria.Enabled=true;
+        btnDefinisciCorso.Enabled = true;
     }
 
     protected void btnAssegnazioneDocenti_Click(object sender, EventArgs e)
@@ -38,4 +44,9 @@ public partial class Default2 : System.Web.UI.Page
     }
 
 
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("../POPUP/preparazione_corso/definisciCorso.aspx");
+    }
 }
