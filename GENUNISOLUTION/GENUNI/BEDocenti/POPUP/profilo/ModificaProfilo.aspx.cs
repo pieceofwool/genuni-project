@@ -12,14 +12,6 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            //// Se non vi è nessun elemento selezionato impedisco il proseguimento
-            //if (string.IsNullOrEmpty(Session["CodiceAttore"].ToString()))
-            //{
-            //    ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Errore')", true);
-            //    return;
-            //}
-
-
 
             ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
             int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
@@ -39,8 +31,6 @@ public partial class PopUp_Profilo_ModificaProfilo : System.Web.UI.Page
             txtCitta.Text = dt.Rows[0]["Citta"].ToString();
             txtProvincia.Text = dt.Rows[0]["Provincia"].ToString();
             txtNazionalita.Text = dt.Rows[0]["Nazionalita"].ToString();
-
-
 
         }
     }

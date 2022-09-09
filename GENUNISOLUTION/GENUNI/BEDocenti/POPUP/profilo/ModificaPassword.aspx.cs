@@ -14,7 +14,7 @@ public partial class POPUP_profilo_ModificaPassword : System.Web.UI.Page
 
     }
 
-    // condizioni e logica di un modifica password
+    
 
 
 
@@ -49,6 +49,7 @@ public partial class POPUP_profilo_ModificaPassword : System.Web.UI.Page
         CRYPTA.Crypta_WSSoapClient CR = new CRYPTA.Crypta_WSSoapClient(); 
         string password = CR.PWD_CRYPTA(txtNuovaPassword.Text);
 
+        //se il login è valido allora la password è uguale a quella vecchia
         if (E.Login(user, password))
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Password uguale a quella vecchia, cambiala." + "')", true);

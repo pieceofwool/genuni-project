@@ -12,12 +12,16 @@ public partial class Default2 : System.Web.UI.Page
     {
         int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
         //int CHIAVE = 2;
-        int i = 0;
+
+        int i = 0;// uso i per accedere a una nuova riga a ogni ciclo
         MATERIE.Materie_WSSoapClient MA = new MATERIE.Materie_WSSoapClient();
+
+        //tabella con tutte le materie
         DataTable storico = new DataTable();
         storico = MA.SelectMaterieDocente(CHIAVE);
         foreach (DataRow riga in storico.Rows)
         {
+            //se la tabella è vuota
             if(storico.Rows.Count == 0)
             {
                 ScriptManager.RegisterClientScriptBlock(this, GetType(), "ERRORE", "alert('Nessuna materia presente')", true);
@@ -31,24 +35,30 @@ public partial class Default2 : System.Web.UI.Page
             string corso = storico.Rows[i][3].ToString();
             string data = storico.Rows[i][4].ToString().Substring(0, 10);
 
+            //se la materia è già stata accettata
             if (accettata)
             {
                 litStorico.Text += "<tr><td>" + materia + "</td><td>" + corso + "</td><td>" + data + "</td></tr>";
             }
+
+            //se la materia non è stata accettata
             else
             {
                 litDaAccettare.Text += "<tr><td>" + materia + "</td><td>" + corso + "</td><td>" + data + "</td>"
-                   + "<td><input id=\"btnAccetta"+chiave+"\" type=\"button\" value=\"Accetta\" onclick=\"Accetta("+chiave+")\"/></td></tr>";
+                   //+ "<td><input id=\"btnAccetta"+chiave+"\" type=\"button\" value=\"Accetta\" onclick=\"Accetta("+chiave+")\"/></td></tr>"
+                + "<td><a id=\"btnAccetta" + chiave + "\" class=\"popUpBtnBE\" href=\"#\" onclick=\"Accetta(" + chiave + ")\">Accetta</a></td></tr>";
             }
 
             i++;
         }
 
+        //recupero tutti i corsi in cui il docente ha almeno una materia accettata
         DataTable corsi = new DataTable();
         corsi = MA.SelectCorsiDocente(CHIAVE);
 
         foreach(DataRow riga in corsi.Rows)
         {
+            //se la tabella è vuota
             if (corsi.Rows.Count == 0)
             {
                 ScriptManager.RegisterClientScriptBlock(this, GetType(), "ERRORE", "alert('Nessun corso presente')", true);
