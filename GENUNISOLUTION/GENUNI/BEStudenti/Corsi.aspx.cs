@@ -48,6 +48,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 
     protected void grigliaMaterie_SelectedIndexChanged(object sender, EventArgs e)
     {
+        Session["Cod_Materia"] = grigliaMaterie.SelectedDataKey[0].ToString();
         Response.Redirect("Materie.aspx");
     }
 
