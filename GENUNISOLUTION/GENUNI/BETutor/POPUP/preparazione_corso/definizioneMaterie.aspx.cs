@@ -55,10 +55,10 @@ public partial class definizioneMaterie : System.Web.UI.Page
         gridMatCorso.DataBind();
     }
 
-    protected void CaricaCorsiCreati()
-    {
-        CaricaMateriePreparate();
-    }
+    //protected void CaricaCorsiCreati()
+    //{
+    //    CaricaMateriePreparate();
+    //}
 
     protected void btnAssegnaM_Click(object sender, EventArgs e)
     {
@@ -80,8 +80,8 @@ public partial class definizioneMaterie : System.Web.UI.Page
     //    Session["ChiaveCorso"] = gridCorsiCreati.SelectedDataKey[0].ToString();
     //}
 
-    //protected void btnAggiornaCorsi_Click(object sender, EventArgs e)
-    //{
-    //    CaricaCorsiCreati();
-    //}
+    protected void btnAggiornaCorsi_Click(object sender, EventArgs e)
+    {
+        CaricaMateriePreparate();
+    }
 }
