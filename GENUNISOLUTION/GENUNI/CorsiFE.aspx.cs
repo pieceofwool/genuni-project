@@ -30,8 +30,27 @@ public partial class Default2 : System.Web.UI.Page
             char status = char.Parse(dr.Field<string>("Status_Corsi"));
             int Codice = dr.Field<int>("Chiave");
             string Titolo = dr.Field<string>("Titolo").ToString();
-            byte[] arr = dr.Field<byte[]>("Avatar_Corso");
-            string tipo = dr.Field<string>("Tipo_Img").ToString();
+            byte[] arr;
+            string tipo;
+            string Src = "img/javascript.png";
+
+            try
+            {
+                arr = dr.Field<byte[]>("Avatar_Corso");
+                //tipo = dr.Field<string>("Tipo_Img").ToString();
+                tipo = dt.Rows[i]["Tipo_Img"].ToString();
+                if (arr != null)
+                {
+                    string base64String1 = Convert.ToBase64String(arr, 0, arr.Length);
+                    Src = "data:image/" + tipo + ";base64," + base64String1;
+                }
+            }
+
+            catch (Exception)
+            {
+               
+            }
+
 
             string Descrizione = "";
             string data = "";
@@ -67,18 +86,12 @@ public partial class Default2 : System.Web.UI.Page
             }
 
 
-            string Src;
+
 
             //variabili per modal per distinguere le differenze di ogni scheda
             i++;
 
-            if (arr != null)
-            {
-                string base64String1 = Convert.ToBase64String(arr, 0, arr.Length);
-                Src = "data:image/" + tipo + ";base64," + base64String1;
 
-            }
-            else { Src = "img/logo.png"; }
             //creo ogni scheda del corso
             litCorso.Text += "<div class=\"col - md - 6 col - lg - 4 wow bounceInUp\" data-wow-duration=\"1.4s\">";
             litCorso.Text += "<div style=\"width: fit-content\" class=\"box\">";

@@ -44,9 +44,9 @@ public partial class Default2 : System.Web.UI.Page
             //se la materia non è stata accettata
             else
             {
-                litDaAccettare.Text += "<tr><td>" + materia + "</td><td>" + corso + "</td><td>" + data + "</td>"
+                litDaAccettare.Text += "<tr style=\"height: 40px\"><td>" + materia + "</td><td>" + corso + "</td><td>" + data + "</td>"
                    //+ "<td><input id=\"btnAccetta"+chiave+"\" type=\"button\" value=\"Accetta\" onclick=\"Accetta("+chiave+")\"/></td></tr>"
-                + "<td><a id=\"btnAccetta" + chiave + "\" class=\"popUpBtnBE\" href=\"#\" onclick=\"Accetta(" + chiave + ")\">Accetta</a></td></tr>";
+                + "<td><a style=\"height:10px\" id=\"btnAccetta" + chiave + "\" class=\"popUpBtnBE\" href=\"#\" onclick=\"Accetta(" + chiave + ")\">Accetta</a></td></tr>";
             }
 
             i++;

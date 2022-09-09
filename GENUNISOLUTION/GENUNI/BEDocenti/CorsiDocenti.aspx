@@ -32,6 +32,21 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        h4 {
+            background-color: #5fcf80;
+            width: 920px;
+        }
+
+            h4::after {
+            }
+
+            h4:hover {
+                color: white;
+                width: 920px;
+            }
+     
+
     </style>
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </asp:Content>
@@ -40,9 +55,9 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <h4 class="titoliBE">Storico materie</h4>
+        <h4 style="background-color: #5fcf80; width: 920px;" class="titoliBE">Storico materie</h4>
         <%--corpo scrollabile--%>
-        <div class="MaterieScroll">
+        <div class="MaterieScroll" style="margin-top: -14px">
             <table class="tabella">
                 <tr>
                     <td style="width: 33.3%"></td>
@@ -60,9 +75,9 @@
     </div>
 
     <%--footer--%>
-    <table style="border-collapse: collapse; border: 1px solid lightgrey; width: 604px; font-size: 19px; margin-top: 8px; text-align: center; margin-left: auto; margin-right: auto; margin-top: -24px;">
+    <table style="border-collapse: collapse; border: 1px solid lightgrey; width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
         <tr>
-            <td><small>Vengono mostrate tutte le materie accettate</small></td>
+            <td><small><%--Vengono mostrate tutte le materie accettate--%></small></td>
             <td style="text-align: right">
                 <asp:Button ID="BtnIndietro3" CssClass="btnBE" runat="server" Text="Esci" OnClick="BtnIndietro_Click" />
             </td>
@@ -73,11 +88,11 @@
     <%--tabelle materie da accettare--%>
 
     <%-- header--%>
-    <div class="containerBE">
-        <h4 class="titoliBE">Materie da accettare</h4>
+    <div class="containerBE" style="margin-top:-40px;">
+        <h4 style="background-color: #5fcf80; width: 920px;" class="titoliBE">Materie da accettare</h4>
 
         <%--corpo scrollabile--%>
-        <div class="MaterieScroll">
+        <div class="MaterieScroll" style="margin-top: -14px">
             <table class="tabella">
                 <tr>
                     <td style="width: 30%"></td>
@@ -97,9 +112,9 @@
     </div>
 
     <%--footer--%>
-    <table style="border-collapse: collapse; border: 1px solid lightgrey; width: 604px; font-size: 19px; margin-top: 8px; text-align: center; margin-left: auto; margin-right: auto; margin-top: -24px;">
+    <table style="border-collapse: collapse; border: 1px solid lightgrey; width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
         <tr>
-            <td><small>Vengono mostrate tutte le materie non ancora accettate</small></td>
+            <td><small><%--Vengono mostrate tutte le materie non ancora accettate--%></small></td>
             <td style="text-align: right">
                 <asp:Button ID="BtnIndietro2" runat="server" CssClass="btnBE" Text="Esci" OnClick="BtnIndietro_Click" />
             </td>
@@ -110,10 +125,10 @@
     <%--Corsi Docente--%>
 
     <%-- header--%>
-    <div class="containerBE">
-        <h4 class="titoliBE">I miei corsi</h4>
+    <div class="containerBE" style="margin-top:-40px;">
+        <h4 style="background-color: #5fcf80; width: 920px;" class="titoliBE">I miei corsi</h4>
         <%--corpo scrollabile--%>
-        <div class="MaterieScroll">
+        <div class="MaterieScroll" style="margin-top: -14px">
             <table class="tabella">
                 <tr>
                     <td style="width: 50%"></td>
@@ -129,9 +144,9 @@
     </div>
 
     <%--footer--%>
-    <table style="border-collapse: collapse; border: 1px solid lightgrey; width: 604px; font-size: 19px; margin-top: 8px; text-align: center; margin-left: auto; margin-right: auto; margin-top: -24px;">
+    <table style="border-collapse: collapse; border: 1px solid lightgrey; width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
         <tr>
-            <td><small>Vengono mostrati tutti i corsi in cui si hanno materie accettate</small></td>
+            <td><small><%--Vengono mostrati tutti i corsi in cui si hanno materie accettate--%></small></td>
             <td style="text-align: right">
                 <asp:Button ID="BtnIndietro" runat="server" CssClass="btnBE" Text="Esci" OnClick="BtnIndietro_Click" />
             </td>
