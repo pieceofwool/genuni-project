@@ -12,15 +12,15 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         CaricaMateriale();
     }
 
-    protected void btnTest_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("Test_Studenti.aspx");
-    }
+    //protected void btnTest_Click(object sender, EventArgs e)
+    //{
+    //    Response.Redirect("Test_Studenti.aspx");
+    //}
 
     protected void CaricaMateriale()
     {
         PROGRAMMI.Programmi_WSSoapClient p = new PROGRAMMI.Programmi_WSSoapClient();
-        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        int CHIAVE = int.Parse(Session["Cod_Materia"].ToString());
         grigliaMateriale.DataSource = p.ProgrammiInfoMateria(CHIAVE);
         grigliaMateriale.DataBind();
     }
