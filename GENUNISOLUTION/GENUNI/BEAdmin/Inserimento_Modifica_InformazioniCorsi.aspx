@@ -17,11 +17,11 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Inserimento Dati',  //titolo dell'oggetto
+                    title: 'Inserimento dati corso',  //titolo dell'oggetto
                     resizable: false,
                     dialogClass: 'dialog',
-                    height: 500,
-                    width: 600,
+                    height: 400,
+                    width: 400,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
                 });
@@ -40,10 +40,10 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Modifica Dati',  //titolo dell'oggetto
+                    title: 'Modifica dati corso',  //titolo dell'oggetto
                     dialogClass: 'dialog',
-                    resizable: false,  //blocca il ridimensionamento
-                    height: 500,
+                    resizable: true,  //blocca il ridimensionamento
+                    height: 400,
                     width: 600,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
@@ -63,10 +63,10 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Modifica Dati',  //titolo dell'oggetto
+                    title: 'Visualizza informazioni',  //titolo dell'oggetto
                     dialogClass: 'dialog',
                     resizable: false,  //blocca il ridimensionamento
-                    height: 500,
+                    height: 400,
                     width: 600,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
@@ -116,8 +116,9 @@
                                 <controlstyle cssclass="btnBE" />
                             </asp:CommandField>
                         </columns>
-                        <headerstyle />
-                        <headerstyle cssclass="headergrid" />
+                        <HeaderStyle />
+                        <HeaderStyle CssClass="headergrid" />
+                        <SelectedRowStyle CssClass="selezionegrid" />
                     </asp:GridView>
                 </td>
             </tr>

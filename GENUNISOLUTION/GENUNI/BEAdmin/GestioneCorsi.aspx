@@ -20,8 +20,8 @@
                     title: 'Inserimento Dati',  //titolo dell'oggetto
                     resizable: false,
                     dialogClass: 'dialog',
-                    height: 500,
-                    width: 600,
+                    height: 400,
+                    width: 400,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
                 });
@@ -188,6 +188,7 @@
                         </Columns>
                         <HeaderStyle />
                         <HeaderStyle CssClass="headergrid" />
+                        <SelectedRowStyle CssClass="selezionegrid" />
                     </asp:GridView>
                 </td>
             </tr>
@@ -216,8 +217,9 @@
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
                         </Columns>
-                         <HeaderStyle />
+                        <HeaderStyle />
                         <HeaderStyle CssClass="headergrid" />
+                        <SelectedRowStyle CssClass="selezionegrid" />
                     </asp:GridView>
                 </td>
             </tr>
@@ -242,12 +244,13 @@
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                             <asp:BoundField DataField="Nome" HeaderText="Nome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
                             <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor" ConvertEmptyStringToNull="False" NullDisplayText="Non assegnato" />
-                               <asp:CommandField ButtonType="Button" ShowSelectButton="true">
+                            <asp:CommandField ButtonType="Button" ShowSelectButton="true">
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
                         </Columns>
-                         <HeaderStyle />
+                        <HeaderStyle />
                         <HeaderStyle CssClass="headergrid" />
+                        <SelectedRowStyle CssClass="selezionegrid" />
                     </asp:GridView>
                 </td>
             </tr>

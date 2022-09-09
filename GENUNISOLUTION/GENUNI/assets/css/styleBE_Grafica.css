@@ -44,6 +44,11 @@ h1 {
     color: rgba(76, 43, 148,0.5);
 }
 
+.ddl {
+    border-radius: 9px;
+    border: 1px solid #9ceeb78b;
+    width: 99px;
+}
 .btnHeader {
     background-color: #ffffff;
     color: black;
@@ -60,11 +65,41 @@ h1 {
     float: right;
 }
 
+.grigliaStudentiContabilità {
+    border: 1px solid lightgrey;
+    width: 70%;
+    font-size: 12px;
+    margin-top: 8px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.h5Sottotitoli {
+    text-align: center;
+}
+
 #btnGestione {
     float: left;
 }
 
+.lblTest {
+    font-weight: 600;
+    text-align: center;
+    font-style: italic;
+}
 
+.tdTest {
+    padding-bottom: 15px;
+}
+
+#lblDataInizio {
+    font-size: 14px;
+}
+
+#lblDataFine {
+    font-size: 14px;
+}
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -84,8 +119,8 @@ h1 {
 
 #footer {
     text-align: center;
-    color: rgba(255,255,255,.2);
-    height: 70px;
+    color: white;
+    height: 0;
     margin-top: 290px;
     display: block;
 }
@@ -151,6 +186,8 @@ a.popUpBtnBE {
     position: relative;
     text-transform: uppercase;
     width: 500px;
+    font-size: 26px;
+    margin-bottom: 14px;
 }
 
     .titoliBE::after {
@@ -220,10 +257,27 @@ a.popUpBtnBE {
         color: black;
     }
 
+.txtDate {
+    margin-top: 11px;
+    background: white;
+    border: 1px solid white;
+    border-radius: 0px;
+    text-align: center;
+    width: 179px;
+}
+
+.selezionegrid {
+    background-color: #9ceeb78c;
+}
+
 .mr-sm-2 txtSearch {
     border: 1px solid;
 }
 
+.box-content {
+    height: auto;
+    overflow-y: scroll;
+}
 
 .ui-widget-content {
     height: 100%;
@@ -258,7 +312,7 @@ a.popUpBtnBE {
 
 .ui-widget-header {
     border: 1px solid #aaaaaa /*{borderColorHeader}*/;
-    background: #79ef9c;
+    background: #9ceeb78c;
     color: black;
     font-weight: bold;
 }

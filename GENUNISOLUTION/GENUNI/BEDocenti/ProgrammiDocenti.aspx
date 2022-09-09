@@ -88,16 +88,19 @@
     <%-- header--%>
     <table style="width: 1220px; text-align: center; margin-top: 100px;">
         <tr>
-            <td>
+            <td style="text-align: left">
+                <asp:Button ID="BtnAggiorna" runat="server" Text="Aggiorna" OnClick="BtnAggiorna_Click" /></td>
+            <td style="text-align: left">
                 <asp:Button class="popupInserisciMateriale" ID="btnInserisciMateriale" runat="server" Text="Inserisci materiale" />
             </td>
-            <td>
-                <asp:Button class="popupModificaMateriale" ID="btnModificaMateriale" runat="server" Visible="false" Text="Modifica materiale " /></td>
+
             <td><b runat="server" id="InserireCorso"></b></td>
-            <td>
+            <td style="text-align: right">
+                <asp:Button class="popupModificaMateriale" ID="btnModificaMateriale" runat="server" Visible="false" Text="Modifica materiale " /></td>
+            <td style="text-align: right">
                 <asp:Button ID="BtnElimina" runat="server" Text="Elimina" Visible="false" OnClick="BtnElimina_Click" /></td>
-            <td>
-                <asp:Button ID="BtnAggiorna" runat="server" Text="Aggiorna" OnClick="BtnAggiorna_Click" /></td>
+
+
 
         </tr>
     </table>

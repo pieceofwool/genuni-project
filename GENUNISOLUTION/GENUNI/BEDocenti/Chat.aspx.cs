@@ -73,6 +73,13 @@ public partial class BEDocenti_Default : System.Web.UI.Page
                 //chiamo un nuova datatable che contiene la select join con l'esterno per avere le sue informazioni
                 DataTable dt2 = C.SelectOneJoinEsterni(key);
 
+                if (dt2.Rows.Count == 0)
+                {
+                    // metto messaggio di riempimento nella lit se non esistono messaggi per quel corso
+                    litChat.Text = "Questa chat non ha ancora nessun messaggio.";
+                    return;
+                }
+
                 //recupero variabili
                 string date = dt2.Rows[0]["Data_Post"].ToString();
                 string messaggio = dt2.Rows[0]["Contenuto"].ToString();
@@ -136,6 +143,13 @@ public partial class BEDocenti_Default : System.Web.UI.Page
                 //chiamo un nuova datatable che contiene la select join con l'interno per avere le sue informazioni
                 DataTable dt2 = C.SelectOneJoinUtenti(key);
 
+                if (dt2.Rows.Count == 0)
+                {
+                    // metto messaggio di riempimento nella lit se non esistono messaggi per quel corso
+                    litChat.Text = "Questa chat non ha ancora nessun messaggio.";
+                    return;
+                }
+
                 //recupero variabili
                 string date = dt2.Rows[0]["Data_Post"].ToString();
                 string messaggio = dt2.Rows[0]["Contenuto"].ToString();
@@ -179,8 +193,8 @@ public partial class BEDocenti_Default : System.Web.UI.Page
         int codiceCorso = int.Parse(Request.QueryString["codicecorso"].ToString());
         //int codiceCorso = 1; //DEBUG, sostituire con Session
 
-        //int codiceEsterno = int.Parse(Session["CodiceAttore"].ToString());
-        int codiceEsterno = 2; //DEBUG, sostituire con Session
+        int codiceEsterno = int.Parse(Session["CodiceAttore"].ToString());
+        //int codiceEsterno = 2; //DEBUG, sostituire con Session
         string contenuto = txtRisposta.InnerText;
 
 

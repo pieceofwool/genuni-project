@@ -4,19 +4,20 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-eq
-        v="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="../../assets/css/styleBE_Grafica.css" rel="stylesheet" />
+    <link href="../../assets/css/StylePopUp.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="zoom:100%;">
         <div id="content" style="width: 100%;">
             <table>
                 <tr>
                     <td colspan="2">
-                        <asp:Label ID="lbl" CssClass="lbl" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lbl" CssClass="lblP" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblAvatar" runat="server" CssClass="lblP" Text="Avatar corso:"></asp:Label>
                     </td>
+
                 </tr>
                 <%--<tr>
                     <td>
@@ -25,52 +26,37 @@
                 </tr>--%>
                 <tr>
                     <td>
-                        <asp:Label ID="lblAvatar" runat="server" Text="Avatar corso:"></asp:Label>
-                    </td>
-                    <td>
                         <asp:FileUpload ID="fupAvatar" runat="server" accept=".png,.jpg,.jpeg" />
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <asp:Label ID="lblTitolo" runat="server" Text="Titolo:"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="txtTitolo" CssClass="txt" runat="server" ></asp:TextBox><br />
+                        <asp:Label ID="lblTitolo" CssClass="lblP" runat="server" Text="Titolo:"></asp:Label>
+                        <asp:TextBox ID="txtTitolo" CssClass="txt" runat="server"></asp:TextBox><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblTipo" runat="server" Text="Tipo:"></asp:Label>
-                    </td>
-                    <td>
-
-                        <asp:TextBox ID="txtTipo" CssClass="txt" runat="server" ></asp:TextBox><br />
+                        <asp:Label ID="lblTipo" CssClass="lblP" runat="server" Text="Tipo:"></asp:Label>
+                        <asp:TextBox ID="txtTipo" CssClass="txt" runat="server"></asp:TextBox><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblDescrizione" runat="server" Text="Descrizione:"></asp:Label>
-                    </td>
-                    <td>
-
-                        <asp:TextBox ID="txtDescrizione" CssClass="txt" runat="server" ></asp:TextBox><br />
+                        <asp:Label ID="lblDescrizione" CssClass="lblP" runat="server" Text="Descrizione:"></asp:Label>
+                        <asp:TextBox ID="txtDescrizione" CssClass="txt" runat="server"></asp:TextBox><br />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblDataPartenza" runat="server" Text="Data partenza:"></asp:Label>
-                    </td>
-                    <td>
-
+                        <asp:Label ID="lblDataPartenza" CssClass="lblP" runat="server" Text="Data partenza:"></asp:Label>
                         <asp:TextBox ID="txtDataPartenza" CssClass="txt" runat="server" TextMode="Date"></asp:TextBox><br />
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-
                         <asp:Button ID="btnInserisci" CssClass="btnBE" runat="server" Text="Inserisci" OnClick="btnInserisci_Click" />
                     </td>
                 </tr>

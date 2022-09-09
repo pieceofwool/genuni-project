@@ -1,15 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEAdmin.master" AutoEventWireup="true" CodeFile="GestioneReport.aspx.cs" Inherits="Default3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-
-
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
     <link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
-
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div>
@@ -46,42 +42,13 @@
                     <span><b>Totale ricavi:</b></span>
                     <asp:Label ID="lblTotStud" runat="server" CssClass="lbl" Text=""></asp:Label>
                 </td>
-                <td>
+                                <td>
                     <span><b>Totale utili: </b></span>
                     <asp:Label ID="lblUtili" runat="server" CssClass="lbl" Text=""></asp:Label>
                 </td>
             </tr>
         </table>
-    </div>
-
-     <%--   <div id="utili">
-            <h3 class="titoliBE">Utili</h3>
-            <table>
-                <tr>
-                    <td>
-            <span><b>Totale utili: </b></span>
-            <asp:Label ID="lblUtili" runat="server" CssClass="lbl" Text=""></asp:Label>
-
-                    </td>
-                    <td>
-            <span><b>Totale ricavi:</b></span>
-            <asp:Label ID="Label1" runat="server" CssClass="lbl" Text=""></asp:Label>
-
-
-                    </td>
-                    <td>
-            <span><b>Totale spese:</b></span>
-            <asp:Label ID="Label2" runat="server" CssClass="lbl" Text=""></asp:Label>
-
-
-                    </td>
-                </tr>
-            </table>--%>
-
-            <%--AREA MODIFICHE--%>
-            <%--AREA MODIFICHE--%>
-
-    
+           </div>
 
         <%--AREA RICAVI--%>
         <div id="studenti" class="containerBE">
@@ -142,6 +109,7 @@
         <%--            <span><b>Totale utili: </b></span>--%>
         <%--            <asp:Label ID="lblUtili" runat="server" CssClass="lblReport" Text=""></asp:Label>--%>
         <%--   </div>--%>
+
     </div>
 </asp:Content>
 

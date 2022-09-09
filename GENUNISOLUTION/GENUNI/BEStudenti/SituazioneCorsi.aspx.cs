@@ -15,14 +15,14 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 
     protected void grigliaCorsiAcquistati_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Response.Redirect("Corsi.aspx");
         Session["CHIAVE"] = grigliaCorsiAcquistati.SelectedDataKey[0];
+        Response.Redirect("Corsi.aspx");
     }
 
     protected void grigliaCorsiDisponibili_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Response.Redirect("AcquistoCorsi.aspx");
         Session["CHIAVE"] = grigliaCorsiDisponibili.SelectedDataKey[0];
+        Response.Redirect("AcquistoCorsi.aspx");
     }
 
     protected void CaricaCorsiAcquistati()
@@ -43,11 +43,9 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     }
 
 
-
-
-    protected void grigliaCorsiAcquistati_RowDataBound(object sender, GridViewRowEventArgs e)
-    {
-        e.Row.Cells[4].Visible = false;
-        e.Row.Cells[5].Visible = false;
-    }
+    //protected void grigliaCorsiAcquistati_RowDataBound(object sender, GridViewRowEventArgs e)
+    //{
+    //    e.Row.Cells[4].Visible = false;
+    //    e.Row.Cells[5].Visible = false;
+    //}
 }

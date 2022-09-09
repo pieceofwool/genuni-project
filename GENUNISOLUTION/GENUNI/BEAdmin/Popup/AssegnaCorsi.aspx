@@ -6,8 +6,8 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="../../assets/css/styleBE_Grafica.css" rel="stylesheet" />
     <script src="../../assets/js/JS.js"></script>
+    <link href="../../assets/css/StylePopUp.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -18,10 +18,8 @@
                         <asp:DropDownList ID="ddlTutor" tooltip="Tutor" runat="server"></asp:DropDownList>
                     </td>
                 </tr>
-
                 <tr>
                     <td>
-
                         <asp:Button ID="btnAssegna" CssClass="btnBE" runat="server" Text="Assegna" OnClick="btnAssegna_Click" />
                     </td>
                 </tr>

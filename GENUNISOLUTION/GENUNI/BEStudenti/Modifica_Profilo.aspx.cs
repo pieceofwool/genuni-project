@@ -12,7 +12,7 @@ public partial class Modifica_Profilo : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            if (Session["CHIAVE"] == null)
+            if (Session["CodiceAttore"] == null)
             {
                 lblRes.Text = "ERRORE, selezionare una voce";
                 tabella.Visible = false;
@@ -20,7 +20,7 @@ public partial class Modifica_Profilo : System.Web.UI.Page
                 return;
             }
            
-            int cod = int.Parse(Session["CHIAVE"].ToString());
+            int cod = int.Parse(Session["CodiceAttore"].ToString());
             ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
             DataRow sel = E.SelectOne_Profilo_Studenti(cod).Rows[0];
             
@@ -36,7 +36,7 @@ public partial class Modifica_Profilo : System.Web.UI.Page
     protected void btnSalva_Click(object sender, EventArgs e)
     {
         
-        int Chiave= int.Parse(Session["CHIAVE"].ToString());
+        int Chiave= int.Parse(Session["CodiceAttore"].ToString());
         string Nome = txtNome.Text.Trim();
         string Cognome = txtCognome.Text.Trim();
         string Indirizzo = txtIndirizzo.Text.Trim();
@@ -44,7 +44,7 @@ public partial class Modifica_Profilo : System.Web.UI.Page
         string Provincia = txtProvincia.Text.Trim();
         string Nazionalita = txtNazionalita.Text.Trim();
         // Se non vi è nessun elemento selezionato impedisco il proseguimento
-        if (Session["CHIAVE"] == null)
+        if (Session["CodiceAttore"] == null)
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Seleziona una riga per poterla modificare')", true);
             return;
@@ -63,26 +63,5 @@ public partial class Modifica_Profilo : System.Web.UI.Page
 
         lblRes.Text="Info Modificato";
     }
-    protected void btnSalvaPass_Click(object sender, EventArgs e)
-    {
-        CRYPTA.Crypta_WSSoapClient C = new CRYPTA.Crypta_WSSoapClient();
-        //dichiaro le variabili
-        int Chiave = 1;
-        string User = txtUser.Text.Trim();
-        string plaintext = txtPassword.Text.Trim();
-        string pwd = C.PWD_CRYPTA(plaintext); // E quì vengono cryptate
-
-        // Controlli formali
-        if (string.IsNullOrEmpty(txtUser.Text.Trim()) || string.IsNullOrEmpty(txtPassword.Text.Trim()))
-        {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "Dati non validi", "alert('Compilare tutti i campi')", true);
-            return;
-        }
-
-        //modifico la Password
-        ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
-        
-        E.UpdatePassword_Studenti(Chiave, User, pwd);
-        lbl1.Text="User e Password Modificati!";
-    }
+    
 }

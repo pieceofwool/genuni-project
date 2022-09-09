@@ -90,7 +90,7 @@ public class Domande_WS : System.Web.Services.WebService
     public DataTable DomandeSelectAllTest(int COD_TEST)
     {
         DOMANDE D = new DOMANDE();
-        D.CHIAVE = COD_TEST;
+        D.COD_TEST = COD_TEST;
         DataTable dt = D.DomandeSelectAllTest();
         dt.TableName = "Domande";
         return dt;
