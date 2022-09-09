@@ -207,10 +207,10 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="img/javascript.png" alt="Javascript" width="1100" height="500">
+                            <img src="img/ristouni5.png" alt="Javascript" width="1100" height="500">
                             <div class="carousel-caption" style="left: 13%; bottom: 17px;">
                                 <a class="linkCorsi" href="CorsiFE.aspx">
-                                    <h3>Corso Javascript</h3>
+                                    <h3>Corso di Cucina Italiana tradizionale</h3>
                                     <p>Clicca qui per saperne di pi&#249;</p>
                                 </a>
                             </div>

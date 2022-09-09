@@ -28,6 +28,7 @@ public partial class Default2 : System.Web.UI.Page
 
         PROGRAMMI.Programmi_WSSoapClient P = new PROGRAMMI.Programmi_WSSoapClient();
 
+        //riempo la griglia
         grigliaProgrammi.DataSource = P.SelectProgrammiMateria(codicemateria);
         grigliaProgrammi.DataBind();
     }
@@ -49,6 +50,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void grigliaProgrammi_SelectedIndexChanged(object sender, EventArgs e)
     {
+        //salvo il datakey chiave e rendo visibili modifica ed elimina
         Session["CHIAVE"] = int.Parse(grigliaProgrammi.SelectedDataKey[0].ToString());
         btnModificaMateriale.Visible = true;
         BtnElimina.Visible = true;
@@ -56,6 +58,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void BtnIndietro_Click(object sender, EventArgs e)
     {
+        //torno indietro ma passo i valori nella query string, per non perdere informazioni
         int codice = int.Parse(Session["CodiceCorso"].ToString());
         string corso = Request.QueryString["corso"].ToString();
         Response.Redirect("MaterieDocenti.aspx?codice=" + codice + "&corso=" + corso);

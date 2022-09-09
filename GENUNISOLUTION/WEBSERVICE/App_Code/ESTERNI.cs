@@ -164,7 +164,7 @@ public class ESTERNI
         SqlCommand cmd = new SqlCommand();
 
         cmd.CommandText = "ESTERNI_UPDATE_PWD";
-        cmd.Parameters.AddWithValue("@USR", USR);
+        cmd.Parameters.AddWithValue("@Chiave", CHIAVE);
         cmd.Parameters.AddWithValue("@PWD", PWD);
 
         c.EseguiCmd(cmd);
@@ -385,7 +385,6 @@ public class ESTERNI
 
         cmd.CommandText = "ESTERNI_UPDATE_PWD_STUDENTI";
         cmd.Parameters.AddWithValue("@CHIAVE", CHIAVE);
-        cmd.Parameters.AddWithValue("@USR", USR);
         cmd.Parameters.AddWithValue("@PWD", PWD);
 
         c.EseguiCmd(cmd);

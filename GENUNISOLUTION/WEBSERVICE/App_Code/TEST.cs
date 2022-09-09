@@ -98,7 +98,17 @@ public class TEST
     {
         CONNESSIONE c = new CONNESSIONE();
         SqlCommand cmd = new SqlCommand();
-        cmd.CommandText = "TEST_SELECT_SOGLIA ";
+        cmd.CommandText = "TEST_SELECT_SOGLIA";
+        cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
+
+        return c.EseguiSelect(cmd);
+    }
+    
+    public DataTable SelectOneByCorso()
+    {
+        CONNESSIONE c = new CONNESSIONE();
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "TEST_SELECTONEBYCORSO";
         cmd.Parameters.AddWithValue("@Cod_Corso", COD_CORSO);
 
         return c.EseguiSelect(cmd);

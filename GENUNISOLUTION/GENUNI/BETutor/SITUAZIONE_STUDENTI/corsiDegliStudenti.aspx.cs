@@ -14,9 +14,9 @@ public partial class corsiDegliStudenti : System.Web.UI.Page
 
     public void VisualizzaCorso()
     {
-        int COD_STUDENTE = Convert.ToInt32(Session["COD_TUTOR"]);
-        CLASSI.Classi_WSSoapClient C = new CLASSI.Classi_WSSoapClient();
-        grvCorsiStudenti.DataSource = C.SelectAllStudente(COD_STUDENTE);
+        int COD_STUDENTE = Convert.ToInt32(Session["COD_STUDENTE"]);
+        ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
+        grvCorsiStudenti.DataSource = E.CorsiFrequentati(COD_STUDENTE);
 
         DataBind();
     }

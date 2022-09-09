@@ -50,8 +50,6 @@
         </table>
     </div>
 
-    <div class="containerBE" style="margin-top: -18px;">
-        <h4 class="titoliBE">Spese docenti</h4>
         <table class="tablePopUp">
             <tr>
                 <td>
@@ -81,7 +79,8 @@
                 </td>
             </tr>
         </table>
-    </div>
+    
+    <br />
 
     <div class="containerBE" style="margin-top: -54px;">
         <h4 class="titoliBE">Ricavo studenti</h4>
@@ -106,18 +105,10 @@
                             <SelectedRowStyle CssClass="selezionegrid" />
                         </asp:GridView>
                     </div>
-
                 </td>
             </tr>
         </table>
     </div>
-    <%--<div class="containerBE" style="margin-top: -54px;">
-            <h4 class="titoliBE">Utili</h4>
-            <table class="tablePopUp">
-                <tr>
-                    <td></td>
-                </tr>
-            </table>--%>
-    <%--  </div>--%>
+
 </asp:Content>
 
