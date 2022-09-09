@@ -41,7 +41,7 @@
 
                 dialog.dialog({
                     modal: true,
-                    title: 'Visualizza',
+                    title: 'Quotazione',
                     resizable: false,
                     with: '400px',
                     show: {
@@ -66,7 +66,7 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <h4 class="titoliBE">Valutazione</h4>
+        <h4 class="titoliBE">Quotazione</h4>
         <table class="tablePopUp">
             <tr>
                 <td class="btnGestisci">
