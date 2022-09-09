@@ -23,7 +23,9 @@ public partial class Default2 : System.Web.UI.Page
             int COD_TUTOR = Convert.ToInt32(Session["CodiceAttore"]);
             GridCorsi.DataSource = C.SelectForTutor(COD_TUTOR);
             GridCorsi.DataBind();
+
         }
+        
     }
 
     protected void grvCorsi_SelectedIndexChanged(object sender, EventArgs e)

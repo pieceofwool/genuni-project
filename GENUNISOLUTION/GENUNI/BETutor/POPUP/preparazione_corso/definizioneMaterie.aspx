@@ -38,10 +38,18 @@
        <%-- <hr />
         <div>--%>
             <%--TABELLA DEI CORSI CREATI DAL TUTOR CHE HA FATTO ACCESSO--%>
+<<<<<<< HEAD
+            <asp:Label ID="lblCorsiCreati" runat="server" Text="Corsi creati:"></asp:Label>
+            <asp:GridView ID="gridCorsiCreati" runat="server" OnSelectedIndexChanged="gridCorsiCreati_SelectedIndexChanged" DataKeyNames="Chiave" AutoGenerateColumns="False">
+=======
             <%--<asp:Label ID="lblCorsiCreati" runat="server" Text="Corsi creati:"></asp:Label>
             <asp:GridView ID="gridCorsiCreati" runat="server" OnSelectedIndexChanged="gridCorsiCreati_SelectedIndexChanged" DataKeyNames="Chiave">
+>>>>>>> development
                 <Columns>
                     <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Seleziona" ShowHeader="True" Text="Seleziona" />
+                    <asp:BoundField DataField="Corso" HeaderText="Corso" />
+                    <asp:BoundField DataField="Titolo" HeaderText="Materia" />
+                    <asp:BoundField DataField="Docente" HeaderText="Docente" />
                 </Columns>
             </asp:GridView>
             <asp:Button ID="btnAssegnaM" runat="server" Text="Marca corso come 'Materie Assegnate'" OnClick="btnAssegnaM_Click" /><br />--%>

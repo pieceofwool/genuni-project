@@ -74,7 +74,17 @@
     </p>
 
     <p>
-        <asp:GridView ID="GridCorsi" runat="server" OnSelectedIndexChanged="GridCorsi_SelectedIndexChanged" DataKeyNames="CHIAVE" AutoGenerateSelectButton="True">
+        <asp:GridView ID="GridCorsi" runat="server" OnSelectedIndexChanged="GridCorsi_SelectedIndexChanged" DataKeyNames="CHIAVE, Cod_Utente" AutoGenerateSelectButton="True" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
+                <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+                <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
+                <asp:BoundField DataField="Status" HeaderText="Status" />
+                <asp:BoundField DataField="Data_Partenza" HeaderText="Data Partenza" />
+                <asp:BoundField DataField="Costo" HeaderText="Costo" />
+                <asp:ImageField DataAlternateTextField="Avatar_Corso" DataImageUrlField="Avatar_Corso" DataImageUrlFormatString="Tipo_Img" HeaderText="Avatar">
+                </asp:ImageField>
+            </Columns>
         </asp:GridView>
     </p>
 </asp:Content>
