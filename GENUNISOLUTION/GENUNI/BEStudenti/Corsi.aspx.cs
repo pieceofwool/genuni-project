@@ -13,26 +13,37 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         caricaGriglia();
+        int Cod_Corso = int.Parse(Session["Chiave"].ToString());
+        CORSI.Corsi_WSSoapClient C=new CORSI.Corsi_WSSoapClient();
+        DataTable NomeCorso = new DataTable();
+        NomeCorso=C.SelectOne(Cod_Corso);
+        lblTitoloCorso.Text = NomeCorso.Rows[0]["Titolo"].ToString();
+        TEST.Test_WSSoapClient T = new TEST.Test_WSSoapClient();
+        DataTable DTCodTest = new DataTable();
+        DTCodTest=T.SelectOneByCorso(Cod_Corso);
+        int Cod_Test = int.Parse(DTCodTest.Rows[0]["Chiave"].ToString());
 
-        //int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
 
-        ////trasformo una datatable in un intero
-        //TEST.Test_WSSoapClient t = new TEST.Test_WSSoapClient();
-        //DataTable dt = t.SelectSoglia(CHIAVE);
-        ////int soglia = int.Parse(dt.Rows[0]["Soglia"].ToString());
 
-        //CLASSI.Classi_WSSoapClient c = new CLASSI.Classi_WSSoapClient();
-        //DataTable da = c.Select_Punteggio(CHIAVE);
-        //int risultato = int.Parse(da.Rows[0]["Punteggio"].ToString());
+        //trasformo una datatable in un intero
+        DataTable dt = T.SelectSoglia(Cod_Corso);
+        int soglia = int.Parse(dt.Rows[0]["Soglia"].ToString());
 
-        //if (risultato >= soglia)
-        //{
-        //    attestato.Visible = true;
-        //}
-        //else
-        //{
-        //    attestato.Visible = false;
-        //}
+        CLASSI.Classi_WSSoapClient c = new CLASSI.Classi_WSSoapClient();
+        int Cod_Studente = int.Parse(Session["Cod_Studente"].ToString());
+        DataTable da = c.Select_Punteggio(Cod_Studente);
+        int risultato = int.Parse(da.Rows[0]["Punteggio"].ToString());
+
+        if (risultato >= soglia)
+        {
+            lblEsito.Text = "Il test di questo corso è stato già superato. Puoi continuare ad accedere a questa pagina per visualizzare il materiale di studio.";
+            btnTest.Visible = false;
+        }
+        else
+        {
+            lblEsito.Text = "Il test di questo corso è già stato effettuato e non è stato superato. Se vuoi effettuare nuovamente il test, puoi iscriverti ad un nuovo corso. Puoi comunque continuare ad accedere a questa pagina per visualizzare il materiale di studio.";
+            btnTest.Visible = false;
+        }
     }
 
     protected void grigliaMaterie_SelectedIndexChanged(object sender, EventArgs e)
@@ -50,7 +61,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 
     protected void btnAttestato_Click(object sender, EventArgs e)
     {
-        
+
         //DataTable dt = new DataTable();
         //dt = l.Select();
 
@@ -76,8 +87,8 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 
     protected void btnTest_Click(object sender, EventArgs e)
     {
-        int Chiave= int.Parse(Session["Chiave"].ToString()) ;
-        TEST.Test_WSSoapClient T=new TEST.Test_WSSoapClient();
+        int Chiave = int.Parse(Session["Chiave"].ToString());
+        TEST.Test_WSSoapClient T = new TEST.Test_WSSoapClient();
         T.SelectOne(Chiave);
         Response.Redirect("Test_Studenti.aspx");
     }

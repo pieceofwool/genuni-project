@@ -218,21 +218,27 @@ public partial class Test_Studenti : System.Web.UI.Page
         //se è minore della Soglia
         if (PunteggioTotale <=Soglia)
         {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Test non Superato! Torna alla Home')", true);
-
+            //ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Test non Superato! Torna alla Home')", true);
+            lbl.Text="Test non Superato!";
             btnTornaHomeCorso.Visible=true;
             btnConcludiTest.Visible=false;
+
             return;
+
         }
 
         //se è maggiore della soglia
         if (PunteggioTotale >=Soglia)
         {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Test Superato! Torna alla Home')", true);
+            //ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Test Superato! Torna alla Home')", true);
+            lbl.Text="Test Superato!";
             btnTornaHomeCorso.Visible=true;
+
             btnConcludiTest.Visible= false;
             return;
+
         }
+        
         
 
     }
@@ -240,7 +246,7 @@ public partial class Test_Studenti : System.Web.UI.Page
 
     protected void TornaHomeCorso_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Corsi.aspx");
+        Response.Redirect("SituazioneCorsi.aspx");
     }
 
 }
