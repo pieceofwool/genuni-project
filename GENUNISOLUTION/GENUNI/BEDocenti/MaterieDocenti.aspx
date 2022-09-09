@@ -40,6 +40,7 @@
                 <td style="width: 50%"></td>
                 <td style="width: 50%"></td>
             </tr>
+
             <tr>
                 <td><b>Materia</b></td>
                 <td><b>Programma</b></td>
@@ -50,7 +51,7 @@
     <%--footer--%>
     <table style="border: 1px solid black; border-collapse: collapse; width: 917px; text-align:center;margin-bottom:100px;">
         <tr>
-            <td><small>Vengono mostrate tutte le materie accettate del corso cliccato</small></td>
+            <td><small><%--Vengono mostrate tutte le materie accettate del corso cliccato--%></small></td>
         </tr>
     </table>
     <%--chat corso--%>
