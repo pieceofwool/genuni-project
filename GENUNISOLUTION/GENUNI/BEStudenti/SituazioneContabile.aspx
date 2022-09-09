@@ -73,7 +73,14 @@
             </tr>
             <tr>
                 <td>
-                    <asp:GridView ID="grigliaRicariche" CssClass="grigliaStudentiContabilità" runat="server" OnRowDataBound="grigliaRicariche_RowDataBound">
+                    <asp:GridView ID="grigliaRicariche" CssClass="grigliaStudentiContabilità" runat="server" OnRowDataBound="grigliaRicariche_RowDataBound" DataKeyNames="Chiave,Cod_Studente,Cod_Corso" AutoGenerateColumns="False">
+                        <Columns>
+                            <asp:BoundField DataField="Chiave" Visible="false" />
+                            <asp:BoundField DataField="Cod_Studente" Visible="false" />
+                            <asp:BoundField DataField="Cod_Corso" Visible="false" />
+                            <asp:BoundField DataField="Data_Transazione" HeaderText="Data Transazione" />
+                            <asp:BoundField DataField="Ammontare" HeaderText="Ammontare" />
+                        </Columns>
                         <HeaderStyle />
                         <HeaderStyle CssClass="headergrid" />
                     </asp:GridView>
