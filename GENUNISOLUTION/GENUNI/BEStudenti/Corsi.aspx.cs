@@ -43,7 +43,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     protected void caricaGriglia()
     {
         MATERIE.Materie_WSSoapClient m = new MATERIE.Materie_WSSoapClient();
-        int CHIAVE = int.Parse(Session["CodiceAttore"].ToString());
+        int CHIAVE = int.Parse(Session["Chiave"].ToString());
         grigliaMaterie.DataSource = m.MaterieInfoCorso(CHIAVE);
         grigliaMaterie.DataBind();
     }
