@@ -55,24 +55,25 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-<<<<<<< HEAD
 
-    <br />
-    <br />
-    <br />
-    <br />
 
-    <asp:Label ID="lblEs1" runat="server" Text="I TUOI CORSI"></asp:Label>
-    <br />
-
-    <%--bottoni--%>
-    <br />
+   <div>
+        <img src="../assets/img/lavoriBE.png" class="icona" />
+    </div>
+    <div class="containerBE">
+        <h4 class="titoliBE">I tuoi corsi</h4>
+        <table class="tablePopUp">
+            <tr>
+                <td class="btnGestisci">
     <asp:Button class="popupPreparaDomande" ID="btnPreparaDomande" runat="server" Text="Prepara domande" OnClick="btnPreparaDomande_Click" />
     <asp:Button ID="btnRisultatiTest" runat="server" Text="Risultati test" OnClick="btnRisultatiTest_Click" />
     <asp:Button class="popupPreparaTest" ID="popupPreparaTest" runat="server" Text="Crea test" />
     <asp:Button ID="btnChat" runat="server" Text="Chat del corso" OnClick="btnChat_Click" />
-    <br />
-    <%--griglia corsi--%>
+    </td>
+            </tr>
+            <tr>
+                <td>
+                    <%--griglia corsi--%>
     <asp:GridView ID="GridCorsi" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave" AutoGenerateColumns="False">
         <Columns>
             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
@@ -81,33 +82,9 @@
             <asp:BoundField DataField="Data_partenza" HeaderText="Data Partenza" />
         </Columns>
     </asp:GridView>
-    
-=======
-    <div>
-        <img src="../assets/img/lavoriBE.png" class="icona" />
-    </div>
-    <div class="containerBE">
-        <h4 class="titoliBE">I tuoi corsi</h4>
-        <table class="tablePopUp">
-            <tr>
-                <td class="btnGestisci">
-                    <asp:Button class="popupPreparaDomande" CssClass="btnBE" ID="btnPreparaDomande" runat="server" Text="Prepara domande" OnClick="btnPreparaDomande_Click" />
-                    <asp:Button ID="btnRisultatiTest" CssClass="btnBE" runat="server" Text="Risultati test" OnClick="btnRisultatiTest_Click" />
-                    <asp:Button class="popupPreparaTest" CssClass="btnBE" ID="popupPreparaTest" runat="server" Text="Crea test" />
-                    <asp:Button ID="btnChat" runat="server" CssClass="btnBE" Text="Chat del corso" OnClick="btnChat_Click" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <%--griglia corsi--%>
-                    <asp:GridView ID="GridCorsi" CssClass="griglia" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave">
-                        <HeaderStyle />
-                        <HeaderStyle CssClass="headergrid" />
-                        <SelectedRowStyle CssClass="selezionegrid" />
-                    </asp:GridView>
-                </td>
+     </td>
             </tr>
         </table>
-    </div>
->>>>>>> development
+    </div>                 
+
 </asp:Content>
