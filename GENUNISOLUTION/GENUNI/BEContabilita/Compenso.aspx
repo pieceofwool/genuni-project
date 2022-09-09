@@ -42,18 +42,8 @@
                 <td>
                     <asp:Label ID="lblDal" CssClass="lbl" runat="server" Text="Dal" Style="font-size: 16px;"></asp:Label>
                     <asp:TextBox ID="txtDataInzio" CssClass="txtDate" runat="server" TextMode="Date" Style="font-size: 16px;"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>
                     <asp:Label ID="lblAl" CssClass="lbl" runat="server" Text="Al" Style="font-size: 16px;"></asp:Label>
                     <asp:TextBox ID="txtDataFine" CssClass="txtDate" runat="server" TextMode="Date" Style="font-size: 16px;"></asp:TextBox>
-                </td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td>
                     <asp:Button ID="btnCarica" CssClass="btnBE" runat="server" Text="Carica" OnClick="btnCarica_Click" />
                 </td>
             </tr>
