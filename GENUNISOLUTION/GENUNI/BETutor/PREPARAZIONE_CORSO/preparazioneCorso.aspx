@@ -43,7 +43,7 @@
 
                 inserisci.dialog({
                     modal: true,
-                    title: 'Definizione Materie',
+                    title: 'Definizione Corso',
                     resizable: false,
                     width: 450,
                     height: 350,

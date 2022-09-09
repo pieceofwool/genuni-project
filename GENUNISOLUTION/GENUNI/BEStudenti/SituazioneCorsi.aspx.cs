@@ -15,14 +15,15 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 
     protected void grigliaCorsiAcquistati_SelectedIndexChanged(object sender, EventArgs e)
     {
+        Session["Chiave"] = grigliaCorsiAcquistati.SelectedDataKey[0];
+        Session["Cod_Studente"] = grigliaCorsiAcquistati.SelectedDataKey[1];
         Response.Redirect("Corsi.aspx");
-        Session["CHIAVE"] = grigliaCorsiAcquistati.SelectedDataKey[0];
     }
 
     protected void grigliaCorsiDisponibili_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Response.Redirect("AcquistoCorsi.aspx");
         Session["CHIAVE"] = grigliaCorsiDisponibili.SelectedDataKey[0];
+        Response.Redirect("AcquistoCorsi.aspx");
     }
 
     protected void CaricaCorsiAcquistati()

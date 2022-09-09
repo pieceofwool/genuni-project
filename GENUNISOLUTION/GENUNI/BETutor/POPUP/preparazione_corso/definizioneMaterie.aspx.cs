@@ -14,7 +14,7 @@ public partial class definizioneMaterie : System.Web.UI.Page
         if (!IsPostBack)
         {
             CaricaMateriePreparate();
-            CaricaCorsiCreati();
+            //CaricaCorsiCreati();
         }
 
     }
@@ -36,7 +36,6 @@ public partial class definizioneMaterie : System.Web.UI.Page
 
     protected void InserisciMateria()
     {
-
         MATERIE.Materie_WSSoapClient Ma = new MATERIE.Materie_WSSoapClient();
 
         int COD_CORSO = Convert.ToInt32(Session["ChiaveCorso"]);
@@ -52,20 +51,14 @@ public partial class definizioneMaterie : System.Web.UI.Page
     protected void CaricaMateriePreparate()
     {
         MATERIE.Materie_WSSoapClient Ma = new MATERIE.Materie_WSSoapClient();
-        gridMatPreparate.DataSource = Ma.MateriePreparate();
-        gridMatPreparate.DataBind();
-
+        gridMatCorso.DataSource = Ma.MaterieInfoCorso(int.Parse(Session["ChiaveCorso"].ToString()));
+        gridMatCorso.DataBind();
     }
 
-    protected void CaricaCorsiCreati()
-    {
-        CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
-        //int COD_TUTOR = Convert.ToInt32(Session["CodiceAttore"]);
-        int COD_TUTOR = 2;
-        gridCorsiCreati.DataSource = C.CorsiCreati(COD_TUTOR);
-        gridCorsiCreati.DataBind();
-    }
-
+    //protected void CaricaCorsiCreati()
+    //{
+    //    CaricaMateriePreparate();
+    //}
 
     protected void btnAssegnaM_Click(object sender, EventArgs e)
     {
@@ -79,15 +72,16 @@ public partial class definizioneMaterie : System.Web.UI.Page
         C.CorsiMaterieAssegnate(ChiaveCorso);
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Materia assegnata correttamente')", true);
+        CaricaMateriePreparate();
     }
-    protected void gridCorsiCreati_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        GridViewRow riga = gridCorsiCreati.SelectedRow;
-        Session["ChiaveCorso"] = gridCorsiCreati.SelectedDataKey[0].ToString();
-    }
+    //protected void gridCorsiCreati_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //    GridViewRow riga = gridCorsiCreati.SelectedRow;
+    //    Session["ChiaveCorso"] = gridCorsiCreati.SelectedDataKey[0].ToString();
+    //}
 
     protected void btnAggiornaCorsi_Click(object sender, EventArgs e)
     {
-        CaricaCorsiCreati();
+        CaricaMateriePreparate();
     }
 }

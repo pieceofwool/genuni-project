@@ -68,7 +68,7 @@ public partial class _Default : System.Web.UI.Page
             // controlli formali
             if (string.IsNullOrEmpty(txtLogEmail.Text.ToString()) || string.IsNullOrEmpty(txtLogPwd.Text.ToString()))
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Attenzione: compilare tutti i campi!')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Attenzione\\: compilare tutti i campi!')", true);
                 return;
             }
 
@@ -111,7 +111,7 @@ public partial class _Default : System.Web.UI.Page
 
                 else
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('L'account non è attivo')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('L\\'account non è attivo')", true);
                     return;
                 }
             }
@@ -144,12 +144,12 @@ public partial class _Default : System.Web.UI.Page
 
                     else
                     {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('L'account non è attivo, chiedere aiuto ad un'amministratore)", true);
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('L\\'account non è attivo, chiedere aiuto ad un\\'amministratore)", true);
                         return;
                     }
                 }
 
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Password o email errati o autorizzazione all'accesso negata')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Password o email errati o autorizzazione all\\'accesso negata')", true);
                 return;
             }
         }
@@ -177,7 +177,7 @@ public partial class _Default : System.Web.UI.Page
             if (E.ControlloDuplice(usr) == true) //ControlloDuplice (della mail) sarebbe a tutti gli effetti un checkone per controllare se la email dell'esterno esiste già, ma il nome "CheckOne"
                                                  //È già utilizzato per un'altro metodo in RegistrazioneConferma, non è un problema e non ha bisogno di fix, è solo un'appunto.
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Questo e-Mail è già in uso.')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Questa e-Mail è già in uso.')", true);
                 return;
             }
 
