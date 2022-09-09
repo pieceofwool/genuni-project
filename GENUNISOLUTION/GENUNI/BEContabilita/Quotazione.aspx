@@ -32,7 +32,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-   <%-- <script type="text/javascript">--%>
+    <%-- <script type="text/javascript">--%>
 <%--        $(document).ready(function () {
             $('#pippo').click(function () {
 
