@@ -43,5 +43,8 @@
             </tr>
         </table>
     </div>
+
+    <asp:Button ID="btnTest" runat="server" Text="Esegui Test" OnClick="btnTest_Click" />
+
 </asp:Content>
 

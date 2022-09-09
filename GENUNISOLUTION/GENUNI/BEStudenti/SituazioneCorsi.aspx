@@ -4,6 +4,7 @@
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
     <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
@@ -26,8 +27,9 @@
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
                         </Columns>
-                        <HeaderStyle />
+                      
                         <HeaderStyle CssClass="headergrid" />
+                        <SelectedRowStyle CssClass="selezionegrid"/>
                     </asp:GridView>
                 </td>
             </tr>
@@ -52,7 +54,7 @@
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
                         </Columns>
-                        <HeaderStyle />
+                 
                         <HeaderStyle CssClass="headergrid" />
                     </asp:GridView>
                 </td>

@@ -73,4 +73,12 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         //}
 
     }
+
+    protected void btnTest_Click(object sender, EventArgs e)
+    {
+        int Chiave= int.Parse(Session["Chiave"].ToString()) ;
+        TEST.Test_WSSoapClient T=new TEST.Test_WSSoapClient();
+        T.SelectOne(Chiave);
+        Response.Redirect("Test_Studenti.aspx");
+    }
 }

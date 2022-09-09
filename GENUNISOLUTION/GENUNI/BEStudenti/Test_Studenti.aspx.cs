@@ -13,8 +13,8 @@ public partial class Test_Studenti : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        int Cod_Test = 1;
-        //int Cod_Test = int.Parse(Session["COD_TEST"].ToString());
+        
+        int Cod_Test = int.Parse(Session["Chiave"].ToString());
         DOMANDE.Domande_WSSoapClient D = new DOMANDE.Domande_WSSoapClient();
         DataTable dt = new DataTable();
         dt = D.DomandeSelectAllTest(Cod_Test);
