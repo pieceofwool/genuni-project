@@ -23,7 +23,7 @@
     <div>
         <asp:Literal ID="lit" runat="server"></asp:Literal>
     </div>
-
+    <asp:Button ID="btnTest" runat="server" Text="Esegui Test" OnClick="btnTest_Click" />
 
 
 </asp:Content>
