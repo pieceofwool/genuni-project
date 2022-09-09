@@ -20,8 +20,10 @@
             </tr>
             <tr>
                 <td>
-                    <asp:GridView ID="grigliaMaterie" CssClass="griglia" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="grigliaMaterie_SelectedIndexChanged">
+                    <asp:GridView ID="grigliaMaterie" CssClass="griglia" runat="server" DataKeyNames="Chiave" AutoGenerateColumns="False" OnSelectedIndexChanged="grigliaMaterie_SelectedIndexChanged">
                         <Columns>
+                            <asp:BoundField DataField="Chiave" Visible="false" />
+                            
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                             <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
                             <asp:BoundField DataField="Docente" HeaderText="Docente" />
