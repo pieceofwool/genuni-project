@@ -44,7 +44,7 @@ public partial class Default2 : System.Web.UI.Page
         }
         
 
-        Lit2.Text = "";
+        LitCV.Text = "";
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
         //int CHIAVE = 1;
@@ -65,7 +65,7 @@ public partial class Default2 : System.Web.UI.Page
         {
             string base64String1 = Convert.ToBase64String(arr1, 0, arr1.Length);
             string Src = "data:image/" + tipo + ";base64," + base64String1;
-            lit.Text = "<img style='width:200px' src='" + Src + "' />";
+            litIMG.Text = "<img style='width:200px; border: 8px groove #5fcf80' src='" + Src + "' />";
         }
 
         //riempo le label
@@ -116,7 +116,7 @@ public partial class Default2 : System.Web.UI.Page
                 embed += "If you are unable to view file, you can download from <a href = \"{0}{1}&download=1\">here</a>";
                 embed += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
                 embed += "</object>";
-                Lit2.Text = string.Format(embed, ResolveUrl("GestoreCvPdf.ashx?chiave="), CHIAVE /*valore chiave*/);
+                LitCV.Text = string.Format(embed, ResolveUrl("GestoreCvPdf.ashx?chiave="), CHIAVE /*valore chiave*/);
 
             }
         }
