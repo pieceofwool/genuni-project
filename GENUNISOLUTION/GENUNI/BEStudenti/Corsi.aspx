@@ -8,7 +8,10 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <h4 class="titoliBE">INFO CORSO</h4>
+
+        <h4 class="titoliBE">
+            <asp:Label ID="lblTitoloCorso" runat="server" Text=""></asp:Label></h4>
+
         <table class="tablePopUp">
             <tr>
                 <td>
@@ -30,7 +33,7 @@
                 </td>
             </tr>
         </table>
-        <table>
+       <%-- <table>
             <tr>
                 <td id="attestato" runat="server">
                     <asp:Label ID="Label2" runat="server" CssClass="lbl" Text="Scarica Attestato"></asp:Label>
@@ -41,7 +44,8 @@
                     <asp:Literal ID="lit" runat="server"></asp:Literal>
                 </td>
             </tr>
-        </table>
+        </table>--%>
+        <asp:Label ID="lblEsito" runat="server" Text="Label"></asp:Label>
     </div>
 
     <asp:Button ID="btnTest" CssClass="btnBE" runat="server" Text="Esegui Test" OnClick="btnTest_Click" />
