@@ -21,7 +21,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         TEST.Test_WSSoapClient T = new TEST.Test_WSSoapClient();
         DataTable DTCodTest = new DataTable();
         DTCodTest=T.SelectOneByCorso(Cod_Corso);
-        int Cod_Test = DTCodTest.Rows[0]["Chiave"];
+        int Cod_Test = int.Parse(DTCodTest.Rows[0]["Chiave"].ToString());
 
 
 
