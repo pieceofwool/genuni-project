@@ -198,10 +198,10 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void UpdatePassword(string USR, string PWD)
+    public void UpdatePassword(int CHIAVE, string PWD)
     {
         ESTERNI e = new ESTERNI();
-        e.USR = USR;
+        e.CHIAVE = CHIAVE;
         e.PWD = PWD;
 
         e.UpdatePassword();
@@ -352,11 +352,10 @@ public class Esterni_WS : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void UpdatePassword_Studenti(int CHIAVE, string USR, string PWD)
+    public void UpdatePassword_Studenti(int CHIAVE, string PWD)
     {
         ESTERNI e = new ESTERNI();
         e.CHIAVE = CHIAVE;
-        e.USR = USR;
         e.PWD = PWD;
 
         e.UpdatePassword_Studenti();
