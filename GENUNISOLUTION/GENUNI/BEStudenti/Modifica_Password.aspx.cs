@@ -27,13 +27,16 @@ public partial class Default2 : System.Web.UI.Page
     {
         CRYPTA.Crypta_WSSoapClient C = new CRYPTA.Crypta_WSSoapClient();
         //dichiaro le variabili
-        int Chiave = 1;
-        string User = txtUser.Text.Trim();
-        string plaintext = txtPassword.Text.Trim();
-        string pwd = C.PWD_CRYPTA(plaintext); // E quì vengono cryptate
+        int Chiave = int.Parse(Session["CHIAVE"].ToString());
+
+        string plaintext2 = txtPassword.Text.Trim();
+        string pwd = C.PWD_CRYPTA(plaintext2); // E quì vengono cryptate 
+
+        string plaintext = txtConfermaPassw.Text.Trim();
+        string Confermapwd = C.PWD_CRYPTA(plaintext); // E quì vengono cryptate
 
         // Controlli formali
-        if (string.IsNullOrEmpty(txtUser.Text.Trim()) || string.IsNullOrEmpty(txtPassword.Text.Trim()))
+        if (string.IsNullOrEmpty(txtPassword.Text.Trim()) || string.IsNullOrEmpty(txtConfermaPassw.Text.Trim()))
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "Dati non validi", "alert('Compilare tutti i campi')", true);
             return;
@@ -42,7 +45,7 @@ public partial class Default2 : System.Web.UI.Page
         //modifico la Password
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
-        E.UpdatePassword_Studenti(Chiave, User, pwd);
-        lbl1.Text = "User e Password Modificati!";
+        E.UpdatePassword_Studenti(Chiave, pwd);
+        lbl1.Text = "Password Modificata!";
     }
 }

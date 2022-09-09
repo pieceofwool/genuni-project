@@ -8,7 +8,7 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <h4 class="titoliBE">CORSI</h4>
+        <h4 class="titoliBE">INFO CORSO</h4>
         <table class="tablePopUp">
             <tr>
                 <td>
