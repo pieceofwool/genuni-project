@@ -57,7 +57,7 @@
                             </ul>
                         </li>
                         <li><a href="../BEAdmin/GestioneTutor.aspx">Abilitazione tutor e contabili</a></li>
-                        <li><a href="../BEAdmin/GestioneReport.aspx">Grafici e report</a></li>
+                        <li><a href="../BEAdmin/GestioneReport.aspx">Report</a></li>
                         <li><a href="../Default.aspx">Esci</a></li>
                     </ul>
                 </nav>
