@@ -27,7 +27,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void GridCorsi_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Session["CHIAVE"] = GridCorsi.SelectedDataKey[0];
+        Session["ChiaveCorso"] = GridCorsi.SelectedDataKey[0];
         btnAssegnazioneDocenti.Enabled = true;
         btnDefinizioneMateria.Enabled=true;
         btnDefinisciCorso.Enabled = true;

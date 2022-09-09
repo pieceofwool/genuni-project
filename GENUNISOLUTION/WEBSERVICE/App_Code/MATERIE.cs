@@ -19,8 +19,8 @@ public class MATERIE
     public string Titolo;
     public string Descrizione;
     public int Indice;
-    public string Preparato;
-    public string Accettato;
+    public bool Preparato;
+    public bool Accettato;
     public string Data_Risposta;
 
     #endregion Membri
@@ -36,15 +36,12 @@ public class MATERIE
         cmd.Parameters.AddWithValue("@Titolo", Titolo);
         cmd.Parameters.AddWithValue("@Descrizione", Descrizione);
         cmd.Parameters.AddWithValue("@Indice", Indice);
-        cmd.Parameters.AddWithValue("@Preparato", Preparato);
-        cmd.Parameters.AddWithValue("@Accettato", Accettato);
-        cmd.Parameters.AddWithValue("@Data_Risposta", Data_Risposta);
-
 
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);
 
     }
+
     public void Update()
     {
         SqlCommand cmd = new SqlCommand("MATERIE_Update");
@@ -58,7 +55,6 @@ public class MATERIE
         cmd.Parameters.AddWithValue("@Preparato", Preparato);
         cmd.Parameters.AddWithValue("@Accettato", Accettato);
         cmd.Parameters.AddWithValue("@Data_Risposta", Data_Risposta);
-
 
         CONNESSIONE conn = new CONNESSIONE();
         conn.EseguiCmd(cmd);

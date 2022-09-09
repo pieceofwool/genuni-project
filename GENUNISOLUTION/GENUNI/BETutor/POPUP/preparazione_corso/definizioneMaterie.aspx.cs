@@ -39,17 +39,14 @@ public partial class definizioneMaterie : System.Web.UI.Page
 
         MATERIE.Materie_WSSoapClient Ma = new MATERIE.Materie_WSSoapClient();
 
-        int COD_CORSO = Convert.ToInt32(Session["CHIAVE"]);
+        int COD_CORSO = Convert.ToInt32(Session["ChiaveCorso"]);
         int COD_DOCENTE = 0;
         int COSTO_DOCENTE = 0;
         string TITOLO = txtTitolo.Text.ToString();
         string DESCRIZIONE = txtDescrizione.Text.ToString();
         int INDICE = int.Parse(txtIndice.Text);
-        string PREPARATO = "";
-        string ACCETTATO = "";
-        string DATA_RISPOSTA = "";
 
-        Ma.Insert(COD_CORSO, COD_DOCENTE, COSTO_DOCENTE, TITOLO, DESCRIZIONE, INDICE, PREPARATO, ACCETTATO, DATA_RISPOSTA);
+        Ma.Insert(COD_CORSO, COD_DOCENTE, COSTO_DOCENTE, TITOLO, DESCRIZIONE, INDICE);
     }
 
     protected void CaricaMateriePreparate()
@@ -74,7 +71,7 @@ public partial class definizioneMaterie : System.Web.UI.Page
     {
         if (Session["ChiaveCorso"] == null)
         {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Selezionare una voce dalla tabella')", true);
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Selezionare una voce dalla tabella dei corsi')", true);
             return;
         }
         int ChiaveCorso = int.Parse(Session["ChiaveCorso"].ToString());
