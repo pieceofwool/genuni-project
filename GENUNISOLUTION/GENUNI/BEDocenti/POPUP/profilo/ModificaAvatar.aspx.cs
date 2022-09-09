@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 public partial class PopUp_Profilo_InserisciProfilo_Competenze : System.Web.UI.Page
 {
-    string[] estensioni = { ".jpg", ".png", ".bmp" };
+    string[] estensioni = { ".jpg", ".png", ".bmp", ".jpeg",".JPG", ".PNG", ".BMP", ".JPEG" };
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -31,7 +31,13 @@ public partial class PopUp_Profilo_InserisciProfilo_Competenze : System.Web.UI.P
                 return;
             }
 
-            E.UpdateAvatar(CHIAVE, img, TIPOIMG);
+            try { E.UpdateAvatar(CHIAVE, img, TIPOIMG); }
+            catch (Exception) {
+
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Inserire un file inferiore ai 3 MB')", true);
+                return;
+            }
+
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Avatar cambiato correttamente')", true);
 
         }
