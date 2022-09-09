@@ -11,10 +11,18 @@ using System.Web.UI.WebControls;
 
 public partial class Test_Studenti : System.Web.UI.Page
 {
+    public int Cod_Corso;
+    public int Cod_Test;
     protected void Page_Load(object sender, EventArgs e)
     {
-        
-        int Cod_Test = int.Parse(Session["Chiave"].ToString());
+        //chiamo il Cod_Corso per prendere il test
+        int Cod_Corso = int.Parse(Session["Chiave"].ToString());
+        TEST.Test_WSSoapClient T = new TEST.Test_WSSoapClient();
+        DataTable dat = new DataTable();
+        dat= T.SelectOne(Cod_Corso);
+
+        int Cod_Test = int.Parse(dat.Rows[0]["Chiave"].ToString());
+        //dal Test chiamo le Domande e Risposte
         DOMANDE.Domande_WSSoapClient D = new DOMANDE.Domande_WSSoapClient();
         DataTable dt = new DataTable();
         dt = D.DomandeSelectAllTest(Cod_Test);
@@ -73,12 +81,15 @@ public partial class Test_Studenti : System.Web.UI.Page
 
     protected void ConcludiTest_Click(object sender, EventArgs e)
     {
-        int Cod_Test = int.Parse(Session["Cod_Test"].ToString());
-        
-        int Cod_Corso = int.Parse(Session["Cod_Corso"].ToString());
-        
-        int Cod_Studente= int.Parse(Session["CodceAttore"].ToString()) ;
-        
+        //chiamo il Cod_Corso per prendere il test
+        int Cod_Corso = int.Parse(Session["Chiave"].ToString());
+        TEST.Test_WSSoapClient T = new TEST.Test_WSSoapClient();
+        DataTable dat = new DataTable();
+        dat= T.SelectOne(Cod_Corso);
+
+        int Cod_Test = int.Parse(dat.Rows[0]["Chiave"].ToString());
+
+
 
         int PunteggioTotale = 0;
 
@@ -189,16 +200,20 @@ public partial class Test_Studenti : System.Web.UI.Page
             RadioButton19.Checked==false && RadioButton20.Checked==false && RadioButton21.Checked==false && RadioButton22.Checked==false && RadioButton23.Checked==false && RadioButton24.Checked==false && 
             RadioButton25.Checked==false && RadioButton26.Checked==false && RadioButton27.Checked==false && RadioButton28.Checked==false && RadioButton29.Checked==false && RadioButton30.Checked==false)
         {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Seleziona una riga per poterla modificare')", true);
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ATTENZIONE", "alert('Rispondi a tutte le Domande!')", true);
             return;
         }
         //punteggio da fare insert nella tab classi
+        int Cod_Studente = int.Parse(Session["Cod_Studente"].ToString());
         CLASSI.Classi_WSSoapClient C = new CLASSI.Classi_WSSoapClient();
         C.Insert_Punteggio(Cod_Corso, Cod_Studente, PunteggioTotale);
 
         //se4leziona soglia per mettere a confronto
-        TEST.Test_WSSoapClient T = new TEST.Test_WSSoapClient();
-        int Soglia = int.Parse(T.SelectSoglia(Cod_Corso).ToString());
+        DataTable data= new DataTable();
+        TEST.Test_WSSoapClient Te = new TEST.Test_WSSoapClient();
+        data= Te.SelectSoglia(Cod_Corso);
+        int Soglia = int.Parse(data.Rows[0]["Soglia"].ToString());
+        //int Soglia = int.Parse(Te.SelectSoglia(Cod_Corso).ToString());
 
         //se è minore della Soglia
         if (PunteggioTotale <=Soglia)
