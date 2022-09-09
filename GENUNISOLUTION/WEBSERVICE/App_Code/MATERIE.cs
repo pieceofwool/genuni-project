@@ -75,7 +75,7 @@ public class MATERIE
     //metodo che inserisce il codice docente nella relativa materia
     public void InsertDocente()
     {
-        SqlCommand cmd = new SqlCommand("MATERIE_INSERTDOCENTE");
+        SqlCommand cmd = new SqlCommand("MATERIE_UPDATEDOCENTE");
         cmd.Parameters.AddWithValue("@Cod_Materia", Chiave);
         cmd.Parameters.AddWithValue("@Cod_Docente", Cod_Docente);
 
