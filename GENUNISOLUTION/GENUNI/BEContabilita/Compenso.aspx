@@ -51,9 +51,21 @@
         <table>
             <tr>
                 <td>
-                    <asp:GridView ID="grdDocente" CssClass="griglia" runat="server">
-                        <HeaderStyle />
+                    <asp:GridView ID="grdDocente" CssClass="griglia" runat="server" AutoGenerateColumns="False" DataKeyNames="Cod_Corso, Chiave">
                         <HeaderStyle CssClass="headergrid" />
+                        <Columns>
+                            <asp:BoundField DataField="Corso" HeaderText="Corso" />
+                            <asp:BoundField DataField="Tipo materia" HeaderText="Tipo Materia" />
+                            <asp:BoundField DataField="Materia" HeaderText="Materia" />
+                            <asp:BoundField DataField="Data_Partenza" HeaderText="Data Partenza" />
+                            <asp:BoundField DataField="Ragione_Sociale" HeaderText="Ragione Sociale" />
+                            <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
+                            <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                            <asp:BoundField DataField="Piva" HeaderText="P.Iva" />
+                            <asp:BoundField DataField="CF" HeaderText="Codice Fiscale" />
+                            <asp:BoundField DataField="Costo_Docente" HeaderText="Costo Docente" />
+                        </Columns>
+                        <HeaderStyle />
                     </asp:GridView>
 
                 </td>
