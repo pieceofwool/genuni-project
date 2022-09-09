@@ -52,6 +52,22 @@
 
     <div class="containerBE" style="margin-top: -18px;">
         <h4 class="titoliBE">Spese docenti</h4>
+        <div class="containerBE" style="margin-top: -54px;">
+            <table class="tablePopUp">
+                <tr>
+                    <td>
+                        <span><b>Totale spese:</b></span>
+                        <asp:Label ID="lblTotDoc" runat="server" CssClass="lbl" Text=""></asp:Label>
+
+                        <span><b>Totale ricavi:</b></span>
+                        <asp:Label ID="lblTotStud" runat="server" CssClass="lbl" Text=""></asp:Label>
+
+                        <span><b>Totale utili: </b></span>
+                        <asp:Label ID="lblUtili" runat="server" CssClass="lbl" Text=""></asp:Label>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <table class="tablePopUp">
             <tr>
                 <td>
@@ -106,18 +122,10 @@
                             <SelectedRowStyle CssClass="selezionegrid" />
                         </asp:GridView>
                     </div>
-
                 </td>
             </tr>
         </table>
     </div>
-    <%--<div class="containerBE" style="margin-top: -54px;">
-            <h4 class="titoliBE">Utili</h4>
-            <table class="tablePopUp">
-                <tr>
-                    <td></td>
-                </tr>
-            </table>--%>
-    <%--  </div>--%>
+
 </asp:Content>
 

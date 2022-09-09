@@ -15,15 +15,15 @@ public partial class BEContabilita_Default : System.Web.UI.Page
     protected void CaricaGriglia()
     {
         CORSI.Corsi_WSSoapClient Corsi = new CORSI.Corsi_WSSoapClient();
-        grdValutazione.DataSource = Corsi.SelectAllPreparati(); 
-        grdValutazione.DataBind();
+        grdQuotazione.DataSource = Corsi.SelectAllPreparati();
+        grdQuotazione.DataBind();
     }
 
 
     protected void grdValutazione_SelectedIndexChanged(object sender, EventArgs e)
     {
-        GridViewRow row = grdValutazione.SelectedRow;
-        Session["id"] = row.Cells[0].Text;
+
+        Session["id"] = int.Parse(grdQuotazione.SelectedDataKey[0].ToString());
     }
 
     protected void btnAggiorna_Click(object sender, EventArgs e)
