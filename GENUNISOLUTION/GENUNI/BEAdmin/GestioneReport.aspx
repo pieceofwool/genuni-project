@@ -33,7 +33,83 @@
             <asp:Button ID="btnReset" CssClass="btnBE" runat="server" Text="Reset date" OnClick="btnReset_Click" />
 
         </div>
-        <div id="docenti">
+
+        <div class="containerBE" style="margin-top: -20px;">
+        <h3 class="titoliBE">TOTALE</h3>
+        <table class="tablePopUp">
+            <tr>
+                <td>
+                    <span><b>Totale spese:</b></span>
+                    <asp:Label ID="lblTotDoc" runat="server" CssClass="lbl" Text=""></asp:Label>
+                </td>
+                <td>
+                    <span><b>Totale ricavi:</b></span>
+                    <asp:Label ID="lblTotStud" runat="server" CssClass="lbl" Text=""></asp:Label>
+                </td>
+                <td>
+                    <span><b>Totale utili: </b></span>
+                    <asp:Label ID="lblUtili" runat="server" CssClass="lbl" Text=""></asp:Label>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+     <%--   <div id="utili">
+            <h3 class="titoliBE">Utili</h3>
+            <table>
+                <tr>
+                    <td>
+            <span><b>Totale utili: </b></span>
+            <asp:Label ID="lblUtili" runat="server" CssClass="lbl" Text=""></asp:Label>
+
+                    </td>
+                    <td>
+            <span><b>Totale ricavi:</b></span>
+            <asp:Label ID="Label1" runat="server" CssClass="lbl" Text=""></asp:Label>
+
+
+                    </td>
+                    <td>
+            <span><b>Totale spese:</b></span>
+            <asp:Label ID="Label2" runat="server" CssClass="lbl" Text=""></asp:Label>
+
+
+                    </td>
+                </tr>
+            </table>--%>
+
+            <%--AREA MODIFICHE--%>
+            <%--AREA MODIFICHE--%>
+
+    
+
+        <%--AREA RICAVI--%>
+        <div id="studenti" class="containerBE">
+            <h3 class="titoliBE">Ricavo studenti</h3>
+
+            <%-- GRIGLIA DI VISUALIZZAZIONE REPORT STUDENTI --%>
+
+            <asp:GridView ID="grigliaReportStudenti" AutoGenerateColumns="False" runat="server">
+                <Columns>
+                    <asp:BoundField DataField="Cod_Corso" Visible="false" />
+                    <asp:BoundField DataField="Corso" HeaderText="Titolo corso" />
+                    <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+                    <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
+                    <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                    <asp:BoundField DataField="CF" HeaderText="Codice fiscale" />
+                    <asp:BoundField DataField="Data_Transazione" HeaderText="Data transazione" />
+                    <asp:BoundField DataField="Ammontare" HeaderText="Ammontare" />
+
+
+                </Columns>
+            </asp:GridView>
+
+<%--            <span><b>Totale ricavi:</b></span>
+            <asp:Label ID="lblTotStud" runat="server" CssClass="lbl" Text=""></asp:Label>--%>
+        </div>
+
+        <%--AREA COSTI--%>
+        <div id="docenti" class="containerBE">
 
             <h3 class="titoliBE">Spese docenti</h3>
             <%-- GRIGLIA DI VISUALIZZAZIONE REPORT DOCENTI --%>
@@ -54,55 +130,18 @@
                     <asp:BoundField DataField="Chiave" Visible="false" />
                 </Columns>
             </asp:GridView>
-            <span><b>Totale spese:</b></span>
-            <asp:Label ID="lblTotDoc" runat="server" CssClass="lbl" Text=""></asp:Label>
+<%--            <span><b>Totale spese:</b></span>
+            <asp:Label ID="lblTotDoc" runat="server" CssClass="lbl" Text=""></asp:Label>--%>
         </div>
-        <div id="studenti">
-            <h3 class="titoliBE">Ricavo studenti</h3>
-
-            <%-- GRIGLIA DI VISUALIZZAZIONE REPORT STUDENTI --%>
-
-            <asp:GridView ID="grigliaReportStudenti" AutoGenerateColumns="False" runat="server">
-                <Columns>
-                    <asp:BoundField DataField="Cod_Corso" Visible="false" />
-                    <asp:BoundField DataField="Corso" HeaderText="Titolo corso" />
-                    <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
-                    <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
-                    <asp:BoundField DataField="Nome" HeaderText="Nome" />
-                    <asp:BoundField DataField="CF" HeaderText="Codice fiscale" />
-                    <asp:BoundField DataField="Data_Transazione" HeaderText="Data transazione" />
-                    <asp:BoundField DataField="Ammontare" HeaderText="Ammontare" />
 
 
-                </Columns>
-            </asp:GridView>
-
-            <span><b>Totale ricavi:</b></span>
-            <asp:Label ID="lblTotStud" runat="server" CssClass="lbl" Text=""></asp:Label>
-        </div>
         <%-- UTILI --%>
         <%--<div id="utili">--%>
-            <%-- Per il team grafica: 'totale utili' (la div 'utili' sarà in fondo centrale, sotto i due div affiancati) dovrebbe avere uno stile tipo titoletto ma 
+        <%-- Per il team grafica: 'totale utili' (la div 'utili' sarà in fondo centrale, sotto i due div affiancati) dovrebbe avere uno stile tipo titoletto ma 
                 deve rimanere inline con la label; per ora ho lasciato un grassetto nell'html per segnalarlo, poi sistemate voi lo stile dello span come preferite--%>
-<%--            <span><b>Totale utili: </b></span>--%>
-<%--            <asp:Label ID="lblUtili" runat="server" CssClass="lblReport" Text=""></asp:Label>--%>
-     <%--   </div>--%>
-
-        <div id="utili">
-            <h3 class="titoliBE">Utili</h3>
-            <span><b>Totale utili: </b></span>
-            <asp:Label ID="lblUtili" runat="server" CssClass="lbl" Text=""></asp:Label>
-        </div>
-                         
-
-       <%--     <table class="tablePopUp">
-                <tr>
-                    <td class="btnGestisci">
-                    </td>
-                </tr>
-            </table>--%>
-
-
+        <%--            <span><b>Totale utili: </b></span>--%>
+        <%--            <asp:Label ID="lblUtili" runat="server" CssClass="lblReport" Text=""></asp:Label>--%>
+        <%--   </div>--%>
     </div>
 </asp:Content>
 
