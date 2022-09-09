@@ -51,7 +51,7 @@
                             <li><a href="#"></a></li>--%>
                         <li><a href="../BEContabilita/Compenso.aspx">Compenso</a></li>
                         <li><a href="../BEContabilita/Report.aspx">Report</a></li>
-                        <li><a href="../BEContabilita/Valutazione.aspx">Valutazione</a></li>
+                        <li><a href="../BEContabilita/Quotazione.aspx">Quotazione</a></li>
                         <li><a href="../Default.aspx">Esci</a></li>
                     </ul>
                 </nav>

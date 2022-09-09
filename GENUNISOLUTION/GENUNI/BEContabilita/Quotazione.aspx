@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEContabilita.master" AutoEventWireup="true" CodeFile="Valutazione.aspx.cs" Inherits="BEContabilita_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEContabilita.master" AutoEventWireup="true" CodeFile="Quotazione.aspx.cs" Inherits="BEContabilita_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
@@ -76,9 +76,9 @@
             </tr>
             <tr>
                 <td>
-                    <asp:GridView ID="grdValutazione" CssClass="griglia" runat="server" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="Chiave">
+                    <asp:GridView ID="grdQuotazione" CssClass="griglia" runat="server" OnSelectedIndexChanged="grdValutazione_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="Chiave">
                         <Columns>
-                            <asp:BoundField DataField="Chiave" HeaderText="Chiave" InsertVisible="False" ReadOnly="True" SortExpression="Chiave" />
+                            <asp:BoundField DataField="Chiave" HeaderText="Chiave" InsertVisible="False" ReadOnly="True" SortExpression="Chiave" Visible="False" />
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" SortExpression="Titolo" />
                             <asp:BoundField DataField="Cognome" HeaderText="Cognome" SortExpression="Cognome" />
                             <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
