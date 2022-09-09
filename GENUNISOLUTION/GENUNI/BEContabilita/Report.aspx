@@ -32,7 +32,7 @@
     </div>
     <div class="containerBE" style="margin-top: -20px;">
         <h4 class="titoliBE">TOTALE</h4>
-        <table class="tablePopUp">
+        <table class="tablePopUp" style="border: 3px solid #94e2ae; border-radius: 48px; width: 100%%; width: 808px; text-align-last: center; background-color: whitesmoke;">
             <tr>
                 <td>
                     <span><b>Totale spese:</b></span>
@@ -49,7 +49,8 @@
             </tr>
         </table>
     </div>
-
+    <div class="containerBE" style="margin-top: -54px;">
+        <h4 class="titoliBE">Spese docenti</h4>
         <table class="tablePopUp">
             <tr>
                 <td>
@@ -79,36 +80,35 @@
                 </td>
             </tr>
         </table>
-    
-    <br />
 
-    <div class="containerBE" style="margin-top: -54px;">
-        <h4 class="titoliBE">Ricavo studenti</h4>
-        <table class="tablePopUp">
-            <tr>
-                <td>
-                    <%-- GRIGLIA DI VISUALIZZAZIONE REPORT STUDENTI --%>
-                    <div class="box-content" style="min-height: 40px">
-                        <asp:GridView ID="grigliaReportStudenti" CssClass="griglia" AutoGenerateColumns="False" runat="server">
-                            <Columns>
-                                <asp:BoundField DataField="Cod_Corso" Visible="false" />
-                                <asp:BoundField DataField="Corso" HeaderText="Titolo corso" />
-                                <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
-                                <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
-                                <asp:BoundField DataField="Nome" HeaderText="Nome" />
-                                <asp:BoundField DataField="CF" HeaderText="Codice fiscale" />
-                                <asp:BoundField DataField="Data_Transazione" HeaderText="Data transazione" />
-                                <asp:BoundField DataField="Ammontare" HeaderText="Ammontare" />
-                            </Columns>
-                            <HeaderStyle />
-                            <HeaderStyle CssClass="headergrid" />
-                            <SelectedRowStyle CssClass="selezionegrid" />
-                        </asp:GridView>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </div>
+        <br />
 
+        <div class="containerBE" style="margin-top: -24px;">
+            <h4 class="titoliBE">Ricavo studenti</h4>
+            <table class="tablePopUp">
+                <tr>
+                    <td>
+                        <%-- GRIGLIA DI VISUALIZZAZIONE REPORT STUDENTI --%>
+                        <div class="box-content" style="min-height: 40px">
+                            <asp:GridView ID="grigliaReportStudenti" CssClass="griglia" AutoGenerateColumns="False" runat="server">
+                                <Columns>
+                                    <asp:BoundField DataField="Cod_Corso" Visible="false" />
+                                    <asp:BoundField DataField="Corso" HeaderText="Titolo corso" />
+                                    <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+                                    <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
+                                    <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                                    <asp:BoundField DataField="CF" HeaderText="Codice fiscale" />
+                                    <asp:BoundField DataField="Data_Transazione" HeaderText="Data transazione" />
+                                    <asp:BoundField DataField="Ammontare" HeaderText="Ammontare" />
+                                </Columns>
+                                <HeaderStyle />
+                                <HeaderStyle CssClass="headergrid" />
+                                <SelectedRowStyle CssClass="selezionegrid" />
+                            </asp:GridView>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
 </asp:Content>
 
