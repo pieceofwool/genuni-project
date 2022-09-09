@@ -19,25 +19,37 @@
                     <%-- DATA INIZIO REPORT --%>
                     <asp:Label ID="lblDataInizio" CssClass="lbl" runat="server" Text="Data inizio report:" Style="font-size: 16px;"></asp:Label>
                     <asp:TextBox ID="txtDataInizio" CssClass="txtDate" runat="server" TextMode="Date" Style="font-size: 16px;"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>
                     <%-- DATA FINE REPORT --%>
                     <asp:Label ID="lblDataFine" CssClass="lbl" runat="server" Text="Data fine report:" Style="font-size: 16px;"></asp:Label>
                     <asp:TextBox ID="txtDataFine" CssClass="txtDate" runat="server" TextMode="Date" Style="font-size: 16px;"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="btnGestisci">
                     <%-- BUTTON CONFERMA --%>
-                    <asp:Button ID="btnInvia" CssClass="btnBE" runat="server" Text="Fitra" OnClick="btnInvia_Click" />
+                    <asp:Button ID="btnInvia" CssClass="btnBE" runat="server" Style="margin-left: 30px;" Text="Fitra" OnClick="btnInvia_Click" />
                     <%-- BUTTON RESETTA DATE --%>
                     <asp:Button ID="btnReset" CssClass="btnBE" runat="server" Text="Resetta date" OnClick="btnReset_Click" />
                 </td>
             </tr>
         </table>
     </div>
+    <div class="containerBE" style="margin-top: -20px;">
+        <h4 class="titoliBE">TOTALE</h4>
+        <table class="tablePopUp">
+            <tr>
+                <td>
+                    <span><b>Totale spese:</b></span>
+                    <asp:Label ID="lblTotDoc" runat="server" CssClass="lbl" Text=""></asp:Label>
+                </td>
+                <td>
+                    <span><b>Totale ricavi:</b></span>
+                    <asp:Label ID="lblTotStud" runat="server" CssClass="lbl" Text=""></asp:Label>
+                </td>
+                <td>
+                    <span><b>Totale utili: </b></span>
+                    <asp:Label ID="lblUtili" runat="server" CssClass="lbl" Text=""></asp:Label>
+                </td>
+            </tr>
+        </table>
+    </div>
+
     <div class="containerBE" style="margin-top: -18px;">
         <h4 class="titoliBE">Spese docenti</h4>
         <div class="containerBE" style="margin-top: -54px;">
@@ -92,7 +104,6 @@
         <table class="tablePopUp">
             <tr>
                 <td>
-
                     <%-- GRIGLIA DI VISUALIZZAZIONE REPORT STUDENTI --%>
                     <div class="box-content" style="min-height: 40px">
                         <asp:GridView ID="grigliaReportStudenti" CssClass="griglia" AutoGenerateColumns="False" runat="server">

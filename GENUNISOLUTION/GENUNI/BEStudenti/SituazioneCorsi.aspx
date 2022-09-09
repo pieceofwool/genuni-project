@@ -4,6 +4,7 @@
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
     <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
@@ -14,8 +15,9 @@
                 <td class="btnGestisci">
                     <!-- POPUP, HTML-->
                     <%--<asp:LinkButton ID="lnkDownload" Text="Download" CommandArgument='<%# Eval("FileData") %>' runat="server" OnClick="lnkDownload_Click"></asp:LinkButton>--%>
-                    <asp:GridView ID="grigliaCorsiAcquistati" DataKeyNames="Chiave" AutoGenerateColumns="False" CssClass="griglia" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged" >
+                    <asp:GridView ID="grigliaCorsiAcquistati" DataKeyNames="Cod_Corso, Chiave" AutoGenerateColumns="False" CssClass="griglia" runat="server" OnSelectedIndexChanged="grigliaCorsiAcquistati_SelectedIndexChanged" >
                         <Columns>
+                            <asp:BoundField DataField="Cod_Corso" Visible="false" />
                             <asp:BoundField DataField="Chiave" Visible="false" />
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                             <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
@@ -26,8 +28,9 @@
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
                         </Columns>
-                        <HeaderStyle />
+                      
                         <HeaderStyle CssClass="headergrid" />
+                        <SelectedRowStyle CssClass="selezionegrid"/>
                     </asp:GridView>
                 </td>
             </tr>
@@ -52,7 +55,7 @@
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
                         </Columns>
-                        <HeaderStyle />
+                 
                         <HeaderStyle CssClass="headergrid" />
                     </asp:GridView>
                 </td>
