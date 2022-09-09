@@ -72,6 +72,13 @@
     <asp:Button ID="btnChat" runat="server" Text="Chat del corso" OnClick="btnChat_Click" />
     <br />
     <%--griglia corsi--%>
-    <asp:GridView ID="GridCorsi" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave"></asp:GridView>
-
+    <asp:GridView ID="GridCorsi" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave" AutoGenerateColumns="False">
+        <Columns>
+            <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
+            <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+            <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
+            <asp:BoundField DataField="Data_partenza" HeaderText="Data Partenza" />
+        </Columns>
+    </asp:GridView>
+    
 </asp:Content>

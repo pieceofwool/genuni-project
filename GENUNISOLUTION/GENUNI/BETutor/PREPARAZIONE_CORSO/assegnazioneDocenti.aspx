@@ -18,7 +18,14 @@
                 <asp:Button ID="btnSkills" runat="server" Text="Cerca" OnClick="btnSkills_Click" />
             </p>
             <p>
-                <asp:GridView ID="GridDocenti" runat="server" AutoGenerateSelectButton="True" DataKeyNames="Chiave" OnSelectedIndexChanged="GridDocenti_SelectedIndexChanged"></asp:GridView>
+                <asp:GridView ID="GridDocenti" runat="server" AutoGenerateSelectButton="True" DataKeyNames="Chiave" OnSelectedIndexChanged="GridDocenti_SelectedIndexChanged" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:BoundField DataField="Cognome" HeaderText="Cognome" />
+                        <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                        <asp:BoundField DataField="Ragione_Sociale" HeaderText="Ragione Sociale" />
+                        <asp:BoundField DataField="Skills" HeaderText="Skills" />
+                    </Columns>
+                </asp:GridView>
             </p>
             <p>
                 <%--vai a cronistoria docente selezionato--%>

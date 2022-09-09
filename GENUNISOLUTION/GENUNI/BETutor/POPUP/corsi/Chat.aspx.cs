@@ -193,6 +193,6 @@ public partial class BETutor_Default : System.Web.UI.Page
     {
         int codiceCorso = int.Parse(Request.QueryString["codicecorso"].ToString());
         string nomecorso = Request.QueryString["nomecorso"].ToString();
-        Response.Redirect("MaterieDocenti.aspx?codice=" + codiceCorso + "&corso=" + nomecorso + "");
+        Response.Redirect("../../SITUAZIONE_CORSI/situazioneCorsi.aspx");
     }
 }

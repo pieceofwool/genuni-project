@@ -9,8 +9,14 @@
     <p>
 
         <%--risultati dei test per l' intero corso--%>
-        <asp:GridView ID="grvRisulati" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvRisulati_SelectedIndexChanged"></asp:GridView>
+        <asp:GridView ID="grvRisulati" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvRisulati_SelectedIndexChanged" DataKeyNames="Cod_studente" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="Studente" HeaderText="Studente" />
+                <asp:BoundField DataField="Domanda" HeaderText="Domanda" />
+                <asp:BoundField DataField="Risposta" HeaderText="Risposta" />
+            </Columns>
+        </asp:GridView>
     </p>
-    <asp:Button ID="Button1" runat="server" Text="elenco studenti" OnClick="Button1_Click" />
+    <asp:Button ID="btnStudenti" runat="server" Text="elenco studenti" OnClick="Button1_Click" />
 </asp:Content>
 
