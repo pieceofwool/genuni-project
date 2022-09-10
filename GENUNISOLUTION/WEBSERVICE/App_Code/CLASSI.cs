@@ -118,5 +118,18 @@ public class CLASSI
 
         return c.EseguiSelect(cmd);
     }
+
+    /// <summary>
+    /// Controlla se lo studente è già iscritto ad un determinato corso
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckOne()
+    {
+        SqlCommand cmd = new SqlCommand("CLASSI_CHECKONE");
+        cmd.Parameters.AddWithValue("@COD_CORSO", COD_CORSO);
+        cmd.Parameters.AddWithValue("@COD_STUDENTE", COD_STUDENTE);
+
+        return new CONNESSIONE().EseguiSelect(cmd).Rows.Count > 0;
+    }
 }
 

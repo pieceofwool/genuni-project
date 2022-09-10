@@ -22,7 +22,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
 
     protected void grigliaCorsiDisponibili_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Session["Chiave"] = grigliaCorsiDisponibili.SelectedDataKey[0];
+        Session["CHIAVE_CORSO"] = grigliaCorsiDisponibili.SelectedDataKey[0];
         Response.Redirect("AcquistoCorsi.aspx");
     }
 

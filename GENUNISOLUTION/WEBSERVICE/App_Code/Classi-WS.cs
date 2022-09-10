@@ -135,4 +135,20 @@ public class Classi_WS : System.Web.Services.WebService
         return dt;
     }
 
+    /// <summary>
+    /// Controlla se lo studente è già iscritto ad un determinato corso
+    /// </summary>
+    /// <param name="COD_CORSO"></param>
+    /// <param name="COD_STUDENTE"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public bool CheckOne(int COD_CORSO, int COD_STUDENTE)
+    {
+        CLASSI C = new CLASSI();
+        C.COD_CORSO = COD_CORSO;
+        C.COD_STUDENTE = COD_STUDENTE;
+
+        return C.CheckOne();
+    }
+
 }

@@ -56,7 +56,7 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         DateTime dataTest = DTCodTest.Rows[0].Field<DateTime>("Data_Test");
         if (DateTime.Now >= dataTest)
         {
-            btnTest.Enabled = true;
+            btnTest.Visible = true;
         }
     }
 
