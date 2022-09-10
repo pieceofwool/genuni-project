@@ -21,12 +21,6 @@
                         </asp:DropDownList>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="lblIndice" runat="server" Text="Indice: "></asp:Label>
-                        <asp:TextBox ID="txtIndice" placeholder="es. 1, 2, 3" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
                 <tr runat="server" id="LINK">
                     <td>
                         <asp:Label ID="lblLink" runat="server" Text="Link: "></asp:Label>

@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 public partial class BEDocenti_POPUP_inserimentoProgrammi_ModificaProgrammi : System.Web.UI.Page
 {
     static int link;
+    static int INDICE;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -52,7 +53,7 @@ public partial class BEDocenti_POPUP_inserimentoProgrammi_ModificaProgrammi : Sy
 
             }
 
-            txtIndice.Text = dt.Rows[0][3].ToString();
+            INDICE = (int)dt.Rows[0][3];
             txtTitolo.Text = dt.Rows[0][6].ToString();
             txtDescrizione.Text = dt.Rows[0][8].ToString();
         }
@@ -94,12 +95,6 @@ public partial class BEDocenti_POPUP_inserimentoProgrammi_ModificaProgrammi : Sy
 
     protected void btnModifica_Click(object sender, EventArgs e)
     {
-        //controlli formali
-        int INDICE = 0;
-        if (!string.IsNullOrEmpty(txtIndice.Text))
-        {
-            INDICE = Convert.ToInt32(txtIndice.Text);
-        }
 
         int CHIAVE = Convert.ToInt32(Session["CHIAVE"]);
 
@@ -157,7 +152,6 @@ public partial class BEDocenti_POPUP_inserimentoProgrammi_ModificaProgrammi : Sy
 
         txtLink.Text = "";
         txtTitolo.Text = "";
-        txtIndice.Text = "";
         txtDescrizione.Text = "";
     }
 }

@@ -82,26 +82,33 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
+
+        .popupInserisciMateriale, .popupModificaMateriale {
+            background-color: #ffffff;
+            color: black;
+            border-radius: 5px;
+            border-color: rgba(255,255,255,.2);
+        }
+
+            .popupInserisciMateriale :hover, .popupModificaMateriale :hover {
+                background-color: #9ceeb7;
+                color: black;
+            }
+
+            .header{
+            background-color:#5fcf80;
+            color:black;
+            font-size:22px;
+        }
     </style>
+
+    <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <%-- header--%>
     <table style="width: 1220px; text-align: center; margin-top: 100px;">
-        <tr>
-            <td style="text-align: left">
-                <asp:Button ID="BtnAggiorna" runat="server" Text="Aggiorna" OnClick="BtnAggiorna_Click" /></td>
-            <td style="text-align: left">
-                <asp:Button class="popupInserisciMateriale" ID="btnInserisciMateriale" runat="server" Text="Inserisci materiale" />
-            </td>
-
+        <tr class="header">
             <td><b runat="server" id="InserireCorso"></b></td>
-            <td style="text-align: right">
-                <asp:Button class="popupModificaMateriale" ID="btnModificaMateriale" runat="server" Visible="false" Text="Modifica materiale " /></td>
-            <td style="text-align: right">
-                <asp:Button ID="BtnElimina" runat="server" Text="Elimina" Visible="false" OnClick="BtnElimina_Click" /></td>
-
-
-
         </tr>
     </table>
     <div class="MaterieScroll">
@@ -117,7 +124,9 @@
                 <asp:BoundField DataField="Titolo_Materiale" HeaderText="Titolo_Materiale" SortExpression="Titolo_Materiale" />
                 <asp:BoundField DataField="Tipo_Materiale" HeaderText="Tipo_Materiale" SortExpression="Tipo_Materiale" Visible="False" />
                 <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" SortExpression="Descrizione" />
-                <asp:CommandField ButtonType="Button" SelectText="Seleziona" ShowSelectButton="True" />
+                <asp:CommandField ButtonType="Button" SelectText="Seleziona" ShowSelectButton="True">
+                    <ControlStyle CssClass="btnBE" />
+                </asp:CommandField>
             </Columns>
         </asp:GridView>
 
@@ -128,12 +137,17 @@
     <%--footer--%>
     <table style="border: 1px solid black; border-collapse: collapse; width: 1220px; text-align: center; margin-bottom: 100px;">
         <tr>
-            <td><small>Viene mostrato tutto il programma</small></td>
-        </tr>
-        <tr>
+            <td style="text-align: left">
+                <asp:Button ID="Button1" CssClass="btnBE" runat="server" Text="Aggiorna" OnClick="BtnAggiorna_Click" /></td>
+            <td style="text-align: left">
+                <asp:Button class="popupInserisciMateriale" ID="btnInserisciMateriale" runat="server" Text="Inserisci materiale" />
+            </td>
             <td>
-                <asp:Button ID="BtnIndietro" runat="server" Text="Indietro" OnClick="BtnIndietro_Click" /></td>
-
+                <asp:Button ID="BtnIndietro" CssClass="btnBE" runat="server" Text="Indietro" OnClick="BtnIndietro_Click" /></td>
+            <td style="text-align: right">
+                <asp:Button class="popupModificaMateriale" ID="btnModificaMateriale" runat="server" Visible="false" Text="Modifica materiale " /></td>
+            <td style="text-align: right">
+                <asp:Button ID="BtnElimina" CssClass="btnBE" runat="server" Text="Elimina" Visible="false" OnClick="BtnElimina_Click" /></td>
         </tr>
     </table>
 

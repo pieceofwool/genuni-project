@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,14 +20,30 @@ public partial class BEDocenti_POPUP_inserimentoProgrammi_InserimentoProgrammi :
 
     protected void btnInserisci_Click1(object sender, EventArgs e)
     {
+        PROGRAMMI.Programmi_WSSoapClient Pr = new PROGRAMMI.Programmi_WSSoapClient();
+        int COD_MATERIA = Convert.ToInt32(Session["COD_MATERIA"]);
+        DataTable dt = Pr.SelectProgrammiMateria(COD_MATERIA);
+        int INDICE = 1;
 
+        if (dt.Rows.Count == 0)
+        {
+            INDICE = 1;
+        }
+        else
+        {
+            foreach (DataRow dr in dt.Rows)
+            {
+                INDICE = dr.Field<int>("Indice") + 1;
+            }
+
+        }
 
         //controlli formali
-        int INDICE = 0;
-        if (!string.IsNullOrEmpty(txtIndice.Text))
-        {
-            INDICE = Convert.ToInt32(txtIndice.Text);
-        }
+        //int INDICE = 0;
+        //if (!string.IsNullOrEmpty(txtIndice.Text))
+        //{
+        //    INDICE = Convert.ToInt32(txtIndice.Text);
+        //}
         //se è vuoto sia link che materiale
         if (string.IsNullOrEmpty(txtLink.Text) && !fupMateriale.HasFile)
         {
@@ -46,7 +63,7 @@ public partial class BEDocenti_POPUP_inserimentoProgrammi_InserimentoProgrammi :
         }
 
 
-        int COD_MATERIA = Convert.ToInt32(Session["COD_MATERIA"]);
+
         string TIPO = ddlTipo.SelectedValue.ToString();
         string LINK = txtLink.Text.ToString();
         byte[] MATERIALE = fupMateriale.FileBytes;
@@ -54,14 +71,13 @@ public partial class BEDocenti_POPUP_inserimentoProgrammi_InserimentoProgrammi :
 
         string DESCRIZIONE = txtDescrizione.Text.ToString();
 
-        PROGRAMMI.Programmi_WSSoapClient Pr = new PROGRAMMI.Programmi_WSSoapClient();
+
         Pr.Insert(COD_MATERIA, TIPO, INDICE, LINK, MATERIALE, TITOLO_MATERIALE, TIPO_MATERIALE, DESCRIZIONE);
 
         ScriptManager.RegisterClientScriptBlock(this, GetType(), "OK", "alert('Inseririmento effettuato')", true);
 
         txtLink.Text = "";
         txtTitolo.Text = "";
-        txtIndice.Text = "";
         txtDescrizione.Text = "";
 
 
