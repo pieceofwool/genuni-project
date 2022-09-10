@@ -24,8 +24,8 @@
                     modal: true,
                     title: 'Modifica Avatar',
                     resizable: false,
-                    width: 400,
-                    height: 400,
+                    width: 300,
+                    height: 200,
                     overlay: { opacity: 0.9, background: 'black' },
 
                     open: function (type, data) { $(this).parent().appendTo('form'); }

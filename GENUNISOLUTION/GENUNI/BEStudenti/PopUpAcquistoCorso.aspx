@@ -18,7 +18,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td id="bottoni" runat="server">
                         <asp:Button ID="btnAcquista" CssClass="btnBE" runat="server" Text="Acquista" OnClick="btnAcquista_Click" />
                         <asp:Label ID="lblErrore" CssClass="lbl" runat="server" Text=""></asp:Label>
                     </td>

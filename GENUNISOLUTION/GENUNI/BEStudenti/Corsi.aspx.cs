@@ -14,16 +14,14 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
     {
         caricaGriglia();
         int Cod_Corso = int.Parse(Session["Chiave"].ToString());
-        CORSI.Corsi_WSSoapClient C=new CORSI.Corsi_WSSoapClient();
+        CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
         DataTable NomeCorso = new DataTable();
-        NomeCorso=C.SelectOne(Cod_Corso);
+        NomeCorso = C.SelectOne(Cod_Corso);
         lblTitoloCorso.Text = NomeCorso.Rows[0]["Titolo"].ToString();
         TEST.Test_WSSoapClient T = new TEST.Test_WSSoapClient();
         DataTable DTCodTest = new DataTable();
-        DTCodTest=T.SelectOneByCorso(Cod_Corso);
+        DTCodTest = T.SelectOneByCorso(Cod_Corso);
         int Cod_Test = int.Parse(DTCodTest.Rows[0]["Chiave"].ToString());
-
-
 
         //trasformo una datatable in un intero
         DataTable dt = T.SelectSoglia(Cod_Corso);
@@ -32,17 +30,33 @@ public partial class BEstudenti_Default2 : System.Web.UI.Page
         CLASSI.Classi_WSSoapClient c = new CLASSI.Classi_WSSoapClient();
         int Cod_Studente = int.Parse(Session["Cod_Studente"].ToString());
         DataTable da = c.Select_Punteggio(Cod_Studente);
-        int risultato = int.Parse(da.Rows[0]["Punteggio"].ToString());
+        string res = da.Rows[0]["Punteggio"].ToString();
 
-        if (risultato >= soglia)
+        if (!string.IsNullOrEmpty(res))
         {
-            lblEsito.Text = "Il test di questo corso è stato già superato. Puoi continuare ad accedere a questa pagina per visualizzare il materiale di studio.";
-            btnTest.Visible = false;
+            int risultato = int.Parse(res);
+
+            if (risultato >= soglia)
+            {
+                lblEsito.Text = "Il test di questo corso è stato già superato. Puoi continuare ad accedere a questa pagina per visualizzare il materiale di studio.";
+                btnTest.Visible = false;
+            }
+            else
+            {
+                lblEsito.Text = "Il test di questo corso è già stato effettuato e non è stato superato. Se vuoi effettuare nuovamente il test, puoi iscriverti ad un nuovo corso. Puoi comunque continuare ad accedere a questa pagina per visualizzare il materiale di studio.";
+                btnTest.Visible = false;
+            }
+
+            return;
         }
-        else
+
+        lblEsito.Text = "Non hai ancora sostenuto il test per questo corso.";
+
+        // abilito il test se dopo la data
+        DateTime dataTest = DTCodTest.Rows[0].Field<DateTime>("Data_Test");
+        if (DateTime.Now >= dataTest)
         {
-            lblEsito.Text = "Il test di questo corso è già stato effettuato e non è stato superato. Se vuoi effettuare nuovamente il test, puoi iscriverti ad un nuovo corso. Puoi comunque continuare ad accedere a questa pagina per visualizzare il materiale di studio.";
-            btnTest.Visible = false;
+            btnTest.Visible = true;
         }
     }
 

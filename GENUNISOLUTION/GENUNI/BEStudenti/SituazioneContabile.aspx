@@ -20,8 +20,8 @@
                     title: 'Ricarica GenMoney',  //titolo dell'oggetto
                     resizable: false,
                     dialogClass: 'dialog',
-                    height: 400,
-                    width: 400,
+                    height: 220,
+                    width: 350,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
                 });
