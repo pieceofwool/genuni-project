@@ -17,7 +17,7 @@
                     <td>
                         <%--DOMANDA --%>
                         <asp:Label ID="lblInserimentoDomanda" runat="server" Text="Inserire il quesito: "></asp:Label>
-                        <asp:TextBox ID="txtInserimentoDomanda" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtInserimentoDomanda" runat="server" TextMode="MultiLine"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

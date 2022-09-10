@@ -10,10 +10,7 @@ public partial class preparazioneDomande : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-  
-   
             AggiornaDomande();
-    
     }
 
     protected void btnAggiungiDomanda_Click(object sender, EventArgs e)
@@ -24,15 +21,17 @@ public partial class preparazioneDomande : System.Web.UI.Page
         int COD_CORSO = int.Parse(Session["Chiave_Corso"].ToString());
 
         DataTable dt = new DataTable();
-        dt = T.Test_SelectCorso(COD_CORSO);
+        dt = T.SelectOneByCorso(COD_CORSO);
 
         //scrivo i prarametri
-        int COD_TEST = int.Parse(dt.Rows[0]["cHIAVE"].ToString());
-        string DOMANDA = txtInserimentoDomanda.ToString();
-        string RISPOSTA1 = txtCorretta.ToString();
-        string RISPOSTA2 = txtIncompleta.ToString();
-        string RISPOSTA3 = txtErrata.ToString();
-        string VOTI = txtVoti.ToString();
+
+        int COD_TEST = int.Parse(dt.Rows[0]["CHIAVE"].ToString());
+
+        string DOMANDA = txtInserimentoDomanda.Text.ToString();
+        string RISPOSTA1 = txtCorretta.Text.ToString();
+        string RISPOSTA2 = txtIncompleta.Text.ToString();
+        string RISPOSTA3 = txtErrata.Text.ToString();
+        string VOTI = txtVoti.Text.ToString();
 
 
         DOMANDE.Domande_WSSoapClient D = new DOMANDE.Domande_WSSoapClient();

@@ -20,11 +20,6 @@
                 <td>
         <%--risultati dei test per l' intero corso--%>
         <asp:GridView ID="grvRisulati" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvRisulati_SelectedIndexChanged" DataKeyNames="Cod_studente" AutoGenerateColumns="False">
-            <Columns>
-                <asp:BoundField DataField="Studente" HeaderText="Studente" />
-                <asp:BoundField DataField="Domanda" HeaderText="Domanda" />
-                <asp:BoundField DataField="Risposta" HeaderText="Risposta" />
-            </Columns>
         </asp:GridView>
    </td>
             </tr>
