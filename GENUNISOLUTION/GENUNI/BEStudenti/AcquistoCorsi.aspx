@@ -17,9 +17,10 @@
                 //da pippo prendimi il dialog
                 dialog.dialog({
                     modal: true,
-                    title: 'Ricarica GenMoney',
+                    title: 'Acquisto Corso',
                     resizable: false,
-                    width: '400px',
+                    width: 300,
+                    height: 200,
                     overlay: { opacity: 0.9, background: 'black' },
                     open: function (type, data) {
                         $(this).parent().appendTo('form');
