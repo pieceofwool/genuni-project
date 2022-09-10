@@ -100,7 +100,7 @@ public partial class _Default : System.Web.UI.Page
                             break;
 
                         case 'T':
-                            Response.Redirect("/BETutor/SITUAZIONE_CORSI/SituazioneCorsi.aspx"); //Redirect per i Tutor
+                            Response.Redirect("/BETutor/SITUAZIONE_CORSI/situazioneCorsi.aspx"); //Redirect per i Tutor
                             break;
 
                         case 'C':

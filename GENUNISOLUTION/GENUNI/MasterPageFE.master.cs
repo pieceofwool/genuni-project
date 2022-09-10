@@ -58,7 +58,7 @@ public partial class MasterPageFE : System.Web.UI.MasterPage
             case "T":
                 litUserSpace.Text = "<li class=\"drop-down\"><a role=\"link\" aria-disabled=\"true\">" + greeting + Nome + "</a>";
                 litUserSpace.Text += "<ul>";
-                litUserSpace.Text += "<li><a href=\"BETutor/GestioneTutor.aspx\">Area Riservata</a></li>";
+                litUserSpace.Text += "<li><a href=\"BETutor/SITUAZIONE_CORSI/situazioneCorsi.aspx\">Area Riservata</a></li>";
                 litUserSpace.Text += "<li><a href=\"LogOut.aspx\">Logout</a></li>";
                 litUserSpace.Text += "</ul>";
                 litUserSpace.Text += "</li>";
