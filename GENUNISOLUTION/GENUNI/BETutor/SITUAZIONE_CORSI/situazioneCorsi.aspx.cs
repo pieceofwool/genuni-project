@@ -43,17 +43,17 @@ public partial class Default2 : System.Web.UI.Page
 
         dt = T.SelectOneByCorso(COD_CORSO);
 
-        if (dt.Rows.Count < 1)
-        {
-            btnPreparaTest.Enabled = true;
-            btnPreparaDomande.Enabled = false;
-            btnRisultatiTest.Enabled = false;
-        }
-        else
+        if (dt.Rows.Count != 0)
         {
             btnPreparaTest.Enabled = false;
             btnPreparaDomande.Enabled = true;
             btnRisultatiTest.Enabled = true;
+        }
+        else
+        {
+            btnPreparaTest.Enabled = true;
+            btnPreparaDomande.Enabled = false;
+            btnRisultatiTest.Enabled = false;
         }
 
         //creo le session
@@ -71,7 +71,7 @@ public partial class Default2 : System.Web.UI.Page
         Response.Redirect("../POPUP/preparazione_domande/preparazioneDomande.aspx");
     }
 
-    protected void popupPreparaTest_Click(object sender, EventArgs e)
+    protected void btnPreparaTest_Click(object sender, EventArgs e)
     {
         Response.Redirect("../POPUP/corsi/preparazioneTest.aspx");
     }
