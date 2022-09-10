@@ -16,24 +16,28 @@ public partial class POPUP_corsi_preparazioneTest : System.Web.UI.Page
 
     protected void btnCreaTest_Click(object sender, EventArgs e)
     {
-        if (txtData.Text == "" || txtOra.Text == "" || txtSogliaDiSuperamento.Text == "")
+
+        if (string.IsNullOrEmpty(txtData.Text.ToString()) || string.IsNullOrEmpty(txtOra.Text.ToString()) || string.IsNullOrEmpty(txtSogliaDiSuperamento.Text.ToString()))
         {
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('dati mancanti')", true);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Riempire i campi')", true);
             return;
         }
+
         else
         {
             TEST.Test_WSSoapClient T = new TEST.Test_WSSoapClient();
-            int COD_CORSO = int.Parse(Session["Chiave_Corso"].ToString());
-            int SOGLIA = int.Parse(txtSogliaDiSuperamento.Text);
-            string DATA_TEST = txtData.ToString();
-            string ORA_TEST = txtOra.ToString();
+
+            int ChiaveCorso = int.Parse(Session["Chiave_Corso"].ToString());
+            int Soglia = int.Parse(txtSogliaDiSuperamento.Text);
+            string DataTest = txtData.Text.ToString();
+            string OraTest = txtOra.Text.ToString();
 
             
-            T.Insert(COD_CORSO, SOGLIA, DATA_TEST, ORA_TEST);
+            T.Insert(ChiaveCorso, Soglia, DataTest, OraTest);
 
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('dati inseriti correttamente')", true);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATTENZIONE", "alert('Test creato con successo')", true);
             return;
         }
+
     }
 }
