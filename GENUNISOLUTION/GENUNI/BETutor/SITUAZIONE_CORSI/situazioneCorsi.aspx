@@ -67,7 +67,7 @@
                 <td class="btnGestisci">
     <asp:Button class="popupPreparaDomande" ID="btnPreparaDomande" runat="server" Text="Prepara domande" OnClick="btnPreparaDomande_Click" />
     <asp:Button ID="btnRisultatiTest" runat="server" Text="Risultati test" OnClick="btnRisultatiTest_Click" />
-    <asp:Button class="popupPreparaTest" ID="popupPreparaTest" runat="server" Text="Crea test" />
+    <asp:Button class="popupPreparaTest" ID="btnPreparaTest" runat="server" Text="Crea test" />
     <asp:Button ID="btnChat" runat="server" Text="Chat del corso" OnClick="btnChat_Click" />
     </td>
             </tr>
