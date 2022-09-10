@@ -48,8 +48,12 @@
             </tr>
             <tr>
                 <td>
-                    <asp:GridView ID="grigliaCorso" CssClass="griglia" runat="server" DataKeyNames="CHIAVE" OnSelectedIndexChanged="grigliaCorso_SelectedIndexChanged">
+                    <asp:GridView ID="grigliaCorso" CssClass="griglia" runat="server" DataKeyNames="CHIAVE" OnSelectedIndexChanged="grigliaCorso_SelectedIndexChanged" AutoGenerateColumns="False">
                         <Columns>
+                            <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
+                            <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+                            <asp:BoundField DataField="Data_Partenza" HeaderText="Data Partenza" />
+                            <asp:BoundField DataField="Costo" HeaderText="Costo" />
                             <asp:CommandField ButtonType="Button" ShowSelectButton="true">
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
