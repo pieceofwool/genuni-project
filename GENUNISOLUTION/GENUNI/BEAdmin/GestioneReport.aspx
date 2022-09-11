@@ -30,7 +30,7 @@
             </tr>
         </table>
     </div>
-    <div class="containerBE" style="margin-top: -20px;">
+    <div class="containerBE" style="margin-top: -66px;">
         <h4 class="titoliBE">TOTALE</h4>
         <table class="tablePopUp" style="border: 3px solid #94e2ae; border-radius: 48px; width: 100%%; width: 808px; text-align-last: center; background-color: whitesmoke;">
             <tr>

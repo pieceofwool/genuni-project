@@ -10,19 +10,18 @@
     <form id="form1" runat="server">
         <div>
             <table>
-
                 <tr>
                     <td>
-                        <asp:Label ID="Label1" runat="server" Text="Skills:"></asp:Label>
+                        <asp:Label ID="Label1" CssClass="lblP" runat="server" Text="Skills:"></asp:Label>
                     </td>
                     <td>
-                    <asp:TextBox ID="txtSkills" placeholder="Skills" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtSkills" CssClass="txt" placeholder="Skills" runat="server"></asp:TextBox>
 
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="Label2" runat="server" Text="CV:"></asp:Label>
+                        <asp:Label ID="Label2" CssClass="lblP" runat="server" Text="CV:"></asp:Label>
                     </td>
                     <td>
                     <asp:FileUpload ID="FileUploadCV" runat="server" />
@@ -31,12 +30,9 @@
                 </tr>
                 <tr>
                    <td colspan="2">
-
-                    <asp:Button ID="btnModifica" runat="server" Text="Modifica" OnClick="btnModifica_Click" />
+                    <asp:Button ID="btnModifica" CssClass="btnBE" runat="server" Text="Modifica" OnClick="btnModifica_Click" />
                    </td>
                 </tr>
-
-
             </table>
         </div>
     </form>

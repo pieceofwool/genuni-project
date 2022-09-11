@@ -46,11 +46,9 @@
             <!-- ======= Header ======= -->
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center">
-
                     <h1 class="logo me-auto"><a href="../Default.aspx">GENUNI<sub style="color: #808080">Area Docenti</sub></a></h1>
                     <!-- Uncomment below if you prefer to use an image logo -->
                     <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
                     <nav id="navbar" class="navbar order-last order-lg-0">
                         <ul>
                             <li><a class="active" href="../Default.aspx">Home</a></li>
@@ -61,23 +59,18 @@
                         </ul>
                     </nav>
                     <!-- .navbar -->
-
                 </div>
             </header>
             <!-- End Header -->
-
             <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
             <!-- Vendor JS Files -->
             <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
             <script src="assets/vendor/aos/aos.js"></script>
             <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
             <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
             <script src="assets/vendor/php-email-form/validate.js"></script>
-
             <!-- Template Main JS File -->
             <script src="assets/js/main2.js"></script>
-
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
 

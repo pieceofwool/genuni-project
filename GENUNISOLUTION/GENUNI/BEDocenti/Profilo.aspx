@@ -7,6 +7,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
+
     <script type="text/javascript">
 
         $(document).ready(function () {

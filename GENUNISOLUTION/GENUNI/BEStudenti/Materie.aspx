@@ -15,6 +15,7 @@
                     <asp:GridView ID="grigliaMateriale" CssClass="griglia" runat="server" OnSelectedIndexChanged="grigliaMateriale_SelectedIndexChanged" DataKeyNames="Chiave">
                         <Columns>
                             <asp:CommandField ButtonType="Button" ShowSelectButton="true" SelectText="Apri materiale">
+                                <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
                         </Columns>
                         <HeaderStyle />
@@ -22,7 +23,7 @@
                     </asp:GridView>
                 </td>
             </tr>
-           <%-- <tr>
+            <%-- <tr>
                 <td>
                     <asp:Button ID="btnTest" runat="server" CssClass="btnBE" Text="Vai al test" OnClick="btnTest_Click" />
                 </td>

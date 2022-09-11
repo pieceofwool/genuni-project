@@ -193,7 +193,7 @@
             </tr>
         </table>
     </div>
-    <div class="containerBE2">
+    <div class="containerBE2" style="margin-top: 7px;">
         <h4 class="titoliBE">Assegnazione corsi</h4>
         <table class="tablePopUp">
             <tr>

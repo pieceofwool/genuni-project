@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEDocenti.master" AutoEventWireup="true" CodeFile="MaterieDocenti.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageBEDocenti.master" AutoEventWireup="true" CodeFile="MaterieDocenti - Copia.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style>
@@ -12,8 +12,7 @@
         }
 
         .tabella {
-            width: 100%;
-            text-align: center;
+            width: 900px;
         }
 
         .MaterieScroll {
@@ -23,28 +22,15 @@
         }
 
         table {
+            border: 1px solid black;
             border-collapse: collapse;
-            border: 1px solid lightgrey;
-            width: 70%;
-            font-size: 16px;
-            margin-top: 8px;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        h4 {
+        .header {
             background-color: #5fcf80;
-            width: 920px;
+            color: black;
+            font-size: 22px;
         }
-
-            h4::after {
-            }
-
-            h4:hover {
-                color: white;
-                width: 920px;
-            }
     </style>
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </asp:Content>
@@ -53,17 +39,16 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <div class="titoliBE">MATERIA</div>
+        <h4 class="titoliBE">MATERIA</h4>
         <%--Materie Docente--%>
         <%-- header--%>
-        <h4 class="header titoliBE" style="width: 917px; text-align: center; margin-top: 50px;">
+        <table class="header" style="width: 917px; text-align: center; margin-top: 100px;">
             <tr>
                 <td style="width: 33.3%"></td>
                 <td runat="server" id="InserireCorso" style="width: 33.3%"><b><big></big></b></td>
                 <td style="width: 33.3%"></td>
             </tr>
-        </h4>
-        <br />
+        </table>
         <%--corpo scrollabile--%>
         <div class="MaterieScroll">
             <table class="tabella">
@@ -79,11 +64,8 @@
                 <asp:Literal ID="litMaterie" runat="server"></asp:Literal>
             </table>
         </div>
-        <br />
-        <br />
-        <br />
         <%--footer--%>
-        <table style="width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
+        <table style="border: 1px solid black; border-collapse: collapse; width: 917px; text-align: right; margin-bottom: 100px;">
             <tr>
                 <td><small><%--Vengono mostrate tutte le materie accettate del corso cliccato--%></small></td>
             </tr>
@@ -93,13 +75,14 @@
                 </td>
             </tr>
         </table>
+        <%--chat corso--%>
+        <table style="border: 1px solid black; border-collapse: collapse; width: 917px; text-align: center; margin-top: 100px; font-size: 20px; margin-top: -50px;">
+            <tr>
+
+                <asp:Literal ID="litChat" runat="server"></asp:Literal>
+            </tr>
+
+        </table>
     </div>
-    <br />
-    <%--chat corso--%>
-    <table style="width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
-        <tr>
-            <asp:Literal ID="litChat" runat="server"></asp:Literal>
-        </tr>
-    </table>
 </asp:Content>
 

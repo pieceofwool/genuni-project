@@ -7,9 +7,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
 
-
     <script type="text/javascript">
-
         $(document).ready(function () {
 
             $('.popupInserisciMateriale').click(function () {
@@ -27,7 +25,6 @@
 
                     open: function (type, data) { $(this).parent().appendTo('form'); }
                 });
-
                 return false;
             });
         });
@@ -79,7 +76,6 @@
         }
 
         table {
-            border: 1px solid black;
             border-collapse: collapse;
         }
 
@@ -95,61 +91,69 @@
                 color: black;
             }
 
-            .header{
-            background-color:#5fcf80;
-            color:black;
-            font-size:22px;
+        .header {
+            color: black;
+            font-size: 19px;
+            text-transform: uppercase;
+            text-align: center;
         }
     </style>
 
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <%-- header--%>
-    <table style="width: 1220px; text-align: center; margin-top: 100px;">
-        <tr class="header">
-            <td><b runat="server" id="InserireCorso"></b></td>
-        </tr>
-    </table>
-    <div class="MaterieScroll">
-
-        <asp:GridView Width="1200px" class="grigliaProgrammi" ID="grigliaProgrammi" runat="server" AutoGenerateColumns="False" DataKeyNames="Chiave,Cod_Materia" OnSelectedIndexChanged="grigliaProgrammi_SelectedIndexChanged">
-            <Columns>
-                <asp:BoundField DataField="Chiave" HeaderText="Chiave" InsertVisible="False" ReadOnly="True" SortExpression="Chiave" Visible="False" />
-                <asp:BoundField DataField="Cod_Materia" HeaderText="Cod_Materia" SortExpression="Cod_Materia" Visible="False" />
-                <asp:BoundField DataField="Tipo" HeaderText="Tipo" SortExpression="Tipo" />
-                <asp:BoundField DataField="Indice" HeaderText="Indice" SortExpression="Indice" />
-                <asp:BoundField DataField="Link" HeaderText="Link" SortExpression="Link" />
-                <asp:BoundField DataField="Materiale" HeaderText="Materiale" SortExpression="Materiale" Visible="False" />
-                <asp:BoundField DataField="Titolo_Materiale" HeaderText="Titolo_Materiale" SortExpression="Titolo_Materiale" />
-                <asp:BoundField DataField="Tipo_Materiale" HeaderText="Tipo_Materiale" SortExpression="Tipo_Materiale" Visible="False" />
-                <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" SortExpression="Descrizione" />
-                <asp:CommandField ButtonType="Button" SelectText="Seleziona" ShowSelectButton="True">
-                    <ControlStyle CssClass="btnBE" />
-                </asp:CommandField>
-            </Columns>
-        </asp:GridView>
-
+    <div>
+        <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
+    <div class="containerBE">
+        <h4 class="titoliBE">PROGRAMMI CORSI</h4>
+        <%-- header--%>
+        <table style="width: 1220px; text-align: center; margin-top: 50px;">
+            <tr class="header">
+                <td><b runat="server" id="InserireCorso"></b></td>
+            </tr>
+        </table>
+        <div class="MaterieScroll">
+
+            <asp:GridView Width="1200px" class="grigliaProgrammi" CssClass="griglia" ID="grigliaProgrammi" runat="server" AutoGenerateColumns="False" DataKeyNames="Chiave,Cod_Materia" OnSelectedIndexChanged="grigliaProgrammi_SelectedIndexChanged">
+                <Columns>
+                    <asp:BoundField DataField="Chiave" HeaderText="Chiave" InsertVisible="False" ReadOnly="True" SortExpression="Chiave" Visible="False" />
+                    <asp:BoundField DataField="Cod_Materia" HeaderText="Cod_Materia" SortExpression="Cod_Materia" Visible="False" />
+                    <asp:BoundField DataField="Tipo" HeaderText="Tipo" SortExpression="Tipo" />
+                    <asp:BoundField DataField="Indice" HeaderText="Indice" SortExpression="Indice" />
+                    <asp:BoundField DataField="Link" HeaderText="Link" SortExpression="Link" />
+                    <asp:BoundField DataField="Materiale" HeaderText="Materiale" SortExpression="Materiale" Visible="False" />
+                    <asp:BoundField DataField="Titolo_Materiale" HeaderText="Titolo_Materiale" SortExpression="Titolo_Materiale" />
+                    <asp:BoundField DataField="Tipo_Materiale" HeaderText="Tipo_Materiale" SortExpression="Tipo_Materiale" Visible="False" />
+                    <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" SortExpression="Descrizione" />
+                    <asp:CommandField ButtonType="Button" SelectText="Seleziona" ShowSelectButton="True">
+                        <ControlStyle CssClass="btnBE" />
+                    </asp:CommandField>
+                </Columns>
+                <HeaderStyle />
+                <HeaderStyle CssClass="headergrid" />
+                <SelectedRowStyle CssClass="selezionegrid" />
+            </asp:GridView>
+
+        </div>
 
 
 
-    <%--footer--%>
-    <table style="border: 1px solid black; border-collapse: collapse; width: 1220px; text-align: center; margin-bottom: 100px;">
-        <tr>
-            <td style="text-align: left">
-                <asp:Button ID="Button1" CssClass="btnBE" runat="server" Text="Aggiorna" OnClick="BtnAggiorna_Click" /></td>
-            <td style="text-align: left">
-                <asp:Button class="popupInserisciMateriale" ID="btnInserisciMateriale" runat="server" Text="Inserisci materiale" />
-            </td>
-            <td>
-                <asp:Button ID="BtnIndietro" CssClass="btnBE" runat="server" Text="Indietro" OnClick="BtnIndietro_Click" /></td>
-            <td style="text-align: right">
-                <asp:Button class="popupModificaMateriale" ID="btnModificaMateriale" runat="server" Visible="false" Text="Modifica materiale " /></td>
-            <td style="text-align: right">
-                <asp:Button ID="BtnElimina" CssClass="btnBE" runat="server" Text="Elimina" Visible="false" OnClick="BtnElimina_Click" /></td>
-        </tr>
-    </table>
-
+        <%--footer--%>
+        <table style="width: 1220px; text-align: center; margin-top: 10px;">
+            <tr>
+                <td style="text-align: left">
+                    <asp:Button ID="Button1" CssClass="btnBE" runat="server" Text="Aggiorna" OnClick="BtnAggiorna_Click" /></td>
+                <td style="text-align: center">
+                    <asp:Button class="popupInserisciMateriale" CssClass="btnBE" ID="btnInserisciMateriale" runat="server" Text="Inserisci materiale" />
+                </td>
+                <td style="text-align: right">
+                    <asp:Button ID="BtnIndietro" CssClass="btnBE" runat="server" Text="Indietro" OnClick="BtnIndietro_Click" /></td>
+                <td style="text-align: right">
+                    <asp:Button class="popupModificaMateriale" CssClass="btnBE" ID="btnModificaMateriale" runat="server" Visible="false" Text="Modifica materiale " /></td>
+                <td style="text-align: right">
+                    <asp:Button ID="BtnElimina" CssClass="btnBE" runat="server" Text="Elimina" Visible="false" OnClick="BtnElimina_Click" /></td>
+            </tr>
+        </table>
 </asp:Content>
 
