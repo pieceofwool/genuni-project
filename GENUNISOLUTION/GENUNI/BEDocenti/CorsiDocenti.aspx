@@ -45,8 +45,6 @@
                 color: white;
                 width: 920px;
             }
-     
-
     </style>
     <link href="../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </asp:Content>
@@ -55,7 +53,10 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <h4 style="background-color: #5fcf80; width: 920px;" class="titoliBE">Storico materie</h4>
+        <div class="titoliBE">CORSI</div>
+        <br />
+        <br />
+        <h4 style="width: 920px;" class="titoliBE">Storico materie</h4>
         <%--corpo scrollabile--%>
         <div class="MaterieScroll" style="margin-top: -14px">
             <table class="tabella">
@@ -88,8 +89,8 @@
     <%--tabelle materie da accettare--%>
 
     <%-- header--%>
-    <div class="containerBE" style="margin-top:-40px;">
-        <h4 style="background-color: #5fcf80; width: 920px;" class="titoliBE">Materie da accettare</h4>
+    <div class="containerBE" style="margin-top: -40px;">
+        <h4 style="width: 920px;" class="titoliBE">Materie da accettare</h4>
 
         <%--corpo scrollabile--%>
         <div class="MaterieScroll" style="margin-top: -14px">
@@ -112,7 +113,7 @@
     </div>
 
     <%--footer--%>
-    <table style="border-collapse: collapse; border: 1px solid lightgrey; width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
+    <table style="border-collapse: collapse; width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
         <tr>
             <td><small><%--Vengono mostrate tutte le materie non ancora accettate--%></small></td>
             <td style="text-align: right">
@@ -125,8 +126,8 @@
     <%--Corsi Docente--%>
 
     <%-- header--%>
-    <div class="containerBE" style="margin-top:-40px;">
-        <h4 style="background-color: #5fcf80; width: 920px;" class="titoliBE">I miei corsi</h4>
+    <div class="containerBE" style="margin-top: -40px;">
+        <h4 style="width: 920px;" class="titoliBE">I miei corsi</h4>
         <%--corpo scrollabile--%>
         <div class="MaterieScroll" style="margin-top: -14px">
             <table class="tabella">
@@ -144,7 +145,7 @@
     </div>
 
     <%--footer--%>
-    <table style="border-collapse: collapse; border: 1px solid lightgrey; width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
+    <table style="border-collapse: collapse; width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
         <tr>
             <td><small><%--Vengono mostrati tutti i corsi in cui si hanno materie accettate--%></small></td>
             <td style="text-align: right">

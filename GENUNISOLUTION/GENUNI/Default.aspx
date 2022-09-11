@@ -99,7 +99,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="why-us-img">
-                            <img src="assets/img/why-us.png" alt="" class="img-fluid" style="margin-top: -24px; width: 493px; margin-left: 55px;">
+                            <img src="assets/img/why-us.png" alt="" class="img-fluid" style="margin-top: 68px;width: 493px;margin-left: 52px;">>
                         </div>
                     </div>
                     <div class="col-lg-6">

@@ -27,8 +27,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-
-
     <!--==========================
       Services Section
     ============================-->
@@ -37,9 +35,6 @@
 
             <header class="section-header">
                 <h3>I nostri corsi</h3>
-
-                
-
                 <p>
                     Ecco l'elenco aggiornato dei nostri corsi:
                     <br />
@@ -48,7 +43,6 @@
                     <asp:Button ID="BtnPronti" style="font-size:15px" class="btn btn-primary" runat="server" Text="Corsi Pronti" UseSubmitBehavior="False" OnClick="BtnPronti_Click" />
                     <asp:Button ID="BtnNonPronti" style="font-size:15px" class="btn btn-primary" runat="server" Text="Corsi non Pronti" UseSubmitBehavior="False" OnClick="BtnNonPronti_Click" />
                 </p>
-              
             </header>
 
             <!-- Button trigger modal -->
@@ -101,14 +95,9 @@
             </div>--%>
 
             <asp:Literal ID="litModalCorso" runat="server"></asp:Literal>
-
-
             <div class="row">
-
                 <%--LITERAL DA RIEMPIRE DINAMICAMENTE--%>
-
                 <asp:Literal ID="litCorso" runat="server"></asp:Literal>
-
                 <%--<div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
                         <div class="box">
                             <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
@@ -123,7 +112,6 @@
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- Uncomment below i you want to use a preloader -->
     <!-- <div id="preloader"></div> -->
-
     <!-- JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/jquery/jquery-migrate.min.js"></script>
@@ -138,13 +126,9 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <!-- Contact Form JavaScript File -->
     <script src="contactform/contactform.js"></script>
-
     <!-- Template Main Javascript File -->
     <script src="assets/js/main.js"></script>
-
     <!-- Javascript frontend corsi -->
     <script src="JavaScript/JSCorsiFE.js"></script>
-
-
 </asp:Content>
 
