@@ -191,8 +191,8 @@ public partial class BETutor_Default : System.Web.UI.Page
 
     protected void BtnEsci_Click(object sender, EventArgs e)
     {
-        int codiceCorso = int.Parse(Request.QueryString["codicecorso"].ToString());
-        string nomecorso = Request.QueryString["nomecorso"].ToString();
+        int codiceCorso = Convert.ToInt32(Session["Chiave_Corso"]);
+        string nomecorso = Session["nomecorso"].ToString();
         Response.Redirect("../../SITUAZIONE_CORSI/situazioneCorsi.aspx");
     }
 }
