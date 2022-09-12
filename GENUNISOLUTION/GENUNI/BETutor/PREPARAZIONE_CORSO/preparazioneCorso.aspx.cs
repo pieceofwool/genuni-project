@@ -17,7 +17,7 @@ public partial class Default2 : System.Web.UI.Page
         {
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
 
-        int COD_TUTOR =Convert.ToInt32(Session["CodiceAttore"]);
+        int COD_TUTOR = Convert.ToInt32(Session["CodiceAttore"]);
 
         GridCorsi.DataSource = C.CorsiCreati(COD_TUTOR);
         GridCorsi.DataBind();
