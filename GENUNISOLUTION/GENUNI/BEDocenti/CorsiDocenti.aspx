@@ -53,9 +53,7 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <div class="titoliBE">CORSI</div>
-        <br />
-        <br />
+
         <h4 style="width: 920px;" class="titoliBE">Storico materie</h4>
         <%--corpo scrollabile--%>
         <div class="MaterieScroll" style="margin-top: -14px">
