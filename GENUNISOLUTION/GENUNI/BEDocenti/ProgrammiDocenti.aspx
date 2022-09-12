@@ -106,7 +106,6 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <h4 class="titoliBE">PROGRAMMI CORSI</h4>
         <%-- header--%>
         <table style="width: 1220px; text-align: center; margin-top: 50px;">
             <tr class="header">

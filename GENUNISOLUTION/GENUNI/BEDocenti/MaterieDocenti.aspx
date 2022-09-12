@@ -25,12 +25,12 @@
         table {
             border-collapse: collapse;
             border: 1px solid lightgrey;
-            width: 70%;
+         /*   width: 70%;
             font-size: 16px;
             margin-top: 8px;
             text-align: center;
             margin-left: auto;
-            margin-right: auto;
+            margin-right: auto;*/
         }
 
         h4 {
@@ -53,10 +53,10 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <div class="titoliBE">MATERIA</div>
+       
         <%--Materie Docente--%>
         <%-- header--%>
-        <h4 class="header titoliBE" style="width: 917px; text-align: center; margin-top: 50px;">
+        <h4 class="header titoliBE" style="width: 917px; text-align: center; margin-top: 50px; margin-bottom:-24px;">
             <tr>
                 <td style="width: 33.3%"></td>
                 <td runat="server" id="InserireCorso" style="width: 33.3%"><b><big></big></b></td>
@@ -83,7 +83,7 @@
         <br />
         <br />
         <%--footer--%>
-        <table style="width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
+        <table style="width: 920px; font-size: 19px; text-align: center; margin-top: -72px;">
             <tr>
                 <td><small><%--Vengono mostrate tutte le materie accettate del corso cliccato--%></small></td>
             </tr>
