@@ -25,12 +25,6 @@
         table {
             border-collapse: collapse;
             border: 1px solid lightgrey;
-         /*   width: 70%;
-            font-size: 16px;
-            margin-top: 8px;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;*/
         }
 
         h4 {
@@ -56,12 +50,8 @@
        
         <%--Materie Docente--%>
         <%-- header--%>
-        <h4 class="header titoliBE" style="width: 917px; text-align: center; margin-top: 50px; margin-bottom:-24px;">
-            <tr>
-                <td style="width: 33.3%"></td>
-                <td runat="server" id="InserireCorso" style="width: 33.3%"><b><big></big></b></td>
-                <td style="width: 33.3%"></td>
-            </tr>
+        <h4 class="header titoliBE" runat="server" id="InserireCorso" style="width: 917px; text-align: center; margin-top: 50px; margin-bottom:-24px;">
+                <b><big></big></b>
         </h4>
         <br />
         <%--corpo scrollabile--%>
