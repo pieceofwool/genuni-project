@@ -25,12 +25,6 @@
         table {
             border-collapse: collapse;
             border: 1px solid lightgrey;
-            width: 70%;
-            font-size: 16px;
-            margin-top: 8px;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         h4 {

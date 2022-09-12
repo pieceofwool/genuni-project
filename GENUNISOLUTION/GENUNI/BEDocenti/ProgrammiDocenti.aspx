@@ -109,7 +109,7 @@
         <%-- header--%>
         <table style="width: 1220px; text-align: center; margin-top: 50px;">
             <tr class="header">
-                <td><b runat="server" id="InserireCorso"></b></td>
+                <td><b runat="server" id="InserireCorso" style="font-size:25px;"></b></td>
             </tr>
         </table>
         <div class="MaterieScroll">
@@ -154,5 +154,6 @@
                     <asp:Button ID="BtnElimina" CssClass="btnBE" runat="server" Text="Elimina" Visible="false" OnClick="BtnElimina_Click" /></td>
             </tr>
         </table>
+    </div>
 </asp:Content>
 
