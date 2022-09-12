@@ -74,12 +74,15 @@
             <tr>
                 <td>
                     <%--griglia corsi--%>
-                    <asp:GridView ID="GridCorsi" runat="server" CssClass="griglia" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave" AutoGenerateColumns="False">
+                    <asp:GridView ID="GridCorsi" runat="server" CssClass="griglia" AutoGenerateSelectButton="False" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                             <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
                             <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
                             <asp:BoundField DataField="Data_partenza" HeaderText="Data Partenza" />
+                            <asp:CommandField ButtonType="Button" ShowSelectButton="true">
+                                <ControlStyle CssClass="btnBE" />
+                            </asp:CommandField>
                         </Columns>
                         <HeaderStyle />
                         <HeaderStyle CssClass="headergrid" />
