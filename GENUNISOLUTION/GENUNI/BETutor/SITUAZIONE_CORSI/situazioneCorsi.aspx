@@ -5,7 +5,8 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
-
+    
+    <link href="../../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 
     <script type="text/javascript">
 
@@ -21,7 +22,7 @@
                     title: 'Preparazione Test',
                     resizable: false,
                     width: 650,
-                    height: 350,
+                    height: 500 ,
                     overlay: { opacity: 0.9, background: 'black' },
 
                     open: function (type, data) { $(this).parent().appendTo('form'); }
@@ -65,16 +66,16 @@
         <table class="tablePopUp">
             <tr>
                 <td class="btnGestisci">
-                    <asp:Button class="popupPreparaDomande" CssClass="btnBE" ID="btnPreparaDomande" runat="server" Text="Prepara domande" OnClick="btnPreparaDomande_Click" />
-                    <asp:Button ID="btnRisultatiTest" CssClass="btnBE" runat="server" Text="Risultati test" OnClick="btnRisultatiTest_Click" />
-                    <asp:Button class="popupPreparaTest" CssClass="btnBE" ID="btnPreparaTest" runat="server" Text="Crea test" OnClick="btnPreparaTest_Click" />
-                    <asp:Button ID="btnChat" runat="server" Text="Chat del corso" CssClass="btnBE" OnClick="btnChat_Click" />
+                    <asp:Button class="popupPreparaDomande btnBE" ID="btnPreparaDomande" runat="server" Text="Prepara domande" OnClick="btnPreparaDomande_Click" />
+                    <asp:Button class="btnBE" ID="btnRisultatiTest" runat="server" Text="Risultati test" OnClick="btnRisultatiTest_Click" />
+                    <asp:Button class="popupPreparaTest btnBE" ID="btnPreparaTest" runat="server" Text="Crea test" OnClick="btnPreparaTest_Click" />
+                    <asp:Button class="btnBE" ID="btnChat" runat="server" Text="Chat del corso" OnClick="btnChat_Click" />
                 </td>
             </tr>
             <tr>
                 <td>
                     <%--griglia corsi--%>
-                    <asp:GridView ID="GridCorsi" runat="server" CssClass="griglia" AutoGenerateSelectButton="False" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave" AutoGenerateColumns="False">
+                    <asp:GridView ID="GridCorsi" style="width: 80%" runat="server" CssClass="griglia" AutoGenerateSelectButton="False" OnSelectedIndexChanged="grvCorsi_SelectedIndexChanged" DataKeyNames="Chiave" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                             <asp:BoundField DataField="Tipo" HeaderText="Tipo" />

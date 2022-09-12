@@ -51,7 +51,9 @@ public partial class definizioneMaterie : System.Web.UI.Page
     protected void CaricaMateriePreparate()
     {
         MATERIE.Materie_WSSoapClient Ma = new MATERIE.Materie_WSSoapClient();
-        gridMatCorso.DataSource = Ma.MaterieInfoCorso(int.Parse(Session["ChiaveCorso"].ToString()));
+        int COD_CORSO = Convert.ToInt32(Session["ChiaveCorso"].ToString());
+        gridMatCorso.DataSource = Ma.SelectNonAssegnate(COD_CORSO);
+
         gridMatCorso.DataBind();
     }
 

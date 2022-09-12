@@ -12,7 +12,6 @@ public partial class Default2 : System.Web.UI.Page
     {
         btnAssegnazioneDocenti.Enabled = false;
         btnDefinizioneMateria.Enabled = false;
-        btnDefinisciCorso.Enabled = false;
         if (!IsPostBack == true)
         {
         CORSI.Corsi_WSSoapClient C = new CORSI.Corsi_WSSoapClient();
@@ -30,7 +29,6 @@ public partial class Default2 : System.Web.UI.Page
         Session["ChiaveCorso"] = GridCorsi.SelectedDataKey[0];
         btnAssegnazioneDocenti.Enabled = true;
         btnDefinizioneMateria.Enabled=true;
-        btnDefinisciCorso.Enabled = true;
     }
 
     protected void btnAssegnazioneDocenti_Click(object sender, EventArgs e)

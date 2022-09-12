@@ -13,11 +13,19 @@
             border-collapse: collapse;
         }
     </style>
-
+    <link href="../../../assets/css/styleBE_Grafica.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <table style="margin-top: 100px">
+    <div>
+        <img src="../assets/img/lavoriBE.png" class="icona" />
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <h4 class="titoliBE">CHAT</h4>
+    <table style="margin-top: 29px">
         <tr>
             <td style="width: 33%">
                 <asp:Button ID="BtnCaricaAsc" runat="server" Text="Meno Recenti" OnClick="BtnCaricaAsc_Click" />

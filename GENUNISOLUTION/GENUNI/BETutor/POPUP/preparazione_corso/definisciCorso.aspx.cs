@@ -41,8 +41,8 @@ public partial class BETutor_POPUP_preparazione_corso_definisciCorso : System.We
         string TIPOIMG = corso["Tipo_Img"].ToString();
 
         // Definizione nuovi dati
-        string TITOLO = txtTitolo.Text;
-        string TIPO = txtTipo.Text;
+        string TITOLO = txtTitolo.Text.ToString();
+        string TIPO = txtTipo.Text.ToString();
         string DESCRIZIONE = txtDescrizione.Text.ToString();
         string DATA_PARTENZA = txtDataDiPartenza.Text.ToString();
 
