@@ -24,11 +24,11 @@
 
         table {
             border-collapse: collapse;
-            border: 1px solid lightgrey;
+            border: 1px solid #d9d0d0;
         }
 
         h4 {
-            background-color: #5fcf80;
+            background-color: none;
             width: 920px;
         }
 
@@ -36,7 +36,7 @@
             }
 
             h4:hover {
-                color: white;
+                color: black;
                 width: 920px;
             }
     </style>
@@ -47,11 +47,11 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-       
+
         <%--Materie Docente--%>
         <%-- header--%>
-        <h4 class="header titoliBE" runat="server" id="InserireCorso" style="width: 917px; text-align: center; margin-top: 50px; margin-bottom:-24px;">
-                <b><big></big></b>
+        <h4 class="header titoliBE" runat="server" id="InserireCorso" style="width: 920px; margin-bottom: 21px;">
+            <b><big></big></b>
         </h4>
         <br />
         <%--corpo scrollabile--%>
@@ -78,7 +78,7 @@
                 <td><small><%--Vengono mostrate tutte le materie accettate del corso cliccato--%></small></td>
             </tr>
             <tr>
-                <td>
+                <td style="text-align: right; border: 1px solid transparent;">
                     <asp:Button ID="BtnEsci" CssClass="btnBE" runat="server" Text="Indietro" OnClick="BtnEsci_Click" />
                 </td>
             </tr>
@@ -86,7 +86,7 @@
     </div>
     <br />
     <%--chat corso--%>
-    <table style="width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
+      <table style="width: 920px; font-size: 19px; text-align: center; margin-top: -72px;">
         <tr>
             <asp:Literal ID="litChat" runat="server"></asp:Literal>
         </tr>

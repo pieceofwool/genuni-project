@@ -17,10 +17,10 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Inserimento Dati',  //titolo dell'oggetto
+                    title: 'Inserisci dati corso',  //titolo dell'oggetto
                     resizable: false,
                     dialogClass: 'dialog',
-                    height: 400,
+                    height: 350,
                     width: 400,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
@@ -43,7 +43,7 @@
                     title: 'Modifica corsi',  //titolo dell'oggetto
                     dialogClass: 'dialog',
                     resizable: false,  //blocca il ridimensionamento
-                    height: 500,
+                    height: 350,
                     width: 600,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
@@ -63,10 +63,10 @@
                 popUp.dialog({
 
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Informazioni',  //titolo dell'oggetto
+                    title: 'Informazioni corso',  //titolo dell'oggetto
                     dialogClass: 'dialog',
                     resizable: false,  //blocca il ridimensionamento
-                    height: 500,
+                    height: 350,
                     width: 600,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
@@ -89,7 +89,7 @@
                     title: 'Assegna corsi',  //titolo dell'oggetto
                     dialogClass: 'dialog',
                     resizable: false,  //blocca il ridimensionamento--%>
-                    height: 500,
+                    height: 180,
                     width: 600,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura

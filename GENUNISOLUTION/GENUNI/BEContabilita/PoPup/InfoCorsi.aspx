@@ -23,7 +23,7 @@
             <table>
                 <tr>
                     <td>
-                        <asp:GridView ID="grdDocente" runat="server"></asp:GridView>
+                        <asp:GridView ID="grdDocente" CssClass="griglia" runat="server"></asp:GridView>
                     </td>
                 </tr>
             </table>

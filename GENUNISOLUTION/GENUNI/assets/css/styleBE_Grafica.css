@@ -324,6 +324,7 @@ iframe.ui-widget-content {
 .ui-widget-content {
     border: 1px solid #aaaaaa /*{borderColorContent}*/;
     background: #ffffff /*{bgColorContent}*/ url(images/ui-bg_flat_75_ffffff_40x100.png) /*{bgImgUrlContent}*/ 100% /*{bgContentXPos}*/ 100% /*{bgContentYPos}*/ repeat-x /*{bgContentRepeat}*/;
+    min-inline-size: -webkit-fill-available;
     color: #222222 /*{fcContent}*/;
 }
 

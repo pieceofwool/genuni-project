@@ -7,12 +7,11 @@
     <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
-    <div class="containerBE">
-
+    <div class="containerBE" >
         <h4 class="titoliBE">
-            <asp:Label ID="lblTitoloCorso" CssClass="lbl" runat="server" Text=""></asp:Label></h4>
-
-        <table class="tablePopUp">
+            <asp:Label ID="lblTitoloCorso" CssClass="lbl" runat="server" Text=""></asp:Label>
+        </h4>
+        <table class="tablePopUp" style="width: 90%;">
             <tr>
                 <td>
                     <h5 cssclass="h5Sottotitoli" style="text-align: center; margin-top: 0px;" runat="server">Clicca sulla materia per il materiale didattico</h5>
@@ -21,7 +20,7 @@
             <tr>
                 <td>
                     <asp:GridView ID="grigliaMaterie" CssClass="griglia" runat="server" DataKeyNames="Chiave" AutoGenerateColumns="False" OnSelectedIndexChanged="grigliaMaterie_SelectedIndexChanged">
-                        <Columns>
+                        <columns>
                             <asp:BoundField DataField="Chiave" Visible="false" />
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                             <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
@@ -30,12 +29,11 @@
                             <asp:BoundField DataField="Preparato" Visible="false" />
                             <asp:BoundField DataField="Data_Risposta" Visible="false" />
                             <asp:CommandField ButtonType="Button" SelectText="Accedi alle materie" ShowSelectButton="true">
-                                <ControlStyle CssClass="btnBE" />
+                                <controlstyle cssclass="btnBE" />
                             </asp:CommandField>
-                        </Columns>
-                        <HeaderStyle />
-                        <HeaderStyle CssClass="headergrid" />
-                        <SelectedRowStyle CssClass="selezionegrid" />
+                        </columns>
+                        <headerstyle cssclass="headergrid" />
+                        <selectedrowstyle cssclass="selezionegrid" />
                     </asp:GridView>
                 </td>
             </tr>
@@ -65,6 +63,7 @@
                 </td>
             </tr>
         </table>
+    </div>
     </div>
 
 </asp:Content>
