@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class corsiDegliStudenti : System.Web.UI.Page
+public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -18,10 +18,10 @@ public partial class corsiDegliStudenti : System.Web.UI.Page
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
         grvCorsiStudenti.DataSource = E.CorsiFrequentati(COD_STUDENTE);
 
-        DataBind();
+        grvCorsiStudenti.DataBind();
     }
 
-    
+
 
     protected void btnAggiorna_Click(object sender, EventArgs e)
     {
