@@ -19,7 +19,7 @@
                     <%--barra di ricerca del docente per skills--%>
                     <asp:Label ID="Label1" CssClass="lblP" runat="server" Text="Cerca per competenze"></asp:Label>
                     <br />
-                    <asp:TextBox ID="txtRicercaDocente" runat="server" TextMode="Search"></asp:TextBox>
+                    <asp:TextBox ID="txtRicercaDocente" CssClass="txt" style="border: solid 1px #9fff74" runat="server" TextMode="Search"></asp:TextBox>
                     <asp:Button ID="btnSkills" runat="server" Text="Cerca" OnClick="btnSkills_Click" />
                 </td>
             </tr>

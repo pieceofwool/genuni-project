@@ -6,8 +6,9 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>
-        <link href="../../assets/css/StylePopUp.css" rel="stylesheet" />
     </title>
+        <link href="../../../assets/css/stylePopUp.css" rel="stylesheet" />
+
 </head>
 <body>
     <form id="form1" runat="server">

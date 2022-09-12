@@ -6,8 +6,8 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>
-        <link href="../../assets/css/StylePopUp.css" rel="stylesheet" />
     </title>
+        <link href="../../assets/css/StylePopUp.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,21 +17,21 @@
                 <tr>
                     <td>
                         <%--info per creazione test--%>
-                        <asp:Label ID="lblSogliaDiSuperamento" CssClass="lblP" runat="server" Text="Soglia di superamento: "></asp:Label><br />
+                        <asp:Label ID="lblSogliaDiSuperamento" CssClass="lbl" runat="server" Text="Soglia di superamento: "></asp:Label><br />
                         <asp:TextBox ID="txtSogliaDiSuperamento" CssClass="txt" runat="server"></asp:TextBox>
 
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblData" runat="server" CssClass="lblP" Text="Data: "></asp:Label><br />
+                        <asp:Label ID="lblData" runat="server" CssClass="lbl" Text="Data: "></asp:Label><br />
                         <asp:TextBox ID="txtData" CssClass="txt" runat="server" TextMode="Date"></asp:TextBox>
 
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblOra" runat="server" CssClass="lblP" Text="Ora: "></asp:Label><br />
+                        <asp:Label ID="lblOra" runat="server" CssClass="lbl" Text="Ora: "></asp:Label><br />
                         <asp:TextBox ID="txtOra" CssClass="txt" runat="server" TextMode="Time"></asp:TextBox>
 
                     </td>
