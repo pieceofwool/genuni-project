@@ -25,12 +25,6 @@
         table {
             border-collapse: collapse;
             border: 1px solid lightgrey;
-            width: 70%;
-            font-size: 16px;
-            margin-top: 8px;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         h4 {
@@ -53,9 +47,7 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <div class="titoliBE">CORSI</div>
-        <br />
-        <br />
+
         <h4 style="width: 920px;" class="titoliBE">Storico materie</h4>
         <%--corpo scrollabile--%>
         <div class="MaterieScroll" style="margin-top: -14px">

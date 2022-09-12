@@ -15,7 +15,7 @@
                 //dichiariamo tutte le caratteristiche dell' oggetto
                 popUp.dialog({
                     modal: true, //blocca le modifiche a tutto ciò che sta sotto all' ogg.
-                    title: 'Valutazione',  //titolo dell'oggetto
+                    title: 'Quotazione',  //titolo dell'oggetto
                     resizable: false,
                     dialogClass: 'dialog',
                     height: 600,
@@ -80,8 +80,8 @@
                         <Columns>
                             <asp:BoundField DataField="Chiave" HeaderText="Chiave" InsertVisible="False" ReadOnly="True" SortExpression="Chiave" Visible="False" />
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" SortExpression="Titolo" />
-                            <asp:BoundField DataField="Cognome" HeaderText="Cognome" SortExpression="Cognome" />
-                            <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
+                            <asp:BoundField DataField="Cognome" HeaderText="Cognome Tutor" SortExpression="Cognome" />
+                            <asp:BoundField DataField="Nome" HeaderText="Nome Tutor" SortExpression="Nome" />
                             <asp:CommandField ButtonType="Button" ShowSelectButton="true">
                                 <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>

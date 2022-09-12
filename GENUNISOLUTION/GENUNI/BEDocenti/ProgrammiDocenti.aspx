@@ -10,7 +10,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            $('.popupInserisciMateriale').click(function () {
+            $('#btnInserisciMateriale').click(function () {
 
                 var url = 'POPUP/preparazioneMateriale/InserimentoProgrammi.aspx';
                 var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
@@ -34,7 +34,7 @@
 
         $(document).ready(function () {
 
-            $('.popupModificaMateriale').click(function () {
+            $('#btnModificaMateriale').click(function () {
 
                 var url = 'POPUP/preparazioneMateriale/ModificaProgrammi.aspx';
                 var inserisci = $('<iframe src="' + url + '" frameborder="0"></iframe>').appendTo('body');
@@ -106,11 +106,10 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <h4 class="titoliBE">PROGRAMMI CORSI</h4>
         <%-- header--%>
         <table style="width: 1220px; text-align: center; margin-top: 50px;">
             <tr class="header">
-                <td><b runat="server" id="InserireCorso"></b></td>
+                <td><b runat="server" id="InserireCorso" style="font-size:25px;"></b></td>
             </tr>
         </table>
         <div class="MaterieScroll">
@@ -145,15 +144,17 @@
                 <td style="text-align: left">
                     <asp:Button ID="Button1" CssClass="btnBE" runat="server" Text="Aggiorna" OnClick="BtnAggiorna_Click" /></td>
                 <td style="text-align: center">
-                    <asp:Button class="popupInserisciMateriale" CssClass="btnBE" ID="btnInserisciMateriale" runat="server" Text="Inserisci materiale" />
+                    <a class="btnBE" ID="btnInserisciMateriale" href="POPUP/preparazioneMateriale/InserimentoProgrammi.aspx">Inserisci Materiale</a>
                 </td>
                 <td style="text-align: right">
                     <asp:Button ID="BtnIndietro" CssClass="btnBE" runat="server" Text="Indietro" OnClick="BtnIndietro_Click" /></td>
                 <td style="text-align: right">
-                    <asp:Button class="popupModificaMateriale" CssClass="btnBE" ID="btnModificaMateriale" runat="server" Visible="false" Text="Modifica materiale " /></td>
+                    <%--<asp:Button class="popupModificaMateriale" CssClass="btnBE" ID="btnModificaMateriale" runat="server" Visible="false" Text="Modifica materiale " /></td>--%>
+                    <a class="btnBE" ID="btnModificaMateriale" runat="server">Modifica Materiale</a>
                 <td style="text-align: right">
                     <asp:Button ID="BtnElimina" CssClass="btnBE" runat="server" Text="Elimina" Visible="false" OnClick="BtnElimina_Click" /></td>
             </tr>
         </table>
+    </div>
 </asp:Content>
 

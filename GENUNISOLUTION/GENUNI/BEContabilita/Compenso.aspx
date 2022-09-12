@@ -14,7 +14,7 @@
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
     <div class="containerBE">
-        <h4 class="titoliBE">GESTIONE COMPENSO</h4>
+        <h4 class="titoliBE">GESTIONE COMPENSI</h4>
         <table>
             <tr>
                 <td>
