@@ -32,19 +32,19 @@
     </div>
     <div class="containerBE" style="margin-top: -66px;">
         <h4 class="titoliBE">TOTALE</h4>
-        <table class="tablePopUp" style="border: 3px solid #94e2ae; border-radius: 48px; width: 100%%; width: 808px; text-align-last: center; background-color: whitesmoke;">
+        <table class="tablePopUp" style="border: 3px solid #94e2ae; border-radius: 48px; width: 100%%; width: 808px; text-align-last: center; background-color: transparent;">
             <tr>
                 <td>
-                    <span><b>Totale spese:</b></span>
-                    <asp:Label ID="lblTotDoc" runat="server" CssClass="lbl" Text=""></asp:Label>
+                    <span>Totale spese:</span>
+                    <asp:Label ID="lblTotDoc" runat="server" style="font-weight: bold;" CssClass="lbl" Text=""></asp:Label>
                 </td>
                 <td>
-                    <span><b>Totale ricavi:</b></span>
-                    <asp:Label ID="lblTotStud" runat="server" CssClass="lbl" Text=""></asp:Label>
+                    <span>Totale ricavi:</span>
+                    <asp:Label ID="lblTotStud" runat="server" style="font-weight: bold;" CssClass="lbl" Text=""></asp:Label>
                 </td>
                 <td>
-                    <span><b>Totale utili: </b></span>
-                    <asp:Label ID="lblUtili" runat="server" CssClass="lbl" Text=""></asp:Label>
+                    <span>Totale utili:</span>
+                    <asp:Label ID="lblUtili" style="font-weight: bold;" runat="server" CssClass="lbl" Text=""></asp:Label>
                 </td>
             </tr>
         </table>
@@ -72,7 +72,6 @@
                                 <asp:BoundField DataField="Tipo docente" Visible="false" />
                                 <asp:BoundField DataField="Chiave" Visible="false" />
                             </Columns>
-                            <HeaderStyle />
                             <HeaderStyle CssClass="headergrid" />
                             <SelectedRowStyle CssClass="selezionegrid" />
                         </asp:GridView>
@@ -80,7 +79,6 @@
                 </td>
             </tr>
         </table>
-
         <br />
 
         <div class="containerBE" style="margin-top: -24px;">

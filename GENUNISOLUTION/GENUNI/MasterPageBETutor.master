@@ -55,7 +55,7 @@
                         </li>
                         <li><a href="/BETutor/SITUAZIONE_CORSI/situazioneCorsi.aspx">Situazione Corsi</a></li>
                         <li><a href="/BETutor/SITUAZIONE_STUDENTI/corsiDegliStudenti.aspx">Situazione Studenti</a></li>
-                        <li><a href="Default.aspx">Esci</a></li>
+                                                  <li><a href="../Default.aspx">Esci</a></li>
                     </ul>
                 </nav>
                 <!-- .navbar -->
