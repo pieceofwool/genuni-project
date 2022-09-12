@@ -18,8 +18,8 @@
                     title: 'Quotazione',  //titolo dell'oggetto
                     resizable: false,
                     dialogClass: 'dialog',
-                    height: 600,
-                    width: 600,
+                    height: 450,
+                    width: 300,
                     overlay: { opacity: 1, background: 'black' },  //parametri relativi all' overlay (bordo/sfondo scuro intorno)
                     open: function (type, data) { $(this).parent().appendTo('form'); } //dati relativi all' apertura
                 });

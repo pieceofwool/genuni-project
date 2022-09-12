@@ -29,6 +29,10 @@
 
     <table style="margin-top: 29px">
         <tr>
+            <td>
+
+                <asp:Button ID="BtnEsci" Style="margin-left: 3px;" CssClass="btnBE" runat="server" Text="Indietro" OnClick="BtnEsci_Click" />
+            </td>
             <td style="width: 33%">
                 <asp:Button ID="BtnCaricaAsc" runat="server" CssClass="btnBE" Text="Meno Recenti" OnClick="BtnCaricaAsc_Click" />
             </td>
@@ -40,8 +44,6 @@
     </table>
 
     <div runat="Server" style="overflow: auto; width: 1200px; max-height: 700px;">
-
-
         <%--chat--%>
         <table style="width: 1182px;">
 
@@ -63,12 +65,10 @@
     <table style="margin-bottom: 100px">
         <tr>
             <td>
-                <textarea id="txtRisposta" cssclass="txt" runat="server" style="width: 1100px;"></textarea>
-
+                <textarea id="txtRisposta" cssclass="txt" runat="server" style="width: 1100px;height: 140px;margin-top: 7px;margin-left: 7px;"></textarea>
             </td>
             <td>
-                <asp:Button ID="BtnRispondi" Style="margin-left: 13px;" CssClass="btnBE" runat="server" Text="Rispondi" UseSubmitBehavior="False" OnClick="BtnRispondi_Click" />
-                <asp:Button ID="BtnEsci" Style="margin-left: 17px;" CssClass="btnBE" runat="server" Text="Indietro" OnClick="BtnEsci_Click" />
+                <asp:Button ID="BtnRispondi" style="margin-left: 13px;" CssClass="btnBE" runat="server" Text="Rispondi" UseSubmitBehavior="False" OnClick="BtnRispondi_Click" />
             </td>
         </tr>
 

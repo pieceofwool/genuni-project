@@ -24,11 +24,11 @@
 
         table {
             border-collapse: collapse;
-            border: 1px solid lightgrey;
+            border: 1px solid #d9d0d0;
         }
 
         h4 {
-            background-color: #5fcf80;
+            background-color: none;
             width: 920px;
         }
 
@@ -36,7 +36,7 @@
             }
 
             h4:hover {
-                color: white;
+                color: black;
                 width: 920px;
             }
     </style>
@@ -46,9 +46,9 @@
     <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
-    <div class="containerBE">
+    <div class="containerBE" style="margin-top: 99px;">
 
-        <h4 style="width: 920px;" class="titoliBE">Storico materie</h4>
+        <h4 style="width: 920px; margin-bottom: 21px;" class="titoliBE">Storico materie</h4>
         <%--corpo scrollabile--%>
         <div class="MaterieScroll" style="margin-top: -14px">
             <table class="tabella">
@@ -70,8 +70,8 @@
     <%--footer--%>
     <table style="border-collapse: collapse; border: 1px solid lightgrey; width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
         <tr>
-            <td><small><%--Vengono mostrate tutte le materie accettate--%></small></td>
-            <td style="text-align: right">
+            <%--<td><small>--%><%--Vengono mostrate tutte le materie accettate--%>
+            <td style="text-align: right; border: 1px solid transparent;">
                 <asp:Button ID="BtnIndietro3" CssClass="btnBE" runat="server" Text="Esci" OnClick="BtnIndietro_Click" />
             </td>
         </tr>
@@ -82,8 +82,7 @@
 
     <%-- header--%>
     <div class="containerBE" style="margin-top: -40px;">
-        <h4 style="width: 920px;" class="titoliBE">Materie da accettare</h4>
-
+        <h4 style="width: 920px; margin-bottom: 21px;" class="titoliBE">Materie da accettare</h4>
         <%--corpo scrollabile--%>
         <div class="MaterieScroll" style="margin-top: -14px">
             <table class="tabella">
@@ -107,8 +106,7 @@
     <%--footer--%>
     <table style="border-collapse: collapse; width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
         <tr>
-            <td><small><%--Vengono mostrate tutte le materie non ancora accettate--%></small></td>
-            <td style="text-align: right">
+            <td style="text-align: right; border: 1px solid transparent;">
                 <asp:Button ID="BtnIndietro2" runat="server" CssClass="btnBE" Text="Esci" OnClick="BtnIndietro_Click" />
             </td>
         </tr>
@@ -119,7 +117,7 @@
 
     <%-- header--%>
     <div class="containerBE" style="margin-top: -40px;">
-        <h4 style="width: 920px;" class="titoliBE">I miei corsi</h4>
+        <h4 style="width: 920px; margin-bottom: 21px;" class="titoliBE">I corsi</h4>
         <%--corpo scrollabile--%>
         <div class="MaterieScroll" style="margin-top: -14px">
             <table class="tabella">
@@ -139,8 +137,7 @@
     <%--footer--%>
     <table style="border-collapse: collapse; width: 920px; font-size: 19px; text-align: center; margin-top: -52px;">
         <tr>
-            <td><small><%--Vengono mostrati tutti i corsi in cui si hanno materie accettate--%></small></td>
-            <td style="text-align: right">
+            <td style="text-align: right; border: 1px solid transparent;">
                 <asp:Button ID="BtnIndietro" runat="server" CssClass="btnBE" Text="Esci" OnClick="BtnIndietro_Click" />
             </td>
         </tr>
