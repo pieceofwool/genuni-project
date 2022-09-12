@@ -384,4 +384,15 @@ public class Corsi_WS : System.Web.Services.WebService
         C.CorsoMateriaAssegnata();
     }
 
+    [WebMethod]
+    public DataTable SelectForTutorStatusM(int COD_TUTOR)
+    {
+        DataTable dt = new DataTable();
+        CORSI c = new CORSI();
+        c.CHIAVE_TUTOR = COD_TUTOR;
+        dt = c.SelectForTutorStatusM();
+        dt.TableName = "Corso";
+        return dt;
+    }
+
 }

@@ -340,6 +340,16 @@ public class CORSI
         CONNESSIONE C = new CONNESSIONE();
         C.EseguiCmd(cmd);
     }
+
+    public DataTable SelectForTutorStatusM()
+    {
+        SqlCommand cmd = new SqlCommand("CORSI_SelectForTutorStatusM");
+        cmd.Parameters.AddWithValue("@Cod_Tutor", CHIAVE_TUTOR);
+        CONNESSIONE C = new CONNESSIONE();
+
+        return C.EseguiSelect(cmd);
+    }
+
     #endregion Metodi
 
 }
