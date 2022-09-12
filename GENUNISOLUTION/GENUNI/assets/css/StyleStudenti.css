@@ -98,7 +98,7 @@ h2.active {
 
 input[type=text], input[type=password] {
     background-color: #fff;
-    border: none;
+    /*border: none;*/
     color: #0d0d0d;
     padding: 5px 4px;
     text-align: center;
@@ -107,6 +107,10 @@ input[type=text], input[type=password] {
     margin: 5px;
     width: 90%;
     border-radius: 10px 10px 10px 10px;
+    border-bottom: 2px solid #5fcf80;
+    border-top: 2px solid lightgrey;
+    border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey;
 }
 
     input[type=text], input[type=password]:focus {
@@ -115,11 +119,11 @@ input[type=text], input[type=password] {
         border-top: 3px solid lightgrey;
     }
 
-input: internal autofill selected {
+/*input: internal autofill selected {
     appearance: menulist-button;
     background-image: none !important;
     background-color: #fff;
-}
+}*/
 
 
 /* ANIMATIONS */
