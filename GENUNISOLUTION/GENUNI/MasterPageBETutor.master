@@ -49,13 +49,12 @@
                             <li><a href="#"></a></li>--%>
                         <li class="dropdown"><a href="/BETutor/PREPARAZIONE_CORSO/preparazioneCorso.aspx"><span>Preparazione corsi</span><i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="/BETutor/PREPARAZIONE_CORSO/assegnazioneDocenti.aspx">Assegnazione Docenti</a></li>
                                 <li><a href="/BETutor/PREPARAZIONE_CORSO/CronistoriaDocenti.aspx">Cronistoria Docenti</a></li>
                             </ul>
                         </li>
                         <li><a href="/BETutor/SITUAZIONE_CORSI/situazioneCorsi.aspx">Situazione Corsi</a></li>
                         <li><a href="/BETutor/SITUAZIONE_STUDENTI/corsiDegliStudenti.aspx">Situazione Studenti</a></li>
-                                                  <li><a href="../Default.aspx">Esci</a></li>
+                        <li><a href="/Default.aspx">Esci</a></li>
                     </ul>
                 </nav>
                 <!-- .navbar -->

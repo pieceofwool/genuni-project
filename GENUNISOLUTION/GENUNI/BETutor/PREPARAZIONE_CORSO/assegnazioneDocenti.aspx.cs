@@ -13,7 +13,7 @@ public partial class BETutor_Default : System.Web.UI.Page
         if (!IsPostBack == true)
         {
             MATERIE.Materie_WSSoapClient M = new MATERIE.Materie_WSSoapClient();
-            int COD_CORSO = Convert.ToInt32(Session["ChiaveCorso"].ToString());
+            int COD_CORSO = Convert.ToInt32(Session["Chiave_Corso"].ToString());
             DataTable dt = new DataTable();
             dt = M.SelectNonAssegnate(COD_CORSO);
             ddlMaterie.DataSource = dt;
