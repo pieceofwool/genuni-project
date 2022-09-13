@@ -77,7 +77,7 @@ public partial class Modifica_Profilo : System.Web.UI.Page
 
         ESTERNI.Esterni_WSSoapClient E = new ESTERNI.Esterni_WSSoapClient();
 
-        E.Update_Profilo_Studenti(Chiave, Nome, Cognome, Indirizzo, Citta, Provincia, Nazionalita);
+        E.Update_Profilo_Studenti(Chiave, Nome, Cognome, Citta, Indirizzo, Provincia, Nazionalita);
     }
 
 
