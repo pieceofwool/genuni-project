@@ -41,7 +41,7 @@
                     <br />
                     <asp:Button ID="BtnTutti" style="font-size:15px" class="btn btn-primary" runat="server" Text="Tutti i corsi" UseSubmitBehavior="False" OnClick="BtnTutti_Click" />
                     <asp:Button ID="BtnPronti" style="font-size:15px" class="btn btn-primary" runat="server" Text="Corsi Pronti" UseSubmitBehavior="False" OnClick="BtnPronti_Click" />
-                    <asp:Button ID="BtnNonPronti" style="font-size:15px" class="btn btn-primary" runat="server" Text="Corsi non Pronti" UseSubmitBehavior="False" OnClick="BtnNonPronti_Click" />
+                    <asp:Button ID="BtnNonPronti" style="font-size:15px" class="btn btn-primary" runat="server" Text="Corsi in Arrivo" UseSubmitBehavior="False" OnClick="BtnNonPronti_Click" />
                 </p>
             </header>
 
