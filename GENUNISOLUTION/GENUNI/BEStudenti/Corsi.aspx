@@ -7,7 +7,7 @@
     <div>
         <img src="../assets/img/lavoriBE.png" class="icona" />
     </div>
-    <div class="containerBE" >
+    <div class="containerBE">
         <h4 class="titoliBE">
             <asp:Label ID="lblTitoloCorso" CssClass="lbl" runat="server" Text=""></asp:Label>
         </h4>
@@ -20,7 +20,7 @@
             <tr>
                 <td>
                     <asp:GridView ID="grigliaMaterie" CssClass="griglia" runat="server" DataKeyNames="Chiave" AutoGenerateColumns="False" OnSelectedIndexChanged="grigliaMaterie_SelectedIndexChanged">
-                        <columns>
+                        <Columns>
                             <asp:BoundField DataField="Chiave" Visible="false" />
                             <asp:BoundField DataField="Titolo" HeaderText="Titolo" />
                             <asp:BoundField DataField="Descrizione" HeaderText="Descrizione" />
@@ -29,11 +29,11 @@
                             <asp:BoundField DataField="Preparato" Visible="false" />
                             <asp:BoundField DataField="Data_Risposta" Visible="false" />
                             <asp:CommandField ButtonType="Button" SelectText="Accedi alle materie" ShowSelectButton="true">
-                                <controlstyle cssclass="btnBE" />
+                                <ControlStyle CssClass="btnBE" />
                             </asp:CommandField>
-                        </columns>
-                        <headerstyle cssclass="headergrid" />
-                        <selectedrowstyle cssclass="selezionegrid" />
+                        </Columns>
+                        <HeaderStyle CssClass="headergrid" />
+                        <SelectedRowStyle CssClass="selezionegrid" />
                     </asp:GridView>
                 </td>
             </tr>
@@ -57,14 +57,12 @@
             </tr>
         </table>--%>
             <tr>
-                <td>
+                <td style="text-align:center;">
                     <asp:Label ID="lblEsito" runat="server" CssClass="lbl btnBE" Text="Label"></asp:Label>
                     <asp:Button ID="btnTest" CssClass="btnBE" runat="server" Text="Esegui Test" OnClick="btnTest_Click" Visible="False" />
                 </td>
             </tr>
         </table>
     </div>
-    </div>
-
 </asp:Content>
 
