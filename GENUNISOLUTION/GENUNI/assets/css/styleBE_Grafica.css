@@ -1,0 +1,440 @@
+﻿* {
+    margin: 0 auto;
+}
+
+#esci {
+    float: right;
+}
+
+#form1 {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url('../img/circuit.jpg');
+}
+
+#titolo {
+    margin-top: -13px;
+    margin-bottom: 10px;
+    margin-right: -124px;
+    text-align: center
+}
+
+#tablelogin {
+    background-color: white;
+    width: 100px;
+}
+
+#tableReg {
+    background-color: white;
+    width: 400px;
+    text-align: left;
+}
+
+.tableHeader {
+    text-align: center;
+    background-color: #ffffff;
+    color: #061b0d;
+    position: relative;
+    height: 55px;
+    font-weight: 600;
+}
+
+h1 {
+    color: rgba(76, 43, 148,0.5);
+}
+
+.ddl {
+    border-radius: 9px;
+    border: 1px solid #9ceeb78b;
+    width: 99px;
+}
+.btnHeader {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 5px;
+    border-color: rgba(255,255,255,.2);
+}
+
+    .btnHeader:hover {
+        background-color: #ffffff;
+        color: #5918b7;
+    }
+
+#btnEsci {
+    float: right;
+}
+
+.grigliaStudentiContabilità {
+    border: 1px solid lightgrey;
+    width: 70%;
+    font-size: 12px;
+    margin-top: 8px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.h5Sottotitoli {
+    text-align: center;
+}
+
+#btnGestione {
+    float: left;
+}
+
+.lblTest {
+    font-weight: 600;
+    text-align: center;
+    font-style: italic;
+}
+
+.tdTest {
+    padding-bottom: 15px;
+}
+
+#lblDataInizio {
+    font-size: 14px;
+}
+
+#lblDataFine {
+    font-size: 14px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #cfc4f8;
+    text-decoration: underline;
+}
+
+#container {
+    height: 90vh;
+    width: 80%;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.btnBE {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 5px;
+    border-color: rgba(255,255,255,.2);
+}
+
+    .btnBE:hover, .dropdown-content {
+        background-color: #9ceeb7;
+        color: black;
+    }
+
+
+
+a.popUpBtnBE {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 4px 4px 4px 4px;
+    border-color: rgba(255,255,255,.2);
+}
+
+    a.popUpBtnBE:hover {
+        background-color: #9ceeb7;
+        color: black;
+    }
+
+.tablePopUpePopUp {
+    margin-top: 50px;
+    text-align: center;
+    max-width: 70%;
+    font-family: Tahoma, Calibri;
+    font-size: small;
+    width: 70%;
+    border-color: darkgray;
+    padding: 10px;
+}
+
+
+
+/*.titoliBE {
+    text-align: center;
+    font-family: 'Montserrat';
+    padding: 10px, 10px;
+    margin-bottom: 50px;
+    color: black;
+    transition: width 3s;
+    text-transform: uppercase;
+}
+
+    .titoliBE:hover {
+        color: #0b6c31;
+        font-size: larger;
+    }*/
+
+.titoliBE {
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    width: 500px;
+    font-size: 26px;
+    margin-bottom: 14px;
+}
+
+    .titoliBE::after {
+        content: "";
+        position: absolute;
+        background-color: #79ef9c;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        opacity: 0;
+        transition: opacity 300ms, transform 300ms;
+    }
+
+    .titoliBE:is(:hover,:focus)::after {
+        opacity: 1;
+        transform: translateY(8px);
+    }
+
+.containerBE {
+    margin-top: 50px;
+    padding: 40px 0px 50px 0;
+}
+
+.containerBE2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+}
+
+.chk {
+    backdrop-filter: blur();
+    background-color: white;
+    padding: 0 20px 1px 30px;
+}
+
+.lbl {
+    display: inline-block;
+    padding: 16px 32px 20px 21px;
+}
+
+.lblReport {
+    display: inline-block;
+    padding: 7px 11px 8px 7px;
+    margin: 0 auto;
+}
+
+.rdb {
+    width: 30%;
+}
+
+.txt {
+    padding: 7px 11px 8px 7px;
+    border-color: white;
+    background: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    width: 179px;
+    height: auto;
+    color: darkgreen;
+}
+
+    .txt:hover {
+        background-color: #9ceeb7;
+        color: black;
+    }
+
+.txtDate {
+    margin-top: 11px;
+    background: white;
+    border: 1px solid white;
+    border-radius: 0px;
+    text-align: center;
+    width: 179px;
+}
+
+.selezionegrid {
+    background-color: #9ceeb78c;
+}
+
+.mr-sm-2 txtSearch {
+    border: 1px solid;
+}
+
+.box-content {
+    height: auto;
+    overflow-y: scroll;
+}
+
+.ui-widget-content {
+    height: 100%;
+    width: 100%;
+}
+
+-corner-all {
+    height: 39px;
+    width: 590px;
+}
+
+.ui-draggable {
+    display: block;
+    z-index: 1002;
+    outline: 48px;
+    height: 400px;
+    width: 600px;
+    top: 81px;
+    left: 233px;
+}
+
+.ui-dialog-title {
+    font-size: 15px;
+}
+
+/*.ui-draggable .ui-dialog-titlebar {
+    cursor: move;
+    background-color: black;
+    color: darkgreen;
+    background-color: white;
+}*/
+
+.ui-widget-header {
+    border: 1px solid #aaaaaa /*{borderColorHeader}*/;
+    background: #9ceeb78c;
+    color: black;
+    font-weight: bold;
+}
+
+/*.ui-dialog .ui-dialog-titlebar-close span {
+    color: darkgreen;
+}*/
+/*
+iframe.ui-widget-content {
+    width: !important;
+}*/
+
+#content {
+    width: 100%;
+}
+
+.ui-widget-content {
+    border: 1px solid #aaaaaa /*{borderColorContent}*/;
+    background: #ffffff /*{bgColorContent}*/ url(images/ui-bg_flat_75_ffffff_40x100.png) /*{bgImgUrlContent}*/ 100% /*{bgContentXPos}*/ 100% /*{bgContentYPos}*/ repeat-x /*{bgContentRepeat}*/;
+    min-inline-size: -webkit-fill-available;
+    color: #222222 /*{fcContent}*/;
+}
+
+    .ui-widget-content a {
+        color: #222222 /*{fcContent}*/;
+    }
+
+.ui-dialog {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .2em;
+    outline: 0;
+}
+
+    .ui-dialog .ui-dialog-titlebar {
+        padding: .4em 1em;
+        position: relative;
+    }
+
+    .ui-dialog .ui-dialog-title {
+        float: left;
+        margin: .1em 0;
+        white-space: nowrap;
+        width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .ui-dialog .ui-dialog-titlebar-close {
+        position: absolute;
+        right: .3em;
+        top: 50%;
+        width: 20px;
+        margin: -10px 0 0 0;
+        padding: 1px;
+        height: 20px;
+    }
+
+    .ui-dialog .ui-dialog-content {
+        position: relative;
+        border: 0;
+        padding: .5em 1em;
+        background: none;
+        overflow: auto;
+    }
+
+    .ui-dialog .ui-dialog-buttonpane {
+        text-align: left;
+        border-width: 1px 0 0 0;
+        background-image: none;
+        margin-top: .5em;
+        padding: .3em 1em .5em .4em;
+    }
+
+        .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+            float: right;
+        }
+
+        .ui-dialog .ui-dialog-buttonpane button {
+            margin: .5em .4em .5em 0;
+            cursor: pointer;
+        }
+
+    .ui-dialog .ui-resizable-se {
+        width: 12px;
+        height: 12px;
+        right: -5px;
+        bottom: -5px;
+        background-position: 16px 16px;
+    }
+
+.ui-draggable .ui-dialog-titlebar {
+    cursor: move;
+}
+
+
+/* GRIGLIA */
+
+.griglia {
+    border: 1px solid lightgrey;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 8px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    padding: 9px 26px 9px 20px;
+    font-size: 14px;
+    background-color: #94e2ae;
+    color: #061b0d;
+    text-align: center;
+}
+
+.headergrid {
+    width: auto;
+}
+
+
+.btnGestisci {
+    text-align: center;
+}
+
+
+#h4Report {
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+}

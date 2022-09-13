@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SelectAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectOneResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectChatCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectChatCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectChatCorsoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectChatCorsoDesc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectChatCorsoDescResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectChatCorsoDescResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectOneJoinEsterni">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectOneJoinEsterniResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectOneJoinEsterniResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectOneJoinUtenti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectOneJoinUtentiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectOneJoinUtentiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_STUDENTE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_INTERNO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONTENUTO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertEsterni">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_STUDENTE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONTENUTO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEsterniResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertInterni">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_INTERNO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONTENUTO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertInterniResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAll" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectOneSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectOne" />
+  </wsdl:message>
+  <wsdl:message name="SelectOneSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectChatCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectChatCorso" />
+  </wsdl:message>
+  <wsdl:message name="SelectChatCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectChatCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectChatCorsoDescSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectChatCorsoDesc" />
+  </wsdl:message>
+  <wsdl:message name="SelectChatCorsoDescSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectChatCorsoDescResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectOneJoinEsterniSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectOneJoinEsterni" />
+  </wsdl:message>
+  <wsdl:message name="SelectOneJoinEsterniSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectOneJoinEsterniResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectOneJoinUtentiSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectOneJoinUtenti" />
+  </wsdl:message>
+  <wsdl:message name="SelectOneJoinUtentiSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectOneJoinUtentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEsterniSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEsterni" />
+  </wsdl:message>
+  <wsdl:message name="InsertEsterniSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEsterniResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertInterniSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertInterni" />
+  </wsdl:message>
+  <wsdl:message name="InsertInterniSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertInterniResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Chat_WSSoap">
+    <wsdl:operation name="SelectAll">
+      <wsdl:input message="tns:SelectAllSoapIn" />
+      <wsdl:output message="tns:SelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectOne">
+      <wsdl:input message="tns:SelectOneSoapIn" />
+      <wsdl:output message="tns:SelectOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatCorso">
+      <wsdl:input message="tns:SelectChatCorsoSoapIn" />
+      <wsdl:output message="tns:SelectChatCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatCorsoDesc">
+      <wsdl:input message="tns:SelectChatCorsoDescSoapIn" />
+      <wsdl:output message="tns:SelectChatCorsoDescSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectOneJoinEsterni">
+      <wsdl:input message="tns:SelectOneJoinEsterniSoapIn" />
+      <wsdl:output message="tns:SelectOneJoinEsterniSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectOneJoinUtenti">
+      <wsdl:input message="tns:SelectOneJoinUtentiSoapIn" />
+      <wsdl:output message="tns:SelectOneJoinUtentiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <wsdl:input message="tns:InsertSoapIn" />
+      <wsdl:output message="tns:InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEsterni">
+      <wsdl:input message="tns:InsertEsterniSoapIn" />
+      <wsdl:output message="tns:InsertEsterniSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInterni">
+      <wsdl:input message="tns:InsertInterniSoapIn" />
+      <wsdl:output message="tns:InsertInterniSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Chat_WSSoap" type="tns:Chat_WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SelectAll">
+      <soap:operation soapAction="http://tempuri.org/SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOne">
+      <soap:operation soapAction="http://tempuri.org/SelectOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatCorso">
+      <soap:operation soapAction="http://tempuri.org/SelectChatCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatCorsoDesc">
+      <soap:operation soapAction="http://tempuri.org/SelectChatCorsoDesc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOneJoinEsterni">
+      <soap:operation soapAction="http://tempuri.org/SelectOneJoinEsterni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOneJoinUtenti">
+      <soap:operation soapAction="http://tempuri.org/SelectOneJoinUtenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <soap:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEsterni">
+      <soap:operation soapAction="http://tempuri.org/InsertEsterni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInterni">
+      <soap:operation soapAction="http://tempuri.org/InsertInterni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Chat_WSSoap12" type="tns:Chat_WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SelectAll">
+      <soap12:operation soapAction="http://tempuri.org/SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOne">
+      <soap12:operation soapAction="http://tempuri.org/SelectOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatCorso">
+      <soap12:operation soapAction="http://tempuri.org/SelectChatCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatCorsoDesc">
+      <soap12:operation soapAction="http://tempuri.org/SelectChatCorsoDesc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOneJoinEsterni">
+      <soap12:operation soapAction="http://tempuri.org/SelectOneJoinEsterni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectOneJoinUtenti">
+      <soap12:operation soapAction="http://tempuri.org/SelectOneJoinUtenti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <soap12:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEsterni">
+      <soap12:operation soapAction="http://tempuri.org/InsertEsterni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInterni">
+      <soap12:operation soapAction="http://tempuri.org/InsertInterni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Chat_WS">
+    <wsdl:port name="Chat_WSSoap" binding="tns:Chat_WSSoap">
+      <soap:address location="http://localhost:58260/Chat-WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Chat_WSSoap12" binding="tns:Chat_WSSoap12">
+      <soap12:address location="http://localhost:58260/Chat-WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

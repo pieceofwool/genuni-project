@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListaSpese">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaSpeseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaSpeseResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaSpeseCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CODCORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaSpeseCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaSpeseCorsoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaSpeseTipoCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIPOCORSO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaSpeseTipoCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaSpeseTipoCorsoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaRicavi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaRicaviResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaRicaviResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaRicaviCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CODCORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaRicaviCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaRicaviCorsoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaRicaviTipoCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIPOCORSO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaRicaviTipoCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaRicaviTipoCorsoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaSpese">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaSpeseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SommaSpeseResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaSpeseCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CODCORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaSpeseCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SommaSpeseCorsoResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaSpeseTipoCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIPOCORSO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaSpeseTipoCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SommaSpeseTipoCorsoResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaRicavi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaRicaviResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SommaRicaviResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaRicaviCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CODCORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaRicaviCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SommaRicaviCorsoResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaRicaviTipoCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIPOCORSO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SommaRicaviTipoCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SommaRicaviTipoCorsoResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utili">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtiliResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UtiliResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtiliCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CODCORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtiliCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UtiliCorsoResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtiliTipoCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIPOCORSO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtiliTipoCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UtiliTipoCorsoResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaSpeseDocenteSingolo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DATAINIZIO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAFINE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CODICEDOCENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaSpeseDocenteSingoloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaSpeseDocenteSingoloResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CostoDocentePerCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CODICECORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CostoDocentePerCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CostoDocentePerCorsoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListaSpeseSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaSpese" />
+  </wsdl:message>
+  <wsdl:message name="ListaSpeseSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaSpeseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaSpeseCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaSpeseCorso" />
+  </wsdl:message>
+  <wsdl:message name="ListaSpeseCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaSpeseCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaSpeseTipoCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaSpeseTipoCorso" />
+  </wsdl:message>
+  <wsdl:message name="ListaSpeseTipoCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaSpeseTipoCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaRicaviSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaRicavi" />
+  </wsdl:message>
+  <wsdl:message name="ListaRicaviSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaRicaviResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaRicaviCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaRicaviCorso" />
+  </wsdl:message>
+  <wsdl:message name="ListaRicaviCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaRicaviCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaRicaviTipoCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaRicaviTipoCorso" />
+  </wsdl:message>
+  <wsdl:message name="ListaRicaviTipoCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaRicaviTipoCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SommaSpeseSoapIn">
+    <wsdl:part name="parameters" element="tns:SommaSpese" />
+  </wsdl:message>
+  <wsdl:message name="SommaSpeseSoapOut">
+    <wsdl:part name="parameters" element="tns:SommaSpeseResponse" />
+  </wsdl:message>
+  <wsdl:message name="SommaSpeseCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:SommaSpeseCorso" />
+  </wsdl:message>
+  <wsdl:message name="SommaSpeseCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:SommaSpeseCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SommaSpeseTipoCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:SommaSpeseTipoCorso" />
+  </wsdl:message>
+  <wsdl:message name="SommaSpeseTipoCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:SommaSpeseTipoCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SommaRicaviSoapIn">
+    <wsdl:part name="parameters" element="tns:SommaRicavi" />
+  </wsdl:message>
+  <wsdl:message name="SommaRicaviSoapOut">
+    <wsdl:part name="parameters" element="tns:SommaRicaviResponse" />
+  </wsdl:message>
+  <wsdl:message name="SommaRicaviCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:SommaRicaviCorso" />
+  </wsdl:message>
+  <wsdl:message name="SommaRicaviCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:SommaRicaviCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SommaRicaviTipoCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:SommaRicaviTipoCorso" />
+  </wsdl:message>
+  <wsdl:message name="SommaRicaviTipoCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:SommaRicaviTipoCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UtiliSoapIn">
+    <wsdl:part name="parameters" element="tns:Utili" />
+  </wsdl:message>
+  <wsdl:message name="UtiliSoapOut">
+    <wsdl:part name="parameters" element="tns:UtiliResponse" />
+  </wsdl:message>
+  <wsdl:message name="UtiliCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:UtiliCorso" />
+  </wsdl:message>
+  <wsdl:message name="UtiliCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:UtiliCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UtiliTipoCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:UtiliTipoCorso" />
+  </wsdl:message>
+  <wsdl:message name="UtiliTipoCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:UtiliTipoCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaSpeseDocenteSingoloSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaSpeseDocenteSingolo" />
+  </wsdl:message>
+  <wsdl:message name="ListaSpeseDocenteSingoloSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaSpeseDocenteSingoloResponse" />
+  </wsdl:message>
+  <wsdl:message name="CostoDocentePerCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:CostoDocentePerCorso" />
+  </wsdl:message>
+  <wsdl:message name="CostoDocentePerCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:CostoDocentePerCorsoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Contabilita_WSSoap">
+    <wsdl:operation name="ListaSpese">
+      <wsdl:input message="tns:ListaSpeseSoapIn" />
+      <wsdl:output message="tns:ListaSpeseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaSpeseCorso">
+      <wsdl:input message="tns:ListaSpeseCorsoSoapIn" />
+      <wsdl:output message="tns:ListaSpeseCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaSpeseTipoCorso">
+      <wsdl:input message="tns:ListaSpeseTipoCorsoSoapIn" />
+      <wsdl:output message="tns:ListaSpeseTipoCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaRicavi">
+      <wsdl:input message="tns:ListaRicaviSoapIn" />
+      <wsdl:output message="tns:ListaRicaviSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaRicaviCorso">
+      <wsdl:input message="tns:ListaRicaviCorsoSoapIn" />
+      <wsdl:output message="tns:ListaRicaviCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaRicaviTipoCorso">
+      <wsdl:input message="tns:ListaRicaviTipoCorsoSoapIn" />
+      <wsdl:output message="tns:ListaRicaviTipoCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SommaSpese">
+      <wsdl:input message="tns:SommaSpeseSoapIn" />
+      <wsdl:output message="tns:SommaSpeseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SommaSpeseCorso">
+      <wsdl:input message="tns:SommaSpeseCorsoSoapIn" />
+      <wsdl:output message="tns:SommaSpeseCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SommaSpeseTipoCorso">
+      <wsdl:input message="tns:SommaSpeseTipoCorsoSoapIn" />
+      <wsdl:output message="tns:SommaSpeseTipoCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SommaRicavi">
+      <wsdl:input message="tns:SommaRicaviSoapIn" />
+      <wsdl:output message="tns:SommaRicaviSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SommaRicaviCorso">
+      <wsdl:input message="tns:SommaRicaviCorsoSoapIn" />
+      <wsdl:output message="tns:SommaRicaviCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SommaRicaviTipoCorso">
+      <wsdl:input message="tns:SommaRicaviTipoCorsoSoapIn" />
+      <wsdl:output message="tns:SommaRicaviTipoCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Utili">
+      <wsdl:input message="tns:UtiliSoapIn" />
+      <wsdl:output message="tns:UtiliSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UtiliCorso">
+      <wsdl:input message="tns:UtiliCorsoSoapIn" />
+      <wsdl:output message="tns:UtiliCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UtiliTipoCorso">
+      <wsdl:input message="tns:UtiliTipoCorsoSoapIn" />
+      <wsdl:output message="tns:UtiliTipoCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaSpeseDocenteSingolo">
+      <wsdl:input message="tns:ListaSpeseDocenteSingoloSoapIn" />
+      <wsdl:output message="tns:ListaSpeseDocenteSingoloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CostoDocentePerCorso">
+      <wsdl:input message="tns:CostoDocentePerCorsoSoapIn" />
+      <wsdl:output message="tns:CostoDocentePerCorsoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Contabilita_WSSoap" type="tns:Contabilita_WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListaSpese">
+      <soap:operation soapAction="http://tempuri.org/ListaSpese" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSpeseCorso">
+      <soap:operation soapAction="http://tempuri.org/ListaSpeseCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSpeseTipoCorso">
+      <soap:operation soapAction="http://tempuri.org/ListaSpeseTipoCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaRicavi">
+      <soap:operation soapAction="http://tempuri.org/ListaRicavi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaRicaviCorso">
+      <soap:operation soapAction="http://tempuri.org/ListaRicaviCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaRicaviTipoCorso">
+      <soap:operation soapAction="http://tempuri.org/ListaRicaviTipoCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaSpese">
+      <soap:operation soapAction="http://tempuri.org/SommaSpese" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaSpeseCorso">
+      <soap:operation soapAction="http://tempuri.org/SommaSpeseCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaSpeseTipoCorso">
+      <soap:operation soapAction="http://tempuri.org/SommaSpeseTipoCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaRicavi">
+      <soap:operation soapAction="http://tempuri.org/SommaRicavi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaRicaviCorso">
+      <soap:operation soapAction="http://tempuri.org/SommaRicaviCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaRicaviTipoCorso">
+      <soap:operation soapAction="http://tempuri.org/SommaRicaviTipoCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utili">
+      <soap:operation soapAction="http://tempuri.org/Utili" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtiliCorso">
+      <soap:operation soapAction="http://tempuri.org/UtiliCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtiliTipoCorso">
+      <soap:operation soapAction="http://tempuri.org/UtiliTipoCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSpeseDocenteSingolo">
+      <soap:operation soapAction="http://tempuri.org/ListaSpeseDocenteSingolo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CostoDocentePerCorso">
+      <soap:operation soapAction="http://tempuri.org/CostoDocentePerCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Contabilita_WSSoap12" type="tns:Contabilita_WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListaSpese">
+      <soap12:operation soapAction="http://tempuri.org/ListaSpese" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSpeseCorso">
+      <soap12:operation soapAction="http://tempuri.org/ListaSpeseCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSpeseTipoCorso">
+      <soap12:operation soapAction="http://tempuri.org/ListaSpeseTipoCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaRicavi">
+      <soap12:operation soapAction="http://tempuri.org/ListaRicavi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaRicaviCorso">
+      <soap12:operation soapAction="http://tempuri.org/ListaRicaviCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaRicaviTipoCorso">
+      <soap12:operation soapAction="http://tempuri.org/ListaRicaviTipoCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaSpese">
+      <soap12:operation soapAction="http://tempuri.org/SommaSpese" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaSpeseCorso">
+      <soap12:operation soapAction="http://tempuri.org/SommaSpeseCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaSpeseTipoCorso">
+      <soap12:operation soapAction="http://tempuri.org/SommaSpeseTipoCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaRicavi">
+      <soap12:operation soapAction="http://tempuri.org/SommaRicavi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaRicaviCorso">
+      <soap12:operation soapAction="http://tempuri.org/SommaRicaviCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SommaRicaviTipoCorso">
+      <soap12:operation soapAction="http://tempuri.org/SommaRicaviTipoCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utili">
+      <soap12:operation soapAction="http://tempuri.org/Utili" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtiliCorso">
+      <soap12:operation soapAction="http://tempuri.org/UtiliCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtiliTipoCorso">
+      <soap12:operation soapAction="http://tempuri.org/UtiliTipoCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSpeseDocenteSingolo">
+      <soap12:operation soapAction="http://tempuri.org/ListaSpeseDocenteSingolo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CostoDocentePerCorso">
+      <soap12:operation soapAction="http://tempuri.org/CostoDocentePerCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Contabilita_WS">
+    <wsdl:port name="Contabilita_WSSoap" binding="tns:Contabilita_WSSoap">
+      <soap:address location="http://localhost:58260/Contabilita-WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Contabilita_WSSoap12" binding="tns:Contabilita_WSSoap12">
+      <soap12:address location="http://localhost:58260/Contabilita-WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

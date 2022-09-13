@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_DOCENTE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COSTO_DOCENTE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TITOLO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="INDICE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_DOCENTE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COSTO_DOCENTE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TITOLO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="INDICE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PREPARATO" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ACCETTATO" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATA_RISPOSTA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Info">
+        <s:complexType />
+      </s:element>
+      <s:element name="InfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDocente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_DOCENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDocenteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Rispondi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="risposta" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RispondiResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectDocente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_DOCENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDocenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectDocenteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDocenteCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_DOCENTE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDocenteCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectDocenteCorsoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectNonAssegnate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COD_CORSO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectNonAssegnateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectNonAssegnateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDaRispondere">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cod_docente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDaRispondereResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectDaRispondereResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectMaterieDocente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cod_docente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectMaterieDocenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectMaterieDocenteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Accettazione">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHIAVE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccettazioneResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectCorsiDocente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cod_docente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectCorsiDocenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectCorsiDocenteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectMaterieDocenteCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cod_docente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cod_corso" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectMaterieDocenteCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectMaterieDocenteCorsoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MaterieInfoCorso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cod_corso" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MaterieInfoCorsoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaterieInfoCorsoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MateriePreparate">
+        <s:complexType />
+      </s:element>
+      <s:element name="MateriePreparateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MateriePreparateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="InfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Info" />
+  </wsdl:message>
+  <wsdl:message name="InfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertDocenteSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDocente" />
+  </wsdl:message>
+  <wsdl:message name="InsertDocenteSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDocenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RispondiSoapIn">
+    <wsdl:part name="parameters" element="tns:Rispondi" />
+  </wsdl:message>
+  <wsdl:message name="RispondiSoapOut">
+    <wsdl:part name="parameters" element="tns:RispondiResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectDocenteSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectDocente" />
+  </wsdl:message>
+  <wsdl:message name="SelectDocenteSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectDocenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectDocenteCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectDocenteCorso" />
+  </wsdl:message>
+  <wsdl:message name="SelectDocenteCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectDocenteCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectNonAssegnateSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectNonAssegnate" />
+  </wsdl:message>
+  <wsdl:message name="SelectNonAssegnateSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectNonAssegnateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectDaRispondereSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectDaRispondere" />
+  </wsdl:message>
+  <wsdl:message name="SelectDaRispondereSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectDaRispondereResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectMaterieDocenteSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectMaterieDocente" />
+  </wsdl:message>
+  <wsdl:message name="SelectMaterieDocenteSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectMaterieDocenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccettazioneSoapIn">
+    <wsdl:part name="parameters" element="tns:Accettazione" />
+  </wsdl:message>
+  <wsdl:message name="AccettazioneSoapOut">
+    <wsdl:part name="parameters" element="tns:AccettazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectCorsiDocenteSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectCorsiDocente" />
+  </wsdl:message>
+  <wsdl:message name="SelectCorsiDocenteSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectCorsiDocenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectMaterieDocenteCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectMaterieDocenteCorso" />
+  </wsdl:message>
+  <wsdl:message name="SelectMaterieDocenteCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectMaterieDocenteCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaterieInfoCorsoSoapIn">
+    <wsdl:part name="parameters" element="tns:MaterieInfoCorso" />
+  </wsdl:message>
+  <wsdl:message name="MaterieInfoCorsoSoapOut">
+    <wsdl:part name="parameters" element="tns:MaterieInfoCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MateriePreparateSoapIn">
+    <wsdl:part name="parameters" element="tns:MateriePreparate" />
+  </wsdl:message>
+  <wsdl:message name="MateriePreparateSoapOut">
+    <wsdl:part name="parameters" element="tns:MateriePreparateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Materie_WSSoap">
+    <wsdl:operation name="Insert">
+      <wsdl:input message="tns:InsertSoapIn" />
+      <wsdl:output message="tns:InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input message="tns:UpdateSoapIn" />
+      <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Info">
+      <wsdl:input message="tns:InfoSoapIn" />
+      <wsdl:output message="tns:InfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDocente">
+      <wsdl:input message="tns:InsertDocenteSoapIn" />
+      <wsdl:output message="tns:InsertDocenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Rispondi">
+      <wsdl:input message="tns:RispondiSoapIn" />
+      <wsdl:output message="tns:RispondiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectDocente">
+      <wsdl:input message="tns:SelectDocenteSoapIn" />
+      <wsdl:output message="tns:SelectDocenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectDocenteCorso">
+      <wsdl:input message="tns:SelectDocenteCorsoSoapIn" />
+      <wsdl:output message="tns:SelectDocenteCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectNonAssegnate">
+      <wsdl:input message="tns:SelectNonAssegnateSoapIn" />
+      <wsdl:output message="tns:SelectNonAssegnateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectDaRispondere">
+      <wsdl:input message="tns:SelectDaRispondereSoapIn" />
+      <wsdl:output message="tns:SelectDaRispondereSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectMaterieDocente">
+      <wsdl:input message="tns:SelectMaterieDocenteSoapIn" />
+      <wsdl:output message="tns:SelectMaterieDocenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Accettazione">
+      <wsdl:input message="tns:AccettazioneSoapIn" />
+      <wsdl:output message="tns:AccettazioneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCorsiDocente">
+      <wsdl:input message="tns:SelectCorsiDocenteSoapIn" />
+      <wsdl:output message="tns:SelectCorsiDocenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectMaterieDocenteCorso">
+      <wsdl:input message="tns:SelectMaterieDocenteCorsoSoapIn" />
+      <wsdl:output message="tns:SelectMaterieDocenteCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MaterieInfoCorso">
+      <wsdl:input message="tns:MaterieInfoCorsoSoapIn" />
+      <wsdl:output message="tns:MaterieInfoCorsoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MateriePreparate">
+      <wsdl:input message="tns:MateriePreparateSoapIn" />
+      <wsdl:output message="tns:MateriePreparateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Materie_WSSoap" type="tns:Materie_WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insert">
+      <soap:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Info">
+      <soap:operation soapAction="http://tempuri.org/Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDocente">
+      <soap:operation soapAction="http://tempuri.org/InsertDocente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Rispondi">
+      <soap:operation soapAction="http://tempuri.org/Rispondi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDocente">
+      <soap:operation soapAction="http://tempuri.org/SelectDocente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDocenteCorso">
+      <soap:operation soapAction="http://tempuri.org/SelectDocenteCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectNonAssegnate">
+      <soap:operation soapAction="http://tempuri.org/SelectNonAssegnate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDaRispondere">
+      <soap:operation soapAction="http://tempuri.org/SelectDaRispondere" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMaterieDocente">
+      <soap:operation soapAction="http://tempuri.org/SelectMaterieDocente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Accettazione">
+      <soap:operation soapAction="http://tempuri.org/Accettazione" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCorsiDocente">
+      <soap:operation soapAction="http://tempuri.org/SelectCorsiDocente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMaterieDocenteCorso">
+      <soap:operation soapAction="http://tempuri.org/SelectMaterieDocenteCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaterieInfoCorso">
+      <soap:operation soapAction="http://tempuri.org/MaterieInfoCorso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MateriePreparate">
+      <soap:operation soapAction="http://tempuri.org/MateriePreparate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Materie_WSSoap12" type="tns:Materie_WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insert">
+      <soap12:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap12:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Info">
+      <soap12:operation soapAction="http://tempuri.org/Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDocente">
+      <soap12:operation soapAction="http://tempuri.org/InsertDocente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Rispondi">
+      <soap12:operation soapAction="http://tempuri.org/Rispondi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDocente">
+      <soap12:operation soapAction="http://tempuri.org/SelectDocente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDocenteCorso">
+      <soap12:operation soapAction="http://tempuri.org/SelectDocenteCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectNonAssegnate">
+      <soap12:operation soapAction="http://tempuri.org/SelectNonAssegnate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDaRispondere">
+      <soap12:operation soapAction="http://tempuri.org/SelectDaRispondere" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMaterieDocente">
+      <soap12:operation soapAction="http://tempuri.org/SelectMaterieDocente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Accettazione">
+      <soap12:operation soapAction="http://tempuri.org/Accettazione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCorsiDocente">
+      <soap12:operation soapAction="http://tempuri.org/SelectCorsiDocente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMaterieDocenteCorso">
+      <soap12:operation soapAction="http://tempuri.org/SelectMaterieDocenteCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaterieInfoCorso">
+      <soap12:operation soapAction="http://tempuri.org/MaterieInfoCorso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MateriePreparate">
+      <soap12:operation soapAction="http://tempuri.org/MateriePreparate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Materie_WS">
+    <wsdl:port name="Materie_WSSoap" binding="tns:Materie_WSSoap">
+      <soap:address location="http://localhost:58260/Materie-WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Materie_WSSoap12" binding="tns:Materie_WSSoap12">
+      <soap12:address location="http://localhost:58260/Materie-WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
