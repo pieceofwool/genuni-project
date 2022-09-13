@@ -10,12 +10,13 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-            //disabilito i bottoni 
-            btnChat.Enabled = false;
-            btnPreparaDomande.Enabled = false;
-            btnRisultatiTest.Enabled = false;
-            btnPreparaTest.Enabled = false;
-        
+        //disabilito i bottoni 
+
+        btnPreparaDomande.Enabled = false;
+        btnRisultatiTest.Enabled = false;
+        btnPreparaTest.Enabled = false;
+        btnChat.Enabled = false;
+
         if (!IsPostBack == true)
         {
             //CARICO LA GRIGLIA
@@ -27,13 +28,13 @@ public partial class Default2 : System.Web.UI.Page
             GridCorsi.DataBind();
 
         }
-        
+
     }
 
     protected void grvCorsi_SelectedIndexChanged(object sender, EventArgs e)
     {
         //abilito i bottoni
-        btnChat.Enabled = true;
+
 
         //controlli per i test e relativa abilitazione dei bottoni
         TEST.Test_WSSoapClient T = new TEST.Test_WSSoapClient();
@@ -48,12 +49,14 @@ public partial class Default2 : System.Web.UI.Page
             btnPreparaTest.Enabled = false;
             btnPreparaDomande.Enabled = true;
             btnRisultatiTest.Enabled = true;
+            btnChat.Enabled = true;
         }
         else
         {
             btnPreparaTest.Enabled = true;
             btnPreparaDomande.Enabled = false;
             btnRisultatiTest.Enabled = false;
+            btnChat.Enabled = true;
         }
 
         //creo le session
@@ -81,5 +84,5 @@ public partial class Default2 : System.Web.UI.Page
         Response.Redirect("../POPUP/corsi/Chat.aspx");
     }
 
-   
+
 }
