@@ -40,8 +40,8 @@
         <table class="tablePopUp">
             <tr>
                 <td class="btnGestisci">
-                    <asp:Label ID="Label1" runat="server" CssClass="lbl" Text="Portafoglio"></asp:Label>
-                    <asp:Label ID="lblSaldo" runat="server" CssClass="lbl" Text=""></asp:Label>
+                    <asp:Label ID="Label1" runat="server" CssClass="lbl" Text="Portafoglio GenMoney:"></asp:Label>
+                    <asp:Label ID="lblSaldo" Style="font-weight: bold;" runat="server" CssClass="lbl" Text=""></asp:Label>
                     <br />
                     <a id="btnAcquista" class="popUpBtnBE" cssclass="popUpBtnBE" href="Popup/AcquistoGenMoney.aspx">Acquista GenMoney</a>
                     <asp:Button ID="btnAggiornaSaldo" CssClass="btnBE" runat="server" Text="Aggiorna saldo" OnClick="btnAggiornaSaldo_Click" />
@@ -68,7 +68,7 @@
                 <td>
                     <br />
                     <br />
-                    <h5 CssClass="h5Sottotitoli">STORICO RICARICHE GENMONEY</h5>
+                    <h5 cssclass="h5Sottotitoli">STORICO RICARICHE GENMONEY</h5>
                 </td>
             </tr>
             <tr>
